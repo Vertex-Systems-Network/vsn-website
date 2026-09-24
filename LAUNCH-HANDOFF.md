@@ -31,41 +31,38 @@ Production launch is **not yet authorized**. The remaining work is external to n
 
 ## Launch gates — all must be completed before production/domain switch
 
-### Gate 1 — Exact official logo localization — Issue #5
+### Gate 1 — Exact official logo localization — Issue #5 — COMPLETED IN RELEASE CANDIDATE
 
-Current exact owner-supplied source:
+Owner source:
 
 `https://vertexsystemsnetwork.com/wp-content/uploads/2026/02/vertex-logo.png`
 
-Do not redraw, recreate, convert, optimize, or substitute the logo.
+Release-candidate completion evidence:
+- exact binary stored at `assets/vertex-logo.png`
+- SHA-256: `ede0edd921742c57af19b513c1aab73e079fe1217f4bc7ad156ab3260109c671`
+- dimensions: `2041×517`
+- size: `60,222 bytes`
+- all header/footer/favicon references use the local asset
+- runtime CSP image policy is `img-src 'self'`
+- `static-integrity` verifies hash, signature, dimensions and references
 
-When the exact PNG bytes are available:
-
-1. Store the exact binary under `assets/`.
-2. Replace header, footer and favicon remote references with the local asset.
-3. Verify dimensions and rendering.
-4. Remove `https://vertexsystemsnetwork.com` from the CSP `img-src` exception when no longer needed.
-5. Run `static-integrity`.
-6. Close Issue #5 only after the local asset is verified on `main`.
+Issue #5 closes only after this candidate is green on `main`.
 
 ### Gate 2 — Vercel preview + live QA — Issue #8
 
-Create/import a **preview-only** Vercel project:
+Vercel project now exists:
 
 - Team: `VSN / vsnteam`
 - Project: `vsn-website`
-- Repository: `Vertex-Systems-Network/vsn-website`
-- Branch: `main`
-- Framework preset: **Other**
-- Root: repository root
-- Build command: none
-- Install command: none
-- Output: repository root/static files
-- Environment variables: none required
+- Project ID: `prj_xfZGl8mInhJAo7solaapm6lcsaTS`
+- Framework: none / static
+- True preview URL: `https://vsn-website-fgb7kni3h-vsnteam.vercel.app`
+- Preview protection: Vercel Authentication
+- Custom production domain: untouched
 
 Do not add a framework or package runtime as a deployment workaround.
 
-After a preview URL exists:
+Remaining preview work:
 
 1. Verify primary routes and 404 behavior.
 2. Verify mobile navigation and keyboard interaction.
@@ -111,7 +108,6 @@ Qualified Pakistan legal/corporate counsel must review the public policies and c
 
 The production domain must **not** be switched to this static release until:
 
-- Issue #5 is complete,
 - Issue #8 preview/live QA is complete,
 - Issue #14 protection is verified,
 - final qualified legal/corporate review is complete,
@@ -126,7 +122,7 @@ If work resumes later, read in this order:
 1. `.ai/state/CURRENT-STATE.yaml`
 2. `LAST-CHECKPOINT.md`
 3. `LAUNCH-HANDOFF.md`
-4. Open Issues #5, #8 and #14
+4. Open Issues #8 and #14
 5. `.ai/RUNNER-BENCHMARK.md` after a real preview URL exists
 
 Repository evidence outranks chat history.
