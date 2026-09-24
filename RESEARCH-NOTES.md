@@ -7,6 +7,6 @@ Design and information architecture were informed by:
 - Vertex Systems Network public business profiles: software, web/mobile, SaaS, e-commerce, hosting and digital transformation positioning; public registration details.
 - VSN Metafields Shopify listing: existing VSN product proof and current public pricing.
 
-## Design decision
+## Brand asset\n\nThe website now uses the official VSN logo URL supplied by the owner: `https://vertexsystemsnetwork.com/wp-content/uploads/2026/02/vertex-logo.png`.\n
 
 The current `assets/logo.svg` is a clean temporary VSN brand mark because the official logo asset could not be reliably fetched from the existing website during this build. Replace it with the official SVG/PNG before launch; the layout is already sized for a horizontal logo.

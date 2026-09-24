@@ -49,3 +49,7 @@ Legal pages are in `legal/` and should receive final Pakistani legal/corporate r
 ## Deployment
 
 This repository intentionally stays host-agnostic. Deploy the files to any static hosting environment or standard web server.
+
+## Branding
+
+The website references the official VSN logo supplied by the owner at `https://vertexsystemsnetwork.com/wp-content/uploads/2026/02/vertex-logo.png` for the header, footer and favicon.
