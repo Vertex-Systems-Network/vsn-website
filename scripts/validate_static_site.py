@@ -145,6 +145,23 @@ def main() -> int:
             if fragment not in ids_by_file.get(normalized,set()):
                 errors.append(f"{source}: fragment {raw_ref!r} targets missing id {fragment!r}")
 
+    workflow_text = (ROOT / ".github/workflows/static-integrity.yml").read_text(encoding="utf-8")
+    action_refs = re.findall(r"^\\s*uses:\\s*([^\\s#]+)", workflow_text, re.M)
+    for action_ref in action_refs:
+        if action_ref.startswith("./"):
+            continue
+        if "@" not in action_ref:
+            errors.append(f"static-integrity.yml: action reference missing @ref: {action_ref}")
+            continue
+        ref_value = action_ref.rsplit("@", 1)[1]
+        if not re.fullmatch(r"[0-9a-fA-F]{40}", ref_value):
+            errors.append(
+                "static-integrity.yml: third-party actions must be pinned to a full commit SHA: "
+                f"{action_ref}"
+            )
+    if "persist-credentials: false" not in workflow_text:
+        errors.append("static-integrity.yml: checkout must disable persisted credentials")
+
     app_js = (ROOT / "assets/app.js").read_text(encoding="utf-8")
     for token in TRACKING_TOKENS:
         if token in app_js:
