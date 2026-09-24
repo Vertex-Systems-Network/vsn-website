@@ -1,35 +1,38 @@
 repo: Vertex-Systems-Network/vsn-website
 updated: 2026-09-24
-verified_main_sha: 68622237450adfc461e61af147bbf399d88d4e97
-last_completed_pr: 9
-current_issue: 10
-current_branch: fix/authority-profile-pricing-safety
-current_milestone: authority-profile-pricing-safety
+verified_main_sha: 8642fb77400f376bf6b0798f7a0080e09cfef520
+last_completed_pr: 11
+current_issue: 12
+current_branch: docs/legal-prelaunch-hardening
+current_milestone: legal-prelaunch-hardening
 module_progress_percent: 100
-overall_launch_readiness_percent: 97
+overall_launch_readiness_percent: 98
 architecture: static-html-css-vanilla-js
 open_pr: pending
 open_issues:
   - 5
   - 8
-  - 10
+  - 12
 checks:
   open_issues_reconciled: true
   open_prs_reconciled: true
+  authority_profile_pricing_safe: true
   framework_dependency: none
   package_json: absent
   vercel_runtime_config: absent
   runner_tasks: deferred
+legal:
+  internal_content_hardening: complete
+  identity_consistency: complete
+  policy_cross_links: complete
+  tracking_search_results: none_found
+  qualified_pakistan_counsel_review: required_before_production
 hosting:
   provider_target: vercel
   team: vsnteam
   project_exists: false
   preview_only: true
   connector_deploy_runtime_available: false
-commercial:
-  authority_profile_numeric_pricing: removed_pending_owner_approval
-  package_scope: retained
-  quote_based_pricing: enabled
 brand_asset:
   official_url: https://vertexsystemsnetwork.com/wp-content/uploads/2026/02/vertex-logo.png
   graceful_runtime_fallback: merged
@@ -38,5 +41,5 @@ brand_asset:
 launch_blockers:
   - issue 5 exact official logo localization
   - issue 8 preview deployment and live QA
-  - final Pakistani legal/corporate review of legal pages
-next_valid_action: review Authority Profile pricing safety PR at exact head, then merge and verify resulting main
+  - final Pakistan-qualified legal/corporate review using LEGAL-REVIEW.md
+next_valid_action: review legal pre-launch hardening PR at exact head, then merge and verify resulting main
