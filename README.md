@@ -57,12 +57,13 @@ The website references the official VSN logo supplied by the owner at `https://v
 
 ## AI-Native progress
 
-- Last verified `main`: `628d01c2b63ad96f48dc3124a6a0405029da6f28`
+- Last verified `main`: `462e3352f711033d0107b60a78498896a6d5f58d`
 - Launch QA hardening: **merged and verified**
 - Post-merge state closeout: **merged and verified**
-- Current module: Brand asset resilience — PR pending review
+- Brand resilience fallback: **merged and verified**
+- Current module: Brand-resilience durable-state reconciliation — PR pending review
 - Overall launch readiness: **96%**
-- Active Issue: **#5**
+- Active Issue: **#5 — repo-local exact official logo**
+- Issue #5 remains open intentionally until the exact PNG is stored under `assets/` and all site references are switched local.
 - Runner-heavy QA remains deferred to `.ai/RUNNER-BENCHMARK.md` for final-stage batching.
-- Exact official logo remains sourced from the owner-supplied WordPress URL; runtime text fallback is now included if that image fails.
-- Repo-local official PNG remains blocked until the exact binary becomes retrievable.
+- Other remaining blockers: legal review, Authority Profile commercial pricing, and production hosting/live QA.

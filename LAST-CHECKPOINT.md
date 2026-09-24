@@ -2,25 +2,35 @@
 
 Date: 2026-09-24
 
-## Verified starting state
+## Verified resulting main
 - Repo: Vertex-Systems-Network/vsn-website
-- Main SHA: `628d01c2b63ad96f48dc3124a6a0405029da6f28`
-- Open Issues before activation: 0
-- Open PRs before activation: 0
+- Main SHA: `462e3352f711033d0107b60a78498896a6d5f58d`
+- PR #6: merged
+- Issue #5: open / reopened
+- Open PRs before this reconciliation: 0
 
-## Active milestone
-- Issue #5 — Brand asset resilience and repo-local official logo
-- Branch: `fix/brand-asset-resilience`
+## Verified brand state
+- The owner-supplied official WordPress logo URL remains the primary image source.
+- Header/footer graceful text-brand fallback is merged on `main`.
+- Static HTML/CSS/vanilla-JS architecture remains intact.
+- No package.json, framework runtime, or Vercel runtime configuration was added.
 
-## Completed in this milestone
-- Retried direct download of the exact owner-supplied logo PNG; retrieval still failed in the execution environment.
-- Retried web/image retrieval without finding a retrievable exact binary.
-- Preserved the exact official WordPress logo URL as the primary branding source.
-- Added graceful text-brand fallback for header/footer if the remote image fails.
-- Kept the site plain HTML/CSS/vanilla JS with no framework/runtime package.
+## Issue #5 remains open because
+The exact official PNG has not yet been stored under `assets/`. The current execution environment could not retrieve the binary, and no guessed or recreated logo will be substituted.
 
-## Still blocked
-The exact PNG cannot yet be committed under `assets/` because the source binary is unavailable to the current execution environment. No guessed or recreated logo is being substituted.
+Remaining Issue #5 completion conditions:
+1. Store the exact official PNG under `assets/`.
+2. Switch production references to the repo-local asset.
+3. Verify dimensions/rendering.
+4. Remove the external-image CSP dependency.
+
+## Other launch blockers
+- Final Pakistani legal/corporate review of legal pages.
+- Confirm Authority Profile commercial pricing before public launch.
+- Production hosting/domain selection and final live QA.
+
+## Current milestone
+Durable-state reconciliation only. No website runtime or branding code changes are included.
 
 ## Next deterministic action
-Review the brand-resilience PR at its exact head SHA. If clean, merge it and verify resulting `main`. Keep Issue #5 open until the exact official PNG is stored locally.
+Review the reconciliation PR at its exact head SHA; if clean, merge it. Keep Issue #5 open until exact logo localization is complete.
