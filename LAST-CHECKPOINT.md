@@ -4,30 +4,33 @@ Date: 2026-09-25
 
 ## Verified starting main
 - Repo: Vertex-Systems-Network/vsn-website
-- Main SHA: `615b0e5442f24b10e7963cf101ef7b423610f086`
-- PR #23: merged
-- PR #23 `static-integrity` run #10: green
-- Resulting main run #11: green
-- Issue #22: closed
-- Open Issues: #5, #8 and #14
+- Main SHA: `4d09259a9e8999f1508b3d7fb161793829a55421`
+- PR #24: merged
+- PR #24 `static-integrity` run #12: green
+- Resulting main run #13: green
+- Dependabot PR #21: superseded and closed
+- Open Issues before activation: #5, #8 and #14
+- Open PRs before activation: 0
 - Main branch protection: disabled
 
-## Dependency maintenance
-Dependabot PR #21 proposes `actions/checkout` v7.0.1, pinned to official commit `3d3c42e5aac5ba805825da76410c181273ba90b1`.
-PR #21 is based on the pre-PR-23 main and is therefore stale/non-mergeable.
-
 ## Active milestone
-- Branch: `security/checkout-v7-upgrade`
-- Apply the same pinned checkout v7.0.1 update on latest main.
-- Preserve `persist-credentials: false`.
-- Preserve read-only workflow permissions.
-- Require green `static-integrity` before merge.
-- Close Dependabot PR #21 as superseded after the equivalent latest-main PR merges.
+- Issue #25 — Make inline JSON-LD strict-CSP hash verifiable
+- Branch: `security/csp-script-hash-readiness`
+
+## Changes in this milestone
+- Keep Organization JSON-LD inline for structured-data SEO.
+- Add machine-readable `security/csp-hashes.json`.
+- SHA-256 allowlist the exact JSON-LD bytes: `sha256-ZM1h9WKmDZGFgxszmJKYmle/IrxoM/sfN9fSDcx5Rbk=`.
+- Make `static-integrity` reject unexpected inline executable scripts.
+- Parse/validate the JSON-LD and compare computed hashes against the manifest.
+- Ensure documented CSP hash stays synchronized with the manifest.
+- Add a strict CSP baseline candidate without `'unsafe-inline'`.
 
 ## Guardrails
-- No website runtime changes.
-- No package.json/framework/Vercel runtime added.
+- No website feature/business-copy changes.
+- No framework/package/Vercel runtime added.
+- Production headers are not claimed active.
 - Runner Benchmark remains deferred.
 
 ## Next deterministic action
-Open focused latest-main upgrade PR, verify exact diff + green `static-integrity`, then expected-head squash merge and verify resulting main.
+Review the PR at exact head and require a green `static-integrity` run before merge.
