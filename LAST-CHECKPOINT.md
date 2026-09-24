@@ -1,31 +1,31 @@
 # Last Checkpoint
 
-Date: 2026-09-24
+Date: 2026-09-25
 
 ## Verified starting main
 - Repo: Vertex-Systems-Network/vsn-website
-- Main SHA: `d9d0f4a8499093075ada558dfb6116c912aaf9b7`
-- PR #17: merged
-- `static-integrity` PR run: green
-- `static-integrity` main run: green
-- Issue #16: closed
+- Main SHA: `2119221e0e030a0677d41ecd76e8491f9a31684f`
+- PR #18: merged
+- Resulting `static-integrity` main run #6: green
 - Open Issues before activation: #5, #8 and #14
 - Open PRs before activation: 0
-- Main branch protection: disabled
+- Main branch protection: still disabled
 
 ## Active milestone
-- Issue #14 — require proven `static-integrity` in target main protection
-- Branch: `security/require-static-integrity-protection`
+- Issue #19 — Harden CI action supply chain
+- Branch: `security/ci-supply-chain-hardening`
 
 ## Changes in this milestone
-- Apply script requires `static-integrity`.
-- Required status checks use strict mode.
-- Verify script checks that required-status protection exists, `static-integrity` is included and strict mode is enabled.
-- Existing zero-human-approval AI-led governance remains unchanged.
-- README/state/governance documentation reconciled to PR #17/main run evidence.
+- Pin `actions/checkout` to immutable commit `fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09` (v5).
+- Disable checkout credential persistence.
+- Extend the static validator to reject mutable third-party action refs.
+- Add Dependabot GitHub Actions update coverage.
+- Preserve read-only workflow permissions and no project runtime/package dependencies.
 
-## Constraint
-The current connector still does not expose branch-protection administration writes. Actual GitHub protection remains pending even after these scripts merge.
+## Guardrails
+- No website runtime behavior changes.
+- No Node.js/package.json/framework/Vercel runtime added.
+- Runner Benchmark remains deferred.
 
 ## Next deterministic action
-Review this PR at the exact head SHA; merge only if `static-integrity` is green. Keep Issue #14 open until GitHub itself reports active protection.
+Review PR at exact head and require a green `static-integrity` run before merge.

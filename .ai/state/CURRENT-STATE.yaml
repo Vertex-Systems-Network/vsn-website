@@ -1,10 +1,10 @@
 repo: Vertex-Systems-Network/vsn-website
-updated: 2026-09-24
-verified_main_sha: d9d0f4a8499093075ada558dfb6116c912aaf9b7
-last_completed_pr: 17
-current_issue: 14
-current_branch: security/require-static-integrity-protection
-current_milestone: require-static-integrity-in-protection
+updated: 2026-09-25
+verified_main_sha: 2119221e0e030a0677d41ecd76e8491f9a31684f
+last_completed_pr: 18
+current_issue: 19
+current_branch: security/ci-supply-chain-hardening
+current_milestone: ci-supply-chain-hardening
 module_progress_percent: 100
 overall_launch_readiness_percent: 98
 architecture: static-html-css-vanilla-js
@@ -13,11 +13,11 @@ open_issues:
   - 5
   - 8
   - 14
+  - 19
 checks:
   open_issues_reconciled: true
   open_prs_reconciled: true
-  static_integrity_pr_run: passed
-  static_integrity_main_run: passed
+  static_integrity_required_policy_ready: true
   framework_dependency: none
   package_json: absent
   vercel_runtime_config: absent
@@ -25,40 +25,31 @@ checks:
 ci:
   workflow: .github/workflows/static-integrity.yml
   job_name: static-integrity
-  proven_green_on_pr: true
-  proven_green_on_main: true
-  required_status_target: true
+  checkout_action_pinned_sha: fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09
+  checkout_persist_credentials: false
+  validator_enforces_pinned_actions: true
+  dependabot_github_actions: enabled
 governance:
   main_currently_protected: false
   protection_issue: 14
   required_status_check_target: static-integrity
   required_status_strict_target: true
   human_approval_required_target: false
-  required_approving_review_count_target: 0
-  enforce_admins_target: true
-  force_pushes_target: blocked
-  deletion_target: blocked
-  conversation_resolution_target: required
-  linear_history_target: required
-  apply_script: scripts/apply_main_protection.ps1
-  verify_script: scripts/verify_main_protection.ps1
 legal:
-  internal_content_hardening: complete
   qualified_pakistan_counsel_review: required_before_production
 hosting:
   provider_target: vercel
   team: vsnteam
   project_exists: false
   preview_only: true
-  connector_deploy_runtime_available: false
 brand_asset:
   official_url: https://vertexsystemsnetwork.com/wp-content/uploads/2026/02/vertex-logo.png
   graceful_runtime_fallback: merged
-  repo_local_copy: blocked_by_source_retrieval
+  repo_local_copy: blocked_by_exact_binary_retrieval
   localization_issue: 5
 launch_blockers:
   - issue 5 exact official logo localization
   - issue 8 preview deployment and live QA
-  - issue 14 apply and verify main branch protection with static-integrity required
-  - final Pakistan-qualified legal/corporate review using LEGAL-REVIEW.md
-next_valid_action: review and merge protection-script update PR; then apply and verify actual GitHub protection when an admin-capable write surface is available
+  - issue 14 actual main branch protection application
+  - final Pakistan-qualified legal/corporate review
+next_valid_action: review CI supply-chain hardening PR at exact head; merge only after static-integrity is green

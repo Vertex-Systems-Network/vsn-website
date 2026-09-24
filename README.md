@@ -52,7 +52,7 @@ This repository intentionally stays host-agnostic. Deploy the files to any stati
 
 ## Continuous integration
 
-`.github/workflows/static-integrity.yml` runs fast source-integrity checks with Python standard library only. The stable job name is `static-integrity`. This is intentionally separate from the deferred Runner Benchmark.
+`.github/workflows/static-integrity.yml` runs fast source-integrity checks with Python standard library only. The stable job name is `static-integrity`. Third-party actions are pinned to immutable commit SHAs, checkout credentials are not persisted, and Dependabot tracks GitHub Actions updates. This remains separate from the deferred Runner Benchmark.
 
 ## Repository governance
 
@@ -65,14 +65,14 @@ The website references the official VSN logo supplied by the owner at `https://v
 
 ## AI-Native progress
 
-- Last verified `main`: `d9d0f4a8499093075ada558dfb6116c912aaf9b7`
-- Static Integrity CI: **merged and green on PR + main**
-- Current module: Require `static-integrity` in main protection — PR pending review
+- Last verified `main`: `2119221e0e030a0677d41ecd76e8491f9a31684f`
+- Static Integrity CI: **green and protection-ready**
+- Protection scripts: **require `static-integrity` in strict mode**
+- Current module: CI supply-chain hardening — PR pending review
 - Overall launch readiness: **98%**
-- Active governance Issue: **#14**
-- Target branch protection now requires `static-integrity` in strict mode.
-- Human approvals remain **0** to preserve the AI-led workflow.
-- Actual GitHub main protection is still not active because the current connector lacks the administration write action.
-- Deployment Issue #8 and logo localization Issue #5 remain open.
+- Active security Issue: **#19**
+- Checkout action is pinned to an immutable SHA and persisted credentials are disabled.
+- Dependabot tracks GitHub Actions updates.
+- Branch protection Issue #14, deployment Issue #8 and logo Issue #5 remain open.
 - Final Pakistan-qualified legal review remains required.
 - No `package.json`, framework runtime, or `vercel.json` is required.
