@@ -38,6 +38,9 @@ CANONICAL_RE = re.compile(
     r"""<link\b[^>]*rel=["'][^"']*canonical[^"']*["'][^>]*href=["']([^"']+)["'][^>]*>""",
     re.I,
 )
+SCRIPT_RE = re.compile(r"<script\b([^>]*)>([\s\S]*?)</script>", re.I)
+SCRIPT_SRC_RE = re.compile(r"""\bsrc=["']([^"']+)["']""", re.I)
+SCRIPT_TYPE_RE = re.compile(r"""\btype=["']([^"']+)["']""", re.I)
 
 def rel(path: Path) -> str:
     return path.relative_to(ROOT).as_posix()
