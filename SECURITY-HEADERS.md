@@ -19,3 +19,13 @@ Until the official logo is stored locally, image policy must allow:
 The contact flow opens `https://wa.me` only after a user submits the local project brief.
 
 Do not copy a CSP blindly. Validate the final header against the deployed origin and all intentional third-party resources.
+
+
+## CSP readiness status — 2026-09-25
+
+- Remaining inline `style=""` attributes in HTML: **0** after Issue #22.
+- Inline `<style>` blocks: **0**.
+- `static-integrity` rejects future inline style attributes and inline style blocks.
+- This makes a future production `style-src 'self'` policy practical without `'unsafe-inline'`.
+- The homepage still contains intentional inline JSON-LD structured data. A strict production `script-src` must account for that data block, for example with a reviewed CSP hash, rather than blindly enabling `'unsafe-inline'`.
+- Production security headers still require verification on the deployed origin; this repository does not claim they are active yet.

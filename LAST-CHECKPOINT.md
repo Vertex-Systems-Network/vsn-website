@@ -4,28 +4,36 @@ Date: 2026-09-25
 
 ## Verified starting main
 - Repo: Vertex-Systems-Network/vsn-website
-- Main SHA: `2119221e0e030a0677d41ecd76e8491f9a31684f`
-- PR #18: merged
-- Resulting `static-integrity` main run #6: green
+- Main SHA: `332e4b774a033230e3548b29eb5c20cb07abb702`
+- PR #20: merged
+- PR #20 `static-integrity`: green
+- Resulting main run #8: green
+- Issue #19: closed
 - Open Issues before activation: #5, #8 and #14
 - Open PRs before activation: 0
-- Main branch protection: still disabled
+- Main branch protection: disabled
 
 ## Active milestone
-- Issue #19 — Harden CI action supply chain
-- Branch: `security/ci-supply-chain-hardening`
+- Issue #22 — Eliminate inline style debt for strict CSP readiness
+- Branch: `security/csp-readiness-inline-style-cleanup`
+
+## Verified debt
+- 10 HTML pages contained 14 inline style declarations.
+- No inline `<style>` block was required by the site.
 
 ## Changes in this milestone
-- Pin `actions/checkout` to immutable commit `fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09` (v5).
-- Disable checkout credential persistence.
-- Extend the static validator to reject mutable third-party action refs.
-- Add Dependabot GitHub Actions update coverage.
-- Preserve read-only workflow permissions and no project runtime/package dependencies.
+- Move all 14 inline declarations to shared CSS classes.
+- Add responsive fallback for the two-column service-grid replacement.
+- Extend `static-integrity` to reject inline `style=""` attributes.
+- Extend `static-integrity` to reject inline `<style>` blocks.
+- Update security-header guidance to record `style-src 'self'` readiness.
+- Preserve the homepage JSON-LD and document that strict `script-src` still needs a reviewed CSP hash/equivalent.
 
 ## Guardrails
-- No website runtime behavior changes.
-- No Node.js/package.json/framework/Vercel runtime added.
+- No website feature or business copy changes.
+- No framework/package/Vercel runtime added.
+- Production response headers are not claimed active.
 - Runner Benchmark remains deferred.
 
 ## Next deterministic action
-Review PR at exact head and require a green `static-integrity` run before merge.
+Review the PR at exact head and require a green `static-integrity` run before merge.
