@@ -60,18 +60,20 @@ Target main-branch protection and deterministic apply/verify commands are docume
 
 ## Branding
 
-The website references the official VSN logo supplied by the owner at `https://vertexsystemsnetwork.com/wp-content/uploads/2026/02/vertex-logo.png` for the header, footer and favicon.
+The exact owner-supplied VSN logo is stored at `assets/vertex-logo.png` and used locally for the header, footer and favicon. Verified SHA-256: `ede0edd921742c57af19b513c1aab73e079fe1217f4bc7ad156ab3260109c671`; dimensions: `2041×517`; size: `60,222 bytes`.
 
 
 ## AI-Native progress
 
 - Repository state: **CODE COMPLETE / LAUNCH GATED**
-- Finalization base `main`: `273b4de4cfb3fdb44f883282eff834fe8bd1a835`
+- Last verified `main`: `43fb9fc1e4cae35e3c2beed1ed55ee6fe56f3782`
+- Current module: exact official logo localization — PR pending review
 - Repository implementation: **100%**
 - Source security/CSP: **100%**
 - CI/security automation: **100%**
-- Overall launch readiness: **98%**
-- Canonical launch handoff: `LAUNCH-HANDOFF.md`
-- Production/domain switch: **not authorized yet**
-- Remaining gates: Issue #5 exact logo, Issue #8 preview/live QA/Runner, Issue #14 actual main protection, and final qualified Pakistan legal/corporate review.
-- Do not create speculative framework/runtime work to bypass those gates.
+- Overall launch readiness: **99%**
+- Exact official logo binary is now repository-local and machine-verified.
+- Runtime CSP image policy is reduced to `img-src 'self'`.
+- Vercel project `vsn-website` now exists; live QA/Runner work remains under Issue #8.
+- Branch protection Issue #14 and final qualified Pakistan legal/corporate review remain production gates.
+- Production/domain switch: **not authorized yet**.
