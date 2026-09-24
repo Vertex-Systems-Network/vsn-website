@@ -53,3 +53,13 @@ This repository intentionally stays host-agnostic. Deploy the files to any stati
 ## Branding
 
 The website references the official VSN logo supplied by the owner at `https://vertexsystemsnetwork.com/wp-content/uploads/2026/02/vertex-logo.png` for the header, footer and favicon.
+
+
+## AI-Native progress
+
+- Current module: Launch QA hardening — PR pending review
+- Overall launch readiness: **96%**
+- Durable state: `.ai/state/CURRENT-STATE.yaml`
+- Last checkpoint: `LAST-CHECKPOINT.md`
+- Runner tasks are deferred to `.ai/RUNNER-BENCHMARK.md` for final-stage batching.
+- Current external blocker: official logo is still loaded from the supplied WordPress URL because the PNG binary could not be fetched in the current execution environment.

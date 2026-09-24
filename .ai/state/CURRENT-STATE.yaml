@@ -1,0 +1,23 @@
+repo: Vertex-Systems-Network/vsn-website
+updated: 2026-09-24
+main_sha_at_start: e64fe69d853e590f7223fbef9c1a5f99be7339fd
+current_issue: 2
+current_branch: chore/launch-qa-hardening
+current_milestone: launch-qa-hardening
+module_progress_percent: 100
+overall_launch_readiness_percent: 96
+architecture: static-html-css-vanilla-js
+open_pr: pending
+checks:
+  open_issues_reconciled: true
+  open_prs_reconciled: true
+  framework_dependency: none
+  package_json: absent
+  vercel_runtime_config: absent
+  runner_tasks: deferred
+launch_blockers:
+  - final Pakistani legal/corporate review of legal pages
+  - confirm Authority Profile commercial pricing before public launch
+  - localize official logo PNG when source binary becomes retrievable
+  - production hosting/domain and live browser/performance verification
+next_valid_action: review PR for issue 2, verify exact head, then merge and verify resulting main
