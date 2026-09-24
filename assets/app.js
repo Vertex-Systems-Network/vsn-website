@@ -21,3 +21,14 @@ if(form){form.addEventListener('submit',e=>{
 ${lines.join('\n')}`);
   window.open(`https://wa.me/923051983930?text=${msg}`,'_blank','noopener,noreferrer');
 })}
+
+// Brand resilience: keep the site identifiable if the remote official logo becomes unavailable.
+document.querySelectorAll('[data-brand-logo]').forEach(img=>{
+  const host=img.closest('.brand, .footer-brand-lockup');
+  const markFailed=()=>{
+    if(host) host.classList.add('logo-failed');
+    img.hidden=true;
+  };
+  img.addEventListener('error',markFailed,{once:true});
+  if(img.complete && img.naturalWidth===0) markFailed();
+});

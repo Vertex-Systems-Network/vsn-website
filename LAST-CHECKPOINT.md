@@ -2,30 +2,25 @@
 
 Date: 2026-09-24
 
-## Verified resulting main
+## Verified starting state
 - Repo: Vertex-Systems-Network/vsn-website
-- Main SHA: `11eec81fad7b9f3b7f655fbe981699a019d2b0e8`
-- PR #3: merged
-- Issue #2: closed
-- Open Issues after verification: 0
-- Open PRs after verification: 0
+- Main SHA: `628d01c2b63ad96f48dc3124a6a0405029da6f28`
+- Open Issues before activation: 0
+- Open PRs before activation: 0
 
-## Completed
-- Static HTML/CSS/vanilla-JS architecture retained.
-- 404 now uses `noindex,follow`.
-- Mobile navigation has a no-JavaScript progressive-enhancement fallback.
-- Durable AI state/checkpoint files are present.
-- Runner-heavy QA remains deferred to the final launch stage.
-- Host-agnostic security-header guidance is documented.
+## Active milestone
+- Issue #5 — Brand asset resilience and repo-local official logo
+- Branch: `fix/brand-asset-resilience`
 
-## Remaining launch blockers
-1. Final Pakistani legal/corporate review of legal pages.
-2. Confirm Authority Profile commercial pricing before public launch.
-3. Localize the official logo PNG when the source binary becomes retrievable.
-4. Select production hosting/domain target and run final live performance, accessibility, external-link and security-header checks.
+## Completed in this milestone
+- Retried direct download of the exact owner-supplied logo PNG; retrieval still failed in the execution environment.
+- Retried web/image retrieval without finding a retrievable exact binary.
+- Preserved the exact official WordPress logo URL as the primary branding source.
+- Added graceful text-brand fallback for header/footer if the remote image fails.
+- Kept the site plain HTML/CSS/vanilla JS with no framework/runtime package.
 
-## Current milestone
-Post-merge durable-state closeout only. No new product/site feature is being added in this milestone.
+## Still blocked
+The exact PNG cannot yet be committed under `assets/` because the source binary is unavailable to the current execution environment. No guessed or recreated logo is being substituted.
 
 ## Next deterministic action
-Review the state-closeout PR at its exact head SHA; if clean, merge it and then activate exactly one remaining launch blocker.
+Review the brand-resilience PR at its exact head SHA. If clean, merge it and verify resulting `main`. Keep Issue #5 open until the exact official PNG is stored locally.
