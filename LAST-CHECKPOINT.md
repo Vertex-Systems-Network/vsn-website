@@ -4,32 +4,26 @@ Date: 2026-09-24
 
 ## Verified starting main
 - Repo: Vertex-Systems-Network/vsn-website
-- Main SHA: `33f2e558159b759e573c0372207d4caa4d703c8f`
-- Legal-hardening PR #13: merged
-- Open Issues before activation: #5 and #8
+- Main SHA: `b884089af00ecf2db1d6d66d1cc2595655cf53c6`
+- Governance PR #15: merged
+- Open Issues before activation: #5, #8 and #14
 - Open PRs before activation: 0
 - Main branch protection: disabled
 
-## Active milestone
-- Issue #14 — Protect main branch and codify repository governance
-- Branch: `security/main-branch-governance`
+## Preflight evidence
+A source-level audit on the verified main checked all 22 HTML pages and found no broken local references, duplicate IDs, pricing regressions, legal identity regressions or unexpected tracking/storage code.
 
-## Constraint
-The connected GitHub account reports repository admin permission, but the current GitHub connector does not expose administration writes for branch protection/rulesets.
+## Active milestone
+- Issue #16 — Add lightweight static integrity CI baseline
+- Branch: `ci/static-integrity-baseline`
 
 ## Changes in this milestone
-- Added `SECURITY-GOVERNANCE.md` with the target AI-led protection policy.
-- Added deterministic PowerShell apply/verify scripts using GitHub CLI/API.
-- Added a PR checklist that preserves exact-head review and security scope checks.
-- Target requires PRs but zero human approvals.
-- Target blocks force pushes/deletion, enforces administrators, linear history and conversation resolution.
-- No fake required CI checks are introduced while stable CI is absent.
-
-## Remaining launch blockers
-- Issue #5 — exact official logo localization.
-- Issue #8 — real preview deployment and live QA.
-- Issue #14 — actual branch-protection application/verification.
-- Final Pakistan-qualified legal/corporate review.
+- Add a Python-standard-library static validator.
+- Add a fast GitHub Actions workflow with stable job name `static-integrity`.
+- Run on pull requests, pushes to main, and manual dispatch.
+- No Node.js, package manager, framework, Vercel runtime or external network dependency.
+- Keep Lighthouse/browser/external-link Runner Benchmark deferred.
+- Do not require the status in branch protection until it has completed successfully.
 
 ## Next deterministic action
-Review the governance PR at its exact head SHA. If clean, merge it. Keep Issue #14 open until the verification script confirms the target protection on GitHub.
+Review the CI PR at its exact head and inspect the `static-integrity` workflow result. Merge only when the workflow is green or any failure has been reconciled.

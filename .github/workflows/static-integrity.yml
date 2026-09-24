@@ -1,0 +1,28 @@
+name: Static Integrity
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  static-integrity:
+    name: static-integrity
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Show Python
+        run: python3 --version
+
+      - name: Validate static website
+        run: python3 scripts/validate_static_site.py

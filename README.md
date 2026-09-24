@@ -50,6 +50,10 @@ Legal pages are in `legal/`. Internal consistency hardening is documented in `LE
 
 This repository intentionally stays host-agnostic. Deploy the files to any static hosting environment or standard web server.
 
+## Continuous integration
+
+`.github/workflows/static-integrity.yml` runs fast source-integrity checks with Python standard library only. The stable job name is `static-integrity`. This is intentionally separate from the deferred Runner Benchmark.
+
 ## Repository governance
 
 Target main-branch protection and deterministic apply/verify commands are documented in `SECURITY-GOVERNANCE.md`. Repository protection must require pull requests while keeping required human approvals at zero for the AI-led workflow.
@@ -61,13 +65,13 @@ The website references the official VSN logo supplied by the owner at `https://v
 
 ## AI-Native progress
 
-- Last verified `main`: `33f2e558159b759e573c0372207d4caa4d703c8f`
-- Legal content hardening: **merged and verified**
-- Current module: Main-branch security/governance — PR pending review
+- Last verified `main`: `b884089af00ecf2db1d6d66d1cc2595655cf53c6`
+- Repository governance implementation: **merged and verified**
+- Source-level preflight QA: **22/22 HTML pages passed**
+- Current module: Static integrity CI — PR pending review/run
 - Overall launch readiness: **98%**
-- Active governance Issue: **#14**
-- Main is currently unprotected; deterministic apply/verify scripts are included in this milestone.
-- Target governance requires PRs but **0 human approvals**, preserving the AI-led merge flow.
-- Deployment Issue #8 and logo localization Issue #5 remain open.
+- Active CI Issue: **#16**
+- Candidate required status: `static-integrity` (do not require until first green run).
+- Branch protection Issue #14, deployment Issue #8 and logo Issue #5 remain open.
 - Final Pakistan-qualified legal review remains required.
 - No `package.json`, framework runtime, or `vercel.json` is required.
