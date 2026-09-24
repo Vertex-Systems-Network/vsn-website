@@ -44,7 +44,7 @@ Then open `http://localhost:8080`.
 
 ## Legal
 
-Legal pages are in `legal/` and should receive final Pakistani legal/corporate review before production launch.
+Legal pages are in `legal/`. Internal consistency hardening is documented in `LEGAL-REVIEW.md`; final Pakistan-qualified legal/corporate review is still required before production launch.
 
 ## Deployment
 
@@ -57,12 +57,12 @@ The website references the official VSN logo supplied by the owner at `https://v
 
 ## AI-Native progress
 
-- Last verified `main`: `68622237450adfc461e61af147bbf399d88d4e97`
-- Deployment readiness: **merged and verified**
-- Current module: Authority Profile pricing safety — PR pending review
-- Overall launch readiness: **97%**
-- Active pricing Issue: **#10**
-- Numeric Authority Profile prices are removed pending explicit owner approval.
-- Package scope remains public; final pricing is quote/proposal based.
+- Last verified `main`: `8642fb77400f376bf6b0798f7a0080e09cfef520`
+- Authority Profile pricing safety: **merged and verified**
+- Current module: Legal pre-launch hardening — PR pending review
+- Overall launch readiness: **98%**
+- Active legal-hardening Issue: **#12**
+- Internal legal-policy identity/cross-link consistency is hardened.
+- Final Pakistan-qualified legal/corporate review remains required via `LEGAL-REVIEW.md`.
 - Deployment Issue #8 and logo localization Issue #5 remain open.
 - No `package.json`, framework runtime, or `vercel.json` is required.

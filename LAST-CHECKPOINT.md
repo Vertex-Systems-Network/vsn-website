@@ -4,28 +4,32 @@ Date: 2026-09-24
 
 ## Verified starting main
 - Repo: Vertex-Systems-Network/vsn-website
-- Main SHA: `68622237450adfc461e61af147bbf399d88d4e97`
+- Main SHA: `8642fb77400f376bf6b0798f7a0080e09cfef520`
+- Pricing-safety PR #11: merged
 - Open Issues before activation: #5 and #8
 - Open PRs before activation: 0
 
 ## Active milestone
-- Issue #10 — Finalize Authority Profile commercial pricing before launch
-- Branch: `fix/authority-profile-pricing-safety`
+- Issue #12 — Legal content pre-launch hardening and counsel handoff
+- Branch: `docs/legal-prelaunch-hardening`
 
-## Finding
-`profile.html` displayed three numeric prices ($499, $1,250 and $2,500) while also stating that the pricing structure was recommended/provisional and should be finalized commercially before launch.
+## Findings
+- Current static JavaScript does not use cookies or local storage.
+- Repository search found no gtag, analytics or tracking-pixel implementation.
+- Contact form behavior matches the Privacy Policy description: it prepares a WhatsApp message rather than posting to a VSN website database.
+- Core legal pages were structurally reasonable but did not present the company identity/contact block consistently or provide a single counsel handoff checklist.
 
 ## Changes in this milestone
-- Removed unapproved numeric public price claims.
-- Preserved Profile, Authority and Executive package names and deliverable scope.
-- Replaced numeric amounts with quote-based wording.
-- Clarified that final pricing comes from an approved proposal based on scope.
-- Kept architecture plain HTML/CSS/vanilla JS.
+- Added consistent VSN legal-entity identity/contact information to Terms, Privacy, Refunds and Cookie Policy.
+- Added related-policy/payment navigation to all four legal pages.
+- Added `LEGAL-REVIEW.md` for final qualified-counsel review.
+- Preserved substantive liability, governing-law, IP and refund clauses without claiming final legal approval.
+- Updated durable state and README.
 
 ## Remaining launch blockers
 - Issue #5 — exact official logo localization.
 - Issue #8 — real preview deployment and live QA.
-- Final Pakistani legal/corporate review of legal pages.
+- Final Pakistan-qualified legal/corporate review using `LEGAL-REVIEW.md`.
 
 ## Next deterministic action
-Review this pricing-safety PR at its exact head SHA. If clean, merge it and verify resulting `main`.
+Review the legal-hardening PR at its exact head SHA; if clean, merge and verify resulting `main`.
