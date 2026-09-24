@@ -42,6 +42,10 @@ SCRIPT_RE = re.compile(r"<script\b([^>]*)>([\s\S]*?)</script>", re.I)
 SCRIPT_SRC_RE = re.compile(r"""\bsrc=["']([^"']+)["']""", re.I)
 SCRIPT_TYPE_RE = re.compile(r"""\btype=["']([^"']+)["']""", re.I)
 
+CSP_META_POLICY = "default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self' 'sha256-ZM1h9WKmDZGFgxszmJKYmle/IrxoM/sfN9fSDcx5Rbk='; style-src 'self'; img-src 'self' https://vertexsystemsnetwork.com; font-src 'self'; connect-src 'none'; worker-src 'none'; form-action 'self'"
+CSP_META_TAG = "<meta http-equiv=\"Content-Security-Policy\" content=\"default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self' 'sha256-ZM1h9WKmDZGFgxszmJKYmle/IrxoM/sfN9fSDcx5Rbk='; style-src 'self'; img-src 'self' https://vertexsystemsnetwork.com; font-src 'self'; connect-src 'none'; worker-src 'none'; form-action 'self'\">"
+REFERRER_META_TAG = "<meta name=\"referrer\" content=\"strict-origin-when-cross-origin\">"
+
 def rel(path: Path) -> str:
     return path.relative_to(ROOT).as_posix()
 
@@ -70,6 +74,8 @@ def local_target(source: str, raw_ref: str) -> tuple[str | None, str | None]:
 
 def main() -> int:
     errors: list[str] = []
+    if "'unsafe-inline'" in CSP_META_POLICY or "'unsafe-eval'" in CSP_META_POLICY:
+        errors.append("CSP_META_POLICY must not allow unsafe-inline or unsafe-eval")
     repo_files = {
         rel(path) for path in ROOT.rglob("*")
         if path.is_file() and ".git" not in path.parts
@@ -101,6 +107,17 @@ def main() -> int:
             errors.append(f"{source}: expected exactly one <title>")
         if not re.search(r"""<meta\b[^>]*name=["']viewport["']""", text, re.I):
             errors.append(f"{source}: missing viewport meta")
+        if text.count(CSP_META_TAG) != 1:
+            errors.append(f"{source}: expected exactly one reviewed CSP meta tag")
+        else:
+            csp_pos = text.find(CSP_META_TAG)
+            first_link = text.find("<link")
+            first_script = text.find("<script")
+            resource_positions = [pos for pos in (first_link, first_script) if pos >= 0]
+            if resource_positions and csp_pos > min(resource_positions):
+                errors.append(f"{source}: CSP meta must appear before loadable resources")
+        if text.count(REFERRER_META_TAG) != 1:
+            errors.append(f"{source}: expected strict-origin-when-cross-origin referrer meta")
         if len(re.findall(r"<main\b", text, re.I)) != 1:
             errors.append(f"{source}: expected exactly one <main>")
         if len(re.findall(r"<h1\b", text, re.I)) != 1:
