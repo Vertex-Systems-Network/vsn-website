@@ -10,7 +10,10 @@ gh auth status 1>$null 2>$null
 if ($LASTEXITCODE -ne 0) { throw "GitHub CLI is not authenticated." }
 
 $payload = @{
-    required_status_checks = $null
+    required_status_checks = @{
+        strict = $true
+        contexts = @("static-integrity")
+    }
     enforce_admins = $true
     required_pull_request_reviews = @{
         dismissal_restrictions = @{ users = @(); teams = @(); apps = @() }
