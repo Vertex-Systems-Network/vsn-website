@@ -39,3 +39,15 @@ a{color:inherit;text-decoration:none}img{max-width:100%;display:block}button,inp
 @media(max-width:1080px){.nav-links{gap:14px;font-size:13px}.brand img{max-width:205px}}
 @media(max-width:980px){.proof-grid{grid-template-columns:1fr 1fr}.proof-card:first-child{grid-column:1/-1}}
 @media(max-width:620px){.proof-grid{grid-template-columns:1fr}.proof-card:first-child{grid-column:auto}}
+
+
+/* Progressive-enhancement fallback: primary navigation remains usable if JS fails. */
+@media(max-width:980px){
+  html:not(.js) .nav{height:auto;min-height:78px;align-items:flex-start;flex-wrap:wrap;padding:12px 0}
+  html:not(.js) .nav-links{display:flex!important;width:100%;order:3;flex-wrap:wrap;gap:10px 16px;padding:0 0 10px}
+  html:not(.js) .mobile-toggle{display:none!important}
+  .js .nav{height:78px;align-items:center;flex-wrap:nowrap;padding:0}
+  .js .nav-links{display:none}
+  .js .mobile-toggle{display:block}
+  .js .nav-links.open{display:flex}
+}
