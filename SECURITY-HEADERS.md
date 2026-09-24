@@ -37,10 +37,29 @@ Do not copy a CSP blindly. Validate the final header against the deployed origin
 
 Use this only after testing it on the deployed preview origin:
 
-`Content-Security-Policy: default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; script-src 'self' 'sha256-ZM1h9WKmDZGFgxszmJKYmle/IrxoM/sfN9fSDcx5Rbk='; style-src 'self'; img-src 'self' https://vertexsystemsnetwork.com; font-src 'self'; connect-src 'self'; form-action 'self'`
+`Content-Security-Policy: default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; script-src 'self' 'sha256-ZM1h9WKmDZGFgxszmJKYmle/IrxoM/sfN9fSDcx5Rbk='; style-src 'self'; img-src 'self' https://vertexsystemsnetwork.com; font-src 'self'; connect-src 'none'; worker-src 'none'; form-action 'self'`
 
 Notes:
 - `https://vertexsystemsnetwork.com` remains in `img-src` while Issue #5 keeps the official logo remote.
 - After the exact official logo is localized, the extra image origin can be removed.
 - The same reviewed hash authorizes the identical Organization JSON-LD bytes on `index.html` and `about.html`; changing either block requires a reviewed manifest/hash update.
 - This is a repository-side policy candidate, not proof that production response headers are active.
+
+
+## Source-level meta CSP defense in depth — 2026-09-25
+
+All 22 HTML pages now carry the same reviewed `Content-Security-Policy` meta policy before loadable resources:
+
+`default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self' 'sha256-ZM1h9WKmDZGFgxszmJKYmle/IrxoM/sfN9fSDcx5Rbk='; style-src 'self'; img-src 'self' https://vertexsystemsnetwork.com; font-src 'self'; connect-src 'none'; worker-src 'none'; form-action 'self'`
+
+They also carry:
+
+`<meta name="referrer" content="strict-origin-when-cross-origin">`
+
+`static-integrity` enforces the exact policy, placement, referrer policy, and rejects any policy containing `'unsafe-inline'` or `'unsafe-eval'`.
+
+This is defense in depth only. A meta CSP does **not** replace production response headers. In particular:
+- `frame-ancestors` must be delivered as an HTTP response header.
+- HSTS must be delivered as an HTTP response header.
+- Permissions-Policy must be delivered as an HTTP response header.
+- Final deployed-origin headers still require live preview verification under Issue #8.

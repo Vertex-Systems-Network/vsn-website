@@ -1,10 +1,10 @@
 repo: Vertex-Systems-Network/vsn-website
 updated: 2026-09-25
-verified_main_sha: 4d09259a9e8999f1508b3d7fb161793829a55421
-last_completed_pr: 24
-current_issue: 25
-current_branch: security/csp-script-hash-readiness
-current_milestone: csp-script-hash-readiness
+verified_main_sha: f79c8369343824a8daff74df5f0e751a13afc2cb
+last_completed_pr: 26
+current_issue: 27
+current_branch: security/meta-csp-runtime-baseline
+current_milestone: meta-csp-runtime-baseline
 module_progress_percent: 100
 overall_launch_readiness_percent: 98
 architecture: static-html-css-vanilla-js
@@ -13,12 +13,12 @@ open_issues:
   - 5
   - 8
   - 14
-  - 25
+  - 27
 checks:
   open_issues_reconciled: true
   open_prs_reconciled: true
-  checkout_v7_upgrade_merged: true
-  static_integrity_main_run_13: passed
+  csp_script_hash_readiness_merged: true
+  static_integrity_main_run_17: passed
   framework_dependency: none
   package_json: absent
   vercel_runtime_config: absent
@@ -27,14 +27,17 @@ security:
   inline_style_attributes: 0
   inline_style_blocks: 0
   validator_rejects_inline_styles: true
-  csp_style_src_self_ready: true
-  csp_script_hash_manifest: security/csp-hashes.json
   organization_jsonld_pages:
     - index.html
     - about.html
   organization_jsonld_hash: sha256-ZM1h9WKmDZGFgxszmJKYmle/IrxoM/sfN9fSDcx5Rbk=
   validator_rejects_unexpected_inline_scripts: true
-  csp_script_src_self_plus_hash_ready: true
+  meta_csp_pages_target: 22
+  meta_csp_policy: "default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self' 'sha256-ZM1h9WKmDZGFgxszmJKYmle/IrxoM/sfN9fSDcx5Rbk='; style-src 'self'; img-src 'self' https://vertexsystemsnetwork.com; font-src 'self'; connect-src 'none'; worker-src 'none'; form-action 'self'"
+  meta_csp_unsafe_inline: false
+  meta_csp_unsafe_eval: false
+  meta_referrer_policy: strict-origin-when-cross-origin
+  response_header_csp_still_required: true
 ci:
   workflow: .github/workflows/static-integrity.yml
   job_name: static-integrity
@@ -64,4 +67,4 @@ launch_blockers:
   - issue 8 preview deployment and live QA
   - issue 14 actual main branch protection application
   - final Pakistan-qualified legal/corporate review
-next_valid_action: review CSP script-hash PR at exact head and merge only after static-integrity is green
+next_valid_action: review meta-CSP PR at exact head and merge only after static-integrity is green
