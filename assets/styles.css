@@ -59,3 +59,15 @@ a{color:inherit;text-decoration:none}img{max-width:100%;display:block}button,inp
 .footer-brand-fallback{color:#fff;background:#0e1a2d;border-color:#26364d}
 .logo-failed .brand-fallback{display:inline-flex}
 .logo-failed [data-brand-logo]{display:none!important}
+
+
+/* CSP-readiness: shared replacements for former inline declarations */
+.service-grid-two{grid-template-columns:1fr 1fr}
+.feature-list-muted{color:#40506a}
+.mt-22{margin-top:22px}
+.mt-26{margin-top:26px}
+.mt-28{margin-top:28px}
+.eyebrow-soft-indigo{color:#9cb6ff}
+.eyebrow-soft-cyan{color:#8fcfff}
+.profile-name-lg{font-size:19px}
+@media(max-width:720px){.service-grid-two{grid-template-columns:1fr}}

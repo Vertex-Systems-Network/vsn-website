@@ -1,10 +1,10 @@
 repo: Vertex-Systems-Network/vsn-website
 updated: 2026-09-25
-verified_main_sha: 2119221e0e030a0677d41ecd76e8491f9a31684f
-last_completed_pr: 18
-current_issue: 19
-current_branch: security/ci-supply-chain-hardening
-current_milestone: ci-supply-chain-hardening
+verified_main_sha: 332e4b774a033230e3548b29eb5c20cb07abb702
+last_completed_pr: 20
+current_issue: 22
+current_branch: security/csp-readiness-inline-style-cleanup
+current_milestone: csp-readiness-inline-style-cleanup
 module_progress_percent: 100
 overall_launch_readiness_percent: 98
 architecture: static-html-css-vanilla-js
@@ -13,30 +13,33 @@ open_issues:
   - 5
   - 8
   - 14
-  - 19
+  - 22
 checks:
   open_issues_reconciled: true
   open_prs_reconciled: true
-  static_integrity_required_policy_ready: true
+  ci_supply_chain_hardening_merged: true
   framework_dependency: none
   package_json: absent
   vercel_runtime_config: absent
   runner_tasks: deferred
+security:
+  inline_style_attributes_target: 0
+  inline_style_blocks_target: 0
+  validator_rejects_inline_styles: true
+  csp_style_src_self_ready: true
+  csp_script_src_self_ready: false
+  inline_jsonld_requires_csp_hash_or_equivalent: true
 ci:
   workflow: .github/workflows/static-integrity.yml
   job_name: static-integrity
   checkout_action_pinned_sha: fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09
   checkout_persist_credentials: false
-  validator_enforces_pinned_actions: true
   dependabot_github_actions: enabled
 governance:
   main_currently_protected: false
   protection_issue: 14
   required_status_check_target: static-integrity
   required_status_strict_target: true
-  human_approval_required_target: false
-legal:
-  qualified_pakistan_counsel_review: required_before_production
 hosting:
   provider_target: vercel
   team: vsnteam
@@ -44,12 +47,13 @@ hosting:
   preview_only: true
 brand_asset:
   official_url: https://vertexsystemsnetwork.com/wp-content/uploads/2026/02/vertex-logo.png
-  graceful_runtime_fallback: merged
   repo_local_copy: blocked_by_exact_binary_retrieval
   localization_issue: 5
+legal:
+  qualified_pakistan_counsel_review: required_before_production
 launch_blockers:
   - issue 5 exact official logo localization
   - issue 8 preview deployment and live QA
   - issue 14 actual main branch protection application
   - final Pakistan-qualified legal/corporate review
-next_valid_action: review CI supply-chain hardening PR at exact head; merge only after static-integrity is green
+next_valid_action: review CSP-readiness cleanup PR at exact head; merge only after static-integrity is green

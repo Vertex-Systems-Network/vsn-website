@@ -97,6 +97,10 @@ def main() -> int:
             errors.append(f"{source}: expected exactly one <main>")
         if len(re.findall(r"<h1\b", text, re.I)) != 1:
             errors.append(f"{source}: expected exactly one <h1>")
+        if re.search(r"""\sstyle=["']""", text, re.I):
+            errors.append(f"{source}: inline style attributes are not allowed")
+        if re.search(r"<style\b", text, re.I):
+            errors.append(f"{source}: inline <style> blocks are not allowed")
 
         ids = ID_RE.findall(text)
         duplicates = sorted({value for value in ids if ids.count(value) > 1})
