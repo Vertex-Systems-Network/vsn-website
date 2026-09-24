@@ -12,9 +12,12 @@ Recommended baseline after deployment:
 - clickjacking protection via CSP `frame-ancestors 'none'` where compatible
 
 ## Current CSP dependencies
-Until the official logo is stored locally, image policy must allow:
-- `'self'`
-- `https://vertexsystemsnetwork.com`
+The exact official VSN logo is now stored locally at `assets/vertex-logo.png`, so the site runtime image policy only needs `'self'`.
+
+Verified logo identity:
+- SHA-256: `ede0edd921742c57af19b513c1aab73e079fe1217f4bc7ad156ab3260109c671`
+- PNG dimensions: `2041×517`
+- Size: `60,222 bytes`
 
 The contact flow opens `https://wa.me` only after a user submits the local project brief.
 
@@ -37,11 +40,11 @@ Do not copy a CSP blindly. Validate the final header against the deployed origin
 
 Use this only after testing it on the deployed preview origin:
 
-`Content-Security-Policy: default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; script-src 'self' 'sha256-ZM1h9WKmDZGFgxszmJKYmle/IrxoM/sfN9fSDcx5Rbk='; style-src 'self'; img-src 'self' https://vertexsystemsnetwork.com; font-src 'self'; connect-src 'none'; worker-src 'none'; form-action 'self'`
+`Content-Security-Policy: default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; script-src 'self' 'sha256-ZM1h9WKmDZGFgxszmJKYmle/IrxoM/sfN9fSDcx5Rbk='; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'none'; worker-src 'none'; form-action 'self'`
 
 Notes:
-- `https://vertexsystemsnetwork.com` remains in `img-src` while Issue #5 keeps the official logo remote.
-- After the exact official logo is localized, the extra image origin can be removed.
+- The exact owner-supplied logo is repository-local, so no external image origin is required for current runtime assets.
+- `static-integrity` verifies the local PNG hash, signature, dimensions and page references.
 - The same reviewed hash authorizes the identical Organization JSON-LD bytes on `index.html` and `about.html`; changing either block requires a reviewed manifest/hash update.
 - This is a repository-side policy candidate, not proof that production response headers are active.
 
@@ -50,7 +53,7 @@ Notes:
 
 All 22 HTML pages now carry the same reviewed `Content-Security-Policy` meta policy before loadable resources:
 
-`default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self' 'sha256-ZM1h9WKmDZGFgxszmJKYmle/IrxoM/sfN9fSDcx5Rbk='; style-src 'self'; img-src 'self' https://vertexsystemsnetwork.com; font-src 'self'; connect-src 'none'; worker-src 'none'; form-action 'self'`
+`default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self' 'sha256-ZM1h9WKmDZGFgxszmJKYmle/IrxoM/sfN9fSDcx5Rbk='; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'none'; worker-src 'none'; form-action 'self'`
 
 They also carry:
 

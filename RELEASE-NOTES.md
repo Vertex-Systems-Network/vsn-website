@@ -45,3 +45,15 @@ Repository development is code-complete. Production remains launch-gated by:
 4. qualified Pakistan legal/corporate review.
 
 See `LAUNCH-HANDOFF.md` for the authoritative production handoff and launch order.
+
+
+## Exact official logo localization — 2026-09-25
+- Retrieved the exact owner-supplied PNG from the canonical VSN source without recreation or optimization.
+- Stored the binary at `assets/vertex-logo.png`.
+- Verified size: **60,222 bytes**.
+- Verified dimensions: **2041×517**.
+- Verified SHA-256: `ede0edd921742c57af19b513c1aab73e079fe1217f4bc7ad156ab3260109c671`.
+- Replaced remote header/footer/favicon runtime references across all 22 HTML pages.
+- Reduced source-level CSP image policy to `img-src 'self'`.
+- Extended `static-integrity` to verify the exact logo binary and reject legacy remote-logo references.
+- Vercel project `vsn-website` now exists; remaining live QA/Runner work stays under Issue #8.

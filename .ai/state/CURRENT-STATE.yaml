@@ -1,26 +1,26 @@
 repo: Vertex-Systems-Network/vsn-website
 updated: 2026-09-25
 phase: code-complete-launch-gated
-finalization_issue: 29
-finalization_base_main_sha: 273b4de4cfb3fdb44f883282eff834fe8bd1a835
-last_completed_pr_before_finalization: 28
+verified_main_sha: 43fb9fc1e4cae35e3c2beed1ed55ee6fe56f3782
+current_issue: 5
+current_branch: brand/localize-official-logo
+current_milestone: exact-official-logo-localization
 architecture: static-html-css-vanilla-js
 code_complete: true
 production_launch_authorized: false
 module_progress_percent: 100
 repository_implementation_percent: 100
-overall_launch_readiness_percent: 98
+overall_launch_readiness_percent: 99
 open_external_gates:
   - issue: 5
-    gate: exact-official-logo-localization
+    gate: exact-official-logo-localization-pending-merge
   - issue: 8
-    gate: vercel-preview-live-qa-runner
+    gate: vercel-live-qa-runner
   - issue: 14
     gate: github-main-protection
   - gate: qualified-pakistan-legal-corporate-review
 checks:
-  static_integrity_ci: green
-  final_main_run_before_finalization: 19
+  static_integrity_ci: green_on_last_main
   html_pages: 22
   framework_dependency: none
   package_json: absent
@@ -34,6 +34,7 @@ checks:
 security:
   csp_unsafe_inline: false
   csp_unsafe_eval: false
+  csp_img_src: self-only
   checkout_credentials_persisted: false
   actions_pinned_to_immutable_sha: true
   required_status_target: static-integrity
@@ -42,17 +43,26 @@ hosting:
   provider_target: vercel
   team: vsnteam
   project_name: vsn-website
-  project_exists: false
-  first_target: preview-only
+  project_id: prj_xfZGl8mInhJAo7solaapm6lcsaTS
+  project_exists: true
+  true_preview_url: https://vsn-website-fgb7kni3h-vsnteam.vercel.app
+  preview_protected_by_vercel_auth: true
 brand_asset:
-  official_url: https://vertexsystemsnetwork.com/wp-content/uploads/2026/02/vertex-logo.png
-  repo_local_copy: blocked-by-exact-binary-retrieval
+  original_source_url: https://vertexsystemsnetwork.com/wp-content/uploads/2026/02/vertex-logo.png
+  local_path: assets/vertex-logo.png
+  sha256: ede0edd921742c57af19b513c1aab73e079fe1217f4bc7ad156ab3260109c671
+  size_bytes: 60222
+  width: 2041
+  height: 517
+  png_signature_verified: true
+  all_html_runtime_references_local: true
 legal:
   internal_content_hardening: complete
   qualified_counsel_review: required-before-production
 runner:
-  deferred_until_real_preview_url: true
+  real_preview_exists: true
+  blocked_by_preview_auth_for_full_automation: true
 handoff:
   canonical_file: LAUNCH-HANDOFF.md
   production_domain_switch_allowed: false
-next_valid_action: complete one of the external launch gates in LAUNCH-HANDOFF.md; do not create speculative repository work
+next_valid_action: review logo-localization PR at exact head and merge only after static-integrity is green

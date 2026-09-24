@@ -20,7 +20,7 @@ EXPECTED_HTML = {
     "social-media.html","software.html","tax-consulting.html","trust.html","work.html",
 }
 REQUIRED_FILES = {
-    "assets/app.js","assets/styles.css","robots.txt","sitemap.xml",".well-known/security.txt",
+    "assets/app.js","assets/styles.css","assets/vertex-logo.png","robots.txt","sitemap.xml",".well-known/security.txt",
     "security/csp-hashes.json",
 }
 FORBIDDEN_ROOT_FILES = {"package.json","vercel.json"}
@@ -42,9 +42,16 @@ SCRIPT_RE = re.compile(r"<script\b([^>]*)>([\s\S]*?)</script>", re.I)
 SCRIPT_SRC_RE = re.compile(r"""\bsrc=["']([^"']+)["']""", re.I)
 SCRIPT_TYPE_RE = re.compile(r"""\btype=["']([^"']+)["']""", re.I)
 
-CSP_META_POLICY = "default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self' 'sha256-ZM1h9WKmDZGFgxszmJKYmle/IrxoM/sfN9fSDcx5Rbk='; style-src 'self'; img-src 'self' https://vertexsystemsnetwork.com; font-src 'self'; connect-src 'none'; worker-src 'none'; form-action 'self'"
-CSP_META_TAG = "<meta http-equiv=\"Content-Security-Policy\" content=\"default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self' 'sha256-ZM1h9WKmDZGFgxszmJKYmle/IrxoM/sfN9fSDcx5Rbk='; style-src 'self'; img-src 'self' https://vertexsystemsnetwork.com; font-src 'self'; connect-src 'none'; worker-src 'none'; form-action 'self'\">"
+CSP_META_POLICY = "default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self' 'sha256-ZM1h9WKmDZGFgxszmJKYmle/IrxoM/sfN9fSDcx5Rbk='; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'none'; worker-src 'none'; form-action 'self'"
+CSP_META_TAG = "<meta http-equiv=\"Content-Security-Policy\" content=\"default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self' 'sha256-ZM1h9WKmDZGFgxszmJKYmle/IrxoM/sfN9fSDcx5Rbk='; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'none'; worker-src 'none'; form-action 'self'\">"
 REFERRER_META_TAG = "<meta name=\"referrer\" content=\"strict-origin-when-cross-origin\">"
+OFFICIAL_LOGO_PATH = "assets/vertex-logo.png"
+OFFICIAL_LOGO_REF = "/assets/vertex-logo.png"
+REMOTE_LOGO_URL = "https://vertexsystemsnetwork.com/wp-content/uploads/2026/02/vertex-logo.png"
+OFFICIAL_LOGO_SHA256 = "ede0edd921742c57af19b513c1aab73e079fe1217f4bc7ad156ab3260109c671"
+OFFICIAL_LOGO_SIZE = 60222
+OFFICIAL_LOGO_WIDTH = 2041
+OFFICIAL_LOGO_HEIGHT = 517
 
 def rel(path: Path) -> str:
     return path.relative_to(ROOT).as_posix()
@@ -93,6 +100,29 @@ def main() -> int:
     if forbidden:
         errors.append(f"Unexpected runtime/config files present: {sorted(forbidden)}")
 
+    logo_path = ROOT / OFFICIAL_LOGO_PATH
+    if logo_path.is_file():
+        logo_bytes = logo_path.read_bytes()
+        logo_hash = hashlib.sha256(logo_bytes).hexdigest()
+        if len(logo_bytes) != OFFICIAL_LOGO_SIZE:
+            errors.append(
+                f"{OFFICIAL_LOGO_PATH}: expected {OFFICIAL_LOGO_SIZE} bytes, found {len(logo_bytes)}"
+            )
+        if logo_hash != OFFICIAL_LOGO_SHA256:
+            errors.append(
+                f"{OFFICIAL_LOGO_PATH}: SHA-256 mismatch: {logo_hash}"
+            )
+        if logo_bytes[:8] != b"\x89PNG\r\n\x1a\n":
+            errors.append(f"{OFFICIAL_LOGO_PATH}: invalid PNG signature")
+        if len(logo_bytes) >= 24:
+            width = int.from_bytes(logo_bytes[16:20], "big")
+            height = int.from_bytes(logo_bytes[20:24], "big")
+            if (width, height) != (OFFICIAL_LOGO_WIDTH, OFFICIAL_LOGO_HEIGHT):
+                errors.append(
+                    f"{OFFICIAL_LOGO_PATH}: expected "
+                    f"{OFFICIAL_LOGO_WIDTH}x{OFFICIAL_LOGO_HEIGHT}, found {width}x{height}"
+                )
+
     ids_by_file: dict[str,set[str]] = {}
     refs: list[tuple[str,str,str,str|None]] = []
     inline_script_hashes: dict[str,list[str]] = {}
@@ -100,6 +130,11 @@ def main() -> int:
     html_files = sorted(path for path in repo_files if path.endswith(".html"))
     for source in html_files:
         text = (ROOT / source).read_text(encoding="utf-8")
+
+        if REMOTE_LOGO_URL in text:
+            errors.append(f"{source}: legacy remote logo URL must not be used")
+        if OFFICIAL_LOGO_REF not in text:
+            errors.append(f"{source}: local official logo reference missing")
 
         if not re.match(r"\s*<!doctype html>", text, re.I):
             errors.append(f"{source}: missing HTML5 doctype")
