@@ -57,13 +57,12 @@ The website references the official VSN logo supplied by the owner at `https://v
 
 ## AI-Native progress
 
-- Last verified `main`: `f5b79447f9e40ddbe3df29ef562410990941017f`
-- Brand resilience fallback: **merged and verified**
-- Current module: Static preview deployment readiness — PR pending review
-- Overall launch readiness: **96%**
-- Active deployment Issue: **#8**
-- Logo localization Issue: **#5**
-- Preview target: VSN Vercel team / project `vsn-website`
+- Last verified `main`: `68622237450adfc461e61af147bbf399d88d4e97`
+- Deployment readiness: **merged and verified**
+- Current module: Authority Profile pricing safety — PR pending review
+- Overall launch readiness: **97%**
+- Active pricing Issue: **#10**
+- Numeric Authority Profile prices are removed pending explicit owner approval.
+- Package scope remains public; final pricing is quote/proposal based.
+- Deployment Issue #8 and logo localization Issue #5 remain open.
 - No `package.json`, framework runtime, or `vercel.json` is required.
-- Deployment settings and live-QA gate are documented in `DEPLOYMENT.md`.
-- Runner-heavy QA remains deferred until a real preview URL exists.

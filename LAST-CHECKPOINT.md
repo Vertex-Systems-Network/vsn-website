@@ -2,35 +2,30 @@
 
 Date: 2026-09-24
 
-## Verified resulting main
+## Verified starting main
 - Repo: Vertex-Systems-Network/vsn-website
-- Main SHA: `462e3352f711033d0107b60a78498896a6d5f58d`
-- PR #6: merged
-- Issue #5: open / reopened
-- Open PRs before this reconciliation: 0
+- Main SHA: `68622237450adfc461e61af147bbf399d88d4e97`
+- Open Issues before activation: #5 and #8
+- Open PRs before activation: 0
 
-## Verified brand state
-- The owner-supplied official WordPress logo URL remains the primary image source.
-- Header/footer graceful text-brand fallback is merged on `main`.
-- Static HTML/CSS/vanilla-JS architecture remains intact.
-- No package.json, framework runtime, or Vercel runtime configuration was added.
+## Active milestone
+- Issue #10 — Finalize Authority Profile commercial pricing before launch
+- Branch: `fix/authority-profile-pricing-safety`
 
-## Issue #5 remains open because
-The exact official PNG has not yet been stored under `assets/`. The current execution environment could not retrieve the binary, and no guessed or recreated logo will be substituted.
+## Finding
+`profile.html` displayed three numeric prices ($499, $1,250 and $2,500) while also stating that the pricing structure was recommended/provisional and should be finalized commercially before launch.
 
-Remaining Issue #5 completion conditions:
-1. Store the exact official PNG under `assets/`.
-2. Switch production references to the repo-local asset.
-3. Verify dimensions/rendering.
-4. Remove the external-image CSP dependency.
+## Changes in this milestone
+- Removed unapproved numeric public price claims.
+- Preserved Profile, Authority and Executive package names and deliverable scope.
+- Replaced numeric amounts with quote-based wording.
+- Clarified that final pricing comes from an approved proposal based on scope.
+- Kept architecture plain HTML/CSS/vanilla JS.
 
-## Other launch blockers
+## Remaining launch blockers
+- Issue #5 — exact official logo localization.
+- Issue #8 — real preview deployment and live QA.
 - Final Pakistani legal/corporate review of legal pages.
-- Confirm Authority Profile commercial pricing before public launch.
-- Production hosting/domain selection and final live QA.
-
-## Current milestone
-Durable-state reconciliation only. No website runtime or branding code changes are included.
 
 ## Next deterministic action
-Review the reconciliation PR at its exact head SHA; if clean, merge it. Keep Issue #5 open until exact logo localization is complete.
+Review this pricing-safety PR at its exact head SHA. If clean, merge it and verify resulting `main`.
