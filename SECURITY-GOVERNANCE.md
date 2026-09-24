@@ -34,7 +34,7 @@ Issue #14 must remain open until verification confirms the target policy is actu
 
 ## CI rule
 
-Do not add fake or unstable required status checks just to make branch protection look stronger. When a stable lightweight CI workflow exists, add only deterministic checks to the required-status set. Runner-heavy launch benchmarks remain end-stage work under `.ai/RUNNER-BENCHMARK.md`.
+Do not add fake or unstable required status checks just to make branch protection look stronger. The repository now has a candidate lightweight status named `static-integrity`; require it only after the workflow has merged and demonstrated a successful run on `main`. Runner-heavy launch benchmarks remain end-stage work under `.ai/RUNNER-BENCHMARK.md`.
 
 ## Change-control rule
 
