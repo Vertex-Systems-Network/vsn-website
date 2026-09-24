@@ -2,42 +2,34 @@
 
 Date: 2026-09-25
 
-## Verified starting main
+## Finalized repository baseline
 - Repo: Vertex-Systems-Network/vsn-website
-- Main SHA: `f79c8369343824a8daff74df5f0e751a13afc2cb`
-- PR #26: merged
-- PR #26 `static-integrity` run #16: green
-- Resulting main run #17: green
-- Issue #25: closed
-- Open Issues before activation: #5, #8 and #14
-- Open PRs before activation: 0
-- Main branch protection: disabled
+- Finalization base main SHA: `273b4de4cfb3fdb44f883282eff834fe8bd1a835`
+- PR #28: merged
+- PR #28 `static-integrity` run #18: green
+- Resulting main run #19: green
+- Issue #27: closed
+- Open PRs at finalization start: 0
 
-## External blocker recheck
-- Exact official logo binary retrieval still unavailable.
-- Vercel deploy connector still lacks a working runtime write path.
-- Vercel CLI bootstrap times out before installation.
-- GitHub connector still lacks branch-protection administration writes.
+## Final state
+The current website implementation is code-complete. Further speculative repository development is frozen until an external launch gate changes.
 
-## Active milestone
-- Issue #27 — Enforce host-agnostic meta CSP baseline
-- Branch: `security/meta-csp-runtime-baseline`
+Canonical operational handoff: `LAUNCH-HANDOFF.md`.
 
-## Verified compatibility
-- 22 HTML pages.
-- No external runtime scripts or stylesheets.
-- No inline event handlers.
-- No CSS `url()` dependencies.
-- No fetch/XHR/WebSocket/EventSource usage.
-- Only temporary external runtime asset origin is `https://vertexsystemsnetwork.com` for the exact official logo.
-- Reviewed JSON-LD hash is already machine-enforced.
+## Remaining external launch gates
+- Issue #5 — exact official logo binary localization.
+- Issue #8 — Vercel preview deployment, live QA, response-header verification and deferred Runner Benchmark.
+- Issue #14 — apply and verify actual GitHub main branch protection.
+- Qualified Pakistan legal/corporate review.
 
-## Changes in this milestone
-- Add identical reviewed CSP meta policy to all 22 HTML pages before loadable resources.
-- Add strict referrer meta policy to all 22 HTML pages.
-- Keep `'unsafe-inline'` and `'unsafe-eval'` forbidden.
-- Extend `static-integrity` to enforce exact policy and placement.
-- Keep production response-header CSP/HSTS/Permissions-Policy as deployment requirements.
+## Production rule
+Do not switch the production domain until all launch gates above are complete and `static-integrity` is green.
 
-## Next deterministic action
-Review the PR at exact head and require green `static-integrity` before merge.
+## Resume rule
+On resume, read:
+1. `.ai/state/CURRENT-STATE.yaml`
+2. `LAST-CHECKPOINT.md`
+3. `LAUNCH-HANDOFF.md`
+4. Issues #5, #8 and #14
+
+Repository evidence outranks chat history.

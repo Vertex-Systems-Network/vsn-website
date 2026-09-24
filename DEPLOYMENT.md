@@ -4,7 +4,8 @@ This repository is a plain static website. Hosting must not introduce a framewor
 
 ## Verified source
 - Repository: `Vertex-Systems-Network/vsn-website`
-- Verified main SHA at activation: `f5b79447f9e40ddbe3df29ef562410990941017f`
+- Finalization base main SHA: `273b4de4cfb3fdb44f883282eff834fe8bd1a835`
+- Before deployment, use the current `main` only if `static-integrity` is green.
 - Production branch: `main`
 
 ## Vercel preview settings
