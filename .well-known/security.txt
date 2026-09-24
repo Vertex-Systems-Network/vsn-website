@@ -1,0 +1,4 @@
+Contact: https://vertexsystemsnetwork.com/contact.html
+Expires: 2027-09-24T00:00:00Z
+Preferred-Languages: en, ur
+Canonical: https://vertexsystemsnetwork.com/.well-known/security.txt

@@ -1,0 +1,22 @@
+const toggle=document.querySelector('.mobile-toggle');
+const links=document.querySelector('.nav-links');
+if(toggle&&links){
+  const closeMenu=()=>{links.classList.remove('open');toggle.setAttribute('aria-expanded','false')};
+  toggle.addEventListener('click',()=>{const open=links.classList.toggle('open');toggle.setAttribute('aria-expanded',String(open))});
+  links.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMenu));
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMenu()});
+}
+if('IntersectionObserver' in window){
+  const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}}),{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+}else{document.querySelectorAll('.reveal').forEach(el=>el.classList.add('visible'))}
+const form=document.querySelector('[data-project-form]');
+if(form){form.addEventListener('submit',e=>{
+  e.preventDefault();
+  const d=new FormData(form);
+  const lines=[`Name: ${d.get('name')||''}`,`Company: ${d.get('company')||''}`,`Email: ${d.get('email')||''}`,`Service: ${d.get('service')||''}`,`Budget: ${d.get('budget')||''}`,`Timeline: ${d.get('timeline')||''}`,`Message: ${d.get('message')||''}`];
+  const msg=encodeURIComponent(`Hello VSN, I would like to discuss a project.
+
+${lines.join('\n')}`);
+  window.open(`https://wa.me/923051983930?text=${msg}`,'_blank','noopener,noreferrer');
+})}
