@@ -4,32 +4,32 @@ Date: 2026-09-24
 
 ## Verified starting main
 - Repo: Vertex-Systems-Network/vsn-website
-- Main SHA: `8642fb77400f376bf6b0798f7a0080e09cfef520`
-- Pricing-safety PR #11: merged
+- Main SHA: `33f2e558159b759e573c0372207d4caa4d703c8f`
+- Legal-hardening PR #13: merged
 - Open Issues before activation: #5 and #8
 - Open PRs before activation: 0
+- Main branch protection: disabled
 
 ## Active milestone
-- Issue #12 — Legal content pre-launch hardening and counsel handoff
-- Branch: `docs/legal-prelaunch-hardening`
+- Issue #14 — Protect main branch and codify repository governance
+- Branch: `security/main-branch-governance`
 
-## Findings
-- Current static JavaScript does not use cookies or local storage.
-- Repository search found no gtag, analytics or tracking-pixel implementation.
-- Contact form behavior matches the Privacy Policy description: it prepares a WhatsApp message rather than posting to a VSN website database.
-- Core legal pages were structurally reasonable but did not present the company identity/contact block consistently or provide a single counsel handoff checklist.
+## Constraint
+The connected GitHub account reports repository admin permission, but the current GitHub connector does not expose administration writes for branch protection/rulesets.
 
 ## Changes in this milestone
-- Added consistent VSN legal-entity identity/contact information to Terms, Privacy, Refunds and Cookie Policy.
-- Added related-policy/payment navigation to all four legal pages.
-- Added `LEGAL-REVIEW.md` for final qualified-counsel review.
-- Preserved substantive liability, governing-law, IP and refund clauses without claiming final legal approval.
-- Updated durable state and README.
+- Added `SECURITY-GOVERNANCE.md` with the target AI-led protection policy.
+- Added deterministic PowerShell apply/verify scripts using GitHub CLI/API.
+- Added a PR checklist that preserves exact-head review and security scope checks.
+- Target requires PRs but zero human approvals.
+- Target blocks force pushes/deletion, enforces administrators, linear history and conversation resolution.
+- No fake required CI checks are introduced while stable CI is absent.
 
 ## Remaining launch blockers
 - Issue #5 — exact official logo localization.
 - Issue #8 — real preview deployment and live QA.
-- Final Pakistan-qualified legal/corporate review using `LEGAL-REVIEW.md`.
+- Issue #14 — actual branch-protection application/verification.
+- Final Pakistan-qualified legal/corporate review.
 
 ## Next deterministic action
-Review the legal-hardening PR at its exact head SHA; if clean, merge and verify resulting `main`.
+Review the governance PR at its exact head SHA. If clean, merge it. Keep Issue #14 open until the verification script confirms the target protection on GitHub.

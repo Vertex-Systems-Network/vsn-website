@@ -1,10 +1,10 @@
 repo: Vertex-Systems-Network/vsn-website
 updated: 2026-09-24
-verified_main_sha: 8642fb77400f376bf6b0798f7a0080e09cfef520
-last_completed_pr: 11
-current_issue: 12
-current_branch: docs/legal-prelaunch-hardening
-current_milestone: legal-prelaunch-hardening
+verified_main_sha: 33f2e558159b759e573c0372207d4caa4d703c8f
+last_completed_pr: 13
+current_issue: 14
+current_branch: security/main-branch-governance
+current_milestone: main-branch-governance
 module_progress_percent: 100
 overall_launch_readiness_percent: 98
 architecture: static-html-css-vanilla-js
@@ -12,20 +12,31 @@ open_pr: pending
 open_issues:
   - 5
   - 8
-  - 12
+  - 14
 checks:
   open_issues_reconciled: true
   open_prs_reconciled: true
-  authority_profile_pricing_safe: true
+  legal_content_hardening_merged: true
   framework_dependency: none
   package_json: absent
   vercel_runtime_config: absent
   runner_tasks: deferred
+governance:
+  main_currently_protected: false
+  protection_admin_write_surface_available_in_connector: false
+  deterministic_apply_script: scripts/apply_main_protection.ps1
+  deterministic_verify_script: scripts/verify_main_protection.ps1
+  pull_request_required_target: true
+  human_approval_required_target: false
+  required_approving_review_count_target: 0
+  enforce_admins_target: true
+  force_pushes_target: blocked
+  deletion_target: blocked
+  conversation_resolution_target: required
+  linear_history_target: required
+  required_status_checks_target: none_until_stable_ci_exists
 legal:
   internal_content_hardening: complete
-  identity_consistency: complete
-  policy_cross_links: complete
-  tracking_search_results: none_found
   qualified_pakistan_counsel_review: required_before_production
 hosting:
   provider_target: vercel
@@ -41,5 +52,6 @@ brand_asset:
 launch_blockers:
   - issue 5 exact official logo localization
   - issue 8 preview deployment and live QA
+  - issue 14 apply and verify main branch protection
   - final Pakistan-qualified legal/corporate review using LEGAL-REVIEW.md
-next_valid_action: review legal pre-launch hardening PR at exact head, then merge and verify resulting main
+next_valid_action: review repository governance PR at exact head; merge if clean; then apply and verify protection when an admin-capable GitHub write surface is available

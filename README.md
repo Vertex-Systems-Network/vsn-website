@@ -50,6 +50,10 @@ Legal pages are in `legal/`. Internal consistency hardening is documented in `LE
 
 This repository intentionally stays host-agnostic. Deploy the files to any static hosting environment or standard web server.
 
+## Repository governance
+
+Target main-branch protection and deterministic apply/verify commands are documented in `SECURITY-GOVERNANCE.md`. Repository protection must require pull requests while keeping required human approvals at zero for the AI-led workflow.
+
 ## Branding
 
 The website references the official VSN logo supplied by the owner at `https://vertexsystemsnetwork.com/wp-content/uploads/2026/02/vertex-logo.png` for the header, footer and favicon.
@@ -57,12 +61,13 @@ The website references the official VSN logo supplied by the owner at `https://v
 
 ## AI-Native progress
 
-- Last verified `main`: `8642fb77400f376bf6b0798f7a0080e09cfef520`
-- Authority Profile pricing safety: **merged and verified**
-- Current module: Legal pre-launch hardening — PR pending review
+- Last verified `main`: `33f2e558159b759e573c0372207d4caa4d703c8f`
+- Legal content hardening: **merged and verified**
+- Current module: Main-branch security/governance — PR pending review
 - Overall launch readiness: **98%**
-- Active legal-hardening Issue: **#12**
-- Internal legal-policy identity/cross-link consistency is hardened.
-- Final Pakistan-qualified legal/corporate review remains required via `LEGAL-REVIEW.md`.
+- Active governance Issue: **#14**
+- Main is currently unprotected; deterministic apply/verify scripts are included in this milestone.
+- Target governance requires PRs but **0 human approvals**, preserving the AI-led merge flow.
 - Deployment Issue #8 and logo localization Issue #5 remain open.
+- Final Pakistan-qualified legal review remains required.
 - No `package.json`, framework runtime, or `vercel.json` is required.
