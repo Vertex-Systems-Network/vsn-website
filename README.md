@@ -65,13 +65,14 @@ The website references the official VSN logo supplied by the owner at `https://v
 
 ## AI-Native progress
 
-- Last verified `main`: `b884089af00ecf2db1d6d66d1cc2595655cf53c6`
-- Repository governance implementation: **merged and verified**
-- Source-level preflight QA: **22/22 HTML pages passed**
-- Current module: Static integrity CI — PR pending review/run
+- Last verified `main`: `d9d0f4a8499093075ada558dfb6116c912aaf9b7`
+- Static Integrity CI: **merged and green on PR + main**
+- Current module: Require `static-integrity` in main protection — PR pending review
 - Overall launch readiness: **98%**
-- Active CI Issue: **#16**
-- Candidate required status: `static-integrity` (do not require until first green run).
-- Branch protection Issue #14, deployment Issue #8 and logo Issue #5 remain open.
+- Active governance Issue: **#14**
+- Target branch protection now requires `static-integrity` in strict mode.
+- Human approvals remain **0** to preserve the AI-led workflow.
+- Actual GitHub main protection is still not active because the current connector lacks the administration write action.
+- Deployment Issue #8 and logo localization Issue #5 remain open.
 - Final Pakistan-qualified legal review remains required.
 - No `package.json`, framework runtime, or `vercel.json` is required.

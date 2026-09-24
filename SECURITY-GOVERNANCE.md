@@ -11,7 +11,8 @@ This repository uses an AI-led pull-request workflow. The governance target is t
 - Branch deletion is disabled.
 - Conversation resolution is required.
 - Linear history is required.
-- Required status checks are not invented while no stable CI checks are configured.
+- Required status check: **`static-integrity`**.
+- Required status checks use strict mode so the protected branch must be up to date before merge.
 - Squash merge is the preferred merge method for AI milestones.
 
 This protects the branch while preserving exact-head review → expected-head merge.
@@ -34,7 +35,7 @@ Issue #14 must remain open until verification confirms the target policy is actu
 
 ## CI rule
 
-Do not add fake or unstable required status checks just to make branch protection look stronger. The repository now has a candidate lightweight status named `static-integrity`; require it only after the workflow has merged and demonstrated a successful run on `main`. Runner-heavy launch benchmarks remain end-stage work under `.ai/RUNNER-BENCHMARK.md`.
+Do not add fake or unstable required status checks just to make branch protection look stronger. `static-integrity` is now proven green on both PR and `main`, so the apply/verify scripts require it in strict mode. Runner-heavy launch benchmarks remain end-stage work under `.ai/RUNNER-BENCHMARK.md`.
 
 ## Change-control rule
 

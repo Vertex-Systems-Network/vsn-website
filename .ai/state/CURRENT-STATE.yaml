@@ -1,10 +1,10 @@
 repo: Vertex-Systems-Network/vsn-website
 updated: 2026-09-24
-verified_main_sha: b884089af00ecf2db1d6d66d1cc2595655cf53c6
-last_completed_pr: 15
-current_issue: 16
-current_branch: ci/static-integrity-baseline
-current_milestone: static-integrity-ci
+verified_main_sha: d9d0f4a8499093075ada558dfb6116c912aaf9b7
+last_completed_pr: 17
+current_issue: 14
+current_branch: security/require-static-integrity-protection
+current_milestone: require-static-integrity-in-protection
 module_progress_percent: 100
 overall_launch_readiness_percent: 98
 architecture: static-html-css-vanilla-js
@@ -13,12 +13,11 @@ open_issues:
   - 5
   - 8
   - 14
-  - 16
 checks:
   open_issues_reconciled: true
   open_prs_reconciled: true
-  governance_docs_merged: true
-  source_preflight_qa: passed
+  static_integrity_pr_run: passed
+  static_integrity_main_run: passed
   framework_dependency: none
   package_json: absent
   vercel_runtime_config: absent
@@ -26,16 +25,23 @@ checks:
 ci:
   workflow: .github/workflows/static-integrity.yml
   job_name: static-integrity
-  validator: scripts/validate_static_site.py
-  external_network_required: false
-  package_manager_required: false
-  required_status_candidate: static-integrity
-  branch_protection_requirement: pending_first_green_run
+  proven_green_on_pr: true
+  proven_green_on_main: true
+  required_status_target: true
 governance:
   main_currently_protected: false
   protection_issue: 14
+  required_status_check_target: static-integrity
+  required_status_strict_target: true
   human_approval_required_target: false
   required_approving_review_count_target: 0
+  enforce_admins_target: true
+  force_pushes_target: blocked
+  deletion_target: blocked
+  conversation_resolution_target: required
+  linear_history_target: required
+  apply_script: scripts/apply_main_protection.ps1
+  verify_script: scripts/verify_main_protection.ps1
 legal:
   internal_content_hardening: complete
   qualified_pakistan_counsel_review: required_before_production
@@ -53,7 +59,6 @@ brand_asset:
 launch_blockers:
   - issue 5 exact official logo localization
   - issue 8 preview deployment and live QA
-  - issue 14 apply and verify main branch protection
-  - issue 16 merge and obtain first green static-integrity run
+  - issue 14 apply and verify main branch protection with static-integrity required
   - final Pakistan-qualified legal/corporate review using LEGAL-REVIEW.md
-next_valid_action: review static-integrity CI PR at exact head; merge only after the PR workflow is green or its failure is reconciled
+next_valid_action: review and merge protection-script update PR; then apply and verify actual GitHub protection when an admin-capable write surface is available

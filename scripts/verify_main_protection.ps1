@@ -15,6 +15,9 @@ if ($LASTEXITCODE -ne 0) { throw "Failed to read branch protection." }
 $p = $raw | ConvertFrom-Json
 $checks = [ordered]@{
     pull_request_required = ($null -ne $p.required_pull_request_reviews)
+    status_checks_required = ($null -ne $p.required_status_checks)
+    static_integrity_required = (@($p.required_status_checks.contexts) -contains "static-integrity")
+    status_checks_strict = ($p.required_status_checks.strict -eq $true)
     required_approvals_zero = ($p.required_pull_request_reviews.required_approving_review_count -eq 0)
     admins_enforced = ($p.enforce_admins.enabled -eq $true)
     linear_history = ($p.required_linear_history.enabled -eq $true)
