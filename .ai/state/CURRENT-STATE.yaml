@@ -29,6 +29,9 @@ security:
   validator_rejects_inline_styles: true
   csp_style_src_self_ready: true
   csp_script_hash_manifest: security/csp-hashes.json
+  organization_jsonld_pages:
+    - index.html
+    - about.html
   organization_jsonld_hash: sha256-ZM1h9WKmDZGFgxszmJKYmle/IrxoM/sfN9fSDcx5Rbk=
   validator_rejects_unexpected_inline_scripts: true
   csp_script_src_self_plus_hash_ready: true

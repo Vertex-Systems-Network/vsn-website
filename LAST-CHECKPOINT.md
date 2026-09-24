@@ -18,7 +18,7 @@ Date: 2026-09-25
 - Branch: `security/csp-script-hash-readiness`
 
 ## Changes in this milestone
-- Keep Organization JSON-LD inline for structured-data SEO.
+- Keep identical Organization JSON-LD inline on `index.html` and `about.html` for structured-data SEO.
 - Add machine-readable `security/csp-hashes.json`.
 - SHA-256 allowlist the exact JSON-LD bytes: `sha256-ZM1h9WKmDZGFgxszmJKYmle/IrxoM/sfN9fSDcx5Rbk=`.
 - Make `static-integrity` reject unexpected inline executable scripts.

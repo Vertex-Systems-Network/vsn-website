@@ -70,7 +70,7 @@ The website references the official VSN logo supplied by the owner at `https://v
 - Current module: strict CSP script/JSON-LD hash readiness — PR pending review
 - Overall launch readiness: **98%**
 - Active security Issue: **#25**
-- JSON-LD remains inline for SEO but is SHA-256 allowlisted and machine-verified.
+- Organization JSON-LD remains inline on the homepage and About page for SEO; identical bytes are SHA-256 allowlisted and machine-verified.
 - `static-integrity` rejects unexpected inline executable scripts and hash drift.
 - Strict `style-src 'self'` and `script-src 'self' + reviewed hash` are repository-ready.
 - Production response headers still require deployed-origin verification.
