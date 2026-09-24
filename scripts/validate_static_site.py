@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 from __future__ import annotations
 
+import base64
+import hashlib
+import json
 import re
 import sys
 import xml.etree.ElementTree as ET
@@ -18,6 +21,7 @@ EXPECTED_HTML = {
 }
 REQUIRED_FILES = {
     "assets/app.js","assets/styles.css","robots.txt","sitemap.xml",".well-known/security.txt",
+    "security/csp-hashes.json",
 }
 FORBIDDEN_ROOT_FILES = {"package.json","vercel.json"}
 LEGAL_PAGES = {
@@ -34,6 +38,9 @@ CANONICAL_RE = re.compile(
     r"""<link\b[^>]*rel=["'][^"']*canonical[^"']*["'][^>]*href=["']([^"']+)["'][^>]*>""",
     re.I,
 )
+SCRIPT_RE = re.compile(r"<script\b([^>]*)>([\s\S]*?)</script>", re.I)
+SCRIPT_SRC_RE = re.compile(r"""\bsrc=["']([^"']+)["']""", re.I)
+SCRIPT_TYPE_RE = re.compile(r"""\btype=["']([^"']+)["']""", re.I)
 
 def rel(path: Path) -> str:
     return path.relative_to(ROOT).as_posix()
@@ -82,6 +89,7 @@ def main() -> int:
 
     ids_by_file: dict[str,set[str]] = {}
     refs: list[tuple[str,str,str,str|None]] = []
+    inline_script_hashes: dict[str,list[str]] = {}
 
     html_files = sorted(path for path in repo_files if path.endswith(".html"))
     for source in html_files:
@@ -101,6 +109,32 @@ def main() -> int:
             errors.append(f"{source}: inline style attributes are not allowed")
         if re.search(r"<style\b", text, re.I):
             errors.append(f"{source}: inline <style> blocks are not allowed")
+
+        for script_attrs, script_body in SCRIPT_RE.findall(text):
+            if SCRIPT_SRC_RE.search(script_attrs):
+                continue
+            type_match = SCRIPT_TYPE_RE.search(script_attrs)
+            script_type = type_match.group(1).strip().lower() if type_match else ""
+            if script_type != "application/ld+json":
+                errors.append(
+                    f"{source}: unexpected inline executable script; "
+                    "use an external script or an explicitly reviewed CSP mechanism"
+                )
+                continue
+            try:
+                structured = json.loads(script_body)
+            except json.JSONDecodeError as exc:
+                errors.append(f"{source}: invalid JSON-LD: {exc}")
+                continue
+            if source == "index.html":
+                if structured.get("@context") != "https://schema.org":
+                    errors.append("index.html: Organization JSON-LD must use schema.org context")
+                if structured.get("@type") != "Organization":
+                    errors.append("index.html: expected Organization JSON-LD")
+            digest = base64.b64encode(
+                hashlib.sha256(script_body.encode("utf-8")).digest()
+            ).decode("ascii")
+            inline_script_hashes.setdefault(source, []).append(f"sha256-{digest}")
 
         ids = ID_RE.findall(text)
         duplicates = sorted({value for value in ids if ids.count(value) > 1})
@@ -139,6 +173,29 @@ def main() -> int:
                     errors.append(f"profile.html: provisional price still present: {price}")
             if "Custom <small>quote</small>" not in text:
                 errors.append("profile.html: custom quote wording missing")
+
+    try:
+        csp_manifest = json.loads(
+            (ROOT / "security/csp-hashes.json").read_text(encoding="utf-8")
+        )
+        expected_inline_hashes = csp_manifest.get("inline_script_hashes", {})
+    except (OSError, json.JSONDecodeError) as exc:
+        errors.append(f"security/csp-hashes.json: invalid manifest: {exc}")
+        expected_inline_hashes = {}
+
+    if inline_script_hashes != expected_inline_hashes:
+        errors.append(
+            "CSP inline-script hash manifest mismatch: "
+            f"expected {expected_inline_hashes}, computed {inline_script_hashes}"
+        )
+
+    security_headers = (ROOT / "SECURITY-HEADERS.md").read_text(encoding="utf-8")
+    for hashes in expected_inline_hashes.values():
+        for hash_value in hashes:
+            if f"'{hash_value}'" not in security_headers:
+                errors.append(
+                    f"SECURITY-HEADERS.md: missing documented CSP hash {hash_value}"
+                )
 
     for source, raw_ref, target, fragment in refs:
         normalized = target + "index.html" if target.endswith("/") else target

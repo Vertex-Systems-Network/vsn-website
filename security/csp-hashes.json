@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "inline_script_hashes": {
+    "about.html": [
+      "sha256-ZM1h9WKmDZGFgxszmJKYmle/IrxoM/sfN9fSDcx5Rbk="
+    ],
+    "index.html": [
+      "sha256-ZM1h9WKmDZGFgxszmJKYmle/IrxoM/sfN9fSDcx5Rbk="
+    ]
+  }
+}

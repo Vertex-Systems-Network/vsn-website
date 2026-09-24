@@ -65,14 +65,15 @@ The website references the official VSN logo supplied by the owner at `https://v
 
 ## AI-Native progress
 
-- Last verified `main`: `615b0e5442f24b10e7963cf101ef7b423610f086`
-- CSP inline-style cleanup: **merged and green**
-- Static Integrity CI: **green on resulting main**
-- Current module: `actions/checkout` v7.0.1 pinned upgrade — PR pending review
+- Last verified `main`: `4d09259a9e8999f1508b3d7fb161793829a55421`
+- Checkout v7.0.1 pinned upgrade: **merged and green**
+- Current module: strict CSP script/JSON-LD hash readiness — PR pending review
 - Overall launch readiness: **98%**
-- Checkout target: `3d3c42e5aac5ba805825da76410c181273ba90b1` (v7.0.1).
-- `persist-credentials: false` remains enforced.
-- Dependabot PR #21 is stale after PR #23 and will be superseded by the latest-main equivalent.
+- Active security Issue: **#25**
+- Organization JSON-LD remains inline on the homepage and About page for SEO; identical bytes are SHA-256 allowlisted and machine-verified.
+- `static-integrity` rejects unexpected inline executable scripts and hash drift.
+- Strict `style-src 'self'` and `script-src 'self' + reviewed hash` are repository-ready.
+- Production response headers still require deployed-origin verification.
 - Branch protection Issue #14, deployment Issue #8 and logo Issue #5 remain open.
 - Final Pakistan-qualified legal review remains required.
 - No `package.json`, framework runtime, or `vercel.json` is required.
