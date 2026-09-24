@@ -4,36 +4,30 @@ Date: 2026-09-25
 
 ## Verified starting main
 - Repo: Vertex-Systems-Network/vsn-website
-- Main SHA: `332e4b774a033230e3548b29eb5c20cb07abb702`
-- PR #20: merged
-- PR #20 `static-integrity`: green
-- Resulting main run #8: green
-- Issue #19: closed
-- Open Issues before activation: #5, #8 and #14
-- Open PRs before activation: 0
+- Main SHA: `615b0e5442f24b10e7963cf101ef7b423610f086`
+- PR #23: merged
+- PR #23 `static-integrity` run #10: green
+- Resulting main run #11: green
+- Issue #22: closed
+- Open Issues: #5, #8 and #14
 - Main branch protection: disabled
 
+## Dependency maintenance
+Dependabot PR #21 proposes `actions/checkout` v7.0.1, pinned to official commit `3d3c42e5aac5ba805825da76410c181273ba90b1`.
+PR #21 is based on the pre-PR-23 main and is therefore stale/non-mergeable.
+
 ## Active milestone
-- Issue #22 — Eliminate inline style debt for strict CSP readiness
-- Branch: `security/csp-readiness-inline-style-cleanup`
-
-## Verified debt
-- 10 HTML pages contained 14 inline style declarations.
-- No inline `<style>` block was required by the site.
-
-## Changes in this milestone
-- Move all 14 inline declarations to shared CSS classes.
-- Add responsive fallback for the two-column service-grid replacement.
-- Extend `static-integrity` to reject inline `style=""` attributes.
-- Extend `static-integrity` to reject inline `<style>` blocks.
-- Update security-header guidance to record `style-src 'self'` readiness.
-- Preserve the homepage JSON-LD and document that strict `script-src` still needs a reviewed CSP hash/equivalent.
+- Branch: `security/checkout-v7-upgrade`
+- Apply the same pinned checkout v7.0.1 update on latest main.
+- Preserve `persist-credentials: false`.
+- Preserve read-only workflow permissions.
+- Require green `static-integrity` before merge.
+- Close Dependabot PR #21 as superseded after the equivalent latest-main PR merges.
 
 ## Guardrails
-- No website feature or business copy changes.
-- No framework/package/Vercel runtime added.
-- Production response headers are not claimed active.
+- No website runtime changes.
+- No package.json/framework/Vercel runtime added.
 - Runner Benchmark remains deferred.
 
 ## Next deterministic action
-Review the PR at exact head and require a green `static-integrity` run before merge.
+Open focused latest-main upgrade PR, verify exact diff + green `static-integrity`, then expected-head squash merge and verify resulting main.
