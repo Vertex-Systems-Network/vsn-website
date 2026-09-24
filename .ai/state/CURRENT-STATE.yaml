@@ -1,34 +1,41 @@
 repo: Vertex-Systems-Network/vsn-website
 updated: 2026-09-24
-verified_main_sha: 462e3352f711033d0107b60a78498896a6d5f58d
-last_completed_issue: 2
-last_completed_pr: 6
-current_issue: 5
-current_branch: chore/brand-resilience-state-reconcile
-current_milestone: brand-resilience-state-reconcile
+verified_main_sha: f5b79447f9e40ddbe3df29ef562410990941017f
+last_completed_pr: 7
+current_issue: 8
+current_branch: docs/static-preview-deployment-readiness
+current_milestone: static-preview-deployment-readiness
 module_progress_percent: 100
 overall_launch_readiness_percent: 96
 architecture: static-html-css-vanilla-js
 open_pr: pending
+open_issues:
+  - 5
+  - 8
 checks:
   open_issues_reconciled: true
   open_prs_reconciled: true
-  launch_qa_hardening_merged: true
-  post_merge_state_closeout_merged: true
   brand_resilience_merged: true
-  issue_5_reopened_for_localization: true
   framework_dependency: none
   package_json: absent
   vercel_runtime_config: absent
   runner_tasks: deferred
+hosting:
+  provider_target: vercel
+  team: vsnteam
+  project_exists: false
+  preview_only: true
+  connector_read_access: true
+  connector_deploy_runtime_available: false
+  local_cli_authenticated: false
 brand_asset:
   official_url: https://vertexsystemsnetwork.com/wp-content/uploads/2026/02/vertex-logo.png
   graceful_runtime_fallback: merged
   repo_local_copy: blocked_by_source_retrieval
   localization_issue: 5
 launch_blockers:
+  - issue 5 exact official logo localization
+  - issue 8 preview deployment and live QA
   - final Pakistani legal/corporate review of legal pages
   - confirm Authority Profile commercial pricing before public launch
-  - localize exact official logo PNG when source binary becomes retrievable
-  - production hosting/domain and live browser/performance verification
-next_valid_action: review and merge durable-state reconciliation PR; keep Issue 5 open until exact PNG is stored locally
+next_valid_action: review static preview deployment readiness PR; merge if clean; then create preview when a Vercel write/deploy surface is available

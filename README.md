@@ -57,13 +57,13 @@ The website references the official VSN logo supplied by the owner at `https://v
 
 ## AI-Native progress
 
-- Last verified `main`: `462e3352f711033d0107b60a78498896a6d5f58d`
-- Launch QA hardening: **merged and verified**
-- Post-merge state closeout: **merged and verified**
+- Last verified `main`: `f5b79447f9e40ddbe3df29ef562410990941017f`
 - Brand resilience fallback: **merged and verified**
-- Current module: Brand-resilience durable-state reconciliation — PR pending review
+- Current module: Static preview deployment readiness — PR pending review
 - Overall launch readiness: **96%**
-- Active Issue: **#5 — repo-local exact official logo**
-- Issue #5 remains open intentionally until the exact PNG is stored under `assets/` and all site references are switched local.
-- Runner-heavy QA remains deferred to `.ai/RUNNER-BENCHMARK.md` for final-stage batching.
-- Other remaining blockers: legal review, Authority Profile commercial pricing, and production hosting/live QA.
+- Active deployment Issue: **#8**
+- Logo localization Issue: **#5**
+- Preview target: VSN Vercel team / project `vsn-website`
+- No `package.json`, framework runtime, or `vercel.json` is required.
+- Deployment settings and live-QA gate are documented in `DEPLOYMENT.md`.
+- Runner-heavy QA remains deferred until a real preview URL exists.
