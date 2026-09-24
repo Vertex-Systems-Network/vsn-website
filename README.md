@@ -65,15 +65,14 @@ The website references the official VSN logo supplied by the owner at `https://v
 
 ## AI-Native progress
 
-- Last verified `main`: `332e4b774a033230e3548b29eb5c20cb07abb702`
-- CI supply-chain hardening: **merged and green**
-- Current module: CSP readiness / inline-style elimination — PR pending review
+- Last verified `main`: `615b0e5442f24b10e7963cf101ef7b423610f086`
+- CSP inline-style cleanup: **merged and green**
+- Static Integrity CI: **green on resulting main**
+- Current module: `actions/checkout` v7.0.1 pinned upgrade — PR pending review
 - Overall launch readiness: **98%**
-- Active security Issue: **#22**
-- All current inline HTML style declarations are moved to shared CSS in this milestone.
-- `static-integrity` rejects future inline style attributes and inline `<style>` blocks.
-- Future production `style-src 'self'` is now practical without `'unsafe-inline'`.
-- Homepage JSON-LD still needs explicit CSP treatment before a strict `script-src`.
+- Checkout target: `3d3c42e5aac5ba805825da76410c181273ba90b1` (v7.0.1).
+- `persist-credentials: false` remains enforced.
+- Dependabot PR #21 is stale after PR #23 and will be superseded by the latest-main equivalent.
 - Branch protection Issue #14, deployment Issue #8 and logo Issue #5 remain open.
 - Final Pakistan-qualified legal review remains required.
 - No `package.json`, framework runtime, or `vercel.json` is required.

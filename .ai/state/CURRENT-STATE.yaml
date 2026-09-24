@@ -1,10 +1,10 @@
 repo: Vertex-Systems-Network/vsn-website
 updated: 2026-09-25
-verified_main_sha: 332e4b774a033230e3548b29eb5c20cb07abb702
-last_completed_pr: 20
-current_issue: 22
-current_branch: security/csp-readiness-inline-style-cleanup
-current_milestone: csp-readiness-inline-style-cleanup
+verified_main_sha: 615b0e5442f24b10e7963cf101ef7b423610f086
+last_completed_pr: 23
+current_issue: null
+current_branch: security/checkout-v7-upgrade
+current_milestone: checkout-v7-upgrade
 module_progress_percent: 100
 overall_launch_readiness_percent: 98
 architecture: static-html-css-vanilla-js
@@ -13,27 +13,27 @@ open_issues:
   - 5
   - 8
   - 14
-  - 22
 checks:
   open_issues_reconciled: true
-  open_prs_reconciled: true
-  ci_supply_chain_hardening_merged: true
+  csp_inline_style_cleanup_merged: true
+  static_integrity_main_run_11: passed
   framework_dependency: none
   package_json: absent
   vercel_runtime_config: absent
   runner_tasks: deferred
 security:
-  inline_style_attributes_target: 0
-  inline_style_blocks_target: 0
+  inline_style_attributes: 0
+  inline_style_blocks: 0
   validator_rejects_inline_styles: true
   csp_style_src_self_ready: true
   csp_script_src_self_ready: false
-  inline_jsonld_requires_csp_hash_or_equivalent: true
 ci:
   workflow: .github/workflows/static-integrity.yml
   job_name: static-integrity
-  checkout_action_pinned_sha: fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09
+  checkout_action_version: 7.0.1
+  checkout_action_pinned_sha: 3d3c42e5aac5ba805825da76410c181273ba90b1
   checkout_persist_credentials: false
+  validator_enforces_pinned_actions: true
   dependabot_github_actions: enabled
 governance:
   main_currently_protected: false
@@ -56,4 +56,4 @@ launch_blockers:
   - issue 8 preview deployment and live QA
   - issue 14 actual main branch protection application
   - final Pakistan-qualified legal/corporate review
-next_valid_action: review CSP-readiness cleanup PR at exact head; merge only after static-integrity is green
+next_valid_action: review checkout v7 upgrade PR at exact head and merge only after static-integrity is green
