@@ -71,3 +71,13 @@ a{color:inherit;text-decoration:none}img{max-width:100%;display:block}button,inp
 .eyebrow-soft-cyan{color:#8fcfff}
 .profile-name-lg{font-size:19px}
 @media(max-width:720px){.service-grid-two{grid-template-columns:1fr}}
+
+/* Expanded service catalogue and public profile pricing */
+.plan-grid{grid-template-columns:repeat(3,minmax(0,1fr));align-items:stretch}
+.plan-grid .price-card{display:flex;flex-direction:column}
+.plan-grid .price-card ul{flex:1}
+.plan-grid .amount{white-space:nowrap}
+.plan-grid .price-card .label{min-height:2em}
+.service-card ul{padding-left:1.1rem;color:var(--slate)}
+.service-card li{margin:.45rem 0}
+@media(max-width:850px){.plan-grid{grid-template-columns:1fr}}

@@ -63,3 +63,5 @@ No repository development action is currently required. Resume only for:
 - future branch-protection activation,
 - legal-review-driven content changes,
 - or a new product/business requirement.
+
+\n## Owner-requested content refresh — 2026-09-25\n\nWork is on branch website-service-pricing-legal-refresh-2026-09; it is not merged or deployed. The refresh adds a business website platform guide, profile package pricing, expanded service copy, corrected public contact details and service-specific legal drafts. Qualified Pakistan legal/corporate review remains required before production. Branch protection remains deferred by owner.\n

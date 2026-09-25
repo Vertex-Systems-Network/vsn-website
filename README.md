@@ -4,7 +4,7 @@ Official static corporate website for **Vertex Systems Network (VSN)**.
 
 ## Status
 
-**Repository implementation: 100% complete.**
+**Website content refresh: in review.** The direct-open static architecture remains complete; the requested service, pricing and legal-content expansion is in draft PR #38; static integrity passed in CI: 23 HTML files, 747 local references and 22 sitemap URLs.
 
 The current website scope is finalized. No further repository development is required for the approved direct-file architecture.
 
@@ -35,8 +35,8 @@ Do **not** convert local links back to root-relative `/assets/...` or `/contact.
 ## Main pages
 
 - `index.html` — corporate homepage
-- `services.html` — service overview
-- `profile.html` — VSN Authority Profile
+- `services.html` — expanded service catalogue\n- `websites.html` — business website platforms and scope
+- `profile.html` — VSN Authority Profile packages and pricing
 - `software.html` — software & app development
 - `ecommerce.html` — e-commerce development
 - `ai-automation.html` — AI & automation

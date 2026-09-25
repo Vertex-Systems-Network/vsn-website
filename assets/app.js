@@ -19,7 +19,7 @@ if(form){form.addEventListener('submit',e=>{
   const msg=encodeURIComponent(`Hello VSN, I would like to discuss a project.
 
 ${lines.join('\n')}`);
-  window.open(`https://wa.me/923051983930?text=${msg}`,'_blank','noopener,noreferrer');
+  window.open(`https://wa.me/923168433104?text=${msg}`,'_blank','noopener,noreferrer');
 })}
 
 // Brand resilience: keep the site identifiable if the remote official logo becomes unavailable.

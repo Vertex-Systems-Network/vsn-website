@@ -30,7 +30,7 @@ Do not copy a CSP blindly. Validate the final header against the deployed origin
 - Inline `<style>` blocks: **0**.
 - `static-integrity` rejects future inline style attributes and inline style blocks.
 - This makes a future production `style-src 'self'` policy practical without `'unsafe-inline'`.
-- The homepage and About page contain identical intentional inline Organization JSON-LD blocks. Its exact CSP hash is machine-verified in `security/csp-hashes.json`: `sha256-ZM1h9WKmDZGFgxszmJKYmle/IrxoM/sfN9fSDcx5Rbk=`.
+- The homepage and About page contain identical intentional inline Organization JSON-LD blocks. Its exact CSP hash is machine-verified in `security/csp-hashes.json`: `sha256-+RvWWLE055Y83NN2tnQqwBMbousTQloiJeaaIBrsomU=`.
 - `static-integrity` rejects unexpected inline executable scripts and fails if the JSON-LD bytes drift without an explicit hash-manifest update.
 - This makes strict `script-src` practical without `'unsafe-inline'` while preserving structured-data SEO.
 - Production security headers still require verification on the deployed origin; this repository does not claim they are active yet.
@@ -40,7 +40,7 @@ Do not copy a CSP blindly. Validate the final header against the deployed origin
 
 Use this only if the direct-file package is later published on a normal HTTPS web host:
 
-`Content-Security-Policy: default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; script-src 'self' 'sha256-ZM1h9WKmDZGFgxszmJKYmle/IrxoM/sfN9fSDcx5Rbk='; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'none'; worker-src 'none'; form-action 'self'`
+`Content-Security-Policy: default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; script-src 'self' 'sha256-+RvWWLE055Y83NN2tnQqwBMbousTQloiJeaaIBrsomU='; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'none'; worker-src 'none'; form-action 'self'`
 
 Notes:
 - The exact owner-supplied logo is repository-local, so no external image origin is required for current runtime assets.
@@ -53,7 +53,7 @@ Notes:
 
 All 22 HTML pages now carry the same reviewed `Content-Security-Policy` meta policy before loadable resources:
 
-`default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self' 'sha256-ZM1h9WKmDZGFgxszmJKYmle/IrxoM/sfN9fSDcx5Rbk='; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'none'; worker-src 'none'; form-action 'self'`
+`default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self' 'sha256-+RvWWLE055Y83NN2tnQqwBMbousTQloiJeaaIBrsomU='; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'none'; worker-src 'none'; form-action 'self'`
 
 They also carry:
 

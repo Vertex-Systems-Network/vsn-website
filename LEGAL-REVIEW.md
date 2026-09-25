@@ -39,3 +39,5 @@ Counsel should review at minimum:
 ## Change-control rule
 
 If the site later adds analytics, advertising, account creation, direct card checkout, user uploads, authentication, new SaaS products, or a materially different sales/refund model, re-open legal review before treating the current policies as launch-ready.
+
+\n## Owner-requested service expansion (2026-09-25)\n\nDraft Terms, Privacy, Refunds and Cookie updates on branch website-service-pricing-legal-refresh-2026-09 cover websites, SaaS, apps, WordPress, Shopify, Webflow, Wix, Laravel, AI, automation, social media, BPO and tax coordination. This is draft website copy, not a legal opinion. Qualified Pakistan legal/corporate review remains required before publication. Confirm package prices, taxes, address, contracting entity, refund treatment, privacy roles and service-provider list before merge. The enquiry form continues to prepare a WhatsApp draft client-side; it does not submit to a VSN database.\n
