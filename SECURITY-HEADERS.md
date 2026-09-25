@@ -38,7 +38,7 @@ Do not copy a CSP blindly. Validate the final header against the deployed origin
 
 ## Strict CSP baseline candidate
 
-Use this only after testing it on the deployed preview origin:
+Use this only if the direct-file package is later published on a normal HTTPS web host:
 
 `Content-Security-Policy: default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; script-src 'self' 'sha256-ZM1h9WKmDZGFgxszmJKYmle/IrxoM/sfN9fSDcx5Rbk='; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'none'; worker-src 'none'; form-action 'self'`
 
@@ -65,4 +65,4 @@ This is defense in depth only. A meta CSP does **not** replace production respon
 - `frame-ancestors` must be delivered as an HTTP response header.
 - HSTS must be delivered as an HTTP response header.
 - Permissions-Policy must be delivered as an HTTP response header.
-- Final deployed-origin headers still require live preview verification under Issue #8.
+- Response-header verification applies only if the static folder is later published on an HTTPS web host; it is not required for direct `file://` use.
