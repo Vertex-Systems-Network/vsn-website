@@ -2,81 +2,64 @@
 
 Date: 2026-09-25
 
-## Completed runtime milestone
+## Final repository status
 
-Issue #33 — direct-file browser portability — is complete.
+The VSN website repository is finalized for the approved scope.
 
-- PR #34 exact head: `4a53e98531b6613a94ff6c2c908bfb23d4d7c814`
-- PR Static Integrity: run #24 — success
-- Resulting runtime main: `c77af261bdee0e4d834d6fa78989724a79e4d879`
-- Resulting-main Static Integrity: run #25 — success
-- Issue #33: closed as completed
+- Repository implementation: **100%**
+- Runtime architecture: direct-open static HTML + CSS + vanilla JavaScript
+- No Vercel dependency
+- No local HTTP server
+- No Node runtime
+- No framework
+- No build/install step
+- 22 HTML pages
+- Exact official logo stored locally and machine-verified
+- Static Integrity CI active
+- Direct-file portability complete
 
-## Current governance milestone
+Latest verified pre-finalization `main`:
+`16a181f9791bc01dea390b561541bc9c568b5815`
 
-Issue #14 — protect `main`.
+## Governance decision
 
-Fresh verification on 2026-09-25:
-- latest `main`: `cbe9337aa76825ddfdd1fa7cbbb6dc4286067474`
+Owner decision on 2026-09-25:
+
+**Leave GitHub main-branch protection for later and finalize the repository now.**
+
+Current GitHub state remains:
 - `main protected`: false
-- protection enabled: false
 - required status-check enforcement: off
-- required contexts: none
 - repository rulesets: none
-- direct ChatGPT GitHub integration administration write: unavailable
-- direct branch-protection admin endpoint through the integration: inaccessible
 
-Repository-side target policy and verification scripts remain complete.
+Issue #14 is therefore deferred, not completed.
 
-## New activation path
-
-Branch:
-`feat/main-protection-admin-workflow`
-
-Added:
-`.github/workflows/main-protection-admin.yml`
-
-The workflow is manual-only and reuses:
+Future activation assets remain available:
 - `scripts/apply_main_protection.ps1`
 - `scripts/verify_main_protection.ps1`
+- `.github/workflows/main-protection-admin.yml`
+- `SECURITY-GOVERNANCE.md`
 
-It requires repository secret:
-`VSN_GOVERNANCE_ADMIN_TOKEN`
+Branch protection can be enabled later without reopening normal website development.
 
-The token must be narrowly scoped to this repository with GitHub repository **Administration: Read and write** permission. Never commit or paste the token into repository content.
+## Runtime contract
 
-After this governance PR is merged:
+- open `index.html` directly in the browser
+- root pages use relative paths
+- `legal/` pages use parent-relative paths
+- root-relative local href/src values are rejected by CI
+- mobile navigation remains vanilla JavaScript
+- WhatsApp project-brief handoff remains client-side
+- official logo fallback remains client-side
 
-1. Add `VSN_GOVERNANCE_ADMIN_TOKEN` in repository Actions secrets.
-2. Run **Main Protection Admin** on `main`.
-3. Enter `APPLY`.
-4. Require the workflow apply step and verification step to pass.
-5. Re-read GitHub branch metadata and protection state.
-6. Close Issue #14 only after GitHub reports the target protection active.
+## External production requirement
 
-## Target protection invariant
+Qualified Pakistan legal/corporate review remains required before public production use.
 
-- pull request required
-- required approvals: 0
-- `static-integrity` required
-- status checks strict
-- administrators enforced
-- linear history required
-- force pushes blocked
-- branch deletion blocked
-- conversation resolution required
+## Resume rule
 
-## Runtime architecture remains unchanged
-
-- plain HTML
-- shared CSS
-- vanilla JavaScript
-- no local HTTP server
-- no Node runtime
-- no framework
-- no Vercel dependency
-- direct `index.html` browser opening
-
-## Next valid action
-
-Merge the governance workflow after exact-head Static Integrity is green, then activate it with the scoped admin secret.
+No repository development action is currently required. Resume only for:
+- a new owner-requested website change,
+- future branch-protection activation,
+- legal-review-driven content changes,
+- or a new product/business requirement.
