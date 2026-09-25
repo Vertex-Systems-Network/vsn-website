@@ -35,7 +35,7 @@ The CDC signature card is not used on the public website. The public tax-support
 
 ## Verification and remaining review
 
-The earlier branch revision passed static integrity at commit `7b8406513e5c5763e51f6acaeb50e61a6825ed23`. The current follow-up must be checked by CI after the branch moves.
+Static Integrity passed on service-content commit `cfc5944948b0b9f3fed8b4e8f90fd3f54c2b7fb7` (workflow run #47, success). A metadata-only progress update follows that verified source commit.
 
 Before merge or production use, review proposed prices and have qualified Pakistan legal/corporate counsel review the legal drafts. Confirm payment, tax, refund, privacy-role and provider details against the live business setup.
 
