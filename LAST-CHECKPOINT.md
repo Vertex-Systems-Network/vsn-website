@@ -52,10 +52,10 @@ Static Integrity run #49 passed on visual-refresh commit `2708f032bd6d36dbe86985
 
 ## Verification and remaining review
 
-Static Integrity passed on visual-refresh commit `2708f032bd6d36dbe869856fa27217179b95268f` (run #49), and on the current metadata commit `02714baffa8c59c4e86c54e528398b2f4ad444ba` (run #50). The final audit edits in this checkpoint are awaiting Static Integrity.
+Static Integrity passed on visual-refresh commit `2708f032bd6d36dbe869856fa27217179b95268f` (run #49), and on the current metadata commit `02714baffa8c59c4e86c54e528398b2f4ad444ba` (run #50). The final pricing and legal audit commit `b8bdb25b918f9b415025fe89dacb6b3d4cf20868` passed Static Integrity (run #51).
 
 Before merge or production use, review proposed prices and have qualified Pakistan legal/corporate counsel review the legal drafts. Confirm payment, tax, refund, privacy-role and provider details against the live business setup.
 
 ## Resume
 
-Next: verify Static Integrity on the final audit commit, then complete owner price approval and qualified Pakistan legal/corporate review. Do not merge or deploy the draft until prices and legal content are approved.
+Next: continue the reference-site audit, then complete owner price approval and qualified Pakistan legal/corporate review. Do not merge or deploy the draft until prices and legal content are approved.
