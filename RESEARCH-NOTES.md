@@ -162,3 +162,20 @@ The VSN organization search returned **15 public repositories** and four private
 | [brovexa](https://github.com/Vertex-Systems-Network/brovexa) | Business intelligence, opportunity research and lead-operations system | Development in progress; persistence and provider-activation gates remain |
 
 The public product catalogue retains the existing VSN Metafields marketplace link and distinguishes that product listing from development repositories, reusable templates and the corporate website source. Each project card states its evidence-based current boundary; public visibility alone does not promise a release, commercial-use licence, support or compatibility.
+
+
+## Homepage, About and public-proof redesign (2026-09-25)
+
+Awwwards references reviewed for art direction and page structure:
+- [TING — Awwwards](https://www.awwwards.com/sites/ting) combines a clear hero and explicit About, Teams and Contact destinations for a services agency.
+- [Weirdoo — Awwwards](https://www.awwwards.com/sites/weirdoo) uses a distinctive visual composition and case-study-led agency presentation.
+- [ShellFirst — Awwwards](https://www.awwwards.com/sites/shellfirst) demonstrates responsive corporate presentation and clear product-feature hierarchy.
+VSN applies the useful structure (strong editorial hero, proof, team/delivery context and direct contact) in its existing navy, blue and lime brand style. No Awwwards visuals or text were copied.
+
+Public-proof review:
+- [VSN Metafields on Shopify](https://apps.shopify.com/vsn-metafields) is a verifiable VSN-built public product listing. Shopify controls its current features, price and review count; the site links to that live listing instead of duplicating changing claims.
+- [WP Essential WordPress.org profile](https://profiles.wordpress.org/wpessential/) identifies the profile's employer as Vertex Systems Network; the VSN site links to the profile without publishing an unverified personal name.
+- [VSN GitHub organization](https://github.com/Vertex-Systems-Network) is linked as a public engineering presence.
+- Search did not establish official LinkedIn, Facebook, Instagram or X accounts for VSN. No guessed social URLs were added. The site uses only the identifiable GitHub and platform profiles above.
+- Public review listings currently surfaced no submitted reviews for the company or Shopify app. The redesign makes review status inspectable and sets an approval-only testimonial standard. It does not invent customer quotations, ratings, client logos or outcome metrics.
+- Font Awesome Free SVG icons, version 6.7.2, are embedded locally to work with the site's restrictive CSP and direct-file static mode. Icons are credited on the site and are licensed CC BY 4.0; no icon CDN or font dependency is added.
