@@ -1,10 +1,10 @@
 repo: Vertex-Systems-Network/vsn-website
-updated: 2026-09-26
-phase: custom-software-products-navigation
-verified_main_sha: 938393c167be3a5c49d7915d112e598ce1be9a59
+updated: 2026-09-25
+phase: homepage-about-trust-redesign
+verified_main_sha: 3356bd642e204e91aa8e04cfb8a47383d38770ba
 current_issue: null
 current_branch: main
-current_milestone: custom-software-saas-products-and-navigation-merged
+current_milestone: homepage-about-public-proof-and-icons-merged
 architecture: static-html-css-vanilla-js
 runtime_mode: file-direct-open
 implementation_complete: true
@@ -20,7 +20,7 @@ production_readiness_percent: 90
 requested_content_refresh_percent: 100
 content_refresh_ci: passed
 static_integrity_run: 100
-static_integrity_passed_sha: 61768e2fea508170655184a2a3c35d5bac2f45f5
+static_integrity_passed_sha: c08547ed90e3876db63d6d41bc53a05f0b660286
 local_http_server_required: false
 vercel_required: false
 node_runtime_required: false
@@ -78,6 +78,8 @@ completed_milestones:
     result: business-solutions-forms-faqs-and-legal-draft-update-merged
   - pr: 57
     result: custom-software-saas-products-public-repository-catalogue-and-classified-navigation-merged
+  - pr: 59
+    result: homepage-about-public-proof-and-fontawesome-icons-merged
 deferred_items:
   - issue: 14
     item: github-main-protection
@@ -94,8 +96,8 @@ next_valid_action: continue-with-next-requested-website-improvement
 industry_expansion_percent: 100
 ai_solutions_module_percent: 100
 resource_augmentation_module_percent: 100
-latest_pr: 57
-latest_static_integrity_run: 100
+latest_pr: 59
+latest_static_integrity_run: 106
 production_deployed: false
 
 business_solutions_module_percent: 100
@@ -104,5 +106,14 @@ service_form_layout_consistency_percent: 100
 custom_software_saas_module_percent: 100
 products_catalogue_public_repo_audit_percent: 100
 navigation_classification_module_percent: 100
+homepage_redesign_percent: 100
+about_expansion_percent: 100
+trust_social_icon_audit_percent: 100
 audited_public_repository_count: 15
 excluded_private_repository_count: 4
+
+deferred_evidence:
+  - item: official social-network profile URLs
+    reason: no official LinkedIn, Instagram, Facebook or X URLs were verified; only confirmed GitHub, WordPress.org and Shopify profiles are linked
+  - item: named team biographies and client testimonials
+    reason: publish only named people with consent and client-approved genuine feedback
