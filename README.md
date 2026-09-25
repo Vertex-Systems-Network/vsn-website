@@ -130,3 +130,8 @@ Static Integrity passed on the PR head in run #99 and on the merged main commit 
 PR #59 merged to `main` as `3356bd642e204e91aa8e04cfb8a47383d38770ba`. Static Integrity run #106 passed on PR head `c08547ed90e3876db63d6d41bc53a05f0b660286`. The homepage was rebuilt around clearer service paths, company credentials, public product proof, delivery roles and contact. About now gives a fuller company story, role-based delivery model, company details, public profiles and a client-feedback approval policy.
 
 Font Awesome Free 6.7.2 SVGs are embedded locally and credited; the shared footer now links to VSN’s verified GitHub organization, WP Essential WordPress.org profile and Shopify app listing on all 27 pages. No official Facebook, Instagram, LinkedIn or X account URLs, named employee bios or client-approved reviews were available to publish. The service-page main content is unchanged. We did not check or deploy the live website.
+
+
+## Styling fix — Homepage & About (2026-09-26)
+
+The page-specific CSS had been lost during a footer stylesheet update, which left the redesigned Home and About layouts without their grid/card rules. Restored the responsive styles in PR #60 (`17baf7f6b3065d337da6b702ce4bfbf64c92347f`). Static Integrity run #112 passed; local integrity checks also passed for all 27 HTML files and 1,408 local references. Service-page styling was preserved. No production check or deployment was performed.
