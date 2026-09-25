@@ -4,11 +4,11 @@ Date: 2026-09-25
 
 ## Current repository status
 
-The original direct-file website architecture is complete. Owner-requested service, pricing and legal-content improvements remain in draft PR #38 on branch `website-service-pricing-legal-refresh-2026-09`; nothing from this branch has been merged or deployed.
+The original direct-file website architecture and the owner-requested service, pricing, legal-copy and visual refresh are complete on `main`. PR #38 was squash-merged as `700fc02222885d20d000362ce377bf0d4ff1c4e4`; Static Integrity run #54 passed. The source is merged but no production deployment was made.
 
 - Main branch at PR creation: `5d1ff4bc277618677c4681640257cf4e256e067f`
-- Draft PR branch: `website-service-pricing-legal-refresh-2026-09`
-- Current review focus: final profile package and legal copy audit; visual-refresh review is complete
+- Merged PR branch: `website-service-pricing-legal-refresh-2026-09`
+- Current milestone: requested website refresh merged; branch protection remains deferred by owner
 - Runtime architecture: direct-open static HTML, CSS and vanilla JavaScript
 - No Vercel dependency, local HTTP server, Node runtime or build step
 
@@ -24,14 +24,14 @@ The original direct-file website architecture is complete. Owner-requested servi
 
 The CDC signature card is not used on the public website. The public tax-support copy does not claim VSN itself is a licensed tax adviser.
 
-## Completed in the current draft
+## Completed and merged
 
 - Expanded the homepage's engagement process and service overview.
 - Added detailed scoping, operations, controls and client responsibilities to software, e-commerce, AI, social media, BPO and tax-support pages.
 - Added Authority Profile starting packages at $249, $549 and $899 USD with scope and exclusions.
 - Expanded draft Terms, Privacy and Refunds wording for the relevant service models.
 - Fixed duplicate company-location labels and malformed literal newline escapes in progress documents.
-- Kept all work on a review branch; no production deployment or branch-protection change.
+- Merged the reviewed website work to main; no production deployment or branch-protection change.
 
 ## Visual refresh started
 
@@ -59,10 +59,10 @@ Static Integrity run #49 passed on visual-refresh commit `2708f032bd6d36dbe86985
 
 ## Verification and remaining review
 
-Static Integrity passed on visual-refresh commit `2708f032bd6d36dbe869856fa27217179b95268f` (run #49), and on the current metadata commit `02714baffa8c59c4e86c54e528398b2f4ad444ba` (run #50). The final pricing and legal audit commit `b8bdb25b918f9b415025fe89dacb6b3d4cf20868` passed Static Integrity (run #51).
+Static Integrity passed on visual-refresh commit `2708f032bd6d36dbe869856fa27217179b95268f` (run #49), and on the current metadata commit `02714baffa8c59c4e86c54e528398b2f4ad444ba` (run #50). The final pricing and legal audit commit `b8bdb25b918f9b415025fe89dacb6b3d4cf20868` passed Static Integrity (run #51). The competitor benchmark checkpoint passed run #53, and the merged main commit `700fc02222885d20d000362ce377bf0d4ff1c4e4` passed run #54.
 
 Before merge or production use, review proposed prices and have qualified Pakistan legal/corporate counsel review the legal drafts. Confirm payment, tax, refund, privacy-role and provider details against the live business setup.
 
 ## Resume
 
-Next: continue the reference-site audit, then complete owner price approval and qualified Pakistan legal/corporate review. Do not merge or deploy the draft until prices and legal content are approved.
+Next: obtain qualified Pakistan legal/corporate review and verify final package costs and business details before any public production use. Branch protection remains deferred; no deployment was made. Do not merge or deploy the draft until prices and legal content are approved.

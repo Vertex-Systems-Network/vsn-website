@@ -4,14 +4,14 @@ Official static corporate website for **Vertex Systems Network (VSN)**.
 
 ## Status
 
-**Website refresh: in review.** The direct-open static architecture remains complete; the requested service, pricing and legal-content expansion is in draft PR #38; the visual refresh passed Static Integrity (run #49); the final pricing/legal audit corrections passed Static Integrity (run #51).
+**Website refresh: merged to main.** PR #38 was squash-merged on 25 September 2026 as `700fc02222885d20d000362ce377bf0d4ff1c4e4`. Static Integrity run #54 passed on the merge commit.
 
-The direct-file architecture is complete. Service copy, profile pricing, legal wording and the updated visual direction are in draft PR #38; the branch is not merged or deployed.
+The refreshed site now includes expanded service pages, Authority Profile starting packages, expanded legal drafts, and the navy/cobalt/lime visual system. No production deployment was made. Profile prices remain starting fees; legal and tax language should receive qualified Pakistan review before public production use.
 
 
 ## Visual direction
 
-The draft refresh uses a midnight navy, cobalt and lime palette, a more editorial homepage hierarchy and a locally stored hero visual. The visual is original, text-free artwork; no external image host is required.
+The refresh uses a midnight navy, cobalt and lime palette, a more editorial homepage hierarchy and a locally stored hero visual. The visual is original, text-free artwork; no external image host is required.
 
 ## Architecture
 
