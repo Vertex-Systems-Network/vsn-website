@@ -35,3 +35,15 @@ Further FBR research for the implemented tools:
 - [Punjab Revenue Authority](https://pra.punjab.gov.pk/), [Sindh Revenue Board taxable services](https://www.srb.gos.pk/srb/taxable-services/), [KPRA](https://kpra.gov.pk/) and [Balochistan Revenue Authority](https://bra.gob.pk/) — official starting points for provincial service-tax rules.
 
 Implementation note: only the individual progressive estimate embeds a published TY2027 rate schedule. Company liability, transaction withholding, and sales tax depend on entity, section, ATL status, service classification, jurisdiction, credits and other facts, so those tools calculate from a rate the user supplies after checking the relevant official schedule. The estimator suite does not file or transmit data to FBR.
+
+
+## Digital Marketing & Growth service-page benchmark (2026-09-26)
+
+Reviewed public service pages for their scope structure, not to copy their text:
+
+- [Digital Otters — Social Media Management](https://www.digitalotters.pk/social-media-management-pakistan/) — connects content planning, platform-specific creative, publishing, community response, approval workflow and reporting; it distinguishes individual channel operations from campaign planning.
+- [WebCo Pakistan — Social Media Management](https://webcopakistan.com/social-media-management-service/) — makes platform coverage, monthly calendar, creative, community handling, paid-ad support and reporting explicit.
+- [Digital Otters — Email & SMS Marketing](https://www.digitalotters.pk/email-sms-marketing/) — frames email around permission-based audiences, segmentation, automation, deliverability, consent and outcome measurement.
+- [Xcentric Services — Email Marketing](https://www.xcentricservices.com/service/targeted-email-marketing-services) — details campaign operations, audience segmentation, automated sequences, testing and reporting.
+
+Content implications for VSN: distinguish personal brands from company pages; define post and campaign operations separately; explain audience, creative, approval, launch and learning steps; describe email campaign and lifecycle-flow options; make account ownership, ad-spend and list-permission limits visible; use a service-specific enquiry before FAQs. Avoid claiming guaranteed followers, leads, sales, deliverability or return on ad spend.

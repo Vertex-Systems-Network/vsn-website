@@ -113,3 +113,13 @@ Compared the VSN BPO page with Xcentric Services’ public BPO page. The referen
 - Local behavior checks exercise all six calculators and official individual-slab boundaries; static integrity and markup checks are recorded with the resulting PR.
 - PR #45 was squash-merged as `608900a94c3a5b14ec034f5cc189f3b98b9992bd`; Static Integrity run #72 passed on PR head `185d669935e253e6a4b067998b02d0c9c8a9e50a`.
 - No live-site check or production deployment was performed.
+
+
+## Digital Marketing & Growth service update (2026-09-26)
+
+- Repositioned the former social-media-only page as a wider service for individual professional profiles, personal brands, business pages and company channels.
+- Added distinct scope descriptions for profile and page management, content planning and publishing, organic and paid social campaigns, community handling, reporting, newsletters and email lifecycle automation.
+- Added a service-specific enquiry form before the FAQ section. It captures profile or organisation type, the requested marketing work, platforms/tools, target market, cadence and goals, then prepares the service brief in WhatsApp.
+- Set out account ownership, delegated access, client approvals, paid-media billing and permission-based email-list boundaries. The page avoids promised growth figures and excludes platform charges unless an offer includes them.
+- Benchmarked Digital Otters and WebCo Pakistan social-management service pages, plus Digital Otters and Xcentric Services email-marketing pages. The page uses those scope patterns as reference and is independently written.
+- Static validation and CI results will be recorded after the change is merged. No live-site check or production deployment was performed.
