@@ -8,7 +8,7 @@ Official static corporate website for **Vertex Systems Network (VSN)**.
 
 Contact-page improvement: PR #39 was squash-merged as `3846b430844736e50558231d0b36a77d420ccd27`; Static Integrity run #59 passed. The contact card now shows direct support and phone links, and the enquiry form groups all requested service and platform types.
 
-Authority Profile starting fees are finalized for publication at **$249, $549 and $899 USD**. The custom domain currently serves a WordPress “Coming Soon” page; the static version has not yet been uploaded to the existing host.
+Authority Profile starting fees are finalized for publication at **$249, $549 and $899 USD**; PR #40 merged on 25 September 2026 and Static Integrity run #62 passed. The custom domain currently serves a WordPress “Coming Soon” page; the static version has not yet been uploaded to the existing host.
 
 The refreshed site now includes expanded service pages, Authority Profile starting packages, expanded legal drafts, and the navy/cobalt/lime visual system. No production deployment was made. Profile prices remain starting fees; legal and tax language should receive qualified Pakistan review before public production use.
 

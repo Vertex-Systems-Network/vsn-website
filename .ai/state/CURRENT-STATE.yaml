@@ -1,9 +1,9 @@
 repo: Vertex-Systems-Network/vsn-website
 updated: 2026-09-25
-phase: profile-package-pricing-finalization
+phase: profile-package-pricing-finalized-deployment-handoff
 verified_main_sha: 3846b430844736e50558231d0b36a77d420ccd27
 current_issue: null
-current_branch: codex/finalize-profile-starting-fees
+current_branch: main
 current_milestone: profile-package-pricing-finalized
 architecture: static-html-css-vanilla-js
 runtime_mode: file-direct-open
@@ -14,7 +14,7 @@ production_readiness_percent: 90
 requested_content_refresh_percent: 100
 content_refresh_ci: passed
 static_integrity_run: 59
-static_integrity_passed_sha: 3846b430844736e50558231d0b36a77d420ccd27
+static_integrity_passed_sha: a8f030fb4b407c690635e94551bdbe99087815bc
 local_http_server_required: false
 vercel_required: false
 node_runtime_required: false

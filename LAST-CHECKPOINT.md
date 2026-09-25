@@ -4,7 +4,7 @@ Date: 2026-09-25
 
 ## Current repository status
 
-The original direct-file website architecture and the owner-requested service, pricing, legal-copy and visual refresh are complete on `main`. PR #38 was squash-merged as `700fc02222885d20d000362ce377bf0d4ff1c4e4`; Static Integrity run #54 passed. The contact-page improvement was merged in PR #39 as `3846b430844736e50558231d0b36a77d420ccd27`, and Static Integrity run #59 passed. No production deployment was made. The later company-fact audit commit `63fb624e6e9c5198be8195aa6455c3b5f9ef0f3c` clarified the PSEB validity period across 23 pages; run #56 passed.
+The original direct-file website architecture and the owner-requested service, pricing, legal-copy and visual refresh are complete on `main`. PR #38 was squash-merged as `700fc02222885d20d000362ce377bf0d4ff1c4e4`; Static Integrity run #54 passed. The contact-page improvement was merged in PR #39 as `3846b430844736e50558231d0b36a77d420ccd27`, and Static Integrity run #59 passed. PR #40 finalized the Authority Profile rates as `$249/$549/$899 USD` starting fees; run #62 passed on merge commit `a8f030fb4b407c690635e94551bdbe99087815bc`. No production deployment was made. The later company-fact audit commit `63fb624e6e9c5198be8195aa6455c3b5f9ef0f3c` clarified the PSEB validity period across 23 pages; run #56 passed.
 
 - Main branch at PR creation: `5d1ff4bc277618677c4681640257cf4e256e067f`
 - Merged PR branch: `website-service-pricing-legal-refresh-2026-09`
