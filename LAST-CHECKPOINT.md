@@ -35,10 +35,12 @@ The CDC signature card is not used on the public website. The public tax-support
 
 ## Visual refresh started
 
-- Original local hero visual generated and prepared as WebP.
+- Original local hero visual generated, optimized to 1440×614 WebP (52 KB) and stored as `assets/vsn-hero-visual.webp`.
 - Homepage opening section redesigned with a clear service proposition, project CTA, three delivery principles and accessible artwork text.
 - Shared theme shifted from violet-gradient cards to midnight navy, cobalt and lime, with consistent cards, navigation, buttons and page heroes.
 - No Vercel, server or new runtime added.
+
+Static Integrity run #49 passed on visual-refresh commit `2708f032bd6d36dbe869856fa27217179b95268f`.
 
 ## Verification and remaining review
 
