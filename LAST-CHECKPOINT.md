@@ -135,3 +135,13 @@ Compared the VSN BPO page with Xcentric Services’ public BPO page. The referen
 - Benchmarked public CartHighway and TekRevol service-page structure; recorded primary technology-documentation references in `RESEARCH-NOTES.md`.
 - PR #49 was squash-merged as `2afa432dec154018b8e3b92662c4391e2b5fac76`; Static Integrity run #82 passed on the main-branch merge commit.
 - Internal structure checks confirmed one main, one H1, a single labeled service form before FAQs, unique IDs and relative local links. No live production check or deployment was performed.
+
+
+## Digital Marketing, Web Development & Mobile App expansion
+
+- Expanded Digital Marketing & Growth to cover SEO, paid search and social campaigns, content strategy, landing-page conversion paths, client-owned ad accounts, media-spend separation, reporting and a service-specific intake before FAQs.
+- Expanded Web Development & E-commerce with UX/UI, backend/API and custom integration coverage, modern framework options, AI-enabled features, migration and maintenance detail.
+- Added a dedicated Mobile App Development page for native iOS/Android and cross-platform delivery, learning products, creator/tutor and task marketplaces, reward mechanics, local/international readiness, payment/store dependencies, quality testing and post-launch care.
+- Added an app-specific project brief before FAQs and updated the homepage, service catalogue, software-app cross-link, contact routing, sitemap and static validator.
+- Researched Xcentric and DIGIT in Pakistan and international Thoughtbot and Designli service/product pages. Findings and official platform-policy references are recorded in `RESEARCH-NOTES.md`.
+- Code changes are in review; internal structure checks and Static Integrity CI will be recorded after review. No live production check or deployment is planned.

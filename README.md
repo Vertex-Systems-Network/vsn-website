@@ -16,6 +16,10 @@ The refreshed site now includes expanded service pages, Authority Profile starti
 
 The Web Development & E-commerce service now covers managed CMS and store platforms, full-stack application scope, frontend and backend technology combinations, integrations, migration, quality checks, ownership and maintenance. It includes a project-specific WhatsApp brief before FAQs and links to the existing business/profile website and e-commerce detail pages. PR #49 was squash-merged on 25 September 2026 as `2afa432dec154018b8e3b92662c4391e2b5fac76`; Static Integrity run #82 passed on that main-branch commit. No live production check or deployment was performed.
 
+Digital Marketing & Growth has been extended to cover SEO, paid search and social ads, content, landing-page conversion paths, email programmes, reporting and media-budget boundaries. The VSN form captures the current website and paid-media budget status before FAQs.
+
+Web Development & E-commerce now also details UX/UI, custom backend/API work, additional frameworks, AI-enabled web features and post-launch maintenance. A standalone Mobile App Development page covers native iOS/Android, Flutter and React Native, learning and creator/task earning models, payments and store-policy dependencies, QA, release and lifecycle support; a project-specific app brief appears before FAQs. App income, store approval and marketing outcomes are not guaranteed.
+
 The BPO page now includes a dedicated workflow enquiry form immediately before its FAQs, decision-rights guidance for routine versus approval-required work, and a knowledge-maintenance approach for client-approved procedures. The enquiry captures the service area, approximate workload, channels, coverage window, tools and expected start, then prepares those details for WhatsApp. The form does not send data to a VSN server; it cautions visitors not to include customer records or credentials. PR #43 was squash-merged on 25 September 2026 and Static Integrity run #68 passed. No production deployment was made.
 
 
@@ -52,13 +56,13 @@ Do **not** convert local links back to root-relative `/assets/...` or `/contact.
 - `index.html` — corporate homepage
 - `services.html` — expanded service catalogue
 - `web-development-ecommerce.html` — web development & e-commerce
-- `web-development-ecommerce.html` — web development & e-commerce
 - `websites.html` — business website platforms and scope
 - `profile.html` — VSN Authority Profile packages and pricing
-- `software.html` — software & app development
+- `software.html` — custom software & SaaS
+- `mobile-app-development.html` — native and cross-platform mobile apps
 - `ecommerce.html` — e-commerce development
 - `ai-automation.html` — AI & automation
-- `social-media.html` — Digital Marketing & Growth (individual and business profiles, social campaigns and email marketing)
+- `social-media.html` — Digital Marketing & Growth (SEO, paid search/social, profiles, content, email and campaign measurement)
 - `bpo.html` — BPO / managed operations
 - `tax-consulting.html` — tax & compliance services
 - `products.html` — VSN products

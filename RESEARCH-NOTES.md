@@ -70,3 +70,35 @@ Official technology references used to distinguish platform categories and stack
 - OpenCart docs: https://docs.opencart.com/
 
 MEAN and MERN are presented as common combinations (MongoDB, Express, Angular or React, and Node.js), rather than standalone platforms. The page explains that frontend, backend, API and database choices depend on features, data relationships, integrations, maintenance and operating requirements; naming a technology does not imply it fits every engagement.
+
+
+## Digital marketing, web engineering and mobile app service research (2026-09-26)
+
+### Pakistan and regional agency pages
+
+- [Xcentric digital marketing](https://www.xcentricservices.com/service/best-digital-marketing-agency) organizes services across technical/on-page SEO, Meta and Google campaigns, LinkedIn/video/social channel advertising, email campaigns, social management, content, competitor and keyword research, paid budget control and reporting.
+- [Xcentric web development](https://www.xcentricservices.com/service/web-development) groups full-stack engineering, e-commerce, CRM/API integrations, WordPress, UX/UI, AI/ML, maintenance, technology choices, strategy, UX architecture, development and QA.
+- [Xcentric mobile app development](https://www.xcentricservices.com/service/mobile-app-development) covers native and cross-platform delivery, UX/UI, backend/cloud, commerce, product discovery and lifecycle support.
+- [DIGIT mobile app development](https://digit.com.pk/services/mobile-app-development) describes Flutter and React Native options, offline behavior, notifications, analytics, staged product design, device QA, store preparation and ongoing updates. Its published prices and performance figures were not adopted for VSN.
+- These competitor pages were treated as coverage and information-architecture references, not proof of VSN delivery history. VSN does not reuse third-party case studies, numerical results or guarantees.
+
+### International product-development references
+
+- [Thoughtbot product development](https://thoughtbot.com/emea) describes end-to-end research, design, development and product partnership for web and mobile products.
+- [Designli app development](https://origin.designli.co/services/mobile-app-development) focuses on product and user needs with cross-platform delivery; its [e-learning platform case study](https://designli.co/stories/behind-the-knife-elearning-platform-app) highlights extending monetized learning features while maintaining the existing service.
+- Service-page improvements use those themes to explain discovery, real-user flows, release validation, ownership, support and phased scope. No third-party case study or result is represented as VSN work.
+
+### Official platform references and market-dependent rules
+
+- React Native documentation: https://reactnative.dev/Home
+- Flutter supported platforms: https://docs.flutter.dev/reference/supported-platforms
+- Apple App Review Guidelines: https://developer.apple.com/app-store/guidelines/
+- Apple in-app purchase overview: https://developer.apple.com/help/app-store-connect/configure-in-app-purchase-settings/overview-for-configuring-in-app-purchases
+- Google Play payments guidance: https://support.google.com/googleplay/android-developer/answer/10281818?hl=en
+- Mobile store billing, in-app digital content, external payments, account eligibility and regional exceptions can change. The app page avoids stating a universal payment rule; each product needs current review for its target stores, storefronts and markets.
+
+### Positioning boundaries
+
+- Digital Marketing & Growth describes discoverability, SEO, paid search/social, content, email and landing-page work while separating client media spend from VSN's fee and avoiding traffic, leads, ranking or ROAS guarantees.
+- Learning-and-earning app scope distinguishes educational content, marketplace transactions, task compensation and non-cash rewards. The site states that software delivery does not guarantee user income, job availability or reward funding.
+- Product owners remain responsible for operating rules, moderation, substantiating claims, funding any payouts and obtaining legal, tax and payments advice where needed.
