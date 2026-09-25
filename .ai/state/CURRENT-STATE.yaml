@@ -1,10 +1,10 @@
 repo: Vertex-Systems-Network/vsn-website
 updated: 2026-09-25
-phase: tax-calculator-and-service-page-expansion
-verified_main_sha: 608900a94c3a5b14ec034f5cc189f3b98b9992bd
+phase: digital-marketing-growth-service-expansion
+verified_main_sha: 9df3917879138657123db3664eba0cfd58997f4a
 current_issue: null
 current_branch: main
-current_milestone: functional-tax-calculators-tax-intake-form-and-expanded-bpo-content
+current_milestone: digital-marketing-growth-service-page-with-service-specific-enquiry-before-faq
 architecture: static-html-css-vanilla-js
 runtime_mode: file-direct-open
 implementation_complete: true
@@ -13,8 +13,8 @@ module_progress_percent: 100
 production_readiness_percent: 90
 requested_content_refresh_percent: 100
 content_refresh_ci: passed
-static_integrity_run: 72
-static_integrity_passed_sha: 185d669935e253e6a4b067998b02d0c9c8a9e50a
+static_integrity_run: 74
+static_integrity_passed_sha: c20745dc82b0c138fd8dc6d86b3058e87a1c93b1
 local_http_server_required: false
 vercel_required: false
 node_runtime_required: false

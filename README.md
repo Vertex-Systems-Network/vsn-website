@@ -8,6 +8,8 @@ Official static corporate website for **Vertex Systems Network (VSN)**.
 
 Contact-page improvement: PR #39 was squash-merged as `3846b430844736e50558231d0b36a77d420ccd27`; Static Integrity run #59 passed. The contact card now shows direct support and phone links, and the enquiry form groups all requested service and platform types.
 
+Digital Marketing &amp; Growth now replaces the former social-only service positioning with a detailed offer for individual and company profiles, publishing, social campaigns and email marketing; the page includes a dedicated enquiry form before FAQs. The profile/page ownership, approval, list-permission and paid-media boundaries are explicit.
+
 Authority Profile starting fees are finalized for publication at **$249, $549 and $899 USD**; PR #40 merged on 25 September 2026 and Static Integrity run #62 passed. The static version has not yet been uploaded to the existing host. Production domain state is unverified by request.
 
 The refreshed site now includes expanded service pages, Authority Profile starting packages, expanded legal drafts, the navy/cobalt/lime visual system, and expanded BPO and individual/business tax-service pages. The tax page now includes six working browser-side estimate tools: individual income, freelancer/sole-proprietor profit, company provision, sales-tax invoice, withholding/net payment and a tax-reserve planner. The Tax Year 2027 individual schedule is based on FBR's published rate card; entity, payment-section and provincial-service rates are entered from the applicable current source instead of being guessed. The page includes a tax-specific enquiry form before FAQs and cautions visitors not to send tax IDs or documents through WhatsApp. PR #45 was squash-merged as `608900a94c3a5b14ec034f5cc189f3b98b9992bd`; Static Integrity run #72 passed. No production deployment was made. Profile prices remain starting fees; legal and tax language should receive qualified Pakistan review before public production use.
@@ -52,7 +54,7 @@ Do **not** convert local links back to root-relative `/assets/...` or `/contact.
 - `software.html` — software & app development
 - `ecommerce.html` — e-commerce development
 - `ai-automation.html` — AI & automation
-- `social-media.html` — social media management
+- `social-media.html` — Digital Marketing & Growth (individual and business profiles, social campaigns and email marketing)
 - `bpo.html` — BPO / managed operations
 - `tax-consulting.html` — tax & compliance services
 - `products.html` — VSN products
@@ -96,5 +98,5 @@ The exact owner-supplied VSN logo is stored at `assets/vertex-logo.png`. SHA-256
 - Server requirement: **none**
 - Vercel requirement: **none**
 - Main protection: **deferred by owner**
-- Current milestone: BPO service enquiry form added before FAQs; static checks passed
+- Current milestone: Digital Marketing & Growth service page expanded with a service-specific enquiry form before FAQs
 - External production requirement: qualified Pakistan legal/corporate review
