@@ -4,9 +4,9 @@ Official static corporate website for **Vertex Systems Network (VSN)**.
 
 ## Status
 
-**Website content refresh: in review.** The direct-open static architecture remains complete; the requested service, pricing and legal-content expansion is in draft PR #38; static integrity passed in CI: 23 HTML files, 747 local references and 22 sitemap URLs.
+**Website content refresh: in review.** The direct-open static architecture remains complete; the requested service, pricing and legal-content expansion is in draft PR #38; the prior source revision passed static integrity; the updated branch will rerun that check after this content audit.
 
-The current website scope is finalized. No further repository development is required for the approved direct-file architecture.
+The direct-file architecture is complete. Service copy, profile pricing and legal wording remain in review on draft PR #38; the branch is not merged or deployed.
 
 ## Architecture
 
@@ -35,7 +35,8 @@ Do **not** convert local links back to root-relative `/assets/...` or `/contact.
 ## Main pages
 
 - `index.html` — corporate homepage
-- `services.html` — expanded service catalogue\n- `websites.html` — business website platforms and scope
+- `services.html` — expanded service catalogue
+- `websites.html` — business website platforms and scope
 - `profile.html` — VSN Authority Profile packages and pricing
 - `software.html` — software & app development
 - `ecommerce.html` — e-commerce development
@@ -78,11 +79,11 @@ The exact owner-supplied VSN logo is stored at `assets/vertex-logo.png`. SHA-256
 
 ## AI-Native progress
 
-- Repository implementation: **100% — finalized**
+- Static architecture and direct-file portability: **100% — complete**
 - Direct-file portability: **100% — completed**
 - Architecture: **direct-open static HTML + CSS + vanilla JS**
 - Server requirement: **none**
 - Vercel requirement: **none**
 - Main protection: **deferred by owner**
-- Repository development remaining: **none**
+- Current milestone: service-page depth, profile package clarity and legal draft review
 - External production requirement: qualified Pakistan legal/corporate review
