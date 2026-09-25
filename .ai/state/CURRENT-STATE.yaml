@@ -1,68 +1,45 @@
 repo: Vertex-Systems-Network/vsn-website
 updated: 2026-09-25
-phase: code-complete-launch-gated
-verified_main_sha: 43fb9fc1e4cae35e3c2beed1ed55ee6fe56f3782
-current_issue: 5
-current_branch: brand/localize-official-logo
-current_milestone: exact-official-logo-localization
+phase: direct-file-browser-finalization
+verified_main_sha: 185bf03f23767cfcda34f87b6940030d701b1df5
+current_issue: 33
+current_branch: feat/direct-file-browser-mode
+current_milestone: direct-file-browser-portability
 architecture: static-html-css-vanilla-js
-code_complete: true
-production_launch_authorized: false
-module_progress_percent: 100
-repository_implementation_percent: 100
-overall_launch_readiness_percent: 99
-open_external_gates:
-  - issue: 5
-    gate: exact-official-logo-localization-pending-merge
-  - issue: 8
-    gate: vercel-live-qa-runner
-  - issue: 14
-    gate: github-main-protection
-  - gate: qualified-pakistan-legal-corporate-review
-checks:
-  static_integrity_ci: green_on_last_main
-  html_pages: 22
-  framework_dependency: none
-  package_json: absent
-  vercel_runtime_config: absent
-  inline_style_attributes: 0
-  inline_style_blocks: 0
-  unexpected_inline_executable_scripts: rejected
-  jsonld_hash_manifest: enforced
-  meta_csp_pages: 22
-  referrer_policy_pages: 22
-security:
-  csp_unsafe_inline: false
-  csp_unsafe_eval: false
-  csp_img_src: self-only
-  checkout_credentials_persisted: false
-  actions_pinned_to_immutable_sha: true
-  required_status_target: static-integrity
-  main_currently_protected: false
-hosting:
-  provider_target: vercel
-  team: vsnteam
-  project_name: vsn-website
-  project_id: prj_xfZGl8mInhJAo7solaapm6lcsaTS
-  project_exists: true
-  true_preview_url: https://vsn-website-fgb7kni3h-vsnteam.vercel.app
-  preview_protected_by_vercel_auth: true
+runtime_mode: file-direct-open
+local_http_server_required: false
+vercel_required: false
+node_runtime_required: false
+framework_dependency: none
+package_json: absent
+vercel_runtime_config: absent
+html_pages: 22
+javascript:
+  shared_file: assets/app.js
+  enabled: true
+  mobile_navigation: true
+  whatsapp_project_brief: true
+  logo_failure_fallback: true
+paths:
+  root_pages: relative
+  legal_pages: parent-relative
+  root_relative_local_refs_allowed: false
 brand_asset:
-  original_source_url: https://vertexsystemsnetwork.com/wp-content/uploads/2026/02/vertex-logo.png
   local_path: assets/vertex-logo.png
   sha256: ede0edd921742c57af19b513c1aab73e079fe1217f4bc7ad156ab3260109c671
   size_bytes: 60222
   width: 2041
   height: 517
-  png_signature_verified: true
-  all_html_runtime_references_local: true
-legal:
-  internal_content_hardening: complete
-  qualified_counsel_review: required-before-production
-runner:
-  real_preview_exists: true
-  blocked_by_preview_auth_for_full_automation: true
-handoff:
-  canonical_file: LAUNCH-HANDOFF.md
-  production_domain_switch_allowed: false
-next_valid_action: review logo-localization PR at exact head and merge only after static-integrity is green
+security:
+  static_integrity_ci: active
+  exact_logo_identity_enforced: true
+  root_relative_local_refs_rejected: true
+  main_currently_protected: false
+open_gates:
+  - issue: 33
+    gate: direct-file-browser-portability
+  - issue: 14
+    gate: github-main-protection
+  - gate: qualified-pakistan-legal-corporate-review
+production_domain_switch_allowed: false
+next_valid_action: merge Issue #33 only after static-integrity passes on the exact PR head

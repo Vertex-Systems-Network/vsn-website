@@ -2,44 +2,35 @@
 
 Date: 2026-09-25
 
+## User architecture decision
+Vercel is no longer part of the website plan.
+
+Required runtime:
+- plain HTML
+- CSS
+- vanilla JavaScript
+- no local server
+- no Node runtime
+- no framework
+- open `index.html` directly in the browser
+
 ## Verified starting main
-- Repo: Vertex-Systems-Network/vsn-website
-- Main SHA: `43fb9fc1e4cae35e3c2beed1ed55ee6fe56f3782`
-- PR #30: merged
-- Resulting `static-integrity` run #21: green
-- Repository state before this milestone: code complete / launch gated
+- `185bf03f23767cfcda34f87b6940030d701b1df5`
+- exact official logo is already localized and CI-verified
 
 ## Active milestone
-- Issue #5 — exact official logo localization
-- Branch: `brand/localize-official-logo`
+Issue #33 — direct-file browser portability.
 
-## Exact official logo evidence
-Owner source:
-`https://vertexsystemsnetwork.com/wp-content/uploads/2026/02/vertex-logo.png`
+Branch:
+`feat/direct-file-browser-mode`
 
-Retrieved server-side from Vercel and verified before commit:
-- upstream status: 200
-- content type: image/png
-- size: 60,222 bytes
-- dimensions: 2041×517
-- PNG signature: valid
-- SHA-256: `ede0edd921742c57af19b513c1aab73e079fe1217f4bc7ad156ab3260109c671`
-- local path: `assets/vertex-logo.png`
+All 22 HTML pages are being converted from root-absolute local paths to file-safe relative paths.
 
-All 22 HTML pages now reference the local asset and use `img-src 'self'`.
+## Required invariant
+- root pages: `assets/app.js`, `contact.html`, `legal/privacy.html`
+- legal pages: `../assets/app.js`, `../contact.html`, `privacy.html`
+- no local `href="/..."` or `src="/..."`
 
-## Vercel state
-- Team: `vsnteam`
-- Project: `vsn-website`
-- Project ID: `prj_xfZGl8mInhJAo7solaapm6lcsaTS`
-- True non-production preview: `https://vsn-website-fgb7kni3h-vsnteam.vercel.app`
-- Preview is protected by Vercel Authentication.
-- Custom production domain remains untouched.
-
-## Remaining production gates after this milestone merges
-- Issue #8 — full live QA, deployed-origin header review and Runner Benchmark.
+## Remaining non-runtime gates
 - Issue #14 — actual GitHub main protection.
-- Qualified Pakistan legal/corporate review.
-
-## Next deterministic action
-Open the logo-localization PR, require green `static-integrity`, exact-head merge, verify resulting main, then close Issue #5.
+- Qualified Pakistan legal/corporate review before public production use.

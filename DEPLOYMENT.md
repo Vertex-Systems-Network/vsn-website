@@ -1,54 +1,41 @@
-# Static Preview Deployment Readiness
+# Direct-file distribution
 
-This repository is a plain static website. Hosting must not introduce a framework, Node runtime, package manager requirement, or application build step.
+The VSN website does not require a deployment platform or local development server to run.
 
-## Verified source
-- Repository: `Vertex-Systems-Network/vsn-website`
-- Last verified main before logo-localization candidate: `43fb9fc1e4cae35e3c2beed1ed55ee6fe56f3782`
-- Before deployment, use the current `main` only if `static-integrity` is green.
-- Production branch: `main`
+## Use
 
-## Vercel preview settings
+Keep the repository directory structure intact and open:
 
-Current Vercel project:
+`index.html`
 
-- Team: `VSN` / `vsnteam`
-- Project name: `vsn-website`
-- Project ID: `prj_xfZGl8mInhJAo7solaapm6lcsaTS`
-- Git repository target: `Vertex-Systems-Network/vsn-website`
-- Framework preset: **Other**
-- Root directory: repository root
-- Build command: **none**
-- Install command: **none**
-- Output directory: repository root / static files
-- Environment variables: none required for the current static site
+directly in a modern browser.
 
-Do not add `package.json`, framework dependencies, or `vercel.json` merely to make deployment work.
+## Runtime files
 
-## Preview-only gate
+- `*.html`
+- `legal/*.html`
+- `assets/styles.css`
+- `assets/app.js`
+- `assets/vertex-logo.png`
 
-The first deployment must remain a preview. Do not attach or switch the production domain until the checks below pass.
+JavaScript is client-side vanilla JS only.
 
-## Live verification checklist
+## Path rules
 
-1. Homepage and primary pages return expected content.
-2. Internal links do not produce unexpected 404s.
-3. The dedicated 404 page renders and remains `noindex,follow`.
-4. Mobile navigation opens, closes, and remains usable with JavaScript disabled.
-5. Contact form generates the expected WhatsApp handoff.
-6. Repository-local official logo renders; simulated image failure displays the VSN text fallback.
-7. Sitemap and robots.txt resolve from the preview origin.
-8. Security headers are reviewed against `SECURITY-HEADERS.md`.
-9. Accessibility, Lighthouse, broken-link, and external-asset checks from `.ai/RUNNER-BENCHMARK.md` are executed together.
-10. Only after a clean preview should production/domain activation be considered.
+Do not use root-relative local paths.
 
-## Current preview state
+Correct on root pages:
+- `assets/styles.css`
+- `assets/app.js`
+- `contact.html`
 
-The connected Vercel write action now works and created project `vsn-website`.
+Correct inside `legal/`:
+- `../assets/styles.css`
+- `../assets/app.js`
+- `../contact.html`
 
-Verified true non-production preview:
-`https://vsn-website-fgb7kni3h-vsnteam.vercel.app`
+## Optional future hosting
 
-The preview is protected by Vercel Authentication, which currently blocks a complete automated browser/Runner pass from this execution surface. The custom production domain remains untouched.
+If the same folder is later uploaded to a normal static web host, these relative paths remain valid. Hosting is optional and is not required for local/direct use.
 
-Current blocker is preview-authenticated live QA, not repository deployment creation.
+Vercel is not part of the current architecture.

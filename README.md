@@ -9,18 +9,22 @@ Official static corporate website for **Vertex Systems Network (VSN)**.
 - Shared vanilla JavaScript in `assets/app.js`
 - No Node.js runtime
 - No framework dependency
-- No Vercel-specific package or configuration required
-- Can run locally from any static HTTP server or compatible web host
+- No Vercel dependency
+- No local HTTP server required
+- No build/install command required
+- Direct browser opening supported through relative local paths
 
-## Local preview
+## Run directly
 
-From the repository root:
+1. Keep the repository folder structure unchanged.
+2. Open `index.html` directly in a modern browser.
+3. Navigation, CSS, logo assets and `assets/app.js` resolve through relative paths.
+4. The contact form prepares the project brief in WhatsApp using client-side JavaScript; it does not require a VSN backend.
 
-```bash
-python -m http.server 8080
-```
+Root pages use paths such as `assets/styles.css` and `contact.html`.
+Pages inside `legal/` use paths such as `../assets/styles.css` and `../contact.html`.
 
-Then open `http://localhost:8080`.
+Do **not** convert local links back to root-relative `/assets/...` or `/contact.html` paths, because those break direct `file://` opening.
 
 ## Main pages
 
@@ -44,15 +48,11 @@ Then open `http://localhost:8080`.
 
 ## Legal
 
-Legal pages are in `legal/`. Internal consistency hardening is documented in `LEGAL-REVIEW.md`; final Pakistan-qualified legal/corporate review is still required before production launch.
-
-## Deployment
-
-This repository intentionally stays host-agnostic. Deploy the files to any static hosting environment or standard web server.
+Legal pages are in `legal/`. Internal consistency hardening is documented in `LEGAL-REVIEW.md`; final Pakistan-qualified legal/corporate review is still required before a public production launch.
 
 ## Continuous integration
 
-`.github/workflows/static-integrity.yml` runs fast source-integrity checks with Python standard library only. The stable job name is `static-integrity`. Third-party actions are pinned to immutable commit SHAs, checkout credentials are not persisted, and Dependabot tracks GitHub Actions updates. This remains separate from the deferred Runner Benchmark.
+`.github/workflows/static-integrity.yml` validates source integrity with Python standard library only. It verifies the exact official logo, local references, CSP/hash invariants, sitemap/legal requirements, and now rejects root-relative local `href`/`src` values so direct-file compatibility cannot regress.
 
 ## Repository governance
 
@@ -60,20 +60,13 @@ Target main-branch protection and deterministic apply/verify commands are docume
 
 ## Branding
 
-The exact owner-supplied VSN logo is stored at `assets/vertex-logo.png` and used locally for the header, footer and favicon. Verified SHA-256: `ede0edd921742c57af19b513c1aab73e079fe1217f4bc7ad156ab3260109c671`; dimensions: `2041×517`; size: `60,222 bytes`.
-
+The exact owner-supplied VSN logo is stored at `assets/vertex-logo.png`. SHA-256: `ede0edd921742c57af19b513c1aab73e079fe1217f4bc7ad156ab3260109c671`; dimensions: `2041×517`; size: `60,222 bytes`.
 
 ## AI-Native progress
 
-- Repository state: **CODE COMPLETE / LAUNCH GATED**
-- Last verified `main`: `43fb9fc1e4cae35e3c2beed1ed55ee6fe56f3782`
-- Current module: exact official logo localization — PR pending review
 - Repository implementation: **100%**
-- Source security/CSP: **100%**
-- CI/security automation: **100%**
-- Overall launch readiness: **99%**
-- Exact official logo binary is now repository-local and machine-verified.
-- Runtime CSP image policy is reduced to `img-src 'self'`.
-- Vercel project `vsn-website` now exists; live QA/Runner work remains under Issue #8.
-- Branch protection Issue #14 and final qualified Pakistan legal/corporate review remain production gates.
-- Production/domain switch: **not authorized yet**.
+- Architecture: **direct-open static HTML + CSS + vanilla JS**
+- Server requirement: **none**
+- Vercel requirement: **none**
+- Current compatibility milestone: Issue #33
+- Branch protection Issue #14 and qualified Pakistan legal/corporate review remain governance/production gates.

@@ -57,3 +57,16 @@ See `LAUNCH-HANDOFF.md` for the authoritative production handoff and launch orde
 - Reduced source-level CSP image policy to `img-src 'self'`.
 - Extended `static-integrity` to verify the exact logo binary and reject legacy remote-logo references.
 - Vercel project `vsn-website` now exists; remaining live QA/Runner work stays under Issue #8.
+
+
+## Direct-file browser architecture — 2026-09-25
+- Owner decision: Vercel removed from the active website plan.
+- Website runtime is plain HTML5 + shared CSS + vanilla JavaScript.
+- No local HTTP server is required.
+- No Node.js runtime, framework, build command or install step is required.
+- All root HTML pages use file-safe relative local paths.
+- All `legal/` pages use parent-relative paths for root assets/pages.
+- `static-integrity` rejects root-relative local `href="/..."` and `src="/..."` values to prevent `file://` regressions.
+- Exact official logo remains repository-local and hash-verified.
+- Contact-to-WhatsApp, mobile navigation and logo fallback remain client-side JavaScript behavior.
+- Hosted-origin Runner/Lighthouse/header checks are optional only if the same static folder is later published online.

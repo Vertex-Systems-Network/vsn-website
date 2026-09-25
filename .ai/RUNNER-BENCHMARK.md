@@ -1,23 +1,26 @@
 # Runner Benchmark
 
-Runner-heavy tasks are intentionally deferred and batched near final launch, per repository workflow policy.
+Runner-heavy hosted-origin checks are intentionally separate from the direct-file website runtime.
 
-## Deferred tasks
-- Automated link crawl against final production origin
+## Direct-file release mode
+
+The VSN website is designed to run by opening `index.html` directly in a browser:
+- no Vercel
+- no local HTTP server
+- no Node runtime
+- no framework
+
+These hosted-origin checks are therefore **not required to use the direct-file package**.
+
+## Optional future hosted-origin checks
+
+Only if the same static folder is later published on a normal web host, run these checks together against that final public origin:
+- automated link crawl
 - Lighthouse / performance benchmark
-- Accessibility automation against deployed pages
-- Security-header scan against deployed origin
-- Broken external asset validation
-- Final sitemap/robots production-origin verification
+- accessibility automation
+- security response-header scan
+- broken external asset validation
+- sitemap / robots verification
 
-Do not rerun these on every small development milestone. Run them together once the production hosting target is available and the content/legal blockers are closed.
-
-
-## Activation note — 2026-09-25
-
-A real Vercel preview now exists:
-`https://vsn-website-fgb7kni3h-vsnteam.vercel.app`
-
-The preview is protected by Vercel Authentication. Activate the full live-origin benchmark only when the runner/browser can access the authenticated preview consistently.
-
-Do not run the live-origin jobs against the existing WordPress production site as a substitute, and do not switch the custom production domain before the benchmark passes.
+Do not introduce a local server or deployment platform merely to run this benchmark.
+Do not treat this benchmark as a blocker for direct `file://` use.

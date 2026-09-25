@@ -46,7 +46,7 @@ CSP_META_POLICY = "default-src 'self'; base-uri 'self'; object-src 'none'; scrip
 CSP_META_TAG = "<meta http-equiv=\"Content-Security-Policy\" content=\"default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self' 'sha256-ZM1h9WKmDZGFgxszmJKYmle/IrxoM/sfN9fSDcx5Rbk='; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'none'; worker-src 'none'; form-action 'self'\">"
 REFERRER_META_TAG = "<meta name=\"referrer\" content=\"strict-origin-when-cross-origin\">"
 OFFICIAL_LOGO_PATH = "assets/vertex-logo.png"
-OFFICIAL_LOGO_REF = "/assets/vertex-logo.png"
+OFFICIAL_LOGO_REF = "assets/vertex-logo.png"
 REMOTE_LOGO_URL = "https://vertexsystemsnetwork.com/wp-content/uploads/2026/02/vertex-logo.png"
 OFFICIAL_LOGO_SHA256 = "ede0edd921742c57af19b513c1aab73e079fe1217f4bc7ad156ab3260109c671"
 OFFICIAL_LOGO_SIZE = 60222
@@ -133,8 +133,23 @@ def main() -> int:
 
         if REMOTE_LOGO_URL in text:
             errors.append(f"{source}: legacy remote logo URL must not be used")
-        if OFFICIAL_LOGO_REF not in text:
-            errors.append(f"{source}: local official logo reference missing")
+        expected_logo_ref = (
+            "../assets/vertex-logo.png" if source.startswith("legal/")
+            else OFFICIAL_LOGO_REF
+        )
+        if expected_logo_ref not in text:
+            errors.append(
+                f"{source}: expected direct-file logo reference {expected_logo_ref!r}"
+            )
+        root_local_refs = re.findall(
+            r"""\b(?:href|src)=["']/(?!/)[^"']*["']""",
+            text,
+            re.I,
+        )
+        if root_local_refs:
+            errors.append(
+                f"{source}: root-relative local refs break file:// mode: {root_local_refs}"
+            )
 
         if not re.match(r"\s*<!doctype html>", text, re.I):
             errors.append(f"{source}: missing HTML5 doctype")
