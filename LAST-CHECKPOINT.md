@@ -69,4 +69,12 @@ Before public production use, confirm package costs and have qualified Pakistan 
 
 ## Resume
 
-Next: obtain qualified Pakistan legal/corporate review and verify final package costs and business details before any public production use. Branch protection remains deferred; no deployment was made. Do not deploy publicly until legal review and the business-fact check are complete.
+## Contact-page improvement (2026-09-25)
+
+- Added direct `mailto:` support email and `tel:` phone links to the contact card.
+- Grouped the enquiry service selector into software/apps, website/e-commerce platforms, and AI/business services, including WordPress/WP Essential, Shopify, Webflow, Wix, Laravel, SaaS, AI-native development, AI solutions, and AI automation.
+- Added a required placeholder so a visitor must intentionally select a service before submitting the brief.
+- `python3 scripts/validate_static_site.py` passed: 23 HTML files, 748 local references and 22 sitemap URLs. `git diff --check` passed.
+- This is a contact-page conversion improvement; it does not change the static architecture or production deployment status.
+
+Next: continue bounded website improvements when requested. Branch protection remains deferred and no production deployment was made.
