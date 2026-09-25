@@ -10,7 +10,7 @@ Contact-page improvement: PR #39 was squash-merged as `3846b430844736e50558231d0
 
 Authority Profile starting fees are finalized for publication at **$249, $549 and $899 USD**; PR #40 merged on 25 September 2026 and Static Integrity run #62 passed. The static version has not yet been uploaded to the existing host. Production domain state is unverified by request.
 
-The refreshed site now includes expanded service pages, Authority Profile starting packages, expanded legal drafts, the navy/cobalt/lime visual system, and a detailed BPO service page. No production deployment was made. Profile prices remain starting fees; legal and tax language should receive qualified Pakistan review before public production use.
+The refreshed site now includes expanded service pages, Authority Profile starting packages, expanded legal drafts, the navy/cobalt/lime visual system, and expanded BPO and individual/business tax-service pages. The tax page separates services by taxpayer type and labels the proposed calculator tools as in development. No production deployment was made. Profile prices remain starting fees; legal and tax language should receive qualified Pakistan review before public production use.
 
 
 ## Visual direction
