@@ -1,101 +1,50 @@
 # Repository Security & Governance
 
-This repository uses an AI-led pull-request workflow. The governance target is to prevent unsafe direct changes to `main` without introducing a mandatory human-review bottleneck.
+## Current owner decision — 2026-09-25
 
-## Target `main` protection
+The VSN website repository is finalized for the approved scope.
 
-- Changes must reach `main` through a pull request.
-- Required approving reviews: **0**.
-- Protection applies to administrators.
-- Force pushes are disabled.
-- Branch deletion is disabled.
-- Conversation resolution is required.
-- Linear history is required.
-- Required status check: **`static-integrity`**.
-- Required status checks use strict mode so the protected branch must be up to date before merge.
-- Squash merge is the preferred merge method for AI milestones.
+GitHub `main` branch protection is **deferred by owner for now**. The branch is currently unprotected. This is an explicit governance deferral and must not be represented as active protection.
 
-This protects the branch while preserving exact-head review → expected-head merge.
+## Preserved future target
 
-## Current verified state — 2026-09-25
+If branch protection is enabled later, the intended policy remains:
 
-- `main` protection: **disabled**
-- required status-check enforcement: **off**
-- configured required contexts: **none**
-- repository rulesets: **none**
-- latest verified `main`: `cbe9337aa76825ddfdd1fa7cbbb6dc4286067474`
-- current ChatGPT GitHub integration does not expose branch-protection administration writes
+- changes reach `main` through pull requests
+- required approving reviews: **0**
+- administrators enforced
+- force pushes disabled
+- branch deletion disabled
+- conversation resolution required
+- linear history required
+- required status check: **`static-integrity`**
+- required status checks in strict/up-to-date mode
 
-Issue #14 remains open until GitHub reports the target policy active.
+## Future activation assets
 
-## Apply locally
-
-Requires GitHub CLI authenticated with repository administration permission:
+The repository keeps deterministic activation and verification tooling:
 
 ```powershell
 pwsh scripts/apply_main_protection.ps1 -Repository Vertex-Systems-Network/vsn-website -Branch main
-```
-
-Then verify:
-
-```powershell
 pwsh scripts/verify_main_protection.ps1 -Repository Vertex-Systems-Network/vsn-website -Branch main
 ```
 
-## Apply through GitHub Actions
-
-The repository includes a manual workflow:
+A manual workflow is also preserved:
 
 `.github/workflows/main-protection-admin.yml`
 
-It reuses the same audited apply/verify scripts and does not modify website runtime files.
-
-Before running it, create a fine-grained GitHub personal access token that is:
-
-- owned by an administrator/owner allowed to administer this repository
-- scoped only to `Vertex-Systems-Network/vsn-website`
-- granted repository permission **Administration: Read and write**
-- not granted unrelated permissions
-
-Store the token as the repository Actions secret:
+It expects the repository Actions secret:
 
 `VSN_GOVERNANCE_ADMIN_TOKEN`
 
-Do not commit the token, place it in workflow YAML, or paste it into issues, pull requests, logs, or chat.
+The token must remain narrowly scoped to this repository with Administration read/write permission and must never be committed to repository content.
 
-After the workflow is merged to `main`:
+## Current verified state
 
-1. Open **Actions → Main Protection Admin**.
-2. Choose **Run workflow** on `main`.
-3. Enter `APPLY` in the confirmation field.
-4. Run the workflow.
-5. The workflow applies the policy and immediately executes `verify_main_protection.ps1`.
-6. Close Issue #14 only after the workflow is green and GitHub reports `main` as protected with `static-integrity` required in strict mode.
-
-## Verify
-
-The verification target remains:
-
-```powershell
-pwsh scripts/verify_main_protection.ps1 -Repository Vertex-Systems-Network/vsn-website -Branch main
-```
-
-Expected checks:
-
-- pull request required
-- `static-integrity` required
-- status checks strict
-- required approvals = 0
-- administrators enforced
-- linear history required
-- force pushes blocked
-- branch deletion blocked
-- conversations resolved
-
-## CI rule
-
-Do not add fake or unstable required status checks just to make branch protection look stronger. `static-integrity` is proven green on both PR and `main`, so the apply/verify scripts require it in strict mode. Runner-heavy hosted checks are not part of the direct-file runtime.
+- `main protected`: false
+- required status-check enforcement: off
+- repository rulesets: none
 
 ## Change-control rule
 
-Security/governance changes should use a dedicated issue and pull request. Protection must not be weakened silently to unblock a merge.
+Do not silently claim protection is active. If protection is enabled later, verify the actual GitHub state before updating this document or closing any future governance task.
