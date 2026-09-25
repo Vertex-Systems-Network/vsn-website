@@ -15,7 +15,7 @@ ROOT = Path(__file__).resolve().parents[1]
 EXPECTED_HTML = {
     "404.html","about.html","ai-automation.html","bpo.html","contact.html",
     "ecommerce.html","index.html","industries.html","legal/cookies.html",
-    "legal/privacy.html","legal/refunds.html","legal/terms.html","payments.html",
+    "legal/privacy.html","legal/refunds.html","legal/terms.html","mobile-app-development.html","payments.html",
     "process.html","products.html","profile.html","services.html",
     "social-media.html","software.html","tax-consulting.html","trust.html","web-development-ecommerce.html","websites.html","work.html",
 }
@@ -314,8 +314,8 @@ def main() -> int:
         errors.append(f"sitemap.xml: invalid XML: {exc}")
         urls = []
 
-    if len(urls) != 23:
-        errors.append(f"sitemap.xml: expected 23 public URLs, found {len(urls)}")
+    if len(urls) != 24:
+        errors.append(f"sitemap.xml: expected 24 public URLs, found {len(urls)}")
     if any(url.endswith("/404.html") for url in urls):
         errors.append("sitemap.xml: 404 page must not be indexed")
     if any(not url.startswith("https://vertexsystemsnetwork.com/") for url in urls):
