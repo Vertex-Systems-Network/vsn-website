@@ -1,7 +1,7 @@
 repo: Vertex-Systems-Network/vsn-website
 updated: 2026-09-25
 phase: tax-calculator-and-service-page-expansion
-verified_main_sha: 8c36c276e7988c0a08fb297442e263030f2baab6
+verified_main_sha: 608900a94c3a5b14ec034f5cc189f3b98b9992bd
 current_issue: null
 current_branch: main
 current_milestone: functional-tax-calculators-tax-intake-form-and-expanded-bpo-content
@@ -13,8 +13,8 @@ module_progress_percent: 100
 production_readiness_percent: 90
 requested_content_refresh_percent: 100
 content_refresh_ci: passed
-static_integrity_run: 68
-static_integrity_passed_sha: 3b077c33f328507f40c1059188361626bf933756
+static_integrity_run: 72
+static_integrity_passed_sha: 185d669935e253e6a4b067998b02d0c9c8a9e50a
 local_http_server_required: false
 vercel_required: false
 node_runtime_required: false
@@ -58,6 +58,8 @@ completed_milestones:
     result: branch-protection-activation-path-ready
   - pr: 43
     result: bpo-specific-enquiry-form-added-before-faq
+  - pr: 45
+    result: functional-tax-calculators-tax-intake-and-expanded-tax-bpo-content
 deferred_items:
   - issue: 14
     item: github-main-protection
