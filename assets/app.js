@@ -4,8 +4,11 @@ const links=document.querySelector('.nav-links');
 if(toggle&&links){
   const closeMenu=()=>{links.classList.remove('open');toggle.setAttribute('aria-expanded','false')};
   toggle.addEventListener('click',()=>{const open=links.classList.toggle('open');toggle.setAttribute('aria-expanded',String(open))});
+  const dropdowns=[...links.querySelectorAll('.nav-dropdown')];
+  dropdowns.forEach(dropdown=>dropdown.addEventListener('toggle',()=>{if(dropdown.open)dropdowns.forEach(other=>{if(other!==dropdown)other.open=false})}));
   links.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMenu));
-  document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMenu()});
+  document.addEventListener('click',e=>{if(e.target instanceof Element&&!e.target.closest('.nav-links'))dropdowns.forEach(dropdown=>{dropdown.open=false})});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeMenu();dropdowns.forEach(dropdown=>{dropdown.open=false})}});
 }
 if('IntersectionObserver' in window){
   const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}}),{threshold:.12});
