@@ -101,3 +101,14 @@ Compared the VSN BPO page with Xcentric Services’ public BPO page. The referen
 - `python3 scripts/validate_static_site.py` passed: 23 HTML pages and 752 local references. `git diff --check` passed.
 - PR #43 was squash-merged as `8c36c276e7988c0a08fb297442e263030f2baab6`; Static Integrity run #68 passed on the PR head.
 - No live-site check or production deployment was performed.
+
+## Tax calculator implementation and service expansion (2026-09-25)
+
+- Replaced the placeholder “in development” cards with six working in-page, browser-side tools: Tax Year 2027 individual income estimate, freelancer/sole-proprietor profit estimate, company provision using an entered applicable rate, withholding/net-payment arithmetic using an entered rate, sales-tax invoice/input-credit estimate using the applicable entered rate, and a monthly tax-reserve planner.
+- Implemented the individual progressive schedule based on the FBR Tax Year 2027 withholding rate card, published as updated through 30 June 2026. Rates that vary by company classification, tax provision or provincial service category remain user-entered and explicitly linked to current official references.
+- Added a tax-only intake form immediately before FAQs; it routes taxpayer type, tax year, support category and jurisdiction with the brief through WhatsApp, and tells users not to send tax IDs or documents there.
+- Expanded tax content with taxpayer-specific document checklists, periodic recordkeeping guidance, classification limits and official federal/provincial tax-source links.
+- Expanded the BPO page with agent decision boundaries and client-approved knowledge-change controls; the material adds operating detail without duplicating the existing service catalogue or six-step delivery flow.
+- No rates are assumed for standard/small companies, special regimes, specific withholding sections or provincial services. This prevents a generic calculator from presenting a potentially wrong universal rate.
+- Local behavior checks exercise all six calculators and official individual-slab boundaries; static integrity and markup checks are recorded with the resulting PR.
+- No live-site check or production deployment was performed.

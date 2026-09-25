@@ -23,4 +23,15 @@ Official FBR references checked for page content:
 - [Income-tax return forms and statements](https://www.fbr.gov.pk/categ/income-tax-return-forms-tax-year-2004-returns-certificate-and-statements/85)
 - [Sales Tax Act](https://www.fbr.gov.pk/categ/sales-tax-act/301) — current listing showed an edition amended through 30 June 2026.
 
-This review did not hard-code tax rates, eligibility rules or deadlines into the marketing page. Calculator features are presented as in development, must display their applicable tax year and source, and are described as estimates—not FBR tools or final tax determinations. Federal and provincial service-tax jurisdiction must be established for a particular service before a calculator or filing workflow is offered.
+At the time of the initial service-copy review, no rates were hard-coded and the calculator tools remained planned. The later functional calculator update below supersedes that status. Federal and provincial service-tax jurisdiction must still be established for a particular service before selecting a rate or finalizing a filing position.
+
+## Functional calculator update (2026-09-25)
+
+Further FBR research for the implemented tools:
+
+- [Withholding Tax Rate Card for Tax Year 2027](https://www.fbr.gov.pk/withholding-taxes-rate-card/174298/174301) — the current card is marked updated through 30 June 2026 as per Finance Act 2026 and publishes the individual salary schedule used for the TY2027 estimator. FBR's card itself states that the amended Ordinance prevails in case of conflict.
+- [Finance Act 2026](https://fbr.gov.pk/Budget2026-27/FinanceAct.html) and [Income Tax Ordinance editions](https://www.fbr.gov.pk/Categ/Income-Tax-Ordinance/326) — used to anchor the individual's tax-year schedule and note the controlling statute.
+- [FBR sales-tax basics](https://www.fbr.gov.pk/sales-tax-basics/51148/101149) — federal sales tax applies to goods, while services may fall under ICT or provincial/territorial rules; the calculators therefore require a user-confirmed applicable rate.
+- [Punjab Revenue Authority](https://pra.punjab.gov.pk/), [Sindh Revenue Board taxable services](https://www.srb.gos.pk/srb/taxable-services/), [KPRA](https://kpra.gov.pk/) and [Balochistan Revenue Authority](https://bra.gob.pk/) — official starting points for provincial service-tax rules.
+
+Implementation note: only the individual progressive estimate embeds a published TY2027 rate schedule. Company liability, transaction withholding, and sales tax depend on entity, section, ATL status, service classification, jurisdiction, credits and other facts, so those tools calculate from a rate the user supplies after checking the relevant official schedule. The estimator suite does not file or transmit data to FBR.
