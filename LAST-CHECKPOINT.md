@@ -76,4 +76,9 @@ Before public production use, confirm package costs and have qualified Pakistan 
 - PR #39 was squash-merged as `3846b430844736e50558231d0b36a77d420ccd27`; Static Integrity run #59 passed.
 - The change does not alter the static architecture or production deployment status.
 
-Next: upload the static site bundle to the existing Middlehost hosting account. The live domain currently serves a WordPress “Coming Soon” page. Secure hosting sign-in was not completed, so no production upload or domain change was made. Branch protection remains deferred.
+Next: publish the static site bundle to the existing Middlehost hosting account when publishing resumes. No production upload or domain change was made; per owner direction, the live domain was not checked. Branch protection remains deferred.
+
+
+## BPO service-page improvement (2026-09-25)
+
+Compared the VSN BPO page with Xcentric Services’ public BPO page. The reference clearly groups contact-center offerings, shows a delivery process, and answers buyer questions about quality, data, visibility, workload changes and costs. VSN’s page already emphasized process control and data access, so the update broadens its service catalogue and adds engagement models, a six-step handover, measurable reporting guidance, security responsibilities and buyer FAQs. It avoids unverified claims such as guaranteed 24/7 coverage, named client outcomes or guaranteed results.
