@@ -123,3 +123,10 @@ PR #57 was squash-merged to `main` as `938393c167be3a5c49d7915d112e598ce1be9a59`
 The Products page now includes the VSN Metafields marketplace link and a repository directory covering all **15 public VSN organization repositories** discovered in the audit. Four private repositories were excluded. Cards distinguish marketplace product information from active engineering initiatives, templates/tooling and the company website source; repository status labels follow README, docs and manifest evidence and do not claim commercial availability, production readiness or full security review.
 
 Static Integrity passed on the PR head in run #99 and on the merged main commit in run #100. Internal checks found no broken local links or fragments across the 27 HTML pages, confirmed the software enquiry form appears before its FAQs, and verified 15 public-repository links. No production deployment or live-site check was performed.
+
+
+## Latest milestone — Homepage, About & trust evidence (2026-09-25)
+
+PR #59 merged to `main` as `3356bd642e204e91aa8e04cfb8a47383d38770ba`. Static Integrity run #106 passed on PR head `c08547ed90e3876db63d6d41bc53a05f0b660286`. The homepage was rebuilt around clearer service paths, company credentials, public product proof, delivery roles and contact. About now gives a fuller company story, role-based delivery model, company details, public profiles and a client-feedback approval policy.
+
+Font Awesome Free 6.7.2 SVGs are embedded locally and credited; the shared footer now links to VSN’s verified GitHub organization, WP Essential WordPress.org profile and Shopify app listing on all 27 pages. No official Facebook, Instagram, LinkedIn or X account URLs, named employee bios or client-approved reviews were available to publish. The service-page main content is unchanged. We did not check or deploy the live website.
