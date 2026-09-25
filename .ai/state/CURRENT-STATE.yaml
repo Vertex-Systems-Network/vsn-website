@@ -1,16 +1,16 @@
 repo: Vertex-Systems-Network/vsn-website
 updated: 2026-09-25
-phase: repository-governance-activation
-verified_runtime_main_sha: cbe9337aa76825ddfdd1fa7cbbb6dc4286067474
-current_issue: 14
-current_branch: feat/main-protection-admin-workflow
-current_milestone: github-main-protection
+phase: finalized-code-complete
+verified_main_sha: 16a181f9791bc01dea390b561541bc9c568b5815
+current_issue: null
+current_branch: main
+current_milestone: finalized
 architecture: static-html-css-vanilla-js
 runtime_mode: file-direct-open
 implementation_complete: true
-module_progress_percent: 90
 repository_implementation_percent: 100
-overall_launch_readiness_percent: 99
+module_progress_percent: 100
+production_readiness_percent: 99
 local_http_server_required: false
 vercel_required: false
 node_runtime_required: false
@@ -39,29 +39,24 @@ security:
   exact_logo_identity_enforced: true
   root_relative_local_refs_rejected: true
   main_currently_protected: false
-  required_status_checks_enforcement: off
-  configured_required_status_contexts: []
-  repository_rulesets: []
 governance:
-  issue: 14
-  target_check: static-integrity
-  target_strict_status_checks: true
-  target_required_human_approvals: 0
-  admin_apply_script: scripts/apply_main_protection.ps1
-  admin_verify_script: scripts/verify_main_protection.ps1
-  admin_workflow: .github/workflows/main-protection-admin.yml
-  admin_workflow_secret: VSN_GOVERNANCE_ADMIN_TOKEN
-  admin_workflow_secret_permission: repository-administration-write
-  current_connector_admin_write: unavailable
-  activation_status: pending-admin-token-and-workflow-run
+  branch_protection_status: deferred_by_owner
+  branch_protection_issue: 14
+  branch_protection_required_for_repo_finalization: false
+  future_apply_script: scripts/apply_main_protection.ps1
+  future_verify_script: scripts/verify_main_protection.ps1
+  future_admin_workflow: .github/workflows/main-protection-admin.yml
 completed_milestones:
   - issue: 33
     pr: 34
-    merge_sha: c77af261bdee0e4d834d6fa78989724a79e4d879
     result: direct-file-browser-portability-complete
-open_gates:
+  - pr: 36
+    result: branch-protection-activation-path-ready
+deferred_items:
   - issue: 14
-    gate: github-main-protection
-  - gate: qualified-pakistan-legal-corporate-review
+    item: github-main-protection
+    reason: owner-deferred-for-now
+external_production_requirements:
+  - qualified-pakistan-legal-corporate-review
 production_domain_switch_allowed: false
-next_valid_action: merge governance workflow PR, add VSN_GOVERNANCE_ADMIN_TOKEN secret, run Main Protection Admin with APPLY, then verify protection
+next_valid_action: none-for-repository-development
