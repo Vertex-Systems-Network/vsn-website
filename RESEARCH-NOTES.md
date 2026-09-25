@@ -124,3 +124,16 @@ Technical and governance references used to shape AI service scope:
 - Added resource-augmentation.html with individual specialist, dedicated pod, temporary burst and fractional models; scoped roles, responsibilities and a dedicated pre-FAQ enquiry form.
 - Updated Services catalogue, Contact service routing, sitemap and static integrity expectations (26 HTML files; 25 indexed URLs).
 - PR #53 merged as b95912519a6b7dc26bf6efd4d9d6bfc2122fdf49; Static Integrity run #89 passed on PR head and run #90 passed on main. No live site check or deployment.
+
+
+## Business Solutions and service design consistency (2026-09-26)
+
+Research for the Pakistan setup, launch and ongoing operations service:
+
+- [SECP company registration](https://www.secp.gov.pk/company-formation/registration-of-company/) describes name reservation and incorporation as formal filing steps. VSN copy therefore describes setup coordination and authority-specific review rather than promising registration approval.
+- [SECP Ultimate Beneficial Ownership FAQ](https://www.secp.gov.pk/faq/what-is-the-purpose-behind-the-requirement-to-maintain-ultimate-beneficial-ownership-information-by-the-companies/) describes identifying the true natural-person owners/controllers in applicable cases. The service explicitly excludes nominee/placeholder ownership to hide a true controller; any VSN investment must be real, separately agreed and transparently recorded.
+- [SECP foreign company branch/liaison-office guidance](https://www.secp.gov.pk/document/procedure-for-registration-of-branch-or-liaison-office/) and the current [Companies Regulations listing](https://www.secp.gov.pk/wp-content/uploads/2026/04/Companies-Regulations-2024-updated-upto-25.07.2025-Reviewed-14042026.pdf) show that foreign-company presence is a distinct route with its own documents and permission questions. The page separates that from a locally incorporated company and requires current qualified review.
+- [FBR income-tax registration for companies](https://www.fbr.gov.pk/categ/income-tax/51148/30846/71150) and [company/AOP enrolment requirements](https://www.fbr.gov.pk/categ/income-tax/51148/30846/71149) identify company, principal-officer, director/shareholder, activity and authorization information relevant to registration. Since routes and portal procedures may change, VSN content directs users to confirm the current checklist rather than advertising a fixed outcome.
+- [GoGlobal market-entry model](https://goglobal.com/market-entry-and-expansion/) groups work into scope, establishment and continuing operations, with entity, workforce, payroll, accounting/tax and HR support. VSN adapts that modular market-entry structure to Pakistan and its actual delivery boundaries; the page does not claim to be an EOR, licensed legal adviser, bank or regulator.
+
+PR #55 also normalized the AI Solutions and Resource Augmentation forms to the shared two-column form-card pattern and the shared FAQ accordion component used by BPO, Tax, Web and Digital Marketing. Corrected the Mobile App page's stale Open Graph/Twitter metadata discovered during the review. PR #55 merged as d59fb75827a58ba1f40a82fdc69b1c357015d29e; Static Integrity run #94 passed on PR head and run #95 passed on main. No live or production check and no deployment.
