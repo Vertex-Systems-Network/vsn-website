@@ -1,10 +1,10 @@
 repo: Vertex-Systems-Network/vsn-website
 updated: 2026-09-25
 phase: web-development-ecommerce-service-expansion
-verified_main_sha: 14e6944b33936c6272c2a6287f671ee9a14461d4
+verified_main_sha: 2afa432dec154018b8e3b92662c4391e2b5fac76
 current_issue: null
-current_branch: web-development-ecommerce-service-2026-09
-current_milestone: web-development-ecommerce-service-page-with-project-specific-enquiry-before-faq
+current_branch: main
+current_milestone: web-development-ecommerce-service-merged-and-internally-validated
 architecture: static-html-css-vanilla-js
 runtime_mode: file-direct-open
 implementation_complete: true
@@ -15,8 +15,8 @@ web_development_ecommerce_content_refresh_percent: 100
 production_readiness_percent: 90
 requested_content_refresh_percent: 100
 content_refresh_ci: passed
-static_integrity_run: 80
-static_integrity_passed_sha: eb4799f96c95d995b964e4117d111af887ae6310
+static_integrity_run: 82
+static_integrity_passed_sha: 2afa432dec154018b8e3b92662c4391e2b5fac76
 local_http_server_required: false
 vercel_required: false
 node_runtime_required: false
@@ -41,7 +41,7 @@ brand_asset:
   width: 2041
   height: 517
 security:
-  static_integrity_ci: green_on_pr_head
+  static_integrity_ci: green_on_latest_main
   exact_logo_identity_enforced: true
   root_relative_local_refs_rejected: true
   main_currently_protected: false
@@ -64,7 +64,8 @@ completed_milestones:
     result: functional-tax-calculators-tax-intake-and-expanded-tax-bpo-content
   - pr: 47
     result: digital-marketing-growth-service-page-and-enquiry-form
-  - result: web-development-ecommerce-service-page-with-full-stack-platform-coverage-form-before-faq
+  - pr: 49
+    result: web-development-ecommerce-service-page-full-stack-platform-coverage-form-before-faq
 deferred_items:
   - issue: 14
     item: github-main-protection
@@ -76,4 +77,4 @@ profile_package_prices:
   status: owner-finalized-starting-fees
   usd: [249, 549, 899]
 deployment_status: waiting-for-hosting-panel-access
-next_valid_action: merge-web-development-ecommerce-service-update-after-static-integrity-ci-passes
+next_valid_action: continue-with-next-requested-website-improvement
