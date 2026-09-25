@@ -16,6 +16,7 @@ if(form){form.addEventListener('submit',e=>{
   e.preventDefault();
   const d=new FormData(form);
   const lines=[`Name: ${d.get('name')||''}`,`Company: ${d.get('company')||''}`,`Email: ${d.get('email')||''}`,`Service: ${d.get('service')||''}`,`Budget: ${d.get('budget')||''}`,`Timeline: ${d.get('timeline')||''}`,`Message: ${d.get('message')||''}`];
+  form.querySelectorAll('[data-brief-label]').forEach(field=>{if(field.value)lines.push(`${field.dataset.briefLabel}: ${field.value}`)});
   const msg=encodeURIComponent(`Hello VSN, I would like to discuss a project.
 
 ${lines.join('\n')}`);

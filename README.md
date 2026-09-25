@@ -12,6 +12,8 @@ Authority Profile starting fees are finalized for publication at **$249, $549 an
 
 The refreshed site now includes expanded service pages, Authority Profile starting packages, expanded legal drafts, the navy/cobalt/lime visual system, and expanded BPO and individual/business tax-service pages. The tax page separates services by taxpayer type and labels the proposed calculator tools as in development. No production deployment was made. Profile prices remain starting fees; legal and tax language should receive qualified Pakistan review before public production use.
 
+The BPO page now includes a dedicated workflow enquiry form immediately before its FAQs. It asks for the BPO service area, approximate workload, channels, coverage window, tools and expected start, then prepares those details for WhatsApp. The form does not send data to a VSN server; the BPO brief cautions visitors not to include customer records or credentials. This improvement is merged through its own reviewed PR; no production deployment was made.
+
 
 ## Visual direction
 
@@ -94,5 +96,5 @@ The exact owner-supplied VSN logo is stored at `assets/vertex-logo.png`. SHA-256
 - Server requirement: **none**
 - Vercel requirement: **none**
 - Main protection: **deferred by owner**
-- Current milestone: profile-pricing/legal audit and reference-site benchmark complete
+- Current milestone: BPO service enquiry form added before FAQs; static checks passed
 - External production requirement: qualified Pakistan legal/corporate review
