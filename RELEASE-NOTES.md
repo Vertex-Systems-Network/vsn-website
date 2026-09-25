@@ -70,3 +70,11 @@ See `LAUNCH-HANDOFF.md` for the authoritative production handoff and launch orde
 - Exact official logo remains repository-local and hash-verified.
 - Contact-to-WhatsApp, mobile navigation and logo fallback remain client-side JavaScript behavior.
 - Hosted-origin Runner/Lighthouse/header checks are optional only if the same static folder is later published online.
+
+
+## Homepage, About and site-wide trust links — 2026-09-25
+- PR #59 squash-merged: `3356bd642e204e91aa8e04cfb8a47383d38770ba`.
+- Static Integrity run #106 passed on the PR head.
+- Redesigned homepage and expanded About; added role-based delivery visibility, registration facts, public product proof and genuine-feedback standards.
+- Added local, credited Font Awesome Free SVG icons and verified public profile links in all 27 footers. Service-page main content remained unchanged.
+- No production inspection or deployment. Official social profile URLs and client-approved reviews remain unprovided.
