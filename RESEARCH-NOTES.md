@@ -137,3 +137,28 @@ Research for the Pakistan setup, launch and ongoing operations service:
 - [GoGlobal market-entry model](https://goglobal.com/market-entry-and-expansion/) groups work into scope, establishment and continuing operations, with entity, workforce, payroll, accounting/tax and HR support. VSN adapts that modular market-entry structure to Pakistan and its actual delivery boundaries; the page does not claim to be an EOR, licensed legal adviser, bank or regulator.
 
 PR #55 also normalized the AI Solutions and Resource Augmentation forms to the shared two-column form-card pattern and the shared FAQ accordion component used by BPO, Tax, Web and Digital Marketing. Corrected the Mobile App page's stale Open Graph/Twitter metadata discovered during the review. PR #55 merged as d59fb75827a58ba1f40a82fdc69b1c357015d29e; Static Integrity run #94 passed on PR head and run #95 passed on main. No live or production check and no deployment.
+
+
+## Vertex Systems Network public repository and product audit (2026-09-26)
+
+The VSN organization search returned **15 public repositories** and four private repositories in the visible inventory. Only public repositories are linked on the public Products page; private repositories and their names/content are excluded. The review covered each public repository's default-branch metadata and recursive file tree, README or available project documentation, and representative package/plugin manifests where present. This is a product-scope and public-status audit, not a line-by-line security assessment, legal licence opinion, production certification, or live deployment check.
+
+| Public repository | Scope evidenced by repository | Public status represented on the site |
+|---|---|---|
+| [vsn-marketing](https://github.com/Vertex-Systems-Network/vsn-marketing) | Provider-agnostic marketing operations: campaign, publishing, approvals, scheduling and operator workflows | Active development |
+| [vsn-builder](https://github.com/Vertex-Systems-Network/vsn-builder) | Shopify-native visual commerce builder; app manifest, engineering specification and merchant/developer docs | Public source; customer release availability unconfirmed |
+| [ai-native-project-operating-system](https://github.com/Vertex-Systems-Network/ai-native-project-operating-system) | Reusable AI-native Git project template and governance protocol | Template/protocol; README says not a live app or billing service |
+| [ai-automation-force](https://github.com/Vertex-Systems-Network/ai-automation-force) | Provider-agnostic creative/media-production platform foundation | Planning/consent/milestone gates apply; not presented as launched |
+| [vsn-local-server](https://github.com/Vertex-Systems-Network/vsn-local-server) | Cross-platform local developer server, CLI/desktop, runtime and release tooling | Active development; README says VSN 1.0 is not certified or stable |
+| [wpessential](https://github.com/Vertex-Systems-Network/wpessential) | Modular WordPress application platform | Plugin manifest 0.1.0-dev; active milestone-gated, non-GA development |
+| [vsn-website](https://github.com/Vertex-Systems-Network/vsn-website) | Static company website source | Corporate site code; not a separate software product |
+| [vsn-klyvesta](https://github.com/Vertex-Systems-Network/vsn-klyvesta) | PSX investing-platform direction with manual, AI-assisted and guarded-auto modes | Non-live staging; real-money operation remains blocked/not authorized |
+| [omnexa](https://github.com/Vertex-Systems-Network/omnexa) | Modular enterprise business platform covering ERP, CRM, finance, commerce and related domains | Platform engineering; release availability not established |
+| [wp-elementor-prep](https://github.com/Vertex-Systems-Network/wp-elementor-prep) | Figma audit/safe-preparation tooling for WordPress and Elementor | Alpha; publishable activation disabled and production acceptance unclaimed |
+| [vsn-commerce](https://github.com/Vertex-Systems-Network/vsn-commerce) | Unified Laravel/React commerce application with customer, seller, admin and API surfaces | Active engineering; production acceptance gates remain |
+| [workforce-intelligence](https://github.com/Vertex-Systems-Network/workforce-intelligence) | Laravel/React workforce operations and attendance/time workflows | Release-readiness work in progress; not production-verified |
+| [nexora](https://github.com/Vertex-Systems-Network/nexora) | Secure modular Laravel/Inertia application platform | Source/CI and real-target readiness are separate; target remains blocked |
+| [vsn-voice-ai](https://github.com/Vertex-Systems-Network/vsn-voice-ai) | Hybrid real-time voice and meeting-intelligence platform | First commercial-core phase in progress; external release gates apply |
+| [brovexa](https://github.com/Vertex-Systems-Network/brovexa) | Business intelligence, opportunity research and lead-operations system | Development in progress; persistence and provider-activation gates remain |
+
+The public product catalogue retains the existing VSN Metafields marketplace link and distinguishes that product listing from development repositories, reusable templates and the corporate website source. Each project card states its evidence-based current boundary; public visibility alone does not promise a release, commercial-use licence, support or compatibility.
