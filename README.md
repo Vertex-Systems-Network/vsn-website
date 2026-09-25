@@ -58,7 +58,16 @@ Direct-file portability PR #34 passed exact-head Static Integrity run #24 and wa
 
 ## Repository governance
 
-Target main-branch protection and deterministic apply/verify commands are documented in `SECURITY-GOVERNANCE.md`. Repository protection must require pull requests while keeping required human approvals at zero for the AI-led workflow.
+Target main-branch protection is documented in `SECURITY-GOVERNANCE.md`.
+
+Current verified GitHub state:
+- `main` protection: **disabled**
+- required status-check enforcement: **off**
+- repository rulesets: **none**
+
+Repository-side apply/verify scripts are complete. A manual GitHub Actions workflow, `.github/workflows/main-protection-admin.yml`, now provides a controlled activation path once repository secret `VSN_GOVERNANCE_ADMIN_TOKEN` is configured with narrowly scoped repository Administration write permission.
+
+The target policy still requires pull requests, `static-integrity` in strict mode, zero required human approvals, administrator enforcement, linear history, conversation resolution, and blocks force pushes/deletion.
 
 ## Branding
 
@@ -70,8 +79,10 @@ The exact owner-supplied VSN logo is stored at `assets/vertex-logo.png`. SHA-256
 - Issue #33: **closed**
 - PR #34: **merged**
 - Repository implementation: **100%**
+- Main-protection automation: **ready for admin-secret activation**
+- Issue #14 governance milestone: **90%**
 - Architecture: **direct-open static HTML + CSS + vanilla JS**
 - Server requirement: **none**
 - Vercel requirement: **none**
 - Overall launch readiness: **99%**
-- Remaining gates: Issue #14 main-branch protection and qualified Pakistan legal/corporate review.
+- Remaining gates: Issue #14 active main-branch protection and qualified Pakistan legal/corporate review.
