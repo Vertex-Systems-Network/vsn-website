@@ -1,10 +1,10 @@
 repo: Vertex-Systems-Network/vsn-website
 updated: 2026-09-25
-phase: service-page-enquiry-enhancement
+phase: tax-calculator-and-service-page-expansion
 verified_main_sha: 8c36c276e7988c0a08fb297442e263030f2baab6
 current_issue: null
 current_branch: main
-current_milestone: bpo-service-enquiry-form-added
+current_milestone: functional-tax-calculators-tax-intake-form-and-expanded-bpo-content
 architecture: static-html-css-vanilla-js
 runtime_mode: file-direct-open
 implementation_complete: true
