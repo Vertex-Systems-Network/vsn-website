@@ -8,7 +8,7 @@ This file records internal content-readiness checks for the VSN corporate websit
 - The project brief form does not submit to a VSN website database; it prepares a WhatsApp message and the visitor chooses whether to send it.
 - Repository search found no use of `document.cookie`, `localStorage`, `gtag`, analytics scripts or tracking pixels on the default branch at the 2026-09-24 review point.
 - Current payment copy tells customers to use official invoices/verified checkout and not send full card details by chat, email or WhatsApp.
-- Public legal identity used across policies: Vertex Systems Network (Private) Limited, SECP 0313834, NTN H979166, Multan, Punjab, Pakistan.
+- Public legal identity used across policies: Vertex Systems Network (Private) Limited, SECP 0313834, NTN H979166, Islamabad Capital Territory, Pakistan.
 
 ## Internal consistency checks completed
 
@@ -40,6 +40,13 @@ Counsel should review at minimum:
 
 If the site later adds analytics, advertising, account creation, direct card checkout, user uploads, authentication, new SaaS products, or a materially different sales/refund model, re-open legal review before treating the current policies as launch-ready.
 
+
+## Final audit corrections (2026-09-25)
+
+- Corrected the internal public-identity note from Multan, Punjab to Islamabad Capital Territory, consistent with the supplied company filing details.
+- Removed the unsupported “Most selected” claim from the Authority package.
+- Replaced the Punjab-specific court venue with neutral competent-jurisdiction wording under Pakistani law; counsel must still confirm the final clause.
+- Clarified profile package exclusions for translation, photography/AI portraits, press outreach, domain, hosting, integrations and maintenance.
 
 ## Owner-requested service expansion (2026-09-25)
 

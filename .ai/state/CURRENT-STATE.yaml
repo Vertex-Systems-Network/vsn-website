@@ -1,10 +1,10 @@
 repo: Vertex-Systems-Network/vsn-website
 updated: 2026-09-25
-phase: visual-system-and-homepage-refresh
+phase: profile-pricing-and-legal-final-review
 verified_main_sha: 5d1ff4bc277618677c4681640257cf4e256e067f
 current_issue: null
 current_branch: website-service-pricing-legal-refresh-2026-09
-current_milestone: visual-system-and-homepage-refresh
+current_milestone: profile-pricing-and-legal-final-review
 architecture: static-html-css-vanilla-js
 runtime_mode: file-direct-open
 implementation_complete: true
@@ -12,7 +12,7 @@ repository_implementation_percent: 100
 module_progress_percent: 90
 production_readiness_percent: 90
 requested_content_refresh_percent: 97
-content_refresh_ci: passed
+content_refresh_ci: pending-final-audit-commit
 static_integrity_passed_sha: 2708f032bd6d36dbe869856fa27217179b95268f
 local_http_server_required: false
 vercel_required: false
@@ -62,4 +62,4 @@ deferred_items:
 external_production_requirements:
   - qualified-pakistan-legal-corporate-review
 production_domain_switch_allowed: false
-next_valid_action: final-review-profile-prices-legal-copy-and-open-pr-preview-before-merge
+next_valid_action: verify-final-audit-ci-then-owner-review-profile-prices-and-qualified-counsel-review

@@ -8,7 +8,7 @@ The original direct-file website architecture is complete. Owner-requested servi
 
 - Main branch at PR creation: `5d1ff4bc277618677c4681640257cf4e256e067f`
 - Draft PR branch: `website-service-pricing-legal-refresh-2026-09`
-- Current review focus: shared design refresh, homepage visual hierarchy, then final pricing/legal review
+- Current review focus: final profile package and legal copy audit; visual-refresh review is complete
 - Runtime architecture: direct-open static HTML, CSS and vanilla JavaScript
 - No Vercel dependency, local HTTP server, Node runtime or build step
 
@@ -42,12 +42,20 @@ The CDC signature card is not used on the public website. The public tax-support
 
 Static Integrity run #49 passed on visual-refresh commit `2708f032bd6d36dbe869856fa27217179b95268f`.
 
+## Final pricing and legal audit (2026-09-25)
+
+- Removed the unsupported “Most selected” sales claim from the $549 Authority package.
+- Made the package note explicit that translation, photography/AI portraits, press outreach, integrations, domain, hosting and ongoing maintenance are excluded unless the written proposal includes them.
+- Corrected the internal legal identity note from Multan, Punjab to Islamabad Capital Territory.
+- Changed the Terms dispute clause to neutral competent-jurisdiction wording under Pakistani law and retained the mandatory-rights safeguard. This remains draft wording for qualified counsel.
+- Package prices remain proposed starting fees pending owner approval.
+
 ## Verification and remaining review
 
-Static Integrity passed on service-content commit `cfc5944948b0b9f3fed8b4e8f90fd3f54c2b7fb7` (workflow run #47, success). A metadata-only progress update follows that verified source commit.
+Static Integrity passed on visual-refresh commit `2708f032bd6d36dbe869856fa27217179b95268f` (run #49), and on the current metadata commit `02714baffa8c59c4e86c54e528398b2f4ad444ba` (run #50). The final audit edits in this checkpoint are awaiting Static Integrity.
 
 Before merge or production use, review proposed prices and have qualified Pakistan legal/corporate counsel review the legal drafts. Confirm payment, tax, refund, privacy-role and provider details against the live business setup.
 
 ## Resume
 
-Next: verify the visual refresh with Static Integrity, inspect the changed source and continue legal/pricing final review. Do not merge or deploy the draft until prices and legal content are approved.
+Next: verify Static Integrity on the final audit commit, then complete owner price approval and qualified Pakistan legal/corporate review. Do not merge or deploy the draft until prices and legal content are approved.

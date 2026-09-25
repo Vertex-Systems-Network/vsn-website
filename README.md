@@ -4,7 +4,7 @@ Official static corporate website for **Vertex Systems Network (VSN)**.
 
 ## Status
 
-**Website refresh: in review.** The direct-open static architecture remains complete; the requested service, pricing and legal-content expansion is in draft PR #38; the latest visual-refresh commit passed Static Integrity (run #49).
+**Website refresh: in review.** The direct-open static architecture remains complete; the requested service, pricing and legal-content expansion is in draft PR #38; the visual refresh passed Static Integrity (run #49); the final pricing/legal audit corrections are in the latest draft commit and awaiting their own check.
 
 The direct-file architecture is complete. Service copy, profile pricing, legal wording and the updated visual direction are in draft PR #38; the branch is not merged or deployed.
 
@@ -90,5 +90,5 @@ The exact owner-supplied VSN logo is stored at `assets/vertex-logo.png`. SHA-256
 - Server requirement: **none**
 - Vercel requirement: **none**
 - Main protection: **deferred by owner**
-- Current milestone: service-page depth, profile package clarity and legal draft review
+- Current milestone: profile-pricing and legal final audit
 - External production requirement: qualified Pakistan legal/corporate review
