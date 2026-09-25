@@ -2,35 +2,43 @@
 
 Date: 2026-09-25
 
-## User architecture decision
-Vercel is no longer part of the website plan.
+## Completed milestone
 
-Required runtime:
+Issue #33 — direct-file browser portability — is complete.
+
+PR #34 was merged to `main` using the exact reviewed head:
+
+- PR head: `4a53e98531b6613a94ff6c2c908bfb23d4d7c814`
+- PR Static Integrity: run #24 — success
+- Resulting main: `c77af261bdee0e4d834d6fa78989724a79e4d879`
+- Resulting-main Static Integrity: run #25 — success
+- Issue #33: closed as completed
+
+## Final runtime contract
+
 - plain HTML
-- CSS
+- shared CSS
 - vanilla JavaScript
-- no local server
+- no local HTTP server
 - no Node runtime
 - no framework
+- no Vercel dependency
 - open `index.html` directly in the browser
+- all 22 HTML pages use file-safe relative local paths
+- root-relative local `href="/..."` and `src="/..."` references are rejected by static-integrity
 
-## Verified starting main
-- `185bf03f23767cfcda34f87b6940030d701b1df5`
-- exact official logo is already localized and CI-verified
+## Verified invariants
 
-## Active milestone
-Issue #33 — direct-file browser portability.
+- root pages use references such as `assets/app.js`, `contact.html`, `legal/privacy.html`
+- legal pages use references such as `../assets/app.js`, `../contact.html`, `privacy.html`
+- exact official logo identity remains machine-verified
+- mobile navigation, Escape close, WhatsApp project brief and logo fallback remain in vanilla JavaScript
 
-Branch:
-`feat/direct-file-browser-mode`
+## Remaining gates
 
-All 22 HTML pages are being converted from root-absolute local paths to file-safe relative paths.
+1. Issue #14 — apply and verify actual GitHub `main` protection.
+2. Qualified Pakistan legal/corporate review before public production use.
 
-## Required invariant
-- root pages: `assets/app.js`, `contact.html`, `legal/privacy.html`
-- legal pages: `../assets/app.js`, `../contact.html`, `privacy.html`
-- no local `href="/..."` or `src="/..."`
+## Next valid action
 
-## Remaining non-runtime gates
-- Issue #14 — actual GitHub main protection.
-- Qualified Pakistan legal/corporate review before public production use.
+Continue with Issue #14 repository governance without changing the direct-file runtime architecture.
