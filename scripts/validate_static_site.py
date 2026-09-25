@@ -17,7 +17,7 @@ EXPECTED_HTML = {
     "ecommerce.html","index.html","industries.html","legal/cookies.html",
     "legal/privacy.html","legal/refunds.html","legal/terms.html","payments.html",
     "process.html","products.html","profile.html","services.html",
-    "social-media.html","software.html","tax-consulting.html","trust.html","websites.html","work.html",
+    "social-media.html","software.html","tax-consulting.html","trust.html","web-development-ecommerce.html","websites.html","work.html",
 }
 REQUIRED_FILES = {
     "assets/app.js","assets/styles.css","assets/vertex-logo.png","robots.txt","sitemap.xml",".well-known/security.txt",
@@ -314,8 +314,8 @@ def main() -> int:
         errors.append(f"sitemap.xml: invalid XML: {exc}")
         urls = []
 
-    if len(urls) != 22:
-        errors.append(f"sitemap.xml: expected 22 public URLs, found {len(urls)}")
+    if len(urls) != 23:
+        errors.append(f"sitemap.xml: expected 23 public URLs, found {len(urls)}")
     if any(url.endswith("/404.html") for url in urls):
         errors.append("sitemap.xml: 404 page must not be indexed")
     if any(not url.startswith("https://vertexsystemsnetwork.com/") for url in urls):

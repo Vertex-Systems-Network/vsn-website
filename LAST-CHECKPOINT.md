@@ -124,3 +124,13 @@ Compared the VSN BPO page with Xcentric Services’ public BPO page. The referen
 - Benchmarked Digital Otters and WebCo Pakistan social-management service pages, plus Digital Otters and Xcentric Services email-marketing pages. The page uses those scope patterns as reference and is independently written.
 - PR #47 was squash-merged as `4753b4e8ce7c91abb6bf1d22d3b606da520a3298`; Static Integrity run #76 passed on PR head `3b9b6423e374854c4aedf7a40be6502a42aca204`.
 - Structural QA found one unique service form before FAQs, no duplicate paragraph copy or IDs, and no inline scripts/styles or root-relative local links. No live-site check or production deployment was performed.
+
+
+## Web development & e-commerce service expansion
+
+- Added a detailed service page for business and profile websites, CMS sites, web applications, SaaS/portals, custom full-stack work, online stores, integrations, migration, QA, ownership and ongoing maintenance.
+- Listed WordPress / WP Essential, Shopify, WooCommerce, Webflow, Wix, OpenCart, Laravel, Symfony, React, Vue.js, Angular, Node.js, MEAN and MERN with selection boundaries; MEAN/MERN are identified as technology combinations.
+- Added a service-specific enquiry form before the FAQ section. The static form prepares a visitor-reviewed WhatsApp message and tells visitors not to submit credentials or confidential records.
+- Updated the homepage, service catalogue, contact-service routing, sitemap, validator, README and research notes. Existing business/profile and e-commerce detail pages remain linked as focused follow-up pages.
+- Benchmarked public CartHighway and TekRevol service-page structure; recorded primary technology-documentation references in `RESEARCH-NOTES.md`.
+- Internal source and CI verification is pending PR review. No live production check or deployment is included.
