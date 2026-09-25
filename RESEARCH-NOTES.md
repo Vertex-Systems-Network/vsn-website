@@ -47,3 +47,26 @@ Reviewed public service pages for their scope structure, not to copy their text:
 - [Xcentric Services — Email Marketing](https://www.xcentricservices.com/service/targeted-email-marketing-services) — details campaign operations, audience segmentation, automated sequences, testing and reporting.
 
 Content implications for VSN: distinguish personal brands from company pages; define post and campaign operations separately; explain audience, creative, approval, launch and learning steps; describe email campaign and lifecycle-flow options; make account ownership, ad-spend and list-permission limits visible; use a service-specific enquiry before FAQs. Avoid claiming guaranteed followers, leads, sales, deliverability or return on ad spend.
+
+
+## Web development and e-commerce service research (2026-09-25)
+
+Agency pages reviewed for the service architecture and delivery coverage:
+
+- [CartHighway ecommerce development](https://carthighway.com/) organizes work around discovery and competitor review, UX/content/technical planning, design/development, QA/launch, platform comparison, migrations and ongoing optimization. Its public copy also describes product/catalog structure, integrations, merchant operations and the assumptions that affect pricing and timelines.
+- [TekRevol web development](https://www.tekrevol.com/web-development) separates websites, e-commerce, web applications, CMS, modernization, headless commerce and AI-oriented use cases. Its [Shopify service page](https://www.tekrevol.com/shopify-development-services) sets out planning, wireframes, UI design, development/launch checks and post-launch maintenance. These pages were reviewed as examples of information depth, not as evidence of VSN case results or a basis for copied claims.
+- VSN's page uses that useful sequence while keeping platform selection conditional, making account/data ownership and third-party responsibilities explicit, linking the detailed website and ecommerce pages, and avoiding guaranteed rankings, sales or migration outcomes.
+
+Official technology references used to distinguish platform categories and stack composition:
+
+- React: https://react.dev/learn/describing-the-ui
+- Angular: https://angular.dev/overview
+- Vue.js: https://vuejs.org/guide/introduction.html
+- Node.js: https://nodejs.org/en/learn/getting-started/introduction-to-nodejs
+- Laravel: https://laravel.com/docs/13.x/routing
+- Symfony: https://symfony.com/doc/current/create_framework/introduction.html
+- Shopify Storefront API: https://shopify.dev/docs/storefronts/headless/building-with-the-storefront-api
+- WooCommerce developer docs: https://developer.woocommerce.com/docs/
+- OpenCart docs: https://docs.opencart.com/
+
+MEAN and MERN are presented as common combinations (MongoDB, Express, Angular or React, and Node.js), rather than standalone platforms. The page explains that frontend, backend, API and database choices depend on features, data relationships, integrations, maintenance and operating requirements; naming a technology does not imply it fits every engagement.
