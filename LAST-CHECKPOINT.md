@@ -189,3 +189,16 @@ Continue with the next owner-requested service or product improvement.
 - Added the organization inventory, evidence scope and classification rationale to `RESEARCH-NOTES.md`.
 - Checks: Static Integrity run #99 passed on PR head `61768e2fea508170655184a2a3c35d5bac2f45f5`; resulting-main run #100 passed. Internal checks verified 27 pages, all local links and fragments, unique IDs, one nav per page, form-before-FAQ order and all 15 public repository links.
 - No production deployment or live-site verification. Product availability, licences and release readiness remain item-specific and are not inferred from public repository visibility.
+
+
+## Homepage, About, trust and public-profile refresh (2026-09-25)
+
+PR #59 squash-merged to `main` as `3356bd642e204e91aa8e04cfb8a47383d38770ba`. Static Integrity run #106 passed on PR head `c08547ed90e3876db63d6d41bc53a05f0b660286`.
+
+- Rebuilt the homepage with a clearer business proposition, grouped service paths, company registration identifiers, public VSN product proof, delivery-role visibility, work process and direct contact route.
+- Expanded About with the company story, capability map, role-based team/delivery model, business credentials, public profiles and an approved-feedback policy.
+- Added locally embedded Font Awesome Free 6.7.2 SVG icons to the new sections and shared footer across all 27 pages. Icons are credited; no third-party icon CDN was introduced.
+- Linked verified public profiles: GitHub, WP Essential on WordPress.org and VSN Metafields on Shopify. Search did not verify official Facebook, Instagram, LinkedIn or X accounts, so no guessed URLs were added.
+- No staff biographies, client quotes, star ratings or client logos were fabricated. The public review record remains inspectable through the Shopify listing.
+- Internal audit: 27 HTML pages; each has exactly one H1 and main landmark; no duplicate IDs, broken local references or missing local fragments; all 27 footer profile groups present. Service-page main content matches main unchanged.
+- No production-site check or deployment was performed. Real client reviews and any official social-account URLs can be added once supplied and approved.
