@@ -12,7 +12,7 @@ Digital Marketing &amp; Growth now replaces the former social-only service posit
 
 Authority Profile starting fees are finalized for publication at **$249, $549 and $899 USD**; PR #40 merged on 25 September 2026 and Static Integrity run #62 passed. The static version has not yet been uploaded to the existing host. Production domain state is unverified by request.
 
-The refreshed site now includes expanded service pages, Authority Profile starting packages, expanded legal drafts, the navy/cobalt/lime visual system, and expanded BPO and individual/business tax-service pages. The tax page now includes six working browser-side estimate tools: individual income, freelancer/sole-proprietor profit, company provision, sales-tax invoice, withholding/net payment and a tax-reserve planner. The Tax Year 2027 individual schedule is based on FBR's published rate card; entity, payment-section and provincial-service rates are entered from the applicable current source instead of being guessed. The page includes a tax-specific enquiry form before FAQs and cautions visitors not to send tax IDs or documents through WhatsApp. PR #45 was squash-merged as `608900a94c3a5b14ec034f5cc189f3b98b9992bd`; Static Integrity run #72 passed. No production deployment was made. Profile prices remain starting fees; legal and tax language should receive qualified Pakistan review before public production use.
+The refreshed site now includes expanded service pages, Authority Profile starting packages, expanded legal drafts, the navy/cobalt/lime visual system, expanded BPO and individual/business tax-service pages, detailed AI Solutions, Resource Augmentation, and industry-specific pathways. The tax page now includes six working browser-side estimate tools: individual income, freelancer/sole-proprietor profit, company provision, sales-tax invoice, withholding/net payment and a tax-reserve planner. The Tax Year 2027 individual schedule is based on FBR's published rate card; entity, payment-section and provincial-service rates are entered from the applicable current source instead of being guessed. The page includes a tax-specific enquiry form before FAQs and cautions visitors not to send tax IDs or documents through WhatsApp. PR #45 was squash-merged as `608900a94c3a5b14ec034f5cc189f3b98b9992bd`; Static Integrity run #72 passed. No production deployment was made. Profile prices remain starting fees; legal and tax language should receive qualified Pakistan review before public production use.
 
 The Web Development & E-commerce service now covers managed CMS and store platforms, full-stack application scope, frontend and backend technology combinations, integrations, migration, quality checks, ownership and maintenance. It includes a project-specific WhatsApp brief before FAQs and links to the existing business/profile website and e-commerce detail pages. PR #49 was squash-merged on 25 September 2026 as `2afa432dec154018b8e3b92662c4391e2b5fac76`; Static Integrity run #82 passed on that main-branch commit. No live production check or deployment was performed.
 
@@ -66,7 +66,8 @@ Do **not** convert local links back to root-relative `/assets/...` or `/contact.
 - `bpo.html` — BPO / managed operations
 - `tax-consulting.html` — tax & compliance services
 - `products.html` — VSN products
-- `industries.html` — industries served
+- `industries.html` — 19 industry contexts, industry-specific workflow examples and linked VSN capabilities
+- `resource-augmentation.html` — individual specialist augmentation and dedicated team models
 - `work.html` — work & proof framework
 - `trust.html` — trust & security
 - `process.html` — delivery process
@@ -98,7 +99,7 @@ This deferred governance item does not block repository/code finalization. It ca
 
 The exact owner-supplied VSN logo is stored at `assets/vertex-logo.png`. SHA-256: `ede0edd921742c57af19b513c1aab73e079fe1217f4bc7ad156ab3260109c671`; dimensions: `2041×517`; size: `60,222 bytes`.
 
-## AI-Native progress
+## Website progress
 
 - Static architecture and direct-file portability: **100% — complete**
 - Direct-file portability: **100% — completed**
@@ -106,5 +107,8 @@ The exact owner-supplied VSN logo is stored at `assets/vertex-logo.png`. SHA-256
 - Server requirement: **none**
 - Vercel requirement: **none**
 - Main protection: **deferred by owner**
-- Current milestone: Digital Marketing & Growth, Web Development & E-commerce and Mobile App Development expanded in PR #51; merged as `f8dd9bf9ca964e6153a0eebf276c2c2fe07b1b02`; Static Integrity run #85 passed on PR head `ac278466f03e7cafcfce938aa762954f718f9a9d`.
+- Current milestone: Industries, AI Solutions and Resource Augmentation expanded in PR #53; merged as `b95912519a6b7dc26bf6efd4d9d6bfc2122fdf49`; Static Integrity run #90 passed on main.
 - External production requirement: qualified Pakistan legal/corporate review
+
+
+Current development chunk (PR #53): Industries, AI Solutions and Resource Augmentation are complete; 26 HTML files and 25 indexed sitemap URLs pass Static Integrity run #90 on main. No live check or deployment was performed.

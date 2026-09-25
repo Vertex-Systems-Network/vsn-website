@@ -102,3 +102,25 @@ MEAN and MERN are presented as common combinations (MongoDB, Express, Angular or
 - Digital Marketing & Growth describes discoverability, SEO, paid search/social, content, email and landing-page work while separating client media spend from VSN's fee and avoiding traffic, leads, ranking or ROAS guarantees.
 - Learning-and-earning app scope distinguishes educational content, marketplace transactions, task compensation and non-cash rewards. The site states that software delivery does not guarantee user income, job availability or reward funding.
 - Product owners remain responsible for operating rules, moderation, substantiating claims, funding any payouts and obtaining legal, tax and payments advice where needed.
+
+## Industries, AI Solutions and Resource Augmentation research (2026-09-25)
+
+Owner-requested references and international practice reviewed:
+
+- Inspire Technology — Industries: https://www.inspiretechnology.org/industries. Industry-led routing to relevant digital capabilities informed VSN's 19 distinct contexts with workflow examples, capability links, and explicit no-implied-client-proof or certification language.
+- Xcentric Services — Staff Augmentation: https://www.xcentricservices.com/service/staff-augmentation. Role-family groupings and team-extension positioning across engineering areas.
+- Inspire Technology — Dedicated Teams: https://www.inspiretechnology.org/services/dedicated-teams. The supplied page was directly reviewed; its rendered text was limited, so no specific unsupported claims were carried into VSN copy.
+- Toptal Teams: https://www.toptal.com/teams and Andela hiring process: https://enterprise.andela.com/adaptive-hiring/how-andela-works. International staffing pages distinguish client-led team integration from managed coordination and explain alignment, team assembly, onboarding and continuing support. VSN describes these as possible engagement choices only where contract scope confirms them; it does not claim competitor screening guarantees or time-to-fill promises.
+
+Technical and governance references used to shape AI service scope:
+
+- OpenAI Agents guide: https://developers.openai.com/api/docs/guides/agents; Evals guide: https://developers.openai.com/api/docs/guides/evals; File search guide: https://developers.openai.com/api/docs/guides/tools-file-search. These inform bounded tool use, retrieval and evaluation as implementation patterns, not guaranteed outcomes.
+- NIST AI RMF Core: https://airc.nist.gov/airmf-resources/airmf/5-sec-core/. Govern, Map, Measure and Manage functions informed use-case mapping, evaluation, human oversight, monitoring and lifecycle change control. The framework is voluntary and VSN does not claim NIST certification.
+
+## PR #53 internal completion
+
+- Industries page expanded to 19 separate industry contexts and workflow examples with cross-links to service pages.
+- Existing ai-automation.html route retained while the service name changed to AI Solutions; the page now covers planning through operation and places its AI-specific enquiry form before FAQs.
+- Added resource-augmentation.html with individual specialist, dedicated pod, temporary burst and fractional models; scoped roles, responsibilities and a dedicated pre-FAQ enquiry form.
+- Updated Services catalogue, Contact service routing, sitemap and static integrity expectations (26 HTML files; 25 indexed URLs).
+- PR #53 merged as b95912519a6b7dc26bf6efd4d9d6bfc2122fdf49; Static Integrity run #89 passed on PR head and run #90 passed on main. No live site check or deployment.
