@@ -162,3 +162,10 @@ body{color:var(--ink);line-height:1.65}
   .service-card{padding:24px}
 }
 .tax-tool-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.tax-tool{display:flex;flex-direction:column;gap:14px}.tax-tool>p{color:var(--slate)}.tax-tool .form{margin-top:4px}.tax-result{min-height:68px;padding:14px 16px;border:1px solid #cfe1dd;border-left:4px solid #23a88d;border-radius:12px;background:#f5fbf9;color:var(--ink);font-size:14px;line-height:1.6;white-space:pre-line}.tax-tool .form-note{margin-top:2px}@media(max-width:620px){.tax-tool-grid{grid-template-columns:1fr}}
+
+.footer-public-links{display:flex;align-items:center;gap:23px;border-top:1px solid #213047;margin-top:32px;padding-top:20px}
+.footer-public-links>span{font-size:12px;font-weight:850;letter-spacing:.08em;text-transform:uppercase;color:#8294a4;margin-right:auto}
+.footer-public-links>a{display:inline-flex;align-items:center;gap:7px;color:#aab6c7;font-size:13px;font-weight:750}
+.footer-public-links>a:hover{color:#c7ef58}
+.footer-public-links .fa-icon{width:16px;height:16px}
+@media(max-width:620px){.footer-public-links{justify-content:flex-start;gap:16px;flex-wrap:wrap}.footer-public-links>span{width:100%}.footer-public-links>a{font-size:12px}}
