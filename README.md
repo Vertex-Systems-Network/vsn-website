@@ -52,7 +52,9 @@ Legal pages are in `legal/`. Internal consistency hardening is documented in `LE
 
 ## Continuous integration
 
-`.github/workflows/static-integrity.yml` validates source integrity with Python standard library only. It verifies the exact official logo, local references, CSP/hash invariants, sitemap/legal requirements, and now rejects root-relative local `href`/`src` values so direct-file compatibility cannot regress.
+`.github/workflows/static-integrity.yml` validates source integrity with Python standard library only. It verifies the exact official logo, local references, CSP/hash invariants, sitemap/legal requirements, and rejects root-relative local `href`/`src` values so direct-file compatibility cannot regress.
+
+Direct-file portability PR #34 passed exact-head Static Integrity run #24 and was merged to `main` at `c77af261bdee0e4d834d6fa78989724a79e4d879`. Resulting-main Static Integrity run #25 also passed.
 
 ## Repository governance
 
@@ -64,9 +66,12 @@ The exact owner-supplied VSN logo is stored at `assets/vertex-logo.png`. SHA-256
 
 ## AI-Native progress
 
+- Direct-file portability: **100% — completed**
+- Issue #33: **closed**
+- PR #34: **merged**
 - Repository implementation: **100%**
 - Architecture: **direct-open static HTML + CSS + vanilla JS**
 - Server requirement: **none**
 - Vercel requirement: **none**
-- Current compatibility milestone: Issue #33
-- Branch protection Issue #14 and qualified Pakistan legal/corporate review remain governance/production gates.
+- Overall launch readiness: **99%**
+- Remaining gates: Issue #14 main-branch protection and qualified Pakistan legal/corporate review.
