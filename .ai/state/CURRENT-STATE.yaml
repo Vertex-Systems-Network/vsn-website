@@ -1,19 +1,19 @@
 repo: Vertex-Systems-Network/vsn-website
 updated: 2026-09-25
-phase: service-depth-and-legal-copy-review
+phase: visual-system-and-homepage-refresh
 verified_main_sha: 5d1ff4bc277618677c4681640257cf4e256e067f
 current_issue: null
 current_branch: website-service-pricing-legal-refresh-2026-09
-current_milestone: service-depth-and-legal-copy-review
+current_milestone: visual-system-and-homepage-refresh
 architecture: static-html-css-vanilla-js
 runtime_mode: file-direct-open
 implementation_complete: true
 repository_implementation_percent: 100
 module_progress_percent: 90
 production_readiness_percent: 90
-requested_content_refresh_percent: 95
-content_refresh_ci: passed
-static_integrity_passed_sha: cfc5944948b0b9f3fed8b4e8f90fd3f54c2b7fb7
+requested_content_refresh_percent: 97
+content_refresh_ci: pending-after-visual-change
+static_integrity_passed_sha: c19f35551fa5128912d57f4d71fad1295d28362d
 local_http_server_required: false
 vercel_required: false
 node_runtime_required: false
@@ -62,4 +62,4 @@ deferred_items:
 external_production_requirements:
   - qualified-pakistan-legal-corporate-review
 production_domain_switch_allowed: false
-next_valid_action: rerun-static-integrity-on-updated-head-and-review-pricing-and-legal-draft
+next_valid_action: run-static-integrity-on-visual-refresh-head-and-review-live-preview-before-final-merge

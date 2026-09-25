@@ -8,7 +8,7 @@ The original direct-file website architecture is complete. Owner-requested servi
 
 - Main branch at PR creation: `5d1ff4bc277618677c4681640257cf4e256e067f`
 - Draft PR branch: `website-service-pricing-legal-refresh-2026-09`
-- Current review focus: deeper service pages, profile package scope, legal wording and current-branch static integrity
+- Current review focus: shared design refresh, homepage visual hierarchy, then final pricing/legal review
 - Runtime architecture: direct-open static HTML, CSS and vanilla JavaScript
 - No Vercel dependency, local HTTP server, Node runtime or build step
 
@@ -33,6 +33,13 @@ The CDC signature card is not used on the public website. The public tax-support
 - Fixed duplicate company-location labels and malformed literal newline escapes in progress documents.
 - Kept all work on a review branch; no production deployment or branch-protection change.
 
+## Visual refresh started
+
+- Original local hero visual generated and prepared as WebP.
+- Homepage opening section redesigned with a clear service proposition, project CTA, three delivery principles and accessible artwork text.
+- Shared theme shifted from violet-gradient cards to midnight navy, cobalt and lime, with consistent cards, navigation, buttons and page heroes.
+- No Vercel, server or new runtime added.
+
 ## Verification and remaining review
 
 Static Integrity passed on service-content commit `cfc5944948b0b9f3fed8b4e8f90fd3f54c2b7fb7` (workflow run #47, success). A metadata-only progress update follows that verified source commit.
@@ -41,4 +48,4 @@ Before merge or production use, review proposed prices and have qualified Pakist
 
 ## Resume
 
-Next: inspect CI on the updated PR head, fix any failures, then continue with the next content/design chunk. Do not merge or deploy the draft until prices and legal content are approved.
+Next: verify the visual refresh with Static Integrity, inspect the changed source and continue legal/pricing final review. Do not merge or deploy the draft until prices and legal content are approved.

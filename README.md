@@ -4,9 +4,14 @@ Official static corporate website for **Vertex Systems Network (VSN)**.
 
 ## Status
 
-**Website content refresh: in review.** The direct-open static architecture remains complete; the requested service, pricing and legal-content expansion is in draft PR #38; the updated service-content commit passed the Static Integrity workflow.
+**Website refresh: in review.** The direct-open static architecture remains complete; the requested service, pricing and legal-content expansion is in draft PR #38; the updated service-content commit passed the Static Integrity workflow.
 
-The direct-file architecture is complete. Service copy, profile pricing and legal wording remain in review on draft PR #38; the branch is not merged or deployed.
+The direct-file architecture is complete. Service copy, profile pricing, legal wording and the updated visual direction are in draft PR #38; the branch is not merged or deployed.
+
+
+## Visual direction
+
+The draft refresh uses a midnight navy, cobalt and lime palette, a more editorial homepage hierarchy and a locally stored hero visual. The visual is original, text-free artwork; no external image host is required.
 
 ## Architecture
 
