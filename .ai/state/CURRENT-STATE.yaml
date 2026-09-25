@@ -1,10 +1,9 @@
 repo: Vertex-Systems-Network/vsn-website
 updated: 2026-09-25
 phase: web-development-ecommerce-service-expansion
-phase: digital-marketing-growth-service-expansion
 verified_main_sha: 14e6944b33936c6272c2a6287f671ee9a14461d4
 current_issue: null
-current_branch: main
+current_branch: web-development-ecommerce-service-2026-09
 current_milestone: web-development-ecommerce-service-page-with-project-specific-enquiry-before-faq
 architecture: static-html-css-vanilla-js
 runtime_mode: file-direct-open
@@ -15,9 +14,9 @@ web_development_ecommerce_module_percent: 100
 web_development_ecommerce_content_refresh_percent: 100
 production_readiness_percent: 90
 requested_content_refresh_percent: 100
-content_refresh_ci: pending
-static_integrity_run: pending
-static_integrity_passed_sha: 3b9b6423e374854c4aedf7a40be6502a42aca204
+content_refresh_ci: passed
+static_integrity_run: 80
+static_integrity_passed_sha: eb4799f96c95d995b964e4117d111af887ae6310
 local_http_server_required: false
 vercel_required: false
 node_runtime_required: false
@@ -42,7 +41,7 @@ brand_asset:
   width: 2041
   height: 517
 security:
-  static_integrity_ci: green_on_latest_main
+  static_integrity_ci: green_on_pr_head
   exact_logo_identity_enforced: true
   root_relative_local_refs_rejected: true
   main_currently_protected: false
