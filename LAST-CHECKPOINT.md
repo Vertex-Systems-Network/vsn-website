@@ -99,4 +99,5 @@ Compared the VSN BPO page with Xcentric Services’ public BPO page. The referen
 - Extended the shared WhatsApp brief builder to include the BPO-specific fields while preserving the existing general contact form behavior.
 - Disclosed that the static form opens a WhatsApp draft rather than sending to a VSN server, and asked users not to submit customer records or credentials.
 - `python3 scripts/validate_static_site.py` passed: 23 HTML pages and 752 local references. `git diff --check` passed.
+- PR #43 was squash-merged as `8c36c276e7988c0a08fb297442e263030f2baab6`; Static Integrity run #68 passed on the PR head.
 - No live-site check or production deployment was performed.
