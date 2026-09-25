@@ -1,0 +1,41 @@
+name: Main Protection Admin
+
+on:
+  workflow_dispatch:
+    inputs:
+      confirmation:
+        description: 'Type APPLY to apply and verify the target main-branch protection policy'
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  apply-and-verify:
+    name: apply-and-verify-main-protection
+    if: ${{ github.event.inputs.confirmation == 'APPLY' && github.ref == 'refs/heads/main' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      GH_TOKEN: ${{ secrets.VSN_GOVERNANCE_ADMIN_TOKEN }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Require scoped administration token
+        shell: pwsh
+        run: |
+          if ([string]::IsNullOrWhiteSpace($env:GH_TOKEN)) {
+            throw "Missing repository secret VSN_GOVERNANCE_ADMIN_TOKEN."
+          }
+
+      - name: Apply target protection
+        shell: pwsh
+        run: pwsh scripts/apply_main_protection.ps1 -Repository Vertex-Systems-Network/vsn-website -Branch main
+
+      - name: Verify active protection
+        shell: pwsh
+        run: pwsh scripts/verify_main_protection.ps1 -Repository Vertex-Systems-Network/vsn-website -Branch main
