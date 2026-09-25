@@ -48,7 +48,7 @@ Static Integrity run #49 passed on visual-refresh commit `2708f032bd6d36dbe86985
 - Made the package note explicit that translation, photography/AI portraits, press outreach, integrations, domain, hosting and ongoing maintenance are excluded unless the written proposal includes them.
 - Corrected the internal legal identity note from Multan, Punjab to Islamabad Capital Territory.
 - Changed the Terms dispute clause to neutral competent-jurisdiction wording under Pakistani law and retained the mandatory-rights safeguard. This remains draft wording for qualified counsel.
-- Package prices remain proposed starting fees pending owner approval.
+- Owner finalized the public Authority Profile starting fees as $249, $549 and $899 USD on 2026-09-25. The proposal confirms final totals when requested work extends beyond package scope.
 
 ## Post-merge company-fact audit (2026-09-25)
 
@@ -76,4 +76,4 @@ Before public production use, confirm package costs and have qualified Pakistan 
 - PR #39 was squash-merged as `3846b430844736e50558231d0b36a77d420ccd27`; Static Integrity run #59 passed.
 - The change does not alter the static architecture or production deployment status.
 
-Next: continue bounded website improvements when requested. Branch protection remains deferred and no production deployment was made.
+Next: upload the static site bundle to the existing Middlehost hosting account. The live domain currently serves a WordPress “Coming Soon” page. Secure hosting sign-in was not completed, so no production upload or domain change was made. Branch protection remains deferred.

@@ -1,10 +1,10 @@
 repo: Vertex-Systems-Network/vsn-website
 updated: 2026-09-25
-phase: contact-page-conversion-complete
+phase: profile-package-pricing-finalization
 verified_main_sha: 3846b430844736e50558231d0b36a77d420ccd27
 current_issue: null
-current_branch: main
-current_milestone: contact-page-conversion-clarity
+current_branch: codex/finalize-profile-starting-fees
+current_milestone: profile-package-pricing-finalized
 architecture: static-html-css-vanilla-js
 runtime_mode: file-direct-open
 implementation_complete: true
@@ -62,5 +62,9 @@ deferred_items:
     reason: owner-deferred-for-now
 external_production_requirements:
   - qualified-pakistan-legal-corporate-review
-production_domain_switch_allowed: false
-next_valid_action: continue-bounded-website-improvements-when-requested
+production_domain_switch_allowed: true
+profile_package_prices:
+  status: owner-finalized-starting-fees
+  usd: [249, 549, 899]
+deployment_status: waiting-for-hosting-panel-access
+next_valid_action: publish-static-site-to-existing-middlehost-hosting
