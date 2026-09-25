@@ -4,7 +4,7 @@ Date: 2026-09-25
 
 ## Current repository status
 
-The original direct-file website architecture and the owner-requested service, pricing, legal-copy and visual refresh are complete on `main`. PR #38 was squash-merged as `700fc02222885d20d000362ce377bf0d4ff1c4e4`; Static Integrity run #54 passed. The source is merged but no production deployment was made.
+The original direct-file website architecture and the owner-requested service, pricing, legal-copy and visual refresh are complete on `main`. PR #38 was squash-merged as `700fc02222885d20d000362ce377bf0d4ff1c4e4`; Static Integrity run #54 passed. The source is merged but no production deployment was made. The later company-fact audit commit `63fb624e6e9c5198be8195aa6455c3b5f9ef0f3c` clarified the PSEB validity period across 23 pages; run #56 passed.
 
 - Main branch at PR creation: `5d1ff4bc277618677c4681640257cf4e256e067f`
 - Merged PR branch: `website-service-pricing-legal-refresh-2026-09`
@@ -63,7 +63,7 @@ The supplied PSEB certificate lists registration Z-25-17539/25 as valid through 
 
 ## Verification and remaining review
 
-Static Integrity passed on visual-refresh commit `2708f032bd6d36dbe869856fa27217179b95268f` (run #49), and on the current metadata commit `02714baffa8c59c4e86c54e528398b2f4ad444ba` (run #50). The final pricing and legal audit commit `b8bdb25b918f9b415025fe89dacb6b3d4cf20868` passed Static Integrity (run #51). The competitor benchmark checkpoint passed run #53, and the merged main commit `700fc02222885d20d000362ce377bf0d4ff1c4e4` passed run #54.
+Static Integrity passed on visual-refresh commit `2708f032bd6d36dbe869856fa27217179b95268f` (run #49), and on the current metadata commit `02714baffa8c59c4e86c54e528398b2f4ad444ba` (run #50). The final pricing and legal audit commit `b8bdb25b918f9b415025fe89dacb6b3d4cf20868` passed Static Integrity (run #51). The competitor benchmark checkpoint passed run #53, and the merged main commit `700fc02222885d20d000362ce377bf0d4ff1c4e4` passed run #54. The PSEB validity disclosure update passed run #56.
 
 Before public production use, confirm package costs and have qualified Pakistan legal/corporate counsel review the legal drafts. Confirm payment, tax, refund, privacy-role and provider details against the live business setup.
 
