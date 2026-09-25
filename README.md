@@ -106,5 +106,5 @@ The exact owner-supplied VSN logo is stored at `assets/vertex-logo.png`. SHA-256
 - Server requirement: **none**
 - Vercel requirement: **none**
 - Main protection: **deferred by owner**
-- Current milestone: Digital Marketing & Growth page, service enquiry and site-navigation updates merged in PR #47; Static Integrity run #76 passed
+- Current milestone: Digital Marketing & Growth, Web Development & E-commerce and Mobile App Development expanded in PR #51; merged as `f8dd9bf9ca964e6153a0eebf276c2c2fe07b1b02`; Static Integrity run #85 passed on PR head `ac278466f03e7cafcfce938aa762954f718f9a9d`.
 - External production requirement: qualified Pakistan legal/corporate review
