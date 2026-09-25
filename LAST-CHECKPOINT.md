@@ -82,3 +82,12 @@ Next: publish the static site bundle to the existing Middlehost hosting account 
 ## BPO service-page improvement (2026-09-25)
 
 Compared the VSN BPO page with Xcentric Services’ public BPO page. The reference clearly groups contact-center offerings, shows a delivery process, and answers buyer questions about quality, data, visibility, workload changes and costs. VSN’s page already emphasized process control and data access, so the update broadens its service catalogue and adds engagement models, a six-step handover, measurable reporting guidance, security responsibilities and buyer FAQs. It avoids unverified claims such as guaranteed 24/7 coverage, named client outcomes or guaranteed results.
+
+
+## Tax support page expansion (2026-09-25)
+
+- Research covered FBR IRIS return-filing guidance, the currently published Income Tax Ordinance (amended through 30 June 2026), current tax rules, return-form resources, and the Sales Tax Act.
+- Reviewed Pakistani tax advisory service-page structures for individual, freelancer, business, company, withholding, sales-tax, notice and compliance offerings.
+- Expanded VSN’s tax page into separate individual/freelancer and sole-proprietor/AOP/company tracks, plus registration, wealth-statement where applicable, annual-return, withholding/payroll, sales-tax, notices, engagement workflow, official-source links and FAQs.
+- Added a tax calculator section for salary, freelance/business, company, withholding, sales tax and advance-tax review. Every calculator is marked “In development”; the copy requires tax-year, taxpayer-type, assumptions, sources and last-review date, and states that VSN tools are estimates rather than official FBR determinations. No tax rates or deadlines were hard-coded into the service page.
+- Updated the services overview and enquiry selector to distinguish individual tax, business/company tax and calculator enquiries. Formal advice, certification, appeals and representation are limited to the qualified professional confirmed for the specific engagement.
