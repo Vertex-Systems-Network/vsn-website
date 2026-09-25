@@ -202,3 +202,13 @@ PR #59 squash-merged to `main` as `3356bd642e204e91aa8e04cfb8a47383d38770ba`. St
 - No staff biographies, client quotes, star ratings or client logos were fabricated. The public review record remains inspectable through the Shopify listing.
 - Internal audit: 27 HTML pages; each has exactly one H1 and main landmark; no duplicate IDs, broken local references or missing local fragments; all 27 footer profile groups present. Service-page main content matches main unchanged.
 - No production-site check or deployment was performed. Real client reviews and any official social-account URLs can be added once supplied and approved.
+
+
+## Homepage/About styling recovery (2026-09-26)
+
+The owner reported that the redesigned pages looked broken. Investigation found that a later footer-only stylesheet write had replaced the new page-specific CSS with an older stored stylesheet snapshot, leaving the new Home/About classes unstyled. Restored the responsive Home/About rules without changing service-page styles.
+
+- PR #60 squash-merged to `main` as `17baf7f6b3065d337da6b702ce4bfbf64c92347f`.
+- Static Integrity run #112 passed on PR head `64c32e7b35b521836d3ac26d65c7aa1545591b13`.
+- Local static integrity passed: 27 HTML files, 1,408 local references, 26 sitemap URLs; required Home/About selectors present and stylesheet braces balanced.
+- No production-site check or deployment. The corrected stylesheet is now on `main`.
