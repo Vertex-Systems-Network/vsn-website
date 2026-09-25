@@ -1,10 +1,10 @@
 repo: Vertex-Systems-Network/vsn-website
-updated: 2026-09-25
-phase: homepage-about-trust-redesign
-verified_main_sha: 3356bd642e204e91aa8e04cfb8a47383d38770ba
+updated: 2026-09-26
+phase: homepage-about-styling-recovery
+verified_main_sha: 17baf7f6b3065d337da6b702ce4bfbf64c92347f
 current_issue: null
 current_branch: main
-current_milestone: homepage-about-public-proof-and-icons-merged
+current_milestone: homepage-about-styling-fix-merged
 architecture: static-html-css-vanilla-js
 runtime_mode: file-direct-open
 implementation_complete: true
@@ -20,7 +20,7 @@ production_readiness_percent: 90
 requested_content_refresh_percent: 100
 content_refresh_ci: passed
 static_integrity_run: 100
-static_integrity_passed_sha: c08547ed90e3876db63d6d41bc53a05f0b660286
+static_integrity_passed_sha: 64c32e7b35b521836d3ac26d65c7aa1545591b13
 local_http_server_required: false
 vercel_required: false
 node_runtime_required: false
@@ -80,6 +80,8 @@ completed_milestones:
     result: custom-software-saas-products-public-repository-catalogue-and-classified-navigation-merged
   - pr: 59
     result: homepage-about-public-proof-and-fontawesome-icons-merged
+  - pr: 60
+    result: restored-homepage-and-about-responsive-styles-merged
 deferred_items:
   - issue: 14
     item: github-main-protection
@@ -96,8 +98,8 @@ next_valid_action: continue-with-next-requested-website-improvement
 industry_expansion_percent: 100
 ai_solutions_module_percent: 100
 resource_augmentation_module_percent: 100
-latest_pr: 59
-latest_static_integrity_run: 106
+latest_pr: 60
+latest_static_integrity_run: 112
 production_deployed: false
 
 business_solutions_module_percent: 100
@@ -109,6 +111,7 @@ navigation_classification_module_percent: 100
 homepage_redesign_percent: 100
 about_expansion_percent: 100
 trust_social_icon_audit_percent: 100
+homepage_about_stylesheet_recovery_percent: 100
 audited_public_repository_count: 15
 excluded_private_repository_count: 4
 
