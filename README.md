@@ -67,6 +67,8 @@ Do **not** convert local links back to root-relative `/assets/...` or `/contact.
 - `tax-consulting.html` — tax & compliance services
 - `products.html` — VSN products
 - `industries.html` — 19 industry contexts, industry-specific workflow examples and linked VSN capabilities
+- `business-solutions.html` — modular Pakistan company setup, launch and operations service
+- `resource-augmentation.html` — individual specialist augmentation and dedicated team models
 - `resource-augmentation.html` — individual specialist augmentation and dedicated team models
 - `work.html` — work & proof framework
 - `trust.html` — trust & security
@@ -107,8 +109,8 @@ The exact owner-supplied VSN logo is stored at `assets/vertex-logo.png`. SHA-256
 - Server requirement: **none**
 - Vercel requirement: **none**
 - Main protection: **deferred by owner**
-- Current milestone: Industries, AI Solutions and Resource Augmentation expanded in PR #53; merged as `b95912519a6b7dc26bf6efd4d9d6bfc2122fdf49`; Static Integrity run #90 passed on main.
+- Current milestone: Business Solutions, service-form design consistency and updated legal drafts merged in PR #55 as `d59fb75827a58ba1f40a82fdc69b1c357015d29e`; Static Integrity run #95 passed on main.
 - External production requirement: qualified Pakistan legal/corporate review
 
 
-Current development chunk (PR #53): Industries, AI Solutions and Resource Augmentation are complete; 26 HTML files and 25 indexed sitemap URLs pass Static Integrity run #90 on main. No live check or deployment was performed.
+Current development chunks: PR #53 completed Industries, AI Solutions and Resource Augmentation. PR #55 added three-module Business Solutions and aligned AI/Resource forms and FAQ presentation with the site's standard layout. The site now has 27 HTML files and 26 indexed sitemap URLs; Static Integrity run #95 passed on main. No live check or deployment was performed.

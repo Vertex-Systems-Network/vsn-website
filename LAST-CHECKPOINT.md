@@ -161,3 +161,20 @@ PR #53 was merged to main as b95912519a6b7dc26bf6efd4d9d6bfc2122fdf49. Static In
 ### Next development
 
 Continue with the next owner-requested enhancement. Production use remains subject to the previously recorded qualified Pakistan legal/corporate review and the current PSEB renewal status.
+
+
+## Business Solutions and service layout consistency (2026-09-26)
+
+PR #55 merged to main as d59fb75827a58ba1f40a82fdc69b1c357015d29e. Static Integrity run #94 passed on the PR head; post-merge run #95 passed on main.
+
+- Added business-solutions.html with three optional modules: Company Setup & Compliance Coordination; Pakistan Market Launch & Digital Foundation; and Managed Business Operations.
+- Added separate pathways for client-owned companies, foreign-parent branch/liaison review, client-managed operations, scoped delegation and genuine JVs/VSN investment. The page excludes nominee/placeholder ownership, discloses UBO/authority requirements and does not guarantee official approvals.
+- Added the Business Solutions intake form before shared FAQ accordions; added service catalogue/contact discovery, sitemap URL and validator expectation. Repository now has 27 HTML files and 26 sitemap URLs.
+- Updated the service-specific Terms, Privacy and Refund drafts for company-setup, beneficial-owner/workforce information, delegated authority and staged setup-fee treatment. Counsel review remains required before public production use.
+- Refactored AI Solutions and Resource Augmentation enquiries into the site's established explanation + card form layout and shared FAQ accordion style; removed duplicate form method/privacy-note markup during QA.
+- Corrected stale Open Graph/Twitter title/description/canonical metadata on the Mobile App page and aligned service/contact summaries.
+- Main commit: d59fb75827a58ba1f40a82fdc69b1c357015d29e. No live website check or production deployment was performed.
+
+### Next development
+
+Continue with the next owner-requested service or product improvement.
