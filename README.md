@@ -114,3 +114,12 @@ The exact owner-supplied VSN logo is stored at `assets/vertex-logo.png`. SHA-256
 
 
 Current development chunks: PR #53 completed Industries, AI Solutions and Resource Augmentation. PR #55 added three-module Business Solutions and aligned AI/Resource forms and FAQ presentation with the site's standard layout. The site now has 27 HTML files and 26 indexed sitemap URLs; Static Integrity run #95 passed on main. No live check or deployment was performed.
+
+
+## Latest milestone — Custom Software, SaaS, Products & navigation (2026-09-26)
+
+PR #57 was squash-merged to `main` as `938393c167be3a5c49d7915d112e598ce1be9a59`. It expands the Custom Software & SaaS page with SaaS architecture, delivery and quality scope, a dedicated project enquiry form and nine FAQs. The Services menu now groups every service detail page; the Company menu links company, trust, contact and legal pages.
+
+The Products page now includes the VSN Metafields marketplace link and a repository directory covering all **15 public VSN organization repositories** discovered in the audit. Four private repositories were excluded. Cards distinguish marketplace product information from active engineering initiatives, templates/tooling and the company website source; repository status labels follow README, docs and manifest evidence and do not claim commercial availability, production readiness or full security review.
+
+Static Integrity passed on the PR head in run #99 and on the merged main commit in run #100. Internal checks found no broken local links or fragments across the 27 HTML pages, confirmed the software enquiry form appears before its FAQs, and verified 15 public-repository links. No production deployment or live-site check was performed.
