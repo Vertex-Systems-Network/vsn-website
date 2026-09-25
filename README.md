@@ -2,6 +2,12 @@
 
 Official static corporate website for **Vertex Systems Network (VSN)**.
 
+## Status
+
+**Repository implementation: 100% complete.**
+
+The current website scope is finalized. No further repository development is required for the approved direct-file architecture.
+
 ## Architecture
 
 - Plain HTML5 pages
@@ -48,26 +54,23 @@ Do **not** convert local links back to root-relative `/assets/...` or `/contact.
 
 ## Legal
 
-Legal pages are in `legal/`. Internal consistency hardening is documented in `LEGAL-REVIEW.md`; final Pakistan-qualified legal/corporate review is still required before a public production launch.
+Legal pages are in `legal/`. Internal consistency hardening is documented in `LEGAL-REVIEW.md`. Qualified Pakistan legal/corporate review remains an external requirement before public production use.
 
 ## Continuous integration
 
 `.github/workflows/static-integrity.yml` validates source integrity with Python standard library only. It verifies the exact official logo, local references, CSP/hash invariants, sitemap/legal requirements, and rejects root-relative local `href`/`src` values so direct-file compatibility cannot regress.
 
-Direct-file portability PR #34 passed exact-head Static Integrity run #24 and was merged to `main` at `c77af261bdee0e4d834d6fa78989724a79e4d879`. Resulting-main Static Integrity run #25 also passed.
-
 ## Repository governance
 
-Target main-branch protection is documented in `SECURITY-GOVERNANCE.md`.
+Main-branch protection is **deferred by owner for now**. The repository currently remains unprotected.
 
-Current verified GitHub state:
-- `main` protection: **disabled**
-- required status-check enforcement: **off**
-- repository rulesets: **none**
+The implementation for future activation is preserved:
+- `scripts/apply_main_protection.ps1`
+- `scripts/verify_main_protection.ps1`
+- `.github/workflows/main-protection-admin.yml`
+- `SECURITY-GOVERNANCE.md`
 
-Repository-side apply/verify scripts are complete. A manual GitHub Actions workflow, `.github/workflows/main-protection-admin.yml`, now provides a controlled activation path once repository secret `VSN_GOVERNANCE_ADMIN_TOKEN` is configured with narrowly scoped repository Administration write permission.
-
-The target policy still requires pull requests, `static-integrity` in strict mode, zero required human approvals, administrator enforcement, linear history, conversation resolution, and blocks force pushes/deletion.
+This deferred governance item does not block repository/code finalization. It can be activated later without changing the website runtime architecture.
 
 ## Branding
 
@@ -75,14 +78,11 @@ The exact owner-supplied VSN logo is stored at `assets/vertex-logo.png`. SHA-256
 
 ## AI-Native progress
 
+- Repository implementation: **100% — finalized**
 - Direct-file portability: **100% — completed**
-- Issue #33: **closed**
-- PR #34: **merged**
-- Repository implementation: **100%**
-- Main-protection automation: **ready for admin-secret activation**
-- Issue #14 governance milestone: **90%**
 - Architecture: **direct-open static HTML + CSS + vanilla JS**
 - Server requirement: **none**
 - Vercel requirement: **none**
-- Overall launch readiness: **99%**
-- Remaining gates: Issue #14 active main-branch protection and qualified Pakistan legal/corporate review.
+- Main protection: **deferred by owner**
+- Repository development remaining: **none**
+- External production requirement: qualified Pakistan legal/corporate review
