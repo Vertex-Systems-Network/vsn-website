@@ -111,4 +111,5 @@ Compared the VSN BPO page with Xcentric Services’ public BPO page. The referen
 - Expanded the BPO page with agent decision boundaries and client-approved knowledge-change controls; the material adds operating detail without duplicating the existing service catalogue or six-step delivery flow.
 - No rates are assumed for standard/small companies, special regimes, specific withholding sections or provincial services. This prevents a generic calculator from presenting a potentially wrong universal rate.
 - Local behavior checks exercise all six calculators and official individual-slab boundaries; static integrity and markup checks are recorded with the resulting PR.
+- PR #45 was squash-merged as `608900a94c3a5b14ec034f5cc189f3b98b9992bd`; Static Integrity run #72 passed on PR head `185d669935e253e6a4b067998b02d0c9c8a9e50a`.
 - No live-site check or production deployment was performed.
