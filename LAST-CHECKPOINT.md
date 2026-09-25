@@ -178,3 +178,14 @@ PR #55 merged to main as d59fb75827a58ba1f40a82fdc69b1c357015d29e. Static Integr
 ### Next development
 
 Continue with the next owner-requested service or product improvement.
+
+
+## Custom Software, SaaS, Products and navigation milestone (2026-09-26)
+
+- PR #57 merged to `main` as `938393c167be3a5c49d7915d112e598ce1be9a59`.
+- Expanded `software.html` with a clear product/SaaS delivery scope, tenancy and account architecture considerations, system integrations, technology-selection boundaries, quality/handover detail, a project-specific WhatsApp brief and nine FAQs. The form precedes the FAQ section and avoids inviting sensitive records.
+- Rebuilt `products.html` around the existing VSN Metafields marketplace link and 15 cards for all public VSN organization repositories. Four private repositories are omitted. Each card describes its project scope and repository-documented maturity; the page distinguishes software initiatives, templates, project tooling and the company-site source.
+- Replaced the former SaaS/products service card with a product-directory link. Grouped detail pages in Services navigation and placed Company, trust, contact and legal pages in Company navigation across all 27 HTML pages. Added keyboard, outside-click, Escape-key and responsive menu behavior.
+- Added the organization inventory, evidence scope and classification rationale to `RESEARCH-NOTES.md`.
+- Checks: Static Integrity run #99 passed on PR head `61768e2fea508170655184a2a3c35d5bac2f45f5`; resulting-main run #100 passed. Internal checks verified 27 pages, all local links and fragments, unique IDs, one nav per page, form-before-FAQ order and all 15 public repository links.
+- No production deployment or live-site verification. Product availability, licences and release readiness remain item-specific and are not inferred from public repository visibility.
