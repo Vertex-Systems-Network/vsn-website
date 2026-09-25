@@ -4,11 +4,11 @@ Date: 2026-09-25
 
 ## Current repository status
 
-The original direct-file website architecture and the owner-requested service, pricing, legal-copy and visual refresh are complete on `main`. PR #38 was squash-merged as `700fc02222885d20d000362ce377bf0d4ff1c4e4`; Static Integrity run #54 passed. The source is merged but no production deployment was made. The later company-fact audit commit `63fb624e6e9c5198be8195aa6455c3b5f9ef0f3c` clarified the PSEB validity period across 23 pages; run #56 passed.
+The original direct-file website architecture and the owner-requested service, pricing, legal-copy and visual refresh are complete on `main`. PR #38 was squash-merged as `700fc02222885d20d000362ce377bf0d4ff1c4e4`; Static Integrity run #54 passed. The contact-page improvement was merged in PR #39 as `3846b430844736e50558231d0b36a77d420ccd27`, and Static Integrity run #59 passed. No production deployment was made. The later company-fact audit commit `63fb624e6e9c5198be8195aa6455c3b5f9ef0f3c` clarified the PSEB validity period across 23 pages; run #56 passed.
 
 - Main branch at PR creation: `5d1ff4bc277618677c4681640257cf4e256e067f`
 - Merged PR branch: `website-service-pricing-legal-refresh-2026-09`
-- Current milestone: requested website refresh merged; branch protection remains deferred by owner
+- Current milestone: contact information and enquiry service routing clarified; branch protection remains deferred by owner
 - Runtime architecture: direct-open static HTML, CSS and vanilla JavaScript
 - No Vercel dependency, local HTTP server, Node runtime or build step
 
@@ -67,14 +67,13 @@ Static Integrity passed on visual-refresh commit `2708f032bd6d36dbe869856fa27217
 
 Before public production use, confirm package costs and have qualified Pakistan legal/corporate counsel review the legal drafts. Confirm payment, tax, refund, privacy-role and provider details against the live business setup.
 
-## Resume
-
-## Contact-page improvement (2026-09-25)
+## Contact-page improvement merged (2026-09-25)
 
 - Added direct `mailto:` support email and `tel:` phone links to the contact card.
 - Grouped the enquiry service selector into software/apps, website/e-commerce platforms, and AI/business services, including WordPress/WP Essential, Shopify, Webflow, Wix, Laravel, SaaS, AI-native development, AI solutions, and AI automation.
 - Added a required placeholder so a visitor must intentionally select a service before submitting the brief.
 - `python3 scripts/validate_static_site.py` passed: 23 HTML files, 748 local references and 22 sitemap URLs. `git diff --check` passed.
-- This is a contact-page conversion improvement; it does not change the static architecture or production deployment status.
+- PR #39 was squash-merged as `3846b430844736e50558231d0b36a77d420ccd27`; Static Integrity run #59 passed.
+- The change does not alter the static architecture or production deployment status.
 
 Next: continue bounded website improvements when requested. Branch protection remains deferred and no production deployment was made.
