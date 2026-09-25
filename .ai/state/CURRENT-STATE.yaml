@@ -1,10 +1,10 @@
 repo: Vertex-Systems-Network/vsn-website
 updated: 2026-09-25
-phase: website-refresh-merged
+phase: post-merge-company-fact-audit
 verified_main_sha: 700fc02222885d20d000362ce377bf0d4ff1c4e4
 current_issue: null
 current_branch: main
-current_milestone: website-refresh-merged
+current_milestone: pseb-validity-disclosure
 architecture: static-html-css-vanilla-js
 runtime_mode: file-direct-open
 implementation_complete: true
@@ -63,4 +63,4 @@ deferred_items:
 external_production_requirements:
   - qualified-pakistan-legal-corporate-review
 production_domain_switch_allowed: false
-next_valid_action: qualified-counsel-review-and-business-fact-check-before-public-production-use
+next_valid_action: confirm-pseb-renewal-and-qualified-counsel-review-before-public-production-use

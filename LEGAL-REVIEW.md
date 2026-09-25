@@ -41,6 +41,11 @@ Counsel should review at minimum:
 If the site later adds analytics, advertising, account creation, direct card checkout, user uploads, authentication, new SaaS products, or a materially different sales/refund model, re-open legal review before treating the current policies as launch-ready.
 
 
+## Post-merge company-fact audit (2026-09-25)
+
+- The owner-supplied PSEB certificate shows registration Z-25-17539/25 valid through October 2026. The public footer states that validity on all 23 pages; confirm renewal or remove/update the claim before November 2026.
+- PR #38 has been merged to main; no production deployment was made.
+
 ## Final audit corrections (2026-09-25)
 
 - Corrected the internal public-identity note from Multan, Punjab to Islamabad Capital Territory, consistent with the supplied company filing details.

@@ -50,6 +50,10 @@ Static Integrity run #49 passed on visual-refresh commit `2708f032bd6d36dbe86985
 - Changed the Terms dispute clause to neutral competent-jurisdiction wording under Pakistani law and retained the mandatory-rights safeguard. This remains draft wording for qualified counsel.
 - Package prices remain proposed starting fees pending owner approval.
 
+## Post-merge company-fact audit (2026-09-25)
+
+The supplied PSEB certificate lists registration Z-25-17539/25 as valid through October 2026. All 23 page footers now display that validity period to prevent the registration badge from implying indefinite validity. Confirm renewal or remove/update the badge before November 2026.
+
 ## Reference-site benchmark (2026-09-25)
 
 - PellaNova's public profile tiers show $1,000 Presence, $2,000 Reach and $5,000 Legacy pricing. Their published scope makes sections and languages explicit and includes items such as editorial writing, AI portraits, press mentions and 3–12 months maintenance depending on tier.
@@ -61,8 +65,8 @@ Static Integrity run #49 passed on visual-refresh commit `2708f032bd6d36dbe86985
 
 Static Integrity passed on visual-refresh commit `2708f032bd6d36dbe869856fa27217179b95268f` (run #49), and on the current metadata commit `02714baffa8c59c4e86c54e528398b2f4ad444ba` (run #50). The final pricing and legal audit commit `b8bdb25b918f9b415025fe89dacb6b3d4cf20868` passed Static Integrity (run #51). The competitor benchmark checkpoint passed run #53, and the merged main commit `700fc02222885d20d000362ce377bf0d4ff1c4e4` passed run #54.
 
-Before merge or production use, review proposed prices and have qualified Pakistan legal/corporate counsel review the legal drafts. Confirm payment, tax, refund, privacy-role and provider details against the live business setup.
+Before public production use, confirm package costs and have qualified Pakistan legal/corporate counsel review the legal drafts. Confirm payment, tax, refund, privacy-role and provider details against the live business setup.
 
 ## Resume
 
-Next: obtain qualified Pakistan legal/corporate review and verify final package costs and business details before any public production use. Branch protection remains deferred; no deployment was made. Do not merge or deploy the draft until prices and legal content are approved.
+Next: obtain qualified Pakistan legal/corporate review and verify final package costs and business details before any public production use. Branch protection remains deferred; no deployment was made. Do not deploy publicly until legal review and the business-fact check are complete.

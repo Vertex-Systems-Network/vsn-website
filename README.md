@@ -4,7 +4,7 @@ Official static corporate website for **Vertex Systems Network (VSN)**.
 
 ## Status
 
-**Website refresh: merged to main.** PR #38 was squash-merged on 25 September 2026 as `700fc02222885d20d000362ce377bf0d4ff1c4e4`. Static Integrity run #54 passed on the merge commit.
+**Website refresh: merged to main.** PR #38 was squash-merged on 25 September 2026 as `700fc02222885d20d000362ce377bf0d4ff1c4e4`. Static Integrity run #54 passed on the merge commit. All 23 page footers now show the PSEB certificate validity through October 2026; confirm renewal before that date.
 
 The refreshed site now includes expanded service pages, Authority Profile starting packages, expanded legal drafts, and the navy/cobalt/lime visual system. No production deployment was made. Profile prices remain starting fees; legal and tax language should receive qualified Pakistan review before public production use.
 
