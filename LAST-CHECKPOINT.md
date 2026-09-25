@@ -50,6 +50,13 @@ Static Integrity run #49 passed on visual-refresh commit `2708f032bd6d36dbe86985
 - Changed the Terms dispute clause to neutral competent-jurisdiction wording under Pakistani law and retained the mandatory-rights safeguard. This remains draft wording for qualified counsel.
 - Package prices remain proposed starting fees pending owner approval.
 
+## Reference-site benchmark (2026-09-25)
+
+- PellaNova's public profile tiers show $1,000 Presence, $2,000 Reach and $5,000 Legacy pricing. Their published scope makes sections and languages explicit and includes items such as editorial writing, AI portraits, press mentions and 3–12 months maintenance depending on tier.
+- VSN's proposed $249/$549/$899 fees are lower, narrower build scopes. Client-supplied translation, no included portrait production/press outreach and separately scoped aftercare are now explicit; treat the prices as starting fees, not like-for-like equivalents.
+- TekRevol's homepage organizes a broad service catalogue by capability, industry and portfolio/proof, with quantified company claims. VSN's current Work page appropriately limits proof to the published Shopify App Store product and does not invent client outcomes or metrics.
+- Benchmark takeaway: keep public pricing and scope clear, group services by buyer need, and publish real approved evidence as it becomes available rather than copying unsupported metrics.
+
 ## Verification and remaining review
 
 Static Integrity passed on visual-refresh commit `2708f032bd6d36dbe869856fa27217179b95268f` (run #49), and on the current metadata commit `02714baffa8c59c4e86c54e528398b2f4ad444ba` (run #50). The final pricing and legal audit commit `b8bdb25b918f9b415025fe89dacb6b3d4cf20868` passed Static Integrity (run #51).

@@ -90,5 +90,5 @@ The exact owner-supplied VSN logo is stored at `assets/vertex-logo.png`. SHA-256
 - Server requirement: **none**
 - Vercel requirement: **none**
 - Main protection: **deferred by owner**
-- Current milestone: profile-pricing and legal final audit
+- Current milestone: profile-pricing/legal audit and reference-site benchmark complete
 - External production requirement: qualified Pakistan legal/corporate review

@@ -62,4 +62,4 @@ deferred_items:
 external_production_requirements:
   - qualified-pakistan-legal-corporate-review
 production_domain_switch_allowed: false
-next_valid_action: finish-pricing-owner-review-legal-counsel-review-and-reference-site-visual-audit
+next_valid_action: owner-review-profile-prices-and-qualified-counsel-review-before-ready-for-merge
