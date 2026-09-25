@@ -4,7 +4,7 @@ phase: profile-package-pricing-finalized-deployment-handoff
 verified_main_sha: 3846b430844736e50558231d0b36a77d420ccd27
 current_issue: null
 current_branch: main
-current_milestone: profile-package-pricing-finalized
+current_milestone: bpo-service-enquiry-form-added
 architecture: static-html-css-vanilla-js
 runtime_mode: file-direct-open
 implementation_complete: true
@@ -56,6 +56,8 @@ completed_milestones:
     result: direct-file-browser-portability-complete
   - pr: 36
     result: branch-protection-activation-path-ready
+  - pr: 43
+    result: bpo-specific-enquiry-form-added-before-faq
 deferred_items:
   - issue: 14
     item: github-main-protection

@@ -91,3 +91,12 @@ Compared the VSN BPO page with Xcentric Services’ public BPO page. The referen
 - Expanded VSN’s tax page into separate individual/freelancer and sole-proprietor/AOP/company tracks, plus registration, wealth-statement where applicable, annual-return, withholding/payroll, sales-tax, notices, engagement workflow, official-source links and FAQs.
 - Added a tax calculator section for salary, freelance/business, company, withholding, sales tax and advance-tax review. Every calculator is marked “In development”; the copy requires tax-year, taxpayer-type, assumptions, sources and last-review date, and states that VSN tools are estimates rather than official FBR determinations. No tax rates or deadlines were hard-coded into the service page.
 - Updated the services overview and enquiry selector to distinguish individual tax, business/company tax and calculator enquiries. Formal advice, certification, appeals and representation are limited to the qualified professional confirmed for the specific engagement.
+
+## BPO-specific enquiry form (2026-09-25)
+
+- Added a dedicated BPO workflow form immediately before the BPO FAQ section.
+- The form captures contact details, BPO service area, approximate workload, channels/work types, coverage window and time zone, systems/platforms, preferred start timing, and a workflow brief.
+- Extended the shared WhatsApp brief builder to include the BPO-specific fields while preserving the existing general contact form behavior.
+- Disclosed that the static form opens a WhatsApp draft rather than sending to a VSN server, and asked users not to submit customer records or credentials.
+- `python3 scripts/validate_static_site.py` passed: 23 HTML pages and 752 local references. `git diff --check` passed.
+- No live-site check or production deployment was performed.
