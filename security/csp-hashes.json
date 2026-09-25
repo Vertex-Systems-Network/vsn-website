@@ -2,10 +2,13 @@
   "version": 1,
   "inline_script_hashes": {
     "about.html": [
-      "sha256-ZM1h9WKmDZGFgxszmJKYmle/IrxoM/sfN9fSDcx5Rbk="
+      "sha256-+RvWWLE055Y83NN2tnQqwBMbousTQloiJeaaIBrsomU="
     ],
     "index.html": [
-      "sha256-ZM1h9WKmDZGFgxszmJKYmle/IrxoM/sfN9fSDcx5Rbk="
+      "sha256-+RvWWLE055Y83NN2tnQqwBMbousTQloiJeaaIBrsomU="
+    ],
+    "websites.html": [
+      "sha256-+RvWWLE055Y83NN2tnQqwBMbousTQloiJeaaIBrsomU="
     ]
   }
 }

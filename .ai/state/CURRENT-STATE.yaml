@@ -1,23 +1,26 @@
 repo: Vertex-Systems-Network/vsn-website
 updated: 2026-09-25
-phase: finalized-code-complete
-verified_main_sha: 16a181f9791bc01dea390b561541bc9c568b5815
+phase: profile-pricing-and-legal-final-review
+verified_main_sha: 5d1ff4bc277618677c4681640257cf4e256e067f
 current_issue: null
-current_branch: main
-current_milestone: finalized
+current_branch: website-service-pricing-legal-refresh-2026-09
+current_milestone: profile-pricing-and-legal-final-review
 architecture: static-html-css-vanilla-js
 runtime_mode: file-direct-open
 implementation_complete: true
 repository_implementation_percent: 100
-module_progress_percent: 100
-production_readiness_percent: 99
+module_progress_percent: 90
+production_readiness_percent: 90
+requested_content_refresh_percent: 97
+content_refresh_ci: passed
+static_integrity_passed_sha: b8bdb25b918f9b415025fe89dacb6b3d4cf20868
 local_http_server_required: false
 vercel_required: false
 node_runtime_required: false
 framework_dependency: none
 package_json: absent
 vercel_runtime_config: absent
-html_pages: 22
+html_pages: 23
 javascript:
   shared_file: assets/app.js
   enabled: true
@@ -59,4 +62,4 @@ deferred_items:
 external_production_requirements:
   - qualified-pakistan-legal-corporate-review
 production_domain_switch_allowed: false
-next_valid_action: none-for-repository-development
+next_valid_action: owner-review-profile-prices-and-qualified-counsel-review-before-ready-for-merge

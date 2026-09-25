@@ -4,9 +4,14 @@ Official static corporate website for **Vertex Systems Network (VSN)**.
 
 ## Status
 
-**Repository implementation: 100% complete.**
+**Website refresh: in review.** The direct-open static architecture remains complete; the requested service, pricing and legal-content expansion is in draft PR #38; the visual refresh passed Static Integrity (run #49); the final pricing/legal audit corrections passed Static Integrity (run #51).
 
-The current website scope is finalized. No further repository development is required for the approved direct-file architecture.
+The direct-file architecture is complete. Service copy, profile pricing, legal wording and the updated visual direction are in draft PR #38; the branch is not merged or deployed.
+
+
+## Visual direction
+
+The draft refresh uses a midnight navy, cobalt and lime palette, a more editorial homepage hierarchy and a locally stored hero visual. The visual is original, text-free artwork; no external image host is required.
 
 ## Architecture
 
@@ -35,8 +40,9 @@ Do **not** convert local links back to root-relative `/assets/...` or `/contact.
 ## Main pages
 
 - `index.html` — corporate homepage
-- `services.html` — service overview
-- `profile.html` — VSN Authority Profile
+- `services.html` — expanded service catalogue
+- `websites.html` — business website platforms and scope
+- `profile.html` — VSN Authority Profile packages and pricing
 - `software.html` — software & app development
 - `ecommerce.html` — e-commerce development
 - `ai-automation.html` — AI & automation
@@ -78,11 +84,11 @@ The exact owner-supplied VSN logo is stored at `assets/vertex-logo.png`. SHA-256
 
 ## AI-Native progress
 
-- Repository implementation: **100% — finalized**
+- Static architecture and direct-file portability: **100% — complete**
 - Direct-file portability: **100% — completed**
 - Architecture: **direct-open static HTML + CSS + vanilla JS**
 - Server requirement: **none**
 - Vercel requirement: **none**
 - Main protection: **deferred by owner**
-- Repository development remaining: **none**
+- Current milestone: profile-pricing/legal audit and reference-site benchmark complete
 - External production requirement: qualified Pakistan legal/corporate review

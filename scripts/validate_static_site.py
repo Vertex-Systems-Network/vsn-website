@@ -17,7 +17,7 @@ EXPECTED_HTML = {
     "ecommerce.html","index.html","industries.html","legal/cookies.html",
     "legal/privacy.html","legal/refunds.html","legal/terms.html","payments.html",
     "process.html","products.html","profile.html","services.html",
-    "social-media.html","software.html","tax-consulting.html","trust.html","work.html",
+    "social-media.html","software.html","tax-consulting.html","trust.html","websites.html","work.html",
 }
 REQUIRED_FILES = {
     "assets/app.js","assets/styles.css","assets/vertex-logo.png","robots.txt","sitemap.xml",".well-known/security.txt",
@@ -42,8 +42,8 @@ SCRIPT_RE = re.compile(r"<script\b([^>]*)>([\s\S]*?)</script>", re.I)
 SCRIPT_SRC_RE = re.compile(r"""\bsrc=["']([^"']+)["']""", re.I)
 SCRIPT_TYPE_RE = re.compile(r"""\btype=["']([^"']+)["']""", re.I)
 
-CSP_META_POLICY = "default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self' 'sha256-ZM1h9WKmDZGFgxszmJKYmle/IrxoM/sfN9fSDcx5Rbk='; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'none'; worker-src 'none'; form-action 'self'"
-CSP_META_TAG = "<meta http-equiv=\"Content-Security-Policy\" content=\"default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self' 'sha256-ZM1h9WKmDZGFgxszmJKYmle/IrxoM/sfN9fSDcx5Rbk='; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'none'; worker-src 'none'; form-action 'self'\">"
+CSP_META_POLICY = "default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self' 'sha256-+RvWWLE055Y83NN2tnQqwBMbousTQloiJeaaIBrsomU='; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'none'; worker-src 'none'; form-action 'self'"
+CSP_META_TAG = "<meta http-equiv=\"Content-Security-Policy\" content=\"default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self' 'sha256-+RvWWLE055Y83NN2tnQqwBMbousTQloiJeaaIBrsomU='; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'none'; worker-src 'none'; form-action 'self'\">"
 REFERRER_META_TAG = "<meta name=\"referrer\" content=\"strict-origin-when-cross-origin\">"
 OFFICIAL_LOGO_PATH = "assets/vertex-logo.png"
 OFFICIAL_LOGO_REF = "assets/vertex-logo.png"
@@ -238,7 +238,7 @@ def main() -> int:
             for price in OLD_PRICES:
                 if price in text:
                     errors.append(f"profile.html: provisional price still present: {price}")
-            if "Custom <small>quote</small>" not in text:
+            if "Custom quote" not in text:
                 errors.append("profile.html: custom quote wording missing")
 
     try:
@@ -314,8 +314,8 @@ def main() -> int:
         errors.append(f"sitemap.xml: invalid XML: {exc}")
         urls = []
 
-    if len(urls) != 21:
-        errors.append(f"sitemap.xml: expected 21 public URLs, found {len(urls)}")
+    if len(urls) != 22:
+        errors.append(f"sitemap.xml: expected 22 public URLs, found {len(urls)}")
     if any(url.endswith("/404.html") for url in urls):
         errors.append("sitemap.xml: 404 page must not be indexed")
     if any(not url.startswith("https://vertexsystemsnetwork.com/") for url in urls):
