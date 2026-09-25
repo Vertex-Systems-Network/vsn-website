@@ -1,7 +1,7 @@
 repo: Vertex-Systems-Network/vsn-website
 updated: 2026-09-25
 phase: digital-marketing-growth-service-expansion
-verified_main_sha: 9df3917879138657123db3664eba0cfd58997f4a
+verified_main_sha: 4753b4e8ce7c91abb6bf1d22d3b606da520a3298
 current_issue: null
 current_branch: main
 current_milestone: digital-marketing-growth-service-page-with-service-specific-enquiry-before-faq
@@ -13,8 +13,8 @@ module_progress_percent: 100
 production_readiness_percent: 90
 requested_content_refresh_percent: 100
 content_refresh_ci: passed
-static_integrity_run: 74
-static_integrity_passed_sha: c20745dc82b0c138fd8dc6d86b3058e87a1c93b1
+static_integrity_run: 76
+static_integrity_passed_sha: 3b9b6423e374854c4aedf7a40be6502a42aca204
 local_http_server_required: false
 vercel_required: false
 node_runtime_required: false
@@ -60,6 +60,8 @@ completed_milestones:
     result: bpo-specific-enquiry-form-added-before-faq
   - pr: 45
     result: functional-tax-calculators-tax-intake-and-expanded-tax-bpo-content
+  - pr: 47
+    result: digital-marketing-growth-service-page-and-enquiry-form
 deferred_items:
   - issue: 14
     item: github-main-protection

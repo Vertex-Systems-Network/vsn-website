@@ -122,4 +122,5 @@ Compared the VSN BPO page with Xcentric Services’ public BPO page. The referen
 - Added a service-specific enquiry form before the FAQ section. It captures profile or organisation type, the requested marketing work, platforms/tools, target market, cadence and goals, then prepares the service brief in WhatsApp.
 - Set out account ownership, delegated access, client approvals, paid-media billing and permission-based email-list boundaries. The page avoids promised growth figures and excludes platform charges unless an offer includes them.
 - Benchmarked Digital Otters and WebCo Pakistan social-management service pages, plus Digital Otters and Xcentric Services email-marketing pages. The page uses those scope patterns as reference and is independently written.
-- Static validation and CI results will be recorded after the change is merged. No live-site check or production deployment was performed.
+- PR #47 was squash-merged as `4753b4e8ce7c91abb6bf1d22d3b606da520a3298`; Static Integrity run #76 passed on PR head `3b9b6423e374854c4aedf7a40be6502a42aca204`.
+- Structural QA found one unique service form before FAQs, no duplicate paragraph copy or IDs, and no inline scripts/styles or root-relative local links. No live-site check or production deployment was performed.
