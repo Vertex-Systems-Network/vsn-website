@@ -377,3 +377,11 @@ Authority Profile and site-wide motion merged in PR #64 (`7e544c9f58f703cabb0162
 - Rebuilt About and Services around the recorded centered-hero, dark-accordion and human-card visual patterns.
 - Added fidelity-mode animation ownership so the old observer does not create a second entrance pass.
 - Added scripts/check_ritovex_fidelity.cjs; next action is CI validation and corrective fixes.
+
+## Corrective verification run #420
+
+- Static website validation: passed.
+- Motion regression: passed.
+- Ritovex fidelity regression: passed.
+- About legacy fragment targets restored so existing Home links remain valid.
+- PR #75 remains the corrective merge vehicle; next action is exact-final-head verification and merge.
