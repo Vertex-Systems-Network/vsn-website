@@ -1,10 +1,10 @@
 repo: Vertex-Systems-Network/vsn-website
 updated: 2026-09-26
-phase: homepage-about-styling-recovery
-verified_main_sha: 17baf7f6b3065d337da6b702ce4bfbf64c92347f
+phase: authority-profile-and-site-motion
+verified_main_sha: 7e544c9f58f703cabb0162f11e68cf48ebc8b185
 current_issue: null
 current_branch: main
-current_milestone: homepage-about-styling-fix-merged
+current_milestone: authority-profile-service-packages-and-motion-merged
 architecture: static-html-css-vanilla-js
 runtime_mode: file-direct-open
 implementation_complete: true
@@ -19,8 +19,8 @@ web_development_ecommerce_content_refresh_percent: 100
 production_readiness_percent: 90
 requested_content_refresh_percent: 100
 content_refresh_ci: passed
-static_integrity_run: 100
-static_integrity_passed_sha: 64c32e7b35b521836d3ac26d65c7aa1545591b13
+static_integrity_run: 125
+static_integrity_passed_sha: 3fd3a11b4c969a975349a3fa212f0a137d0093ac
 local_http_server_required: false
 vercel_required: false
 node_runtime_required: false
@@ -93,13 +93,13 @@ profile_package_prices:
   status: owner-requested-revised-starting-fees
   usd: [499, 999, 1999]
 deployment_status: waiting-for-hosting-panel-access
-next_valid_action: await-owner-google-business-profile-url-and-client-approved-proof
+next_valid_action: visual-review-when-available-and-owner-supplied-google-review-evidence
 
 industry_expansion_percent: 100
 ai_solutions_module_percent: 100
 resource_augmentation_module_percent: 100
-latest_pr: 63
-latest_static_integrity_run: 122
+latest_pr: 64
+latest_static_integrity_run: 125
 production_deployed: false
 
 business_solutions_module_percent: 100

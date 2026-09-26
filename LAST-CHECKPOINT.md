@@ -250,3 +250,5 @@ PR #63 merged to `main` as `7ddc6435e3c3f6f700ce66e12ee5ca93d64821c0`; Static In
 - Added `assets/motion.js` to every page; removed the former narrow reveal loop from `app.js`. The new engine covers entrances, hover/mouse exit, buttons, menu/FAQ events, field focus and scroll progress with progressive fallback and reduced-motion cancellation.
 - Profile-specific package buttons populate the enquiry tier. Privacy wording covers approved personal-brand material and optional AI portraits.
 - Verification: 27 pages, 1,490 local references and 26 sitemap URLs; uniform service classification, all-page motion inclusion, package values and form order; JS syntax; offline motion behavior checks and diff whitespace pass. No browser visual or production check/deployment.
+
+Authority Profile and site-wide motion merged in PR #64 (`7e544c9f58f703cabb0162f11e68cf48ebc8b185`). Static Integrity run #125 passed; offline motion behavior checks passed. Browser visual review and production deployment were not performed.
