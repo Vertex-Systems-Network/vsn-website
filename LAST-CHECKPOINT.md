@@ -260,3 +260,14 @@ PR #63 merged to `main` as `7ddc6435e3c3f6f700ce66e12ee5ca93d64821c0`; Static In
 - User confirmed content still flashed into view before sliding on scroll. Removed the IntersectionObserver entrance system entirely so page content remains stationary during scroll; kept CSS hover, header, FAQ and progress feedback. Regression checks assert no observer-driven slide keyframes remain.
 
 Authority Profile and site-wide motion merged in PR #64 (`7e544c9f58f703cabb0162f11e68cf48ebc8b185`). Static Integrity run #125 passed; offline motion behavior checks passed. Browser visual review and production deployment were not performed.
+
+
+## Ritovex-inspired homepage visual milestone (2026-09-26)
+
+- Continued draft PR #68 on `design/ritovex-homepage-rebuild` instead of creating duplicate work.
+- Added four original local VSN SVG assets for the hero, product engineering, AI/automation, and growth/operations visual stories.
+- Added an image-led About block, a three-card capability showcase and a capability marquee while preserving VSN-specific content and claims.
+- No Ritovex/Webflow imagery, copy or template files were copied into the repository.
+- Scroll-triggered entrance animations remain disabled, so the previous double-slide/jank regression is not reintroduced.
+- Static Integrity run #135 passed on commit `2c2f2d6eeee4880d25fa10f7678a82ac916eb6f3`.
+- Next milestone: extend the visual language and content-matched imagery to Services, About, Products, Contact and service-detail pages.
