@@ -24,6 +24,12 @@ assert.doesNotMatch(styles,/vsn-intro|is-scrolled \.nav\{height:/);
 assert.match(home,/data-service-accordion/);
 assert.match(home,/home-services-stage/);
 assert.match(home,/home-process-layout/);
+assert.ok(fs.existsSync('assets/ritovex-editorial.css'));
+assert.ok(fs.existsSync('blog.html'));
+assert.ok(fs.existsSync('blog-detail.html'));
+assert.ok(fs.existsSync('projects.html'));
+assert.ok(fs.existsSync('project-detail.html'));
+assert.ok(fs.existsSync('coming-soon.html'));
 
 const htmlFiles = [];
 function walk(dir) {
@@ -35,7 +41,7 @@ function walk(dir) {
   }
 }
 walk('.');
-assert.equal(htmlFiles.length,27);
+assert.equal(htmlFiles.length,32);
 for (const file of htmlFiles) {
   const body = fs.readFileSync(file,'utf8');
   const legal = file.startsWith('legal'+path.sep);
@@ -45,4 +51,4 @@ for (const file of htmlFiles) {
   assert.ok(body.includes(cssRef), file+' missing motion stylesheet');
 }
 
-console.log('Motion behavior passed: pre-paint setup, one-shot observer, unobserve-after-reveal, no pointermove/WAAPI loops, all 27 pages wired.');
+console.log('Motion behavior passed: pre-paint setup, one-shot observer, unobserve-after-reveal, no pointermove/WAAPI loops, all 32 pages wired.');
