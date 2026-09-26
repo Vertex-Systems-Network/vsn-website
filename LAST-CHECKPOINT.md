@@ -305,3 +305,16 @@ Authority Profile and site-wide motion merged in PR #64 (`7e544c9f58f703cabb0162
 - Automated markup spot-check confirms all five pages load the shared stylesheet, use the expected page class and reference local VSN visual assets.
 
 - Static Integrity run #143 passed for PR #71 on the completed company/proof implementation checkpoint.
+
+
+## Video-reference rebaseline (2026-09-26)
+
+- PR #71 merged to main as `29cd7557a48f1e0ed66f9cdd66e872352acb682a` after final Static Integrity run #144 passed.
+- Started `design/ritovex-motion-content-human-v2` from that merge.
+- Added `RITOVEX-IMPLEMENTATION-PLAN.md` based on the owner-supplied full-page recordings and public demo.
+- Homepage copy was shortened into simple, natural English while preserving VSN meaning and factual boundaries.
+- Homepage services now follow a dark accordion interaction; portfolio/capability cards use a horizontal editorial treatment; process uses sticky-left + stacked-right cards.
+- Added `assets/motion-init.js` and `assets/motion.css`; all 27 HTML pages load them before the shared styles. The system prepares reveal states before first paint, reveals once with IntersectionObserver, and never replays on scroll-back.
+- Existing pointermove animation loops remain removed. Reduced-motion fallback remains supported.
+- Core Services, About, Products, Contact, Industries, Work, Process, Trust and Payments hero copy was simplified without changing the underlying service or policy meaning.
+- Human-led VSN photography is the next asset milestone; current interface/mockup visuals are temporary and are not considered final.
