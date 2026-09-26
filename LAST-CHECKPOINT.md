@@ -363,3 +363,14 @@ Authority Profile and site-wide motion merged in PR #64 (`7e544c9f58f703cabb0162
 - Final human-image state reconciled: Hero and About are direct unique WebPs; Software, AI, Growth, Operations, Business, Team, Industries and Editorial are distinct atlas scenes exposed through semantic SVG wrappers.
 - No human-image aliases remain pending.
 - Website implementation status remains complete; production publishing/deployment is a separate owner-triggered action.
+
+
+## Ritovex parity recovery batch 1 (2026-09-26)
+
+- Owner rejected the previous completed-state claim after comparison with the supplied Ritovex recordings.
+- Revalidated the public Ritovex Home, Blog, Portfolio, Contact, Service Single, Blog Single, Project Single and 404 page structures.
+- Added `assets/ritovex-recovery.css` as the new parity override layer using only VSN logo-family colors plus neutral white/dark surfaces.
+- Restored missing Website and E-commerce enquiry forms; primary service-detail contract is FAQ + enquiry form.
+- Replaced OpenStreetMap Contact embed with Google Maps and updated CSP frame-src.
+- Rebuilt Blog, Projects, Blog Detail, Project Detail and 404 around the recorded Ritovex hierarchy while keeping VSN content and evidence boundaries.
+- Remaining recovery work: exact header/footer markup parity, animation/microinteraction parity, individual final image assets and full responsive visual audit.

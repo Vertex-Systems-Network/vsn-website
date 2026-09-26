@@ -1,0 +1,356 @@
+/* Ritovex parity recovery — VSN content, VSN logo palette only.
+   Source of truth: owner recordings + public Ritovex demo. */
+:root{
+  --vsn-ink:#081925;
+  --vsn-cyan:#51bfd3;
+  --vsn-blue:#6380c4;
+  --vsn-purple:#6656a9;
+  --vsn-white:#ffffff;
+  --vsn-paper:#f7f8fa;
+  --vsn-line:#d9e2ea;
+  --vsn-muted:#5e6f82;
+  --vsn-gradient:linear-gradient(110deg,#51bfd3 0%,#6380c4 48%,#6656a9 100%);
+}
+html{scroll-behavior:smooth}
+body{background:var(--vsn-white);color:var(--vsn-ink)}
+a{color:inherit}
+.eyebrow,.gradient-text{color:var(--vsn-blue)!important;background:none!important;-webkit-text-fill-color:currentColor!important}
+.btn-primary{background:var(--vsn-ink)!important;border-color:var(--vsn-ink)!important;color:#fff!important;box-shadow:none!important}
+.btn-primary:hover{background:var(--vsn-purple)!important;border-color:var(--vsn-purple)!important}
+.btn-secondary{background:#fff!important;border-color:#aeb9c7!important;color:var(--vsn-ink)!important;box-shadow:none!important}
+.btn-secondary:hover{border-color:var(--vsn-blue)!important;color:var(--vsn-blue)!important}
+::selection{background:var(--vsn-cyan);color:var(--vsn-ink)}
+
+/* Header: compact white Ritovex rhythm */
+.site-header{
+  position:sticky;top:0;z-index:1000;
+  background:rgba(255,255,255,.96)!important;
+  border-bottom:1px solid #e6ebef!important;
+  backdrop-filter:blur(16px);
+  box-shadow:none!important;
+}
+.site-header:after{display:none!important}
+.nav{min-height:72px!important;display:grid!important;grid-template-columns:auto 1fr auto;align-items:center;gap:28px}
+.brand img{height:40px!important;width:auto!important;object-fit:contain}
+.brand-fallback{display:none!important}
+.nav-links{display:flex!important;justify-content:center;align-items:center;gap:26px!important}
+.nav-links>a,.nav-dropdown>summary{font-size:13px!important;font-weight:600!important;letter-spacing:-.01em;color:var(--vsn-ink)!important}
+.nav-links>a:hover,.nav-dropdown>summary:hover{color:var(--vsn-blue)!important}
+.nav-dropdown>summary:after{content:"⌄";font-size:11px;margin-left:6px;color:var(--vsn-purple)}
+.nav-menu{
+  background:#fff!important;border:1px solid #e2e8ed!important;border-radius:0!important;
+  box-shadow:0 20px 55px rgba(8,25,37,.12)!important;padding:24px!important;
+}
+.nav-menu-group strong{color:var(--vsn-purple)!important;font-size:11px!important;text-transform:uppercase;letter-spacing:.08em}
+.nav-menu a{font-size:13px!important;padding:7px 0!important}
+.nav-actions{display:flex;align-items:center;gap:14px}
+.nav-actions .btn-secondary{
+  border:0!important;background:transparent!important;padding:0!important;
+  min-height:auto!important;border-radius:0!important;font-size:12px!important;font-weight:700!important;
+}
+.nav-actions .btn-secondary:before{content:"Call / WhatsApp  ";font-weight:500;color:var(--vsn-muted)}
+.mobile-toggle{border:1px solid #d7e0e7!important;background:#fff!important;color:var(--vsn-ink)!important}
+
+/* Shared page rhythm */
+.page-hero,.rv-service-hero,.rv-company-hero,.editorial-hero,.rv-about-hero{
+  background:#fff!important;
+}
+.page-hero,.rv-service-hero,.rv-company-hero,.editorial-hero{padding-top:72px!important;padding-bottom:88px!important}
+.h1,.display{letter-spacing:-.06em!important}
+.h2{letter-spacing:-.045em!important}
+.section,.section-sm{background:#fff}
+.section.soft{background:var(--vsn-paper)!important}
+.card,.service-card,.proof-card,.price-card,.repo-card,.product-card,.decision-card,.scope-panel{
+  border-radius:0!important;box-shadow:none!important;border-color:var(--vsn-line)!important;
+}
+
+/* Dark services / bands use only logo-dark + logo accents */
+.home-page .home-capabilities,.site-footer,.home-contact-band,.cta{
+  background:var(--vsn-ink)!important;color:#fff!important;
+}
+.home-page .home-capabilities .eyebrow,.home-contact-band .eyebrow,.site-footer .eyebrow{color:var(--vsn-cyan)!important}
+.home-page .home-service-card.is-active h3{color:var(--vsn-cyan)!important}
+.home-page .home-service-card{border-color:rgba(255,255,255,.14)!important}
+.home-page .home-service-card>p,.home-page .home-capabilities .home-section-intro>p{color:#b6c1cc!important}
+
+/* Footer: recorded Ritovex hierarchy */
+.site-footer{position:relative;overflow:hidden;padding:0!important;margin-top:0!important}
+.site-footer .container{padding-top:64px!important;padding-bottom:42px!important}
+.site-footer:before{
+  content:"Get the latest from VSN";
+  display:block;border-bottom:1px solid rgba(255,255,255,.14);
+  max-width:1200px;margin:0 auto;padding:34px 24px;
+  font-size:clamp(22px,3vw,42px);font-weight:750;letter-spacing:-.045em;
+}
+.site-footer:after{
+  content:"VERTEX";display:block;position:absolute;left:50%;bottom:-7vw;transform:translateX(-50%);
+  font-size:clamp(110px,22vw,340px);font-weight:900;letter-spacing:-.08em;
+  color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.11);pointer-events:none;white-space:nowrap;
+}
+.footer-grid{position:relative;z-index:2;display:grid!important;grid-template-columns:minmax(280px,1.5fr) repeat(3,minmax(140px,.55fr))!important;gap:48px!important}
+.footer-brand p,.site-footer li a,.footer-bottom,.footer-public-links{color:#b8c4ce!important}
+.site-footer h4{color:#fff!important;font-size:12px!important;text-transform:uppercase;letter-spacing:.08em}
+.logo-cloud{display:none!important}
+.footer-public-links{position:relative;z-index:2;border-top:1px solid rgba(255,255,255,.12)!important;padding-top:22px!important}
+.footer-bottom{position:relative;z-index:2;border-top:1px solid rgba(255,255,255,.12)!important;margin-top:24px!important;padding-top:20px!important}
+
+/* FAQ parity */
+.faq{border-top:1px solid var(--vsn-line)}
+.faq details{border-radius:0!important;border:0!important;border-bottom:1px solid var(--vsn-line)!important;background:#fff!important}
+.faq summary{padding:22px 0!important;font-weight:700!important}
+.faq details p{padding:0 0 22px!important;color:var(--vsn-muted)!important;max-width:850px}
+
+/* Forms match recorded minimal fields */
+.form{display:grid;gap:18px!important}
+.field input,.field textarea,.field select{
+  border:0!important;border-bottom:1px solid #aeb9c7!important;border-radius:0!important;
+  background:transparent!important;padding:12px 0!important;
+}
+.field input:focus,.field textarea:focus,.field select:focus{border-color:var(--vsn-blue)!important;box-shadow:none!important;outline:none}
+.field label{font-size:12px!important;color:var(--vsn-muted)!important}
+
+/* Contact page */
+.contact-page .contact-main{padding-top:96px!important;padding-bottom:96px!important}
+.contact-page .contact-main .two-col{align-items:stretch}
+.contact-page .contact-main .card{background:#fff!important;color:var(--vsn-ink)!important;border:1px solid var(--vsn-line)!important}
+.contact-location{background:var(--vsn-paper)!important}
+.contact-map{border-radius:0!important;overflow:hidden;border:1px solid var(--vsn-line)!important}
+.contact-map iframe{display:block;width:100%;height:520px;border:0}
+
+/* Blog / Projects recorded listing rhythm */
+.editorial-page .editorial-hero{padding:92px 0 58px!important;text-align:center}
+.editorial-page .editorial-hero-grid{display:block!important;max-width:900px;margin:0 auto}
+.editorial-page .editorial-hero-visual{display:none!important}
+.editorial-page .editorial-hero-copy .h1{font-size:clamp(54px,6vw,92px)!important;max-width:900px;margin-left:auto;margin-right:auto}
+.editorial-page .editorial-hero-copy .lead{max-width:720px;margin-left:auto;margin-right:auto}
+.editorial-card-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:18px!important}
+.editorial-card{border:0!important;background:#fff!important}
+.editorial-card-media img{aspect-ratio:1.35/1!important}
+.editorial-card-body{padding:18px 0 26px!important}
+.editorial-card h3{font-size:22px!important;line-height:1.08!important}
+.editorial-meta{color:var(--vsn-blue)!important}
+.editorial-feature{background:transparent!important;color:var(--vsn-ink)!important;grid-template-columns:1.25fr .75fr!important;border:0!important}
+.editorial-feature-copy{background:var(--vsn-paper)!important;color:var(--vsn-ink)!important;padding:38px!important}
+.editorial-feature-copy p{color:var(--vsn-muted)!important}
+.editorial-feature-copy .card-link{color:var(--vsn-blue)!important}
+
+/* Single article/project pages */
+.article-shell{grid-template-columns:minmax(0,.36fr) minmax(0,.64fr)!important;gap:70px!important}
+.article-body{font-size:17px!important;line-height:1.8!important}
+.article-body h2{font-size:clamp(32px,4vw,52px)!important}
+.article-body blockquote{border-color:var(--vsn-line)!important;color:var(--vsn-purple)!important}
+.project-facts{border-color:var(--vsn-line)!important}
+.project-facts>div{border-color:var(--vsn-line)!important}
+
+/* Motion closer to recording: short reveal, no floaty travel */
+.motion-prep:not(.motion-fallback) [class*="rv-visible"]{will-change:auto}
+.motion-prep:not(.motion-fallback) .home-hero-copy>*,
+.motion-prep:not(.motion-fallback) .hero-art,
+.motion-prep:not(.motion-fallback) .home-about-visual,
+.motion-prep:not(.motion-fallback) .home-about-copy,
+.motion-prep:not(.motion-fallback) .home-section-intro,
+.motion-prep:not(.motion-fallback) .home-service-card,
+.motion-prep:not(.motion-fallback) .home-service-preview,
+.motion-prep:not(.motion-fallback) .home-showcase-card,
+.motion-prep:not(.motion-fallback) .rv-hero-copy>*,
+.motion-prep:not(.motion-fallback) .rv-hero-visual,
+.motion-prep:not(.motion-fallback) .rv-service-hero-copy>*,
+.motion-prep:not(.motion-fallback) .rv-service-visual,
+.motion-prep:not(.motion-fallback) .rv-company-hero-copy>*,
+.motion-prep:not(.motion-fallback) .rv-company-visual,
+.motion-prep:not(.motion-fallback) .editorial-card,
+.motion-prep:not(.motion-fallback) .editorial-section-head{
+  transform:translate3d(0,16px,0)!important;
+  transition-duration:.52s!important;
+  transition-timing-function:cubic-bezier(.22,1,.36,1)!important;
+}
+
+@media(max-width:980px){
+  .nav{grid-template-columns:auto 1fr auto!important}
+  .nav-links{justify-content:flex-start!important}
+  .footer-grid{grid-template-columns:1fr 1fr!important}
+  .editorial-card-grid{grid-template-columns:1fr 1fr!important}
+}
+@media(max-width:760px){
+  .nav{min-height:66px!important}
+  .brand img{height:34px!important}
+  .nav-links{display:none!important}
+  .nav-links.is-open{display:flex!important;position:absolute;left:0;right:0;top:66px;background:#fff;padding:22px;flex-direction:column;align-items:flex-start!important;border-bottom:1px solid var(--vsn-line)}
+  .nav-actions .btn-secondary{display:none!important}
+  .footer-grid{grid-template-columns:1fr!important}
+  .editorial-card-grid{grid-template-columns:1fr!important}
+  .article-shell{grid-template-columns:1fr!important;gap:36px!important}
+  .contact-map iframe{height:380px}
+}
+
+
+/* Atlas photo slots: real generated VSN human images, no placeholder wrappers */
+.vsn-atlas-photo{
+  background-image:url("vsn-human-atlas.webp");
+  background-repeat:no-repeat;
+  background-size:400% 200%;
+  background-color:#e9eef2;
+  min-height:280px;
+}
+.atlas-software{background-position:0% 0%}
+.atlas-ai{background-position:33.333% 0%}
+.atlas-growth{background-position:66.666% 0%}
+.atlas-operations{background-position:100% 0%}
+.atlas-business{background-position:0% 100%}
+.atlas-team{background-position:33.333% 100%}
+.atlas-industries{background-position:66.666% 100%}
+.atlas-editorial{background-position:100% 100%}
+
+/* Ensure service hero figures show actual generated photos, not SVG crop placeholders */
+.service-detail-page .rv-service-visual img[src*="vsn-human-"],
+.company-proof-page .rv-company-visual img[src*="vsn-human-"],
+.secondary-page .rv-hero-visual img[src*="vsn-human-"]{opacity:0}
+.service-detail-page .rv-service-visual,
+.company-proof-page .rv-company-visual,
+.secondary-page .rv-hero-visual{
+  background-image:url("vsn-human-atlas.webp");
+  background-size:400% 200%;
+  background-repeat:no-repeat;
+}
+.software-detail-page .rv-service-visual,
+.web-commerce-detail-page .rv-service-visual,
+.ecommerce-detail-page .rv-service-visual,
+.websites-page .rv-service-visual,
+.mobile-detail-page .rv-service-visual{background-position:0% 0%}
+.ai-detail-page .rv-service-visual,.trust-page .rv-company-visual{background-position:33.333% 0%}
+.profile-detail-page .rv-service-visual,.growth-detail-page .rv-service-visual{background-position:66.666% 0%}
+.bpo-detail-page .rv-service-visual{background-position:100% 0%}
+.business-solutions-detail-page .rv-service-visual,.tax-detail-page .rv-service-visual,.payments-page .rv-company-visual{background-position:0% 100%}
+.resource-detail-page .rv-service-visual,.process-page .rv-company-visual,.services-page .rv-hero-visual,.contact-page .rv-hero-visual{background-position:33.333% 100%}
+.industries-page .rv-company-visual{background-position:66.666% 100%}
+.work-page .rv-company-visual{background-position:100% 100%}
+
+/* Blog listing parity */
+.ritovex-blog-main{padding:88px 0 110px}
+.ritovex-page-intro{max-width:820px;margin:0 auto 58px;text-align:center}
+.ritovex-page-intro .eyebrow{display:block;margin-bottom:14px}
+.ritovex-page-intro h1{font-size:clamp(50px,6vw,86px);line-height:.94;letter-spacing:-.06em;margin:0 0 20px}
+.ritovex-page-intro p{color:var(--vsn-muted);max-width:680px;margin:0 auto;line-height:1.7}
+.ritovex-blog-grid,.ritovex-project-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:34px 18px}
+.ritovex-blog-card,.ritovex-project-card{display:block;text-decoration:none}
+.ritovex-blog-card .vsn-atlas-photo,.ritovex-project-card .vsn-atlas-photo{aspect-ratio:1.32/1;min-height:0;margin-bottom:18px;transition:transform .55s cubic-bezier(.22,1,.36,1),filter .35s ease}
+.ritovex-blog-card:hover .vsn-atlas-photo,.ritovex-project-card:hover .vsn-atlas-photo{transform:scale(.985);filter:saturate(1.05)}
+.card-meta-line{display:flex;gap:12px;align-items:center;font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--vsn-blue);margin-bottom:10px}
+.ritovex-blog-card h2,.ritovex-project-card h2{font-size:23px;line-height:1.08;letter-spacing:-.035em;margin:0 0 9px}
+.ritovex-blog-card p,.ritovex-project-card p{color:var(--vsn-muted);line-height:1.6;margin:0}
+
+/* Single blog parity */
+.ritovex-single-hero{padding:88px 0 44px}
+.ritovex-single-hero h1{font-size:clamp(54px,6.5vw,96px);line-height:.92;letter-spacing:-.065em;max-width:1020px;margin:0 auto 26px;text-align:center}
+.ritovex-single-hero>p{max-width:780px;margin:0 auto 34px;text-align:center;color:var(--vsn-muted);font-size:18px;line-height:1.7}
+.ritovex-single-image{aspect-ratio:1.9/1;max-width:1180px;margin:0 auto}
+.ritovex-post-meta{display:flex;justify-content:center;gap:28px;flex-wrap:wrap;margin:24px 0 0;color:var(--vsn-muted);font-size:13px}
+.ritovex-article{max-width:900px;margin:0 auto;padding:70px 0 110px;font-size:18px;line-height:1.8}
+.ritovex-article h2{font-size:clamp(34px,4vw,52px);letter-spacing:-.045em;margin:58px 0 18px}
+.ritovex-article blockquote{font-size:clamp(26px,3vw,38px);line-height:1.15;border-left:3px solid var(--vsn-blue);padding-left:24px;margin:44px 0;color:var(--vsn-purple)}
+
+/* Project single parity */
+.ritovex-project-single{padding:80px 0 110px}
+.project-single-image{aspect-ratio:1.8/1;margin-bottom:54px}
+.project-single-grid{display:grid;grid-template-columns:.7fr 1.3fr;gap:64px;align-items:start}
+.project-single-meta{position:sticky;top:110px}
+.project-single-meta h1{font-size:clamp(42px,5vw,70px);line-height:.96;letter-spacing:-.055em;margin:0 0 18px}
+.project-single-content h2{font-size:32px;letter-spacing:-.04em;margin:0 0 16px}
+.project-single-content h2:not(:first-child){margin-top:48px}
+.project-feature-list{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:24px}
+.project-feature-list article{border:1px solid var(--vsn-line);padding:24px}
+.project-feature-list h3{font-size:17px;margin:0 0 8px}
+.project-feature-list p{font-size:14px;color:var(--vsn-muted);margin:0}
+
+/* 404 parity */
+.ritovex-404{min-height:72vh;display:grid;place-items:center;padding:90px 24px}
+.ritovex-404-grid{width:min(980px,100%);display:grid;grid-template-columns:.85fr 1.15fr;gap:46px;align-items:center}
+.ritovex-404-photo{aspect-ratio:.86/1}
+.ritovex-404-copy{text-align:center}
+.ritovex-404-number{font-size:clamp(150px,22vw,310px);font-weight:850;line-height:.72;letter-spacing:-.09em;color:var(--vsn-ink)}
+.ritovex-404-copy h1{font-size:30px;letter-spacing:-.04em;margin:28px 0 10px}
+.ritovex-404-copy p{color:var(--vsn-muted);margin-bottom:24px}
+
+@media(max-width:900px){
+  .ritovex-blog-grid,.ritovex-project-grid{grid-template-columns:1fr 1fr}
+  .project-single-grid,.ritovex-404-grid{grid-template-columns:1fr}
+  .project-single-meta{position:relative;top:auto}
+  .ritovex-404-photo{max-width:420px;margin:0 auto;width:100%}
+}
+@media(max-width:640px){
+  .ritovex-blog-grid,.ritovex-project-grid{grid-template-columns:1fr}
+  .project-feature-list{grid-template-columns:1fr}
+  .ritovex-single-image{aspect-ratio:1.2/1}
+}
+
+
+/* Shared shell v2 — markup parity pass */
+.ritovex-nav-menu{
+  min-width:240px!important;display:grid!important;gap:2px!important;
+}
+.ritovex-nav-menu a{display:block!important;padding:9px 0!important;border-bottom:1px solid #eef2f5}
+.ritovex-nav-menu a:last-child{border-bottom:0}
+.nav-contact{display:grid;gap:0;line-height:1.15;text-align:right}
+.nav-contact span{font-size:9px;text-transform:uppercase;letter-spacing:.12em;color:var(--vsn-muted)}
+.nav-contact strong{font-size:12px;font-weight:700;color:var(--vsn-ink)}
+.nav-talk{
+  display:inline-flex;align-items:center;justify-content:center;min-height:38px;padding:0 16px;
+  background:var(--vsn-ink);color:#fff!important;font-size:12px;font-weight:700;
+  transition:background .25s ease,transform .25s ease;
+}
+.nav-talk:hover{background:var(--vsn-purple);transform:translateY(-1px)}
+.site-footer:before,.site-footer:after{display:none!important}
+.footer-news{border-bottom:1px solid rgba(255,255,255,.14);padding:0}
+.footer-news .container{padding-top:42px!important;padding-bottom:42px!important}
+.footer-news-row{display:flex;justify-content:space-between;align-items:end;gap:30px}
+.footer-news-row h2{font-size:clamp(32px,4vw,58px);line-height:.95;letter-spacing:-.055em;margin:8px 0 0;color:#fff}
+.footer-news-row a{color:var(--vsn-cyan);font-size:14px;font-weight:700}
+.footer-main{position:relative;padding-top:54px!important;padding-bottom:54px!important}
+.ritovex-footer-grid{grid-template-columns:minmax(250px,1.2fr) repeat(4,minmax(120px,.55fr))!important;gap:36px!important}
+.footer-mark{width:min(210px,100%);height:auto!important;margin-bottom:20px}
+.footer-brand p{max-width:320px}
+.ritovex-footer-grid ul{list-style:none;margin:0;padding:0;display:grid;gap:9px}
+.ritovex-footer-grid li,.ritovex-footer-grid a{font-size:13px}
+.footer-public-links{display:flex!important;align-items:center;gap:18px;flex-wrap:wrap}
+.footer-public-links span{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:#7f93a4}
+.footer-wordmark{
+  font-size:clamp(100px,18vw,260px);font-weight:900;letter-spacing:-.085em;line-height:.72;
+  color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.11);
+  white-space:nowrap;text-align:center;margin-top:46px;pointer-events:none;
+}
+.footer-bottom{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+@media(max-width:1100px){
+  .nav{gap:18px!important}
+  .nav-links{gap:18px!important}
+  .nav-contact{display:none}
+  .ritovex-footer-grid{grid-template-columns:1.2fr repeat(2,1fr)!important}
+}
+@media(max-width:760px){
+  .nav-talk{display:none}
+  .nav-links.is-open .nav-dropdown{width:100%}
+  .nav-links.is-open .nav-menu{position:static!important;box-shadow:none!important;border:0!important;padding:10px 0 0!important}
+  .footer-news-row{display:block}
+  .footer-news-row a{display:inline-block;margin-top:22px}
+  .ritovex-footer-grid{grid-template-columns:1fr!important}
+  .footer-wordmark{margin-top:30px}
+}
+
+
+/* Legacy token remap — no non-logo accent colors */
+:root{
+  --ink:#081925!important;
+  --ink-2:#081925!important;
+  --slate:#40506a!important;
+  --muted:#526178!important;
+  --line:#d9e2ea!important;
+  --panel:#f7f8fa!important;
+  --blue:#6380c4!important;
+  --indigo:#6656a9!important;
+  --violet:#6656a9!important;
+  --green:#51bfd3!important;
+  --white:#fff!important;
+}
+.home-page .home-capabilities .eyebrow,
+.home-page .home-service-card.is-active h3{color:#51bfd3!important}
+.home-page .home-service-card .home-index{color:#8fa0ae!important}
+.notice strong,.card-link,.home-showcase-meta>a,.contact-public-links a{color:#6380c4!important}
