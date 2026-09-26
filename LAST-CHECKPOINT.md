@@ -355,3 +355,11 @@ Authority Profile and site-wide motion merged in PR #64 (`7e544c9f58f703cabb0162
 - Motion rebaseline, responsive CSS QA, Blog/Projects expansion, utility pages and primary marketing-copy simplification are complete.
 - Legal/policy content remains accuracy-first and was not rewritten for poetic tone where that could change meaning.
 - Next valid action: final PR review, final-head CI, merge PR #72 to main.
+
+
+## Final main merge reconciliation (2026-09-26)
+
+- PR #72 merged to main as `a2a7cb18075e814b955109dfe60891645639ea40`.
+- Final human-image state reconciled: Hero and About are direct unique WebPs; Software, AI, Growth, Operations, Business, Team, Industries and Editorial are distinct atlas scenes exposed through semantic SVG wrappers.
+- No human-image aliases remain pending.
+- Website implementation status remains complete; production publishing/deployment is a separate owner-triggered action.
