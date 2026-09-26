@@ -333,3 +333,6 @@ Authority Profile and site-wide motion merged in PR #64 (`7e544c9f58f703cabb0162
 - Static validator and motion regression expectations were updated to the 32-page architecture without relaxing CSP, local-path, shared-header or proof-boundary checks.
 
 - Static Integrity run #198 passed on the completed Blog/Projects/utility-page batch, including 32-page shared navigation, 30 public sitemap URLs and editorial motion regression checks.
+
+
+- Human image batch 1: committed `assets/vsn-human-hero.webp` and `assets/vsn-human-about.webp`; Home hero, Home About and About page now reference those human-led assets. Static Integrity run #204 passed. Next batch: Software, AI, Growth, Operations.
