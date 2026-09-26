@@ -250,3 +250,7 @@ Corrections now include:
 - About and Services rebuilt around the reference centered hero, black accordion, human cards and split-image patterns;
 - one reveal-animation owner in fidelity mode to prevent the earlier double-animation behavior;
 - a dedicated scripts/check_ritovex_fidelity.cjs CI regression check.
+
+### Corrective verification run #420
+
+Static Integrity run #420 passed on the corrective branch. The same job passed the static-site validator, motion regression and the dedicated Ritovex fidelity regression. The fidelity check now protects the reference shell, direct human imagery, all service-detail FAQs/forms, Google Maps contact section, separate Blog/Projects and detail layouts, About/Services reference structures, 404 composition and single animation ownership.
