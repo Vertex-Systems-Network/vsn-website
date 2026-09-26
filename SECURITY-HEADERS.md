@@ -66,3 +66,7 @@ This is defense in depth only. A meta CSP does **not** replace production respon
 - HSTS must be delivered as an HTTP response header.
 - Permissions-Policy must be delivered as an HTTP response header.
 - Response-header verification applies only if the static folder is later published on an HTTPS web host; it is not required for direct `file://` use.
+
+## Contact map exception (2026-09-26)
+
+The Contact page embeds an OpenStreetMap area map. Its source-level CSP adds `frame-src https://www.openstreetmap.org`. If response CSP headers are configured, allow the same frame origin on Contact only. Other pages retain the baseline. The map is described in the Privacy Policy.

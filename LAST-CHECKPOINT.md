@@ -212,3 +212,13 @@ The owner reported that the redesigned pages looked broken. Investigation found 
 - Static Integrity run #112 passed on PR head `64c32e7b35b521836d3ac26d65c7aa1545591b13`.
 - Local static integrity passed: 27 HTML files, 1,408 local references, 26 sitemap URLs; required Home/About selectors present and stylesheet braces balanced.
 - No production-site check or deployment. The corrected stylesheet is now on `main`.
+
+## Visual, contact and proof audit (2026-09-26)
+
+- Reconciled the local checkout with the current `main` before editing, after the previous CSS recovery.
+- Normalized header markup across all 27 HTML pages, retaining direct-file relative paths. The static validator now checks normalized header equivalence and Contact map/profile presence.
+- Restyled shared chrome, buttons, service surfaces and contact layout around cyan/blue/violet sampled from the official VSN logo. Added motion to the home hero and cards with reduced-motion support.
+- Added Contact's OpenStreetMap Phase 4-A area view, explicitly distinguished from an exact address pin, plus GitHub, WP Essential WordPress.org and Shopify product links. Documented map privacy behavior and its scoped CSP frame permission.
+- Added sourced product/repository review destinations on Home, About and Work. Google Business Profile URL, named team bios and client-approved testimonials remain unavailable; no rating, quote or account URL has been invented.
+- Internal verification: all 27 HTML pages, 1,447 local references and 26 sitemap URLs pass; all normalized headers identical; JavaScript syntax and diff whitespace pass.
+- No live production check or deployment was performed.
