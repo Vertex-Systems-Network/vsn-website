@@ -184,3 +184,5 @@ projects_listing_percent: 100
 project_detail_template_percent: 100
 coming_soon_percent: 100
 not_found_redesign_percent: 100
+editorial_page_static_integrity_run: 198
+editorial_page_static_integrity_status: passed
