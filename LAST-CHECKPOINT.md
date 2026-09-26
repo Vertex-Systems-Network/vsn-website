@@ -293,3 +293,13 @@ Authority Profile and site-wide motion merged in PR #64 (`7e544c9f58f703cabb0162
 - Automated markup spot-check confirms all 12 pages reference the shared stylesheet, have the expected service-detail body class and use local VSN visual assets.
 
 - Static Integrity run #140 passed for PR #70 on the completed 12-page implementation checkpoint.
+
+
+## Company/proof visual batch (2026-09-26)
+
+- PR #70 merged to main as `5a51d30ea674f9a7c632b0767605c1350797a24e` after final Static Integrity run #141 passed.
+- Started `design/ritovex-company-proof-batch` from that merge.
+- Migrated Industries, Work, Process, Trust and Payments to a shared company/proof editorial system.
+- Added five original local VSN visuals matched to each page's subject.
+- Work continues to separate verified public proof from unsupported case-study claims; Trust continues to avoid unearned certification claims.
+- Automated markup spot-check confirms all five pages load the shared stylesheet, use the expected page class and reference local VSN visual assets.
