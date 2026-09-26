@@ -192,7 +192,7 @@ human_image_assets_integrated: [hero, about]
 
 human_image_slot_wiring_percent: 100
 unique_human_photo_assets_percent: 100
-human_image_current_strategy: nine-unique-human-assets-editorial-alias-pending
+human_image_current_strategy: final-human-atlas-plus-unique-hero-about
 
 responsive_css_qa_percent: 100
 motion_microinteraction_polish_percent: 100
@@ -201,16 +201,19 @@ responsive_motion_static_integrity_status: passed
 
 human_unique_batch_2_static_integrity_run: 251
 human_unique_batch_2_status: passed
-human_unique_assets: [hero, about, software, ai, growth, operations]
-human_alias_assets_pending: [business, team, industries, editorial]
+human_unique_assets: [hero, about, software, ai, growth, operations, business, team, industries, editorial]
+human_alias_assets_pending: []
 
 human_unique_batch_3_static_integrity_run: 256
 human_unique_batch_3_status: passed
-human_unique_assets: [hero, about, software, ai, growth, operations, business, team, industries]
-human_alias_assets_pending: [editorial]
+human_unique_assets: [hero, about, software, ai, growth, operations, business, team, industries, editorial]
+human_alias_assets_pending: []
 final_human_atlas_static_integrity_run: 295
 final_human_atlas_static_integrity_status: passed
 website_visual_rebuild_percent: 100
 marketing_copy_simplification_status: complete
 legal_policy_copy_preserved_for_accuracy: true
 completion_status: complete
+final_merge_sha: a2a7cb18075e814b955109dfe60891645639ea40
+final_pr: 72
+final_main_status: merged
