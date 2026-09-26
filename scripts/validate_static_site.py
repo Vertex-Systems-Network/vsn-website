@@ -148,7 +148,7 @@ def main() -> int:
         if not footer_links or linkedin_url not in footer_links.group():
             errors.append(f"{source}: LinkedIn missing from shared footer profiles")
         if source == "contact.html":
-            for required in ('class="contact-map"', 'openstreetmap.org/export/embed.html', 'class="contact-public-links"'):
+            for required in ('class="contact-map"', 'www.google.com/maps?q=', 'class="contact-public-links"'):
                 if required not in text:
                     errors.append(f"contact.html: missing {required}")
         if REMOTE_LOGO_URL in text:
@@ -177,7 +177,7 @@ def main() -> int:
             errors.append(f"{source}: expected exactly one <title>")
         if not re.search(r"""<meta\b[^>]*name=["']viewport["']""", text, re.I):
             errors.append(f"{source}: missing viewport meta")
-        expected_csp_tag = CSP_META_TAG.replace("form-action 'self'", "form-action 'self'; frame-src https://www.openstreetmap.org") if source == "contact.html" else CSP_META_TAG
+        expected_csp_tag = CSP_META_TAG.replace("form-action 'self'", "form-action 'self'; frame-src https://www.google.com https://maps.google.com") if source == "contact.html" else CSP_META_TAG
         if text.count(expected_csp_tag) != 1:
             errors.append(f"{source}: expected exactly one reviewed CSP meta tag")
         else:
