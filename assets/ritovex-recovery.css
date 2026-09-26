@@ -334,3 +334,23 @@ a{color:inherit}
   .ritovex-footer-grid{grid-template-columns:1fr!important}
   .footer-wordmark{margin-top:30px}
 }
+
+
+/* Legacy token remap — no non-logo accent colors */
+:root{
+  --ink:#081925!important;
+  --ink-2:#081925!important;
+  --slate:#40506a!important;
+  --muted:#526178!important;
+  --line:#d9e2ea!important;
+  --panel:#f7f8fa!important;
+  --blue:#6380c4!important;
+  --indigo:#6656a9!important;
+  --violet:#6656a9!important;
+  --green:#51bfd3!important;
+  --white:#fff!important;
+}
+.home-page .home-capabilities .eyebrow,
+.home-page .home-service-card.is-active h3{color:#51bfd3!important}
+.home-page .home-service-card .home-index{color:#8fa0ae!important}
+.notice strong,.card-link,.home-showcase-meta>a,.contact-public-links a{color:#6380c4!important}
