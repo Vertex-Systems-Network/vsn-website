@@ -388,3 +388,167 @@ img[src*="vsn-human-editorial"]{
     min-height:360px;
   }
 }
+
+/* =========================================================
+   RITOVEX FIDELITY REPAIR — VSN brand palette only
+   Brand accents already defined by the original VSN system:
+   #0ea5e9 · #5b5cf0 · #8b5cf6
+   Black / white / neutral grays are layout neutrals.
+   ========================================================= */
+:root{
+  --brand-blue:#0ea5e9;
+  --brand-indigo:#5b5cf0;
+  --brand-violet:#8b5cf6;
+  --blue:var(--brand-blue);
+  --indigo:var(--brand-indigo);
+  --violet:var(--brand-violet);
+  --green:var(--brand-blue);
+  --ink:#101010;
+  --ink-2:#181818;
+  --slate:#555b62;
+  --muted:#777c82;
+  --line:#dedede;
+  --panel:#f5f5f3;
+  --shadow:0 22px 60px rgba(0,0,0,.10);
+  --radius:2px;
+  --radius-sm:2px;
+}
+body{background:#fff;color:#101010}
+.gradient-text{
+  background:linear-gradient(115deg,var(--brand-blue),var(--brand-indigo) 58%,var(--brand-violet));
+  -webkit-background-clip:text;background-clip:text;color:transparent
+}
+.eyebrow{color:var(--brand-indigo)}
+.eyebrow:before{background:linear-gradient(90deg,var(--brand-blue),var(--brand-violet))}
+.card-link,.breadcrumbs a,.nav-links a:hover,.nav-dropdown>summary:hover{color:var(--brand-indigo)}
+.btn{border-radius:0;box-shadow:none;transition:transform .34s cubic-bezier(.16,1,.3,1),background .25s,color .25s,border-color .25s}
+.btn-primary{background:#111;color:#fff;border-color:#111;box-shadow:none}
+.btn-primary:hover{background:var(--brand-indigo);border-color:var(--brand-indigo)}
+.btn-secondary{background:transparent;border-color:#bcbcbc;color:#111}
+.btn-secondary:hover{background:#111;border-color:#111;color:#fff}
+.btn-dark{background:#111;color:#fff;border-radius:0}
+
+/* Header: restrained, flat, reference-like */
+.site-header,
+.home-page .site-header,
+.secondary-page .site-header,
+.service-detail-page .site-header,
+.company-proof-page .site-header,
+.editorial-page .site-header{
+  background:#fff!important;
+  backdrop-filter:none!important;
+  border-bottom:1px dashed #d8d8d8!important;
+  box-shadow:none!important
+}
+.site-header:after{display:none!important}
+.nav{height:84px!important;min-height:84px!important;gap:30px}
+.brand{display:flex;align-items:center}
+.brand img{height:42px;width:auto}
+.nav-links{gap:29px;font-size:14px;font-weight:600;color:#171717}
+.nav-actions .btn-secondary,
+.home-page .nav-actions .btn-secondary,
+.secondary-page .nav-actions .btn-secondary,
+.service-detail-page .nav-actions .btn-secondary,
+.company-proof-page .nav-actions .btn-secondary{
+  border:0;background:#111!important;color:#fff!important;padding:12px 18px
+}
+.nav-actions .btn-secondary:hover{background:var(--brand-indigo)!important}
+.mobile-toggle{border-radius:0;background:#fff;border-color:#d4d4d4}
+.nav-menu{
+  border-radius:0;border:1px solid #d7d7d7;box-shadow:0 18px 45px rgba(0,0,0,.11);
+  padding:24px;background:#fff
+}
+.nav-menu-group a{border-radius:0}
+.nav-menu-group a:hover{background:#f5f5f3;color:var(--brand-indigo)}
+
+/* Keep page surfaces neutral; only logo colors are accents */
+.soft,.secondary-page,.service-detail-page,.company-proof-page,.editorial-page{--rv-paper:#f5f5f3;background:#fff}
+.dark-section,.home-page .home-capabilities{background:#111!important}
+.home-page .home-capabilities .eyebrow{color:var(--brand-blue)!important}
+.home-page .home-service-card.is-active h3{color:var(--brand-blue)!important}
+.home-page .home-contact-band{background:#111!important}
+.home-page .home-contact-band:before,
+.home-page .home-contact-band:after{background:linear-gradient(90deg,transparent,var(--brand-indigo),transparent)!important;opacity:.32}
+
+/* Human media must render as real photo surfaces */
+img[src*="vsn-human-"]{filter:none!important}
+.hero-art,.home-about-visual,.rv-hero-visual,.rv-about-visual,.rv-service-visual,.rv-company-visual,
+.editorial-hero-visual,.editorial-card-media,.editorial-feature-media,.project-detail-image{
+  background:#ececea!important;border-radius:0!important;box-shadow:none!important
+}
+.hero-art img,.home-about-visual img,.rv-hero-visual img,.rv-about-visual img,
+.rv-service-visual img,.rv-company-visual img,.editorial-hero-visual img,
+.editorial-card-media img,.editorial-feature-media img,.project-detail-image img{
+  object-fit:cover
+}
+
+/* Service enquiry blocks: large editorial two-column, not a buried generic card */
+.service-detail-page section[id$="-brief"]{background:#111;color:#fff}
+.service-detail-page section[id$="-brief"] .lead,
+.service-detail-page section[id$="-brief"] .muted,
+.service-detail-page section[id$="-brief"] .feature-list{color:#bcbcbc}
+.service-detail-page section[id$="-brief"] .eyebrow{color:var(--brand-blue)}
+.service-detail-page section[id$="-brief"]>.container{align-items:start}
+.service-detail-page section[id$="-brief"] .card{
+  background:#fff!important;color:#111;border:0!important;padding:34px!important
+}
+.service-detail-page .form{border-top:0!important;padding-top:0!important;display:grid;gap:18px}
+.service-detail-page .field label{font-size:12px;text-transform:uppercase;letter-spacing:.08em;font-weight:750;color:#333}
+.service-detail-page .field input,.service-detail-page .field textarea,.service-detail-page .field select{
+  border:0!important;border-bottom:1px solid #cfcfcf!important;border-radius:0!important;
+  background:transparent!important;padding:13px 0!important;outline:none
+}
+.service-detail-page .field input:focus,.service-detail-page .field textarea:focus,.service-detail-page .field select:focus{
+  border-bottom-color:var(--brand-indigo)!important
+}
+.service-detail-page .field textarea{min-height:120px}
+
+/* FAQ: reference-like clean numbered/ruled accordion */
+.service-detail-page .faq{border-top:1px solid #cfcfcf}
+.service-detail-page .faq details{border:0!important;border-bottom:1px solid #cfcfcf!important;background:transparent!important}
+.service-detail-page .faq summary{
+  padding:22px 44px 22px 0!important;font-size:18px;font-weight:650;position:relative;cursor:pointer
+}
+.service-detail-page .faq summary:after{
+  content:"+";position:absolute;right:0;top:17px;font-size:27px;font-weight:300;color:var(--brand-indigo)
+}
+.service-detail-page .faq details[open] summary:after{content:"−"}
+.service-detail-page .faq details p{padding:0 8% 24px 0!important;color:#636363;max-width:880px}
+
+/* Footer: dark editorial system with large brand wordmark */
+.site-footer{
+  position:relative;overflow:hidden;background:#111!important;color:#fff!important;
+  padding:78px 0 28px!important;border-top:0!important
+}
+.site-footer .container{position:relative;z-index:1}
+.footer-grid{
+  grid-template-columns:minmax(300px,1.35fr) repeat(3,minmax(140px,.55fr))!important;
+  gap:48px!important;padding-bottom:54px;border-bottom:1px solid #383838
+}
+.footer-brand p,.site-footer li a,.site-footer .footer-bottom,.site-footer .footer-public-links{color:#a9a9a9!important}
+.site-footer h4{font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:#fff!important}
+.site-footer li a:hover,.site-footer a:hover{color:var(--brand-blue)!important}
+.site-footer .pill{background:transparent!important;border-color:#3b3b3b!important;color:#aaa!important;border-radius:0!important}
+.footer-public-links{padding:26px 0!important;border-bottom:1px solid #383838;display:flex;flex-wrap:wrap;gap:22px!important}
+.footer-bottom{padding-top:24px!important}
+.site-footer:after{
+  content:"VERTEX SYSTEMS NETWORK";display:block;white-space:nowrap;
+  font-size:clamp(56px,10vw,166px);font-weight:850;letter-spacing:-.065em;
+  line-height:.76;color:#fff;opacity:.055;margin:70px 0 -22px;text-align:center;pointer-events:none
+}
+
+/* Global CTA panels match the reference's flat dark closing block */
+.cta,.feature-band{border-radius:0!important;background:#111!important}
+.cta .btn-primary,.feature-band .btn-primary{background:#fff!important;color:#111!important;border-color:#fff!important}
+.cta .btn-primary:hover,.feature-band .btn-primary:hover{background:var(--brand-blue)!important;color:#111!important;border-color:var(--brand-blue)!important}
+
+@media(max-width:960px){
+  .footer-grid{grid-template-columns:1fr 1fr!important}
+}
+@media(max-width:760px){
+  .nav{height:72px!important;min-height:72px!important}
+  .brand img{height:36px}
+  .footer-grid{grid-template-columns:1fr!important;gap:32px!important}
+  .site-footer{padding-top:58px!important}
+  .site-footer:after{font-size:18vw;margin-top:48px}
+}
