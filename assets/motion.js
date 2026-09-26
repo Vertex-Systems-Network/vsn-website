@@ -22,7 +22,8 @@ const groups=[
  ['.secondary-page .split-heading,.service-detail-page .split-heading,.company-proof-page .split-heading',0],
  ['.secondary-page .service-card,.secondary-page .product-card,.secondary-page .repo-card,.secondary-page .card,.secondary-page .contact-section-heading',70],
  ['.service-detail-page .service-card,.service-detail-page .card,.service-detail-page .decision-card,.service-detail-page .scope-panel,.service-detail-page .price-card',70],
- ['.company-proof-page .service-card,.company-proof-page .proof-card,.company-proof-page .card,.company-proof-page .decision-card,.company-proof-page .scope-panel',70]
+ ['.company-proof-page .service-card,.company-proof-page .proof-card,.company-proof-page .card,.company-proof-page .decision-card,.company-proof-page .scope-panel',70],
+ ['.editorial-hero-copy>*',80],['.editorial-hero-visual',0],['.editorial-section-head',0],['.editorial-feature',0],['.editorial-card',80],['.article-aside',0],['.article-body>*',55],['.project-detail-image',0],['.utility-inner>*',80]
 ];
 const targets=[];
 groups.forEach(([selector,step])=>document.querySelectorAll(selector).forEach((el,i)=>{el.style.setProperty('--rv-delay',step?Math.min(i*step,320)+'ms':'0ms');targets.push(el)}));
