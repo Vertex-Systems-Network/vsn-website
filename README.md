@@ -195,3 +195,5 @@ PR #70 was squash-merged as `5a51d30ea674f9a7c632b0767605c1350797a24e`. A new br
 ## Video-reference motion and copy rebaseline — in progress (2026-09-26)
 
 PR #71 merged to main as `29cd7557a48f1e0ed66f9cdd66e872352acb682a`. Work then moved to `design/ritovex-motion-content-human-v2` using the owner's full-page Ritovex recordings as the motion/layout reference. The homepage now uses a dark interactive services accordion, horizontal work cards, a sticky process layout and shorter VSN copy. A new pre-paint motion initializer plus shared motion stylesheet loads on all 27 HTML pages so reveal animations start before content is painted, run once, and do not replay on scroll-back. Core marketing-page hero copy was simplified without changing meaning. The remaining visual milestone is to replace mockup-first imagery with original human + AI/technology interaction photography generated specifically for VSN.
+
+Static Integrity run #147 passed with both the static-site validator and the new motion regression check. The motion layer is wired across all 27 HTML pages; the human-image asset swap remains the open visual milestone.
