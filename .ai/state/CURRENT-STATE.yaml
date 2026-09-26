@@ -93,7 +93,7 @@ profile_package_prices:
   status: owner-requested-revised-starting-fees
   usd: [499, 999, 1999]
 deployment_status: waiting-for-hosting-panel-access
-next_valid_action: validate-motion-copy-rebaseline-then-generate-and-integrate-human-ai-technology-images
+next_valid_action: validate-editorial-pages-then-generate-and-integrate-human-ai-technology-images
 
 industry_expansion_percent: 100
 ai_solutions_module_percent: 100
@@ -145,7 +145,7 @@ motion_pointer_transform_restarts: removed
 scroll_header_layout_shift: removed
 large_hero_image_continuous_scale: removed
 
-ritovex_visual_rebuild_percent: 90
+ritovex_visual_rebuild_percent: 92
 ritovex_homepage_percent: 100
 ritovex_original_visual_assets: 4
 ritovex_secondary_pages_percent: 100
@@ -175,3 +175,12 @@ ritovex_human_image_generation_percent: 0
 ritovex_mockup_first_visuals_final_state: false
 ritovex_motion_static_integrity_run: 147
 ritovex_motion_static_integrity_status: passed
+
+editorial_page_batch_percent: 100
+html_pages: 32
+blog_listing_percent: 100
+blog_detail_template_percent: 100
+projects_listing_percent: 100
+project_detail_template_percent: 100
+coming_soon_percent: 100
+not_found_redesign_percent: 100
