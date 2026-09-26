@@ -18,8 +18,8 @@ This file is the implementation contract for the final human-led visual system. 
 
 | File | Primary use | Scene |
 |---|---|---|
-| assets/vsn-human-hero.webp | Home hero | Technical founder / product lead working with an AI-enabled digital workspace; confident but natural, wide editorial composition |
-| assets/vsn-human-about.webp | Home About + About page | Small team collaborating around laptop and large display; discussion and decision-making, not posing |
+| assets/vsn-human-hero.webp ✅ integrated | Home hero | Technical founder / product lead working with an AI-enabled digital workspace; confident but natural, wide editorial composition |
+| assets/vsn-human-about.webp ✅ integrated | Home About + About page | Small team collaborating around laptop and large display; discussion and decision-making, not posing |
 | assets/vsn-human-software.webp | Software + product engineering | Engineer and product lead reviewing a live product together; code/interface context visible but secondary |
 | assets/vsn-human-ai.webp | AI + Blog AI feature | Professional using an AI assistant with an explicit human approval/review moment |
 | assets/vsn-human-growth.webp | Digital growth + Blog hero | Marketer / strategist reviewing content and campaign performance with a teammate |
