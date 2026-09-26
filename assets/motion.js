@@ -5,6 +5,7 @@ if(!window.matchMedia){root.classList.add('motion-fallback');return}
 const reduce=window.matchMedia('(prefers-reduced-motion: reduce)');
 let manualReduce=false,frame=0;
 const allowed=()=>!reduce.matches&&!manualReduce;
+const fidelityMode=!!document.querySelector('link[href*="ritovex-fidelity.css"]');
 const control=document.createElement('button');
 control.type='button';control.className='motion-control';control.setAttribute('aria-label','Reduce website animations');document.body.append(control);
 const progress=document.createElement('progress');
@@ -30,6 +31,7 @@ groups.forEach(([selector,step])=>document.querySelectorAll(selector).forEach((e
 let observer=null;
 function revealAll(){targets.forEach(el=>el.classList.add('rv-visible'))}
 function startReveal(){
+ if(fidelityMode){root.classList.add('motion-live','motion-enabled');root.classList.remove('motion-prep','motion-fallback','motion-reduced');revealAll();return}
  if(!allowed()){root.classList.remove('motion-prep');root.classList.add('motion-reduced');revealAll();return}
  root.classList.add('motion-live','motion-enabled');root.classList.remove('motion-fallback','motion-reduced');
  if(!('IntersectionObserver'in window)){revealAll();return}
