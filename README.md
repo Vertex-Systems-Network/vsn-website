@@ -234,3 +234,8 @@ Business, Team and Industries now use their own committed human-led WebP binarie
 ## Final human photography and Ritovex completion checkpoint (2026-09-26)
 
 The Ritovex-reference redesign is now complete on the active branch. The two approved unique Hero/About WebP photographs remain direct assets. Software, AI, Growth, Operations, Business, Team, Industries and Editorial now use eight distinct generated human + technology scenes stored in a single local WebP atlas with lightweight semantic SVG crop wrappers. Temporary alias WebP files were deleted so stale references cannot silently survive. All major marketing, service, company, Blog and Projects surfaces now use human-led imagery instead of mockup-first illustrations. Responsive and one-shot motion QA are complete. Marketing copy has been simplified across the primary customer-facing pages while legal/policy wording remains factual rather than lyrical where precision matters. Static Integrity run #295 passed after the final image architecture and alias deletion.
+
+
+## Ritovex parity recovery — active (2026-09-26)
+
+The prior visual rebuild was re-opened after owner review found major parity gaps versus the supplied Ritovex recordings. Recovery branch: `recovery/ritovex-parity-fix`. Batch 1 restores a logo-only VSN palette, adds a Ritovex-style shared header/footer override, restores Google Maps on Contact, restores enquiry forms on the Website and E-commerce detail pages so all primary service details retain FAQ + enquiry coverage, and rebuilds Blog, Projects, Blog Detail, Project Detail and 404 around the recorded page structures. This recovery is not complete yet; animation parity, exact header/footer composition and final image delivery remain active work.
