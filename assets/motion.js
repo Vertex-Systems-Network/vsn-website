@@ -23,7 +23,12 @@ const groups=[
  ['.secondary-page .service-card,.secondary-page .product-card,.secondary-page .repo-card,.secondary-page .card,.secondary-page .contact-section-heading',70],
  ['.service-detail-page .service-card,.service-detail-page .card,.service-detail-page .decision-card,.service-detail-page .scope-panel,.service-detail-page .price-card',70],
  ['.company-proof-page .service-card,.company-proof-page .proof-card,.company-proof-page .card,.company-proof-page .decision-card,.company-proof-page .scope-panel',70],
- ['.editorial-hero-copy>*',80],['.editorial-hero-visual',0],['.editorial-section-head',0],['.editorial-feature',0],['.editorial-card',80],['.article-aside',0],['.article-body>*',55],['.project-detail-image',0],['.utility-inner>*',80]
+ ['.editorial-hero-copy>*',80],['.editorial-hero-visual',0],['.editorial-section-head',0],['.editorial-feature',0],['.editorial-card',80],['.article-aside',0],['.article-body>*',55],['.project-detail-image',0],['.utility-inner>*',80],
+ ['.rtv-blog-hero .container>*',85],['.rtv-feature-story',0],['.rtv-blog-card',90],
+ ['.rtv-projects-hero .container>*',85],['.rtv-project-card',100],
+ ['.rtv-article-head .container>*',85],['.rtv-article-cover',0],['.rtv-article-layout>*',90],
+ ['.rtv-project-detail-head .container>*',85],['.rtv-project-cover',0],['.rtv-story-grid>*',90],['.rtv-numbered-grid>article',80],
+ ['.rtv-404 .container>*',90]
 ];
 const targets=[];
 groups.forEach(([selector,step])=>document.querySelectorAll(selector).forEach((el,i)=>{el.style.setProperty('--rv-delay',step?Math.min(i*step,320)+'ms':'0ms');targets.push(el)}));
