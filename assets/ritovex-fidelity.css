@@ -203,3 +203,80 @@ body{background:var(--vsn-white);color:var(--vsn-black)}
 .feature-band:before{background:radial-gradient(circle,rgba(91,92,240,.32),transparent 65%)!important}
 input:focus,textarea:focus,select:focus{outline-color:var(--vsn-indigo)!important;border-color:var(--vsn-indigo)!important}
 ::selection{background:var(--vsn-indigo);color:#fff}
+
+
+/* About + Services recorded-reference structures */
+.about-reference-hero,.services-reference-hero{padding:92px 0 76px;text-align:center;background:#fff}
+.about-reference-hero .container,.services-reference-hero .container{max-width:920px}
+.about-reference-hero .h1,.services-reference-hero .h1{font-size:clamp(64px,8.2vw,126px);line-height:.88;letter-spacing:-.075em;margin:18px auto 28px}
+.about-reference-hero .lead,.services-reference-hero .lead{margin-inline:auto;max-width:760px}
+.about-reference-hero .btn-row,.services-reference-hero .btn-row{justify-content:center}
+.about-reference-services{background:var(--vsn-black);color:#fff;padding:105px 0}
+.about-reference-services .split-heading{border-bottom:1px solid #2b2b30;padding-bottom:32px;margin-bottom:0}
+.about-reference-services .split-heading p{color:rgba(255,255,255,.62)}
+.about-reference-services .h2{font-size:clamp(44px,5vw,74px);letter-spacing:-.055em}
+.reference-service-accordion{border-bottom:1px solid #2b2b30}
+.reference-service-accordion details{border-top:1px solid #2b2b30;background:transparent}
+.reference-service-accordion summary{list-style:none;display:grid;grid-template-columns:58px 1fr 34px;gap:20px;align-items:center;padding:27px 0;cursor:pointer}
+.reference-service-accordion summary::-webkit-details-marker{display:none}
+.reference-service-accordion summary span{font-size:11px;color:#777780}
+.reference-service-accordion summary strong{font-size:clamp(25px,3vw,42px);line-height:1;letter-spacing:-.04em;font-weight:650}
+.reference-service-accordion summary b{font-size:26px;font-weight:300;text-align:center;transition:transform .28s var(--rv-ease),color .2s}
+.reference-service-accordion details[open] summary strong{color:var(--vsn-cyan)}
+.reference-service-accordion details[open] summary b{transform:rotate(45deg);color:var(--vsn-cyan)}
+.reference-service-body{display:grid;grid-template-columns:1fr 1fr;gap:42px;padding:0 54px 28px 78px;color:#b8b8be}
+.reference-service-body p{margin:0;max-width:650px}
+.reference-links{display:flex;gap:9px;flex-wrap:wrap;align-content:start}
+.reference-links a{border:1px solid #34343a;padding:8px 11px;color:#fff;font-size:11px}
+.reference-links a:hover{border-color:var(--vsn-cyan);color:var(--vsn-cyan)}
+.about-reference-team{padding:104px 0}
+.about-team-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.about-team-grid article{background:#fff;border:1px solid var(--vsn-line);overflow:hidden}
+.about-team-grid article img{width:100%;aspect-ratio:1.15/1;object-fit:cover}
+.about-team-grid article>div{padding:18px}
+.about-team-grid article span{font-size:10px;color:var(--vsn-indigo)}
+.about-team-grid h3{font-size:22px;margin:8px 0;letter-spacing:-.035em}
+.about-team-grid p{font-size:13px;color:var(--vsn-muted);margin:0}
+.about-reference-expert{padding:104px 0;background:#fff}
+.about-expert-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(360px,.95fr);gap:64px;align-items:center}
+.about-expert-grid figure{margin:0;overflow:hidden;background:#f1f1f4}
+.about-expert-grid figure img{width:100%;aspect-ratio:1.08/1;object-fit:cover}
+.about-expert-list{margin-top:32px;border-top:1px solid var(--vsn-line)}
+.about-expert-list a{display:grid;grid-template-columns:42px 1fr 28px;align-items:center;gap:14px;padding:17px 0;border-bottom:1px solid var(--vsn-line)}
+.about-expert-list span{font-size:10px;color:var(--vsn-indigo)}
+.about-expert-list strong{font-size:18px}
+.about-expert-list em{font-style:normal;text-align:right;transition:transform .25s var(--rv-ease)}
+.about-expert-list a:hover em{transform:translateX(4px)}
+.about-reference-facts .project-facts{background:#fff}
+.services-reference-outcomes{padding:104px 0}
+.services-reference-scope{display:grid;grid-template-columns:.7fr 1.3fr;gap:60px;align-items:center}
+.services-authority-callout{padding:104px 0}
+.services-authority-callout .about-expert-grid figure img{aspect-ratio:1.2/1}
+
+/* Reference hero load animation: short clip/fade, not long sliding entrances. */
+.motion-enabled .home-hero-copy>*,
+.motion-enabled .about-reference-hero>*,
+.motion-enabled .services-reference-hero>*{animation:rvHeroText .72s var(--rv-ease) both}
+.motion-enabled .home-hero-copy>*:nth-child(2),
+.motion-enabled .about-reference-hero>*:nth-child(2),
+.motion-enabled .services-reference-hero>*:nth-child(2){animation-delay:.06s}
+.motion-enabled .home-hero-copy>*:nth-child(3),
+.motion-enabled .about-reference-hero>*:nth-child(3),
+.motion-enabled .services-reference-hero>*:nth-child(3){animation-delay:.12s}
+.motion-enabled .hero-art{animation:rvHeroMedia .86s var(--rv-ease) both}
+@keyframes rvHeroText{from{opacity:0;transform:translateY(13px)}to{opacity:1;transform:none}}
+@keyframes rvHeroMedia{from{opacity:0;clip-path:inset(0 0 20% 0);transform:scale(1.025)}to{opacity:1;clip-path:inset(0);transform:none}}
+
+@media(max-width:900px){
+ .about-reference-hero,.services-reference-hero{padding:64px 0 54px}
+ .reference-service-body,.about-expert-grid,.services-reference-scope{grid-template-columns:1fr}
+ .reference-service-body{padding:0 0 25px 0}
+ .about-team-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:620px){
+ .about-reference-hero .h1,.services-reference-hero .h1{font-size:clamp(58px,18vw,86px)}
+ .reference-service-accordion summary{grid-template-columns:36px 1fr 24px;gap:10px;padding:22px 0}
+ .reference-service-accordion summary strong{font-size:24px}
+ .about-team-grid{grid-template-columns:1fr}
+ .about-reference-services,.about-reference-team,.about-reference-expert,.services-reference-outcomes,.services-authority-callout{padding:78px 0}
+}
