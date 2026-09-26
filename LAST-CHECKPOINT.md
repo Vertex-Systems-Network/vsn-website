@@ -303,3 +303,5 @@ Authority Profile and site-wide motion merged in PR #64 (`7e544c9f58f703cabb0162
 - Added five original local VSN visuals matched to each page's subject.
 - Work continues to separate verified public proof from unsupported case-study claims; Trust continues to avoid unearned certification claims.
 - Automated markup spot-check confirms all five pages load the shared stylesheet, use the expected page class and reference local VSN visual assets.
+
+- Static Integrity run #143 passed for PR #71 on the completed company/proof implementation checkpoint.
