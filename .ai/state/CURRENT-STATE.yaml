@@ -93,13 +93,13 @@ profile_package_prices:
   status: owner-finalized-starting-fees
   usd: [249, 549, 899]
 deployment_status: waiting-for-hosting-panel-access
-next_valid_action: review-and-merge-official-linkedin-profile-update
+next_valid_action: await-owner-google-business-profile-url-and-client-approved-proof
 
 industry_expansion_percent: 100
 ai_solutions_module_percent: 100
 resource_augmentation_module_percent: 100
-latest_pr: 60
-latest_static_integrity_run: 112
+latest_pr: 62
+latest_static_integrity_run: 119
 production_deployed: false
 
 business_solutions_module_percent: 100

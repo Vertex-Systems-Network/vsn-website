@@ -143,3 +143,5 @@ The 27-page shared header now uses one identical navigation markup (with relativ
 ## LinkedIn profile update (2026-09-26)
 
 The owner supplied the official LinkedIn company URL. Its direct canonical company link is now in the shared footer on every page, Contact public channels and About public profiles. The Google Business Profile URL has not yet been supplied or independently matched, so the site does not invent Google ratings or reviews.
+
+LinkedIn profile update was merged as PR #62; Static Integrity run #119 passed. Google review links and ratings remain pending an official Google Business Profile URL.
