@@ -144,7 +144,7 @@ def main() -> int:
         linkedin_url = "https://www.linkedin.com/company/vertexsystemsnetwork/"
         if linkedin_url not in text:
             errors.append(f"{source}: missing official LinkedIn destination")
-        footer_links = re.search(r'<div class="footer-public-links".*?</div>', text, re.S)
+        footer_links = re.search(r'<div class="[^"]*\\bfooter-public-links\\b[^"]*".*?</div>', text, re.S)
         if not footer_links or linkedin_url not in footer_links.group():
             errors.append(f"{source}: LinkedIn missing from shared footer profiles")
         if source == "contact.html":
