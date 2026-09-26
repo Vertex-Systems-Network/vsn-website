@@ -139,6 +139,7 @@ profile_package_revision_percent: 100
 sitewide_motion_implementation_percent: 100
 motion_behavior_check: passed
 motion_stutter_fix: implemented
+duplicate_home_scroll_entrances: removed
 motion_pointer_transform_restarts: removed
 scroll_header_layout_shift: removed
 large_hero_image_continuous_scale: removed

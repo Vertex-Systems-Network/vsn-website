@@ -3,6 +3,8 @@ const fs = require('node:fs');
 const vm = require('node:vm');
 const assert = require('node:assert/strict');
 const source = fs.readFileSync('assets/motion.js','utf8');
+const styles = fs.readFileSync('assets/styles.css','utf8');
+assert.doesNotMatch(styles,/vsn-intro|is-scrolled \.nav\{height:/);
 function setup(reduced = false, supportsAnimation = true) {
   const callbacks = [];
   const frames = new Map();
