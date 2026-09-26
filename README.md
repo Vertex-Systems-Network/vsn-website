@@ -190,3 +190,8 @@ PR #69 was squash-merged as `f59229c9940dbcd183cd212316ca143167eddadd`. A new br
 ## Company/proof Ritovex batch — in progress (2026-09-26)
 
 PR #70 was squash-merged as `5a51d30ea674f9a7c632b0767605c1350797a24e`. A new branch, `design/ritovex-company-proof-batch`, now migrates Industries, Work, Process, Trust and Payments to the same editorial image-led system. Five original local VSN visuals were added for industry workflows, public proof, delivery process, trust/security and payments. Work and Trust continue to avoid invented client results, certifications or unsupported proof. Existing page copy, links, payment wording and static architecture remain intact. PR #71 carries this batch; Static Integrity run #143 passed on the completed implementation checkpoint.
+
+
+## Video-reference motion and copy rebaseline — in progress (2026-09-26)
+
+PR #71 merged to main as `29cd7557a48f1e0ed66f9cdd66e872352acb682a`. Work then moved to `design/ritovex-motion-content-human-v2` using the owner's full-page Ritovex recordings as the motion/layout reference. The homepage now uses a dark interactive services accordion, horizontal work cards, a sticky process layout and shorter VSN copy. A new pre-paint motion initializer plus shared motion stylesheet loads on all 27 HTML pages so reveal animations start before content is painted, run once, and do not replay on scroll-back. Core marketing-page hero copy was simplified without changing meaning. The remaining visual milestone is to replace mockup-first imagery with original human + AI/technology interaction photography generated specifically for VSN.
