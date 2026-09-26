@@ -241,3 +241,12 @@ PR #62 merged to `main` as `a813e69e9d1d783a77a4fe40dc4318257cd60e35`; Static In
 - No live production check or deployment; official Google Business review link, named team bios and client-approved testimonials still require evidence.
 
 PR #63 merged to `main` as `7ddc6435e3c3f6f700ce66e12ee5ca93d64821c0`; Static Integrity run #122 passed on PR head `59fa1718b02f9e9a7b319e446f3bd16b9416d2a2`. No production check or deployment.
+
+## Authority Profile and motion milestone (2026-09-26)
+
+- Owner corrected Authority Profile classification and requested deeper PellaNova-inspired packages plus full-site animation.
+- Read PellaNova home and package pages. Moved Authority Profile to Services in all 27 headers and added a dedicated catalogue section.
+- Rebuilt the individual personal-brand service page with $499/$999/$1,999 starting tiers, explicit editorial/page/language limits, portraits or photo finishing, useful contact/media assets, capped aftercare, optional add-ons, a dedicated form before FAQs and ownership/search limits.
+- Added `assets/motion.js` to every page; removed the former narrow reveal loop from `app.js`. The new engine covers entrances, hover/mouse exit, buttons, menu/FAQ events, field focus and scroll progress with progressive fallback and reduced-motion cancellation.
+- Profile-specific package buttons populate the enquiry tier. Privacy wording covers approved personal-brand material and optional AI portraits.
+- Verification: 27 pages, 1,490 local references and 26 sitemap URLs; uniform service classification, all-page motion inclusion, package values and form order; JS syntax; offline motion behavior checks and diff whitespace pass. No browser visual or production check/deployment.

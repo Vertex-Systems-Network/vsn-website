@@ -179,3 +179,9 @@ Public-proof review:
 - Search did not establish official LinkedIn, Facebook, Instagram or X accounts for VSN. No guessed social URLs were added. The site uses only the identifiable GitHub and platform profiles above.
 - Public review listings currently surfaced no submitted reviews for the company or Shopify app. The redesign makes review status inspectable and sets an approval-only testimonial standard. It does not invent customer quotations, ratings, client logos or outcome metrics.
 - Font Awesome Free SVG icons, version 6.7.2, are embedded locally to work with the site's restrictive CSP and direct-file static mode. Icons are credited on the site and are licensed CC BY 4.0; no icon CDN or font dependency is added.
+
+## Authority Profile benchmark — 2026-09-26
+
+Source: https://pellanova.com/packages (retrieved 2026-09-26). Published tiers are Presence $1,000, Reach $2,000 and Legacy $5,000; they scale biography depth, languages, revision cycles, AI imagery and maintenance. The top tier also lists articles and press activity. VSN treats personal branding as a service for individual clients, not company information. Its revised $499/$999/$1,999 starting tiers emphasize bounded editorial work, useful brand assets, client-owned accounts and explicit aftercare limits. They do not promise equivalent third-party publicity, rankings or delivery times. Commercial pricing was revised under the owner's instruction; the written proposal confirms the final engagement.
+
+Motion direction: native scrolling with staged entrances, depth on pointer interaction, menu/FAQ feedback and clear controls. Do not describe the result as Awwwards-certified or visually verified: browser rendering has not been reviewed in this session.

@@ -90,8 +90,8 @@ external_production_requirements:
   - qualified-pakistan-legal-corporate-review
 production_domain_switch_allowed: true
 profile_package_prices:
-  status: owner-finalized-starting-fees
-  usd: [249, 549, 899]
+  status: owner-requested-revised-starting-fees
+  usd: [499, 999, 1999]
 deployment_status: waiting-for-hosting-panel-access
 next_valid_action: await-owner-google-business-profile-url-and-client-approved-proof
 
@@ -133,3 +133,8 @@ linkedin_company_profile_added_percent: 100
 buyer_service_selection_module_percent: 100
 commerce_ownership_explanation_percent: 100
 process_review_gates_percent: 100
+
+authority_profile_service_classification_percent: 100
+profile_package_revision_percent: 100
+sitewide_motion_implementation_percent: 100
+motion_behavior_check: passed

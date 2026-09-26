@@ -27,7 +27,7 @@ FORBIDDEN_ROOT_FILES = {"package.json","vercel.json"}
 LEGAL_PAGES = {
     "legal/terms.html","legal/privacy.html","legal/refunds.html","legal/cookies.html",
 }
-OLD_PRICES = {"$499","$1,250","$2,500"}
+OLD_PRICES = {"$249","$549","$899","$1,250","$2,500"}
 TRACKING_TOKENS = {"document.cookie","localStorage","gtag(","fbq("}
 
 ATTR_RE = re.compile(r"""\b(?:href|src)=["']([^"']+)["']""", re.I)
@@ -257,8 +257,8 @@ def main() -> int:
 
         if source == "profile.html":
             for price in OLD_PRICES:
-                if price in text:
-                    errors.append(f"profile.html: provisional price still present: {price}")
+                if any(price in amount for amount in re.findall(r'<div class="amount">(.*?)</div>', text, re.S)):
+                    errors.append(f"profile.html: obsolete package price still present: {price}")
             if "Custom quote" not in text:
                 errors.append("profile.html: custom quote wording missing")
 
