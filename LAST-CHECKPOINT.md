@@ -340,3 +340,5 @@ Authority Profile and site-wide motion merged in PR #64 (`7e544c9f58f703cabb0162
 - Human semantic-slot wiring: eight named human media slots were added and major marketing/editorial pages were switched away from `vsn-visual-*` SVG mockups. The slots temporarily reuse the two approved human photo blobs; unique per-topic photography remains pending. Responsive crop/tonal treatment was added in `assets/styles.css`.
 
 - Responsive/motion polish checkpoint: final tablet/mobile CSS pass added across Home, secondary, service-detail, company/proof and editorial layouts. Motion JS now activates `motion-enabled`, cancels stale service-preview timers and maintains `aria-expanded` state. Static Integrity run #246 passed with updated regression coverage.
+
+- Human image unique batch 2: Software, AI, Growth and Operations now use distinct committed WebP binaries instead of About/Hero aliases. Together with Hero and About, 6/10 planned human assets are unique. Static Integrity run #251 passed. Pending unique assets: Business, Team, Industries, Editorial.
