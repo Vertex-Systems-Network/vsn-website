@@ -1,5 +1,19 @@
 /* Final fidelity layer: VSN content with Ritovex-reference geometry, motion and brand palette. */
 :root{
+  /* strict VSN palette lock */
+  --ink:var(--vsn-black);
+  --ink-2:var(--vsn-black);
+  --slate:rgba(10,10,11,.72);
+  --muted:rgba(10,10,11,.58);
+  --line:rgba(10,10,11,.12);
+  --panel:var(--vsn-white);
+  --blue:var(--vsn-cyan);
+  --indigo:var(--vsn-indigo);
+  --violet:var(--vsn-violet);
+  --green:var(--vsn-cyan);
+  --white:var(--vsn-white);
+  --shadow:0 20px 52px rgba(10,10,11,.12);
+
   --vsn-cyan:#0ea5e9;
   --vsn-indigo:#5b5cf0;
   --vsn-violet:#8b5cf6;
@@ -181,3 +195,11 @@ body{background:var(--vsn-white);color:var(--vsn-black)}
 .utility-404-art{display:flex;align-items:center;justify-content:center;gap:18px;font-size:clamp(120px,20vw,300px);font-weight:900;line-height:.72;letter-spacing:-.08em;margin:42px 0 34px;color:var(--vsn-black)}
 .utility-404-photo{width:clamp(108px,14vw,210px);height:clamp(108px,14vw,210px);border-radius:50%;overflow:hidden;display:block;flex:0 0 auto}
 .utility-404-photo img{width:100%;height:100%;object-fit:cover}
+
+/* Remove legacy accent colors from visible UI; only VSN cyan/indigo/violet + black/white remain. */
+.status,.check i,.card-icon,.linkedin-mark{background:var(--vsn-cyan)!important;color:#fff!important}
+.pill,.notice,.tag,.badge,.product-status{background:#fff!important;color:var(--vsn-black)!important;border-color:var(--vsn-line)!important}
+.feature-band,.dark,.dark-section,.home-product-section,.contact-page .contact-channels{background:var(--vsn-black)!important;color:#fff!important}
+.feature-band:before{background:radial-gradient(circle,rgba(91,92,240,.32),transparent 65%)!important}
+input:focus,textarea:focus,select:focus{outline-color:var(--vsn-indigo)!important;border-color:var(--vsn-indigo)!important}
+::selection{background:var(--vsn-indigo);color:#fff}
