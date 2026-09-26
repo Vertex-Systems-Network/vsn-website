@@ -18,7 +18,11 @@ const groups=[
  ['.home-service-card',70],['.home-service-preview',0],['.home-showcase-card',90],['.home-product-layout>*',90],
  ['.home-team-grid>article',80],['.home-proof-layout>*',90],['.home-process-intro',0],['.home-process-grid>article',90],
  ['.home-contact-band,.review-section .container',0],['.rv-hero-copy>*,.rv-service-hero-copy>*,.rv-company-hero-copy>*',80],
- ['.rv-hero-visual,.rv-service-visual,.rv-company-visual',0]
+ ['.rv-hero-visual,.rv-service-visual,.rv-company-visual',0],
+ ['.secondary-page .split-heading,.service-detail-page .split-heading,.company-proof-page .split-heading',0],
+ ['.secondary-page .service-card,.secondary-page .product-card,.secondary-page .repo-card,.secondary-page .card,.secondary-page .contact-section-heading',70],
+ ['.service-detail-page .service-card,.service-detail-page .card,.service-detail-page .decision-card,.service-detail-page .scope-panel,.service-detail-page .price-card',70],
+ ['.company-proof-page .service-card,.company-proof-page .proof-card,.company-proof-page .card,.company-proof-page .decision-card,.company-proof-page .scope-panel',70]
 ];
 const targets=[];
 groups.forEach(([selector,step])=>document.querySelectorAll(selector).forEach((el,i)=>{el.style.setProperty('--rv-delay',step?Math.min(i*step,320)+'ms':'0ms');targets.push(el)}));
