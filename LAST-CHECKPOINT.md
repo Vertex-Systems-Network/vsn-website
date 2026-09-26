@@ -231,3 +231,11 @@ The owner reported that the redesigned pages looked broken. Investigation found 
 - Static integrity and HTML structure validation check link placement on all 27 pages. No live website check or deployment.
 
 PR #62 merged to `main` as `a813e69e9d1d783a77a4fe40dc4318257cd60e35`; Static Integrity run #119 passed on PR head `4992829a5d6d4a2d00f12d24f396610545fe2e63`. The Google review destination is pending an official profile URL from the owner. No production check or deployment.
+
+## Buyer decision and delivery-depth audit (2026-09-26)
+
+- Audited main-section coverage across 27 pages. Detailed service pages already have 6–11 H2 sections; Services had only one main overview section, and E-commerce/Process lacked explicit ownership and review-gate explanations.
+- Added four decision paths and a scoping-input panel to Services, merchant/VSN/provider responsibility cards to E-commerce, and a four-checkpoint review model to Process.
+- Connected E-commerce to the full web/commerce service and contact form. Kept assertions limited to agreed scope and external provider responsibility, with no outcome guarantees.
+- Internal checks passed: 27 HTML pages, 1,458 local references, 26 sitemap URLs, JavaScript syntax, balanced stylesheet braces and duplicate-ID review of edited pages.
+- No live production check or deployment; official Google Business review link, named team bios and client-approved testimonials still require evidence.

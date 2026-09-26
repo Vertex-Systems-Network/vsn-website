@@ -145,3 +145,7 @@ The 27-page shared header now uses one identical navigation markup (with relativ
 The owner supplied the official LinkedIn company URL. Its direct canonical company link is now in the shared footer on every page, Contact public channels and About public profiles. The Google Business Profile URL has not yet been supplied or independently matched, so the site does not invent Google ratings or reviews.
 
 LinkedIn profile update was merged as PR #62; Static Integrity run #119 passed. Google review links and ratings remain pending an official Google Business Profile URL.
+
+## Buyer decision and delivery depth (2026-09-26)
+
+The Services catalogue now helps visitors choose a starting path for product engineering, digital sales, operational improvement or Pakistan business setup, then explains what information supports a written scope. The E-commerce page separates merchant decisions, VSN implementation and external platform/provider dependencies, with direct routes to the detailed capability page and contact. The Process page makes scope, direction, working-build and handover review gates explicit. Added responsive layouts and reduced-motion-compatible reveal behavior. No service-page claims, prices or legal terms were changed; no production check or deployment was made.
