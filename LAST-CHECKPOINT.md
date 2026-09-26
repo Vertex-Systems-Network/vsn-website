@@ -318,3 +318,5 @@ Authority Profile and site-wide motion merged in PR #64 (`7e544c9f58f703cabb0162
 - Existing pointermove animation loops remain removed. Reduced-motion fallback remains supported.
 - Core Services, About, Products, Contact, Industries, Work, Process, Trust and Payments hero copy was simplified without changing the underlying service or policy meaning.
 - Human-led VSN photography is the next asset milestone; current interface/mockup visuals are temporary and are not considered final.
+
+- Static Integrity run #147 passed, including `node scripts/check_motion_behavior.cjs`; all 27 HTML pages load the pre-paint motion layer, one-shot reveal uses `unobserve`, and pointermove/WAAPI transform loops remain absent.
