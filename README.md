@@ -234,3 +234,19 @@ Business, Team and Industries now use their own committed human-led WebP binarie
 ## Final human photography and Ritovex completion checkpoint (2026-09-26)
 
 The Ritovex-reference redesign is now complete on the active branch. The two approved unique Hero/About WebP photographs remain direct assets. Software, AI, Growth, Operations, Business, Team, Industries and Editorial now use eight distinct generated human + technology scenes stored in a single local WebP atlas with lightweight semantic SVG crop wrappers. Temporary alias WebP files were deleted so stale references cannot silently survive. All major marketing, service, company, Blog and Projects surfaces now use human-led imagery instead of mockup-first illustrations. Responsive and one-shot motion QA are complete. Marketing copy has been simplified across the primary customer-facing pages while legal/policy wording remains factual rather than lyrical where precision matters. Static Integrity run #295 passed after the final image architecture and alias deletion.
+
+## Corrective Ritovex fidelity rebuild
+
+The previous inspired implementation was reopened because it did not preserve the recorded Ritovex visual grammar closely enough. The corrective branch uses the supplied recordings and the live Ritovex demo as the design and interaction reference while keeping VSN content and required business sections.
+
+Corrections now include:
+- logo-palette lock using VSN cyan, indigo and violet with black and white neutrals;
+- reference-style top strip, navigation, wide mega menus, dark newsletter/footer and oversized VSN footer wordmark;
+- direct human WebP section imagery instead of semantic SVG crop wrappers;
+- FAQ and project enquiry forms on all 12 service-detail pages;
+- Google Maps embed on Contact;
+- separate Blog, Projects, Blog Detail and Project Detail compositions;
+- recorded-style 404 circular-photo composition;
+- About and Services rebuilt around the reference centered hero, black accordion, human cards and split-image patterns;
+- one reveal-animation owner in fidelity mode to prevent the earlier double-animation behavior;
+- a dedicated scripts/check_ritovex_fidelity.cjs CI regression check.
