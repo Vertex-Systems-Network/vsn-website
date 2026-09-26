@@ -271,3 +271,12 @@ Authority Profile and site-wide motion merged in PR #64 (`7e544c9f58f703cabb0162
 - Scroll-triggered entrance animations remain disabled, so the previous double-slide/jank regression is not reintroduced.
 - Static Integrity run #135 passed on commit `2c2f2d6eeee4880d25fa10f7678a82ac916eb6f3`.
 - Next milestone: extend the visual language and content-matched imagery to Services, About, Products, Contact and service-detail pages.
+
+
+## Secondary-page Ritovex visual milestone (2026-09-26)
+
+- PR #68 was squash-merged to main as `4540e73d1cfa729fa8ab14bf93f997fb933f8fa3` after Static Integrity run #136 passed.
+- Started `design/ritovex-secondary-pages` from that merge.
+- Services, About, Products and Contact are the active visual-migration set.
+- Added a shared secondary-page editorial stylesheet plus four original local VSN SVG visuals matched to those page purposes.
+- Existing static HTML/CSS/vanilla-JS architecture, local paths and the previous scroll-animation stability fix are preserved.
