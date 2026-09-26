@@ -93,7 +93,7 @@ profile_package_prices:
   status: owner-requested-revised-starting-fees
   usd: [499, 999, 1999]
 deployment_status: waiting-for-hosting-panel-access
-next_valid_action: validate-human-slot-wiring-then-replace-semantic-aliases-with-unique-final-photography
+next_valid_action: replace-semantic-human-aliases-with-unique-final-photography-then-final-visual-review
 
 industry_expansion_percent: 100
 ai_solutions_module_percent: 100
@@ -145,7 +145,7 @@ motion_pointer_transform_restarts: removed
 scroll_header_layout_shift: removed
 large_hero_image_continuous_scale: removed
 
-ritovex_visual_rebuild_percent: 92
+ritovex_visual_rebuild_percent: 95
 ritovex_homepage_percent: 100
 ritovex_original_visual_assets: 4
 ritovex_secondary_pages_percent: 100
@@ -193,3 +193,8 @@ human_image_assets_integrated: [hero, about]
 human_image_slot_wiring_percent: 100
 unique_human_photo_assets_percent: 20
 human_image_current_strategy: semantic-slots-wired-temporary-approved-human-sources
+
+responsive_css_qa_percent: 100
+motion_microinteraction_polish_percent: 100
+responsive_motion_static_integrity_run: 246
+responsive_motion_static_integrity_status: passed
