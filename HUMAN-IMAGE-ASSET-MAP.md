@@ -49,6 +49,8 @@ Page markup now uses semantic human-image filenames rather than the old SVG mock
 ## Current implementation status
 
 - Semantic slot wiring: **100%**.
-- Unique final photography: **60%** (Hero, About, Software, AI, Growth and Operations are unique committed assets).
-- Business, Team, Industries and Editorial filenames remain live semantic aliases pending their unique final photo binaries. Software, AI, Growth and Operations are now unique committed assets.
+- Unique final photography: **90%** (Hero, About, Software, AI, Growth, Operations, Business, Team and Industries are unique committed assets).
+- Editorial is the only remaining semantic alias. Business, Team and Industries now have unique committed photo binaries.
 - This keeps layout, responsive crop rules and future replacement paths stable while removing mockup-first imagery from the page structure.
+
+- Business, Team and Industries ✅ unique binaries activated; Editorial ⏳ remains the last unique-photo replacement.
