@@ -1,6 +1,6 @@
 /* Ritovex-inspired company/proof page system. Original VSN implementation and assets. */
 .company-proof-page{
-  --cp-ink:#08111f;--cp-paper:#f3f1eb;--cp-muted:#66727a;--cp-line:#d7dcda;--cp-blue:#0b6dff;--cp-cyan:#5cc9ed;
+  --cp-ink:#111;--cp-paper:#f3f1eb;--cp-muted:#66727a;--cp-line:#d7dcda;--cp-blue:var(--brand-indigo);--cp-cyan:var(--brand-blue);
   background:var(--cp-paper);color:var(--cp-ink)
 }
 .company-proof-page .site-header{background:rgba(243,241,235,.92);border-bottom:1px solid rgba(8,17,31,.08);backdrop-filter:blur(18px)}
@@ -13,9 +13,9 @@
 .company-proof-page .rv-company-hero .breadcrumbs{margin-bottom:27px;color:#78838a}
 .company-proof-page .rv-company-hero .h1{font-size:clamp(54px,6.2vw,100px);line-height:.92;letter-spacing:-.069em;max-width:780px}
 .company-proof-page .rv-company-hero .lead{font-size:18px;line-height:1.72;color:#626f77;max-width:660px}
-.company-proof-page .rv-company-hero .btn-primary{background:#08111f;border-color:#08111f;box-shadow:none}
-.company-proof-page .rv-company-hero .btn-secondary{background:transparent;border-color:#b9c1c0;color:#08111f}
-.rv-company-visual{position:relative;margin:0;overflow:hidden;background:#0b1723;box-shadow:0 30px 86px rgba(8,17,31,.15)}
+.company-proof-page .rv-company-hero .btn-primary{background:#111;border-color:#111;box-shadow:none}
+.company-proof-page .rv-company-hero .btn-secondary{background:transparent;border-color:#b9c1c0;color:#111}
+.rv-company-visual{position:relative;margin:0;overflow:hidden;background:#111;box-shadow:0 30px 86px rgba(8,17,31,.15)}
 .rv-company-visual img{display:block;width:100%;height:auto;aspect-ratio:1.18/1;object-fit:cover}
 .rv-company-visual figcaption{position:absolute;left:22px;bottom:20px;padding:10px 13px;border:1px solid rgba(255,255,255,.28);background:rgba(4,16,28,.58);backdrop-filter:blur(9px);color:#fff;font-size:10px;font-weight:850;letter-spacing:.12em;text-transform:uppercase;border-radius:999px}
 .company-proof-page .section{padding-top:112px;padding-bottom:112px}
