@@ -76,3 +76,16 @@
 .motion-prep:not(.motion-fallback) .project-detail-image{transform:translate3d(0,30px,0) scale(.988)}
 .motion-prep .editorial-page .rv-visible{opacity:1!important;transform:none!important}
 .motion-fallback .editorial-hero-copy>*,.motion-fallback .editorial-hero-visual,.motion-fallback .editorial-section-head,.motion-fallback .editorial-feature,.motion-fallback .editorial-card,.motion-fallback .article-aside,.motion-fallback .article-body>*,.motion-fallback .project-detail-image,.motion-fallback .utility-inner>*{opacity:1!important;transform:none!important}
+
+/* Ritovex fidelity motion timing */
+.motion-prep:not(.motion-fallback) [class*="home-"] .rv-visible,
+.motion-prep:not(.motion-fallback) .rv-visible{
+  transition-timing-function:cubic-bezier(.16,1,.3,1)!important
+}
+.motion-prep:not(.motion-fallback) .hero-art,
+.motion-prep:not(.motion-fallback) .rv-hero-visual,
+.motion-prep:not(.motion-fallback) .rv-service-visual,
+.motion-prep:not(.motion-fallback) .rv-company-visual,
+.motion-prep:not(.motion-fallback) .editorial-hero-visual{
+  transition-duration:.95s!important
+}
