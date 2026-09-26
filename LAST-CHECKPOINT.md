@@ -336,3 +336,5 @@ Authority Profile and site-wide motion merged in PR #64 (`7e544c9f58f703cabb0162
 
 
 - Human image batch 1: committed `assets/vsn-human-hero.webp` and `assets/vsn-human-about.webp`; Home hero, Home About and About page now reference those human-led assets. Static Integrity run #204 passed. Next batch: Software, AI, Growth, Operations.
+
+- Human semantic-slot wiring: eight named human media slots were added and major marketing/editorial pages were switched away from `vsn-visual-*` SVG mockups. The slots temporarily reuse the two approved human photo blobs; unique per-topic photography remains pending. Responsive crop/tonal treatment was added in `assets/styles.css`.
