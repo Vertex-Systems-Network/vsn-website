@@ -40,3 +40,8 @@ Source references: owner-supplied full-page screen recordings plus the public Ri
 4. Core service/company page copy simplification where text density breaks the reference rhythm.
 5. Responsive polish at desktop/tablet/mobile widths.
 6. Final static integrity + motion regression + visual review.
+
+
+## Human image implementation contract
+
+See `HUMAN-IMAGE-ASSET-MAP.md` for the exact filenames, scenes, crop rules and swap order. Mockup-first SVG visuals are temporary fallbacks only.
