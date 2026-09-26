@@ -135,3 +135,7 @@ Font Awesome Free 6.7.2 SVGs are embedded locally and credited; the shared foote
 ## Styling fix — Homepage & About (2026-09-26)
 
 The page-specific CSS had been lost during a footer stylesheet update, which left the redesigned Home and About layouts without their grid/card rules. Restored the responsive styles in PR #60 (`17baf7f6b3065d337da6b702ce4bfbf64c92347f`). Static Integrity run #112 passed; local integrity checks also passed for all 27 HTML files and 1,408 local references. Service-page styling was preserved. No production check or deployment was performed.
+
+## Visual and contact refresh (2026-09-26)
+
+The 27-page shared header now uses one identical navigation markup (with relative paths for legal pages), backed by a regression check. The palette follows the official logo's cyan, blue and violet, with restrained hero, card and scroll motion and reduced-motion support. The Contact page now has an OpenStreetMap Phase 4-A area view, direct enquiry, and the three verified public VSN destinations. Map access and privacy behavior are explained on the page and in the Privacy Policy. Home, About and Work link to public Shopify/GitHub evidence and explain that a verified Google Business Profile and approved testimonials are still needed before displaying review ratings. No production check or deployment was performed.

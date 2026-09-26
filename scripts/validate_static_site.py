@@ -128,9 +128,23 @@ def main() -> int:
     inline_script_hashes: dict[str,list[str]] = {}
 
     html_files = sorted(path for path in repo_files if path.endswith(".html"))
+    shared_header = None
     for source in html_files:
         text = (ROOT / source).read_text(encoding="utf-8")
 
+        header_match = re.search(r'<header class="site-header">.*?</header>', text, re.S)
+        if not header_match:
+            errors.append(f"{source}: missing shared header")
+        else:
+            normalized_header = header_match.group().replace('../', '').replace(' aria-current="page"', '')
+            if shared_header is None:
+                shared_header = normalized_header
+            elif normalized_header != shared_header:
+                errors.append(f"{source}: header differs from shared navigation")
+        if source == "contact.html":
+            for required in ('class="contact-map"', 'openstreetmap.org/export/embed.html', 'class="contact-public-links"'):
+                if required not in text:
+                    errors.append(f"contact.html: missing {required}")
         if REMOTE_LOGO_URL in text:
             errors.append(f"{source}: legacy remote logo URL must not be used")
         expected_logo_ref = (
@@ -157,10 +171,11 @@ def main() -> int:
             errors.append(f"{source}: expected exactly one <title>")
         if not re.search(r"""<meta\b[^>]*name=["']viewport["']""", text, re.I):
             errors.append(f"{source}: missing viewport meta")
-        if text.count(CSP_META_TAG) != 1:
+        expected_csp_tag = CSP_META_TAG.replace("form-action 'self'", "form-action 'self'; frame-src https://www.openstreetmap.org") if source == "contact.html" else CSP_META_TAG
+        if text.count(expected_csp_tag) != 1:
             errors.append(f"{source}: expected exactly one reviewed CSP meta tag")
         else:
-            csp_pos = text.find(CSP_META_TAG)
+            csp_pos = text.find(expected_csp_tag)
             first_link = text.find("<link")
             first_script = text.find("<script")
             resource_positions = [pos for pos in (first_link, first_script) if pos >= 0]
