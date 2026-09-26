@@ -1,6 +1,6 @@
 /* Ritovex-inspired service-detail page system. Original VSN implementation and assets. */
 .service-detail-page{
-  --sd-ink:#08111f;--sd-paper:#f3f1eb;--sd-muted:#65727a;--sd-line:#d5dbd9;--sd-blue:#0b6dff;--sd-cyan:#5cc9ed;
+  --sd-ink:#111;--sd-paper:#f3f1eb;--sd-muted:#65727a;--sd-line:#d5dbd9;--sd-blue:var(--brand-indigo);--sd-cyan:var(--brand-blue);
   background:var(--sd-paper);color:var(--sd-ink)
 }
 .service-detail-page .site-header{background:rgba(243,241,235,.92);border-bottom:1px solid rgba(8,17,31,.08);backdrop-filter:blur(18px)}
@@ -13,9 +13,9 @@
 .service-detail-page .rv-service-hero .breadcrumbs{margin-bottom:27px;color:#78838a}
 .service-detail-page .rv-service-hero .h1{font-size:clamp(54px,6.1vw,98px);line-height:.92;letter-spacing:-.068em;max-width:760px}
 .service-detail-page .rv-service-hero .lead{font-size:18px;line-height:1.72;color:#626f77;max-width:650px}
-.service-detail-page .rv-service-hero .btn-primary{background:#08111f;border-color:#08111f;box-shadow:none}
-.service-detail-page .rv-service-hero .btn-secondary{background:transparent;border-color:#b9c1c0;color:#08111f}
-.rv-service-visual{position:relative;margin:0;overflow:hidden;background:#0b1723;box-shadow:0 30px 86px rgba(8,17,31,.15)}
+.service-detail-page .rv-service-hero .btn-primary{background:#111;border-color:#111;box-shadow:none}
+.service-detail-page .rv-service-hero .btn-secondary{background:transparent;border-color:#b9c1c0;color:#111}
+.rv-service-visual{position:relative;margin:0;overflow:hidden;background:#111;box-shadow:0 30px 86px rgba(8,17,31,.15)}
 .rv-service-visual img{display:block;width:100%;height:auto;aspect-ratio:1.18/1;object-fit:cover}
 .rv-service-visual figcaption{position:absolute;left:22px;bottom:20px;padding:10px 13px;border:1px solid rgba(255,255,255,.28);background:rgba(4,16,28,.58);backdrop-filter:blur(9px);color:#fff;font-size:10px;font-weight:850;letter-spacing:.12em;text-transform:uppercase;border-radius:999px}
 .service-detail-page .section{padding-top:112px;padding-bottom:112px}
