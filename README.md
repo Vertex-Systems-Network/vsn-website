@@ -224,3 +224,8 @@ Home, secondary, service-detail, company/proof and editorial styles now have a d
 ### Human image unique batch 2 (2026-09-26)
 
 The human-media system now has six unique production WebP assets: Hero, About, Software, AI, Growth and Operations. Software, AI, Growth and Operations replaced their temporary semantic aliases in commit `d11dfd34904dd14d794de78fa0dfdd13071e4c2b`. Static Integrity run #251 passed on that exact head. Business, Team, Industries and Editorial remain semantic aliases and are the final photography batch before PR #72 can leave draft state.
+
+
+### Human image unique batch 3 (2026-09-26)
+
+Business, Team and Industries now use their own committed human-led WebP binaries rather than the About-photo alias. Together with Hero, About, Software, AI, Growth and Operations, **9 of 10** planned human-media slots are now unique. Static Integrity run #256 passed on commit `6b88b7defb6bd20b7f7f41dc18f71b66c626fe48`. Editorial remains the only semantic slot still using an alias; it is the last photography task before final visual review.
