@@ -222,3 +222,10 @@ The owner reported that the redesigned pages looked broken. Investigation found 
 - Added sourced product/repository review destinations on Home, About and Work. Google Business Profile URL, named team bios and client-approved testimonials remain unavailable; no rating, quote or account URL has been invented.
 - Internal verification: all 27 HTML pages, 1,447 local references and 26 sitemap URLs pass; all normalized headers identical; JavaScript syntax and diff whitespace pass.
 - No live production check or deployment was performed.
+
+## LinkedIn profile update (2026-09-26)
+
+- Owner supplied `https://www.linkedin.com/company/vertexsystemsnetwork/`; added the direct destination in all 27 shared footers and the Contact/About profile grids.
+- Adjusted the profile grids for four items on desktop and responsive layouts.
+- Google Business/Profile URL remains outstanding; broad searches did not establish an exact official listing. No Google rating or quotation was claimed.
+- Static integrity and HTML structure validation check link placement on all 27 pages. No live website check or deployment.

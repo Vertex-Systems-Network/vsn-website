@@ -93,7 +93,7 @@ profile_package_prices:
   status: owner-finalized-starting-fees
   usd: [249, 549, 899]
 deployment_status: waiting-for-hosting-panel-access
-next_valid_action: review-and-merge-visual-contact-trust-refresh
+next_valid_action: review-and-merge-official-linkedin-profile-update
 
 industry_expansion_percent: 100
 ai_solutions_module_percent: 100
@@ -117,7 +117,7 @@ excluded_private_repository_count: 4
 
 deferred_evidence:
   - item: official social-network profile URLs
-    reason: no official LinkedIn, Instagram, Facebook or X URLs were verified; only confirmed GitHub, WordPress.org and Shopify profiles are linked
+    reason: owner supplied official LinkedIn URL; Facebook, Instagram and X URLs still not confirmed
   - item: named team biographies and client testimonials
     reason: publish only named people with consent and client-approved genuine feedback
 
@@ -127,3 +127,5 @@ visual_brand_refresh_percent: 100
 review_evidence_section_percent: 100
 verified_google_business_review_link: pending-owner-url
 visual_browser_verification: unavailable-in-this-session
+
+linkedin_company_profile_added_percent: 100

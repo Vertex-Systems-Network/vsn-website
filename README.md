@@ -139,3 +139,7 @@ The page-specific CSS had been lost during a footer stylesheet update, which lef
 ## Visual and contact refresh (2026-09-26)
 
 The 27-page shared header now uses one identical navigation markup (with relative paths for legal pages), backed by a regression check. The palette follows the official logo's cyan, blue and violet, with restrained hero, card and scroll motion and reduced-motion support. The Contact page now has an OpenStreetMap Phase 4-A area view, direct enquiry, and the three verified public VSN destinations. Map access and privacy behavior are explained on the page and in the Privacy Policy. Home, About and Work link to public Shopify/GitHub evidence and explain that a verified Google Business Profile and approved testimonials are still needed before displaying review ratings. No production check or deployment was performed.
+
+## LinkedIn profile update (2026-09-26)
+
+The owner supplied the official LinkedIn company URL. Its direct canonical company link is now in the shared footer on every page, Contact public channels and About public profiles. The Google Business Profile URL has not yet been supplied or independently matched, so the site does not invent Google ratings or reviews.
