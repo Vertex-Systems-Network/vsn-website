@@ -163,3 +163,10 @@ Authority Profile and site-wide motion merged in PR #64 (`7e544c9f58f703cabb0162
 ## Motion stutter fix (2026-09-26)
 
 Removed per-pointermove Web Animations that repeatedly replaced element transforms, stopped shrinking the sticky header during scroll, and removed the continuous full-image scale animation. Then removed scroll-triggered section entrances entirely: IntersectionObserver started them after content was already visible, creating the apparent second slide. Also removed overlapping Home CSS entrances. Scroll leaves content stationary; CSS still handles hover feedback and the FAQ retains its open/close response. Offline checks assert scroll entrance triggers stay absent. Browser visual review and production checks remain unperformed.
+
+
+## Ritovex-inspired homepage rebuild — in progress (2026-09-26)
+
+A homepage-only visual layer is now being developed on `design/ritovex-homepage-rebuild`. The direction follows Ritovex's editorial hierarchy, oversized typography, service-row rhythm, immersive dark feature section, capability marquee and stronger whitespace while preserving VSN's own content, verified company facts and static HTML/CSS/vanilla-JS architecture.
+
+The redesign does **not** copy Ritovex/Webflow assets or text. VSN-specific generated imagery is the next visual milestone; until those original assets are ready, the existing local VSN hero artwork remains in place so the branch keeps all references valid. Scroll-triggered entrance effects remain disabled to avoid the earlier double-animation/jank issue.
