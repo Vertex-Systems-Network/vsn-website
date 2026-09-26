@@ -31,10 +31,11 @@ function setup(reduced = false, supportsAnimation = true) {
 }
 const normal=setup();assert.equal(normal.body.children.length,2);assert.equal(normal.body.children[1].value,50);
 normal.callbacks[0]([{isIntersecting:true,target:normal.card}]);assert.equal(normal.card.effects.length,1);
-normal.card.fire('pointermove',{clientX:200,clientY:100,pointerType:'mouse'});normal.frames.forEach(f=>f());assert.ok(normal.card.effects.some(a=>a.keys.some(k=>k.transform?.includes('rotateX'))));
-normal.card.fire('pointerleave');assert.ok(normal.card.effects.some(a=>a.opts.duration===380));
+const afterEntrance=normal.card.effects.length;
+normal.card.fire('pointermove',{clientX:200,clientY:100,pointerType:'mouse'});normal.frames.forEach(f=>f());assert.equal(normal.card.effects.length,afterEntrance);
+normal.card.fire('pointerleave');assert.equal(normal.card.effects.length,afterEntrance);
 normal.body.children[0].fire('click');assert.ok(normal.root.classes.has('motion-reduced'));assert.ok(normal.card.effects.every(a=>a.cancelled));
 const before=normal.card.effects.length;normal.card.fire('pointermove',{clientX:10,clientY:10});assert.equal(normal.card.effects.length,before);
 const reduced=setup(true);assert.equal(reduced.callbacks.length,0);assert.ok(reduced.body.children[0].disabled);assert.equal(reduced.card.effects.length,0);
 assert.equal(setup(false,false).body.children.length,0);
-console.log('Motion behavior passed: progressive fallback, entrance, pointer exit, progress and reduced-motion cancellation.');
+console.log('Motion behavior passed: progressive fallback, entrance, stable pointer handling, progress and reduced-motion cancellation.');
