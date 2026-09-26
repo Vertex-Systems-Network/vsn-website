@@ -31,7 +31,7 @@ let observer=null;
 function revealAll(){targets.forEach(el=>el.classList.add('rv-visible'))}
 function startReveal(){
  if(!allowed()){root.classList.remove('motion-prep');root.classList.add('motion-reduced');revealAll();return}
- root.classList.add('motion-live');root.classList.remove('motion-fallback','motion-reduced');
+ root.classList.add('motion-live','motion-enabled');root.classList.remove('motion-fallback','motion-reduced');
  if(!('IntersectionObserver'in window)){revealAll();return}
  observer?.disconnect();
  observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('rv-visible');observer.unobserve(entry.target)}}),{threshold:.12,rootMargin:'0px 0px -7% 0px'});
@@ -42,12 +42,13 @@ function startReveal(){
 const accordion=document.querySelector('[data-service-accordion]');
 if(accordion){
  const cards=[...accordion.querySelectorAll('.home-service-card')],preview=document.querySelector('.home-service-preview'),img=preview?.querySelector('img');
- const activate=card=>{cards.forEach(c=>c.classList.toggle('is-active',c===card));if(img&&card.dataset.preview&&img.getAttribute('src')!==card.dataset.preview){preview.classList.add('is-switching');setTimeout(()=>{img.src=card.dataset.preview;requestAnimationFrame(()=>preview.classList.remove('is-switching'))},140)}};
- cards.forEach(card=>{card.tabIndex=0;card.setAttribute('role','button');card.addEventListener('mouseenter',()=>activate(card));card.addEventListener('focus',()=>activate(card));card.addEventListener('click',()=>activate(card));card.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();activate(card)}})});
+ let previewTimer=0;
+ const activate=card=>{cards.forEach(c=>{const active=c===card;c.classList.toggle('is-active',active);c.setAttribute('aria-expanded',String(active))});if(img&&card.dataset.preview&&img.getAttribute('src')!==card.dataset.preview){clearTimeout(previewTimer);preview.classList.add('is-switching');previewTimer=setTimeout(()=>{img.src=card.dataset.preview;requestAnimationFrame(()=>preview.classList.remove('is-switching'))},140)}};
+ cards.forEach(card=>{card.tabIndex=0;card.setAttribute('role','button');card.setAttribute('aria-expanded',String(card.classList.contains('is-active')));card.addEventListener('mouseenter',()=>activate(card));card.addEventListener('focus',()=>activate(card));card.addEventListener('click',()=>activate(card));card.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();activate(card)}})});
 }
 
 document.querySelectorAll('details').forEach(details=>details.addEventListener('toggle',()=>{if(details.open&&allowed())details.classList.add('details-opened')}));
 document.querySelectorAll('.field input,.field textarea,.field select').forEach(input=>{input.addEventListener('focus',()=>input.closest('.field')?.classList.add('field-active'));input.addEventListener('blur',()=>input.closest('.field')?.classList.remove('field-active'))});
-function sync(){const on=allowed();control.textContent=on?'Motion: on':'Motion: reduced';control.setAttribute('aria-pressed',String(!on));control.disabled=reduce.matches;if(on)startReveal();else{observer?.disconnect();root.classList.remove('motion-prep','motion-live');root.classList.add('motion-reduced');revealAll()}}
+function sync(){const on=allowed();control.textContent=on?'Motion: on':'Motion: reduced';control.setAttribute('aria-pressed',String(!on));control.disabled=reduce.matches;if(on)startReveal();else{observer?.disconnect();root.classList.remove('motion-prep','motion-live','motion-enabled');root.classList.add('motion-reduced');revealAll()}}
 control.addEventListener('click',()=>{manualReduce=!manualReduce;sync()});reduce.addEventListener?.('change',sync);sync();updateScroll();
 })();
