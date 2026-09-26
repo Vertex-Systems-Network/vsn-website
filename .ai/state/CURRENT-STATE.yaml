@@ -98,8 +98,8 @@ next_valid_action: await-owner-google-business-profile-url-and-client-approved-p
 industry_expansion_percent: 100
 ai_solutions_module_percent: 100
 resource_augmentation_module_percent: 100
-latest_pr: 62
-latest_static_integrity_run: 119
+latest_pr: 63
+latest_static_integrity_run: 122
 production_deployed: false
 
 business_solutions_module_percent: 100

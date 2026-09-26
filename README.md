@@ -149,3 +149,5 @@ LinkedIn profile update was merged as PR #62; Static Integrity run #119 passed. 
 ## Buyer decision and delivery depth (2026-09-26)
 
 The Services catalogue now helps visitors choose a starting path for product engineering, digital sales, operational improvement or Pakistan business setup, then explains what information supports a written scope. The E-commerce page separates merchant decisions, VSN implementation and external platform/provider dependencies, with direct routes to the detailed capability page and contact. The Process page makes scope, direction, working-build and handover review gates explicit. Added responsive layouts and reduced-motion-compatible reveal behavior. No service-page claims, prices or legal terms were changed; no production check or deployment was made.
+
+The buyer decision and delivery-depth update merged in PR #63; Static Integrity run #122 passed.
