@@ -43,12 +43,12 @@ This file is the implementation contract for the final human-led visual system. 
 4. Blog/Projects editorial cards.
 5. Responsive crop QA across desktop/tablet/mobile.
 
-The old SVG interface illustrations remain only as temporary fallback assets until every mapped human image has been generated, reviewed and committed.
+Page markup now uses semantic human-image filenames rather than the old SVG mockup-first slots. Four semantic filenames still need their own unique final photo binaries.
 
 
 ## Current implementation status
 
 - Semantic slot wiring: **100%**.
-- Unique final photography: **20%** (Hero + About are unique approved assets).
-- Software, AI, Growth, Operations, Business, Team, Industries and Editorial filenames are now live in page markup but temporarily alias the approved Hero/About photo blobs until their unique generated images pass review.
+- Unique final photography: **60%** (Hero, About, Software, AI, Growth and Operations are unique committed assets).
+- Business, Team, Industries and Editorial filenames remain live semantic aliases pending their unique final photo binaries. Software, AI, Growth and Operations are now unique committed assets.
 - This keeps layout, responsive crop rules and future replacement paths stable while removing mockup-first imagery from the page structure.
