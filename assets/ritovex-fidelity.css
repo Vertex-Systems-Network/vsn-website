@@ -280,3 +280,9 @@ input:focus,textarea:focus,select:focus{outline-color:var(--vsn-indigo)!importan
  .about-team-grid{grid-template-columns:1fr}
  .about-reference-services,.about-reference-team,.about-reference-expert,.services-reference-outcomes,.services-authority-callout{padding:78px 0}
 }
+
+.rv-footer-public-links{display:flex;align-items:center;gap:18px;flex-wrap:wrap;padding:20px 0;border-top:1px solid #202024;border-bottom:1px solid #202024;font-size:11px}
+.rv-footer-public-links>span{color:#77777f;text-transform:uppercase;letter-spacing:.1em;margin-right:4px}
+.rv-footer-public-links a{color:#cfcfd4}
+.rv-footer-public-links a:hover{color:var(--vsn-cyan)}
+@media(max-width:620px){.rv-footer-public-links{gap:12px 16px}}
