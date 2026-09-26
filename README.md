@@ -214,3 +214,8 @@ The Home hero, Home About and About page now use committed human-led WebP assets
 ### Human image semantic-slot wiring (2026-09-26)
 
 Human-led semantic media slots are now wired across Home, Services, Products, Contact, all primary service-detail pages, Industries, Work, Process, Trust, Payments, Blog and Projects. The slot filenames (`vsn-human-software.webp`, `vsn-human-ai.webp`, `vsn-human-growth.webp`, `vsn-human-operations.webp`, `vsn-human-business.webp`, `vsn-human-team.webp`, `vsn-human-industries.webp`, `vsn-human-editorial.webp`) currently reuse the two approved human photographs as temporary source blobs so mockup-first SVGs no longer control the live layouts. This is an implementation bridge, not the final photography set. Responsive crop and tonal rules now live in `assets/styles.css`. Each semantic file can be replaced independently with a unique generated photo later without changing page markup.
+
+
+### Responsive and motion polish checkpoint (2026-09-26)
+
+Home, secondary, service-detail, company/proof and editorial styles now have a dedicated final breakpoint pass for tablet/mobile widths. The Home accordion allows larger active content on small screens, horizontal work cards use touch-friendly overflow, process cards collapse cleanly, editorial feature images reduce height on mobile, and shared human-image crops receive desktop/tablet/mobile object-position rules. Motion state now correctly adds the `motion-enabled` class expected by the shared stylesheet. The Home service-preview switch cancels stale timers during fast pointer movement and exposes `aria-expanded` on each interactive service row. Static Integrity run #246 passed with the expanded motion regression assertions.
