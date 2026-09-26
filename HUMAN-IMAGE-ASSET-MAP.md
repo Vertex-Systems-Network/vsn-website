@@ -44,3 +44,11 @@ This file is the implementation contract for the final human-led visual system. 
 5. Responsive crop QA across desktop/tablet/mobile.
 
 The old SVG interface illustrations remain only as temporary fallback assets until every mapped human image has been generated, reviewed and committed.
+
+
+## Current implementation status
+
+- Semantic slot wiring: **100%**.
+- Unique final photography: **20%** (Hero + About are unique approved assets).
+- Software, AI, Growth, Operations, Business, Team, Industries and Editorial filenames are now live in page markup but temporarily alias the approved Hero/About photo blobs until their unique generated images pass review.
+- This keeps layout, responsive crop rules and future replacement paths stable while removing mockup-first imagery from the page structure.
