@@ -342,3 +342,5 @@ Authority Profile and site-wide motion merged in PR #64 (`7e544c9f58f703cabb0162
 - Responsive/motion polish checkpoint: final tablet/mobile CSS pass added across Home, secondary, service-detail, company/proof and editorial layouts. Motion JS now activates `motion-enabled`, cancels stale service-preview timers and maintains `aria-expanded` state. Static Integrity run #246 passed with updated regression coverage.
 
 - Human image unique batch 2: Software, AI, Growth and Operations now use distinct committed WebP binaries instead of About/Hero aliases. Together with Hero and About, 6/10 planned human assets are unique. Static Integrity run #251 passed. Pending unique assets: Business, Team, Industries, Editorial.
+
+- Human image unique batch 3: Business, Team and Industries activated distinct WebP binaries. 9/10 planned human assets are now unique. Static Integrity run #256 passed on `6b88b7defb6bd20b7f7f41dc18f71b66c626fe48`. Only Editorial remains aliased before final visual review.
