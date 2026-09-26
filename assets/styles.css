@@ -339,17 +339,17 @@ img[src*="vsn-human-"]{
   filter:saturate(.94) contrast(1.025);
 }
 img[src$="vsn-human-hero.webp"],
-img[src$="vsn-human-software.webp"],
-img[src$="vsn-human-ai.webp"]{
+img[src*="vsn-human-software"],
+img[src*="vsn-human-ai"]{
   object-position:61% 44%;
 }
 img[src$="vsn-human-about.webp"],
-img[src$="vsn-human-team.webp"],
-img[src$="vsn-human-growth.webp"],
-img[src$="vsn-human-operations.webp"],
-img[src$="vsn-human-business.webp"],
-img[src$="vsn-human-industries.webp"],
-img[src$="vsn-human-editorial.webp"]{
+img[src*="vsn-human-team"],
+img[src*="vsn-human-growth"],
+img[src*="vsn-human-operations"],
+img[src*="vsn-human-business"],
+img[src*="vsn-human-industries"],
+img[src*="vsn-human-editorial"]{
   object-position:50% 50%;
 }
 .hero-art img[src*="vsn-human-"],
@@ -367,16 +367,16 @@ img[src$="vsn-human-editorial.webp"]{
 }
 @media(max-width:1020px){
   img[src$="vsn-human-hero.webp"],
-  img[src$="vsn-human-software.webp"],
-  img[src$="vsn-human-ai.webp"]{
+  img[src*="vsn-human-software"],
+  img[src*="vsn-human-ai"]{
     object-position:58% 46%;
   }
 }
 @media(max-width:700px){
   img[src*="vsn-human-"]{filter:saturate(.96) contrast(1.02)}
   img[src$="vsn-human-hero.webp"],
-  img[src$="vsn-human-software.webp"],
-  img[src$="vsn-human-ai.webp"]{
+  img[src*="vsn-human-software"],
+  img[src*="vsn-human-ai"]{
     object-position:62% 48%;
   }
   .hero-art img[src*="vsn-human-"],
