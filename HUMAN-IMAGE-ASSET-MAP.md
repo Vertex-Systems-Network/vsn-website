@@ -51,6 +51,23 @@ Page markup now uses semantic human-image filenames rather than the old SVG mock
 - Semantic slot wiring: **100%**.
 - Unique final photography: **90%** (Hero, About, Software, AI, Growth, Operations, Business, Team and Industries are unique committed assets).
 - Editorial is the only remaining semantic alias. Business, Team and Industries now have unique committed photo binaries.
-- This keeps layout, responsive crop rules and future replacement paths stable while removing mockup-first imagery from the page structure.
+- Hero and About remain unique direct WebP assets. The final atlas/wrapper architecture keeps responsive crop rules stable and removes mockup-first imagery from the active page structure.
 
 - Business, Team and Industries ✅ unique binaries activated; Editorial ⏳ remains the last unique-photo replacement.
+
+
+## Final asset architecture
+
+- `assets/vsn-human-hero.webp` — unique Home hero photo.
+- `assets/vsn-human-about.webp` — unique About/team photo.
+- `assets/vsn-human-atlas.webp` — eight distinct generated human + technology scenes.
+- `assets/vsn-human-software.svg`
+- `assets/vsn-human-ai.svg`
+- `assets/vsn-human-growth.svg`
+- `assets/vsn-human-operations.svg`
+- `assets/vsn-human-business.svg`
+- `assets/vsn-human-team.svg`
+- `assets/vsn-human-industries.svg`
+- `assets/vsn-human-editorial.svg`
+
+The SVG files are local crop wrappers over the atlas; they contain no external URLs, text, logos or third-party image dependencies.
