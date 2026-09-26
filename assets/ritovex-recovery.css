@@ -1,0 +1,184 @@
+/* Ritovex parity recovery — VSN content, VSN logo palette only.
+   Source of truth: owner recordings + public Ritovex demo. */
+:root{
+  --vsn-ink:#081925;
+  --vsn-cyan:#51bfd3;
+  --vsn-blue:#6380c4;
+  --vsn-purple:#6656a9;
+  --vsn-white:#ffffff;
+  --vsn-paper:#f7f8fa;
+  --vsn-line:#d9e2ea;
+  --vsn-muted:#5e6f82;
+  --vsn-gradient:linear-gradient(110deg,#51bfd3 0%,#6380c4 48%,#6656a9 100%);
+}
+html{scroll-behavior:smooth}
+body{background:var(--vsn-white);color:var(--vsn-ink)}
+a{color:inherit}
+.eyebrow,.gradient-text{color:var(--vsn-blue)!important;background:none!important;-webkit-text-fill-color:currentColor!important}
+.btn-primary{background:var(--vsn-ink)!important;border-color:var(--vsn-ink)!important;color:#fff!important;box-shadow:none!important}
+.btn-primary:hover{background:var(--vsn-purple)!important;border-color:var(--vsn-purple)!important}
+.btn-secondary{background:#fff!important;border-color:#aeb9c7!important;color:var(--vsn-ink)!important;box-shadow:none!important}
+.btn-secondary:hover{border-color:var(--vsn-blue)!important;color:var(--vsn-blue)!important}
+::selection{background:var(--vsn-cyan);color:var(--vsn-ink)}
+
+/* Header: compact white Ritovex rhythm */
+.site-header{
+  position:sticky;top:0;z-index:1000;
+  background:rgba(255,255,255,.96)!important;
+  border-bottom:1px solid #e6ebef!important;
+  backdrop-filter:blur(16px);
+  box-shadow:none!important;
+}
+.site-header:after{display:none!important}
+.nav{min-height:72px!important;display:grid!important;grid-template-columns:auto 1fr auto;align-items:center;gap:28px}
+.brand img{height:40px!important;width:auto!important;object-fit:contain}
+.brand-fallback{display:none!important}
+.nav-links{display:flex!important;justify-content:center;align-items:center;gap:26px!important}
+.nav-links>a,.nav-dropdown>summary{font-size:13px!important;font-weight:600!important;letter-spacing:-.01em;color:var(--vsn-ink)!important}
+.nav-links>a:hover,.nav-dropdown>summary:hover{color:var(--vsn-blue)!important}
+.nav-dropdown>summary:after{content:"⌄";font-size:11px;margin-left:6px;color:var(--vsn-purple)}
+.nav-menu{
+  background:#fff!important;border:1px solid #e2e8ed!important;border-radius:0!important;
+  box-shadow:0 20px 55px rgba(8,25,37,.12)!important;padding:24px!important;
+}
+.nav-menu-group strong{color:var(--vsn-purple)!important;font-size:11px!important;text-transform:uppercase;letter-spacing:.08em}
+.nav-menu a{font-size:13px!important;padding:7px 0!important}
+.nav-actions{display:flex;align-items:center;gap:14px}
+.nav-actions .btn-secondary{
+  border:0!important;background:transparent!important;padding:0!important;
+  min-height:auto!important;border-radius:0!important;font-size:12px!important;font-weight:700!important;
+}
+.nav-actions .btn-secondary:before{content:"Call / WhatsApp  ";font-weight:500;color:var(--vsn-muted)}
+.mobile-toggle{border:1px solid #d7e0e7!important;background:#fff!important;color:var(--vsn-ink)!important}
+
+/* Shared page rhythm */
+.page-hero,.rv-service-hero,.rv-company-hero,.editorial-hero,.rv-about-hero{
+  background:#fff!important;
+}
+.page-hero,.rv-service-hero,.rv-company-hero,.editorial-hero{padding-top:72px!important;padding-bottom:88px!important}
+.h1,.display{letter-spacing:-.06em!important}
+.h2{letter-spacing:-.045em!important}
+.section,.section-sm{background:#fff}
+.section.soft{background:var(--vsn-paper)!important}
+.card,.service-card,.proof-card,.price-card,.repo-card,.product-card,.decision-card,.scope-panel{
+  border-radius:0!important;box-shadow:none!important;border-color:var(--vsn-line)!important;
+}
+
+/* Dark services / bands use only logo-dark + logo accents */
+.home-page .home-capabilities,.site-footer,.home-contact-band,.cta{
+  background:var(--vsn-ink)!important;color:#fff!important;
+}
+.home-page .home-capabilities .eyebrow,.home-contact-band .eyebrow,.site-footer .eyebrow{color:var(--vsn-cyan)!important}
+.home-page .home-service-card.is-active h3{color:var(--vsn-cyan)!important}
+.home-page .home-service-card{border-color:rgba(255,255,255,.14)!important}
+.home-page .home-service-card>p,.home-page .home-capabilities .home-section-intro>p{color:#b6c1cc!important}
+
+/* Footer: recorded Ritovex hierarchy */
+.site-footer{position:relative;overflow:hidden;padding:0!important;margin-top:0!important}
+.site-footer .container{padding-top:64px!important;padding-bottom:42px!important}
+.site-footer:before{
+  content:"Get the latest from VSN";
+  display:block;border-bottom:1px solid rgba(255,255,255,.14);
+  max-width:1200px;margin:0 auto;padding:34px 24px;
+  font-size:clamp(22px,3vw,42px);font-weight:750;letter-spacing:-.045em;
+}
+.site-footer:after{
+  content:"VERTEX";display:block;position:absolute;left:50%;bottom:-7vw;transform:translateX(-50%);
+  font-size:clamp(110px,22vw,340px);font-weight:900;letter-spacing:-.08em;
+  color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.11);pointer-events:none;white-space:nowrap;
+}
+.footer-grid{position:relative;z-index:2;display:grid!important;grid-template-columns:minmax(280px,1.5fr) repeat(3,minmax(140px,.55fr))!important;gap:48px!important}
+.footer-brand p,.site-footer li a,.footer-bottom,.footer-public-links{color:#b8c4ce!important}
+.site-footer h4{color:#fff!important;font-size:12px!important;text-transform:uppercase;letter-spacing:.08em}
+.logo-cloud{display:none!important}
+.footer-public-links{position:relative;z-index:2;border-top:1px solid rgba(255,255,255,.12)!important;padding-top:22px!important}
+.footer-bottom{position:relative;z-index:2;border-top:1px solid rgba(255,255,255,.12)!important;margin-top:24px!important;padding-top:20px!important}
+
+/* FAQ parity */
+.faq{border-top:1px solid var(--vsn-line)}
+.faq details{border-radius:0!important;border:0!important;border-bottom:1px solid var(--vsn-line)!important;background:#fff!important}
+.faq summary{padding:22px 0!important;font-weight:700!important}
+.faq details p{padding:0 0 22px!important;color:var(--vsn-muted)!important;max-width:850px}
+
+/* Forms match recorded minimal fields */
+.form{display:grid;gap:18px!important}
+.field input,.field textarea,.field select{
+  border:0!important;border-bottom:1px solid #aeb9c7!important;border-radius:0!important;
+  background:transparent!important;padding:12px 0!important;
+}
+.field input:focus,.field textarea:focus,.field select:focus{border-color:var(--vsn-blue)!important;box-shadow:none!important;outline:none}
+.field label{font-size:12px!important;color:var(--vsn-muted)!important}
+
+/* Contact page */
+.contact-page .contact-main{padding-top:96px!important;padding-bottom:96px!important}
+.contact-page .contact-main .two-col{align-items:stretch}
+.contact-page .contact-main .card{background:#fff!important;color:var(--vsn-ink)!important;border:1px solid var(--vsn-line)!important}
+.contact-location{background:var(--vsn-paper)!important}
+.contact-map{border-radius:0!important;overflow:hidden;border:1px solid var(--vsn-line)!important}
+.contact-map iframe{display:block;width:100%;height:520px;border:0}
+
+/* Blog / Projects recorded listing rhythm */
+.editorial-page .editorial-hero{padding:92px 0 58px!important;text-align:center}
+.editorial-page .editorial-hero-grid{display:block!important;max-width:900px;margin:0 auto}
+.editorial-page .editorial-hero-visual{display:none!important}
+.editorial-page .editorial-hero-copy .h1{font-size:clamp(54px,6vw,92px)!important;max-width:900px;margin-left:auto;margin-right:auto}
+.editorial-page .editorial-hero-copy .lead{max-width:720px;margin-left:auto;margin-right:auto}
+.editorial-card-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:18px!important}
+.editorial-card{border:0!important;background:#fff!important}
+.editorial-card-media img{aspect-ratio:1.35/1!important}
+.editorial-card-body{padding:18px 0 26px!important}
+.editorial-card h3{font-size:22px!important;line-height:1.08!important}
+.editorial-meta{color:var(--vsn-blue)!important}
+.editorial-feature{background:transparent!important;color:var(--vsn-ink)!important;grid-template-columns:1.25fr .75fr!important;border:0!important}
+.editorial-feature-copy{background:var(--vsn-paper)!important;color:var(--vsn-ink)!important;padding:38px!important}
+.editorial-feature-copy p{color:var(--vsn-muted)!important}
+.editorial-feature-copy .card-link{color:var(--vsn-blue)!important}
+
+/* Single article/project pages */
+.article-shell{grid-template-columns:minmax(0,.36fr) minmax(0,.64fr)!important;gap:70px!important}
+.article-body{font-size:17px!important;line-height:1.8!important}
+.article-body h2{font-size:clamp(32px,4vw,52px)!important}
+.article-body blockquote{border-color:var(--vsn-line)!important;color:var(--vsn-purple)!important}
+.project-facts{border-color:var(--vsn-line)!important}
+.project-facts>div{border-color:var(--vsn-line)!important}
+
+/* Motion closer to recording: short reveal, no floaty travel */
+.motion-prep:not(.motion-fallback) [class*="rv-visible"]{will-change:auto}
+.motion-prep:not(.motion-fallback) .home-hero-copy>*,
+.motion-prep:not(.motion-fallback) .hero-art,
+.motion-prep:not(.motion-fallback) .home-about-visual,
+.motion-prep:not(.motion-fallback) .home-about-copy,
+.motion-prep:not(.motion-fallback) .home-section-intro,
+.motion-prep:not(.motion-fallback) .home-service-card,
+.motion-prep:not(.motion-fallback) .home-service-preview,
+.motion-prep:not(.motion-fallback) .home-showcase-card,
+.motion-prep:not(.motion-fallback) .rv-hero-copy>*,
+.motion-prep:not(.motion-fallback) .rv-hero-visual,
+.motion-prep:not(.motion-fallback) .rv-service-hero-copy>*,
+.motion-prep:not(.motion-fallback) .rv-service-visual,
+.motion-prep:not(.motion-fallback) .rv-company-hero-copy>*,
+.motion-prep:not(.motion-fallback) .rv-company-visual,
+.motion-prep:not(.motion-fallback) .editorial-card,
+.motion-prep:not(.motion-fallback) .editorial-section-head{
+  transform:translate3d(0,16px,0)!important;
+  transition-duration:.52s!important;
+  transition-timing-function:cubic-bezier(.22,1,.36,1)!important;
+}
+
+@media(max-width:980px){
+  .nav{grid-template-columns:auto 1fr auto!important}
+  .nav-links{justify-content:flex-start!important}
+  .footer-grid{grid-template-columns:1fr 1fr!important}
+  .editorial-card-grid{grid-template-columns:1fr 1fr!important}
+}
+@media(max-width:760px){
+  .nav{min-height:66px!important}
+  .brand img{height:34px!important}
+  .nav-links{display:none!important}
+  .nav-links.is-open{display:flex!important;position:absolute;left:0;right:0;top:66px;background:#fff;padding:22px;flex-direction:column;align-items:flex-start!important;border-bottom:1px solid var(--vsn-line)}
+  .nav-actions .btn-secondary{display:none!important}
+  .footer-grid{grid-template-columns:1fr!important}
+  .editorial-card-grid{grid-template-columns:1fr!important}
+  .article-shell{grid-template-columns:1fr!important;gap:36px!important}
+  .contact-map iframe{height:380px}
+}
