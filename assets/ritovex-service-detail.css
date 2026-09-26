@@ -1,0 +1,54 @@
+/* Ritovex-inspired service-detail page system. Original VSN implementation and assets. */
+.service-detail-page{
+  --sd-ink:#08111f;--sd-paper:#f3f1eb;--sd-muted:#65727a;--sd-line:#d5dbd9;--sd-blue:#0b6dff;--sd-cyan:#5cc9ed;
+  background:var(--sd-paper);color:var(--sd-ink)
+}
+.service-detail-page .site-header{background:rgba(243,241,235,.92);border-bottom:1px solid rgba(8,17,31,.08);backdrop-filter:blur(18px)}
+.service-detail-page .site-header:after{height:1px;opacity:.45}
+.service-detail-page .nav{min-height:82px}
+.service-detail-page .nav-actions .btn-secondary{background:var(--sd-ink);border-color:var(--sd-ink);color:#fff}
+.rv-service-hero{padding:50px 0 70px!important;background:linear-gradient(180deg,#f7f5ef,#efede6)!important}
+.rv-service-hero-grid{display:grid;grid-template-columns:minmax(0,.82fr) minmax(470px,1.18fr);gap:clamp(38px,6vw,92px);align-items:center}
+.rv-service-hero-copy{padding:52px 0}
+.service-detail-page .rv-service-hero .breadcrumbs{margin-bottom:27px;color:#78838a}
+.service-detail-page .rv-service-hero .h1{font-size:clamp(54px,6.1vw,98px);line-height:.92;letter-spacing:-.068em;max-width:760px}
+.service-detail-page .rv-service-hero .lead{font-size:18px;line-height:1.72;color:#626f77;max-width:650px}
+.service-detail-page .rv-service-hero .btn-primary{background:#08111f;border-color:#08111f;box-shadow:none}
+.service-detail-page .rv-service-hero .btn-secondary{background:transparent;border-color:#b9c1c0;color:#08111f}
+.rv-service-visual{position:relative;margin:0;overflow:hidden;background:#0b1723;box-shadow:0 30px 86px rgba(8,17,31,.15)}
+.rv-service-visual img{display:block;width:100%;height:auto;aspect-ratio:1.18/1;object-fit:cover}
+.rv-service-visual figcaption{position:absolute;left:22px;bottom:20px;padding:10px 13px;border:1px solid rgba(255,255,255,.28);background:rgba(4,16,28,.58);backdrop-filter:blur(9px);color:#fff;font-size:10px;font-weight:850;letter-spacing:.12em;text-transform:uppercase;border-radius:999px}
+.service-detail-page .section{padding-top:112px;padding-bottom:112px}
+.service-detail-page .section.soft{background:#ecebe5}
+.service-detail-page .split-heading{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(300px,.58fr);gap:66px;align-items:end;margin-bottom:54px}
+.service-detail-page .split-heading .h2,.service-detail-page .section>.container>.h2{font-size:clamp(42px,4.8vw,72px);line-height:.98;letter-spacing:-.052em}
+.service-detail-page .split-heading>p{color:var(--sd-muted);line-height:1.75}
+.service-detail-page .service-grid{gap:14px}
+.service-detail-page .service-card,.service-detail-page .card,.service-detail-page .decision-card,.service-detail-page .scope-panel,.service-detail-page .price-card{border-radius:0;box-shadow:none}
+.service-detail-page .service-card{border-color:#d8dedc;background:#f8f9f6}
+.service-detail-page .service-card:hover{transform:translateY(-3px);box-shadow:0 16px 34px rgba(8,17,31,.07)}
+.service-detail-page .service-card h3{letter-spacing:-.035em}
+.service-detail-page .two-col{gap:clamp(42px,7vw,100px)}
+.service-detail-page .two-col>.card{border:1px solid #d5dcda;background:#fff}
+.service-detail-page .feature-list li{border-color:#d9dfdd}
+.service-detail-page .faq details{border-radius:0}
+.service-detail-page .form{border-top:1px solid #d8dddb;padding-top:28px}
+.service-detail-page .field input,.service-detail-page .field textarea,.service-detail-page .field select{border-radius:0;background:#f9faf8;border-color:#ccd5d5}
+.service-detail-page .pricing{gap:14px}
+.service-detail-page .pricing .price-card{border:1px solid #d6dcda;background:#fff}
+.service-detail-page .notice{border-radius:0}
+.websites-page .rv-websites-intro{padding:50px 0 70px;background:linear-gradient(180deg,#f7f5ef,#efede6)}
+.websites-page .rv-websites-intro .rv-service-hero-grid{align-items:center}
+.websites-page .rv-websites-intro .h1{font-size:clamp(54px,6.1vw,98px);line-height:.92;letter-spacing:-.068em}
+.websites-page .rv-websites-intro .lead{font-size:18px;line-height:1.72;color:#626f77}
+@media(max-width:1020px){
+  .rv-service-hero-grid{grid-template-columns:1fr}.rv-service-hero-copy{padding-bottom:0}
+  .service-detail-page .split-heading{grid-template-columns:1fr;gap:20px}
+}
+@media(max-width:700px){
+  .service-detail-page .rv-service-hero .h1,.websites-page .rv-websites-intro .h1{font-size:clamp(46px,13.5vw,70px)}
+  .rv-service-visual img{aspect-ratio:1/1}
+  .service-detail-page .section{padding-top:82px;padding-bottom:82px}
+}
+@media(prefers-reduced-motion:reduce){.service-detail-page .service-card{transition:none}}
+.motion-reduced .service-detail-page .service-card{transition:none}
