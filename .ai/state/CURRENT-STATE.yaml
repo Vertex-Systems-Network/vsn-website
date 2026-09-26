@@ -93,7 +93,7 @@ profile_package_prices:
   status: owner-requested-revised-starting-fees
   usd: [499, 999, 1999]
 deployment_status: waiting-for-hosting-panel-access
-next_valid_action: validate-service-detail-batch-pr-then-continue-remaining-company-and-industry-pages
+next_valid_action: review-or-merge-pr-70-then-migrate-remaining-company-industry-and-trust-pages
 
 industry_expansion_percent: 100
 ai_solutions_module_percent: 100
@@ -159,3 +159,5 @@ ritovex_secondary_visual_assets: 4
 ritovex_service_detail_batch_percent: 100
 ritovex_service_detail_pages_migrated: 12
 ritovex_service_detail_new_visual_assets: 4
+ritovex_service_detail_static_integrity_run: 140
+ritovex_service_detail_static_integrity_status: passed
