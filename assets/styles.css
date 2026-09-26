@@ -330,3 +330,61 @@ body{background:#fdfefe}.site-header{background:rgba(250,252,255,.93);border-bot
 .motion-reduced *,.motion-reduced *:before,.motion-reduced *:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 @media(max-width:620px){.motion-control{right:10px;bottom:10px}.site-footer{padding-bottom:72px}.pricing .amount{font-size:36px}}
+
+
+/* 2026-09-26 human media system */
+img[src*="vsn-human-"]{
+  object-fit:cover;
+  object-position:50% 50%;
+  filter:saturate(.94) contrast(1.025);
+}
+img[src$="vsn-human-hero.webp"],
+img[src$="vsn-human-software.webp"],
+img[src$="vsn-human-ai.webp"]{
+  object-position:61% 44%;
+}
+img[src$="vsn-human-about.webp"],
+img[src$="vsn-human-team.webp"],
+img[src$="vsn-human-growth.webp"],
+img[src$="vsn-human-operations.webp"],
+img[src$="vsn-human-business.webp"],
+img[src$="vsn-human-industries.webp"],
+img[src$="vsn-human-editorial.webp"]{
+  object-position:50% 50%;
+}
+.hero-art img[src*="vsn-human-"],
+.rv-hero-visual img[src*="vsn-human-"],
+.rv-about-visual img[src*="vsn-human-"],
+.rv-service-visual img[src*="vsn-human-"],
+.rv-company-visual img[src*="vsn-human-"],
+.editorial-hero-visual img[src*="vsn-human-"],
+.home-showcase-image img[src*="vsn-human-"],
+.editorial-card-media img[src*="vsn-human-"],
+.editorial-feature-media img[src*="vsn-human-"],
+.project-detail-image img[src*="vsn-human-"]{
+  width:100%;
+  display:block;
+}
+@media(max-width:1020px){
+  img[src$="vsn-human-hero.webp"],
+  img[src$="vsn-human-software.webp"],
+  img[src$="vsn-human-ai.webp"]{
+    object-position:58% 46%;
+  }
+}
+@media(max-width:700px){
+  img[src*="vsn-human-"]{filter:saturate(.96) contrast(1.02)}
+  img[src$="vsn-human-hero.webp"],
+  img[src$="vsn-human-software.webp"],
+  img[src$="vsn-human-ai.webp"]{
+    object-position:62% 48%;
+  }
+  .hero-art img[src*="vsn-human-"],
+  .rv-hero-visual img[src*="vsn-human-"],
+  .rv-about-visual img[src*="vsn-human-"],
+  .rv-service-visual img[src*="vsn-human-"],
+  .rv-company-visual img[src*="vsn-human-"],
+  .editorial-hero-visual img[src*="vsn-human-"]{
+    min-height:360px;
+  }
+}
