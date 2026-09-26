@@ -219,3 +219,8 @@ Human-led semantic media slots are now wired across Home, Services, Products, Co
 ### Responsive and motion polish checkpoint (2026-09-26)
 
 Home, secondary, service-detail, company/proof and editorial styles now have a dedicated final breakpoint pass for tablet/mobile widths. The Home accordion allows larger active content on small screens, horizontal work cards use touch-friendly overflow, process cards collapse cleanly, editorial feature images reduce height on mobile, and shared human-image crops receive desktop/tablet/mobile object-position rules. Motion state now correctly adds the `motion-enabled` class expected by the shared stylesheet. The Home service-preview switch cancels stale timers during fast pointer movement and exposes `aria-expanded` on each interactive service row. Static Integrity run #246 passed with the expanded motion regression assertions.
+
+
+### Human image unique batch 2 (2026-09-26)
+
+The human-media system now has six unique production WebP assets: Hero, About, Software, AI, Growth and Operations. Software, AI, Growth and Operations replaced their temporary semantic aliases in commit `d11dfd34904dd14d794de78fa0dfdd13071e4c2b`. Static Integrity run #251 passed on that exact head. Business, Team, Industries and Editorial remain semantic aliases and are the final photography batch before PR #72 can leave draft state.
