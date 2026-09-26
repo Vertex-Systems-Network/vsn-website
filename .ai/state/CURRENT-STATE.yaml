@@ -4,7 +4,7 @@ phase: authority-profile-and-site-motion
 verified_main_sha: 7e544c9f58f703cabb0162f11e68cf48ebc8b185
 current_issue: null
 current_branch: main
-current_milestone: authority-profile-service-packages-and-motion-merged
+current_milestone: scroll-content-stability-fix
 architecture: static-html-css-vanilla-js
 runtime_mode: file-direct-open
 implementation_complete: true
@@ -140,6 +140,7 @@ sitewide_motion_implementation_percent: 100
 motion_behavior_check: passed
 motion_stutter_fix: implemented
 duplicate_home_scroll_entrances: removed
+scroll_entrance_animation: removed
 motion_pointer_transform_restarts: removed
 scroll_header_layout_shift: removed
 large_hero_image_continuous_scale: removed

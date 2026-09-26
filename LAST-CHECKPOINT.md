@@ -247,7 +247,7 @@ PR #63 merged to `main` as `7ddc6435e3c3f6f700ce66e12ee5ca93d64821c0`; Static In
 - Owner corrected Authority Profile classification and requested deeper PellaNova-inspired packages plus full-site animation.
 - Read PellaNova home and package pages. Moved Authority Profile to Services in all 27 headers and added a dedicated catalogue section.
 - Rebuilt the individual personal-brand service page with $499/$999/$1,999 starting tiers, explicit editorial/page/language limits, portraits or photo finishing, useful contact/media assets, capped aftercare, optional add-ons, a dedicated form before FAQs and ownership/search limits.
-- Added `assets/motion.js` to every page; removed the former narrow reveal loop from `app.js`. The new engine covers entrances, hover/mouse exit, buttons, menu/FAQ events, field focus and scroll progress with progressive fallback and reduced-motion cancellation.
+- Added `assets/motion.js` to every page; removed the former narrow reveal loop from `app.js`. Motion supports hover feedback, menu/FAQ events, field focus and scroll progress with progressive fallback and reduced-motion cancellation. Viewport entrance effects were later removed because they replayed after content had already appeared.
 - Profile-specific package buttons populate the enquiry tier. Privacy wording covers approved personal-brand material and optional AI portraits.
 - Verification: 27 pages, 1,490 local references and 26 sitemap URLs; uniform service classification, all-page motion inclusion, package values and form order; JS syntax; offline motion behavior checks and diff whitespace pass. No browser visual or production check/deployment.
 
@@ -257,5 +257,6 @@ PR #63 merged to `main` as `7ddc6435e3c3f6f700ce66e12ee5ca93d64821c0`; Static In
 - Kept existing CSS hover states, entrances, and progress feedback. Removed the shrinking header layout on scroll and continuous scale animation on the large hero image to avoid unnecessary layout/compositing work.
 - Updated the offline behavior check to assert pointer movement does not create competing animations. Browser visual review and production checks remain out of scope.
 - Follow-up audit found separate CSS entrance keyframes on Home hero and credential elements, overlapping the shared scroll observer. Removed these CSS entrances; scroll entrances now have one owner. Regression check asserts the duplicate keyframes and header height shift remain absent.
+- User confirmed content still flashed into view before sliding on scroll. Removed the IntersectionObserver entrance system entirely so page content remains stationary during scroll; kept CSS hover, header, FAQ and progress feedback. Regression checks assert no observer-driven slide keyframes remain.
 
 Authority Profile and site-wide motion merged in PR #64 (`7e544c9f58f703cabb0162f11e68cf48ebc8b185`). Static Integrity run #125 passed; offline motion behavior checks passed. Browser visual review and production deployment were not performed.
