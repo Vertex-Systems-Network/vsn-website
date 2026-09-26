@@ -280,3 +280,14 @@ Authority Profile and site-wide motion merged in PR #64 (`7e544c9f58f703cabb0162
 - Services, About, Products and Contact are the active visual-migration set.
 - Added a shared secondary-page editorial stylesheet plus four original local VSN SVG visuals matched to those page purposes.
 - Existing static HTML/CSS/vanilla-JS architecture, local paths and the previous scroll-animation stability fix are preserved.
+
+
+## Service-detail large visual batch (2026-09-26)
+
+- PR #69 merged to main as `f59229c9940dbcd183cd212316ca143167eddadd` after Static Integrity run #138 passed.
+- Started `design/ritovex-service-details-batch-1` from that merge.
+- Migrated 12 primary service-detail pages to the new image-led editorial hero/layout system.
+- Added `assets/ritovex-service-detail.css` and four original local visuals: mobile, web-commerce, operations and business/tax.
+- Reused existing VSN product, AI, growth and company visuals where they are semantically appropriate.
+- Existing page content, enquiry forms, tax calculators, local direct-open paths and motion-stability behavior are preserved.
+- Automated markup spot-check confirms all 12 pages reference the shared stylesheet, have the expected service-detail body class and use local VSN visual assets.
