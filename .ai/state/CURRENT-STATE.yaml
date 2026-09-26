@@ -3,8 +3,8 @@ updated: 2026-09-26
 phase: ritovex-inspired-visual-rebuild
 verified_main_sha: 7e544c9f58f703cabb0162f11e68cf48ebc8b185
 current_issue: null
-current_branch: main
-current_milestone: ritovex-reference-site-rebuild-complete
+current_branch: recovery/ritovex-parity-fix
+current_milestone: ritovex-parity-recovery
 architecture: static-html-css-vanilla-js
 runtime_mode: file-direct-open
 implementation_complete: false
@@ -93,7 +93,7 @@ profile_package_prices:
   status: owner-requested-revised-starting-fees
   usd: [499, 999, 1999]
 deployment_status: waiting-for-hosting-panel-access
-next_valid_action: post-merge-main-verification-or-production-publish-when-owner-requests
+next_valid_action: validate-recovery-batch-1-then-finish-animation-header-footer-and-image-parity
 
 industry_expansion_percent: 100
 ai_solutions_module_percent: 100
@@ -210,10 +210,19 @@ human_unique_assets: [hero, about, software, ai, growth, operations, business, t
 human_alias_assets_pending: []
 final_human_atlas_static_integrity_run: 295
 final_human_atlas_static_integrity_status: passed
-website_visual_rebuild_percent: 100
+website_visual_rebuild_percent: 65
 marketing_copy_simplification_status: complete
 legal_policy_copy_preserved_for_accuracy: true
-completion_status: complete
+completion_status: recovery-in-progress
 final_merge_sha: a2a7cb18075e814b955109dfe60891645639ea40
 final_pr: 72
 final_main_status: merged
+
+ritovex_recovery_percent: 65
+ritovex_reference_validated_against_live_demo: true
+ritovex_recordings_revalidated: true
+service_detail_faq_form_contract: restored
+contact_google_map_status: restored
+blog_projects_detail_parity_batch: implemented
+header_footer_parity_status: partial-css-recovery
+animation_parity_status: pending-final-pass
