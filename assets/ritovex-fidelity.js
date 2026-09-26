@@ -1,5 +1,11 @@
 (()=>{'use strict';
 const reduce=window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+document.querySelectorAll('.reference-service-accordion').forEach(group=>{
+ const items=[...group.querySelectorAll(':scope > details')];
+ items.forEach(item=>item.addEventListener('toggle',()=>{
+  if(item.open) items.forEach(other=>{if(other!==item) other.open=false});
+ }));
+});
 document.querySelectorAll('.rv-header .nav-dropdown').forEach(d=>{
   let t=0;
   d.addEventListener('mouseenter',()=>{if(innerWidth>900){clearTimeout(t);d.open=true}});
