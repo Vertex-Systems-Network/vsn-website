@@ -320,3 +320,14 @@ Authority Profile and site-wide motion merged in PR #64 (`7e544c9f58f703cabb0162
 - Human-led VSN photography is the next asset milestone; current interface/mockup visuals are temporary and are not considered final.
 
 - Static Integrity run #147 passed, including `node scripts/check_motion_behavior.cjs`; all 27 HTML pages load the pre-paint motion layer, one-shot reveal uses `unobserve`, and pointermove/WAAPI transform loops remain absent.
+
+
+## Editorial and project page batch (2026-09-26)
+
+- Added `blog.html` and `blog-detail.html` using the recorded Ritovex editorial/card rhythm with VSN-owned copy.
+- Added `projects.html` and `project-detail.html`; the first project detail uses VSN Metafields because its Shopify listing is publicly verifiable.
+- Added `coming-soon.html` as a noindex utility page and rebuilt `404.html` in the same minimal visual language.
+- Added `assets/ritovex-editorial.css` and extended the shared one-shot motion system to editorial heroes, cards, article content and utility states.
+- Added Projects and Blog to shared header/footer navigation across all 32 HTML pages.
+- Expanded sitemap to 30 indexable URLs while explicitly excluding 404 and Coming Soon.
+- Static validator and motion regression expectations were updated to the 32-page architecture without relaxing CSP, local-path, shared-header or proof-boundary checks.
