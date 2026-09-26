@@ -93,7 +93,7 @@ profile_package_prices:
   status: owner-requested-revised-starting-fees
   usd: [499, 999, 1999]
 deployment_status: waiting-for-hosting-panel-access
-next_valid_action: generate-software-ai-growth-operations-human-images-then-integrate-and-run-responsive-qa
+next_valid_action: validate-human-slot-wiring-then-replace-semantic-aliases-with-unique-final-photography
 
 industry_expansion_percent: 100
 ai_solutions_module_percent: 100
@@ -189,3 +189,7 @@ editorial_page_static_integrity_status: passed
 human_image_batch_1_static_integrity_run: 204
 human_image_batch_1_status: passed
 human_image_assets_integrated: [hero, about]
+
+human_image_slot_wiring_percent: 100
+unique_human_photo_assets_percent: 20
+human_image_current_strategy: semantic-slots-wired-temporary-approved-human-sources
