@@ -6,9 +6,7 @@
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
   const active = new Set();
   let manualReduce = false;
-  let observer;
   let frame = 0;
-  let running = false;
   const allowed = () => !reduce.matches && !manualReduce;
   const control = document.createElement('button');
   control.type = 'button';
@@ -29,32 +27,6 @@
     animation.addEventListener('cancel', () => { active.delete(animation); }, {once:true});
     return animation;
   };
-  const gridNames = '.service-grid,.pricing,.decision-grid,.ownership-grid,.cards-4,.process,.home-service-grid,.home-team-grid,.about-profile-grid,.about-role-grid,.industries,.product-project-grid,.contact-public-links,.footer-grid,.two-col,.proof-grid';
-  const targets = new Set();
-  document.querySelectorAll('main section > .container, .page-hero > .container, .site-footer > .container').forEach(container => {
-    [...container.children].forEach(child => {
-      if (child.matches(gridNames)) [...child.children].forEach(el => targets.add(el));
-      else if (!child.matches('script,style')) targets.add(child);
-    });
-  });
-  document.querySelectorAll(gridNames).forEach(grid => [...grid.children].forEach(child => targets.add(child)));
-  // Animate either a group or its children, never overlapping ancestor animations.
-  const leaves = [...targets].filter(el => ![...targets].some(other => other !== el && el.contains(other)));
-  const watched = new WeakSet();
-  function observe() {
-    if (!allowed() || !('IntersectionObserver' in window)) return;
-    observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting || watched.has(entry.target)) return;
-        watched.add(entry.target);
-        const siblings = [...(entry.target.parentElement?.children || [])];
-        const delay = Math.min(siblings.indexOf(entry.target) % 4, 3) * 65;
-        play(entry.target, [{opacity:0, transform:'translateY(26px)'}, {opacity:1, transform:'translateY(0)'}], {duration:750, delay});
-        observer.unobserve(entry.target);
-      });
-    }, {threshold:0.06, rootMargin:'0px 0px -22px 0px'});
-    leaves.forEach(el => { if (!watched.has(el)) observer.observe(el); });
-  }
   function updateScroll() {
     frame = 0;
     const distance = Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
@@ -82,13 +54,8 @@
     control.setAttribute('aria-pressed', String(!enabled));
     control.disabled = reduce.matches;
     if (!enabled) {
-      observer?.disconnect();
       active.forEach(animation => animation.cancel());
       active.clear();
-      running = false;
-    } else if (!running) {
-      running = true;
-      observe();
     }
   }
   control.addEventListener('click', () => {manualReduce = !manualReduce; sync();});
