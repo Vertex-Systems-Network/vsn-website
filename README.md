@@ -175,3 +175,8 @@ The redesign does **not** copy Ritovex/Webflow assets or text. The branch now in
 ### Ritovex-inspired homepage visual milestone (2026-09-26)
 
 The homepage now has four original local VSN SVG visuals: a new hero artwork plus product-engineering, AI/automation and growth/operations illustrations. Image-led editorial sections were added without copying Ritovex assets or text, and the existing no-scroll-replay motion rule remains intact. Static Integrity run #135 passed on commit `2c2f2d6eeee4880d25fa10f7678a82ac916eb6f3`. The next design milestone is to extend the same visual system to secondary pages.
+
+
+## Secondary-page Ritovex visual milestone — in progress (2026-09-26)
+
+After PR #68 merged, work moved to `design/ritovex-secondary-pages`. Services, About, Products and Contact now use a shared editorial page system with oversized split heroes, original VSN content-matched SVG visuals, flatter service/product layouts and stronger whitespace. Static architecture and the no-scroll-replay motion rule remain unchanged. This milestone is not merged yet.
