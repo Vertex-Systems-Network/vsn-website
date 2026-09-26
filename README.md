@@ -162,4 +162,4 @@ Authority Profile and site-wide motion merged in PR #64 (`7e544c9f58f703cabb0162
 
 ## Motion stutter fix (2026-09-26)
 
-Removed per-pointermove Web Animations that repeatedly replaced element transforms, stopped shrinking the sticky header during scroll, and removed the continuous full-image scale animation. Existing lightweight CSS hover feedback and staged section entrances remain. Offline checks confirm pointer movement no longer spawns competing transforms; browser visual review and production checks remain unperformed.
+Removed per-pointermove Web Animations that repeatedly replaced element transforms, stopped shrinking the sticky header during scroll, and removed the continuous full-image scale animation. A follow-up audit found the Home hero and credentials also had CSS entrances while the shared scroll observer animated their parents. Removed those duplicate CSS entrances so the shared observer now owns section entrance motion; CSS continues to own hover feedback. Offline checks assert the duplicate selectors stay absent. Browser visual review and production checks remain unperformed.

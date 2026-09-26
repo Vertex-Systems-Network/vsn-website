@@ -256,5 +256,6 @@ PR #63 merged to `main` as `7ddc6435e3c3f6f700ce66e12ee5ca93d64821c0`; Static In
 - Removed per-pointermove Web Animations that repeatedly cancelled and recreated card/button transforms, a source of frame jumps on slower devices.
 - Kept existing CSS hover states, entrances, and progress feedback. Removed the shrinking header layout on scroll and continuous scale animation on the large hero image to avoid unnecessary layout/compositing work.
 - Updated the offline behavior check to assert pointer movement does not create competing animations. Browser visual review and production checks remain out of scope.
+- Follow-up audit found separate CSS entrance keyframes on Home hero and credential elements, overlapping the shared scroll observer. Removed these CSS entrances; scroll entrances now have one owner. Regression check asserts the duplicate keyframes and header height shift remain absent.
 
 Authority Profile and site-wide motion merged in PR #64 (`7e544c9f58f703cabb0162f11e68cf48ebc8b185`). Static Integrity run #125 passed; offline motion behavior checks passed. Browser visual review and production deployment were not performed.
