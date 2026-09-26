@@ -169,7 +169,9 @@ ritovex_company_proof_static_integrity_run: 143
 ritovex_company_proof_static_integrity_status: passed
 
 ritovex_video_reference_locked: true
-ritovex_motion_rebaseline_percent: 70
-ritovex_copy_simplification_percent: 35
+ritovex_motion_rebaseline_percent: 100
+ritovex_copy_simplification_percent: 45
 ritovex_human_image_generation_percent: 0
 ritovex_mockup_first_visuals_final_state: false
+ritovex_motion_static_integrity_run: 147
+ritovex_motion_static_integrity_status: passed
