@@ -204,3 +204,8 @@ Static Integrity run #147 passed with both the static-site validator and the new
 The video-reference branch now includes a Ritovex-style editorial system for Blog, Blog Detail, Projects, Project Detail, Coming Soon and the redesigned 404 page. Blog launches with one original VSN article about keeping human judgment inside AI automation; future-note cards route to the noindex Coming Soon page rather than pretending unpublished articles exist. Projects launches with verified public VSN surfaces and a VSN Metafields detail page that points to the Shopify App Store as the source of truth. Projects and Blog were added to the shared navigation/footer across all 32 HTML pages. Sitemap validation now expects 30 public URLs; 404 and Coming Soon remain excluded from indexing. One-shot motion targets include the new editorial components.
 
 Static Integrity run #198 passed after the Blog, Projects and utility-page expansion. The validator now checks 32 HTML pages and 30 sitemap URLs, and the motion regression test covers the new editorial pages.
+
+
+### Human image batch 1 (2026-09-26)
+
+The Home hero, Home About and About page now use committed human-led WebP assets instead of interface/mockup-first SVG illustrations. Responsive object-position/crop tuning is included in the homepage stylesheet. Static Integrity run #204 passed after the binary asset swap. The next image batch is Software, AI, Growth and Operations.
