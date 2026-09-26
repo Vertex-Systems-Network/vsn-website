@@ -185,3 +185,8 @@ After PR #68 merged, work moved to `design/ritovex-secondary-pages`. Services, A
 ## Service-detail Ritovex large batch — in progress (2026-09-26)
 
 PR #69 was squash-merged as `f59229c9940dbcd183cd212316ca143167eddadd`. A new branch, `design/ritovex-service-details-batch-1`, now applies the shared editorial service-detail system to **12 primary service pages**: Custom Software & SaaS, Web Development & E-commerce, Business Websites, E-commerce, Mobile App Development, AI Solutions, Authority Profile, Digital Marketing & Growth, BPO, Business Solutions, Tax Support and Resource Augmentation. Four new original local VSN visuals were added for mobile, web/commerce, operations and business/tax; existing VSN product, AI, growth and company visuals are reused only where they match the subject. Existing content, forms, calculators and the no-scroll-replay motion behavior remain in place. PR #70 now carries this batch; Static Integrity run #140 passed on the implementation checkpoint.
+
+
+## Company/proof Ritovex batch — in progress (2026-09-26)
+
+PR #70 was squash-merged as `5a51d30ea674f9a7c632b0767605c1350797a24e`. A new branch, `design/ritovex-company-proof-batch`, now migrates Industries, Work, Process, Trust and Payments to the same editorial image-led system. Five original local VSN visuals were added for industry workflows, public proof, delivery process, trust/security and payments. Work and Trust continue to avoid invented client results, certifications or unsupported proof. Existing page copy, links, payment wording and static architecture remain intact. PR #71 carries this batch; Static Integrity run #143 passed on the completed implementation checkpoint.

@@ -1,0 +1,50 @@
+/* Ritovex-inspired company/proof page system. Original VSN implementation and assets. */
+.company-proof-page{
+  --cp-ink:#08111f;--cp-paper:#f3f1eb;--cp-muted:#66727a;--cp-line:#d7dcda;--cp-blue:#0b6dff;--cp-cyan:#5cc9ed;
+  background:var(--cp-paper);color:var(--cp-ink)
+}
+.company-proof-page .site-header{background:rgba(243,241,235,.92);border-bottom:1px solid rgba(8,17,31,.08);backdrop-filter:blur(18px)}
+.company-proof-page .site-header:after{height:1px;opacity:.45}
+.company-proof-page .nav{min-height:82px}
+.company-proof-page .nav-actions .btn-secondary{background:var(--cp-ink);border-color:var(--cp-ink);color:#fff}
+.rv-company-hero{padding:50px 0 72px!important;background:linear-gradient(180deg,#f7f5ef,#efede6)!important}
+.rv-company-hero-grid{display:grid;grid-template-columns:minmax(0,.82fr) minmax(470px,1.18fr);gap:clamp(40px,6vw,94px);align-items:center}
+.rv-company-hero-copy{padding:52px 0}
+.company-proof-page .rv-company-hero .breadcrumbs{margin-bottom:27px;color:#78838a}
+.company-proof-page .rv-company-hero .h1{font-size:clamp(54px,6.2vw,100px);line-height:.92;letter-spacing:-.069em;max-width:780px}
+.company-proof-page .rv-company-hero .lead{font-size:18px;line-height:1.72;color:#626f77;max-width:660px}
+.company-proof-page .rv-company-hero .btn-primary{background:#08111f;border-color:#08111f;box-shadow:none}
+.company-proof-page .rv-company-hero .btn-secondary{background:transparent;border-color:#b9c1c0;color:#08111f}
+.rv-company-visual{position:relative;margin:0;overflow:hidden;background:#0b1723;box-shadow:0 30px 86px rgba(8,17,31,.15)}
+.rv-company-visual img{display:block;width:100%;height:auto;aspect-ratio:1.18/1;object-fit:cover}
+.rv-company-visual figcaption{position:absolute;left:22px;bottom:20px;padding:10px 13px;border:1px solid rgba(255,255,255,.28);background:rgba(4,16,28,.58);backdrop-filter:blur(9px);color:#fff;font-size:10px;font-weight:850;letter-spacing:.12em;text-transform:uppercase;border-radius:999px}
+.company-proof-page .section{padding-top:112px;padding-bottom:112px}
+.company-proof-page .section.soft{background:#ecebe5}
+.company-proof-page .split-heading{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(300px,.58fr);gap:66px;align-items:end;margin-bottom:54px}
+.company-proof-page .split-heading .h2,.company-proof-page .section>.container>.h2{font-size:clamp(42px,4.8vw,72px);line-height:.98;letter-spacing:-.052em}
+.company-proof-page .split-heading>p{color:var(--cp-muted);line-height:1.75}
+.company-proof-page .card,.company-proof-page .service-card,.company-proof-page .proof-card,.company-proof-page .decision-card,.company-proof-page .scope-panel{border-radius:0;box-shadow:none}
+.company-proof-page .card,.company-proof-page .service-card,.company-proof-page .proof-card{border-color:#d8dedc}
+.company-proof-page .service-grid,.company-proof-page .proof-grid{gap:14px}
+.company-proof-page .service-card,.company-proof-page .proof-card{background:#f8f9f6}
+.company-proof-page .service-card:hover,.company-proof-page .proof-card:hover{transform:translateY(-3px);box-shadow:0 16px 34px rgba(8,17,31,.07)}
+.company-proof-page .two-col{gap:clamp(42px,7vw,100px)}
+.company-proof-page .feature-list li{border-color:#d9dfdd}
+.company-proof-page .faq details{border-radius:0}
+.company-proof-page .notice{border-radius:0}
+.work-page .proof-card{min-height:260px}
+.trust-page .card{background:#fff}
+.payments-page .card{background:#fff}
+.process-page .process-grid{gap:14px}
+.process-page .process-card{border-radius:0;box-shadow:none}
+@media(max-width:1020px){
+  .rv-company-hero-grid{grid-template-columns:1fr}.rv-company-hero-copy{padding-bottom:0}
+  .company-proof-page .split-heading{grid-template-columns:1fr;gap:20px}
+}
+@media(max-width:700px){
+  .company-proof-page .rv-company-hero .h1{font-size:clamp(46px,13.5vw,70px)}
+  .rv-company-visual img{aspect-ratio:1/1}
+  .company-proof-page .section{padding-top:82px;padding-bottom:82px}
+}
+@media(prefers-reduced-motion:reduce){.company-proof-page .service-card,.company-proof-page .proof-card{transition:none}}
+.motion-reduced .company-proof-page .service-card,.motion-reduced .company-proof-page .proof-card{transition:none}
