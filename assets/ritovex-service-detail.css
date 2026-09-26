@@ -52,3 +52,18 @@
 }
 @media(prefers-reduced-motion:reduce){.service-detail-page .service-card{transition:none}}
 .motion-reduced .service-detail-page .service-card{transition:none}
+
+/* 2026-09-26 final responsive QA: service details */
+.rv-service-hero-grid>*,.service-detail-page .split-heading>*{min-width:0}
+@media(max-width:1020px){
+  .rv-service-hero{padding:42px 0 64px!important}
+  .rv-service-visual img{max-height:560px}
+}
+@media(max-width:700px){
+  .rv-service-hero{padding:28px 0 50px!important}
+  .rv-service-hero-copy{padding:34px 0 0}
+  .rv-service-visual{box-shadow:0 18px 50px rgba(8,17,31,.12)}
+  .rv-service-visual figcaption{left:14px;bottom:14px}
+  .service-detail-page .service-grid,
+  .service-detail-page .pricing{gap:10px}
+}
