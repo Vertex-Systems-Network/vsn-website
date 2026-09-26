@@ -3,8 +3,8 @@ updated: 2026-09-26
 phase: ritovex-inspired-visual-rebuild
 verified_main_sha: 7e544c9f58f703cabb0162f11e68cf48ebc8b185
 current_issue: null
-current_branch: design/ritovex-secondary-pages
-current_milestone: ritovex-secondary-pages-services-about-products-contact
+current_branch: design/ritovex-service-details-batch-1
+current_milestone: ritovex-service-detail-large-batch
 architecture: static-html-css-vanilla-js
 runtime_mode: file-direct-open
 implementation_complete: false
@@ -93,7 +93,7 @@ profile_package_prices:
   status: owner-requested-revised-starting-fees
   usd: [499, 999, 1999]
 deployment_status: waiting-for-hosting-panel-access
-next_valid_action: validate-secondary-page-redesign-and-open-pr
+next_valid_action: validate-service-detail-batch-pr-then-continue-remaining-company-and-industry-pages
 
 industry_expansion_percent: 100
 ai_solutions_module_percent: 100
@@ -145,13 +145,17 @@ motion_pointer_transform_restarts: removed
 scroll_header_layout_shift: removed
 large_hero_image_continuous_scale: removed
 
-ritovex_visual_rebuild_percent: 48
+ritovex_visual_rebuild_percent: 72
 ritovex_homepage_percent: 100
 ritovex_original_visual_assets: 4
-ritovex_secondary_pages_percent: 35
+ritovex_secondary_pages_percent: 100
 ritovex_reference_strategy: original-vsn-content-and-assets-with-reference-inspired-layout
 ritovex_homepage_static_integrity_run: 135
 ritovex_homepage_static_integrity_status: passed
 
 ritovex_active_secondary_pages: [services, about, products, contact]
 ritovex_secondary_visual_assets: 4
+
+ritovex_service_detail_batch_percent: 100
+ritovex_service_detail_pages_migrated: 12
+ritovex_service_detail_new_visual_assets: 4
