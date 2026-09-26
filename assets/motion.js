@@ -1,65 +1,48 @@
-/* VSN motion system. Progressive enhancement; content never depends on animation. */
-(() => {
-  'use strict';
-  if (!Element.prototype.animate || !window.matchMedia) return;
-  const root = document.documentElement;
-  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
-  const active = new Set();
-  let manualReduce = false;
-  let frame = 0;
-  const allowed = () => !reduce.matches && !manualReduce;
-  const control = document.createElement('button');
-  control.type = 'button';
-  control.className = 'motion-control';
-  control.setAttribute('aria-label', 'Reduce website animations');
-  document.body.append(control);
-  const progress = document.createElement('progress');
-  progress.className = 'reading-progress';
-  progress.max = 100;
-  progress.value = 0;
-  progress.setAttribute('aria-hidden', 'true');
-  document.body.append(progress);
-  const play = (element, keys, options = {}) => {
-    if (!allowed() || !element) return null;
-    const animation = element.animate(keys, {duration: 600, easing: 'cubic-bezier(.22,1,.36,1)', ...options});
-    active.add(animation);
-    animation.addEventListener('finish', () => { active.delete(animation); }, {once:true});
-    animation.addEventListener('cancel', () => { active.delete(animation); }, {once:true});
-    return animation;
-  };
-  function updateScroll() {
-    frame = 0;
-    const distance = Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
-    progress.value = distance ? Math.min(100, Math.max(0, window.scrollY / distance * 100)) : 0;
-    document.querySelector('.site-header')?.classList.toggle('is-scrolled', window.scrollY > 24);
-  }
-  window.addEventListener('scroll', () => { if (!frame) frame = requestAnimationFrame(updateScroll); }, {passive:true});
-  window.addEventListener('resize', () => { if (!frame) frame = requestAnimationFrame(updateScroll); }, {passive:true});
-  // Keep pointer feedback in CSS. Replacing WAAPI transform animations on every
-  // pointermove makes the computed matrix jump between frames on slower GPUs.
-  document.querySelectorAll('details').forEach(details => details.addEventListener('toggle', () => {
-    if (!allowed()) return;
-    if (details.open) [...details.children].filter(child => child.tagName !== 'SUMMARY').forEach(child => play(child, [{opacity:0,transform:'translateY(-8px)'},{opacity:1,transform:'translateY(0)'}], {duration:340}));
-    else play(details.querySelector('summary'), [{opacity:.7},{opacity:1}], {duration:200});
-  }));
-  document.querySelectorAll('.field input,.field textarea,.field select').forEach(input => {
-    input.addEventListener('focus', () => input.closest('.field')?.classList.add('field-active'));
-    input.addEventListener('blur', () => input.closest('.field')?.classList.remove('field-active'));
-  });
-  function sync() {
-    const enabled = allowed();
-    root.classList.toggle('motion-enabled', enabled);
-    root.classList.toggle('motion-reduced', !enabled);
-    control.textContent = enabled ? 'Motion: on' : 'Motion: reduced';
-    control.setAttribute('aria-pressed', String(!enabled));
-    control.disabled = reduce.matches;
-    if (!enabled) {
-      active.forEach(animation => animation.cancel());
-      active.clear();
-    }
-  }
-  control.addEventListener('click', () => {manualReduce = !manualReduce; sync();});
-  reduce.addEventListener?.('change', sync);
-  sync();
-  updateScroll();
+/* VSN motion system: one-shot viewport reveals + Ritovex-style interaction grammar. */
+(()=>{'use strict';
+const root=document.documentElement;
+if(!window.matchMedia){root.classList.add('motion-fallback');return}
+const reduce=window.matchMedia('(prefers-reduced-motion: reduce)');
+let manualReduce=false,frame=0;
+const allowed=()=>!reduce.matches&&!manualReduce;
+const control=document.createElement('button');
+control.type='button';control.className='motion-control';control.setAttribute('aria-label','Reduce website animations');document.body.append(control);
+const progress=document.createElement('progress');
+progress.className='reading-progress';progress.max=100;progress.value=0;progress.setAttribute('aria-hidden','true');document.body.append(progress);
+function updateScroll(){frame=0;const d=Math.max(0,document.documentElement.scrollHeight-innerHeight);progress.value=d?Math.min(100,Math.max(0,scrollY/d*100)):0;document.querySelector('.site-header')?.classList.toggle('is-scrolled',scrollY>24)}
+addEventListener('scroll',()=>{if(!frame)frame=requestAnimationFrame(updateScroll)},{passive:true});
+addEventListener('resize',()=>{if(!frame)frame=requestAnimationFrame(updateScroll)},{passive:true});
+
+const groups=[
+ ['.home-hero-copy>*',90],['.hero-art',0],['.home-about-visual,.home-about-copy',100],['.home-section-intro',0],
+ ['.home-service-card',70],['.home-service-preview',0],['.home-showcase-card',90],['.home-product-layout>*',90],
+ ['.home-team-grid>article',80],['.home-proof-layout>*',90],['.home-process-intro',0],['.home-process-grid>article',90],
+ ['.home-contact-band,.review-section .container',0],['.rv-hero-copy>*,.rv-service-hero-copy>*,.rv-company-hero-copy>*',80],
+ ['.rv-hero-visual,.rv-service-visual,.rv-company-visual',0]
+];
+const targets=[];
+groups.forEach(([selector,step])=>document.querySelectorAll(selector).forEach((el,i)=>{el.style.setProperty('--rv-delay',step?Math.min(i*step,320)+'ms':'0ms');targets.push(el)}));
+let observer=null;
+function revealAll(){targets.forEach(el=>el.classList.add('rv-visible'))}
+function startReveal(){
+ if(!allowed()){root.classList.remove('motion-prep');root.classList.add('motion-reduced');revealAll();return}
+ root.classList.add('motion-live');root.classList.remove('motion-fallback','motion-reduced');
+ if(!('IntersectionObserver'in window)){revealAll();return}
+ observer?.disconnect();
+ observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('rv-visible');observer.unobserve(entry.target)}}),{threshold:.12,rootMargin:'0px 0px -7% 0px'});
+ targets.forEach(el=>observer.observe(el));
+ requestAnimationFrame(()=>document.querySelectorAll('.home-hero-copy>*,.hero-art,.rv-hero-copy>*,.rv-service-hero-copy>*,.rv-company-hero-copy>*,.rv-hero-visual,.rv-service-visual,.rv-company-visual').forEach(el=>el.classList.add('rv-visible')));
+}
+
+const accordion=document.querySelector('[data-service-accordion]');
+if(accordion){
+ const cards=[...accordion.querySelectorAll('.home-service-card')],preview=document.querySelector('.home-service-preview'),img=preview?.querySelector('img');
+ const activate=card=>{cards.forEach(c=>c.classList.toggle('is-active',c===card));if(img&&card.dataset.preview&&img.getAttribute('src')!==card.dataset.preview){preview.classList.add('is-switching');setTimeout(()=>{img.src=card.dataset.preview;requestAnimationFrame(()=>preview.classList.remove('is-switching'))},140)}};
+ cards.forEach(card=>{card.tabIndex=0;card.setAttribute('role','button');card.addEventListener('mouseenter',()=>activate(card));card.addEventListener('focus',()=>activate(card));card.addEventListener('click',()=>activate(card));card.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();activate(card)}})});
+}
+
+document.querySelectorAll('details').forEach(details=>details.addEventListener('toggle',()=>{if(details.open&&allowed())details.classList.add('details-opened')}));
+document.querySelectorAll('.field input,.field textarea,.field select').forEach(input=>{input.addEventListener('focus',()=>input.closest('.field')?.classList.add('field-active'));input.addEventListener('blur',()=>input.closest('.field')?.classList.remove('field-active'))});
+function sync(){const on=allowed();control.textContent=on?'Motion: on':'Motion: reduced';control.setAttribute('aria-pressed',String(!on));control.disabled=reduce.matches;if(on)startReveal();else{observer?.disconnect();root.classList.remove('motion-prep','motion-live');root.classList.add('motion-reduced');revealAll()}}
+control.addEventListener('click',()=>{manualReduce=!manualReduce;sync()});reduce.addEventListener?.('change',sync);sync();updateScroll();
 })();
