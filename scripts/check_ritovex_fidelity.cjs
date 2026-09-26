@@ -68,6 +68,16 @@ for(const file of ['index.html','blog.html','projects.html','blog-detail.html','
  assert.match(body,/assets\/vsn-human-[^"' ]+\.webp/,file+' missing direct human WebP imagery');
 }
 
+const about=read('about.html');
+const services=read('services.html');
+assert.match(about,/about-reference-hero/);
+assert.match(about,/reference-service-accordion/);
+assert.match(about,/about-team-grid/);
+assert.match(services,/services-reference-hero/);
+assert.match(services,/reference-service-accordion/);
+assert.match(services,/services-reference-outcomes/);
+for(const file of htmlFiles){const body=read(file);assert.match(body,/footer-public-links rv-footer-public-links/,file+' missing restored public profile footer row');}
+
 const notFound=read('404.html');
 assert.match(notFound,/utility-404-photo/,'404 must keep circular human-photo composition');
 
