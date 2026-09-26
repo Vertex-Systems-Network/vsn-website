@@ -163,3 +163,15 @@ Authority Profile and site-wide motion merged in PR #64 (`7e544c9f58f703cabb0162
 ## Motion stutter fix (2026-09-26)
 
 Removed per-pointermove Web Animations that repeatedly replaced element transforms, stopped shrinking the sticky header during scroll, and removed the continuous full-image scale animation. Then removed scroll-triggered section entrances entirely: IntersectionObserver started them after content was already visible, creating the apparent second slide. Also removed overlapping Home CSS entrances. Scroll leaves content stationary; CSS still handles hover feedback and the FAQ retains its open/close response. Offline checks assert scroll entrance triggers stay absent. Browser visual review and production checks remain unperformed.
+
+
+## Ritovex-inspired homepage rebuild — in progress (2026-09-26)
+
+A homepage-only visual layer is now being developed on `design/ritovex-homepage-rebuild`. The direction follows Ritovex's editorial hierarchy, oversized typography, service-row rhythm, immersive dark feature section, capability marquee and stronger whitespace while preserving VSN's own content, verified company facts and static HTML/CSS/vanilla-JS architecture.
+
+The redesign does **not** copy Ritovex/Webflow assets or text. The branch now includes an original local VSN visual pack for the hero, product engineering, AI/automation and growth/operations sections. The homepage uses those assets in image-led editorial sections while keeping all claims and links VSN-specific. Scroll-triggered entrance effects remain disabled to avoid the earlier double-animation/jank issue.
+
+
+### Ritovex-inspired homepage visual milestone (2026-09-26)
+
+The homepage now has four original local VSN SVG visuals: a new hero artwork plus product-engineering, AI/automation and growth/operations illustrations. Image-led editorial sections were added without copying Ritovex assets or text, and the existing no-scroll-replay motion rule remains intact. Static Integrity run #135 passed on commit `2c2f2d6eeee4880d25fa10f7678a82ac916eb6f3`. The next design milestone is to extend the same visual system to secondary pages.

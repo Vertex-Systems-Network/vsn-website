@@ -1,13 +1,13 @@
 repo: Vertex-Systems-Network/vsn-website
 updated: 2026-09-26
-phase: authority-profile-and-site-motion
+phase: ritovex-inspired-visual-rebuild
 verified_main_sha: 7e544c9f58f703cabb0162f11e68cf48ebc8b185
 current_issue: null
-current_branch: main
-current_milestone: scroll-content-stability-fix
+current_branch: design/ritovex-homepage-rebuild
+current_milestone: ritovex-homepage-image-led-editorial-system
 architecture: static-html-css-vanilla-js
 runtime_mode: file-direct-open
-implementation_complete: true
+implementation_complete: false
 repository_implementation_percent: 100
 module_progress_percent: 100
 digital_marketing_enhancement_percent: 100
@@ -93,7 +93,7 @@ profile_package_prices:
   status: owner-requested-revised-starting-fees
   usd: [499, 999, 1999]
 deployment_status: waiting-for-hosting-panel-access
-next_valid_action: visual-review-when-available-and-owner-supplied-google-review-evidence
+next_valid_action: merge-pr-68-after-review-then-extend-design-system-to-secondary-pages
 
 industry_expansion_percent: 100
 ai_solutions_module_percent: 100
@@ -144,3 +144,11 @@ scroll_entrance_animation: removed
 motion_pointer_transform_restarts: removed
 scroll_header_layout_shift: removed
 large_hero_image_continuous_scale: removed
+
+ritovex_visual_rebuild_percent: 32
+ritovex_homepage_percent: 100
+ritovex_original_visual_assets: 4
+ritovex_secondary_pages_percent: 0
+ritovex_reference_strategy: original-vsn-content-and-assets-with-reference-inspired-layout
+ritovex_homepage_static_integrity_run: 135
+ritovex_homepage_static_integrity_status: passed
