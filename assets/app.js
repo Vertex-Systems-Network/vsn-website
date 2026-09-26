@@ -10,7 +10,7 @@ if(toggle&&links){
   document.addEventListener('click',e=>{if(e.target instanceof Element&&!e.target.closest('.nav-links'))dropdowns.forEach(dropdown=>{dropdown.open=false})});
   document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeMenu();dropdowns.forEach(dropdown=>{dropdown.open=false})}});
 }
-document.querySelectorAll('.home-service-card,.home-team-card,.service-card,.proof-card,.contact-public-links a,.review-links a').forEach(el=>el.classList.add('reveal'));
+document.querySelectorAll('.home-service-card,.home-team-card,.service-card,.proof-card,.contact-public-links a,.review-links a,.decision-card,.ownership-grid article').forEach(el=>el.classList.add('reveal'));
 if('IntersectionObserver' in window){
   const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}}),{threshold:.12});
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
