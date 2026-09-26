@@ -331,3 +331,5 @@ Authority Profile and site-wide motion merged in PR #64 (`7e544c9f58f703cabb0162
 - Added Projects and Blog to shared header/footer navigation across all 32 HTML pages.
 - Expanded sitemap to 30 indexable URLs while explicitly excluding 404 and Coming Soon.
 - Static validator and motion regression expectations were updated to the 32-page architecture without relaxing CSP, local-path, shared-header or proof-boundary checks.
+
+- Static Integrity run #198 passed on the completed Blog/Projects/utility-page batch, including 32-page shared navigation, 30 public sitemap URLs and editorial motion regression checks.
