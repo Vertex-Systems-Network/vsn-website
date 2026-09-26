@@ -1,0 +1,1 @@
+(()=>{try{const r=document.documentElement;const q=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)');if(!q||!q.matches){r.classList.add('motion-prep');setTimeout(()=>{if(!r.classList.contains('motion-live'))r.classList.add('motion-fallback')},1800)}}catch(e){}})();

@@ -1,0 +1,78 @@
+/* Pre-paint reveal states. motion-init.js adds .motion-prep before CSS paints. */
+.motion-prep:not(.motion-fallback) .home-hero-copy>*,
+.motion-prep:not(.motion-fallback) .hero-art,
+.motion-prep:not(.motion-fallback) .home-about-visual,
+.motion-prep:not(.motion-fallback) .home-about-copy,
+.motion-prep:not(.motion-fallback) .home-section-intro,
+.motion-prep:not(.motion-fallback) .home-service-card,
+.motion-prep:not(.motion-fallback) .home-service-preview,
+.motion-prep:not(.motion-fallback) .home-showcase-card,
+.motion-prep:not(.motion-fallback) .home-product-layout>*,
+.motion-prep:not(.motion-fallback) .home-team-grid>article,
+.motion-prep:not(.motion-fallback) .home-proof-layout>*,
+.motion-prep:not(.motion-fallback) .home-process-intro,
+.motion-prep:not(.motion-fallback) .home-process-grid>article,
+.motion-prep:not(.motion-fallback) .home-contact-band,
+.motion-prep:not(.motion-fallback) .review-section .container,
+.motion-prep:not(.motion-fallback) .rv-hero-copy>*,
+.motion-prep:not(.motion-fallback) .rv-hero-visual,
+.motion-prep:not(.motion-fallback) .rv-service-hero-copy>*,
+.motion-prep:not(.motion-fallback) .rv-service-visual,
+.motion-prep:not(.motion-fallback) .rv-company-hero-copy>*,
+.motion-prep:not(.motion-fallback) .rv-company-visual{
+ opacity:0;transform:translate3d(0,28px,0);transition:opacity .72s cubic-bezier(.22,1,.36,1),transform .72s cubic-bezier(.22,1,.36,1);transition-delay:var(--rv-delay,0ms)
+}
+.motion-prep:not(.motion-fallback) .hero-art,
+.motion-prep:not(.motion-fallback) .home-about-visual,
+.motion-prep:not(.motion-fallback) .home-service-preview,
+.motion-prep:not(.motion-fallback) .home-showcase-card,
+.motion-prep:not(.motion-fallback) .rv-hero-visual,
+.motion-prep:not(.motion-fallback) .rv-service-visual,
+.motion-prep:not(.motion-fallback) .rv-company-visual{transform:translate3d(0,34px,0) scale(.985)}
+.motion-prep .rv-visible{opacity:1!important;transform:none!important}
+.motion-fallback .home-hero-copy>*,.motion-fallback .hero-art,.motion-fallback .home-about-visual,.motion-fallback .home-about-copy,.motion-fallback .home-section-intro,.motion-fallback .home-service-card,.motion-fallback .home-service-preview,.motion-fallback .home-showcase-card,.motion-fallback .home-product-layout>*,.motion-fallback .home-team-grid>article,.motion-fallback .home-proof-layout>*,.motion-fallback .home-process-intro,.motion-fallback .home-process-grid>article,.motion-fallback .home-contact-band,.motion-fallback .review-section .container,.motion-fallback .rv-hero-copy>*,.motion-fallback .rv-hero-visual,.motion-fallback .rv-service-hero-copy>*,.motion-fallback .rv-service-visual,.motion-fallback .rv-company-hero-copy>*,.motion-fallback .rv-company-visual{opacity:1!important;transform:none!important}
+@media(prefers-reduced-motion:reduce){.motion-prep *{transition:none!important;animation:none!important}}
+.motion-prep:not(.motion-fallback) .secondary-page .split-heading,
+.motion-prep:not(.motion-fallback) .secondary-page .service-card,
+.motion-prep:not(.motion-fallback) .secondary-page .product-card,
+.motion-prep:not(.motion-fallback) .secondary-page .repo-card,
+.motion-prep:not(.motion-fallback) .secondary-page .card,
+.motion-prep:not(.motion-fallback) .secondary-page .contact-section-heading,
+.motion-prep:not(.motion-fallback) .service-detail-page .split-heading,
+.motion-prep:not(.motion-fallback) .service-detail-page .service-card,
+.motion-prep:not(.motion-fallback) .service-detail-page .card,
+.motion-prep:not(.motion-fallback) .service-detail-page .decision-card,
+.motion-prep:not(.motion-fallback) .service-detail-page .scope-panel,
+.motion-prep:not(.motion-fallback) .service-detail-page .price-card,
+.motion-prep:not(.motion-fallback) .company-proof-page .split-heading,
+.motion-prep:not(.motion-fallback) .company-proof-page .service-card,
+.motion-prep:not(.motion-fallback) .company-proof-page .proof-card,
+.motion-prep:not(.motion-fallback) .company-proof-page .card,
+.motion-prep:not(.motion-fallback) .company-proof-page .decision-card,
+.motion-prep:not(.motion-fallback) .company-proof-page .scope-panel{
+ opacity:0;transform:translate3d(0,24px,0);transition:opacity .68s cubic-bezier(.22,1,.36,1),transform .68s cubic-bezier(.22,1,.36,1);transition-delay:var(--rv-delay,0ms)
+}
+.motion-prep .secondary-page .rv-visible,
+.motion-prep .service-detail-page .rv-visible,
+.motion-prep .company-proof-page .rv-visible{opacity:1!important;transform:none!important}
+.motion-fallback .secondary-page .split-heading,.motion-fallback .secondary-page .service-card,.motion-fallback .secondary-page .product-card,.motion-fallback .secondary-page .repo-card,.motion-fallback .secondary-page .card,.motion-fallback .secondary-page .contact-section-heading,
+.motion-fallback .service-detail-page .split-heading,.motion-fallback .service-detail-page .service-card,.motion-fallback .service-detail-page .card,.motion-fallback .service-detail-page .decision-card,.motion-fallback .service-detail-page .scope-panel,.motion-fallback .service-detail-page .price-card,
+.motion-fallback .company-proof-page .split-heading,.motion-fallback .company-proof-page .service-card,.motion-fallback .company-proof-page .proof-card,.motion-fallback .company-proof-page .card,.motion-fallback .company-proof-page .decision-card,.motion-fallback .company-proof-page .scope-panel{opacity:1!important;transform:none!important}
+
+.motion-prep:not(.motion-fallback) .editorial-hero-copy>*,
+.motion-prep:not(.motion-fallback) .editorial-hero-visual,
+.motion-prep:not(.motion-fallback) .editorial-section-head,
+.motion-prep:not(.motion-fallback) .editorial-feature,
+.motion-prep:not(.motion-fallback) .editorial-card,
+.motion-prep:not(.motion-fallback) .article-aside,
+.motion-prep:not(.motion-fallback) .article-body>*,
+.motion-prep:not(.motion-fallback) .project-detail-image,
+.motion-prep:not(.motion-fallback) .utility-inner>*{
+ opacity:0;transform:translate3d(0,26px,0);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1);transition-delay:var(--rv-delay,0ms)
+}
+.motion-prep:not(.motion-fallback) .editorial-hero-visual,
+.motion-prep:not(.motion-fallback) .editorial-feature,
+.motion-prep:not(.motion-fallback) .editorial-card,
+.motion-prep:not(.motion-fallback) .project-detail-image{transform:translate3d(0,30px,0) scale(.988)}
+.motion-prep .editorial-page .rv-visible{opacity:1!important;transform:none!important}
+.motion-fallback .editorial-hero-copy>*,.motion-fallback .editorial-hero-visual,.motion-fallback .editorial-section-head,.motion-fallback .editorial-feature,.motion-fallback .editorial-card,.motion-fallback .article-aside,.motion-fallback .article-body>*,.motion-fallback .project-detail-image,.motion-fallback .utility-inner>*{opacity:1!important;transform:none!important}

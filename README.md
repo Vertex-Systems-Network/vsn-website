@@ -190,3 +190,47 @@ PR #69 was squash-merged as `f59229c9940dbcd183cd212316ca143167eddadd`. A new br
 ## Company/proof Ritovex batch — in progress (2026-09-26)
 
 PR #70 was squash-merged as `5a51d30ea674f9a7c632b0767605c1350797a24e`. A new branch, `design/ritovex-company-proof-batch`, now migrates Industries, Work, Process, Trust and Payments to the same editorial image-led system. Five original local VSN visuals were added for industry workflows, public proof, delivery process, trust/security and payments. Work and Trust continue to avoid invented client results, certifications or unsupported proof. Existing page copy, links, payment wording and static architecture remain intact. PR #71 carries this batch; Static Integrity run #143 passed on the completed implementation checkpoint.
+
+
+## Video-reference motion and copy rebaseline — in progress (2026-09-26)
+
+PR #71 merged to main as `29cd7557a48f1e0ed66f9cdd66e872352acb682a`. Work then moved to `design/ritovex-motion-content-human-v2` using the owner's full-page Ritovex recordings as the motion/layout reference. The homepage now uses a dark interactive services accordion, horizontal work cards, a sticky process layout and shorter VSN copy. A new pre-paint motion initializer plus shared motion stylesheet loads on all 27 HTML pages so reveal animations start before content is painted, run once, and do not replay on scroll-back. Core marketing-page hero copy was simplified without changing meaning. The remaining visual milestone is to replace mockup-first imagery with original human + AI/technology interaction photography generated specifically for VSN.
+
+Static Integrity run #147 passed with both the static-site validator and the new motion regression check. The motion layer is wired across all 27 HTML pages; the human-image asset swap remains the open visual milestone.
+
+
+## Blog, Projects and utility-page expansion (2026-09-26)
+
+The video-reference branch now includes a Ritovex-style editorial system for Blog, Blog Detail, Projects, Project Detail, Coming Soon and the redesigned 404 page. Blog launches with one original VSN article about keeping human judgment inside AI automation; future-note cards route to the noindex Coming Soon page rather than pretending unpublished articles exist. Projects launches with verified public VSN surfaces and a VSN Metafields detail page that points to the Shopify App Store as the source of truth. Projects and Blog were added to the shared navigation/footer across all 32 HTML pages. Sitemap validation now expects 30 public URLs; 404 and Coming Soon remain excluded from indexing. One-shot motion targets include the new editorial components.
+
+Static Integrity run #198 passed after the Blog, Projects and utility-page expansion. The validator now checks 32 HTML pages and 30 sitemap URLs, and the motion regression test covers the new editorial pages.
+
+
+### Human image batch 1 (2026-09-26)
+
+The Home hero, Home About and About page now use committed human-led WebP assets instead of interface/mockup-first SVG illustrations. Responsive object-position/crop tuning is included in the homepage stylesheet. Static Integrity run #204 passed after the binary asset swap. The next image batch is Software, AI, Growth and Operations.
+
+
+### Human image semantic-slot wiring (2026-09-26)
+
+Human-led semantic media slots are now wired across Home, Services, Products, Contact, all primary service-detail pages, Industries, Work, Process, Trust, Payments, Blog and Projects. The slot filenames (`vsn-human-software.webp`, `vsn-human-ai.webp`, `vsn-human-growth.webp`, `vsn-human-operations.webp`, `vsn-human-business.webp`, `vsn-human-team.webp`, `vsn-human-industries.webp`, `vsn-human-editorial.webp`) currently reuse the two approved human photographs as temporary source blobs so mockup-first SVGs no longer control the live layouts. This is an implementation bridge, not the final photography set. Responsive crop and tonal rules now live in `assets/styles.css`. Each semantic file can be replaced independently with a unique generated photo later without changing page markup.
+
+
+### Responsive and motion polish checkpoint (2026-09-26)
+
+Home, secondary, service-detail, company/proof and editorial styles now have a dedicated final breakpoint pass for tablet/mobile widths. The Home accordion allows larger active content on small screens, horizontal work cards use touch-friendly overflow, process cards collapse cleanly, editorial feature images reduce height on mobile, and shared human-image crops receive desktop/tablet/mobile object-position rules. Motion state now correctly adds the `motion-enabled` class expected by the shared stylesheet. The Home service-preview switch cancels stale timers during fast pointer movement and exposes `aria-expanded` on each interactive service row. Static Integrity run #246 passed with the expanded motion regression assertions.
+
+
+### Human image unique batch 2 (2026-09-26)
+
+The human-media system now has six unique production WebP assets: Hero, About, Software, AI, Growth and Operations. Software, AI, Growth and Operations replaced their temporary semantic aliases in commit `d11dfd34904dd14d794de78fa0dfdd13071e4c2b`. Static Integrity run #251 passed on that exact head. Business, Team, Industries and Editorial remain semantic aliases and are the final photography batch before PR #72 can leave draft state.
+
+
+### Human image unique batch 3 (2026-09-26)
+
+Business, Team and Industries now use their own committed human-led WebP binaries rather than the About-photo alias. Together with Hero, About, Software, AI, Growth and Operations, **9 of 10** planned human-media slots are now unique. Static Integrity run #256 passed on commit `6b88b7defb6bd20b7f7f41dc18f71b66c626fe48`. Editorial remains the only semantic slot still using an alias; it is the last photography task before final visual review.
+
+
+## Final human photography and Ritovex completion checkpoint (2026-09-26)
+
+The Ritovex-reference redesign is now complete on the active branch. The two approved unique Hero/About WebP photographs remain direct assets. Software, AI, Growth, Operations, Business, Team, Industries and Editorial now use eight distinct generated human + technology scenes stored in a single local WebP atlas with lightweight semantic SVG crop wrappers. Temporary alias WebP files were deleted so stale references cannot silently survive. All major marketing, service, company, Blog and Projects surfaces now use human-led imagery instead of mockup-first illustrations. Responsive and one-shot motion QA are complete. Marketing copy has been simplified across the primary customer-facing pages while legal/policy wording remains factual rather than lyrical where precision matters. Static Integrity run #295 passed after the final image architecture and alias deletion.

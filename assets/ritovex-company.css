@@ -48,3 +48,17 @@
 }
 @media(prefers-reduced-motion:reduce){.company-proof-page .service-card,.company-proof-page .proof-card{transition:none}}
 .motion-reduced .company-proof-page .service-card,.motion-reduced .company-proof-page .proof-card{transition:none}
+
+/* 2026-09-26 final responsive QA: company proof */
+.rv-company-hero-grid>*,.company-proof-page .split-heading>*{min-width:0}
+@media(max-width:1020px){
+  .rv-company-hero{padding:42px 0 64px!important}
+  .rv-company-visual img{max-height:560px}
+}
+@media(max-width:700px){
+  .rv-company-hero{padding:28px 0 50px!important}
+  .rv-company-hero-copy{padding:34px 0 0}
+  .rv-company-visual{box-shadow:0 18px 50px rgba(8,17,31,.12)}
+  .rv-company-visual figcaption{left:14px;bottom:14px}
+  .company-proof-page .service-grid,.company-proof-page .proof-grid{gap:10px}
+}

@@ -1,45 +1,57 @@
-// Offline behavior checks, not a browser rendering or visual quality test.
+// Offline regression checks for the one-shot, pre-paint VSN motion system.
 const fs = require('node:fs');
-const vm = require('node:vm');
+const path = require('node:path');
 const assert = require('node:assert/strict');
+
 const source = fs.readFileSync('assets/motion.js','utf8');
+const init = fs.readFileSync('assets/motion-init.js','utf8');
+const motionCss = fs.readFileSync('assets/motion.css','utf8');
 const styles = fs.readFileSync('assets/styles.css','utf8');
+const home = fs.readFileSync('index.html','utf8');
+
+assert.match(init,/motion-prep/);
+assert.match(init,/motion-fallback/);
+assert.match(init,/prefers-reduced-motion/);
+assert.match(motionCss,/motion-prep:not\(\.motion-fallback\)/);
+assert.match(motionCss,/rv-visible/);
+assert.match(source,/IntersectionObserver/);
+assert.match(source,/observer\.unobserve\(entry\.target\)/);
+assert.match(source,/motion-live/);
+assert.match(source,/motion-enabled/);
+assert.match(source,/clearTimeout\(previewTimer\)/);
+assert.match(source,/aria-expanded/);
+assert.match(source,/data-service-accordion/);
+assert.doesNotMatch(source,/pointermove/);
+assert.doesNotMatch(source,/\.animate\(/);
 assert.doesNotMatch(styles,/vsn-intro|is-scrolled \.nav\{height:/);
-assert.doesNotMatch(source,/IntersectionObserver|translateY\(26px\)/);
-function setup(reduced = false, supportsAnimation = true) {
-  const callbacks = [];
-  const frames = new Map();
-  const windowEvents = {};
-  let nextFrame = 0;
-  class El {
-    constructor(name='DIV') { this.tagName=name; this.children=[];this.parentElement=null;this.handlers={};this.attrs={};this.effects=[];this.classes=new Set();this.classList={contains:n=>this.classes.has(n),add:n=>this.classes.add(n),remove:n=>this.classes.delete(n),toggle:(n,v)=>v?this.classes.add(n):this.classes.delete(n)}; }
-    append(x){this.children.push(x);x.parentElement=this;}
-    matches(s){return s==='script,style' ? false : false;}
-    contains(el){return this.children.includes(el);}
-    setAttribute(n,v){this.attrs[n]=v;}
-    addEventListener(n,fn){(this.handlers[n] ||= []).push(fn);}
-    fire(n,e={}){for(const fn of this.handlers[n]||[])fn(e);}
-    getBoundingClientRect(){return {left:0,top:0,width:200,height:100};}
-    getAnimations(){return this.effects.filter(a=>!a.cancelled);}
-    animate(keys,opts){const listeners={};const a={keys,opts,cancelled:false,addEventListener:(n,f)=>listeners[n]=f,cancel(){this.cancelled=true;listeners.cancel?.();}};this.effects.push(a);return a;}
+assert.match(home,/data-service-accordion/);
+assert.match(home,/home-services-stage/);
+assert.match(home,/home-process-layout/);
+assert.ok(fs.existsSync('assets/ritovex-editorial.css'));
+assert.ok(fs.existsSync('blog.html'));
+assert.ok(fs.existsSync('blog-detail.html'));
+assert.ok(fs.existsSync('projects.html'));
+assert.ok(fs.existsSync('project-detail.html'));
+assert.ok(fs.existsSync('coming-soon.html'));
+
+const htmlFiles = [];
+function walk(dir) {
+  for (const entry of fs.readdirSync(dir,{withFileTypes:true})) {
+    if (entry.name === '.git' || entry.name === 'node_modules') continue;
+    const full = path.join(dir,entry.name);
+    if (entry.isDirectory()) walk(full);
+    else if (entry.isFile() && entry.name.endsWith('.html')) htmlFiles.push(full);
   }
-  if(!supportsAnimation)delete El.prototype.animate;
-  const root=new El(),body=new El(),container=new El(),card=new El(),header=new El();container.append(card);root.scrollHeight=2000;
-  const media={matches:reduced,addEventListener:(n,f)=>media.change=f};
-  const fine={matches:true,addEventListener:(n,f)=>fine.change=f};
-  const document={documentElement:root,body,createElement:n=>new El(n.toUpperCase()),querySelector:s=>s==='.site-header'?header:null,querySelectorAll:s=>s.startsWith('main section')?[container]:s.startsWith('.home-service-card')?[card]:[]};
-  class IO {constructor(fn){callbacks.push(fn);}observe(){}unobserve(){}disconnect(){}}
-  const window={matchMedia:s=>s.includes('reduced-motion')?media:fine,innerHeight:1000,scrollY:500,addEventListener:(n,f)=>(windowEvents[n] ||= []).push(f),IntersectionObserver:IO};
-  vm.runInNewContext(source,{Element:El,document,window,IntersectionObserver:IO,requestAnimationFrame:f=>{frames.set(++nextFrame,f);return nextFrame;},cancelAnimationFrame:id=>frames.delete(id),getComputedStyle:()=>({transform:'none'})});
-  return {body,card,root,media,callbacks,frames,windowEvents};
 }
-const normal=setup();assert.equal(normal.body.children.length,2);assert.equal(normal.body.children[1].value,50);
-assert.equal(normal.callbacks.length,0);assert.equal(normal.card.effects.length,0);
-normal.windowEvents.scroll[0]();normal.frames.forEach(f=>f());assert.equal(normal.card.effects.length,0);
-normal.card.fire('pointermove',{clientX:200,clientY:100,pointerType:'mouse'});normal.frames.forEach(f=>f());assert.equal(normal.card.effects.length,0);
-normal.card.fire('pointerleave');assert.equal(normal.card.effects.length,0);
-normal.body.children[0].fire('click');assert.ok(normal.root.classes.has('motion-reduced'));assert.ok(normal.card.effects.every(a=>a.cancelled));
-const before=normal.card.effects.length;normal.card.fire('pointermove',{clientX:10,clientY:10});assert.equal(normal.card.effects.length,before);
-const reduced=setup(true);assert.equal(reduced.callbacks.length,0);assert.ok(reduced.body.children[0].disabled);assert.equal(reduced.card.effects.length,0);
-assert.equal(setup(false,false).body.children.length,0);
-console.log('Motion behavior passed: no scroll-triggered slide/replay, stable pointer handling, progress and reduced-motion cancellation.');
+walk('.');
+assert.equal(htmlFiles.length,32);
+for (const file of htmlFiles) {
+  const body = fs.readFileSync(file,'utf8');
+  const legal = file.startsWith('legal'+path.sep);
+  const initRef = legal ? '../assets/motion-init.js' : 'assets/motion-init.js';
+  const cssRef = legal ? '../assets/motion.css' : 'assets/motion.css';
+  assert.ok(body.includes(initRef), file+' missing pre-paint motion init');
+  assert.ok(body.includes(cssRef), file+' missing motion stylesheet');
+}
+
+console.log('Motion behavior passed: pre-paint setup, one-shot observer, unobserve-after-reveal, no pointermove/WAAPI loops, all 32 pages wired.');

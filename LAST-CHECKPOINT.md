@@ -305,3 +305,53 @@ Authority Profile and site-wide motion merged in PR #64 (`7e544c9f58f703cabb0162
 - Automated markup spot-check confirms all five pages load the shared stylesheet, use the expected page class and reference local VSN visual assets.
 
 - Static Integrity run #143 passed for PR #71 on the completed company/proof implementation checkpoint.
+
+
+## Video-reference rebaseline (2026-09-26)
+
+- PR #71 merged to main as `29cd7557a48f1e0ed66f9cdd66e872352acb682a` after final Static Integrity run #144 passed.
+- Started `design/ritovex-motion-content-human-v2` from that merge.
+- Added `RITOVEX-IMPLEMENTATION-PLAN.md` based on the owner-supplied full-page recordings and public demo.
+- Homepage copy was shortened into simple, natural English while preserving VSN meaning and factual boundaries.
+- Homepage services now follow a dark accordion interaction; portfolio/capability cards use a horizontal editorial treatment; process uses sticky-left + stacked-right cards.
+- Added `assets/motion-init.js` and `assets/motion.css`; all 27 HTML pages load them before the shared styles. The system prepares reveal states before first paint, reveals once with IntersectionObserver, and never replays on scroll-back.
+- Existing pointermove animation loops remain removed. Reduced-motion fallback remains supported.
+- Core Services, About, Products, Contact, Industries, Work, Process, Trust and Payments hero copy was simplified without changing the underlying service or policy meaning.
+- Human-led VSN photography is the next asset milestone; current interface/mockup visuals are temporary and are not considered final.
+
+- Static Integrity run #147 passed, including `node scripts/check_motion_behavior.cjs`; all 27 HTML pages load the pre-paint motion layer, one-shot reveal uses `unobserve`, and pointermove/WAAPI transform loops remain absent.
+
+
+## Editorial and project page batch (2026-09-26)
+
+- Added `blog.html` and `blog-detail.html` using the recorded Ritovex editorial/card rhythm with VSN-owned copy.
+- Added `projects.html` and `project-detail.html`; the first project detail uses VSN Metafields because its Shopify listing is publicly verifiable.
+- Added `coming-soon.html` as a noindex utility page and rebuilt `404.html` in the same minimal visual language.
+- Added `assets/ritovex-editorial.css` and extended the shared one-shot motion system to editorial heroes, cards, article content and utility states.
+- Added Projects and Blog to shared header/footer navigation across all 32 HTML pages.
+- Expanded sitemap to 30 indexable URLs while explicitly excluding 404 and Coming Soon.
+- Static validator and motion regression expectations were updated to the 32-page architecture without relaxing CSP, local-path, shared-header or proof-boundary checks.
+
+- Static Integrity run #198 passed on the completed Blog/Projects/utility-page batch, including 32-page shared navigation, 30 public sitemap URLs and editorial motion regression checks.
+
+
+- Human image batch 1: committed `assets/vsn-human-hero.webp` and `assets/vsn-human-about.webp`; Home hero, Home About and About page now reference those human-led assets. Static Integrity run #204 passed. Next batch: Software, AI, Growth, Operations.
+
+- Human semantic-slot wiring: eight named human media slots were added and major marketing/editorial pages were switched away from `vsn-visual-*` SVG mockups. The slots temporarily reuse the two approved human photo blobs; unique per-topic photography remains pending. Responsive crop/tonal treatment was added in `assets/styles.css`.
+
+- Responsive/motion polish checkpoint: final tablet/mobile CSS pass added across Home, secondary, service-detail, company/proof and editorial layouts. Motion JS now activates `motion-enabled`, cancels stale service-preview timers and maintains `aria-expanded` state. Static Integrity run #246 passed with updated regression coverage.
+
+- Human image unique batch 2: Software, AI, Growth and Operations now use distinct committed WebP binaries instead of About/Hero aliases. Together with Hero and About, 6/10 planned human assets are unique. Static Integrity run #251 passed. Pending unique assets: Business, Team, Industries, Editorial.
+
+- Human image unique batch 3: Business, Team and Industries activated distinct WebP binaries. 9/10 planned human assets are now unique. Static Integrity run #256 passed on `6b88b7defb6bd20b7f7f41dc18f71b66c626fe48`. Only Editorial remains aliased before final visual review.
+
+
+## Final Ritovex completion checkpoint (2026-09-26)
+
+- Final generated human-photo atlas committed as `assets/vsn-human-atlas.webp`.
+- Eight semantic SVG crop wrappers now provide distinct Software, AI, Growth, Operations, Business, Team, Industries and Editorial images from the atlas.
+- Hero and About continue using their approved unique WebP assets.
+- All temporary semantic alias WebP files were deleted; Static Integrity run #295 passed afterward, proving no stale references remain in the validated site.
+- Motion rebaseline, responsive CSS QA, Blog/Projects expansion, utility pages and primary marketing-copy simplification are complete.
+- Legal/policy content remains accuracy-first and was not rewritten for poetic tone where that could change meaning.
+- Next valid action: final PR review, final-head CI, merge PR #72 to main.
