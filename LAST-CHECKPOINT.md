@@ -291,3 +291,5 @@ Authority Profile and site-wide motion merged in PR #64 (`7e544c9f58f703cabb0162
 - Reused existing VSN product, AI, growth and company visuals where they are semantically appropriate.
 - Existing page content, enquiry forms, tax calculators, local direct-open paths and motion-stability behavior are preserved.
 - Automated markup spot-check confirms all 12 pages reference the shared stylesheet, have the expected service-detail body class and use local VSN visual assets.
+
+- Static Integrity run #140 passed for PR #70 on the completed 12-page implementation checkpoint.
