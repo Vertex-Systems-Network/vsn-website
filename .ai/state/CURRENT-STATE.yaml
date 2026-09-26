@@ -3,8 +3,8 @@ updated: 2026-09-26
 phase: ritovex-inspired-visual-rebuild
 verified_main_sha: 7e544c9f58f703cabb0162f11e68cf48ebc8b185
 current_issue: null
-current_branch: design/ritovex-company-proof-batch
-current_milestone: ritovex-industries-work-process-trust-payments
+current_branch: design/ritovex-motion-content-human-v2
+current_milestone: ritovex-video-reference-motion-copy-human-image-rebaseline
 architecture: static-html-css-vanilla-js
 runtime_mode: file-direct-open
 implementation_complete: false
@@ -93,7 +93,7 @@ profile_package_prices:
   status: owner-requested-revised-starting-fees
   usd: [499, 999, 1999]
 deployment_status: waiting-for-hosting-panel-access
-next_valid_action: review-or-merge-pr-71-then-finish-utility-and-legal-visual-polish
+next_valid_action: validate-motion-copy-rebaseline-then-generate-and-integrate-human-ai-technology-images
 
 industry_expansion_percent: 100
 ai_solutions_module_percent: 100
@@ -145,7 +145,7 @@ motion_pointer_transform_restarts: removed
 scroll_header_layout_shift: removed
 large_hero_image_continuous_scale: removed
 
-ritovex_visual_rebuild_percent: 88
+ritovex_visual_rebuild_percent: 90
 ritovex_homepage_percent: 100
 ritovex_original_visual_assets: 4
 ritovex_secondary_pages_percent: 100
@@ -167,3 +167,9 @@ ritovex_company_proof_pages_migrated: 5
 ritovex_company_proof_new_visual_assets: 5
 ritovex_company_proof_static_integrity_run: 143
 ritovex_company_proof_static_integrity_status: passed
+
+ritovex_video_reference_locked: true
+ritovex_motion_rebaseline_percent: 70
+ritovex_copy_simplification_percent: 35
+ritovex_human_image_generation_percent: 0
+ritovex_mockup_first_visuals_final_state: false
