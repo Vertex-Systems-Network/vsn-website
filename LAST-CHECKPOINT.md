@@ -363,3 +363,25 @@ Authority Profile and site-wide motion merged in PR #64 (`7e544c9f58f703cabb0162
 - Final human-image state reconciled: Hero and About are direct unique WebPs; Software, AI, Growth, Operations, Business, Team, Industries and Editorial are distinct atlas scenes exposed through semantic SVG wrappers.
 - No human-image aliases remain pending.
 - Website implementation status remains complete; production publishing/deployment is a separate owner-triggered action.
+
+## Corrective Ritovex fidelity checkpoint
+
+- Reopened the visual rebuild on branch fix/ritovex-fidelity-rebuild; the old 100% visual-completion claim is not treated as valid for reference fidelity.
+- Inspected the supplied recorded-frame sheets and live Ritovex page structure.
+- Replaced the common header/footer shell on all 32 HTML pages.
+- Locked visible UI accents to the VSN logo palette and removed legacy green/yellow accent behavior through the final fidelity layer.
+- Restored direct WebP human imagery across service, company, Blog and Projects surfaces.
+- Restored missing Website and E-commerce enquiry forms and FAQ sections; all 12 service-detail pages now carry both.
+- Switched Contact to Google Maps and removed OpenStreetMap CSP residue.
+- Split Blog/Projects and Blog Detail/Project Detail into distinct reference-driven layouts.
+- Rebuilt About and Services around the recorded centered-hero, dark-accordion and human-card visual patterns.
+- Added fidelity-mode animation ownership so the old observer does not create a second entrance pass.
+- Added scripts/check_ritovex_fidelity.cjs; next action is CI validation and corrective fixes.
+
+## Corrective verification run #420
+
+- Static website validation: passed.
+- Motion regression: passed.
+- Ritovex fidelity regression: passed.
+- About legacy fragment targets restored so existing Home links remain valid.
+- PR #75 remains the corrective merge vehicle; next action is exact-final-head verification and merge.

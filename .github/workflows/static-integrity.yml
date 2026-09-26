@@ -31,3 +31,6 @@ jobs:
 
       - name: Validate motion behavior
         run: node scripts/check_motion_behavior.cjs
+
+      - name: Validate Ritovex fidelity
+        run: node scripts/check_ritovex_fidelity.cjs
