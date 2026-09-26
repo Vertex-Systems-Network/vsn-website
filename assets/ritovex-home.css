@@ -363,3 +363,48 @@
   .home-page .hero-art img{object-position:61% 42%}
   .home-page .home-about-visual img{aspect-ratio:1/1;object-position:52% 50%}
 }
+
+
+/* 2026-09-26 final responsive QA: home */
+.home-page .home-hero-grid>*,
+.home-about-layout>*,
+.home-services-stage>*,
+.home-process-layout>*{min-width:0}
+.home-showcase-grid{
+  overscroll-behavior-inline:contain;
+  scroll-padding-inline:clamp(20px,4vw,52px);
+  -webkit-overflow-scrolling:touch;
+}
+.home-showcase-card{min-width:0}
+@media(max-width:1080px){
+  .home-page .home-hero-grid{grid-template-columns:1fr;gap:34px}
+  .home-page .home-hero-copy{padding-bottom:0}
+  .home-page .hero-art{min-height:460px}
+  .home-page .hero-art img{height:460px}
+  .home-page .home-service-preview{height:340px}
+}
+@media(max-width:760px){
+  .home-page .home-hero{padding-top:18px}
+  .home-page .home-hero-copy{padding-top:34px}
+  .home-page .hero-art{min-height:390px}
+  .home-page .hero-art img{height:390px}
+  .home-page .home-capabilities{padding:86px 0}
+  .home-page .home-service-card{padding:24px 0}
+  .home-page .home-service-card h3{font-size:23px;line-height:1.08}
+  .home-page .home-service-card.is-active>p{max-height:320px}
+  .home-page .home-service-card.is-active .home-link-stack{max-height:220px}
+  .home-page .home-service-preview{height:290px}
+  .home-showcase-grid{grid-auto-columns:88vw;gap:12px}
+  .home-showcase-image img,
+  .home-showcase-card:not(.home-showcase-card-wide) .home-showcase-image img{min-height:320px}
+  .home-process-layout{gap:42px}
+  .home-page .home-process-grid article{min-height:0;padding:25px}
+  .home-page .home-process-grid article:first-child{padding-left:25px}
+  .home-page .home-process-grid h3{margin-top:34px}
+  .home-page .home-contact-band{padding:56px 28px}
+}
+@media(max-width:480px){
+  .home-page .home-service-preview{height:250px}
+  .home-showcase-grid{grid-auto-columns:91vw}
+  .home-page .home-contact-band{padding:48px 22px}
+}
