@@ -93,7 +93,7 @@ profile_package_prices:
   status: owner-requested-revised-starting-fees
   usd: [499, 999, 1999]
 deployment_status: waiting-for-hosting-panel-access
-next_valid_action: replace-business-team-industries-editorial-aliases-with-unique-final-photography-then-final-visual-review
+next_valid_action: replace-editorial-alias-with-unique-final-photography-then-final-visual-review-and-ready-pr-72
 
 industry_expansion_percent: 100
 ai_solutions_module_percent: 100
@@ -171,7 +171,7 @@ ritovex_company_proof_static_integrity_status: passed
 ritovex_video_reference_locked: true
 ritovex_motion_rebaseline_percent: 100
 ritovex_copy_simplification_percent: 45
-ritovex_human_image_generation_percent: 60
+ritovex_human_image_generation_percent: 90
 ritovex_mockup_first_visuals_final_state: false
 ritovex_motion_static_integrity_run: 147
 ritovex_motion_static_integrity_status: passed
@@ -191,8 +191,8 @@ human_image_batch_1_status: passed
 human_image_assets_integrated: [hero, about]
 
 human_image_slot_wiring_percent: 100
-unique_human_photo_assets_percent: 60
-human_image_current_strategy: six-unique-human-assets-four-semantic-aliases-pending
+unique_human_photo_assets_percent: 90
+human_image_current_strategy: nine-unique-human-assets-editorial-alias-pending
 
 responsive_css_qa_percent: 100
 motion_microinteraction_polish_percent: 100
@@ -203,3 +203,8 @@ human_unique_batch_2_static_integrity_run: 251
 human_unique_batch_2_status: passed
 human_unique_assets: [hero, about, software, ai, growth, operations]
 human_alias_assets_pending: [business, team, industries, editorial]
+
+human_unique_batch_3_static_integrity_run: 256
+human_unique_batch_3_status: passed
+human_unique_assets: [hero, about, software, ai, growth, operations, business, team, industries]
+human_alias_assets_pending: [editorial]
