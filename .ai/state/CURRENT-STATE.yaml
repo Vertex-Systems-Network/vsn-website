@@ -263,3 +263,8 @@ homepage_blog_preview_percent: 100
 homepage_blog_preview_reference: ritovex-home-article-stage
 homepage_blog_preview_truthfulness: published-plus-clearly-labelled-coming-soon
 homepage_blog_preview_branch: design/ritovex-home-blog-preview-20260928
+
+mobile_header_shell_parity_percent: 100
+mobile_navigation_focus_containment: implemented
+mobile_footer_stack_parity_percent: 100
+mobile_shell_branch: fix/ritovex-mobile-shell-footer-20260928
