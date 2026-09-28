@@ -78,6 +78,8 @@ const blog=read('blog.html');
 const projects=read('projects.html');
 const blogDetail=read('blog-detail.html');
 const projectDetail=read('project-detail.html');
+const webCommerce=read('web-development-ecommerce.html');
+const serviceDetailCss=read('assets/ritovex-service-detail.css');
 assert.match(home,/home-about-intro/,'Home About must lead with a centered intro before the image/facts layout');
 assert.match(home,/home-blog-section/,'homepage missing Ritovex-style blog preview');
 assert.equal((home.match(/home-blog-card/g)||[]).length,3,'homepage blog preview must contain exactly three cards');
@@ -101,6 +103,18 @@ assert.match(blogDetail,/<body class="editorial-page blog-detail-page">/);
 assert.match(projectDetail,/<body class="editorial-page project-detail-page">/);
 assert.notEqual((blog.match(/<body[^>]*>/)||[''])[0],(projects.match(/<body[^>]*>/)||[''])[0],'Blog and Projects must not share the same page template class');
 assert.notEqual((blogDetail.match(/<body[^>]*>/)||[''])[0],(projectDetail.match(/<body[^>]*>/)||[''])[0],'Blog Detail and Project Detail must remain distinct');
+
+assert.match(webCommerce,/web-service-reference-hero/,'Web Development detail must use the reference single-service hero');
+assert.match(webCommerce,/web-service-reference-media-section/,'Web Development detail must place a full-width media stage after the hero');
+assert.match(webCommerce,/web-service-reference-overview/,'Web Development detail missing service overview stage');
+assert.match(webCommerce,/web-service-reference-included/,'Web Development detail missing included-work stage');
+assert.match(webCommerce,/web-service-reference-vision/,'Web Development detail missing pre-brief vision CTA');
+assert.equal(webCommerce.indexOf('web-service-reference-overview') < webCommerce.indexOf('One web engineering service'),true,'Reference overview must lead the extended VSN service content');
+assert.equal(webCommerce.indexOf('id="web-project-brief"') < webCommerce.indexOf('class="faq"'),true,'Web Development project form must remain before FAQ');
+assert.doesNotMatch(webCommerce,/live Ritovex|reference template|template rhythm/i,'Internal reference notes must not appear in public Web Development copy');
+assert.match(serviceDetailCss,/\.web-service-reference-overview-grid\{[\s\S]*grid-template-columns:repeat\(2/,'Web Development overview must retain a two-column desktop reading rhythm');
+assert.match(serviceDetailCss,/\.web-service-reference-vision\{[\s\S]*background:#000000/,'Web Development vision CTA must retain the dark reference stage');
+
 
 for(const file of ['index.html','blog.html','projects.html','blog-detail.html','project-detail.html']){
  const body=read(file);
