@@ -1,10 +1,10 @@
 repo: Vertex-Systems-Network/vsn-website
 updated: 2026-09-28
 phase: ritovex-inspired-visual-rebuild
-verified_main_sha: c90ff84f2182f378ec5c4a2746901941b14624ea
+verified_main_sha: ba109b04727ec28fc86be93fed629dd036946561
 current_issue: null
 current_branch: main
-current_milestone: ritovex-interaction-boundary-newsletter-hardening-complete
+current_milestone: sitewide-actionable-contact-shell-complete
 architecture: static-html-css-vanilla-js
 runtime_mode: file-direct-open
 implementation_complete: true
@@ -19,8 +19,8 @@ web_development_ecommerce_content_refresh_percent: 100
 production_readiness_percent: 90
 requested_content_refresh_percent: 100
 content_refresh_ci: passed
-static_integrity_run: 473
-static_integrity_passed_sha: c90ff84f2182f378ec5c4a2746901941b14624ea
+static_integrity_run: 477
+static_integrity_passed_sha: ba109b04727ec28fc86be93fed629dd036946561
 local_http_server_required: false
 vercel_required: false
 node_runtime_required: false
@@ -98,8 +98,8 @@ next_valid_action: production-publish-or-new-content-change-when-owner-requests
 industry_expansion_percent: 100
 ai_solutions_module_percent: 100
 resource_augmentation_module_percent: 100
-latest_pr: 85
-latest_static_integrity_run: 473
+latest_pr: 87
+latest_static_integrity_run: 477
 production_deployed: false
 
 business_solutions_module_percent: 100
@@ -253,9 +253,9 @@ exact_logo_palette_merge_sha: 113c82e9ef655627f7abcdcee42eb1178478e547
 exact_logo_palette_merge_pr: 76
 main_visual_state: ritovex-corrective-rebuild-exact-palette-blog-mobile-header-footer-contrast
 
-latest_verified_main_run: 473
+latest_verified_main_run: 477
 latest_verified_main_status: passed
-latest_verified_main_sha: c90ff84f2182f378ec5c4a2746901941b14624ea
+latest_verified_main_sha: ba109b04727ec28fc86be93fed629dd036946561
 stale_recovery_pr_74_status: closed-superseded
 
 homepage_blog_preview_percent: 100
@@ -318,3 +318,10 @@ header_email_action: mailto
 header_phone_action: tel
 footer_email_action: mailto
 footer_phone_action: tel
+
+contact_shell_merge_pr: 87
+contact_shell_merge_sha: ba109b04727ec28fc86be93fed629dd036946561
+contact_shell_pr_run: 476
+contact_shell_pr_status: passed
+contact_shell_main_run: 477
+contact_shell_main_status: passed
