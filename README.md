@@ -278,3 +278,7 @@ Code-side visual requirements currently represented in the repository include th
 ## Homepage article-preview parity — 2026-09-28
 
 The homepage now restores the Ritovex reference flow's article-preview stage using VSN-owned content rather than copied template posts. It shows the published AI/human-judgment article plus two clearly labeled upcoming topics, links to the full Blog, uses committed human WebP imagery, and keeps reduced-motion behavior. The Ritovex fidelity regression now requires the three-card homepage preview so this structural stage cannot silently disappear.
+
+## Mobile header fidelity hardening — 2026-09-28
+
+A responsive audit found a breakpoint seam between the shared navigation (`980px`) and the Ritovex fidelity override (`900px`). At widths from 901–980px the mobile navigation could inherit the wrong vertical offset while the top strip was still present. The fidelity shell now switches at the same 980px boundary, hides the top strip consistently, anchors the menu directly below the 68px mobile header, uses a full-width scrollable menu panel and locks background scrolling while the menu is open. Shared navigation JavaScript now closes cleanly on outside click, link activation, Escape and transition back to desktop. Static fidelity checks protect these behaviors.
