@@ -308,3 +308,7 @@ All 32 HTML pages now expose the shared header email/phone and footer phone/emai
 ## Mobile navigation and footer parity — 2026-09-28
 
 The Ritovex fidelity shell now uses a full-height mobile navigation panel instead of a small floating dropdown, with larger primary links, clearer nested service groups, body-scroll locking and keyboard focus containment. Small-screen footer columns now collapse to one readable stack, while the newsletter, clickable contact actions and oversized footer wordmark remain intact. This pass preserves the latest sitewide contact-shell changes and direct-file operation.
+
+## Desktop mega-menu and section rhythm — 2026-09-28
+
+The shared desktop shell now gives the mega-menu the same deliberate interaction quality as the mobile navigation: short hover intent, a forgiving close delay, keyboard focus-in/focus-out support, active VSN-gradient navigation underlines, a restrained panel reveal, clearer column separation, and small link/CTA hover travel. Homepage desktop section spacing is normalized with a bounded clamp rather than adding another scroll-animation owner.

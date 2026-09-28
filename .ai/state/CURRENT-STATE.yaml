@@ -323,3 +323,9 @@ mobile_header_shell_parity_percent: 100
 mobile_navigation_focus_containment: implemented
 mobile_footer_stack_parity_percent: 100
 mobile_shell_reconciled_base: ba109b04727ec28fc86be93fed629dd036946561
+
+desktop_mega_menu_interaction_percent: 100
+desktop_mega_menu_keyboard_focus: true
+desktop_mega_menu_hover_intent_ms: 55
+desktop_mega_menu_close_delay_ms: 160
+desktop_home_section_rhythm: normalized-clamp
