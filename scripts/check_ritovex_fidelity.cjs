@@ -88,6 +88,8 @@ assert.equal((blog.match(/class="editorial-card"/g)||[]).length,6,'blog referenc
 assert.equal((blog.match(/Coming soon/g)||[]).length>=5,true,'blog upcoming topics must remain clearly labeled');
 assert.match(projects,/<body class="editorial-page projects-list-page">/);
 assert.match(projects,/projects-proof-note/,'projects page missing portfolio truthfulness note');
+assert.equal((projects.match(/project-image-meta/g)||[]).length,2,'featured projects must show two image metadata overlays');
+assert.equal(projects.indexOf('project-proof-grid') < projects.indexOf('projects-proof-note'),true,'portfolio truthfulness note must follow the featured project grid');
 assert.equal((projects.match(/project-proof-card/g)||[]).length,2,'projects page must contain exactly two featured visual portfolio cards');
 assert.equal((projects.match(/project-repo-row/g)||[]).length,2,'projects page must keep two additional compact public repository proof rows');
 assert.match(projects,/github\.com\/Vertex-Systems-Network\/vsn-marketing/,'projects page missing VSN Marketing repository proof');
@@ -198,6 +200,7 @@ assert.match(editorialCss,/\.blog-reference-grid\{grid-template-columns:repeat\(
 assert.match(editorialCss,/\.project-proof-grid\{grid-template-columns:repeat\(2/,'Projects listing must use the reference two-column desktop grid');
 assert.match(editorialCss,/\.blog-featured-article/,'blog feature styling missing');
 assert.match(editorialCss,/\.project-proof-grid\{grid-template-columns:repeat\(2/,'projects portfolio must use a distinct two-column desktop grid');
+assert.match(editorialCss,/\.project-image-meta\{[\s\S]*position:absolute[\s\S]*bottom:0/,'project metadata must overlay the project image bottom edge');
 assert.match(editorialCss,/\.projects-proof-note/,'projects truthfulness note styling missing');
 assert.match(editorialCss,/\.project-detail-page \.editorial-hero-grid\{[\s\S]*grid-template-columns:minmax\(0,1fr\)!important/,'project detail mobile hero must stay inside viewport');
 assert.match(editorialCss,/\.project-detail-page \.editorial-hero-visual,[\s\S]*max-width:100%!important/,'project detail mobile visual must be width-bounded');
