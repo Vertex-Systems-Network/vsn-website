@@ -450,3 +450,12 @@ blog_reference_grid_desktop: 3x3
 blog_published_card_count: 1
 blog_upcoming_topic_count_current: 8
 blog_category_meta_style: pill-plus-status
+
+
+detail_reference_flow_batch_status: implemented-in-review
+detail_reference_flow_pages: [blog-detail, project-detail]
+blog_detail_reference_flow: category-title-summary-publisher-date-readtime-fullwidth-media-article
+project_detail_reference_flow: title-summary-factual-metadata-fullwidth-media-case-study
+detail_reference_truthfulness: no-fake-author-no-fake-client-results-public-proof-preserved
+detail_reference_source_review: live-ritovex-blog-single-and-project-single
+next_manual_reference_scope: [404, coming-soon, representative-service-detail]
