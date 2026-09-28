@@ -390,3 +390,8 @@ core_rendered_browser_qa_missing_images: 0
 core_rendered_browser_qa_page_errors: 0
 core_rendered_browser_qa_horizontal_overflow: false
 reference_fidelity_remaining_focus: [services, contact]
+
+services_contact_rendered_fidelity_status: in-review
+services_rendered_reference_flow: hero-accordion-tools-split-benefits-faq-public-proof
+contact_rendered_reference_flow: hero-image-form-contact-cards-vsn-extended-sections
+services_contact_truthfulness: no-fake-testimonials-no-fake-metrics
