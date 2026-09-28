@@ -363,7 +363,7 @@ page_by_page_parity_pages: [home, services, about, blog, projects, contact]
 page_by_page_parity_latest_substantive_pr: 95
 page_by_page_parity_verified_run: 490
 page_by_page_parity_verified_sha: c2b6794cc09a3101aae5ba2f023bd599b14e2c91
-final_browser_visual_qa_status: primary-detail-utility-passed-secondary-pages-next
+final_browser_visual_qa_status: full-site-rendered-functional-qa-passed-reference-video-review-remains-manual
 
 home_rendered_browser_qa_status: passed
 home_rendered_browser_qa_runtime_sha: ff77b934abf24b8fa5953bebc84a703f33ced7e8
@@ -376,7 +376,7 @@ home_rendered_browser_qa_console_errors: 0
 home_rendered_browser_qa_suspicious_human_images: 0
 reveal_animation_owner: motion.js
 corrupted_human_asset_references_in_html: 0
-next_rendered_browser_qa_page: remaining-service-variants-company-support-legal
+next_rendered_browser_qa_page: manual-pixel-reference-review-and-production-publication
 
 core_rendered_browser_qa_status: passed
 core_rendered_browser_qa_pr: 98
@@ -415,3 +415,18 @@ detail_utility_rendered_browser_qa_missing_images: 0
 detail_utility_rendered_browser_qa_page_errors: 0
 detail_utility_rendered_browser_qa_horizontal_overflow: false
 project_detail_mobile_overflow_repair: block-flow-verified
+
+secondary_rendered_browser_qa_status: passed
+secondary_rendered_browser_qa_pr: 103
+secondary_rendered_browser_qa_visual_run: 1
+secondary_rendered_browser_qa_visual_head: f07e1bdf1137ec01c45f1b272c6b45a330d2a860
+secondary_rendered_browser_qa_static_run: 539
+secondary_rendered_browser_qa_page_count: 21
+secondary_rendered_browser_qa_viewports: [1440x900, 390x844]
+secondary_rendered_browser_qa_artifact: visual-browser-secondary-pages
+secondary_rendered_browser_qa_missing_images: 0
+secondary_rendered_browser_qa_page_errors: 0
+secondary_rendered_browser_qa_horizontal_overflow: false
+full_site_rendered_browser_qa_status: passed
+full_site_rendered_browser_qa_scope: primary-plus-detail-plus-utility-plus-secondary
+full_site_rendered_browser_qa_manual_pixel_review: remaining
