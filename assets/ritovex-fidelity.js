@@ -9,10 +9,34 @@ document.querySelectorAll('.reference-service-accordion').forEach(group=>{
  }));
 });
 
-document.querySelectorAll('.rv-header .nav-dropdown').forEach(d=>{
- let t=0;
- d.addEventListener('mouseenter',()=>{if(desktopNav?.matches){clearTimeout(t);d.open=true}});
- d.addEventListener('mouseleave',()=>{if(desktopNav?.matches)t=setTimeout(()=>{d.open=false},120)});
+const desktopDropdowns=[...document.querySelectorAll('.rv-header .nav-dropdown')];
+desktopDropdowns.forEach(d=>{
+ let openTimer=0,closeTimer=0;
+ const openMenu=()=>{
+  if(!desktopNav?.matches)return;
+  clearTimeout(closeTimer);
+  desktopDropdowns.forEach(other=>{if(other!==d)other.open=false});
+  d.open=true;
+ };
+ const closeMenu=()=>{
+  if(!desktopNav?.matches)return;
+  clearTimeout(openTimer);
+  closeTimer=setTimeout(()=>{d.open=false},160);
+ };
+ d.addEventListener('mouseenter',()=>{
+  if(!desktopNav?.matches)return;
+  clearTimeout(closeTimer);
+  openTimer=setTimeout(openMenu,55);
+ });
+ d.addEventListener('mouseleave',closeMenu);
+ d.addEventListener('focusin',()=>{
+  clearTimeout(openTimer);clearTimeout(closeTimer);openMenu();
+ });
+ d.addEventListener('focusout',e=>{
+  if(!desktopNav?.matches)return;
+  if(e.relatedTarget instanceof Node&&d.contains(e.relatedTarget))return;
+  closeMenu();
+ });
 });
 
 const revealTargets=document.querySelectorAll('main section > .container, .editorial-card, .home-showcase-card, .home-process-grid article, .service-card');
