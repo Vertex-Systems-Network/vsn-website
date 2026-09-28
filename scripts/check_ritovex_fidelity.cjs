@@ -27,8 +27,14 @@ function walk(dir){
 walk('.');
 assert.equal(htmlFiles.length,32,'expected 32 HTML pages');
 
+const corruptedHumanAssets=[
+ 'vsn-human-hero.webp','vsn-human-about.webp','vsn-human-ai.webp',
+ 'vsn-human-editorial.webp','vsn-human-atlas.webp'
+];
+
 for(const file of htmlFiles){
  const body=read(file);
+ corruptedHumanAssets.forEach(asset=>assert.ok(!body.includes(asset),file+' references corrupted human asset '+asset));
  const legal=file.startsWith('legal'+path.sep);
  const fidelityCss=legal?'../assets/ritovex-fidelity.css':'assets/ritovex-fidelity.css';
  const fidelityScript=legal?'../assets/ritovex-fidelity.js':'assets/ritovex-fidelity.js';
@@ -68,6 +74,7 @@ const blog=read('blog.html');
 const projects=read('projects.html');
 const blogDetail=read('blog-detail.html');
 const projectDetail=read('project-detail.html');
+assert.match(home,/home-about-intro/,'Home About must lead with a centered intro before the image/facts layout');
 assert.match(home,/home-blog-section/,'homepage missing Ritovex-style blog preview');
 assert.equal((home.match(/home-blog-card/g)||[]).length,3,'homepage blog preview must contain exactly three cards');
 assert.match(home,/href="blog-detail\.html"/,'homepage blog preview missing published article link');
@@ -131,6 +138,10 @@ assert.match(fidelity,/--vsn-charcoal:#3F4245/i);
 assert.match(fidelity,/--vsn-gray:#7E8083/i);
 assert.match(fidelity,/--green:var\(--vsn-cyan\)/,'legacy green must map to VSN palette');
 assert.match(fidelity,/\.rv-header/);
+assert.match(fidelity,/\.motion-control\{display:none!important\}/,'floating motion control must stay out of the rendered reference UI');
+assert.match(fidelity,/\.rv-topline\{display:none!important\}/,'desktop reference shell must not render the extra top strip');
+assert.match(fidelity,/--rv-topline-h:0px!important/,'desktop mega-menu offset must match hidden top strip');
+assert.match(fidelity,/grid-template-columns:minmax\(0,1\.08fr\) minmax\(430px,\.92fr\)!important/,'Home hero desktop balance must match rendered reference tuning');
 assert.match(fidelity,/@media\(min-width:981px\)/,'desktop fidelity layer missing 981px shell');
 assert.match(fidelity,/border-top:2px solid var\(--vsn-cyan\)!important/,'desktop mega-menu missing VSN accent edge');
 assert.match(fidelity,/\.rv-header \.nav-dropdown\[open\]>summary:before\{transform:scaleX\(1\)\}/,'desktop open dropdown missing active underline');
@@ -172,7 +183,6 @@ assert.match(app,/menuFocusables/,'mobile navigation missing focus containment')
 assert.match(app,/e\.key==='Tab'/,'mobile navigation missing keyboard focus loop');
 assert.match(app,/mobileNav\.addEventListener\?\.\('change',syncBreakpoint\)/,'navigation must clean up when crossing to desktop');
 
-assert.match(fidelityJs,/IntersectionObserver/);
 assert.match(fidelityJs,/matchMedia\?\.\('\(min-width: 981px\)'\)/,'desktop fidelity hover interactions must start at 981px');
 assert.match(fidelityJs,/focusin/,'desktop mega-menu must open from keyboard focus');
 assert.match(fidelityJs,/focusout/,'desktop mega-menu must close when keyboard focus leaves');
@@ -183,10 +193,12 @@ assert.match(fidelityJs,/Request updates →/,'newsletter must describe a reques
 assert.match(fidelityJs,/mailto:info@vertexsystemsnetwork\.com/,'static newsletter request must route through an explicit email draft');
 assert.match(fidelityJs,/not stored on this static page/,'newsletter must disclose static-site storage behavior');
 assert.doesNotMatch(fidelityJs,/btn\.textContent='Thank you'/,'newsletter must not claim false subscription success');
-assert.match(fidelityJs,/unobserve/);
-assert.match(motion,/const fidelityMode=/);
-assert.match(motion,/if\(fidelityMode\)/);
 assert.doesNotMatch(fidelityJs,/pointermove/);
 assert.doesNotMatch(fidelityJs,/\.animate\(/);
+assert.match(motion,/IntersectionObserver/,'motion.js must own viewport reveals');
+assert.match(motion,/observer\.unobserve/,'motion.js reveal must remain one-shot');
+assert.doesNotMatch(fidelityJs,/IntersectionObserver/,'fidelity JS must not own a second viewport reveal observer');
+assert.doesNotMatch(fidelityJs,/rv-fidelity-reveal/,'fidelity JS must not re-hide rendered sections');
+assert.doesNotMatch(fidelity,/\.rv-fidelity-reveal/,'fidelity CSS must not contain a second hidden reveal state');
 
 console.log('Ritovex fidelity passed: shell, 980px mobile navigation, palette lock, direct imagery, service FAQs/forms, Google Map, distinct editorial/project templates, 404 and single reveal owner are intact.');

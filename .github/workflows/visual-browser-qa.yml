@@ -1,0 +1,36 @@
+name: Visual Browser QA
+
+on:
+  pull_request:
+    paths:
+      - 'index.html'
+      - 'assets/**'
+      - 'scripts/visual_browser_qa.cjs'
+      - '.github/workflows/visual-browser-qa.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  home-render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install Playwright for QA
+        run: |
+          npm install --no-save playwright@1.55.0
+          npx playwright install --with-deps chromium
+      - name: Render VSN and live Ritovex
+        run: node scripts/visual_browser_qa.cjs
+      - name: Upload rendered screenshots
+        uses: actions/upload-artifact@v4
+        with:
+          name: visual-browser-home
+          path: qa-artifacts/home
+          if-no-files-found: error
+          retention-days: 7

@@ -177,9 +177,6 @@ body{background:var(--vsn-white);color:var(--vsn-black)}
 
 /* Reveal timing closer to video: small travel, soft opacity, no exaggerated slides. */
 .motion-prep:not(.motion-fallback) [class*="rv-"],.motion-prep:not(.motion-fallback) .home-section-intro{transition-duration:.68s!important;transition-timing-function:var(--rv-ease)!important}
-.rv-fidelity-reveal{opacity:0;transform:translateY(18px);clip-path:inset(0 0 8% 0)}
-.rv-fidelity-reveal.rv-fidelity-in{opacity:1;transform:none;clip-path:inset(0);transition:opacity .7s var(--rv-ease),transform .7s var(--rv-ease),clip-path .8s var(--rv-ease)}
-
 @media(max-width:980px){
   .rv-topline{display:none}
   .rv-header .nav{height:68px!important;min-height:68px!important}
@@ -213,7 +210,7 @@ body{background:var(--vsn-white);color:var(--vsn-black)}
   .blog-list-page .editorial-card-grid,.projects-list-page .editorial-card-grid{grid-template-columns:1fr!important}
   .rv-footer-grid{grid-template-columns:1fr 1fr!important}.rv-footer-bottom{flex-direction:column}
 }
-@media(prefers-reduced-motion:reduce){.rv-footer-cta{animation:none}.rv-fidelity-reveal{opacity:1;transform:none;clip-path:none}}
+@media(prefers-reduced-motion:reduce){.rv-footer-cta{animation:none}}
 
 .utility-404-art{display:flex;align-items:center;justify-content:center;gap:18px;font-size:clamp(120px,20vw,300px);font-weight:900;line-height:.72;letter-spacing:-.08em;margin:42px 0 34px;color:var(--vsn-black)}
 .utility-404-photo{width:clamp(108px,14vw,210px);height:clamp(108px,14vw,210px);border-radius:50%;overflow:hidden;display:block;flex:0 0 auto}
@@ -589,3 +586,149 @@ input:focus,textarea:focus,select:focus{outline-color:var(--vsn-indigo)!importan
  .contact-route-grid strong,.contact-step-grid h3{margin-top:30px}
 }
 @media(prefers-reduced-motion:reduce){.contact-route-grid>a{transition:none!important}}
+
+/* 2026-09-28 rendered Home header + hero correction. */
+.rv-topline{display:none!important}
+@media(min-width:981px){
+  .rv-header{--rv-topline-h:0px!important;--rv-nav-h:70px!important}
+  .rv-header .nav-menu{top:70px!important}
+}
+@media(min-width:1081px){
+  .home-page .home-hero-grid{
+    grid-template-columns:minmax(0,1.08fr) minmax(430px,.92fr)!important;
+    gap:56px!important;
+  }
+  .home-page .home-hero-copy .display{
+    max-width:700px!important;
+    font-size:clamp(54px,4.5vw,68px)!important;
+    line-height:.96!important;
+    letter-spacing:-.058em!important;
+  }
+  .home-page .hero-art{min-height:520px!important}
+  .home-page .hero-art img{
+    height:520px!important;
+    object-position:50% 50%!important;
+  }
+  .home-page .home-about-copy .h2{
+    font-size:clamp(40px,4vw,60px)!important;
+    line-height:.98!important;
+  }
+}
+
+/* 2026-09-28 rendered mobile hero + About hierarchy correction. */
+.motion-control{display:none!important}
+.home-page .home-about-intro{
+  max-width:840px;
+  margin:0 auto 66px;
+  text-align:center;
+}
+.home-page .home-about-intro .eyebrow{justify-content:center}
+.home-page .home-about-intro .h2{
+  font-size:clamp(44px,5vw,72px);
+  line-height:.96;
+  letter-spacing:-.055em;
+  margin:14px auto 20px;
+}
+.home-page .home-about-intro .lead{
+  max-width:720px;
+  margin-left:auto;
+  margin-right:auto;
+  color:#7E8083;
+}
+.home-page .home-about-section .home-about-layout{
+  grid-template-columns:minmax(0,1.08fr) minmax(320px,.72fr);
+  gap:clamp(46px,7vw,96px);
+  align-items:center;
+}
+.home-page .home-about-section .home-about-visual{
+  overflow:hidden;
+  border-radius:18px 18px 18px 4px;
+}
+.home-page .home-about-section .home-about-visual img{
+  width:100%;
+  aspect-ratio:1.15/1;
+  object-fit:cover;
+}
+.home-page .home-about-section .home-about-copy>p{
+  color:#7E8083;
+  line-height:1.7;
+  margin:24px 0;
+}
+.home-page .home-about-section .home-about-facts{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+}
+.home-page .home-about-section .home-about-facts>div{
+  min-height:128px;
+  padding:20px;
+  border:1px solid #FFFFFF;
+  background:#FFFFFF;
+}
+.home-page .home-about-section .home-about-facts>div:last-child{grid-column:1/-1}
+.home-page .home-about-section .home-about-facts strong{
+  display:block;
+  color:#625BA8;
+  margin-bottom:28px;
+}
+@media(max-width:760px){
+  .home-page .home-hero-copy{
+    text-align:center;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+  }
+  .home-page .home-hero-copy .eyebrow{justify-content:center}
+  .home-page .home-hero-copy .display{
+    max-width:360px;
+    font-size:clamp(44px,13vw,58px)!important;
+    line-height:.98!important;
+    letter-spacing:-.055em!important;
+  }
+  .home-page .home-hero-copy .lead{max-width:350px}
+  .home-page .home-hero-copy .btn-row,
+  .home-page .hero-principles{justify-content:center}
+  .home-page .home-credentials{overflow:hidden}
+  .home-page .home-credentials-grid{
+    display:flex!important;
+    overflow-x:auto;
+    overscroll-behavior-inline:contain;
+    scroll-snap-type:x proximity;
+    min-height:0!important;
+    gap:0!important;
+    padding-top:0;
+    padding-bottom:0;
+    scrollbar-width:none;
+  }
+  .home-page .home-credentials-grid::-webkit-scrollbar{display:none}
+  .home-page .home-credentials-grid>*{
+    flex:0 0 min(74vw,270px);
+    min-height:92px;
+    padding:20px 18px;
+    border-right:1px solid #FFFFFF;
+    scroll-snap-align:start;
+  }
+  .home-page .home-credentials-grid>.credential-link{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-basis:190px;
+  }
+  .home-page .home-about-intro{
+    margin-bottom:38px;
+    padding:0 4px;
+  }
+  .home-page .home-about-intro .h2{
+    font-size:clamp(38px,11vw,52px);
+  }
+  .home-page .home-about-section .home-about-layout{grid-template-columns:1fr;gap:28px}
+  .home-page .home-about-section .home-about-visual{order:1;border-radius:16px 16px 16px 4px}
+  .home-page .home-about-section .home-about-copy{order:2}
+  .home-page .home-about-section .home-about-facts{grid-template-columns:1fr 1fr}
+  .home-page .home-about-section .home-about-facts>div{min-height:118px;padding:18px}
+  .home-page .home-about-section .home-about-facts strong{margin-bottom:22px}
+}
+@media(max-width:480px){
+  .home-page .home-about-section .home-about-facts{grid-template-columns:1fr}
+  .home-page .home-about-section .home-about-facts>div:last-child{grid-column:auto}
+}
