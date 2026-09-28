@@ -349,3 +349,11 @@ projects_verifiable_portfolio_count: 4
 projects_generic_capability_cards: 0
 projects_proof_strategy: published-product-plus-public-repositories
 blog_projects_parity_base: 9369c42e86afe1b1cd90618a73bd926b727a44bd
+
+contact_final_parity_percent: 100
+contact_route_count: 3
+contact_direct_whatsapp_route: true
+contact_next_step_count: 3
+contact_google_map_preserved: true
+contact_static_form_truthfulness: preserved
+contact_final_parity_base: c3cd3478863a23dbbf6033b4b3774d5a32424ab6
