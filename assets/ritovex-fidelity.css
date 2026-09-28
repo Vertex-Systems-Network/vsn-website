@@ -107,18 +107,18 @@ body{background:var(--vsn-white);color:var(--vsn-black)}
 .service-enquiry-shell>.service-enquiry-intro{position:sticky;top:126px}
 
 /* Blog listing follows the recorded 3-column article grid rather than project layout. */
-.blog-list-page .editorial-hero{padding:74px 0 42px!important;text-align:center}
+.blog-list-page .editorial-hero{padding:118px 0 72px!important;text-align:left}
 .blog-list-page .editorial-hero-grid{display:block!important;max-width:850px;margin:auto}
 .blog-list-page .editorial-hero-visual{display:none!important}
 .blog-list-page .editorial-card-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:34px 20px!important}
-.blog-list-page .editorial-card{border:0!important;background:#FFFFFF!important}
-.blog-list-page .editorial-card-body{padding:14px 0!important}
+.blog-list-page .editorial-card{border:0!important;background:rgba(126,128,131,.08)!important}
+.blog-list-page .editorial-card-body{padding:18px 18px 20px!important}
 .blog-list-page .editorial-card h3{font-size:25px!important}
-.blog-list-page .editorial-card-media img{aspect-ratio:1.14/1!important}
+.blog-list-page .editorial-card-media img{aspect-ratio:1.42/1!important}
 .blog-list-page .editorial-feature{display:none!important}
 
 /* Projects listing: image-forward portfolio cards with minimal copy like the recorded portfolio page. */
-.projects-list-page .editorial-hero{padding:82px 0 56px!important;text-align:center}
+.projects-list-page .editorial-hero{padding:118px 0 72px!important;text-align:left}
 .projects-list-page .editorial-hero-grid{display:block!important;max-width:900px;margin:auto}
 .projects-list-page .editorial-hero-visual{display:none!important}
 .projects-list-page .editorial-feature{display:none!important}
