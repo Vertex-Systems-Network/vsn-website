@@ -15,6 +15,12 @@ const servicePages=[
  'bpo.html','business-solutions.html','tax-consulting.html','resource-augmentation.html'
 ];
 
+const propagatedServiceReferencePages=[
+ 'software.html','websites.html','ecommerce.html','mobile-app-development.html','ai-automation.html',
+ 'profile.html','social-media.html','bpo.html','business-solutions.html','tax-consulting.html','resource-augmentation.html'
+];
+
+
 const htmlFiles=[];
 function walk(dir){
  for(const entry of fs.readdirSync(dir,{withFileTypes:true})){
@@ -115,6 +121,19 @@ assert.doesNotMatch(webCommerce,/live Ritovex|reference template|template rhythm
 assert.match(serviceDetailCss,/\.web-service-reference-overview-grid\{[\s\S]*grid-template-columns:repeat\(2/,'Web Development overview must retain a two-column desktop reading rhythm');
 assert.match(serviceDetailCss,/\.web-service-reference-vision\{[\s\S]*background:#000000/,'Web Development vision CTA must retain the dark reference stage');
 
+
+
+for(const file of propagatedServiceReferencePages){
+ const body=read(file);
+ assert.match(body,/service-single-reference-hero/,file+' missing text-first single-service hero');
+ assert.match(body,/service-single-reference-media-section/,file+' missing full-width single-service media stage');
+ assert.match(body,/service-single-reference-overview/,file+' missing service overview stage');
+ assert.match(body,/service-single-included-stage/,file+' missing included-work stage');
+ assert.doesNotMatch(body,/live Ritovex|reference template|template rhythm/i,file+' exposes internal reference notes in public copy');
+}
+assert.match(read('websites.html'),/service-single-reference-hero[\s\S]*?<h1 class="h1">Business websites built around the way you work\.<\/h1>/,'Websites H1 must live in the reference hero');
+assert.match(serviceDetailCss,/\.service-single-reference-overview-grid\{[\s\S]*grid-template-columns:repeat\(2/,'Shared service overview must keep two-column desktop rhythm');
+assert.match(serviceDetailCss,/\.service-single-included-stage>\.container\{[\s\S]*border-top:1px solid #3F4245/,'Shared included-work stage must retain reference separator');
 
 for(const file of ['index.html','blog.html','projects.html','blog-detail.html','project-detail.html']){
  const body=read(file);
