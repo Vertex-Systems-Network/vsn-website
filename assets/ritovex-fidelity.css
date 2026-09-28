@@ -557,3 +557,35 @@ input:focus,textarea:focus,select:focus{outline-color:var(--vsn-indigo)!importan
 @media(prefers-reduced-motion:reduce){
  .about-verification-track a,.about-credential-row>a{transition:none!important}
 }
+
+/* 2026-09-28: Contact final parity — clear routing before form and explicit next steps. */
+.contact-route-section{background:#FFFFFF;padding-top:96px!important;padding-bottom:96px!important}
+.contact-route-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid #3F4245}
+.contact-route-grid>a{display:flex;flex-direction:column;min-height:255px;padding:26px 24px 28px;border-right:1px solid #3F4245;color:#3F4245;transition:background-color .22s ease,color .22s ease,transform .22s var(--rv-ease)}
+.contact-route-grid>a:last-child{border-right:0}
+.contact-route-grid>a:hover,.contact-route-grid>a:focus-visible{background:#000000;color:#FFFFFF;transform:translateY(-3px)}
+.contact-route-grid span{font-size:10px;color:#625BA8;font-weight:850;letter-spacing:.08em}
+.contact-route-grid strong{font-size:clamp(26px,2.6vw,38px);line-height:1;letter-spacing:-.04em;margin:58px 0 12px}
+.contact-route-grid small{font-size:14px;line-height:1.6;color:#7E8083}
+.contact-route-grid em{font-style:normal;margin-top:auto;padding-top:24px;font-size:12px;font-weight:850}
+.contact-route-grid>a:hover span,.contact-route-grid>a:focus-visible span{color:#5AC8D6}
+.contact-next-steps{background:#FFFFFF}
+.contact-step-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid #3F4245}
+.contact-step-grid article{min-height:260px;padding:28px 28px 32px;border-right:1px solid #3F4245}
+.contact-step-grid article:last-child{border-right:0}
+.contact-step-grid span{font-size:10px;color:#625BA8;font-weight:850;letter-spacing:.08em}
+.contact-step-grid h3{font-size:clamp(26px,2.5vw,36px);line-height:1.02;letter-spacing:-.04em;margin:64px 0 14px}
+.contact-step-grid p{margin:0;color:#7E8083;font-size:14px;line-height:1.65}
+@media(max-width:900px){
+ .contact-route-grid,.contact-step-grid{grid-template-columns:1fr 1fr}
+ .contact-route-grid>a:nth-child(2),.contact-step-grid article:nth-child(2){border-right:0}
+ .contact-route-grid>a:nth-child(3),.contact-step-grid article:nth-child(3){border-top:1px solid #3F4245}
+}
+@media(max-width:620px){
+ .contact-route-section{padding-top:78px!important;padding-bottom:78px!important}
+ .contact-route-grid,.contact-step-grid{grid-template-columns:1fr}
+ .contact-route-grid>a,.contact-step-grid article{min-height:0;border-right:0;border-bottom:1px solid #3F4245;padding:24px 0}
+ .contact-route-grid>a:nth-child(3),.contact-step-grid article:nth-child(3){border-top:0;border-bottom:0}
+ .contact-route-grid strong,.contact-step-grid h3{margin-top:30px}
+}
+@media(prefers-reduced-motion:reduce){.contact-route-grid>a{transition:none!important}}

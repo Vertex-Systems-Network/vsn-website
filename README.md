@@ -324,3 +324,7 @@ The About page now restores the reference page's early four-principle rhythm, a 
 ## Blog and Projects parity separation — 2026-09-28
 
 Blog and Projects now use intentionally different listing systems. Blog leads with the one published VSN article and separates five clearly marked upcoming topics. Projects uses a four-card, two-column portfolio based only on a published product or public repositories; generic capability cards were removed so Services remains the capability catalogue. This preserves the Ritovex editorial/portfolio rhythm without inventing project outcomes or client case studies.
+
+## Contact final parity — 2026-09-28
+
+The Contact page now opens with three explicit routes—structured project brief, email and WhatsApp—and adds a three-stage explanation of what happens after first contact. The existing WhatsApp-generated static brief, direct contact card, public-profile links and Google Map remain intact. This gives the page a clearer business-conversion rhythm without pretending that the static form submits to a backend.
