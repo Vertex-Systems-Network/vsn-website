@@ -157,6 +157,8 @@ assert.match(fidelity,/\.rv-footer-public-links\{[^}]*border-top:1px solid #3F42
 assert.match(fidelity,/\.home-capabilities/);
 assert.match(fidelity,/\.service-enquiry-shell/);
 assert.match(fidelity,/\.blog-list-page/);
+assert.match(fidelity,/\.blog-list-page \.editorial-hero\{[^}]*text-align:left/,'Blog rendered hero must remain left aligned');
+assert.match(fidelity,/\.projects-list-page \.editorial-hero\{[^}]*text-align:left/,'Projects rendered hero must remain left aligned');
 assert.match(fidelity,/\.projects-list-page/);
 assert.match(fidelity,/\.blog-detail-page/);
 assert.match(fidelity,/\.project-detail-page/);
