@@ -57,7 +57,17 @@ async function settle(page){
       firstSectionTop:document.querySelector('main section')?.getBoundingClientRect().top||0,
       hiddenVisibleArea:[...document.querySelectorAll('main section > .container, .editorial-card, .home-showcase-card, .home-process-grid article, .service-card')]
         .filter(el=>{const r=el.getBoundingClientRect(),s=getComputedStyle(el);return r.width>0&&r.height>0&&Number(s.opacity)<0.1})
-        .map(el=>({className:el.className,opacity:getComputedStyle(el).opacity,height:Math.round(el.getBoundingClientRect().height)}))
+        .map(el=>({className:el.className,opacity:getComputedStyle(el).opacity,height:Math.round(el.getBoundingClientRect().height)})),
+      suspiciousHumanImages:[...document.images].filter(img=>/vsn-human-/i.test(img.getAttribute('src')||'')).map(img=>{
+        try{
+          const canvas=document.createElement('canvas');canvas.width=20;canvas.height=20;
+          const ctx=canvas.getContext('2d',{willReadFrequently:true});ctx.drawImage(img,0,0,20,20);
+          const data=ctx.getImageData(0,0,20,20).data;let sum=0,sum2=0,dark=0,n=0;
+          for(let i=0;i<data.length;i+=4){const y=.2126*data[i]+.7152*data[i+1]+.0722*data[i+2];sum+=y;sum2+=y*y;if(y<8)dark++;n++}
+          const mean=sum/n,variance=sum2/n-mean*mean;
+          return {src:img.getAttribute('src'),mean:+mean.toFixed(1),variance:+variance.toFixed(1),darkRatio:+(dark/n).toFixed(3)};
+        }catch(e){return {src:img.getAttribute('src'),decodeError:String(e)}}
+      }).filter(x=>x.decodeError||x.variance<35||x.darkRatio>.985)
     }));
     await page.screenshot({path:path.join(outDir,t.name+'.png'),fullPage:true});
     report.targets.push({...t,status:response?.status?.()||null,metrics,consoleErrors,pageErrors});
