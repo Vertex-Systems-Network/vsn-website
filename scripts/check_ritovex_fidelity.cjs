@@ -81,9 +81,9 @@ for(const file of htmlFiles){const body=read(file);assert.match(body,/footer-pub
 const notFound=read('404.html');
 assert.match(notFound,/utility-404-photo/,'404 must keep circular human-photo composition');
 
-assert.match(fidelity,/--vsn-cyan:#0ea5e9/);
-assert.match(fidelity,/--vsn-indigo:#5b5cf0/);
-assert.match(fidelity,/--vsn-violet:#8b5cf6/);
+assert.match(fidelity,/--vsn-cyan:#5AC8D6/i);
+assert.match(fidelity,/--vsn-indigo:#625BA8/i);
+assert.match(fidelity,/--vsn-violet:#625BA8/i);\nassert.match(fidelity,/--vsn-blue:#6188C6/i);\nassert.match(fidelity,/--vsn-charcoal:#3F4245/i);\nassert.match(fidelity,/--vsn-gray:#7E8083/i);
 assert.match(fidelity,/--green:var\(--vsn-cyan\)/,'legacy green must map to VSN palette');
 assert.match(fidelity,/\.rv-header/);
 assert.match(fidelity,/\.rv-footer/);
