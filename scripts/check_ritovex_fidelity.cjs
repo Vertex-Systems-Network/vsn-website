@@ -60,9 +60,10 @@ for(const file of servicePages){
 }
 
 const contact=read('contact.html');
-assert.match(contact,/https:\/\/www\.google\.com\/maps\?/, 'contact page missing Google Maps embed');
+assert.match(contact,/https:\/\/maps\.google\.com\/maps\?/, 'contact page missing Google Maps embed');
 assert.match(contact,/frame-src[^;]*google\.com/i,'contact CSP missing Google Maps frame permission');
 assert.doesNotMatch(contact,/openstreetmap/i,'contact page still contains OpenStreetMap residue');
+assert.doesNotMatch(contact,/<iframe[^>]*sandbox=/i,'contact page must not sandbox the Google Maps iframe because it can break the rendered embed');
 assert.match(contact,/contact-route-section/,'contact page missing clear route selector');
 assert.equal((contact.match(/class="contact-route-grid"[\s\S]*?<\/div><\/div><\/section>/)||[''])[0].match(/<a /g)?.length,3,'contact route selector must contain three routes');
 assert.match(contact,/https:\/\/wa\.me\/923168433104/,'contact page missing direct WhatsApp route');
