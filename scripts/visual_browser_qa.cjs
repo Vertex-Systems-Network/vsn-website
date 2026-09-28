@@ -39,6 +39,15 @@ async function collectMetrics(page,local){
     viewport:{w:innerWidth,h:innerHeight},
     scroll:{w:document.documentElement.scrollWidth,h:document.documentElement.scrollHeight},
     horizontalOverflow:document.documentElement.scrollWidth>innerWidth+1,
+    overflowingElements:[...document.querySelectorAll('body *')].filter(el=>{
+      const r=el.getBoundingClientRect();
+      const style=getComputedStyle(el);
+      if(style.position==='fixed')return false;
+      return r.width>0&&r.height>0&&(r.right>innerWidth+1||r.left<-1);
+    }).slice(0,30).map(el=>{
+      const r=el.getBoundingClientRect();
+      return {tag:el.tagName.toLowerCase(),className:typeof el.className==='string'?el.className:'',left:Math.round(r.left),right:Math.round(r.right),width:Math.round(r.width)};
+    }),
     missingImages:[...document.images].filter(i=>!i.complete||i.naturalWidth===0).map(i=>i.getAttribute('src')),
     sectionCount:document.querySelectorAll('main section').length,
     h1:[...document.querySelectorAll('h1')].map(x=>x.textContent.trim()),
@@ -59,7 +68,11 @@ async function collectMetrics(page,local){
       const r=el.getBoundingClientRect(),s=getComputedStyle(el);
       return {className:el.className,height:Math.round(r.height),paddingTop:s.paddingTop,paddingBottom:s.paddingBottom,background:s.backgroundColor};
     }),
-    hiddenVisibleArea:[...document.querySelectorAll('main section > .container, .editorial-card, .project-proof-card, .about-principle-grid article, .services-benefit-grid article, .contact-route-grid > a, .contact-step-grid article')]
+    keyBlockVisibility:{
+      blogFeature:(()=>{const el=document.querySelector('.blog-featured-article');return el?{display:getComputedStyle(el).display,width:Math.round(el.getBoundingClientRect().width),height:Math.round(el.getBoundingClientRect().height)}:null})(),
+      contactTwoCol:(()=>{const el=document.querySelector('.contact-page .contact-main .two-col');return el?{gridTemplateColumns:getComputedStyle(el).gridTemplateColumns,width:Math.round(el.getBoundingClientRect().width)}:null})()
+    },
+    hiddenVisibleArea:[...document.querySelectorAll('main section > .container, .editorial-card, .editorial-feature, .project-proof-card, .about-principle-grid article, .services-benefit-grid article, .contact-route-grid > a, .contact-step-grid article')]
       .filter(el=>{const r=el.getBoundingClientRect(),s=getComputedStyle(el);return r.width>0&&r.height>0&&Number(s.opacity)<0.1})
       .map(el=>({className:el.className,opacity:getComputedStyle(el).opacity,height:Math.round(el.getBoundingClientRect().height)})),
     suspiciousHumanImages:[...document.images].filter(img=>/vsn-human-/i.test(img.getAttribute('src')||'')).map(img=>{
