@@ -160,6 +160,9 @@ assert.match(fidelity,/\.rv-footer-cta \.container\{[\s\S]*max-width:1240px!impo
 assert.match(fidelity,/position:fixed!important;[\s\S]*inset:68px 0 0 0!important/,'mobile navigation must use the full-height reference shell');
 assert.match(fidelity,/\.rv-footer-grid\{grid-template-columns:1fr!important/,'small-screen footer must collapse to one clear column');
 assert.match(fidelity,/\.rv-footer-word\{[^}]*color:#3F4245/,'footer wordmark must remain visible on the black footer');
+assert.match(fidelity,/font-size:clamp\(190px,35vw,500px\)!important/,'footer wordmark must fill the desktop footer width');
+assert.match(fidelity,/font-size:42vw!important/,'footer wordmark must retain oversized mobile scale');
+assert.match(fidelity,/\.rv-footer-bottom\{[\s\S]*border-top:1px solid #3F4245/,'footer bottom metadata row needs the reference separator');
 assert.doesNotMatch(fidelity,/\.rv-footer-word\{[^}]*color:#000000/,'footer wordmark cannot be black on black');
 assert.match(fidelity,/\.rv-footer-public-links\{[^}]*border-top:1px solid #3F4245[^}]*border-bottom:1px solid #3F4245/,'footer public-profile separators must remain visible');
 assert.match(fidelity,/\.home-capabilities/);
