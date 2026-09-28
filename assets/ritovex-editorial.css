@@ -118,3 +118,15 @@
 @media(prefers-reduced-motion:reduce){
  .blog-featured-article .editorial-feature-media img{transition:none!important}
 }
+
+/* 2026-09-28: rendered Blog and Portfolio geometry corrections. */
+.blog-reference-listing{padding-top:94px!important}
+.blog-reference-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:34px 20px!important}
+.project-proof-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:18px!important}
+@media(max-width:980px){
+  .blog-reference-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+}
+@media(max-width:700px){
+  .blog-reference-grid,.project-proof-grid{grid-template-columns:minmax(0,1fr)!important}
+  .blog-reference-listing{padding-top:72px!important}
+}
