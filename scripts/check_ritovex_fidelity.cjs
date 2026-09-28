@@ -52,10 +52,15 @@ assert.match(contact,/https:\/\/www\.google\.com\/maps\?/, 'contact page missing
 assert.match(contact,/frame-src[^;]*google\.com/i,'contact CSP missing Google Maps frame permission');
 assert.doesNotMatch(contact,/openstreetmap/i,'contact page still contains OpenStreetMap residue');
 
+const home=read('index.html');
 const blog=read('blog.html');
 const projects=read('projects.html');
 const blogDetail=read('blog-detail.html');
 const projectDetail=read('project-detail.html');
+assert.match(home,/home-blog-section/,'homepage missing Ritovex-style blog preview');
+assert.equal((home.match(/home-blog-card/g)||[]).length,3,'homepage blog preview must contain exactly three cards');
+assert.match(home,/href="blog-detail\.html"/,'homepage blog preview missing published article link');
+assert.match(home,/href="blog\.html">Browse all articles/,'homepage blog preview missing all-articles route');
 assert.match(blog,/<body class="editorial-page blog-list-page">/);
 assert.match(projects,/<body class="editorial-page projects-list-page">/);
 assert.match(blogDetail,/<body class="editorial-page blog-detail-page">/);
