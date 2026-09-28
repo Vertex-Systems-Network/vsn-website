@@ -27,8 +27,14 @@ function walk(dir){
 walk('.');
 assert.equal(htmlFiles.length,32,'expected 32 HTML pages');
 
+const corruptedHumanAssets=[
+ 'vsn-human-hero.webp','vsn-human-about.webp','vsn-human-ai.webp',
+ 'vsn-human-editorial.webp','vsn-human-atlas.webp'
+];
+
 for(const file of htmlFiles){
  const body=read(file);
+ corruptedHumanAssets.forEach(asset=>assert.ok(!body.includes(asset),file+' references corrupted human asset '+asset));
  const legal=file.startsWith('legal'+path.sep);
  const fidelityCss=legal?'../assets/ritovex-fidelity.css':'assets/ritovex-fidelity.css';
  const fidelityScript=legal?'../assets/ritovex-fidelity.js':'assets/ritovex-fidelity.js';
@@ -131,6 +137,9 @@ assert.match(fidelity,/--vsn-charcoal:#3F4245/i);
 assert.match(fidelity,/--vsn-gray:#7E8083/i);
 assert.match(fidelity,/--green:var\(--vsn-cyan\)/,'legacy green must map to VSN palette');
 assert.match(fidelity,/\.rv-header/);
+assert.match(fidelity,/\.rv-topline\{display:none!important\}/,'desktop reference shell must not render the extra top strip');
+assert.match(fidelity,/--rv-topline-h:0px!important/,'desktop mega-menu offset must match hidden top strip');
+assert.match(fidelity,/grid-template-columns:minmax\(0,1\.08fr\) minmax\(430px,\.92fr\)!important/,'Home hero desktop balance must match rendered reference tuning');
 assert.match(fidelity,/@media\(min-width:981px\)/,'desktop fidelity layer missing 981px shell');
 assert.match(fidelity,/border-top:2px solid var\(--vsn-cyan\)!important/,'desktop mega-menu missing VSN accent edge');
 assert.match(fidelity,/\.rv-header \.nav-dropdown\[open\]>summary:before\{transform:scaleX\(1\)\}/,'desktop open dropdown missing active underline');
