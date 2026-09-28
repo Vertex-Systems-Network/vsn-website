@@ -344,7 +344,7 @@ about_reference_depth_base: 77814c377b7671bc9ffcdb63e39f42ebc3ee9c79
 
 blog_projects_parity_separation_percent: 100
 blog_published_feature_count: 1
-blog_upcoming_topic_count: 5
+blog_upcoming_topic_count: 8
 projects_verifiable_portfolio_count: 4
 projects_generic_capability_cards: 0
 projects_proof_strategy: published-product-plus-public-repositories
@@ -444,3 +444,9 @@ about_priority_mobile_order: copy-media
 projects_featured_metadata_position: image-bottom-overlay
 projects_truthfulness_note_position: after-featured-grid
 projects_featured_grid_reference_order: heading-cards-note
+
+blog_reference_grid_card_count: 9
+blog_reference_grid_desktop: 3x3
+blog_published_card_count: 1
+blog_upcoming_topic_count_current: 8
+blog_category_meta_style: pill-plus-status
