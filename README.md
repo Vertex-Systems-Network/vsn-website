@@ -304,3 +304,7 @@ Interaction/newsletter hardening merged in PR #85 as `c90ff84f2182f378ec5c4a2746
 ## Sitewide actionable contact shell — 2026-09-28
 
 All 32 HTML pages now expose the shared header email/phone and footer phone/email as direct `mailto:` and `tel:` links instead of plain text. The legal pages receive the same contact behavior without changing their parent-relative local navigation. Ritovex fidelity CI now verifies clickable header/footer contact actions on every HTML page and rejects the old plain-text top-contact shell.
+
+## Mobile navigation and footer parity — 2026-09-28
+
+The Ritovex fidelity shell now uses a full-height mobile navigation panel instead of a small floating dropdown, with larger primary links, clearer nested service groups, body-scroll locking and keyboard focus containment. Small-screen footer columns now collapse to one readable stack, while the newsletter, clickable contact actions and oversized footer wordmark remain intact. This pass preserves the latest sitewide contact-shell changes and direct-file operation.
