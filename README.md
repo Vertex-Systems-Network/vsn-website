@@ -316,3 +316,7 @@ The shared desktop shell now gives the mega-menu the same deliberate interaction
 ## Services reference-depth parity — 2026-09-28
 
 The Services listing now follows the reference page's deeper information rhythm after the service catalogue: a real VSN technology/platform grid, delivery benefits, page-level buyer FAQs, and a public-proof stage. The reference testimonial slot is intentionally represented with traceable GitHub and Shopify evidence rather than fabricated client quotes. Tablet/mobile layouts collapse these stages cleanly without adding another animation system.
+
+## About reference-depth parity — 2026-09-28
+
+The About page now restores the reference page's early four-principle rhythm, a horizontally scrollable public-verification strip, and an end-stage credentials/milestones treatment. Ritovex's partner-logo and awards roles are intentionally represented with VSN-owned, checkable evidence such as company registrations, GitHub and the published Shopify app rather than invented partners or awards. Responsive layouts collapse 4→2→1 while preserving the existing team/service structure and single motion owner.
