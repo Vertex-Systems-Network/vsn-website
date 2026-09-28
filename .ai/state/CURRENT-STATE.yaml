@@ -341,3 +341,11 @@ about_operating_principles_count: 4
 about_public_verification_strip: true
 about_credentials_strategy: verifiable-records-not-fabricated-awards
 about_reference_depth_base: 77814c377b7671bc9ffcdb63e39f42ebc3ee9c79
+
+blog_projects_parity_separation_percent: 100
+blog_published_feature_count: 1
+blog_upcoming_topic_count: 5
+projects_verifiable_portfolio_count: 4
+projects_generic_capability_cards: 0
+projects_proof_strategy: published-product-plus-public-repositories
+blog_projects_parity_base: 9369c42e86afe1b1cd90618a73bd926b727a44bd
