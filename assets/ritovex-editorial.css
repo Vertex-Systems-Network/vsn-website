@@ -219,3 +219,36 @@
     object-fit:cover;
   }
 }
+
+/* 2026-09-29: screenshot-led Projects card parity. */
+.projects-list-page .project-proof-grid{margin-top:0!important}
+.projects-list-page .project-featured-card .editorial-card-media{
+  position:relative;
+  display:block;
+}
+.project-image-meta{
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  display:flex;
+  justify-content:space-between;
+  gap:18px;
+  padding:14px 16px;
+  background:linear-gradient(180deg,rgba(0,0,0,0),rgba(0,0,0,.78));
+  color:#FFFFFF;
+  font-size:11px;
+  font-weight:750;
+  letter-spacing:.02em;
+}
+.projects-list-page .projects-proof-note{
+  margin-top:34px;
+  margin-bottom:0;
+  padding-top:18px;
+  padding-bottom:18px;
+}
+.projects-list-page .project-more-proof{margin-top:54px}
+@media(max-width:700px){
+  .project-image-meta{font-size:10px;padding:12px 13px}
+  .projects-list-page .projects-proof-note{margin-top:24px}
+}
