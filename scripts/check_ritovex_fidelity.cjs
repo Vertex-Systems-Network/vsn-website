@@ -80,10 +80,7 @@ assert.equal((home.match(/home-blog-card/g)||[]).length,3,'homepage blog preview
 assert.match(home,/href="blog-detail\.html"/,'homepage blog preview missing published article link');
 assert.match(home,/href="blog\.html">Browse all articles/,'homepage blog preview missing all-articles route');
 assert.match(blog,/<body class="editorial-page blog-list-page">/);
-assert.match(blog,/blog-featured-article/,'blog listing missing published feature stage');
-assert.equal((blog.match(/blog-featured-article/g)||[]).length,1,'blog must have exactly one published feature block');
-assert.equal((blog.match(/class="editorial-card"/g)||[]).length,5,'blog upcoming grid must contain five clearly upcoming cards');
-assert.match(blog,/Published article/,'blog missing published-vs-upcoming distinction');
+assert.equal((blog.match(/class="editorial-card"/g)||[]).length,6,'blog reference grid must contain six cards');
 assert.equal((blog.match(/Coming soon/g)||[]).length>=5,true,'blog upcoming topics must remain clearly labeled');
 assert.match(projects,/<body class="editorial-page projects-list-page">/);
 assert.match(projects,/projects-proof-note/,'projects page missing portfolio truthfulness note');
@@ -160,7 +157,6 @@ assert.match(fidelity,/\.projects-list-page/);
 assert.match(fidelity,/\.blog-detail-page/);
 assert.match(fidelity,/\.project-detail-page/);
 assert.match(fidelity,/\.contact-map/);
-assert.match(fidelity,/\.blog-list-page \.editorial-feature\.blog-featured-article\{[\s\S]*display:grid!important/,'rendered Blog featured article must not be hidden');
 assert.match(fidelity,/\.about-reference-verification\{[\s\S]*overflow:hidden/,'About verification strip must not create page-level overflow');
 assert.match(fidelity,/\.contact-page \.contact-main \.two-col\{[\s\S]*grid-template-columns:minmax\(0,1fr\)!important/,'Contact mobile form/direct-contact layout must collapse to one column');
 assert.match(fidelity,/\.contact-route-grid\{display:grid;grid-template-columns:repeat\(3/,'contact route selector missing three-column desktop layout');
@@ -173,6 +169,8 @@ assert.match(fidelity,/\.about-reference-verification\{background:#000000/,'abou
 assert.match(fidelity,/\.about-credential-row\{display:grid;grid-template-columns:/,'about credentials missing structured evidence rows');
 assert.match(fidelity,/utility-404-art/);
 const editorialCss=read('assets/ritovex-editorial.css');
+assert.match(editorialCss,/\.blog-reference-grid\{grid-template-columns:repeat\(3/,'Blog listing must use the reference three-column desktop grid');
+assert.match(editorialCss,/\.project-proof-grid\{grid-template-columns:repeat\(2/,'Projects listing must use the reference two-column desktop grid');
 assert.match(editorialCss,/\.blog-featured-article/,'blog feature styling missing');
 assert.match(editorialCss,/\.project-proof-grid\{grid-template-columns:repeat\(2/,'projects portfolio must use a distinct two-column desktop grid');
 assert.match(editorialCss,/\.projects-proof-note/,'projects truthfulness note styling missing');
