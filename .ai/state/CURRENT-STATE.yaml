@@ -1,10 +1,10 @@
 repo: Vertex-Systems-Network/vsn-website
 updated: 2026-09-28
 phase: ritovex-inspired-visual-rebuild
-verified_main_sha: 3d36b0f1575a83ff26ad1aa3c68eb5f96be0f50b
+verified_main_sha: c90ff84f2182f378ec5c4a2746901941b14624ea
 current_issue: null
 current_branch: main
-current_milestone: repository-state-consistency-guard-complete
+current_milestone: ritovex-interaction-boundary-newsletter-hardening-complete
 architecture: static-html-css-vanilla-js
 runtime_mode: file-direct-open
 implementation_complete: true
@@ -19,8 +19,8 @@ web_development_ecommerce_content_refresh_percent: 100
 production_readiness_percent: 90
 requested_content_refresh_percent: 100
 content_refresh_ci: passed
-static_integrity_run: 469
-static_integrity_passed_sha: 3d36b0f1575a83ff26ad1aa3c68eb5f96be0f50b
+static_integrity_run: 473
+static_integrity_passed_sha: c90ff84f2182f378ec5c4a2746901941b14624ea
 local_http_server_required: false
 vercel_required: false
 node_runtime_required: false
@@ -98,8 +98,8 @@ next_valid_action: production-publish-or-new-content-change-when-owner-requests
 industry_expansion_percent: 100
 ai_solutions_module_percent: 100
 resource_augmentation_module_percent: 100
-latest_pr: 83
-latest_static_integrity_run: 469
+latest_pr: 85
+latest_static_integrity_run: 473
 production_deployed: false
 
 business_solutions_module_percent: 100
@@ -253,9 +253,9 @@ exact_logo_palette_merge_sha: 113c82e9ef655627f7abcdcee42eb1178478e547
 exact_logo_palette_merge_pr: 76
 main_visual_state: ritovex-corrective-rebuild-exact-palette-blog-mobile-header-footer-contrast
 
-latest_verified_main_run: 469
+latest_verified_main_run: 473
 latest_verified_main_status: passed
-latest_verified_main_sha: 3d36b0f1575a83ff26ad1aa3c68eb5f96be0f50b
+latest_verified_main_sha: c90ff84f2182f378ec5c4a2746901941b14624ea
 stale_recovery_pr_74_status: closed-superseded
 
 homepage_blog_preview_percent: 100
@@ -304,3 +304,10 @@ desktop_interaction_breakpoint: 981px
 newsletter_static_truthfulness: request-opens-email-draft
 newsletter_false_success_removed: true
 reduced_motion_interactions_preserved: true
+
+interaction_merge_pr: 85
+interaction_merge_sha: c90ff84f2182f378ec5c4a2746901941b14624ea
+interaction_pr_run: 472
+interaction_pr_status: passed
+interaction_main_run: 473
+interaction_main_status: passed
