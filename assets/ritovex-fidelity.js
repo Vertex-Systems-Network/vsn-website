@@ -39,15 +39,6 @@ desktopDropdowns.forEach(d=>{
  });
 });
 
-const revealTargets=document.querySelectorAll('main section > .container, .editorial-card, .home-showcase-card, .home-process-grid article, .service-card');
-if(reduce||!('IntersectionObserver'in window)){
- revealTargets.forEach(el=>el.classList.add('rv-fidelity-in'));
-}else{
- revealTargets.forEach(el=>el.classList.add('rv-fidelity-reveal'));
- const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('rv-fidelity-in');io.unobserve(e.target)}}),{threshold:.12,rootMargin:'0px 0px -6% 0px'});
- revealTargets.forEach(el=>io.observe(el));
-}
-
 document.querySelectorAll('.rv-newsletter-form').forEach(form=>{
  const input=form.querySelector('input[type="email"]');
  const btn=form.querySelector('button[type="submit"]');
