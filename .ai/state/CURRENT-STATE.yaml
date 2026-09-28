@@ -435,3 +435,8 @@ footer_wordmark_reference_fill: full-width
 footer_wordmark_desktop_scale: clamp-190-35vw-500
 footer_wordmark_mobile_scale: 42vw
 footer_bottom_separator: true
+
+about_hero_media_reference_order: hero-media-metrics-priority
+about_hero_media_asset: vsn-human-business.webp
+about_priority_desktop_order: media-copy
+about_priority_mobile_order: copy-media
