@@ -304,3 +304,5 @@ Interaction/newsletter hardening merged in PR #85 as `c90ff84f2182f378ec5c4a2746
 ## Sitewide actionable contact shell — 2026-09-28
 
 All 32 HTML pages now expose the shared header email/phone and footer phone/email as direct `mailto:` and `tel:` links instead of plain text. The legal pages receive the same contact behavior without changing their parent-relative local navigation. Ritovex fidelity CI now verifies clickable header/footer contact actions on every HTML page and rejects the old plain-text top-contact shell.
+
+Sitewide actionable contact shell merged in PR #87 as `ba109b04727ec28fc86be93fed629dd036946561`; Static Integrity passed on PR run #476 and merged-main run #477. This is the latest substantive resume anchor; metadata-only reconciliation commits do not supersede it.
