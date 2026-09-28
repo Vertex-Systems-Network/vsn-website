@@ -87,6 +87,12 @@ assert.match(about,/about-team-grid/);
 assert.match(services,/services-reference-hero/);
 assert.match(services,/reference-service-accordion/);
 assert.match(services,/services-reference-outcomes/);
+assert.match(services,/services-reference-tech/,'services page missing technology stage');
+assert.match(services,/services-reference-benefits/,'services page missing benefits stage');
+assert.match(services,/services-reference-faq/,'services page missing page-level FAQ stage');
+assert.equal((services.match(/class="services-faq-list"[\s\S]*?<\/div><\/div><\/section>/)||[''])[0].match(/<details/g)?.length,4,'services page FAQ must contain four buyer questions');
+assert.match(services,/https:\/\/github\.com\/Vertex-Systems-Network/,'services page missing public GitHub proof');
+assert.match(services,/https:\/\/apps\.shopify\.com\/vsn-metafields/,'services page missing published product proof');
 for(const file of htmlFiles){const body=read(file);assert.match(body,/footer-public-links rv-footer-public-links/,file+' missing restored public profile footer row');}
 
 const notFound=read('404.html');
@@ -118,6 +124,9 @@ assert.match(fidelity,/\.projects-list-page/);
 assert.match(fidelity,/\.blog-detail-page/);
 assert.match(fidelity,/\.project-detail-page/);
 assert.match(fidelity,/\.contact-map/);
+assert.match(fidelity,/\.services-tech-grid\{display:grid;grid-template-columns:repeat\(7/,'services technology grid missing desktop reference rhythm');
+assert.match(fidelity,/\.services-benefit-grid\{display:grid;grid-template-columns:repeat\(3/,'services benefits grid missing desktop reference rhythm');
+assert.match(fidelity,/\.services-faq-layout\{display:grid;grid-template-columns:/,'services FAQ layout missing split reference treatment');
 assert.match(fidelity,/utility-404-art/);
 
 assert.match(fidelity,/@media\(max-width:980px\)\{\s*\.rv-topline\{display:none\}/,'Ritovex mobile shell must align to the shared 980px nav breakpoint');

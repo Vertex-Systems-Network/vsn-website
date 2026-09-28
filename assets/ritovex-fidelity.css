@@ -443,3 +443,64 @@ input:focus,textarea:focus,select:focus{outline-color:var(--vsn-indigo)!importan
   .rv-header .nav-menu-group a,
   .rv-header-cta{transition:none!important}
 }
+
+/* 2026-09-28: Services page depth aligned to the reference service flow with VSN-owned content. */
+.services-reference-tech{background:#FFFFFF}
+.services-reference-tech .editorial-section-head,
+.services-reference-benefits .editorial-section-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,.62fr);gap:56px;align-items:end;margin-bottom:44px}
+.services-reference-tech .editorial-section-head p,
+.services-reference-benefits .editorial-section-head p{margin:0;color:#7E8083;max-width:620px}
+.services-tech-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));border-top:1px solid #3F4245;border-left:1px solid #3F4245}
+.services-tech-grid span{display:flex;align-items:center;justify-content:center;min-height:92px;padding:16px 10px;text-align:center;border-right:1px solid #3F4245;border-bottom:1px solid #3F4245;font-size:12px;font-weight:800;color:#3F4245;background:#FFFFFF;transition:background-color .22s ease,color .22s ease}
+.services-tech-grid span:hover{background:#000000;color:#FFFFFF}
+.services-reference-benefits{background:#000000;color:#FFFFFF}
+.services-reference-benefits .eyebrow{color:#5AC8D6!important}
+.services-reference-benefits .editorial-section-head p{color:#7E8083}
+.services-benefit-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid #3F4245}
+.services-benefit-grid article{min-height:290px;padding:30px 30px 34px;border-right:1px solid #3F4245}
+.services-benefit-grid article:last-child{border-right:0}
+.services-benefit-grid article>span{font-size:11px;color:#5AC8D6;font-weight:850}
+.services-benefit-grid h3{font-size:clamp(26px,2.4vw,36px);line-height:1.02;letter-spacing:-.045em;margin:72px 0 16px;color:#FFFFFF}
+.services-benefit-grid p{margin:0;color:#7E8083;font-size:14px;line-height:1.65}
+.services-reference-faq{background:#FFFFFF}
+.services-faq-layout{display:grid;grid-template-columns:minmax(280px,.68fr) minmax(0,1.32fr);gap:70px;align-items:start}
+.services-faq-intro{position:sticky;top:126px}
+.services-faq-intro p{color:#7E8083;max-width:520px;margin-bottom:26px}
+.services-faq-list{border-bottom:1px solid #3F4245}
+.services-faq-list details{border-top:1px solid #3F4245}
+.services-faq-list summary{list-style:none;display:grid;grid-template-columns:1fr 30px;align-items:center;gap:20px;padding:23px 0;cursor:pointer;font-size:clamp(18px,1.8vw,24px);font-weight:750;letter-spacing:-.025em}
+.services-faq-list summary::-webkit-details-marker{display:none}
+.services-faq-list summary b{font-size:28px;font-weight:300;text-align:center;transition:transform .28s var(--rv-ease),color .2s ease}
+.services-faq-list details[open] summary b{transform:rotate(45deg);color:#625BA8}
+.services-faq-list details p{margin:0;padding:0 48px 24px 0;color:#7E8083;max-width:760px}
+.services-reference-proof{background:#FFFFFF}
+.services-proof-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(340px,.78fr);gap:64px;align-items:start}
+.services-proof-layout .lead{max-width:700px}
+.services-proof-links{display:grid;border-top:1px solid #3F4245}
+.services-proof-links a{display:grid;gap:7px;padding:21px 0;border-bottom:1px solid #3F4245;color:#3F4245;transition:transform .22s var(--rv-ease),color .22s ease}
+.services-proof-links a:hover,.services-proof-links a:focus-visible{transform:translateX(5px);color:#625BA8}
+.services-proof-links span{font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:#7E8083}
+.services-proof-links strong{font-size:17px}
+@media(max-width:980px){
+ .services-reference-tech .editorial-section-head,
+ .services-reference-benefits .editorial-section-head,
+ .services-faq-layout,.services-proof-layout{grid-template-columns:1fr;gap:34px}
+ .services-tech-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+ .services-benefit-grid{grid-template-columns:1fr 1fr}
+ .services-benefit-grid article:nth-child(2){border-right:0}
+ .services-benefit-grid article:nth-child(3){border-top:1px solid #3F4245}
+ .services-faq-intro{position:relative;top:auto}
+}
+@media(max-width:620px){
+ .services-tech-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .services-tech-grid span{min-height:74px}
+ .services-benefit-grid{grid-template-columns:1fr}
+ .services-benefit-grid article{min-height:0;border-right:0;border-bottom:1px solid #3F4245;padding:26px 0}
+ .services-benefit-grid article:last-child{border-bottom:0}
+ .services-benefit-grid h3{margin-top:34px}
+ .services-faq-list summary{font-size:19px;padding:20px 0}
+ .services-faq-list details p{padding-right:18px}
+}
+@media(prefers-reduced-motion:reduce){
+ .services-tech-grid span,.services-faq-list summary b,.services-proof-links a{transition:none!important}
+}
