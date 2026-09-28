@@ -1,10 +1,10 @@
 repo: Vertex-Systems-Network/vsn-website
 updated: 2026-09-28
 phase: ritovex-inspired-visual-rebuild
-verified_main_sha: 510214a0eb5d545032662251226f10d93f8f8ec8
+verified_main_sha: 6bd81221b5613e0fdc427e751b8203032b436e09
 current_issue: null
-current_branch: fix/ritovex-mobile-header-seam-20260928
-current_milestone: ritovex-mobile-header-breakpoint-hardening
+current_branch: main
+current_milestone: ritovex-mobile-header-breakpoint-hardening-complete
 architecture: static-html-css-vanilla-js
 runtime_mode: file-direct-open
 implementation_complete: false
@@ -254,9 +254,9 @@ exact_logo_palette_merge_sha: 113c82e9ef655627f7abcdcee42eb1178478e547
 exact_logo_palette_merge_pr: 76
 main_visual_state: ritovex-corrective-rebuild-plus-exact-logo-palette
 
-latest_verified_main_run: 461
+latest_verified_main_run: 463
 latest_verified_main_status: passed
-latest_verified_main_sha: 510214a0eb5d545032662251226f10d93f8f8ec8
+latest_verified_main_sha: 6bd81221b5613e0fdc427e751b8203032b436e09
 stale_recovery_pr_74_status: closed-superseded
 
 homepage_blog_preview_percent: 100
@@ -271,3 +271,10 @@ mobile_header_escape_close: true
 mobile_header_desktop_transition_cleanup: true
 mobile_header_background_scroll_lock: true
 mobile_header_base_verified_run: 461
+
+mobile_header_merge_pr: 80
+mobile_header_merge_sha: 6bd81221b5613e0fdc427e751b8203032b436e09
+mobile_header_pr_run: 462
+mobile_header_pr_status: passed
+mobile_header_main_run: 463
+mobile_header_main_status: passed
