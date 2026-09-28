@@ -377,3 +377,8 @@ Rendered comparison showed that the reference Blog uses a dense three-column, th
 ## Detail-page rendered reference flow — 2026-09-29
 
 Live Ritovex single-blog and single-project pages use a text-first reading hierarchy before the large media stage. VSN now follows that geometry without copying unsupported claims: Blog detail opens with category, large title, summary and a factual VSN Editorial/date/read-time strip before the full-width image; Project detail opens with the verified product summary and factual type/platform/proof/status strip before full-width case-study media. Existing long-form VSN article/project content and public proof remain intact.
+
+
+## Web Development single-service reference spine — 2026-09-29
+
+The representative Web Development & E-commerce detail page now follows the live Ritovex single-service information hierarchy more closely: large service title and summary, a dedicated full-width service image, a concise service overview, concrete included-work groups, then VSN's deeper platform, commerce, architecture, delivery, ownership, project-brief and FAQ content. The project brief remains before the FAQ, and the public page does not expose internal template/reference notes.

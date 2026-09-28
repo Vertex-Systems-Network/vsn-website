@@ -459,3 +459,13 @@ project_detail_reference_flow: title-summary-factual-metadata-fullwidth-media-ca
 detail_reference_truthfulness: no-fake-author-no-fake-client-results-public-proof-preserved
 detail_reference_source_review: live-ritovex-blog-single-and-project-single
 next_manual_reference_scope: [404, coming-soon, representative-service-detail]
+
+
+service_single_reference_batch_status: implemented-in-review
+service_single_reference_page: web-development-ecommerce
+service_single_reference_flow: title-summary-fullwidth-media-overview-included-work-extended-vsn-content-dark-vision-brief-faq
+service_single_form_before_faq: true
+service_single_public_reference_notes_exposed: false
+utility_reference_audit_404: existing-simple-utility-composition-preserved
+utility_reference_audit_coming_soon: no-exact-ritovex-template-page-preserve-vsn-utility-shell
+next_manual_reference_scope: remaining-service-detail-pages-after-representative-certification
