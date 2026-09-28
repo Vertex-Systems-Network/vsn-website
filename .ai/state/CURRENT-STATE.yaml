@@ -3,8 +3,8 @@ updated: 2026-09-28
 phase: ritovex-inspired-visual-rebuild
 verified_main_sha: 6bd81221b5613e0fdc427e751b8203032b436e09
 current_issue: null
-current_branch: main
-current_milestone: ritovex-mobile-header-breakpoint-hardening-complete
+current_branch: fix/ritovex-footer-contrast-20260928
+current_milestone: ritovex-footer-contrast-repair
 architecture: static-html-css-vanilla-js
 runtime_mode: file-direct-open
 implementation_complete: false
@@ -278,3 +278,8 @@ mobile_header_pr_run: 462
 mobile_header_pr_status: passed
 mobile_header_main_run: 463
 mobile_header_main_status: passed
+
+footer_wordmark_contrast_repair_percent: 100
+footer_wordmark_color: '#3F4245'
+footer_separator_color: '#3F4245'
+footer_black_on_black_regression_guard: true
