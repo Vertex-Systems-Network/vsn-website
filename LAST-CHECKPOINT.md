@@ -393,4 +393,11 @@ Authority Profile and site-wide motion merged in PR #64 (`7e544c9f58f703cabb0162
 - Foreign hex/RGB colors after normalization: 0.
 - Added `scripts/check_logo_palette.py` as a permanent CI guard.
 - Static Integrity run #450 passed palette inspection, palette validation, static validation, motion regression and Ritovex fidelity regression.
-- Next action: exact-final-head CI, then merge PR #76 and verify main.
+- Final-head Static Integrity run #453 passed; PR #76 merged to main as `113c82e9ef655627f7abcdcee42eb1178478e547`.
+
+## Exact palette main reconciliation
+
+- PR #76 merged to main as `113c82e9ef655627f7abcdcee42eb1178478e547`.
+- Exact-final-head Static Integrity run #453 passed all five checks: logo inspection, exact palette validation, static website validation, motion regression and Ritovex fidelity regression.
+- Main CSS palette is restricted to the committed VSN logo colors plus white; foreign CSS colors: 0.
+- Website code/design is unchanged by this reconciliation; only persistent project state was corrected.
