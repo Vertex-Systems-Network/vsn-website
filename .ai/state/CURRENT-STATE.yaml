@@ -440,3 +440,7 @@ about_hero_media_reference_order: hero-media-metrics-priority
 about_hero_media_asset: vsn-human-business.webp
 about_priority_desktop_order: media-copy
 about_priority_mobile_order: copy-media
+
+projects_featured_metadata_position: image-bottom-overlay
+projects_truthfulness_note_position: after-featured-grid
+projects_featured_grid_reference_order: heading-cards-note
