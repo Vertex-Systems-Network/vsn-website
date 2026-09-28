@@ -360,3 +360,7 @@ A dedicated Playwright lane now renders the remaining 21 service, company/suppor
 ## Full-width footer wordmark parity — 2026-09-29
 
 Rendered screenshot comparison showed that the three-letter VSN footer mark was materially smaller than the reference template's oversized footer wordmark. The footer now scales VSN to fill the available width on desktop and mobile, keeps the existing black/gray palette, preserves public-profile content, and adds the reference-style separator above the legal metadata row.
+
+## About hero/media rendered parity — 2026-09-29
+
+Rendered comparison against the live About reference showed that VSN moved directly from hero copy to proof cards, while the reference places a wide human visual between them. About now follows hero → wide VSN human image → proof cards → priority block. The priority split remains image-left/copy-right on desktop and changes to copy-first/image-second on mobile, matching the reference reading order without inventing metrics.
