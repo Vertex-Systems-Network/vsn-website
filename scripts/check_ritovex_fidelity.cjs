@@ -172,7 +172,6 @@ assert.match(app,/menuFocusables/,'mobile navigation missing focus containment')
 assert.match(app,/e\.key==='Tab'/,'mobile navigation missing keyboard focus loop');
 assert.match(app,/mobileNav\.addEventListener\?\.\('change',syncBreakpoint\)/,'navigation must clean up when crossing to desktop');
 
-assert.match(fidelityJs,/IntersectionObserver/);
 assert.match(fidelityJs,/matchMedia\?\.\('\(min-width: 981px\)'\)/,'desktop fidelity hover interactions must start at 981px');
 assert.match(fidelityJs,/focusin/,'desktop mega-menu must open from keyboard focus');
 assert.match(fidelityJs,/focusout/,'desktop mega-menu must close when keyboard focus leaves');
@@ -183,10 +182,12 @@ assert.match(fidelityJs,/Request updates →/,'newsletter must describe a reques
 assert.match(fidelityJs,/mailto:info@vertexsystemsnetwork\.com/,'static newsletter request must route through an explicit email draft');
 assert.match(fidelityJs,/not stored on this static page/,'newsletter must disclose static-site storage behavior');
 assert.doesNotMatch(fidelityJs,/btn\.textContent='Thank you'/,'newsletter must not claim false subscription success');
-assert.match(fidelityJs,/unobserve/);
-assert.match(motion,/const fidelityMode=/);
-assert.match(motion,/if\(fidelityMode\)/);
 assert.doesNotMatch(fidelityJs,/pointermove/);
 assert.doesNotMatch(fidelityJs,/\.animate\(/);
+assert.match(motion,/IntersectionObserver/,'motion.js must own viewport reveals');
+assert.match(motion,/observer\.unobserve/,'motion.js reveal must remain one-shot');
+assert.doesNotMatch(fidelityJs,/IntersectionObserver/,'fidelity JS must not own a second viewport reveal observer');
+assert.doesNotMatch(fidelityJs,/rv-fidelity-reveal/,'fidelity JS must not re-hide rendered sections');
+assert.doesNotMatch(fidelity,/\.rv-fidelity-reveal/,'fidelity CSS must not contain a second hidden reveal state');
 
 console.log('Ritovex fidelity passed: shell, 980px mobile navigation, palette lock, direct imagery, service FAQs/forms, Google Map, distinct editorial/project templates, 404 and single reveal owner are intact.');
