@@ -268,3 +268,9 @@ The website palette is now derived from the committed VSN logo itself instead of
 - White: `#FFFFFF`
 
 All eight active CSS files were normalized to these colors or alpha variants of them. `scripts/check_logo_palette.py` now derives the logo colors from `assets/vertex-logo.png` and fails CI if any foreign hex/RGB color enters active CSS. Static Integrity run #450 passed the logo inspector, exact palette validator, static-site validator, motion regression and Ritovex fidelity regression on the same PR head.
+
+## Repository reconciliation — 2026-09-28
+
+The corrective Ritovex rebuild and exact VSN logo palette are merged on `main`. The latest verified main commit is `63387d5d186ca2d1c5326d4c686778b2312e0d4b`; Static Integrity run #457 passed on that exact commit. Draft recovery PR #74 was closed as superseded by merged PRs #75, #76 and #77, so it is no longer treated as active development.
+
+Code-side visual requirements currently represented in the repository include the Ritovex-aligned shell, VSN-only exact logo palette, restored service forms and FAQs, direct WebP imagery, Google Maps on Contact, separated Blog/Projects and detail layouts, and single-owner reveal animation behavior. Production publication and qualified Pakistan legal/corporate review remain external release steps rather than unfinished static-site implementation.
