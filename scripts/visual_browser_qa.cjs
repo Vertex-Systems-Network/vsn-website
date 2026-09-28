@@ -116,9 +116,11 @@ async function collectMetrics(page,local){
       for(const t of targets){
         const context=await browser.newContext({viewport:{width:vp.width,height:vp.height},deviceScaleFactor:1});
         const page=await context.newPage();
-        const consoleErrors=[];const pageErrors=[];
-        page.on('console',m=>{if(m.type()==='error')consoleErrors.push(m.text())});
+        const consoleErrors=[];const pageErrors=[];const badResponses=[];const requestFailures=[];
+        page.on('console',m=>{if(m.type()==='error')consoleErrors.push({text:m.text(),location:m.location()})});
         page.on('pageerror',e=>pageErrors.push(String(e)));
+        page.on('response',r=>{if(r.status()>=400)badResponses.push({status:r.status(),url:r.url()})});
+        page.on('requestfailed',r=>requestFailures.push({url:r.url(),failure:r.failure()?.errorText||'unknown'}));
         let response=null;let navigationError=null;
         try{response=await page.goto(t.url,{waitUntil:'domcontentloaded',timeout:60000})}catch(e){navigationError=String(e)}
         if(!navigationError)await settle(page);
@@ -126,7 +128,7 @@ async function collectMetrics(page,local){
         if(!navigationError)await page.screenshot({path:path.join(pageOut,t.name+'.png'),fullPage:true});
         report.pages[p.key].push({
           target:t.name,url:t.url,width:vp.width,height:vp.height,local:t.local,
-          status:response?.status?.()||null,navigationError,metrics,consoleErrors,pageErrors
+          status:response?.status?.()||null,navigationError,metrics,consoleErrors,pageErrors,badResponses,requestFailures
         });
         await context.close();
       }
