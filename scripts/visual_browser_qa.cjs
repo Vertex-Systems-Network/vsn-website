@@ -15,13 +15,17 @@ const targets = [
 
 async function settle(page){
   await page.waitForTimeout(1200);
+  await page.evaluate(()=>{
+    document.documentElement.style.scrollBehavior='auto';
+    document.querySelectorAll('img[loading="lazy"]').forEach(img=>img.loading='eager');
+  });
   const total = await page.evaluate(()=>Math.max(document.body.scrollHeight,document.documentElement.scrollHeight));
-  for(let y=0;y<total;y+=650){
+  for(let y=0;y<total;y+=480){
     await page.evaluate(v=>window.scrollTo(0,v),y);
-    await page.waitForTimeout(90);
+    await page.waitForTimeout(110);
   }
   await page.evaluate(()=>window.scrollTo(0,0));
-  await page.waitForTimeout(500);
+  await page.waitForTimeout(700);
 }
 
 (async()=>{
@@ -45,7 +49,10 @@ async function settle(page){
       sectionCount:document.querySelectorAll('main section').length,
       h1:[...document.querySelectorAll('h1')].map(x=>x.textContent.trim()),
       headerHeight:document.querySelector('header')?.getBoundingClientRect().height||0,
-      firstSectionTop:document.querySelector('main section')?.getBoundingClientRect().top||0
+      firstSectionTop:document.querySelector('main section')?.getBoundingClientRect().top||0,
+      hiddenVisibleArea:[...document.querySelectorAll('main section > .container, .editorial-card, .home-showcase-card, .home-process-grid article, .service-card')]
+        .filter(el=>{const r=el.getBoundingClientRect(),s=getComputedStyle(el);return r.width>0&&r.height>0&&Number(s.opacity)<0.1})
+        .map(el=>({className:el.className,opacity:getComputedStyle(el).opacity,height:Math.round(el.getBoundingClientRect().height)}))
     }));
     await page.screenshot({path:path.join(outDir,t.name+'.png'),fullPage:true});
     report.targets.push({...t,status:response?.status?.()||null,metrics,consoleErrors,pageErrors});
