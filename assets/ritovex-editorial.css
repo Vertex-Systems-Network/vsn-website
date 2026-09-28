@@ -169,3 +169,26 @@
  .project-more-proof{margin-top:54px}
  .project-more-proof-head,.project-repo-row{grid-template-columns:1fr;gap:8px}
 }
+
+/* 2026-09-28: rendered project-detail mobile overflow repair. */
+@media(max-width:700px){
+  .project-detail-page .editorial-hero-grid{
+    grid-template-columns:minmax(0,1fr)!important;
+    width:100%;
+  }
+  .project-detail-page .editorial-hero-grid>*{
+    min-width:0!important;
+    width:100%;
+    max-width:100%;
+  }
+  .project-detail-page .editorial-hero-visual,
+  .project-detail-page .editorial-hero-visual img{
+    width:100%!important;
+    max-width:100%!important;
+    min-width:0!important;
+  }
+  .project-detail-page .editorial-hero-copy .h1{
+    width:100%;
+    max-width:100%;
+  }
+}
