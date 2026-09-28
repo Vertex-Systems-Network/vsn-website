@@ -148,7 +148,7 @@ def main() -> int:
         if not footer_links or linkedin_url not in footer_links.group():
             errors.append(f"{source}: LinkedIn missing from shared footer profiles")
         if source == "contact.html":
-            for required in ('class="contact-map"', 'https://www.google.com/maps?', 'class="contact-public-links"'):
+            for required in ('class="contact-map"', 'https://maps.google.com/maps?', 'class="contact-public-links"'):
                 if required not in text:
                     errors.append(f"contact.html: missing {required}")
         if REMOTE_LOGO_URL in text:
