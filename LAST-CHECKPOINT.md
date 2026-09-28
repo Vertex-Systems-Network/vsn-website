@@ -385,3 +385,12 @@ Authority Profile and site-wide motion merged in PR #64 (`7e544c9f58f703cabb0162
 - Ritovex fidelity regression: passed.
 - About legacy fragment targets restored so existing Home links remain valid.
 - PR #75 remains the corrective merge vehicle; next action is exact-final-head verification and merge.
+
+## Exact logo palette checkpoint
+
+- Read the committed VSN logo directly in CI and extracted six opaque logo colors: `#3F4245`, `#7E8083`, `#625BA8`, `#5AC8D6`, `#6188C6`, `#000000`; white is retained as the logo/background neutral.
+- Normalized all eight active CSS files to the exact logo palette or alpha variants.
+- Foreign hex/RGB colors after normalization: 0.
+- Added `scripts/check_logo_palette.py` as a permanent CI guard.
+- Static Integrity run #450 passed palette inspection, palette validation, static validation, motion regression and Ritovex fidelity regression.
+- Next action: exact-final-head CI, then merge PR #76 and verify main.
