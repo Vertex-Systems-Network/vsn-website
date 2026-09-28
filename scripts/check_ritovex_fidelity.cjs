@@ -100,6 +100,11 @@ assert.match(fidelity,/--vsn-charcoal:#3F4245/i);
 assert.match(fidelity,/--vsn-gray:#7E8083/i);
 assert.match(fidelity,/--green:var\(--vsn-cyan\)/,'legacy green must map to VSN palette');
 assert.match(fidelity,/\.rv-header/);
+assert.match(fidelity,/@media\(min-width:981px\)/,'desktop fidelity layer missing 981px shell');
+assert.match(fidelity,/border-top:2px solid var\(--vsn-cyan\)!important/,'desktop mega-menu missing VSN accent edge');
+assert.match(fidelity,/\.rv-header \.nav-dropdown\[open\]>summary:before\{transform:scaleX\(1\)\}/,'desktop open dropdown missing active underline');
+assert.match(fidelity,/transform:translateX\(4px\)/,'desktop mega-menu items missing restrained hover travel');
+assert.match(fidelity,/\.home-page \.section\{[\s\S]*padding-top:clamp\(104px,7\.7vw,124px\)!important/,'desktop homepage section rhythm not normalized');
 assert.match(fidelity,/\.rv-footer/);
 assert.match(fidelity,/position:fixed!important;[\s\S]*inset:68px 0 0 0!important/,'mobile navigation must use the full-height reference shell');
 assert.match(fidelity,/\.rv-footer-grid\{grid-template-columns:1fr!important/,'small-screen footer must collapse to one clear column');
@@ -126,6 +131,10 @@ assert.match(app,/mobileNav\.addEventListener\?\.\('change',syncBreakpoint\)/,'n
 
 assert.match(fidelityJs,/IntersectionObserver/);
 assert.match(fidelityJs,/matchMedia\?\.\('\(min-width: 981px\)'\)/,'desktop fidelity hover interactions must start at 981px');
+assert.match(fidelityJs,/focusin/,'desktop mega-menu must open from keyboard focus');
+assert.match(fidelityJs,/focusout/,'desktop mega-menu must close when keyboard focus leaves');
+assert.match(fidelityJs,/setTimeout\(openMenu,55\)/,'desktop mega-menu missing hover-intent opening delay');
+assert.match(fidelityJs,/setTimeout\(\(\)=>\{d\.open=false\},160\)/,'desktop mega-menu missing forgiving close delay');
 assert.doesNotMatch(fidelityJs,/innerWidth>900/,'legacy 900px desktop hover seam must stay removed');
 assert.match(fidelityJs,/Request updates →/,'newsletter must describe a request, not a completed subscription');
 assert.match(fidelityJs,/mailto:info@vertexsystemsnetwork\.com/,'static newsletter request must route through an explicit email draft');
