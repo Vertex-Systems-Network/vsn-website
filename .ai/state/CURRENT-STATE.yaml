@@ -298,3 +298,9 @@ state_guard_pr_run: 468
 state_guard_pr_status: passed
 state_guard_main_run: 469
 state_guard_main_status: passed
+
+interaction_breakpoint_hardening_percent: 100
+desktop_interaction_breakpoint: 981px
+newsletter_static_truthfulness: request-opens-email-draft
+newsletter_false_success_removed: true
+reduced_motion_interactions_preserved: true

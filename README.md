@@ -294,3 +294,7 @@ The Ritovex footer audit found that the oversized `VSN` wordmark and public-prof
 The resume index had accumulated contradictory historical anchors, including duplicate HTML-page counts and outdated latest PR/CI values. The current state is normalized to 32 HTML pages, PR #82 and verified main run #467. CI now runs `scripts/check_state_consistency.cjs`, which rejects duplicate critical state keys, a page-count mismatch, temporary-branch residue in the main resume index, and disagreement between the verified main SHA and CI run anchors.
 
 The repository state consistency guard merged in PR #83 as `3d36b0f1575a83ff26ad1aa3c68eb5f96be0f50b`; PR run #468 and main run #469 both passed. The resume index intentionally anchors the latest substantive main milestone and excludes metadata-only reconciliation commits, preventing self-referential checkpoint churn.
+
+## Interaction boundary and newsletter truthfulness — 2026-09-28
+
+The fidelity interaction layer now uses the same responsive boundary as the navigation shell: desktop hover dropdown behavior starts at 981px, eliminating the remaining 901–980px interaction seam. The static footer newsletter no longer displays a fake `Thank you` success without storing or sending an address. It now labels the action as an updates request, discloses that the page stores nothing, and opens a prefilled email request to VSN. The newsletter handler also remains active when reduced motion is enabled because reveal fallback no longer exits the interaction script early.

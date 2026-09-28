@@ -116,6 +116,12 @@ assert.match(app,/e\.key==='Escape'/,'mobile navigation must close on Escape');
 assert.match(app,/mobileNav\.addEventListener\?\.\('change',syncBreakpoint\)/,'navigation must clean up when crossing to desktop');
 
 assert.match(fidelityJs,/IntersectionObserver/);
+assert.match(fidelityJs,/matchMedia\?\.\('\(min-width: 981px\)'\)/,'desktop fidelity hover interactions must start at 981px');
+assert.doesNotMatch(fidelityJs,/innerWidth>900/,'legacy 900px desktop hover seam must stay removed');
+assert.match(fidelityJs,/Request updates →/,'newsletter must describe a request, not a completed subscription');
+assert.match(fidelityJs,/mailto:info@vertexsystemsnetwork\.com/,'static newsletter request must route through an explicit email draft');
+assert.match(fidelityJs,/not stored on this static page/,'newsletter must disclose static-site storage behavior');
+assert.doesNotMatch(fidelityJs,/btn\.textContent='Thank you'/,'newsletter must not claim false subscription success');
 assert.match(fidelityJs,/unobserve/);
 assert.match(motion,/const fidelityMode=/);
 assert.match(motion,/if\(fidelityMode\)/);
