@@ -382,3 +382,8 @@ Live Ritovex single-blog and single-project pages use a text-first reading hiera
 ## Web Development single-service reference spine — 2026-09-29
 
 The representative Web Development & E-commerce detail page now follows the live Ritovex single-service information hierarchy more closely: large service title and summary, a dedicated full-width service image, a concise service overview, concrete included-work groups, then VSN's deeper platform, commerce, architecture, delivery, ownership, project-brief and FAQ content. The project brief remains before the FAQ, and the public page does not expose internal template/reference notes.
+
+
+## Service-detail reference propagation — 2026-09-29
+
+After the Web Development representative page passed Static Integrity and both rendered-browser QA workflows, the same single-service hierarchy was propagated across the remaining service details. Each page now leads with a text-first service hero, a dedicated full-width human image, a concise service overview, then its existing service-specific capability/content stage. Long VSN content, service enquiry forms and FAQ ordering remain intact. The Business Websites page also moves its primary H1 into the hero so its document and visual hierarchy matches the rest of the service family.
