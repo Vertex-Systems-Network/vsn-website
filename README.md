@@ -328,3 +328,7 @@ Blog and Projects now use intentionally different listing systems. Blog leads wi
 ## Contact final parity — 2026-09-28
 
 The Contact page now opens with three explicit routes—structured project brief, email and WhatsApp—and adds a three-stage explanation of what happens after first contact. The existing WhatsApp-generated static brief, direct contact card, public-profile links and Google Map remain intact. This gives the page a clearer business-conversion rhythm without pretending that the static form submits to a backend.
+
+## Page-by-page parity batch complete — 2026-09-28
+
+The current substantive website main (`c2b6794cc09a3101aae5ba2f023bd599b14e2c91`) completes the planned Home → Services → About → Blog/Projects → Contact parity pass. Static Integrity run #490 passed on that exact code state, including palette validation, static-site validation, repository-state validation, motion checks and Ritovex fidelity checks. The repository remains direct-file HTML/CSS/vanilla-JS. A final rendered-browser comparison against the owner's recordings remains a separate visual QA activity and is not represented as completed by these static checks.
