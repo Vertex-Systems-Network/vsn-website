@@ -300,3 +300,7 @@ The repository state consistency guard merged in PR #83 as `3d36b0f1575a83ff26ad
 The fidelity interaction layer now uses the same responsive boundary as the navigation shell: desktop hover dropdown behavior starts at 981px, eliminating the remaining 901–980px interaction seam. The static footer newsletter no longer displays a fake `Thank you` success without storing or sending an address. It now labels the action as an updates request, discloses that the page stores nothing, and opens a prefilled email request to VSN. The newsletter handler also remains active when reduced motion is enabled because reveal fallback no longer exits the interaction script early.
 
 Interaction/newsletter hardening merged in PR #85 as `c90ff84f2182f378ec5c4a2746901941b14624ea`; Static Integrity passed on PR run #472 and merged-main run #473.
+
+## Sitewide actionable contact shell — 2026-09-28
+
+All 32 HTML pages now expose the shared header email/phone and footer phone/email as direct `mailto:` and `tel:` links instead of plain text. The legal pages receive the same contact behavior without changing their parent-relative local navigation. Ritovex fidelity CI now verifies clickable header/footer contact actions on every HTML page and rejects the old plain-text top-contact shell.
