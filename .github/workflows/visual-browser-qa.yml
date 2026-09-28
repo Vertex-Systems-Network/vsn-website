@@ -4,6 +4,11 @@ on:
   pull_request:
     paths:
       - 'index.html'
+      - 'services.html'
+      - 'about.html'
+      - 'blog.html'
+      - 'projects.html'
+      - 'contact.html'
       - 'assets/**'
       - 'scripts/visual_browser_qa.cjs'
       - '.github/workflows/visual-browser-qa.yml'
@@ -13,9 +18,9 @@ permissions:
   contents: read
 
 jobs:
-  home-render:
+  rendered-pages:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 25
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -25,12 +30,12 @@ jobs:
         run: |
           npm install --no-save playwright@1.55.0
           npx playwright install --with-deps chromium
-      - name: Render VSN and live Ritovex
+      - name: Render VSN and live Ritovex pages
         run: node scripts/visual_browser_qa.cjs
       - name: Upload rendered screenshots
         uses: actions/upload-artifact@v4
         with:
-          name: visual-browser-home
-          path: qa-artifacts/home
+          name: visual-browser-pages
+          path: qa-artifacts/pages
           if-no-files-found: error
           retention-days: 7
