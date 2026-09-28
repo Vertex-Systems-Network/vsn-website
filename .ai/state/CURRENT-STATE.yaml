@@ -311,3 +311,10 @@ interaction_pr_run: 472
 interaction_pr_status: passed
 interaction_main_run: 473
 interaction_main_status: passed
+
+sitewide_actionable_contact_shell_percent: 100
+sitewide_actionable_contact_pages: 32
+header_email_action: mailto
+header_phone_action: tel
+footer_email_action: mailto
+footer_phone_action: tel
