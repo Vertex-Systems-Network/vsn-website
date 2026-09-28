@@ -192,3 +192,30 @@
     max-width:100%;
   }
 }
+
+/* 2026-09-28: force project-detail mobile hero into intrinsic-safe block flow. */
+@media(max-width:700px){
+  .project-detail-page .editorial-hero-grid{
+    display:block!important;
+    width:auto!important;
+    max-width:100%!important;
+  }
+  .project-detail-page .editorial-hero-copy,
+  .project-detail-page .editorial-hero-visual{
+    display:block;
+    width:auto!important;
+    max-width:100%!important;
+    min-width:0!important;
+  }
+  .project-detail-page .editorial-hero-visual{
+    margin:34px 0 0!important;
+  }
+  .project-detail-page .editorial-hero-visual img{
+    display:block;
+    width:100%!important;
+    max-width:100%!important;
+    height:350px!important;
+    min-height:350px!important;
+    object-fit:cover;
+  }
+}
