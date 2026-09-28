@@ -372,3 +372,8 @@ Rendered comparison showed that the Ritovex portfolio moves directly from its ce
 ## Blog 3×3 rendered parity — 2026-09-29
 
 Rendered comparison showed that the reference Blog uses a dense three-column, three-row first listing rhythm. VSN now presents one published article plus eight explicitly labelled upcoming topics in the same nine-card density. Category metadata uses a compact pill while publication status remains visible, so planned topics are not misrepresented as published posts.
+
+
+## Detail-page rendered reference flow — 2026-09-29
+
+Live Ritovex single-blog and single-project pages use a text-first reading hierarchy before the large media stage. VSN now follows that geometry without copying unsupported claims: Blog detail opens with category, large title, summary and a factual VSN Editorial/date/read-time strip before the full-width image; Project detail opens with the verified product summary and factual type/platform/proof/status strip before full-width case-study media. Existing long-form VSN article/project content and public proof remain intact.

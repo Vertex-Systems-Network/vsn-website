@@ -236,3 +236,13 @@ assert.doesNotMatch(fidelityJs,/rv-fidelity-reveal/,'fidelity JS must not re-hid
 assert.doesNotMatch(fidelity,/\.rv-fidelity-reveal/,'fidelity CSS must not contain a second hidden reveal state');
 
 console.log('Ritovex fidelity passed: shell, 980px mobile navigation, palette lock, direct imagery, service FAQs/forms, Google Map, distinct editorial/project templates, 404 and single reveal owner are intact.');
+
+
+assert.match(blogDetail,/blog-detail-reference-hero/,'Blog detail must use the reference text-first hero');
+assert.match(blogDetail,/blog-detail-publish-strip/,'Blog detail must show publisher/date/read-time strip before media');
+assert.match(blogDetail,/blog-detail-hero-media/,'Blog detail must use a full-width media stage');
+assert.match(projectDetail,/project-detail-reference-hero/,'Project detail must use the reference text-first hero');
+assert.match(projectDetail,/project-detail-reference-facts/,'Project detail must keep factual project metadata under the hero copy');
+assert.match(projectDetail,/project-detail-reference-media/,'Project detail must use a full-width case-study media stage');
+assert.match(editorialCss,/\.blog-detail-publish-strip\{[\s\S]*grid-template-columns:repeat\(3/,'Blog detail publish strip must use a three-column desktop rhythm');
+assert.match(editorialCss,/\.project-detail-reference-facts\{[\s\S]*border-top-color:#3F4245/,'Project detail factual strip must remain visually legible');
