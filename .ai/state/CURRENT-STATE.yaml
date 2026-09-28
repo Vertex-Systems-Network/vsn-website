@@ -1,10 +1,10 @@
 repo: Vertex-Systems-Network/vsn-website
 updated: 2026-09-26
 phase: ritovex-inspired-visual-rebuild
-verified_main_sha: 7e544c9f58f703cabb0162f11e68cf48ebc8b185
+verified_main_sha: 63387d5d186ca2d1c5326d4c686778b2312e0d4b
 current_issue: null
 current_branch: main
-current_milestone: ritovex-fidelity-corrective-rebuild-complete
+current_milestone: ritovex-corrective-rebuild-exact-palette-verified-main
 architecture: static-html-css-vanilla-js
 runtime_mode: file-direct-open
 implementation_complete: false
@@ -244,12 +244,17 @@ exact_logo_palette_percent: 100
 exact_logo_palette: [#5AC8D6, #625BA8, #6188C6, #3F4245, #7E8083, #000000, #FFFFFF]
 exact_logo_palette_css_files_checked: 8
 exact_logo_palette_foreign_colors: 0
-exact_logo_palette_ci_run: 453
-exact_logo_palette_ci_status: passed-final-head
+exact_logo_palette_ci_run: 457
+exact_logo_palette_ci_status: passed-on-main
 exact_logo_palette_pr: 76
 
-exact_logo_palette_final_head_run: 453
-exact_logo_palette_final_head_status: passed
+exact_logo_palette_final_head_run: 457
+exact_logo_palette_final_head_status: passed-on-main
 exact_logo_palette_merge_sha: 113c82e9ef655627f7abcdcee42eb1178478e547
 exact_logo_palette_merge_pr: 76
 main_visual_state: ritovex-corrective-rebuild-plus-exact-logo-palette
+
+latest_verified_main_run: 457
+latest_verified_main_status: passed
+latest_verified_main_sha: 63387d5d186ca2d1c5326d4c686778b2312e0d4b
+stale_recovery_pr_74_status: closed-superseded
