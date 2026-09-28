@@ -1,7 +1,7 @@
 const { chromium } = require('playwright');
 const fs = require('node:fs');
 const path = require('node:path');
-const { pathToFileURL } = require('node:url');
+const http = require('node:http');
 
 const outDir = path.resolve('qa-artifacts/pages');
 fs.mkdirSync(outDir,{recursive:true});
@@ -17,6 +17,30 @@ const viewports = [
   {name:'desktop',width:1440,height:900},
   {name:'mobile',width:390,height:844}
 ];
+
+function contentType(file){
+  const ext=path.extname(file).toLowerCase();
+  return ({'.html':'text/html; charset=utf-8','.css':'text/css; charset=utf-8','.js':'text/javascript; charset=utf-8','.json':'application/json; charset=utf-8','.png':'image/png','.jpg':'image/jpeg','.jpeg':'image/jpeg','.webp':'image/webp','.svg':'image/svg+xml','.ico':'image/x-icon','.txt':'text/plain; charset=utf-8'}[ext]||'application/octet-stream');
+}
+
+function startStaticServer(){
+  const root=path.resolve('.');
+  const server=http.createServer((req,res)=>{
+    try{
+      const raw=decodeURIComponent((req.url||'/').split('?')[0]);
+      const rel=raw==='/'?'index.html':raw.replace(/^\/+/, '');
+      const file=path.resolve(root,rel);
+      if(!file.startsWith(root+path.sep)&&file!==root){res.writeHead(403);res.end('Forbidden');return}
+      if(!fs.existsSync(file)||!fs.statSync(file).isFile()){res.writeHead(404);res.end('Not found');return}
+      res.writeHead(200,{'Content-Type':contentType(file),'Cache-Control':'no-store'});
+      fs.createReadStream(file).pipe(res);
+    }catch(e){res.writeHead(500);res.end('Server error')}
+  });
+  return new Promise((resolve,reject)=>{
+    server.once('error',reject);
+    server.listen(4173,'127.0.0.1',()=>resolve(server));
+  });
+}
 
 async function settle(page){
   await page.waitForTimeout(1200);
@@ -102,15 +126,16 @@ async function collectMetrics(page,local){
 }
 
 (async()=>{
-  const browser=await chromium.launch({headless:true,args:['--allow-file-access-from-files']});
-  const report={generatedAt:new Date().toISOString(),pages:{}};
+  const server=await startStaticServer();
+  const browser=await chromium.launch({headless:true});
+  const report={generatedAt:new Date().toISOString(),localBaseUrl:'http://127.0.0.1:4173/',pages:{}};
   for(const p of pages){
     const pageOut=path.join(outDir,p.key);
     fs.mkdirSync(pageOut,{recursive:true});
     report.pages[p.key]=[];
     for(const vp of viewports){
       const targets=[
-        {name:'vsn-'+vp.name,url:pathToFileURL(path.resolve(p.local)).href,local:true},
+        {name:'vsn-'+vp.name,url:'http://127.0.0.1:4173/'+p.local,local:true},
         {name:'ritovex-'+vp.name,url:p.reference,local:false}
       ];
       for(const t of targets){
@@ -137,4 +162,5 @@ async function collectMetrics(page,local){
   fs.writeFileSync(path.join(outDir,'report.json'),JSON.stringify(report,null,2));
   console.log(JSON.stringify(report,null,2));
   await browser.close();
+  await new Promise(resolve=>server.close(resolve));
 })().catch(e=>{console.error(e);process.exit(1)});
