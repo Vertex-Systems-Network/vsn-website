@@ -192,6 +192,9 @@ assert.match(editorialCss,/\.project-proof-grid\{grid-template-columns:repeat\(2
 assert.match(editorialCss,/\.blog-featured-article/,'blog feature styling missing');
 assert.match(editorialCss,/\.project-proof-grid\{grid-template-columns:repeat\(2/,'projects portfolio must use a distinct two-column desktop grid');
 assert.match(editorialCss,/\.projects-proof-note/,'projects truthfulness note styling missing');
+assert.match(editorialCss,/\.project-detail-page \.editorial-hero-grid\{[\s\S]*grid-template-columns:minmax\(0,1fr\)!important/,'project detail mobile hero must stay inside viewport');
+assert.match(editorialCss,/\.project-detail-page \.editorial-hero-visual,[\s\S]*max-width:100%!important/,'project detail mobile visual must be width-bounded');
+assert.match(editorialCss,/\.project-detail-page \.editorial-hero-grid\{[\s\S]*display:block!important/,'project detail mobile hero must use block flow');
 
 assert.match(fidelity,/@media\(max-width:980px\)\{\s*\.rv-topline\{display:none\}/,'Ritovex mobile shell must align to the shared 980px nav breakpoint');
 assert.match(fidelity,/html\.nav-open,html\.nav-open body\{overflow:hidden\}/,'mobile menu must lock page scroll while open');

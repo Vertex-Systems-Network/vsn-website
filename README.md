@@ -348,3 +348,7 @@ This screenshot-led pass moves the two remaining primary pages materially closer
 ### Services + Contact rendered certification
 
 PR #100 passed Static Integrity run #529 and Visual Browser QA run #33 on tested head `623f151e9deec673031720a6b3ff025d5d5a01c9`, then merged as `8a0041b5ff83f15d8e9fd427383485afe1b0c304`. Post-merge Static Integrity run #530 passed on that exact main commit. The next browser-QA scope moves to service-detail, Blog detail, Project detail and utility pages rather than repeating the primary-page checks.
+
+## Detail and utility rendered browser QA — 2026-09-28
+
+Playwright now renders Web Development service detail, Blog detail, Project detail, 404 and Coming Soon at 1440×900 and 390×844, with live Ritovex comparison routes where available. Visual Browser QA run #36 passed after fixing a real mobile overflow on the Project detail hero; Static Integrity run #535 also passed on the tested head. The workflow now fails on local navigation/page errors, horizontal overflow, missing or suspicious human imagery, hidden post-scroll content, missing H1s and mobile-navigation state regressions. Artifact `visual-browser-pages` stores the screenshots and machine-readable report for seven days.

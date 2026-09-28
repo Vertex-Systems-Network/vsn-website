@@ -11,7 +11,12 @@ const pages = [
   {key:'about', local:'about.html', reference:'https://ritovex.webflow.io/template-pages/about-us'},
   {key:'blog', local:'blog.html', reference:'https://ritovex.webflow.io/template-pages/blog'},
   {key:'projects', local:'projects.html', reference:'https://ritovex.webflow.io/template-pages/portfolio'},
-  {key:'contact', local:'contact.html', reference:'https://ritovex.webflow.io/template-pages/contact-us'}
+  {key:'contact', local:'contact.html', reference:'https://ritovex.webflow.io/template-pages/contact-us'},
+  {key:'service-detail', local:'web-development-ecommerce.html', reference:'https://ritovex.webflow.io/services/web-development'},
+  {key:'blog-detail', local:'blog-detail.html', reference:'https://ritovex.webflow.io/blog/simple-tips-for-better-website-design'},
+  {key:'project-detail', local:'project-detail.html', reference:'https://ritovex.webflow.io/portfolio/smartcity-traffic-solution'},
+  {key:'404', local:'404.html', reference:'https://ritovex.webflow.io/404'},
+  {key:'coming-soon', local:'coming-soon.html'}
 ];
 const viewports = [
   {name:'desktop',width:1440,height:900},
@@ -136,7 +141,7 @@ async function collectMetrics(page,local){
     for(const vp of viewports){
       const targets=[
         {name:'vsn-'+vp.name,url:'http://127.0.0.1:4173/'+p.local,local:true},
-        {name:'ritovex-'+vp.name,url:p.reference,local:false}
+        ...(p.reference?[{name:'ritovex-'+vp.name,url:p.reference,local:false}]:[])
       ];
       for(const t of targets){
         const context=await browser.newContext({viewport:{width:vp.width,height:vp.height},deviceScaleFactor:1});
@@ -160,7 +165,30 @@ async function collectMetrics(page,local){
     }
   }
   fs.writeFileSync(path.join(outDir,'report.json'),JSON.stringify(report,null,2));
+  const failures=[];
+  for(const [key,entries] of Object.entries(report.pages)){
+    for(const entry of entries.filter(x=>x.local)){
+      const label=key+'/'+entry.target;
+      if(entry.navigationError)failures.push(label+': navigation '+entry.navigationError);
+      if(entry.status&&entry.status>=400)failures.push(label+': HTTP '+entry.status);
+      if(entry.pageErrors.length)failures.push(label+': page errors '+entry.pageErrors.join(' | '));
+      if(entry.metrics?.horizontalOverflow)failures.push(label+': horizontal overflow');
+      if(entry.metrics?.missingImages?.length)failures.push(label+': missing images '+entry.metrics.missingImages.join(', '));
+      if(entry.metrics?.suspiciousHumanImages?.length)failures.push(label+': suspicious human imagery');
+      if(entry.metrics?.hiddenVisibleArea?.length)failures.push(label+': hidden content remained after full scroll');
+      if(!entry.metrics?.h1?.length)failures.push(label+': missing H1');
+      if(entry.metrics?.mobileNav?.tested){
+        const nav=entry.metrics.mobileNav;
+        if(nav.open.expanded!=='true'||!nav.open.open||!nav.open.rootLocked||nav.closed.expanded!=='false'||nav.closed.open||nav.closed.rootLocked){
+          failures.push(label+': mobile nav state regression');
+        }
+      }
+    }
+  }
+  report.failures=failures;
+  fs.writeFileSync(path.join(outDir,'report.json'),JSON.stringify(report,null,2));
   console.log(JSON.stringify(report,null,2));
   await browser.close();
+  if(failures.length){console.error('Rendered browser QA failures:\n- '+failures.join('\n- '));process.exitCode=1}
   await new Promise(resolve=>server.close(resolve));
 })().catch(e=>{console.error(e);process.exit(1)});
