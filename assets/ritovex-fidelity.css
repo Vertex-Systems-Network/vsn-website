@@ -929,3 +929,38 @@ input:focus,textarea:focus,select:focus{outline-color:var(--vsn-indigo)!importan
   .rv-footer-cta .container{min-height:280px;padding:48px 18px!important;border-radius:8px}
   .rv-footer-cta h2{font-size:clamp(46px,14vw,66px)!important}
 }
+
+/* 2026-09-29: screenshot-led footer wordmark scale parity. */
+.rv-footer-word{
+  width:100%;
+  font-size:clamp(190px,35vw,500px)!important;
+  line-height:.68!important;
+  letter-spacing:-.095em!important;
+  text-align:center;
+  text-indent:-.035em;
+  padding-top:38px!important;
+  padding-bottom:10px;
+}
+.rv-footer-public-links{
+  min-height:58px;
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:18px;
+}
+.rv-footer-bottom{
+  border-top:1px solid #3F4245;
+  padding-top:22px!important;
+}
+@media(max-width:980px){
+  .rv-footer-word{font-size:clamp(150px,42vw,360px)!important}
+}
+@media(max-width:620px){
+  .rv-footer-word{
+    font-size:42vw!important;
+    line-height:.7!important;
+    padding-top:26px!important;
+    padding-bottom:6px;
+  }
+  .rv-footer-public-links{gap:12px 16px;align-items:flex-start}
+}

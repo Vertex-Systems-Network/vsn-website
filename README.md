@@ -356,3 +356,7 @@ Playwright now renders Web Development service detail, Blog detail, Project deta
 ## Secondary and full-site rendered browser QA — 2026-09-28
 
 A dedicated Playwright lane now renders the remaining 21 service, company/support and legal pages at 1440×900 and 390×844. Secondary Visual Browser QA run #1 passed with no local navigation/page errors, page-level horizontal overflow, missing images, suspicious human imagery, hidden post-scroll content, missing H1s or mobile-navigation state failures. Together with the primary-page and detail/utility browser runs, every current site page now has automated rendered functional QA coverage. This does not claim a manual pixel-for-pixel match against every owner-recorded reference video; that remains a separate visual review/publication step.
+
+## Full-width footer wordmark parity — 2026-09-29
+
+Rendered screenshot comparison showed that the three-letter VSN footer mark was materially smaller than the reference template's oversized footer wordmark. The footer now scales VSN to fill the available width on desktop and mobile, keeps the existing black/gray palette, preserves public-profile content, and adds the reference-style separator above the legal metadata row.

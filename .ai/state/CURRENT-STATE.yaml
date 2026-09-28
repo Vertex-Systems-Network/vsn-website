@@ -430,3 +430,8 @@ secondary_rendered_browser_qa_horizontal_overflow: false
 full_site_rendered_browser_qa_status: passed
 full_site_rendered_browser_qa_scope: primary-plus-detail-plus-utility-plus-secondary
 full_site_rendered_browser_qa_manual_pixel_review: remaining
+
+footer_wordmark_reference_fill: full-width
+footer_wordmark_desktop_scale: clamp-190-35vw-500
+footer_wordmark_mobile_scale: 42vw
+footer_bottom_separator: true
