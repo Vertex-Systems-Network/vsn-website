@@ -2,13 +2,33 @@ document.documentElement.classList.add('js');
 const toggle=document.querySelector('.mobile-toggle');
 const links=document.querySelector('.nav-links');
 if(toggle&&links){
-  const closeMenu=()=>{links.classList.remove('open');toggle.setAttribute('aria-expanded','false')};
-  toggle.addEventListener('click',()=>{const open=links.classList.toggle('open');toggle.setAttribute('aria-expanded',String(open))});
+  const root=document.documentElement;
+  const mobileNav=window.matchMedia('(max-width: 980px)');
   const dropdowns=[...links.querySelectorAll('.nav-dropdown')];
+  const closeDropdowns=()=>dropdowns.forEach(dropdown=>{dropdown.open=false});
+  const closeMenu=()=>{
+    links.classList.remove('open');
+    root.classList.remove('nav-open');
+    toggle.setAttribute('aria-expanded','false');
+    toggle.setAttribute('aria-label','Open navigation');
+  };
+  const setMenu=open=>{
+    links.classList.toggle('open',open);
+    root.classList.toggle('nav-open',open&&mobileNav.matches);
+    toggle.setAttribute('aria-expanded',String(open));
+    toggle.setAttribute('aria-label',open?'Close navigation':'Open navigation');
+  };
+  toggle.addEventListener('click',()=>setMenu(!links.classList.contains('open')));
   dropdowns.forEach(dropdown=>dropdown.addEventListener('toggle',()=>{if(dropdown.open)dropdowns.forEach(other=>{if(other!==dropdown)other.open=false})}));
-  links.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMenu));
-  document.addEventListener('click',e=>{if(e.target instanceof Element&&!e.target.closest('.nav-links'))dropdowns.forEach(dropdown=>{dropdown.open=false})});
-  document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeMenu();dropdowns.forEach(dropdown=>{dropdown.open=false})}});
+  links.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{closeMenu();closeDropdowns()}));
+  document.addEventListener('click',e=>{
+    if(!(e.target instanceof Element))return;
+    if(!e.target.closest('.nav-links')&&!e.target.closest('.mobile-toggle')){closeMenu();closeDropdowns()}
+  });
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeMenu();closeDropdowns();toggle.focus()}});
+  const syncBreakpoint=()=>{if(!mobileNav.matches){closeMenu();closeDropdowns()}};
+  mobileNav.addEventListener?.('change',syncBreakpoint);
+  window.addEventListener('pageshow',syncBreakpoint);
 }
 const form=document.querySelector('[data-project-form]');
 if(form){form.addEventListener('submit',e=>{
