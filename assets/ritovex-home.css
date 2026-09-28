@@ -408,3 +408,36 @@
   .home-showcase-grid{grid-auto-columns:91vw}
   .home-page .home-contact-band{padding:48px 22px}
 }
+
+/* 2026-09-28: restore the Ritovex homepage article-preview rhythm with factual VSN content. */
+.home-page .home-blog-section{background:#FFFFFF;padding-top:112px;padding-bottom:118px}
+.home-blog-head{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:36px;align-items:end;margin-bottom:48px}
+.home-blog-head .h2{max-width:880px;font-size:clamp(44px,5.25vw,78px);line-height:.96;letter-spacing:-.058em;margin:12px 0 0}
+.home-blog-all{display:inline-flex;align-items:center;justify-content:flex-end;min-height:44px;padding-bottom:7px;border-bottom:1px solid #3F4245;font-size:12px;font-weight:850;color:#3F4245}
+.home-blog-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.home-blog-card{border-top:1px solid #3F4245;background:#FFFFFF;overflow:hidden}
+.home-blog-media{display:block;overflow:hidden;background:#000000;margin-top:18px}
+.home-blog-media img{display:block;width:100%;aspect-ratio:1.25/1;object-fit:cover;transition:transform .55s cubic-bezier(.22,1,.36,1)}
+.home-blog-card:hover .home-blog-media img{transform:scale(1.025)}
+.home-blog-body{padding:20px 2px 8px}
+.home-blog-meta{display:flex;justify-content:space-between;gap:16px;color:#7E8083;font-size:10px;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
+.home-blog-body h3{font-size:clamp(22px,2.1vw,31px);line-height:1.05;letter-spacing:-.04em;margin:16px 0 12px}
+.home-blog-body p{min-height:54px;margin:0;color:#7E8083;font-size:14px;line-height:1.65}
+.home-blog-body>a{display:inline-flex;margin-top:22px;padding-bottom:6px;border-bottom:1px solid #3F4245;color:#3F4245;font-size:12px;font-weight:850}
+@media(max-width:900px){
+ .home-blog-grid{grid-template-columns:1fr 1fr}
+ .home-blog-card:first-child{grid-column:1/-1}
+ .home-blog-card:first-child{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;border-top:1px solid #3F4245}
+ .home-blog-card:first-child .home-blog-body{padding-top:22px}
+}
+@media(max-width:680px){
+ .home-blog-head{grid-template-columns:1fr;align-items:start;margin-bottom:36px}
+ .home-blog-all{justify-content:flex-start;width:max-content}
+ .home-blog-grid{grid-template-columns:1fr}
+ .home-blog-card:first-child{grid-column:auto;display:block}
+ .home-blog-media{margin-top:14px}
+ .home-blog-body p{min-height:0}
+ .home-page .home-blog-section{padding-top:84px;padding-bottom:88px}
+}
+@media(prefers-reduced-motion:reduce){.home-blog-media img{transition:none}}
+.motion-reduced .home-blog-media img{transition:none}

@@ -274,3 +274,7 @@ All eight active CSS files were normalized to these colors or alpha variants of 
 The corrective Ritovex rebuild and exact VSN logo palette are merged on `main`. The latest verified main commit is `63387d5d186ca2d1c5326d4c686778b2312e0d4b`; Static Integrity run #457 passed on that exact commit. Draft recovery PR #74 was closed as superseded by merged PRs #75, #76 and #77, so it is no longer treated as active development.
 
 Code-side visual requirements currently represented in the repository include the Ritovex-aligned shell, VSN-only exact logo palette, restored service forms and FAQs, direct WebP imagery, Google Maps on Contact, separated Blog/Projects and detail layouts, and single-owner reveal animation behavior. Production publication and qualified Pakistan legal/corporate review remain external release steps rather than unfinished static-site implementation.
+
+## Homepage article-preview parity — 2026-09-28
+
+The homepage now restores the Ritovex reference flow's article-preview stage using VSN-owned content rather than copied template posts. It shows the published AI/human-judgment article plus two clearly labeled upcoming topics, links to the full Blog, uses committed human WebP imagery, and keeps reduced-motion behavior. The Ritovex fidelity regression now requires the three-card homepage preview so this structural stage cannot silently disappear.

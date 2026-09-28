@@ -258,3 +258,8 @@ latest_verified_main_run: 457
 latest_verified_main_status: passed
 latest_verified_main_sha: 63387d5d186ca2d1c5326d4c686778b2312e0d4b
 stale_recovery_pr_74_status: closed-superseded
+
+homepage_blog_preview_percent: 100
+homepage_blog_preview_reference: ritovex-home-article-stage
+homepage_blog_preview_truthfulness: published-plus-clearly-labelled-coming-soon
+homepage_blog_preview_branch: design/ritovex-home-blog-preview-20260928
