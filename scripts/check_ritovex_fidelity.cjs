@@ -155,6 +155,8 @@ assert.match(fidelity,/\.rv-header \.nav-dropdown\[open\]>summary:before\{transf
 assert.match(fidelity,/transform:translateX\(4px\)/,'desktop mega-menu items missing restrained hover travel');
 assert.match(fidelity,/\.home-page \.section\{[\s\S]*padding-top:clamp\(104px,7\.7vw,124px\)!important/,'desktop homepage section rhythm not normalized');
 assert.match(fidelity,/\.rv-footer/);
+assert.match(fidelity,/\.rv-footer-cta\{[\s\S]*background:#FFFFFF!important/,'footer CTA must use white outer breathing space');
+assert.match(fidelity,/\.rv-footer-cta \.container\{[\s\S]*max-width:1240px!important[\s\S]*border-radius:10px[\s\S]*background-color:#000000/,'footer CTA must use centered boxed dark panel');
 assert.match(fidelity,/position:fixed!important;[\s\S]*inset:68px 0 0 0!important/,'mobile navigation must use the full-height reference shell');
 assert.match(fidelity,/\.rv-footer-grid\{grid-template-columns:1fr!important/,'small-screen footer must collapse to one clear column');
 assert.match(fidelity,/\.rv-footer-word\{[^}]*color:#3F4245/,'footer wordmark must remain visible on the black footer');
