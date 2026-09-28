@@ -34,7 +34,7 @@ async function settle(page){
 }
 
 (async()=>{
-  const browser=await chromium.launch({headless:true});
+  const browser=await chromium.launch({headless:true,args:['--allow-file-access-from-files']});
   const report={generatedAt:new Date().toISOString(),targets:[]};
   for(const t of targets){
     const context=await browser.newContext({viewport:{width:t.width,height:t.height},deviceScaleFactor:1});
