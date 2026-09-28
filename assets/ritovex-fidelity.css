@@ -180,10 +180,30 @@ body{background:var(--vsn-white);color:var(--vsn-black)}
 .rv-fidelity-reveal{opacity:0;transform:translateY(18px);clip-path:inset(0 0 8% 0)}
 .rv-fidelity-reveal.rv-fidelity-in{opacity:1;transform:none;clip-path:inset(0);transition:opacity .7s var(--rv-ease),transform .7s var(--rv-ease),clip-path .8s var(--rv-ease)}
 
-@media(max-width:900px){
-  .rv-topline{display:none}.rv-header .nav{height:68px!important}.rv-header .nav-links{top:68px!important}
-  .rv-header .nav-menu{position:static!important;transform:none!important;width:100%!important;grid-template-columns:1fr!important;box-shadow:none!important;border:0!important;padding:12px!important;opacity:1!important;visibility:visible}
+@media(max-width:980px){
+  .rv-topline{display:none}
+  .rv-header .nav{height:68px!important;min-height:68px!important}
+  .rv-header .nav-links.open{
+    position:absolute!important;left:0!important;right:0!important;top:68px!important;width:100%!important;
+    max-height:calc(100dvh - 68px)!important;overflow:auto!important;overscroll-behavior:contain;
+    gap:0!important;padding:12px 20px 24px!important;border:0!important;border-top:1px solid var(--vsn-line)!important;
+    border-radius:0!important;box-shadow:0 22px 50px rgba(0,0,0,.12)!important;background:#FFFFFF!important
+  }
+  .rv-header .nav-links.open>a,.rv-header .nav-links.open>.nav-dropdown>summary{
+    display:flex;align-items:center;min-height:48px;padding:12px 0!important;border-bottom:1px solid var(--vsn-line)!important;
+    color:var(--vsn-black)!important;font-size:14px;font-weight:750
+  }
+  .rv-header .nav-dropdown{width:100%}
+  .rv-header .nav-menu{
+    position:static!important;transform:none!important;width:100%!important;grid-template-columns:1fr!important;
+    box-shadow:none!important;border:0!important;padding:8px 0 14px!important;opacity:1!important;visibility:visible
+  }
+  .rv-header .nav-menu-group{padding:8px 0}
+  .rv-header .nav-menu-group strong{display:block;margin-bottom:5px}
+  .rv-header .nav-menu-group a{padding:8px 0!important}
   .rv-header-cta{display:none}
+  .rv-header .mobile-toggle{min-width:70px;min-height:40px}
+  html.nav-open,html.nav-open body{overflow:hidden}
   .home-page .home-hero-grid,.service-enquiry-shell,.rv-footer-newsletter .container,.rv-footer-grid,.blog-detail-page .article-shell,.project-detail-page .article-shell{grid-template-columns:1fr!important}
   .service-enquiry-shell>.service-enquiry-intro{position:relative;top:auto}
   .blog-list-page .editorial-card-grid,.projects-list-page .editorial-card-grid{grid-template-columns:1fr 1fr!important}

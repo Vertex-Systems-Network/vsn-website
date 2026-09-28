@@ -7,6 +7,7 @@ const read=p=>fs.readFileSync(p,'utf8');
 const fidelity=read('assets/ritovex-fidelity.css');
 const fidelityJs=read('assets/ritovex-fidelity.js');
 const motion=read('assets/motion.js');
+const app=read('assets/app.js');
 
 const servicePages=[
  'software.html','web-development-ecommerce.html','websites.html','ecommerce.html',
@@ -104,6 +105,13 @@ assert.match(fidelity,/\.project-detail-page/);
 assert.match(fidelity,/\.contact-map/);
 assert.match(fidelity,/utility-404-art/);
 
+assert.match(fidelity,/@media\(max-width:980px\)\{\s*\.rv-topline\{display:none\}/,'Ritovex mobile shell must align to the shared 980px nav breakpoint');
+assert.match(fidelity,/html\.nav-open,html\.nav-open body\{overflow:hidden\}/,'mobile menu must lock page scroll while open');
+assert.match(app,/matchMedia\('\(max-width: 980px\)'\)/,'navigation JS must use the same 980px breakpoint as CSS');
+assert.match(app,/closest\('\.mobile-toggle'\)/,'outside-click handling must exclude the mobile toggle');
+assert.match(app,/e\.key==='Escape'/,'mobile navigation must close on Escape');
+assert.match(app,/mobileNav\.addEventListener\?\.\('change',syncBreakpoint\)/,'navigation must clean up when crossing to desktop');
+
 assert.match(fidelityJs,/IntersectionObserver/);
 assert.match(fidelityJs,/unobserve/);
 assert.match(motion,/const fidelityMode=/);
@@ -111,4 +119,4 @@ assert.match(motion,/if\(fidelityMode\)/);
 assert.doesNotMatch(fidelityJs,/pointermove/);
 assert.doesNotMatch(fidelityJs,/\.animate\(/);
 
-console.log('Ritovex fidelity passed: shell, palette lock, direct imagery, service FAQs/forms, Google Map, distinct editorial/project templates, 404 and single reveal owner are intact.');
+console.log('Ritovex fidelity passed: shell, 980px mobile navigation, palette lock, direct imagery, service FAQs/forms, Google Map, distinct editorial/project templates, 404 and single reveal owner are intact.');
