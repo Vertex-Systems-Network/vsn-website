@@ -177,9 +177,6 @@ body{background:var(--vsn-white);color:var(--vsn-black)}
 
 /* Reveal timing closer to video: small travel, soft opacity, no exaggerated slides. */
 .motion-prep:not(.motion-fallback) [class*="rv-"],.motion-prep:not(.motion-fallback) .home-section-intro{transition-duration:.68s!important;transition-timing-function:var(--rv-ease)!important}
-.rv-fidelity-reveal{opacity:0;transform:translateY(18px);clip-path:inset(0 0 8% 0)}
-.rv-fidelity-reveal.rv-fidelity-in{opacity:1;transform:none;clip-path:inset(0);transition:opacity .7s var(--rv-ease),transform .7s var(--rv-ease),clip-path .8s var(--rv-ease)}
-
 @media(max-width:980px){
   .rv-topline{display:none}
   .rv-header .nav{height:68px!important;min-height:68px!important}
