@@ -288,3 +288,7 @@ Mobile header hardening was merged in PR #80 as `6bd81221b5613e0fdc427e751b82030
 ## Footer contrast repair — 2026-09-28
 
 The Ritovex footer audit found that the oversized `VSN` wordmark and public-profile separators had been normalized to black while the footer background is also black, making those elements effectively disappear. The wordmark and separators now use the VSN charcoal `#3F4245`, preserving the exact logo palette while restoring the intended oversized footer treatment. Fidelity checks now reject a black-on-black footer wordmark regression.
+
+## Repository state consistency guard — 2026-09-28
+
+The resume index had accumulated contradictory historical anchors, including duplicate HTML-page counts and outdated latest PR/CI values. The current state is normalized to 32 HTML pages, PR #82 and verified main run #467. CI now runs `scripts/check_state_consistency.cjs`, which rejects duplicate critical state keys, a page-count mismatch, temporary-branch residue in the main resume index, and disagreement between the verified main SHA and CI run anchors.
