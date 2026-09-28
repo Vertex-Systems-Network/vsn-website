@@ -68,7 +68,18 @@ assert.equal((home.match(/home-blog-card/g)||[]).length,3,'homepage blog preview
 assert.match(home,/href="blog-detail\.html"/,'homepage blog preview missing published article link');
 assert.match(home,/href="blog\.html">Browse all articles/,'homepage blog preview missing all-articles route');
 assert.match(blog,/<body class="editorial-page blog-list-page">/);
+assert.match(blog,/blog-featured-article/,'blog listing missing published feature stage');
+assert.equal((blog.match(/blog-featured-article/g)||[]).length,1,'blog must have exactly one published feature block');
+assert.equal((blog.match(/class="editorial-card"/g)||[]).length,5,'blog upcoming grid must contain five clearly upcoming cards');
+assert.match(blog,/Published article/,'blog missing published-vs-upcoming distinction');
+assert.equal((blog.match(/Coming soon/g)||[]).length>=5,true,'blog upcoming topics must remain clearly labeled');
 assert.match(projects,/<body class="editorial-page projects-list-page">/);
+assert.match(projects,/projects-proof-note/,'projects page missing portfolio truthfulness note');
+assert.equal((projects.match(/project-proof-card/g)||[]).length,4,'projects page must contain exactly four verifiable portfolio cards');
+assert.match(projects,/github\.com\/Vertex-Systems-Network\/vsn-marketing/,'projects page missing VSN Marketing repository proof');
+assert.match(projects,/github\.com\/Vertex-Systems-Network\/vsn-builder/,'projects page missing VSN Builder repository proof');
+assert.match(projects,/github\.com\/Vertex-Systems-Network\/ai-native-project-operating-system/,'projects page missing ANPOS repository proof');
+assert.doesNotMatch(projects,/<span>Capability<\/span>/,'projects page must not present generic capabilities as completed projects');
 assert.match(blogDetail,/<body class="editorial-page blog-detail-page">/);
 assert.match(projectDetail,/<body class="editorial-page project-detail-page">/);
 assert.notEqual((blog.match(/<body[^>]*>/)||[''])[0],(projects.match(/<body[^>]*>/)||[''])[0],'Blog and Projects must not share the same page template class');
@@ -140,6 +151,10 @@ assert.match(fidelity,/\.about-principle-grid\{display:grid;grid-template-column
 assert.match(fidelity,/\.about-reference-verification\{background:#000000/,'about verification strip missing reference contrast');
 assert.match(fidelity,/\.about-credential-row\{display:grid;grid-template-columns:/,'about credentials missing structured evidence rows');
 assert.match(fidelity,/utility-404-art/);
+const editorialCss=read('assets/ritovex-editorial.css');
+assert.match(editorialCss,/\.blog-featured-article/,'blog feature styling missing');
+assert.match(editorialCss,/\.project-proof-grid\{grid-template-columns:repeat\(2/,'projects portfolio must use a distinct two-column desktop grid');
+assert.match(editorialCss,/\.projects-proof-note/,'projects truthfulness note styling missing');
 
 assert.match(fidelity,/@media\(max-width:980px\)\{\s*\.rv-topline\{display:none\}/,'Ritovex mobile shell must align to the shared 980px nav breakpoint');
 assert.match(fidelity,/html\.nav-open,html\.nav-open body\{overflow:hidden\}/,'mobile menu must lock page scroll while open');
