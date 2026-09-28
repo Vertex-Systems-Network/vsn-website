@@ -112,6 +112,8 @@ assert.match(about,/about-team-grid/);
 assert.match(about,/about-proof-metrics-grid/,'about page missing factual proof-card stage');
 assert.match(about,/about-priority-grid/,'about page missing image-led priority stage');
 assert.match(about,/about-reference-principles/,'about page missing operating-principles stage');
+assert.match(about,/about-reference-hero-media/,'about page missing reference hero media');
+assert.match(about,/about-reference-hero-media[\s\S]*vsn-human-business\.webp/,'about hero media must use committed VSN human imagery');
 assert.equal((about.match(/about-priority-points[\s\S]*?<\/div><a class="btn btn-dark"/)||[''])[0].match(/<article>/g)?.length,4,'about priority section must contain four operating principles');
 assert.match(about,/about-reference-verification/,'about page missing public verification strip');
 assert.match(about,/about-reference-credentials/,'about page missing credentials/milestones stage');
