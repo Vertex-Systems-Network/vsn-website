@@ -364,3 +364,7 @@ Rendered screenshot comparison showed that the three-letter VSN footer mark was 
 ## About hero/media rendered parity — 2026-09-29
 
 Rendered comparison against the live About reference showed that VSN moved directly from hero copy to proof cards, while the reference places a wide human visual between them. About now follows hero → wide VSN human image → proof cards → priority block. The priority split remains image-left/copy-right on desktop and changes to copy-first/image-second on mobile, matching the reference reading order without inventing metrics.
+
+## Projects rendered-card parity — 2026-09-29
+
+Rendered comparison showed that the Ritovex portfolio moves directly from its centered section heading into large image-led cards and places metadata on the image edge. VSN now follows that rhythm: the two featured public-work cards begin immediately after the heading, their public-proof metadata sits on the image bottom edge, and the factual portfolio-rule note remains available after the cards instead of interrupting the visual flow.
