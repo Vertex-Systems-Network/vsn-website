@@ -298,3 +298,5 @@ The repository state consistency guard merged in PR #83 as `3d36b0f1575a83ff26ad
 ## Interaction boundary and newsletter truthfulness — 2026-09-28
 
 The fidelity interaction layer now uses the same responsive boundary as the navigation shell: desktop hover dropdown behavior starts at 981px, eliminating the remaining 901–980px interaction seam. The static footer newsletter no longer displays a fake `Thank you` success without storing or sending an address. It now labels the action as an updates request, discloses that the page stores nothing, and opens a prefilled email request to VSN. The newsletter handler also remains active when reduced motion is enabled because reveal fallback no longer exits the interaction script early.
+
+Interaction/newsletter hardening merged in PR #85 as `c90ff84f2182f378ec5c4a2746901941b14624ea`; Static Integrity passed on PR run #472 and merged-main run #473.
