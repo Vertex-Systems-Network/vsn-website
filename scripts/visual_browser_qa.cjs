@@ -5,6 +5,11 @@ const { pathToFileURL } = require('node:url');
 
 const outDir = path.resolve('qa-artifacts/home');
 fs.mkdirSync(outDir,{recursive:true});
+const assetOut=path.join(outDir,'source-assets');
+fs.mkdirSync(assetOut,{recursive:true});
+for(const name of fs.readdirSync('assets').filter(n=>/^vsn-human-.*\.webp$/i.test(n))){
+  fs.copyFileSync(path.join('assets',name),path.join(assetOut,name));
+}
 
 const targets = [
   {name:'vsn-desktop', url:pathToFileURL(path.resolve('index.html')).href, width:1440, height:900, local:true},
