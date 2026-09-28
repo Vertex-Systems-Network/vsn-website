@@ -1,10 +1,10 @@
 repo: Vertex-Systems-Network/vsn-website
 updated: 2026-09-28
 phase: ritovex-inspired-visual-rebuild
-verified_main_sha: f56526e64075a270040ed3907d915eb8d13d3752
+verified_main_sha: 3d36b0f1575a83ff26ad1aa3c68eb5f96be0f50b
 current_issue: null
 current_branch: main
-current_milestone: ritovex-footer-contrast-repair-complete
+current_milestone: repository-state-consistency-guard-complete
 architecture: static-html-css-vanilla-js
 runtime_mode: file-direct-open
 implementation_complete: true
@@ -19,8 +19,8 @@ web_development_ecommerce_content_refresh_percent: 100
 production_readiness_percent: 90
 requested_content_refresh_percent: 100
 content_refresh_ci: passed
-static_integrity_run: 467
-static_integrity_passed_sha: f56526e64075a270040ed3907d915eb8d13d3752
+static_integrity_run: 469
+static_integrity_passed_sha: 3d36b0f1575a83ff26ad1aa3c68eb5f96be0f50b
 local_http_server_required: false
 vercel_required: false
 node_runtime_required: false
@@ -98,8 +98,8 @@ next_valid_action: production-publish-or-new-content-change-when-owner-requests
 industry_expansion_percent: 100
 ai_solutions_module_percent: 100
 resource_augmentation_module_percent: 100
-latest_pr: 82
-latest_static_integrity_run: 467
+latest_pr: 83
+latest_static_integrity_run: 469
 production_deployed: false
 
 business_solutions_module_percent: 100
@@ -253,9 +253,9 @@ exact_logo_palette_merge_sha: 113c82e9ef655627f7abcdcee42eb1178478e547
 exact_logo_palette_merge_pr: 76
 main_visual_state: ritovex-corrective-rebuild-exact-palette-blog-mobile-header-footer-contrast
 
-latest_verified_main_run: 467
+latest_verified_main_run: 469
 latest_verified_main_status: passed
-latest_verified_main_sha: f56526e64075a270040ed3907d915eb8d13d3752
+latest_verified_main_sha: 3d36b0f1575a83ff26ad1aa3c68eb5f96be0f50b
 stale_recovery_pr_74_status: closed-superseded
 
 homepage_blog_preview_percent: 100
@@ -289,4 +289,12 @@ footer_pr_run: 466
 footer_pr_status: passed
 footer_main_run: 467
 footer_main_status: passed
-state_consistency_guard: pending-pr
+state_consistency_guard: active-on-main
+
+resume_anchor_scope: latest-substantive-main-excludes-metadata-only-reconciliation
+state_guard_merge_pr: 83
+state_guard_merge_sha: 3d36b0f1575a83ff26ad1aa3c68eb5f96be0f50b
+state_guard_pr_run: 468
+state_guard_pr_status: passed
+state_guard_main_run: 469
+state_guard_main_status: passed
