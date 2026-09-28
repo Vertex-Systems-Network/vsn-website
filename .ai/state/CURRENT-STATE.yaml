@@ -93,7 +93,7 @@ profile_package_prices:
   status: owner-requested-revised-starting-fees
   usd: [499, 999, 1999]
 deployment_status: waiting-for-hosting-panel-access
-next_valid_action: final-head-ci-then-merge-pr-76-and-verify-main
+next_valid_action: production-publish-or-new-content-change-when-owner-requests
 
 industry_expansion_percent: 100
 ai_solutions_module_percent: 100
@@ -244,6 +244,12 @@ exact_logo_palette_percent: 100
 exact_logo_palette: [#5AC8D6, #625BA8, #6188C6, #3F4245, #7E8083, #000000, #FFFFFF]
 exact_logo_palette_css_files_checked: 8
 exact_logo_palette_foreign_colors: 0
-exact_logo_palette_ci_run: 450
-exact_logo_palette_ci_status: passed
+exact_logo_palette_ci_run: 453
+exact_logo_palette_ci_status: passed-final-head
 exact_logo_palette_pr: 76
+
+exact_logo_palette_final_head_run: 453
+exact_logo_palette_final_head_status: passed
+exact_logo_palette_merge_sha: 113c82e9ef655627f7abcdcee42eb1178478e547
+exact_logo_palette_merge_pr: 76
+main_visual_state: ritovex-corrective-rebuild-plus-exact-logo-palette
