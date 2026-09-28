@@ -12,11 +12,13 @@ if(toggle&&links){
     toggle.setAttribute('aria-expanded','false');
     toggle.setAttribute('aria-label','Open navigation');
   };
+  const menuFocusables=()=>[toggle,...links.querySelectorAll('a[href],summary')].filter(el=>!el.hasAttribute('disabled'));
   const setMenu=open=>{
     links.classList.toggle('open',open);
     root.classList.toggle('nav-open',open&&mobileNav.matches);
     toggle.setAttribute('aria-expanded',String(open));
     toggle.setAttribute('aria-label',open?'Close navigation':'Open navigation');
+    if(open&&mobileNav.matches)requestAnimationFrame(()=>links.querySelector('a[href],summary')?.focus());
   };
   toggle.addEventListener('click',()=>setMenu(!links.classList.contains('open')));
   dropdowns.forEach(dropdown=>dropdown.addEventListener('toggle',()=>{if(dropdown.open)dropdowns.forEach(other=>{if(other!==dropdown)other.open=false})}));
@@ -25,7 +27,16 @@ if(toggle&&links){
     if(!(e.target instanceof Element))return;
     if(!e.target.closest('.nav-links')&&!e.target.closest('.mobile-toggle')){closeMenu();closeDropdowns()}
   });
-  document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeMenu();closeDropdowns();toggle.focus()}});
+  document.addEventListener('keydown',e=>{
+    if(e.key==='Escape'&&links.classList.contains('open')){closeMenu();closeDropdowns();toggle.focus();return}
+    if(e.key==='Tab'&&mobileNav.matches&&links.classList.contains('open')){
+      const focusables=menuFocusables();
+      if(!focusables.length)return;
+      const first=focusables[0],last=focusables[focusables.length-1];
+      if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}
+      else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}
+    }
+  });
   const syncBreakpoint=()=>{if(!mobileNav.matches){closeMenu();closeDropdowns()}};
   mobileNav.addEventListener?.('change',syncBreakpoint);
   window.addEventListener('pageshow',syncBreakpoint);

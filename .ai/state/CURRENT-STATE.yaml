@@ -318,3 +318,8 @@ header_email_action: mailto
 header_phone_action: tel
 footer_email_action: mailto
 footer_phone_action: tel
+
+mobile_header_shell_parity_percent: 100
+mobile_navigation_focus_containment: implemented
+mobile_footer_stack_parity_percent: 100
+mobile_shell_reconciled_base: ba109b04727ec28fc86be93fed629dd036946561

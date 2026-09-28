@@ -101,6 +101,8 @@ assert.match(fidelity,/--vsn-gray:#7E8083/i);
 assert.match(fidelity,/--green:var\(--vsn-cyan\)/,'legacy green must map to VSN palette');
 assert.match(fidelity,/\.rv-header/);
 assert.match(fidelity,/\.rv-footer/);
+assert.match(fidelity,/position:fixed!important;[\s\S]*inset:68px 0 0 0!important/,'mobile navigation must use the full-height reference shell');
+assert.match(fidelity,/\.rv-footer-grid\{grid-template-columns:1fr!important/,'small-screen footer must collapse to one clear column');
 assert.match(fidelity,/\.rv-footer-word\{[^}]*color:#3F4245/,'footer wordmark must remain visible on the black footer');
 assert.doesNotMatch(fidelity,/\.rv-footer-word\{[^}]*color:#000000/,'footer wordmark cannot be black on black');
 assert.match(fidelity,/\.rv-footer-public-links\{[^}]*border-top:1px solid #3F4245[^}]*border-bottom:1px solid #3F4245/,'footer public-profile separators must remain visible');
@@ -118,6 +120,8 @@ assert.match(fidelity,/html\.nav-open,html\.nav-open body\{overflow:hidden\}/,'m
 assert.match(app,/matchMedia\('\(max-width: 980px\)'\)/,'navigation JS must use the same 980px breakpoint as CSS');
 assert.match(app,/closest\('\.mobile-toggle'\)/,'outside-click handling must exclude the mobile toggle');
 assert.match(app,/e\.key==='Escape'/,'mobile navigation must close on Escape');
+assert.match(app,/menuFocusables/,'mobile navigation missing focus containment');
+assert.match(app,/e\.key==='Tab'/,'mobile navigation missing keyboard focus loop');
 assert.match(app,/mobileNav\.addEventListener\?\.\('change',syncBreakpoint\)/,'navigation must clean up when crossing to desktop');
 
 assert.match(fidelityJs,/IntersectionObserver/);
