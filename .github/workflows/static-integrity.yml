@@ -26,6 +26,9 @@ jobs:
       - name: Show Python
         run: python3 --version
 
+      - name: Inspect exact logo palette
+        run: python3 scripts/inspect_logo_palette.py
+
       - name: Validate static website
         run: python3 scripts/validate_static_site.py
 
