@@ -320,3 +320,7 @@ The Services listing now follows the reference page's deeper information rhythm 
 ## About reference-depth parity — 2026-09-28
 
 The About page now restores the reference page's early four-principle rhythm, a horizontally scrollable public-verification strip, and an end-stage credentials/milestones treatment. Ritovex's partner-logo and awards roles are intentionally represented with VSN-owned, checkable evidence such as company registrations, GitHub and the published Shopify app rather than invented partners or awards. Responsive layouts collapse 4→2→1 while preserving the existing team/service structure and single motion owner.
+
+## Blog and Projects parity separation — 2026-09-28
+
+Blog and Projects now use intentionally different listing systems. Blog leads with the one published VSN article and separates five clearly marked upcoming topics. Projects uses a four-card, two-column portfolio based only on a published product or public repositories; generic capability cards were removed so Services remains the capability catalogue. This preserves the Ritovex editorial/portfolio rhythm without inventing project outcomes or client case studies.

@@ -84,3 +84,37 @@
   .utility-page{padding:80px 20px}
   .utility-number{margin:28px 0 22px}
 }
+
+/* 2026-09-28: make Blog and Projects visually and semantically distinct. */
+.blog-featured-section{padding-bottom:80px!important}
+.blog-featured-article{border-top:1px solid #3F4245}
+.blog-featured-article .editorial-feature-media{overflow:hidden}
+.blog-featured-article .editorial-feature-media img{transition:transform .6s cubic-bezier(.22,1,.36,1)}
+.blog-featured-article:hover .editorial-feature-media img{transform:scale(1.018)}
+.blog-upcoming-section{padding-top:86px!important;background:#FFFFFF}
+.blog-upcoming-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.projects-list-page .editorial-section-head{margin-bottom:30px}
+.projects-proof-note{display:grid;grid-template-columns:150px minmax(0,1fr);gap:30px;padding:20px 0 28px;border-top:1px solid #3F4245;color:#3F4245}
+.projects-proof-note strong{font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:#625BA8}
+.projects-proof-note p{margin:0;color:#7E8083;max-width:760px}
+.project-proof-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.project-proof-card .editorial-card-media img{aspect-ratio:1.55/1}
+.project-proof-card .editorial-card-body{padding:26px 2px 8px}
+.project-proof-card{border:0;border-top:1px solid #3F4245}
+.project-proof-card h3{font-size:clamp(30px,3.5vw,48px)}
+.project-proof-card .card-link{display:inline-flex;width:max-content;padding-top:22px;padding-bottom:5px;border-bottom:1px solid #3F4245}
+@media(max-width:980px){
+ .blog-upcoming-grid{grid-template-columns:1fr 1fr}
+ .project-proof-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:700px){
+ .blog-featured-section{padding-bottom:64px!important}
+ .blog-upcoming-section{padding-top:68px!important}
+ .blog-upcoming-grid,.project-proof-grid{grid-template-columns:1fr}
+ .projects-proof-note{grid-template-columns:1fr;gap:8px}
+ .project-proof-card .editorial-card-media img{aspect-ratio:1.3/1}
+ .project-proof-card .editorial-card-body{padding-top:20px}
+}
+@media(prefers-reduced-motion:reduce){
+ .blog-featured-article .editorial-feature-media img{transition:none!important}
+}
