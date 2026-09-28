@@ -130,3 +130,42 @@
   .blog-reference-grid,.project-proof-grid{grid-template-columns:minmax(0,1fr)!important}
   .blog-reference-listing{padding-top:72px!important}
 }
+
+/* 2026-09-28: screenshot-led Blog and Portfolio parity refinement. */
+.blog-reference-hero,.projects-reference-hero{padding:118px 0 72px!important}
+.blog-reference-hero .container,.projects-reference-hero .container{max-width:1240px}
+.blog-reference-hero-copy,.projects-reference-hero-copy{max-width:1120px}
+.blog-reference-hero .h1,.projects-reference-hero .h1{font-size:clamp(72px,8.2vw,122px);line-height:.92;letter-spacing:-.06em;margin:0 0 26px}
+.blog-reference-hero .lead,.projects-reference-hero .lead{max-width:1060px;font-size:18px;line-height:1.7;color:#3F4245}
+.projects-reference-hero .btn-row{margin-top:28px}
+.blog-reference-listing .editorial-section-head{display:none}
+.blog-reference-grid .editorial-card{border:0;border-radius:8px;overflow:hidden;background:rgba(126,128,131,.08)}
+.blog-reference-grid .editorial-card-media img{aspect-ratio:1.42/1}
+.blog-reference-grid .editorial-card-body{padding:18px 18px 20px}
+.blog-reference-grid .editorial-meta{padding-bottom:14px;border-bottom:1px dashed #7E8083}
+.blog-reference-grid .editorial-card h3{font-size:clamp(21px,2vw,30px);margin-top:14px}
+.projects-list-page main>.section{padding-top:62px!important;padding-bottom:clamp(230px,27vw,430px)!important}
+.projects-list-page .editorial-section-head{display:block;text-align:center;margin:0 auto 48px;max-width:760px}
+.projects-list-page .editorial-section-head>.eyebrow{display:block}
+.projects-list-page .editorial-section-head .h2{font-size:clamp(38px,4.2vw,62px);margin:10px 0 12px}
+.projects-list-page .editorial-section-head p{margin:0 auto;color:#7E8083}
+.projects-proof-note{margin-bottom:26px}
+.project-featured-card .editorial-card-media{border-radius:10px;overflow:hidden}
+.project-featured-card .editorial-card-media img{aspect-ratio:1.55/1}
+.project-featured-card .editorial-card-body{padding:16px 0 6px}
+.project-featured-card h3{font-size:24px}
+.project-more-proof{margin-top:78px;border-top:1px solid #3F4245}
+.project-more-proof-head{display:grid;grid-template-columns:220px minmax(0,1fr);gap:30px;padding:22px 0}
+.project-more-proof-head p{margin:0;color:#7E8083;max-width:700px}
+.project-repo-row{display:grid;grid-template-columns:minmax(180px,.7fr) minmax(260px,1.25fr) auto;gap:24px;align-items:center;padding:22px 0;border-top:1px solid #3F4245;color:#3F4245}
+.project-repo-row>span{font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:#7E8083}
+.project-repo-row>strong{font-size:20px}
+.project-repo-row>em{font-style:normal;font-size:12px;font-weight:800}
+@media(max-width:700px){
+ .blog-reference-hero,.projects-reference-hero{padding:72px 0 48px!important}
+ .blog-reference-hero .h1,.projects-reference-hero .h1{font-size:clamp(54px,16vw,76px)}
+ .blog-reference-hero .lead,.projects-reference-hero .lead{font-size:16px}
+ .projects-list-page main>.section{padding-top:48px!important;padding-bottom:160px!important}
+ .project-more-proof{margin-top:54px}
+ .project-more-proof-head,.project-repo-row{grid-template-columns:1fr;gap:8px}
+}
