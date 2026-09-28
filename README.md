@@ -312,3 +312,7 @@ The Ritovex fidelity shell now uses a full-height mobile navigation panel instea
 ## Desktop mega-menu and section rhythm — 2026-09-28
 
 The shared desktop shell now gives the mega-menu the same deliberate interaction quality as the mobile navigation: short hover intent, a forgiving close delay, keyboard focus-in/focus-out support, active VSN-gradient navigation underlines, a restrained panel reveal, clearer column separation, and small link/CTA hover travel. Homepage desktop section spacing is normalized with a bounded clamp rather than adding another scroll-animation owner.
+
+## Services reference-depth parity — 2026-09-28
+
+The Services listing now follows the reference page's deeper information rhythm after the service catalogue: a real VSN technology/platform grid, delivery benefits, page-level buyer FAQs, and a public-proof stage. The reference testimonial slot is intentionally represented with traceable GitHub and Shopify evidence rather than fabricated client quotes. Tablet/mobile layouts collapse these stages cleanly without adding another animation system.
