@@ -368,3 +368,7 @@ Rendered comparison against the live About reference showed that VSN moved direc
 ## Projects rendered-card parity — 2026-09-29
 
 Rendered comparison showed that the Ritovex portfolio moves directly from its centered section heading into large image-led cards and places metadata on the image edge. VSN now follows that rhythm: the two featured public-work cards begin immediately after the heading, their public-proof metadata sits on the image bottom edge, and the factual portfolio-rule note remains available after the cards instead of interrupting the visual flow.
+
+## Blog 3×3 rendered parity — 2026-09-29
+
+Rendered comparison showed that the reference Blog uses a dense three-column, three-row first listing rhythm. VSN now presents one published article plus eight explicitly labelled upcoming topics in the same nine-card density. Category metadata uses a compact pill while publication status remains visible, so planned topics are not misrepresented as published posts.
