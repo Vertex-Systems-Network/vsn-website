@@ -217,3 +217,110 @@
     padding-bottom:70px!important;
   }
 }
+
+
+/* 2026-09-29: certified single-service reference hierarchy propagated across service details. */
+.service-single-reference-hero{
+  padding:110px 0 56px!important;
+  background:#FFFFFF!important;
+}
+.service-single-reference-shell{
+  max-width:1240px;
+}
+.service-single-reference-hero .breadcrumbs{
+  margin-bottom:28px!important;
+}
+.service-detail-page .service-single-reference-hero .h1{
+  max-width:1160px;
+  font-size:clamp(66px,7.4vw,112px);
+  line-height:.92;
+  letter-spacing:-.061em;
+  margin:16px 0 24px;
+}
+.service-detail-page .service-single-reference-hero .lead{
+  max-width:900px;
+  color:#3F4245;
+  font-size:18px;
+  line-height:1.72;
+}
+.service-single-reference-hero .btn-row{
+  margin-top:30px;
+}
+.service-single-reference-media-section{
+  padding:0 0 92px!important;
+}
+.service-single-reference-media{
+  box-shadow:none;
+  border-radius:10px;
+}
+.service-single-reference-media img{
+  aspect-ratio:1.72/1;
+  max-height:none!important;
+}
+.service-single-reference-overview{
+  padding-top:42px!important;
+  padding-bottom:88px!important;
+}
+.service-single-reference-overview-copy{
+  max-width:1120px;
+}
+.service-single-reference-overview-copy>.h2{
+  max-width:1050px;
+  margin:14px 0 36px;
+  font-size:clamp(44px,5vw,76px);
+  line-height:.98;
+  letter-spacing:-.052em;
+}
+.service-single-reference-overview-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:clamp(34px,6vw,90px);
+  border-top:1px solid #3F4245;
+  padding-top:28px;
+}
+.service-single-reference-overview-grid p{
+  margin:0;
+  color:#3F4245;
+  font-size:17px;
+  line-height:1.78;
+}
+.service-single-included-stage{
+  padding-top:88px!important;
+}
+.service-single-included-stage>.container{
+  border-top:1px solid #3F4245;
+  padding-top:42px;
+}
+@media(max-width:900px){
+  .service-single-reference-overview-grid{
+    grid-template-columns:1fr;
+    gap:24px;
+  }
+}
+@media(max-width:700px){
+  .service-single-reference-hero{
+    padding:68px 0 40px!important;
+  }
+  .service-detail-page .service-single-reference-hero .h1{
+    font-size:clamp(48px,14vw,72px);
+  }
+  .service-detail-page .service-single-reference-hero .lead{
+    font-size:16px;
+  }
+  .service-single-reference-media-section{
+    padding-bottom:62px!important;
+  }
+  .service-single-reference-media img{
+    aspect-ratio:1.12/1;
+  }
+  .service-single-reference-overview{
+    padding-top:28px!important;
+    padding-bottom:70px!important;
+  }
+  .service-single-included-stage{
+    padding-top:70px!important;
+  }
+  .service-single-included-stage>.container{
+    padding-top:30px;
+  }
+}
