@@ -469,3 +469,14 @@ service_single_public_reference_notes_exposed: false
 utility_reference_audit_404: existing-simple-utility-composition-preserved
 utility_reference_audit_coming_soon: no-exact-ritovex-template-page-preserve-vsn-utility-shell
 next_manual_reference_scope: remaining-service-detail-pages-after-representative-certification
+
+
+service_single_reference_baseline_pr: 110
+service_single_reference_baseline_merge_sha: 8c02d06613f050c99373755f33c8fa3cd7181137
+service_single_reference_baseline_ci: static-555-visual-46-secondary-10-passed
+service_single_reference_propagation_status: implemented-in-review
+service_single_reference_propagated_pages: [software, websites, ecommerce, mobile-app-development, ai-automation, profile, social-media, bpo, business-solutions, tax-consulting, resource-augmentation]
+service_single_reference_total_pages: 12
+service_single_reference_form_faq_order_preserved: true
+service_single_reference_internal_notes_public: false
+next_manual_reference_scope: final-full-site-pixel-review-production-publication
