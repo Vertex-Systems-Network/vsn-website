@@ -335,3 +335,9 @@ services_technology_stage_percent: 100
 services_page_faq_count: 4
 services_public_proof_strategy: github-plus-shopify-no-fabricated-testimonials
 services_reference_depth_base: 2c53ebe3a27b398e222c517c73a3664f709e1859
+
+about_reference_depth_percent: 100
+about_operating_principles_count: 4
+about_public_verification_strip: true
+about_credentials_strategy: verifiable-records-not-fabricated-awards
+about_reference_depth_base: 77814c377b7671bc9ffcdb63e39f42ebc3ee9c79
