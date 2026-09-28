@@ -252,3 +252,33 @@
   .project-image-meta{font-size:10px;padding:12px 13px}
   .projects-list-page .projects-proof-note{margin-top:24px}
 }
+
+/* 2026-09-29: screenshot-led Blog 3x3 density and metadata parity. */
+.blog-reference-grid .editorial-meta{
+  align-items:center;
+  justify-content:space-between;
+  text-transform:none;
+  letter-spacing:0;
+  font-size:11px;
+}
+.blog-reference-grid .editorial-meta>span:first-child{
+  display:inline-flex;
+  align-items:center;
+  width:max-content;
+  padding:7px 10px;
+  border-radius:5px;
+  background:#FFFFFF;
+  color:#3F4245;
+  font-weight:700;
+}
+.blog-reference-grid .editorial-meta>span:last-child,
+.blog-reference-grid .editorial-meta>time{
+  color:#7E8083;
+  font-weight:650;
+}
+.blog-reference-grid .editorial-card-body{
+  min-height:235px;
+}
+@media(max-width:700px){
+  .blog-reference-grid .editorial-card-body{min-height:0}
+}
