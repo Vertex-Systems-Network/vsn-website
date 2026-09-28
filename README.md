@@ -344,3 +344,7 @@ PR #98 completed rendered Chromium QA for Services, About, Blog, Projects and Co
 ## Services + Contact rendered fidelity — 2026-09-28
 
 This screenshot-led pass moves the two remaining primary pages materially closer to the live Ritovex reference without removing VSN-required content. Services now uses a large left editorial hero, dark service accordion, circular technology tokens, image-plus-benefits split, compact FAQ treatment and three verifiable public-proof cards; VSN outcome/scope modules remain available lower in the page. Contact now opens with a simple large hero, then a soft image-plus-project-brief form and three direct contact cards before the VSN-specific route, next-step, public-profile and Google Map sections. Fake testimonials, client metrics and unsupported claims remain excluded. Rendered Chromium QA remains the merge gate.
+
+### Services + Contact rendered certification
+
+PR #100 passed Static Integrity run #529 and Visual Browser QA run #33 on tested head `623f151e9deec673031720a6b3ff025d5d5a01c9`, then merged as `8a0041b5ff83f15d8e9fd427383485afe1b0c304`. Post-merge Static Integrity run #530 passed on that exact main commit. The next browser-QA scope moves to service-detail, Blog detail, Project detail and utility pages rather than repeating the primary-page checks.
