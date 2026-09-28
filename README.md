@@ -352,3 +352,7 @@ PR #100 passed Static Integrity run #529 and Visual Browser QA run #33 on tested
 ## Detail and utility rendered browser QA — 2026-09-28
 
 Playwright now renders Web Development service detail, Blog detail, Project detail, 404 and Coming Soon at 1440×900 and 390×844, with live Ritovex comparison routes where available. Visual Browser QA run #36 passed after fixing a real mobile overflow on the Project detail hero; Static Integrity run #535 also passed on the tested head. The workflow now fails on local navigation/page errors, horizontal overflow, missing or suspicious human imagery, hidden post-scroll content, missing H1s and mobile-navigation state regressions. Artifact `visual-browser-pages` stores the screenshots and machine-readable report for seven days.
+
+## Secondary and full-site rendered browser QA — 2026-09-28
+
+A dedicated Playwright lane now renders the remaining 21 service, company/support and legal pages at 1440×900 and 390×844. Secondary Visual Browser QA run #1 passed with no local navigation/page errors, page-level horizontal overflow, missing images, suspicious human imagery, hidden post-scroll content, missing H1s or mobile-navigation state failures. Together with the primary-page and detail/utility browser runs, every current site page now has automated rendered functional QA coverage. This does not claim a manual pixel-for-pixel match against every owner-recorded reference video; that remains a separate visual review/publication step.

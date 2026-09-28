@@ -1,0 +1,54 @@
+name: Secondary Visual Browser QA
+
+on:
+  pull_request:
+    paths:
+      - 'software.html'
+      - 'mobile-app-development.html'
+      - 'ecommerce.html'
+      - 'ai-automation.html'
+      - 'bpo.html'
+      - 'resource-augmentation.html'
+      - 'profile.html'
+      - 'social-media.html'
+      - 'websites.html'
+      - 'business-solutions.html'
+      - 'tax-consulting.html'
+      - 'products.html'
+      - 'industries.html'
+      - 'work.html'
+      - 'process.html'
+      - 'trust.html'
+      - 'payments.html'
+      - 'legal/**'
+      - 'assets/**'
+      - 'scripts/visual_secondary_browser_qa.cjs'
+      - '.github/workflows/visual-secondary-browser-qa.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  secondary-render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install Playwright for QA
+        run: |
+          npm install --no-save playwright@1.55.0
+          npx playwright install --with-deps chromium
+      - name: Render remaining VSN pages
+        run: node scripts/visual_secondary_browser_qa.cjs
+      - name: Upload screenshots and report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: visual-browser-secondary-pages
+          path: qa-artifacts/secondary-pages
+          if-no-files-found: error
+          retention-days: 7
