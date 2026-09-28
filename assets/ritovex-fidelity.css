@@ -586,3 +586,31 @@ input:focus,textarea:focus,select:focus{outline-color:var(--vsn-indigo)!importan
  .contact-route-grid strong,.contact-step-grid h3{margin-top:30px}
 }
 @media(prefers-reduced-motion:reduce){.contact-route-grid>a{transition:none!important}}
+
+/* 2026-09-28 rendered Home header + hero correction. */
+.rv-topline{display:none!important}
+@media(min-width:981px){
+  .rv-header{--rv-topline-h:0px!important;--rv-nav-h:70px!important}
+  .rv-header .nav-menu{top:70px!important}
+}
+@media(min-width:1081px){
+  .home-page .home-hero-grid{
+    grid-template-columns:minmax(0,1.08fr) minmax(430px,.92fr)!important;
+    gap:56px!important;
+  }
+  .home-page .home-hero-copy .display{
+    max-width:700px!important;
+    font-size:clamp(54px,4.5vw,68px)!important;
+    line-height:.96!important;
+    letter-spacing:-.058em!important;
+  }
+  .home-page .hero-art{min-height:520px!important}
+  .home-page .hero-art img{
+    height:520px!important;
+    object-position:50% 50%!important;
+  }
+  .home-page .home-about-copy .h2{
+    font-size:clamp(40px,4vw,60px)!important;
+    line-height:.98!important;
+  }
+}
