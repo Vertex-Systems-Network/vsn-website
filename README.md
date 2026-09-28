@@ -254,3 +254,17 @@ Corrections now include:
 ### Corrective verification run #420
 
 Static Integrity run #420 passed on the corrective branch. The same job passed the static-site validator, motion regression and the dedicated Ritovex fidelity regression. The fidelity check now protects the reference shell, direct human imagery, all service-detail FAQs/forms, Google Maps contact section, separate Blog/Projects and detail layouts, About/Services reference structures, 404 composition and single animation ownership.
+
+## Exact VSN logo palette lock
+
+The website palette is now derived from the committed VSN logo itself instead of manually chosen approximate colors.
+
+- Cyan: `#5AC8D6`
+- Violet: `#625BA8`
+- Blue: `#6188C6`
+- Charcoal: `#3F4245`
+- Gray: `#7E8083`
+- Black: `#000000`
+- White: `#FFFFFF`
+
+All eight active CSS files were normalized to these colors or alpha variants of them. `scripts/check_logo_palette.py` now derives the logo colors from `assets/vertex-logo.png` and fails CI if any foreign hex/RGB color enters active CSS. Static Integrity run #450 passed the logo inspector, exact palette validator, static-site validator, motion regression and Ritovex fidelity regression on the same PR head.
