@@ -76,7 +76,7 @@ async function collectMetrics(page,local){
       return r.width>0&&r.height>0&&(r.right>innerWidth+1||r.left<-1);
     }).slice(0,30).map(el=>{
       const r=el.getBoundingClientRect();
-      return {tag:el.tagName.toLowerCase(),className:typeof el.className==='string'?el.className:'',left:Math.round(r.left),right:Math.round(r.right),width:Math.round(r.width)};
+      return {tag:el.tagName.toLowerCase(),className:typeof el.className==='string'?el.className:'',text:(el.textContent||'').trim().replace(/\\s+/g,' ').slice(0,120),top:Math.round(r.top),left:Math.round(r.left),right:Math.round(r.right),width:Math.round(r.width)};
     }),
     missingImages:[...document.images].filter(i=>!i.complete||i.naturalWidth===0).map(i=>i.getAttribute('src')),
     sectionCount:document.querySelectorAll('main section').length,
