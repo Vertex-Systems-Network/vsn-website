@@ -1235,3 +1235,18 @@
   }
 }
 
+/* Point 3 process mobile regression correction: desktop split must collapse below 1080px. */
+@media(max-width:1080px){
+  .home-page .home-process-layout{
+    grid-template-columns:minmax(0,1fr)!important;
+    width:100%;
+    min-width:0;
+  }
+  .home-page .home-process-layout>*,
+  .home-page .home-process-grid,
+  .home-page .home-process-grid article{
+    min-width:0;
+    max-width:100%;
+  }
+}
+
