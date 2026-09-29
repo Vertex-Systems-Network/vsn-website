@@ -1,0 +1,404 @@
+/* Point 4 — Services + service-detail data-first visual polish — 2026-09-30
+   Shared visual layer only. VSN content, service routes, forms, FAQs and factual scope remain authoritative. */
+
+.services-reference-page,
+.service-detail-page{
+  --p4-black:#000000;
+  --p4-charcoal:#3F4245;
+  --p4-gray:#7E8083;
+  --p4-cyan:#5AC8D6;
+  --p4-blue:#6188C6;
+  --p4-violet:#625BA8;
+  --p4-white:#FFFFFF;
+}
+
+/* ===== Shared service-lane rail ===== */
+.p4-service-lane-nav{
+  position:relative;
+  z-index:8;
+  overflow:hidden;
+  border-top:1px solid rgba(255,255,255,.08);
+  border-bottom:1px solid rgba(255,255,255,.10);
+  background:
+    radial-gradient(circle at 72% 0%,rgba(97,136,198,.12),transparent 30%),
+    #000000;
+}
+.p4-service-lane-grid{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:0;
+}
+.p4-service-lane{
+  position:relative;
+  min-height:108px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  gap:8px;
+  padding:22px 24px;
+  border-right:1px solid rgba(255,255,255,.10);
+  color:#FFFFFF;
+  text-decoration:none;
+  background:transparent;
+  transition:background-color .22s ease,transform .22s cubic-bezier(.22,1,.36,1);
+}
+.p4-service-lane:last-child{border-right:0}
+.p4-service-lane:before{
+  content:"";
+  position:absolute;
+  left:24px;
+  top:0;
+  width:42px;
+  height:2px;
+  background:#3F4245;
+}
+.p4-service-lane span{
+  color:#7E8083;
+  font-size:9px;
+  font-weight:850;
+  letter-spacing:.13em;
+}
+.p4-service-lane strong{
+  color:#FFFFFF;
+  font-size:14px;
+  line-height:1.25;
+  letter-spacing:-.02em;
+}
+.p4-service-lane:hover,
+.p4-service-lane:focus-visible{
+  background:rgba(255,255,255,.035);
+}
+.p4-service-lane.is-active{
+  background:linear-gradient(135deg,rgba(97,136,198,.16),rgba(98,91,168,.08));
+}
+.p4-service-lane.is-active:before{background:#5AC8D6}
+.p4-service-lane.is-active span{color:#5AC8D6}
+
+/* ===== Services landing ===== */
+.services-reference-page .services-rendered-hero{
+  position:relative;
+  overflow:hidden;
+}
+.services-reference-page .services-rendered-hero:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:
+    linear-gradient(rgba(255,255,255,.022) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.022) 1px,transparent 1px);
+  background-size:58px 58px;
+  mask-image:linear-gradient(90deg,#000000,transparent 82%);
+}
+.services-reference-page .services-rendered-hero-stage{
+  position:relative;
+  gap:10px!important;
+  padding:10px;
+  border:1px solid rgba(90,200,214,.16);
+  border-radius:18px;
+  background:rgba(255,255,255,.025);
+  box-shadow:0 28px 80px rgba(0,0,0,.28);
+}
+.services-reference-page .services-pillar{
+  position:relative;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.12)!important;
+  border-radius:12px!important;
+  background:#3F4245;
+  transition:transform .28s cubic-bezier(.22,1,.36,1),border-color .28s ease;
+}
+.services-reference-page .services-pillar:hover{
+  transform:translateY(-3px);
+  border-color:rgba(90,200,214,.46)!important;
+}
+.services-reference-page .services-pillar:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  border-top:2px solid transparent;
+}
+.services-reference-page .services-pillar:nth-child(1):after{border-top-color:#6188C6}
+.services-reference-page .services-pillar:nth-child(2):after{border-top-color:#5AC8D6}
+.services-reference-page .services-pillar:nth-child(3):after{border-top-color:#625BA8}
+.services-reference-page .services-pillar:nth-child(4):after{border-top-color:#7E8083}
+
+.services-reference-page .reference-service-accordion{
+  display:grid;
+  gap:10px;
+  border:0!important;
+}
+.services-reference-page .reference-service-accordion details{
+  overflow:hidden;
+  border:1px solid #3F4245!important;
+  border-radius:12px;
+  background:rgba(255,255,255,.018)!important;
+}
+.services-reference-page .reference-service-accordion details[open]{
+  border-color:rgba(90,200,214,.42)!important;
+  background:linear-gradient(90deg,rgba(97,136,198,.08),rgba(98,91,168,.035))!important;
+}
+.services-reference-page .reference-service-accordion summary{
+  padding:24px 22px!important;
+}
+.services-reference-page .reference-service-accordion details[open] summary strong{color:#5AC8D6!important}
+.services-reference-page .reference-service-body{
+  padding:0 22px 24px!important;
+}
+.services-reference-page .reference-links a{
+  border-radius:999px;
+  border-color:rgba(255,255,255,.16)!important;
+  background:rgba(255,255,255,.025);
+}
+.services-reference-page .reference-links a:hover,
+.services-reference-page .reference-links a:focus-visible{
+  background:rgba(90,200,214,.08);
+}
+
+.services-reference-page .services-tech-grid{
+  grid-template-columns:repeat(4,minmax(0,1fr))!important;
+  gap:8px;
+  border:0!important;
+}
+.services-reference-page .services-tech-grid span{
+  min-height:76px!important;
+  border:1px solid rgba(126,128,131,.18)!important;
+  border-radius:10px;
+  background:#FFFFFF!important;
+}
+.services-reference-page .services-tech-grid span:hover{
+  border-color:#6188C6!important;
+  background:#000000!important;
+}
+.services-reference-page .services-proof-cards>a,
+.services-reference-page .about-team-grid article,
+.services-reference-page .project-facts{
+  border-radius:14px!important;
+  overflow:hidden;
+}
+
+/* ===== Detail hero refinements ===== */
+.service-detail-page .service-single-reference-hero,
+.service-detail-page .web-service-reference-hero{
+  border-bottom:0!important;
+}
+.service-detail-page .service-hero-visual{
+  border-color:rgba(90,200,214,.20)!important;
+  box-shadow:0 36px 100px rgba(0,0,0,.42)!important;
+}
+.service-detail-page .service-hero-visual:before{
+  content:"";
+  position:absolute;
+  z-index:2;
+  inset:0;
+  pointer-events:none;
+  background:
+    linear-gradient(90deg,transparent 0 66%,rgba(90,200,214,.04) 100%),
+    repeating-linear-gradient(0deg,transparent 0 58px,rgba(255,255,255,.022) 58px 59px);
+}
+.service-detail-page .service-hero-visual figcaption{
+  z-index:4!important;
+  max-width:min(420px,calc(100% - 44px));
+}
+.service-detail-page .service-hero-copy .breadcrumbs{
+  display:flex;
+  flex-wrap:wrap;
+  gap:4px;
+}
+.service-detail-page .service-hero-copy .btn-row{
+  gap:10px!important;
+}
+
+/* ===== Media + overview ===== */
+.service-detail-page .service-single-reference-media,
+.service-detail-page .web-service-reference-media{
+  border:1px solid rgba(126,128,131,.16);
+  box-shadow:0 28px 70px rgba(0,0,0,.10)!important;
+}
+.service-detail-page .service-single-reference-media:before,
+.service-detail-page .web-service-reference-media:before{
+  content:"";
+  position:absolute;
+  z-index:2;
+  left:18px;
+  top:18px;
+  width:54px;
+  height:2px;
+  background:linear-gradient(90deg,#5AC8D6,#6188C6,#625BA8);
+}
+.service-detail-page .service-single-reference-overview-grid>p,
+.service-detail-page .web-service-reference-overview-grid>p{
+  position:relative;
+  overflow:hidden;
+  border-color:rgba(126,128,131,.18)!important;
+  background:
+    linear-gradient(145deg,#FFFFFF,rgba(126,128,131,.045))!important;
+  box-shadow:0 18px 46px rgba(0,0,0,.05);
+}
+.service-detail-page .service-single-reference-overview-grid>p:before,
+.service-detail-page .web-service-reference-overview-grid>p:before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:0;
+  width:48px;
+  height:2px;
+  background:#6188C6;
+}
+.service-detail-page .service-single-reference-overview-grid>p:nth-child(2):before,
+.service-detail-page .web-service-reference-overview-grid>p:nth-child(2):before{background:#625BA8}
+
+/* ===== Long-form content cards ===== */
+.service-detail-page .service-grid{
+  gap:16px!important;
+}
+.service-detail-page .service-card,
+.service-detail-page .decision-card,
+.service-detail-page .scope-panel,
+.service-detail-page .card,
+.service-detail-page .price-card{
+  border:1px solid rgba(126,128,131,.17)!important;
+  border-radius:14px!important;
+  background:linear-gradient(145deg,#FFFFFF,rgba(126,128,131,.035))!important;
+  box-shadow:none!important;
+}
+.service-detail-page .service-card,
+.service-detail-page .decision-card,
+.service-detail-page .scope-panel{
+  position:relative;
+  overflow:hidden;
+}
+.service-detail-page .service-card:before,
+.service-detail-page .decision-card:before,
+.service-detail-page .scope-panel:before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:0;
+  width:46px;
+  height:2px;
+  background:#6188C6;
+}
+.service-detail-page .service-card:hover{
+  border-color:rgba(97,136,198,.46)!important;
+  box-shadow:0 18px 46px rgba(0,0,0,.07)!important;
+}
+.service-detail-page .two-col{
+  align-items:start;
+}
+.service-detail-page .two-col>.scope-panel,
+.service-detail-page .two-col>.card{
+  padding:30px!important;
+}
+.service-detail-page .feature-list li{
+  border-color:rgba(126,128,131,.18)!important;
+}
+.service-detail-page .notice{
+  border:1px solid rgba(97,136,198,.28)!important;
+  border-radius:12px!important;
+  background:rgba(97,136,198,.06)!important;
+}
+
+/* ===== Enquiry forms ===== */
+.service-detail-page form.form{
+  padding:30px!important;
+  border:1px solid rgba(126,128,131,.18)!important;
+  border-radius:14px!important;
+  background:#FFFFFF!important;
+  box-shadow:0 22px 56px rgba(0,0,0,.06);
+}
+.service-detail-page .field input,
+.service-detail-page .field textarea,
+.service-detail-page .field select{
+  min-height:48px;
+  border:1px solid rgba(126,128,131,.32)!important;
+  border-radius:9px!important;
+  background:#FFFFFF!important;
+}
+.service-detail-page .field textarea{min-height:130px}
+.service-detail-page .field input:focus,
+.service-detail-page .field textarea:focus,
+.service-detail-page .field select:focus{
+  border-color:#6188C6!important;
+  outline:2px solid rgba(97,136,198,.16)!important;
+  outline-offset:1px;
+}
+.service-detail-page .form-note{
+  padding:12px 14px;
+  border-radius:9px;
+  background:rgba(126,128,131,.065);
+}
+
+/* ===== FAQs ===== */
+.service-detail-page .faq{
+  display:grid;
+  gap:9px;
+}
+.service-detail-page .faq details{
+  overflow:hidden;
+  border:1px solid rgba(126,128,131,.18)!important;
+  border-radius:11px!important;
+  background:#FFFFFF;
+}
+.service-detail-page .faq details[open]{
+  border-color:rgba(97,136,198,.42)!important;
+  box-shadow:0 14px 38px rgba(0,0,0,.05);
+}
+.service-detail-page .faq summary{
+  padding:18px 20px!important;
+}
+.service-detail-page .faq details>p{
+  padding:0 20px 20px;
+}
+
+/* ===== Authority pricing ===== */
+.service-detail-page .pricing{
+  gap:16px!important;
+}
+.service-detail-page .pricing .price-card{
+  position:relative;
+  overflow:hidden;
+  padding-top:30px!important;
+}
+.service-detail-page .pricing .price-card:before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  height:3px;
+  background:#3F4245;
+}
+.service-detail-page .pricing .price-card.featured:before{
+  background:linear-gradient(90deg,#5AC8D6,#6188C6,#625BA8);
+}
+
+/* ===== Responsive ===== */
+@media(max-width:980px){
+  .p4-service-lane-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .p4-service-lane:nth-child(2){border-right:0}
+  .p4-service-lane:nth-child(-n+2){border-bottom:1px solid rgba(255,255,255,.10)}
+  .services-reference-page .services-tech-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+}
+@media(max-width:700px){
+  .p4-service-lane{min-height:86px;padding:16px}
+  .p4-service-lane:before{left:16px}
+  .p4-service-lane strong{font-size:12px}
+  .service-detail-page .service-hero-visual{border-radius:14px!important}
+  .service-detail-page form.form{padding:20px!important}
+  .service-detail-page .two-col>.scope-panel,
+  .service-detail-page .two-col>.card{padding:22px!important}
+  .services-reference-page .services-tech-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+}
+@media(max-width:460px){
+  .p4-service-lane-grid{grid-template-columns:1fr}
+  .p4-service-lane{border-right:0;border-bottom:1px solid rgba(255,255,255,.10)}
+  .p4-service-lane:last-child{border-bottom:0}
+}
+@media(prefers-reduced-motion:reduce){
+  .p4-service-lane,
+  .services-reference-page .services-pillar,
+  .service-detail-page .service-card{transition:none!important}
+  .services-reference-page .services-pillar:hover,
+  .service-detail-page .service-card:hover{transform:none}
+}
