@@ -372,6 +372,7 @@
   display:flex!important;
   flex-direction:column!important;
   justify-content:center!important;
+  background:#FFFFFF!important;
   color:#000000!important;
 }
 .services-reference-page.services-mockup-parity .services-benefit-copy .h2{
