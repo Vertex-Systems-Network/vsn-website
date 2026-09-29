@@ -402,3 +402,8 @@ A second direct review of the PR #112 screenshots showed that title and metadata
 ## Service-name hero parity — 2026-09-29
 
 Rendered-reference review showed that the remaining service-detail mismatch was driven by long descriptive H1 sentences wrapping into four or five lines, while the Ritovex single-service template uses the service name as the hero title and keeps the explanation in supporting copy. All 12 VSN service-detail pages now use concise service-name H1s while preserving their existing lead paragraphs and full long-form content. Shared service hero sizing is also aligned to the reference, with compact 30px mobile service titles. Blog and Project single-detail title metrics are locked to the measured reference desktop/mobile sizes.
+
+
+## Final title wrapping parity — 2026-09-29
+
+The PR #114 artifact confirmed exact Project Detail heading metrics and exact mobile service-title sizing, but the representative Web Development title still wrapped because the VSN H1 included “& E-commerce”, and the longer Blog headline occupied more lines than the single-blog reference. The representative H1 is now “Web Development” while commerce remains explicit in the page metadata, eyebrow, lead and body. The published Blog title is tightened to “Where AI Helps — and Human Review Matters” consistently on the homepage, Blog listing and article detail. The mobile 404 title is also constrained to the same single-line visual rhythm as the reference.
