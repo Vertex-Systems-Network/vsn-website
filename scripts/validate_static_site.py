@@ -53,6 +53,62 @@ OFFICIAL_LOGO_SIZE = 60222
 OFFICIAL_LOGO_WIDTH = 2041
 OFFICIAL_LOGO_HEIGHT = 517
 
+HUMAN_IMAGE_PATHS = (
+    "assets/vsn-human-hero.webp",
+    "assets/vsn-human-about.webp",
+    "assets/vsn-human-software.webp",
+    "assets/vsn-human-ai.webp",
+    "assets/vsn-human-growth.webp",
+    "assets/vsn-human-operations.webp",
+    "assets/vsn-human-business.webp",
+    "assets/vsn-human-team.webp",
+    "assets/vsn-human-industries.webp",
+    "assets/vsn-human-editorial.webp",
+)
+HUMAN_IMAGE_MIN_WIDTH = 1400
+HUMAN_IMAGE_MIN_HEIGHT = 1000
+HUMAN_IMAGE_MIN_BYTES = 100_000
+SEMANTIC_IMAGE_REFERENCES = {
+    "index.html": ("assets/vsn-human-hero.webp", "assets/vsn-human-editorial.webp"),
+    "about.html": ("assets/vsn-human-about.webp",),
+    "ai-automation.html": ("assets/vsn-human-ai.webp",),
+    "blog.html": ("assets/vsn-human-editorial.webp",),
+    "blog-detail.html": ("assets/vsn-human-editorial.webp",),
+}
+
+def webp_dimensions(data: bytes) -> tuple[int, int] | None:
+    """Read WebP dimensions without adding a runtime image-library dependency."""
+    if len(data) < 30 or data[:4] != b"RIFF" or data[8:12] != b"WEBP":
+        return None
+
+    offset = 12
+    while offset + 8 <= len(data):
+        chunk_type = data[offset:offset + 4]
+        chunk_size = int.from_bytes(data[offset + 4:offset + 8], "little")
+        payload = offset + 8
+
+        if chunk_type == b"VP8X" and payload + 10 <= len(data):
+            width = 1 + int.from_bytes(data[payload + 4:payload + 7], "little")
+            height = 1 + int.from_bytes(data[payload + 7:payload + 10], "little")
+            return width, height
+
+        if chunk_type == b"VP8 " and payload + 10 <= len(data):
+            if data[payload + 3:payload + 6] == b"\x9d\x01\x2a":
+                width = int.from_bytes(data[payload + 6:payload + 8], "little") & 0x3FFF
+                height = int.from_bytes(data[payload + 8:payload + 10], "little") & 0x3FFF
+                return width, height
+
+        if chunk_type == b"VP8L" and payload + 5 <= len(data):
+            if data[payload] == 0x2F:
+                bits = int.from_bytes(data[payload + 1:payload + 5], "little")
+                width = (bits & 0x3FFF) + 1
+                height = ((bits >> 14) & 0x3FFF) + 1
+                return width, height
+
+        offset = payload + chunk_size + (chunk_size & 1)
+
+    return None
+
 def rel(path: Path) -> str:
     return path.relative_to(ROOT).as_posix()
 
@@ -122,6 +178,41 @@ def main() -> int:
                     f"{OFFICIAL_LOGO_PATH}: expected "
                     f"{OFFICIAL_LOGO_WIDTH}x{OFFICIAL_LOGO_HEIGHT}, found {width}x{height}"
                 )
+
+    human_hashes: dict[str, str] = {}
+    for human_image in HUMAN_IMAGE_PATHS:
+        image_path = ROOT / human_image
+        if not image_path.is_file():
+            errors.append(f"{human_image}: missing required semantic human image")
+            continue
+
+        image_bytes = image_path.read_bytes()
+        if len(image_bytes) < HUMAN_IMAGE_MIN_BYTES:
+            errors.append(
+                f"{human_image}: image is too compressed/small for large website media "
+                f"({len(image_bytes)} bytes; minimum {HUMAN_IMAGE_MIN_BYTES})"
+            )
+
+        dimensions = webp_dimensions(image_bytes)
+        if dimensions is None:
+            errors.append(f"{human_image}: invalid or unsupported WebP image")
+        else:
+            width, height = dimensions
+            if width < HUMAN_IMAGE_MIN_WIDTH or height < HUMAN_IMAGE_MIN_HEIGHT:
+                errors.append(
+                    f"{human_image}: expected at least "
+                    f"{HUMAN_IMAGE_MIN_WIDTH}x{HUMAN_IMAGE_MIN_HEIGHT}, found {width}x{height}"
+                )
+
+        digest = hashlib.sha256(image_bytes).hexdigest()
+        human_hashes[human_image] = digest
+
+    if len(set(human_hashes.values())) != len(human_hashes):
+        duplicates: dict[str, list[str]] = {}
+        for image_path, digest in human_hashes.items():
+            duplicates.setdefault(digest, []).append(image_path)
+        repeated = [paths for paths in duplicates.values() if len(paths) > 1]
+        errors.append(f"Semantic human images must be distinct files; duplicates: {repeated}")
 
     ids_by_file: dict[str,set[str]] = {}
     refs: list[tuple[str,str,str,str|None]] = []
@@ -254,6 +345,10 @@ def main() -> int:
                 errors.append(f"{source}: missing Website operator block")
             if "Related policies:" not in text:
                 errors.append(f"{source}: missing Related policies block")
+
+        for required_image in SEMANTIC_IMAGE_REFERENCES.get(source, ()):
+            if required_image not in text:
+                errors.append(f"{source}: missing semantic image reference {required_image}")
 
         if source == "profile.html":
             for price in OLD_PRICES:
