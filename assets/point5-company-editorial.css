@@ -265,6 +265,9 @@
 }
 
 /* ===== PROJECTS — technical/public-work identity ===== */
+.projects-list-page main>.section{
+  padding-bottom:110px!important;
+}
 .projects-list-page .projects-reference-hero{
   position:relative;
   overflow:hidden;
@@ -631,6 +634,7 @@
   .products-page .repo-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
 }
 @media(max-width:700px){
+  .projects-list-page main>.section{padding-bottom:84px!important}
   .about-page .about-reference-hero{padding-bottom:54px!important}
   .about-page .about-reference-hero-media,
   .products-page .rv-hero-visual,
