@@ -1,0 +1,204 @@
+/* Batch 1 global visual polish — 2026-09-29
+   Shared button and footer treatment. Palette is restricted to VSN logo colors. */
+
+:root{--vsn-radius:10px}
+
+.btn,
+.rv-header-cta,
+.rv-newsletter-form input,
+.rv-newsletter-form button,
+.form button,
+.form input,
+.form textarea,
+.form select{
+  border-radius:var(--vsn-radius)!important;
+}
+
+.rv-header-cta,
+.btn{
+  transition:transform .22s ease,background-color .22s ease,color .22s ease,border-color .22s ease,box-shadow .22s ease;
+}
+.rv-header-cta:hover,
+.btn:hover{transform:translateY(-2px)}
+
+.rv-footer-word{display:none!important}
+
+.rv-footer{
+  position:relative;
+  overflow:hidden;
+  background:#000000!important;
+  color:#FFFFFF!important;
+  border-top:1px solid rgba(97,136,198,.35)!important;
+}
+.rv-footer:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:
+    radial-gradient(circle at 14% 0%,rgba(90,200,214,.10),transparent 28%),
+    radial-gradient(circle at 86% 10%,rgba(98,91,168,.15),transparent 32%);
+}
+.rv-footer>.container,
+.rv-footer-newsletter>.container{position:relative;z-index:1}
+
+.rv-footer-newsletter{
+  background:linear-gradient(110deg,rgba(97,136,198,.12),rgba(98,91,168,.12))!important;
+  border-bottom:1px solid rgba(126,128,131,.25)!important;
+}
+.rv-footer-newsletter>.container{
+  min-height:150px;
+  display:grid!important;
+  grid-template-columns:minmax(0,.9fr) minmax(360px,1.1fr)!important;
+  gap:60px!important;
+  align-items:center!important;
+  padding-top:34px!important;
+  padding-bottom:34px!important;
+}
+.rv-footer-newsletter h3{
+  margin:0!important;
+  max-width:520px;
+  color:#FFFFFF!important;
+  font-size:clamp(28px,3vw,46px)!important;
+  line-height:1!important;
+  letter-spacing:-.045em!important;
+}
+.rv-newsletter-form{
+  display:grid!important;
+  grid-template-columns:minmax(0,1fr) auto!important;
+  gap:10px!important;
+  align-items:start!important;
+}
+.rv-newsletter-form input{
+  min-height:52px!important;
+  background:rgba(255,255,255,.06)!important;
+  border:1px solid rgba(255,255,255,.18)!important;
+  color:#FFFFFF!important;
+}
+.rv-newsletter-form input::placeholder{color:#7E8083!important}
+.rv-newsletter-form button{
+  min-height:52px!important;
+  padding:0 22px!important;
+  border:1px solid #6188C6!important;
+  background:#6188C6!important;
+  color:#FFFFFF!important;
+}
+.rv-newsletter-note{
+  grid-column:1/-1;
+  color:#7E8083!important;
+  font-size:11px!important;
+  line-height:1.45!important;
+}
+
+.rv-footer>.container{padding-top:54px!important;padding-bottom:28px!important}
+.rv-footer-grid{
+  grid-template-columns:minmax(280px,1.45fr) repeat(3,minmax(130px,.55fr))!important;
+  gap:48px!important;
+  align-items:start!important;
+  padding-bottom:40px!important;
+}
+.rv-footer-about{max-width:430px}
+.rv-footer-about .brand{display:inline-flex;margin-bottom:18px}
+.rv-footer-about .brand img{max-width:190px;height:auto}
+.rv-footer-about p{color:#7E8083!important;line-height:1.7!important}
+.rv-footer-contact{display:grid!important;gap:7px!important;margin-top:22px!important}
+.rv-footer-contact a,.rv-footer-contact span{color:#FFFFFF!important;font-size:13px!important}
+.rv-footer h4{
+  margin:2px 0 18px!important;
+  color:#FFFFFF!important;
+  font-size:12px!important;
+  text-transform:uppercase!important;
+  letter-spacing:.12em!important;
+}
+.rv-footer ul{display:grid!important;gap:11px!important}
+.rv-footer li a{color:#7E8083!important;font-size:13px!important}
+.rv-footer li a:hover{color:#FFFFFF!important}
+
+.rv-footer-public-links{
+  min-height:auto!important;
+  padding:22px 0!important;
+  margin:0!important;
+  gap:10px!important;
+  border-top:1px solid rgba(126,128,131,.28)!important;
+  border-bottom:1px solid rgba(126,128,131,.28)!important;
+}
+.rv-footer-public-links>span{
+  margin-right:auto;
+  color:#7E8083!important;
+  font-size:11px!important;
+  text-transform:uppercase;
+  letter-spacing:.1em;
+}
+.rv-footer-public-links a{
+  padding:8px 12px;
+  border:1px solid rgba(126,128,131,.28);
+  border-radius:999px;
+  color:#FFFFFF!important;
+  font-size:12px!important;
+}
+.rv-footer-public-links a:hover{
+  border-color:#6188C6;
+  background:rgba(97,136,198,.10);
+}
+
+.rv-footer-bottom{
+  display:flex!important;
+  justify-content:space-between!important;
+  gap:18px!important;
+  flex-wrap:wrap!important;
+  border-top:0!important;
+  padding:22px 0 0!important;
+  color:#7E8083!important;
+  font-size:11px!important;
+}
+.rv-footer-bottom .icon-credit{opacity:.72}
+
+.rv-footer-cta{
+  padding:74px 22px!important;
+  background:#FFFFFF!important;
+}
+.rv-footer-cta .container{
+  position:relative;
+  min-height:300px!important;
+  max-width:1240px!important;
+  border-radius:18px!important;
+  background:
+    radial-gradient(circle at 12% 20%,rgba(90,200,214,.18),transparent 28%),
+    radial-gradient(circle at 88% 80%,rgba(98,91,168,.28),transparent 32%),
+    #000000!important;
+}
+.rv-footer-cta .container:after{
+  content:"";
+  position:absolute;
+  left:-10%;
+  right:-10%;
+  bottom:-58%;
+  height:78%;
+  border-radius:50%;
+  border:1px solid rgba(97,136,198,.35);
+  box-shadow:0 0 0 18px rgba(98,91,168,.05),0 0 0 38px rgba(97,136,198,.04);
+  pointer-events:none;
+}
+.rv-footer-cta .container>*{position:relative;z-index:1}
+.rv-footer-cta .btn{border-radius:var(--vsn-radius)!important}
+
+@media(max-width:980px){
+  .rv-footer-newsletter>.container{grid-template-columns:1fr!important;gap:24px!important}
+  .rv-footer-grid{grid-template-columns:1.25fr 1fr 1fr!important}
+  .rv-footer-about{grid-column:1/-1}
+}
+@media(max-width:620px){
+  .rv-footer-newsletter>.container{padding-top:28px!important;padding-bottom:28px!important}
+  .rv-newsletter-form{grid-template-columns:1fr!important}
+  .rv-newsletter-form button{width:100%}
+  .rv-footer-grid{grid-template-columns:1fr 1fr!important;gap:34px 24px!important}
+  .rv-footer-about{grid-column:1/-1}
+  .rv-footer-public-links>span{width:100%;margin-right:0}
+  .rv-footer-bottom{display:grid!important}
+  .rv-footer-cta{padding:48px 14px!important}
+  .rv-footer-cta .container{border-radius:14px!important}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .rv-header-cta,.btn{transition:none!important}
+}

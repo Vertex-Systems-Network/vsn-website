@@ -8,6 +8,9 @@ const fidelity=read('assets/ritovex-fidelity.css');
 const fidelityJs=read('assets/ritovex-fidelity.js');
 const motion=read('assets/motion.js');
 const app=read('assets/app.js');
+const globalPolish=read('assets/vsn-global-polish.css');
+const homeBatch1=read('assets/home-batch1.css');
+const homeBatch1Js=read('assets/home-batch1.js');
 
 const servicePages=[
  'software.html','web-development-ecommerce.html','websites.html','ecommerce.html',
@@ -45,6 +48,9 @@ for(const file of htmlFiles){
  const fidelityCss=legal?'../assets/ritovex-fidelity.css':'assets/ritovex-fidelity.css';
  const fidelityScript=legal?'../assets/ritovex-fidelity.js':'assets/ritovex-fidelity.js';
  assert.ok(body.includes(fidelityCss),file+' missing fidelity stylesheet');
+ const globalPolishCss=legal?'../assets/vsn-global-polish.css':'assets/vsn-global-polish.css';
+ assert.ok(body.includes(globalPolishCss),file+' missing shared global polish stylesheet');
+ assert.doesNotMatch(body,/rv-footer-word/,file+' still renders the removed giant VSN footer wordmark');
  assert.ok(body.includes(fidelityScript),file+' missing fidelity interaction script');
  assert.ok(body.includes('rv-header'),file+' missing reference header shell');
  assert.ok(body.includes('rv-footer'),file+' missing reference footer shell');
@@ -80,6 +86,25 @@ assert.match(contact,/contact-next-steps/,'contact page missing next-step proces
 assert.equal((contact.match(/class="contact-step-grid"[\s\S]*?<\/div><\/div><\/section>/)||[''])[0].match(/<article>/g)?.length,3,'contact next-step process must contain three stages');
 
 const home=read('index.html');
+assert.match(home,/home-hero-v2/,'Home must use the Batch 1 immersive hero');
+assert.equal((home.match(/data-hero-slide/g)||[]).length,3,'Home hero must contain exactly three visual slides');
+assert.equal((home.match(/data-hero-dot/g)||[]).length,3,'Home hero must contain three accessible slide controls');
+assert.match(home,/home-hero-proof-card/,'Home hero must retain a public-proof glass card');
+assert.match(home,/home-team-card[\s\S]*vsn-human-business\.webp/,'Home accountability section must use image-led cards');
+assert.match(home,/home-proof-cards/,'Home must use the image-led public-proof grid');
+assert.equal((home.match(/class="vsn-marquee-group"/g)||[]).length,2,'Home marquee must contain two identical groups for a seamless loop');
+assert.doesNotMatch(home,/Icons: Font Awesome Free 6\.7\.2, CC BY 4\.0\.<\/small>/,'Font Awesome credit must not interrupt the Home proof section');
+assert.match(home,/assets\/home-batch1\.css/,'Home missing Batch 1 stylesheet');
+assert.match(home,/assets\/home-batch1\.js/,'Home missing Batch 1 interactions');
+assert.match(globalPolish,/\.rv-footer-word\{display:none!important\}/,'Global polish must suppress the removed legacy wordmark if stale markup appears');
+assert.match(globalPolish,/border-radius:var\(--vsn-radius\)!important/,'Global controls must share one rounded border treatment');
+assert.match(homeBatch1,/@keyframes vsn-marquee-seamless/,'Home marquee missing seamless animation');
+assert.match(homeBatch1,/grid-template-columns:repeat\(12,minmax\(0,1fr\)\)!important/,'Home three-image capability grid missing visual composition');
+assert.match(homeBatch1,/\.home-proof-cards\{/,'Home public proof visual grid missing');
+assert.match(homeBatch1,/\.home-blog-section\{[\s\S]*#000000!important/,'Home Blog must use the dark visual treatment');
+assert.match(homeBatch1Js,/setInterval\(\(\)=>show\(active\+1\),6000\)/,'Home slider must rotate at a restrained cadence');
+assert.match(homeBatch1Js,/requestAnimationFrame\(updateParallax\)/,'Home hero parallax must be requestAnimationFrame-driven');
+assert.doesNotMatch(homeBatch1Js,/pointermove/,'Home hero parallax must not use pointermove loops');
 const blog=read('blog.html');
 const projects=read('projects.html');
 const blogDetail=read('blog-detail.html');
