@@ -80,3 +80,39 @@ The live deployment remains an explicit owner-triggered action.
 Relative paths are preserved in the generated bundle, so the same source remains usable in direct `file://` mode and on a conventional static web host.
 
 Vercel is not part of the current architecture.
+
+
+## Guarded Middlehost deployment
+
+The repository includes a manual GitHub Actions workflow for the existing Middlehost cPanel host:
+
+`.github/workflows/deploy-middlehost.yml`
+
+It is intentionally **not** triggered by pushes. Production publishing requires a manual workflow dispatch and the exact confirmation value:
+
+`DEPLOY-PRODUCTION`
+
+The workflow validates the current `main` source, rebuilds the deterministic runtime, verifies the pinned SSH host identity, previews the rsync changes, publishes the static runtime to the cPanel document root, and then runs live HTTPS smoke checks against `https://vertexsystemsnetwork.com`.
+
+Required GitHub Actions repository secrets:
+
+- `MIDDLEHOST_SSH_HOST` — Middlehost/cPanel server hostname, not a guessed Cloudflare-proxied hostname.
+- `MIDDLEHOST_SSH_PORT` — numeric SSH/SFTP port.
+- `MIDDLEHOST_SSH_USER` — cPanel/SSH account user.
+- `MIDDLEHOST_SSH_PRIVATE_KEY` — private key for the deployment identity.
+- `MIDDLEHOST_SSH_KNOWN_HOSTS` — pinned SSH host-key line(s) for strict host verification.
+- `MIDDLEHOST_DEPLOY_PATH` — absolute cPanel document root. The workflow refuses anything outside the pattern `/home/<cpanel-user>/public_html`.
+
+Deployment safety behavior:
+
+- `main` is revalidated before upload.
+- A dry-run rsync preview runs before the real synchronization.
+- Old WordPress/runtime files not present in the static release are removed by `--delete-after`.
+- `.well-known/acme-challenge/` is preserved for certificate validation.
+- `cgi-bin/` is preserved for cPanel compatibility.
+- release manifest/checksum helper files are not published into the web root.
+- file/directory permissions are normalized to conventional static-host values.
+- strict SSH host-key checking is required; the workflow does not use `ssh-keyscan` at deployment time.
+- Home, Services, Contact, Blog, Projects, Authority Profile and the logo are checked over HTTPS after publication.
+
+If the hosting plan does not provide SSH/SFTP, use the manual cPanel File Manager path documented above instead. Middlehost exposes cPanel from the Client Area through the hosting product's **Access Control Panel** action.
