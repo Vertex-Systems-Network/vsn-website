@@ -89,11 +89,15 @@ for(const file of servicePages){
  assert.match(main,/data-project-form/,file+' missing project enquiry form');
  assert.match(main,/<details\b/i,file+' missing FAQ details');
  assert.match(main,/FAQ|Frequently Asked|Common questions/i,file+' missing visible FAQ heading/label');
+ const formIndex=main.indexOf('data-project-form');
+ const faqDetailsIndex=main.search(/<details\b/i);
+ assert.ok(formIndex>=0&&faqDetailsIndex>=0&&formIndex<faqDetailsIndex,file+' project enquiry form must appear before FAQ details');
 }
 
 const processPage=read('process.html');
 const trustPage=read('trust.html');
 const paymentsPage=read('payments.html');
+const profilePage=read('profile.html');
 const contact=read('contact.html');
 assert.match(contact,/<body class="secondary-page contact-page contact-mockup-parity">/,'Contact must use approved cinematic parity body contract');
 assert.match(contact,/assets\/contact-mockup-parity\.css/,'Contact missing approved cinematic parity stylesheet');
@@ -141,6 +145,23 @@ assert.equal((contact.match(/class="contact-route-grid"[\s\S]*?<\/div><\/div><\/
 assert.match(contact,/https:\/\/wa\.me\/923168433104/,'contact page missing direct WhatsApp route');
 assert.match(contact,/contact-next-steps/,'contact page missing next-step process');
 assert.equal((contact.match(/class="contact-step-grid"[\s\S]*?<\/div><\/div><\/section>/)||[''])[0].match(/<article>/g)?.length,3,'contact next-step process must contain three stages');
+const contactPublicStart=contact.indexOf('class="contact-public-links"');
+const contactPublicEnd=contact.indexOf('class="section contact-location"',contactPublicStart);
+assert.ok(contactPublicStart>=0&&contactPublicEnd>contactPublicStart,'contact page missing bounded public-profile stage');
+const contactPublicProfiles=contact.slice(contactPublicStart,contactPublicEnd);
+assert.match(contactPublicProfiles,/https:\/\/github\.com\/Vertex-Systems-Network/,'Contact public profile stage missing GitHub');
+assert.match(contactPublicProfiles,/https:\/\/profiles\.wordpress\.org\/wpessential\//,'Contact public profile stage missing WordPress.org');
+assert.match(contactPublicProfiles,/https:\/\/apps\.shopify\.com\/vsn-metafields/,'Contact public profile stage missing Shopify App Store');
+assert.match(contactPublicProfiles,/https:\/\/www\.linkedin\.com\/company\/vertexsystemsnetwork\//,'Contact public profile stage missing LinkedIn');
+assert.match(contact,/Facebook, Instagram and X will be linked when their official URLs are confirmed\./,'Contact must not fabricate unconfirmed social profile URLs');
+
+const profileHead=(profilePage.match(/<head>[\s\S]*?<\/head>/)||[''])[0];
+assert.match(profileHead,/Profile Website Packages from \$499 \| VSN/,'Authority Profile metadata must match the actual $499 starting package');
+assert.doesNotMatch(profileHead,/Packages from \$249|packages from \$249/,'Authority Profile head must not advertise the media-kit add-on as the starting package price');
+assert.equal((profilePage.match(/class="price-card/g)||[]).length,3,'Authority Profile must retain three package tiers');
+assert.match(profilePage,/<span class="label">Essential<\/span>[\s\S]*?<div class="amount">\$499/,'Authority Profile Essential package must start at $499');
+assert.match(profilePage,/<span class="label">Authority<\/span>[\s\S]*?<div class="amount">\$999/,'Authority Profile Authority package must start at $999');
+assert.match(profilePage,/<span class="label">Signature<\/span>[\s\S]*?<div class="amount">\$1,999/,'Authority Profile Signature package must start at $1,999');
 
 const home=read('index.html');
 assert.match(home,/<body class="home-page mockup-parity">/,'Home must use the approved mockup parity body contract');
