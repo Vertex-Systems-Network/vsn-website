@@ -526,3 +526,13 @@ project_detail_heading_metric_status: exact-reference-match-pr114
 service_detail_mobile_heading_metric_status: exact-reference-match-pr114
 final_wrap_parity_reference_source: pr-114-rendered-report
 next_manual_reference_scope: certify-final-wrap-parity-and-reconcile-canonical-main
+
+
+final_measured_heading_parity_status: implemented-in-review
+representative_service_heading_desktop_metrics: 120px-180px--2.4px
+representative_service_heading_mobile_metrics: 30px-39px--0.6px
+published_blog_article_title: AI Helps. Human Review Still Matters.
+blog_detail_heading_desktop_target: 48px-72px-single-line
+blog_detail_heading_mobile_target: 24px-33.6px-two-line
+final_measured_heading_reference_source: pr-115-rendered-report
+next_manual_reference_scope: certify-final-measured-heading-parity-and-reconcile-canonical-main

@@ -342,3 +342,13 @@
     letter-spacing:-.02em;
   }
 }
+
+
+/* 2026-09-29: exact measured representative service desktop heading metrics. */
+@media(min-width:701px){
+  .web-commerce-detail-page .web-service-reference-hero .h1{
+    font-size:120px;
+    line-height:180px;
+    letter-spacing:-2.4px;
+  }
+}

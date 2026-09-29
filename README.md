@@ -407,3 +407,8 @@ Rendered-reference review showed that the remaining service-detail mismatch was 
 ## Final title wrapping parity — 2026-09-29
 
 The PR #114 artifact confirmed exact Project Detail heading metrics and exact mobile service-title sizing, but the representative Web Development title still wrapped because the VSN H1 included “& E-commerce”, and the longer Blog headline occupied more lines than the single-blog reference. The representative H1 is now “Web Development” while commerce remains explicit in the page metadata, eyebrow, lead and body. The published Blog title is tightened to “Where AI Helps — and Human Review Matters” consistently on the homepage, Blog listing and article detail. The mobile 404 title is also constrained to the same single-line visual rhythm as the reference.
+
+
+## Final measured heading parity — 2026-09-29
+
+The PR #115 rendered report reduced the remaining differences to two measurable heading-geometry gaps. The representative Web Development desktop H1 now uses the exact measured Ritovex reference metrics: 120px font size, 180px line height and -2.4px letter spacing. The published article title is shortened to “AI Helps. Human Review Still Matters.” across the homepage, Blog listing and Blog detail so the 48px desktop article heading can occupy the same single-line rhythm as the reference while retaining the article’s meaning.
