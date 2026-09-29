@@ -1,61 +1,67 @@
-# LAST CHECKPOINT — Post-Restore Reconciliation
+# LAST CHECKPOINT — Point 2 Full Rendered Certification
 
 Date: 2026-09-30
 
-## Canonical substantive baseline
+## Certified main
 
 - Repository: Vertex-Systems-Network/vsn-website
-- Restore PR: #137
-- Restored main SHA: `45df966794cffd4b2695d14e638c8c78f8a2ca75`
-- Data-first source baseline: `dfb37f291b081c5e67479f4aaa53ece7dc9c0608`
-- Static Integrity on restored main: run #680 — passed
-- Production Release Bundle on restored main: run #19 — passed
+- Certified main SHA: `6ad5b3d8d253a85229a4d3a17f7aa10806439ee1`
+- Substantive restore PR: #137
+- Substantive restore SHA: `45df966794cffd4b2695d14e638c8c78f8a2ca75`
+- Reconciliation PR: #138
+- Reconciliation merge SHA: `6ad5b3d8d253a85229a4d3a17f7aa10806439ee1`
+- Static Integrity on main: run #682 — passed
+- Production Release Bundle on main: run #20 — passed
 - HTML pages: 32
 
-## What was corrected
+## Point 2 certification method
 
-The post-PR-123 literal mockup-parity rebuild was rolled back.
+A temporary certification PR #139 was created from certified main.
 
-The current site keeps VSN's real content and business structure, including:
+The only diff was an inert file under `assets/` so both rendered browser workflows would run without changing website HTML/CSS/JS runtime behavior.
 
+The temporary PR was closed without merge after certification.
+
+## Certification evidence
+
+- Static Integrity run #683 — passed
+- Visual Browser QA run #138 — passed
+  - failures: 0
+  - primary/detail/utility screenshots uploaded
+- Secondary Visual Browser QA run #104 — passed
+  - failures: 0
+  - secondary-page desktop/mobile screenshots and report uploaded
+
+The primary log recorded a blocked request for a live external Ritovex placeholder SVG. It was not a VSN runtime request and was not classified as a certification failure.
+
+## Certified runtime expectations
+
+The restored VSN baseline keeps:
+
+- real VSN business content and information architecture
 - Home three-slide hero and parallax
-- 12 service-detail pages
 - long-form service content
-- enquiry forms before FAQs
+- 12 service-detail pages
+- service enquiry forms before FAQs
 - Contact project brief and Google Map
-- distinct Blog and Projects structures
+- distinct Blog and Projects roles
 - VSN Metafields and factual public proof
-- Batch 1-3 useful visual upgrades
+- responsive/mobile navigation behavior
+- reduced-motion support
+- single-owner motion behavior intended to prevent duplicate scroll-animation jerk
 
-The `*-mockup-parity.css` layers are not part of the canonical baseline.
-
-## Design rule
+## Design rule remains locked
 
 Mockups are visual references only.
 
-They may guide composition, spacing, typography, cards, image treatment and visual rhythm. They may not replace VSN data, reduce real service content to fit a reference, force reference section counts, or introduce fabricated proof.
+They may guide spacing, composition, typography, images, cards and visual rhythm. They may not replace VSN data, force mockup section counts, remove functional content, or introduce fabricated proof.
 
-## Reconciliation changes
+## Point 2 status
 
-- `.ai/state/CURRENT-STATE.yaml` rewritten around the restored baseline.
-- `README.md` rewritten to remove contradictory historical status sections.
-- Authority Profile canonical tiers recorded as:
-  - Essential — $499
-  - Authority — $999
-  - Signature — $1,999
-- Profile SEO/social metadata aligned with the $499 starting package.
-- Separate Media Kit add-on from $249 remains valid and is not the package starting price.
-- Middlehost deployment and security hardening remain preserved.
-- Google Maps privacy disclosure remains preserved.
-
-## Production state
-
-Production deployment is not recorded as completed.
-
-The guarded Middlehost/cPanel workflow remains available but must not be triggered as part of this reconciliation checkpoint.
+CLOSED — certification passed.
 
 ## Next allowed action
 
-Point 2 only: run full rendered certification of the restored baseline using primary and secondary Visual Browser QA.
+Point 3 only: data-first Home visual polish.
 
-Do not start Point 3 or another visual redesign until Point 2 is completed and evidence is recorded.
+Do not start Point 4 until Point 3 is completed and merged/certified.
