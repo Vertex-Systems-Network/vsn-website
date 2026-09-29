@@ -491,3 +491,15 @@ final_artifact_pixel_review_blog_detail_reference_gap: corrected
 final_artifact_pixel_review_project_detail_reference_gap: corrected
 final_artifact_pixel_review_service_family_status: rendered-passed
 next_manual_reference_scope: certify-final-artifact-corrections-then-production-publication
+
+
+editorial_single_body_parity_status: implemented-in-review
+editorial_single_body_pages: [blog-detail, project-detail]
+blog_detail_sidebar_shell_removed: true
+project_detail_sidebar_shell_removed: true
+blog_detail_inline_media_count: 2
+project_detail_inline_media_count: 2
+blog_detail_dark_quote_callout: true
+project_detail_truthfulness_note: inline
+editorial_single_body_reference_source: pr-112-rendered-artifacts-vs-live-ritovex
+next_manual_reference_scope: certify-editorial-single-body-then-final-state-reconciliation
