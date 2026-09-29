@@ -1584,3 +1584,31 @@
     box-shadow:none!important;
   }
 }
+
+
+/* Final measured hero lock: approved mockup hero is 300 CSS px at desktop */
+@media(min-width:1181px){
+  .home-page.mockup-parity .mockup-hero{
+    height:300px!important;
+    min-height:300px!important;
+    max-height:300px!important;
+    overflow:hidden!important;
+  }
+  .home-page.mockup-parity .mockup-hero-main{
+    height:300px!important;
+    min-height:300px!important;
+    max-height:300px!important;
+    overflow:hidden!important;
+  }
+  .home-page.mockup-parity .mockup-hero-main .home-hero-stage{
+    height:300px!important;
+    min-height:300px!important;
+    max-height:300px!important;
+  }
+  .home-page.mockup-parity .mockup-process-panel{
+    height:300px!important;
+    min-height:300px!important;
+    max-height:300px!important;
+    box-sizing:border-box!important;
+  }
+}
