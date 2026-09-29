@@ -397,3 +397,8 @@ The PR #111 rendered artifacts were reviewed directly against the live Ritovex c
 ## Single-column Blog and Project detail parity — 2026-09-29
 
 A second direct review of the PR #112 screenshots showed that title and metadata scale were corrected, but both VSN single-detail pages still used the older two-column sidebar body while the Ritovex single-blog and single-project references use a wide single-column reading/case-study flow. This pass removes the sidebar shell, keeps the same factual VSN content, adds a second committed human image inside each long-form page, turns the Blog quote into the dark reference-style callout, and keeps Project public-proof disclosure as an inline evidence note rather than a side column.
+
+
+## Service-name hero parity — 2026-09-29
+
+Rendered-reference review showed that the remaining service-detail mismatch was driven by long descriptive H1 sentences wrapping into four or five lines, while the Ritovex single-service template uses the service name as the hero title and keeps the explanation in supporting copy. All 12 VSN service-detail pages now use concise service-name H1s while preserving their existing lead paragraphs and full long-form content. Shared service hero sizing is also aligned to the reference, with compact 30px mobile service titles. Blog and Project single-detail title metrics are locked to the measured reference desktop/mobile sizes.
