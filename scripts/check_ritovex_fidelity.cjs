@@ -12,6 +12,7 @@ const globalPolish=read('assets/vsn-global-polish.css');
 const homeBatch1=read('assets/home-batch1.css');
 const homeBatch1Js=read('assets/home-batch1.js');
 const servicesBatch2=read('assets/services-batch2.css');
+const batch3Polish=read('assets/batch3-page-polish.css');
 
 const servicePages=[
  'software.html','web-development-ecommerce.html','websites.html','ecommerce.html',
@@ -65,6 +66,9 @@ for(const file of htmlFiles){
 
 for(const file of servicePages){
  const body=read(file);
+ assert.match(body,/assets\/batch3-page-polish\.css/,file+' missing Batch 3 detail stylesheet');
+ assert.match(body,/class="service-hero-copy"/,file+' missing Batch 3 hero copy wrapper');
+ assert.match(body,/class="service-hero-visual"/,file+' missing Batch 3 semantic hero visual');
  const main=(body.match(/<main id="main-content">[\s\S]*?<\/main>/)||[''])[0];
  assert.ok(main,file+' missing main content');
  assert.match(main,/data-project-form/,file+' missing project enquiry form');
@@ -77,6 +81,9 @@ assert.match(contact,/https:\/\/maps\.google\.com\/maps\?/, 'contact page missin
 assert.match(contact,/frame-src[^;]*google\.com/i,'contact CSP missing Google Maps frame permission');
 assert.doesNotMatch(contact,/openstreetmap/i,'contact page still contains OpenStreetMap residue');
 assert.match(contact,/contact-reference-hero/,'contact page missing reference-style simple hero');
+assert.match(contact,/assets\/batch3-page-polish\.css/,'contact page missing Batch 3 stylesheet');
+assert.match(contact,/contact-hero-grid/,'contact page missing Batch 3 image-led hero grid');
+assert.match(contact,/contact-hero-visual[\s\S]*vsn-human-team\.webp/,'contact Batch 3 hero must use committed VSN imagery');
 assert.match(contact,/contact-reference-form-grid/,'contact page missing image-plus-form split');
 assert.equal((contact.match(/class="container contact-info-grid"[\s\S]*?<\/div><\/section>/)||[''])[0].match(/<article>/g)?.length,3,'contact page must contain address, phone and email cards');
 assert.doesNotMatch(contact,/<iframe[^>]*sandbox=/i,'contact page must not sandbox the Google Maps iframe because it can break the rendered embed');
@@ -99,6 +106,12 @@ assert.match(home,/assets\/home-batch1\.css/,'Home missing Batch 1 stylesheet');
 assert.match(home,/assets\/home-batch1\.js/,'Home missing Batch 1 interactions');
 assert.match(globalPolish,/\.rv-footer-word\{display:none!important\}/,'Global polish must suppress the removed legacy wordmark if stale markup appears');
 assert.match(globalPolish,/border-radius:var\(--vsn-radius\)!important/,'Global controls must share one rounded border treatment');
+assert.match(batch3Polish,/\.service-single-reference-shell,[\s\S]*grid-template-columns:minmax\(0,.86fr\) minmax\(470px,1.14fr\)!important/,'Batch 3 service hero split missing');
+assert.match(batch3Polish,/\.contact-hero-grid\{[\s\S]*grid-template-columns:minmax\(0,.82fr\) minmax\(480px,1.18fr\)/,'Batch 3 Contact hero split missing');
+assert.match(batch3Polish,/\.blog-reference-grid \.editorial-card-media\{[\s\S]*height:250px/,'Batch 3 Blog image height contract missing');
+assert.match(batch3Polish,/\.blog-reference-hero\{[\s\S]*#000000!important/,'Batch 3 Blog hero must retain dark contrast');
+assert.match(batch3Polish,/\.blog-list-page \.blog-hero-visual\.editorial-hero-visual\{[\s\S]*display:block!important/,'Blog hero visual must override legacy hide rule');
+assert.match(motion,/querySelectorAll\('[^']*\.editorial-hero-visual[^']*'\)/,'Above-the-fold editorial hero visual must be revealed immediately');
 assert.match(homeBatch1,/@keyframes vsn-marquee-seamless/,'Home marquee missing seamless animation');
 assert.match(homeBatch1,/grid-template-columns:repeat\(12,minmax\(0,1fr\)\)!important/,'Home three-image capability grid missing visual composition');
 assert.match(homeBatch1,/\.home-proof-cards\{/,'Home public proof visual grid missing');
@@ -118,6 +131,9 @@ assert.equal((home.match(/home-blog-card/g)||[]).length,3,'homepage blog preview
 assert.match(home,/href="blog-detail\.html"/,'homepage blog preview missing published article link');
 assert.match(home,/href="blog\.html">Browse all articles/,'homepage blog preview missing all-articles route');
 assert.match(blog,/<body class="editorial-page blog-list-page">/);
+assert.match(blog,/assets\/batch3-page-polish\.css/,'Blog missing Batch 3 stylesheet');
+assert.match(blog,/blog-hero-grid[\s\S]*blog-hero-visual/,'Blog missing Batch 3 image-led hero');
+assert.match(blog,/blog-hero-visual[\s\S]*vsn-human-editorial\.webp/,'Blog hero must use committed editorial imagery');
 assert.equal((blog.match(/class="editorial-card"/g)||[]).length,9,'blog reference grid must contain nine cards');
 assert.equal((blog.match(/Coming soon/g)||[]).length>=8,true,'blog must keep eight planned topics clearly marked as coming soon');
 assert.equal((blog.match(/Coming soon/g)||[]).length>=8,true,'blog upcoming topics must remain clearly labeled');

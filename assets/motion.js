@@ -19,6 +19,7 @@ const groups=[
  ['.home-team-grid>article',80],['.home-proof-layout>*',90],['.home-process-intro',0],['.home-process-grid>article',90],
  ['.home-contact-band,.review-section .container',0],['.rv-hero-copy>*,.rv-service-hero-copy>*,.rv-company-hero-copy>*',80],
  ['.rv-hero-visual,.rv-service-visual,.rv-company-visual',0],
+ ['.service-hero-copy>*',70],['.service-hero-visual',0],['.contact-hero-copy>*',70],['.contact-hero-visual',0],
  ['.secondary-page .split-heading,.service-detail-page .split-heading,.company-proof-page .split-heading',0],
  ['.secondary-page .service-card,.secondary-page .product-card,.secondary-page .repo-card,.secondary-page .card,.secondary-page .contact-section-heading',70],
  ['.service-detail-page .service-card,.service-detail-page .card,.service-detail-page .decision-card,.service-detail-page .scope-panel,.service-detail-page .price-card',70],
@@ -37,7 +38,7 @@ function startReveal(){
  observer?.disconnect();
  observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('rv-visible');observer.unobserve(entry.target)}}),{threshold:.12,rootMargin:'0px 0px -7% 0px'});
  targets.forEach(el=>observer.observe(el));
- requestAnimationFrame(()=>document.querySelectorAll('.home-hero-copy>*,.hero-art,.rv-hero-copy>*,.rv-service-hero-copy>*,.rv-company-hero-copy>*,.rv-hero-visual,.rv-service-visual,.rv-company-visual').forEach(el=>el.classList.add('rv-visible')));
+ requestAnimationFrame(()=>document.querySelectorAll('.home-hero-copy>*,.hero-art,.rv-hero-copy>*,.rv-service-hero-copy>*,.rv-company-hero-copy>*,.rv-hero-visual,.rv-service-visual,.rv-company-visual,.service-hero-copy>*,.service-hero-visual,.contact-hero-copy>*,.contact-hero-visual,.editorial-hero-copy>*,.editorial-hero-visual').forEach(el=>el.classList.add('rv-visible')));
 }
 
 const accordion=document.querySelector('[data-service-accordion]');
