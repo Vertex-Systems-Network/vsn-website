@@ -56,7 +56,7 @@ Normal Static Integrity CI runs the same packaging logic in `--check-only` mode 
 
 Workflow: **Production Release Bundle**
 
-The workflow is intentionally manual and only accepts `main`. It reruns the repository validators, builds the clean ZIP and uploads the ZIP plus manifest/checksum files as a GitHub Actions artifact.
+The workflow runs automatically for every push to `main` and can also be started manually from `main`. It reruns the repository validators, builds the clean ZIP and uploads the ZIP plus manifest/checksum files as a GitHub Actions artifact.
 
 It does **not** deploy the website, change DNS, modify the live domain, or connect to a hosting account.
 
@@ -64,7 +64,7 @@ It does **not** deploy the website, change DNS, modify the live domain, or conne
 
 When production publishing is approved:
 
-1. Run **Production Release Bundle** from `main`.
+1. Use the latest successful **Production Release Bundle** artifact for `main`, or start the workflow manually from `main` if a fresh artifact is needed.
 2. Download the generated `vsn-website-release-<sha>` artifact.
 3. Verify the ZIP checksum shown in the workflow log if desired.
 4. Extract `vsn-website-release.zip`.
