@@ -31,6 +31,15 @@
 .home-page .home-hero-controls,
 .home-page .home-hero-data-panel{z-index:4}
 .home-page .home-hero-slide figcaption{z-index:6!important}
+.home-page .home-hero-slide:not(.is-active) figcaption{
+  opacity:0!important;
+  visibility:hidden!important;
+  transition:none!important;
+}
+.home-page .home-hero-slide.is-active figcaption{
+  opacity:1!important;
+  visibility:visible!important;
+}
 
 .home-page .home-hero-data-panel{
   position:absolute;
@@ -306,7 +315,7 @@
     bottom:16px!important;
     width:calc(100% - 28px)!important;
   }
-  .home-page .home-hero-controls{right:24px!important;bottom:142px!important}
+  .home-page .home-hero-controls{right:24px!important;bottom:168px!important}
   .home-page .home-credentials-grid>div+div:before,
   .home-page .home-credentials-grid>.credential-link:before{display:none}
   .home-page .home-service-card{margin-inline:0;padding-inline:0!important}
