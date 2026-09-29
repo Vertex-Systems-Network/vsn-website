@@ -124,6 +124,9 @@ assert.match(homeBatch1,/\.home-page \.home-product-layout\{[\s\S]*?grid-templat
 assert.match(homeBatch1,/@media\(max-width:760px\)\{[\s\S]*?\.home-page \.home-credentials-grid\{[\s\S]*?grid-template-columns:repeat\(2,minmax\(0,1fr\)\)!important/,'Point 3 mobile evidence strip must use a readable two-column layout');
 assert.match(homeBatch1,/Point 3 mobile regression correction:[\s\S]*?@media\(max-width:1080px\)\{[\s\S]*?\.home-page \.home-product-layout\{[\s\S]*?grid-template-columns:minmax\(0,1fr\)!important/,'Point 3 must reset the desktop product split below 1080px');
 assert.match(homeBatch1,/Point 3 process mobile regression correction:[\s\S]*?@media\(max-width:1080px\)\{[\s\S]*?\.home-page \.home-process-layout\{[\s\S]*?grid-template-columns:minmax\(0,1fr\)!important/,'Point 3 must collapse the process split below 1080px');
+assert.match(homeBatch1,/Point 3 final mobile cascade lock:[\s\S]*?\.home-page \.home-about-intro\{[\s\S]*?grid-template-columns:minmax\(0,1fr\)!important/,'Point 3 must keep About intro single-column below 1080px');
+assert.match(homeBatch1,/Point 3 final mobile cascade lock:[\s\S]*?\.home-proof-header\{[\s\S]*?grid-template-columns:minmax\(0,1fr\)!important/,'Point 3 must keep proof header single-column on mobile');
+assert.match(homeBatch1,/Point 3 final mobile cascade lock:[\s\S]*?\.home-page \.home-showcase-grid\{[\s\S]*?grid-template-columns:minmax\(0,1fr\)!important/,'Point 3 must keep showcase single-column on mobile');
 assert.match(homeBatch1,/Point 3 mobile regression correction:[\s\S]*?@media\(max-width:760px\)\{[\s\S]*?\.home-page \.home-credentials-grid\{[\s\S]*?display:grid!important/,'Point 3 mobile evidence strip must override the legacy horizontal flex scroller');
 [
  'Good technology should feel simple.',
