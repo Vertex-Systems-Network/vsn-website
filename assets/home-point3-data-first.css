@@ -163,6 +163,18 @@
 .home-page .home-data-proof:hover strong,
 .home-page .home-data-proof:focus-visible strong{color:#5AC8D6}
 
+
+/* Keep slide-copy switching crisp while the photography crossfades. */
+.home-page .home-hero-slide:not(.is-active) figcaption{
+  opacity:0!important;
+  visibility:hidden!important;
+  transition:none!important;
+}
+.home-page .home-hero-slide.is-active figcaption{
+  opacity:1!important;
+  visibility:visible!important;
+}
+
 /* The credentials strip becomes a compact verification rail rather than
    looking like a second navigation bar. */
 .home-page .home-credentials-grid{
@@ -274,19 +286,15 @@
     border-radius:12px;
     backdrop-filter:blur(11px);
   }
-  .home-page .home-data-panel-head{
-    display:flex;
-    align-items:baseline;
-    justify-content:space-between;
-    gap:12px;
-  }
+  .home-page .home-data-panel-head{display:block}
   .home-page .home-data-panel-head h2{
-    margin:0;
+    margin:6px 0 0;
     font-size:17px;
-    white-space:nowrap;
+    line-height:1.05;
+    white-space:normal;
   }
   .home-page .home-data-panel-head p{display:none}
-  .home-page .home-data-panel-kicker{font-size:8px}
+  .home-page .home-data-panel-kicker{display:block;font-size:8px;white-space:nowrap}
   .home-page .home-data-grid{gap:5px;margin-top:10px}
   .home-page .home-data-grid a{min-height:58px;padding:9px}
   .home-page .home-data-grid small{font-size:7px;margin-bottom:4px}
