@@ -1,0 +1,107 @@
+/* Work & Proof approved cinematic parity — 2026-09-30 */
+.work-page.work-mockup-parity{
+  --wrk-black:#000000;
+  --wrk-charcoal:#3F4245;
+  --wrk-gray:#7E8083;
+  --wrk-cyan:#5AC8D6;
+  --wrk-blue:#6188C6;
+  --wrk-violet:#625BA8;
+  --wrk-white:#FFFFFF;
+  background:#000000;
+  color:#FFFFFF;
+}
+.work-page.work-mockup-parity .btn{border-radius:6px!important}
+.work-page.work-mockup-parity .rv-company-hero{
+  position:relative;overflow:hidden;padding:0!important;
+  background:radial-gradient(circle at 75% 15%,rgba(97,136,198,.20),transparent 28%),radial-gradient(circle at 12% 88%,rgba(98,91,168,.12),transparent 30%),#000000!important;
+  color:#FFFFFF!important;
+}
+.work-page.work-mockup-parity .rv-company-hero:before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(rgba(255,255,255,.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.02) 1px,transparent 1px);background-size:56px 56px
+}
+.work-page.work-mockup-parity .rv-company-hero-grid{
+  position:relative;z-index:1;min-height:630px;display:grid!important;
+  grid-template-columns:minmax(350px,.84fr) minmax(0,1.16fr)!important;gap:54px!important;align-items:center!important;
+  padding-top:80px!important;padding-bottom:62px!important
+}
+.work-page.work-mockup-parity .rv-company-hero-copy .breadcrumbs{display:none!important}
+.work-page.work-mockup-parity .rv-company-hero-copy .eyebrow{color:#5AC8D6!important;font-size:10px!important}
+.work-page.work-mockup-parity .rv-company-hero-copy .h1{
+  max-width:640px!important;margin:12px 0 20px!important;color:#FFFFFF!important;
+  font-size:clamp(60px,6vw,92px)!important;line-height:.9!important;letter-spacing:-.064em!important;font-weight:520!important
+}
+.work-page.work-mockup-parity .rv-company-hero-copy .lead{max-width:550px!important;color:rgba(255,255,255,.72)!important;font-size:15px!important;line-height:1.6!important}
+.work-page.work-mockup-parity .rv-company-visual{position:relative!important;min-height:500px!important;margin:0!important;overflow:hidden!important;border:1px solid rgba(255,255,255,.14)!important;border-radius:10px!important;background:#3F4245!important}
+.work-page.work-mockup-parity .rv-company-visual:after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(0,0,0,.03),rgba(0,0,0,.6))}
+.work-page.work-mockup-parity .rv-company-visual img{width:100%!important;height:500px!important;object-fit:cover!important;filter:saturate(.88) brightness(.80)!important}
+.work-page.work-mockup-parity .rv-company-visual figcaption{position:absolute!important;z-index:2!important;left:18px!important;bottom:18px!important;color:#FFFFFF!important;font-size:9px!important;text-transform:uppercase!important;letter-spacing:.11em!important}
+
+/* Public product proof */
+.work-page.work-mockup-parity main>.section:nth-of-type(1){padding:86px 0!important;background:#FFFFFF!important;color:#000000!important}
+.work-page.work-mockup-parity .feature-band{border:0!important;background:transparent!important;box-shadow:none!important}
+.work-page.work-mockup-parity .feature-grid{grid-template-columns:minmax(0,1.1fr) minmax(320px,.9fr)!important;gap:16px!important;align-items:stretch!important}
+.work-page.work-mockup-parity .feature-grid>div:first-child{padding:34px!important;border:1px solid rgba(126,128,131,.22)!important;border-radius:9px!important;background:#FFFFFF!important}
+.work-page.work-mockup-parity .feature-grid .h2{color:#000000!important;font-size:clamp(48px,4.8vw,72px)!important;line-height:.94!important;letter-spacing:-.055em!important}
+.work-page.work-mockup-parity .feature-grid .lead{color:#7E8083!important;font-size:14px!important}
+.work-page.work-mockup-parity .checklist{margin-top:28px!important;border-top:1px solid rgba(126,128,131,.25)!important}
+.work-page.work-mockup-parity .check{padding:15px 0!important;border-bottom:1px solid rgba(126,128,131,.25)!important;color:#3F4245!important}
+.work-page.work-mockup-parity .check i{color:#6188C6!important}
+.work-page.work-mockup-parity .evidence-panel{
+  min-height:440px!important;display:flex!important;flex-direction:column!important;justify-content:flex-end!important;
+  padding:30px!important;border-radius:9px!important;border:1px solid rgba(255,255,255,.14)!important;
+  background:linear-gradient(180deg,rgba(0,0,0,.06),rgba(0,0,0,.82)),url("vsn-human-software.webp") center/cover no-repeat!important;color:#FFFFFF!important
+}
+.work-page.work-mockup-parity .evidence-panel strong{color:#FFFFFF!important;font-size:clamp(30px,3vw,46px)!important;line-height:1!important;letter-spacing:-.045em!important}
+.work-page.work-mockup-parity .evidence-panel p{color:rgba(255,255,255,.68)!important}
+.work-page.work-mockup-parity .evidence-panel .app-badge{width:max-content!important;color:#5AC8D6!important;background:rgba(0,0,0,.35)!important;border-color:rgba(90,200,214,.32)!important}
+
+/* Case-study publication standard */
+.work-page.work-mockup-parity main>.section:nth-of-type(2){padding:86px 0!important;background:#000000!important;color:#FFFFFF!important}
+.work-page.work-mockup-parity main>.section:nth-of-type(2) .h2{max-width:740px!important;color:#FFFFFF!important;font-size:clamp(46px,4.6vw,68px)!important;line-height:.95!important;letter-spacing:-.054em!important}
+.work-page.work-mockup-parity main>.section:nth-of-type(2) .split-heading>p{color:#7E8083!important}
+.work-page.work-mockup-parity .cards-4{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:8px!important;margin-top:34px!important}
+.work-page.work-mockup-parity .cards-4 .card{min-height:310px!important;padding:22px!important;border:1px solid rgba(255,255,255,.14)!important;border-radius:8px!important;background:#000000!important;color:#FFFFFF!important;box-shadow:none!important}
+.work-page.work-mockup-parity .cards-4 .card-icon{color:#5AC8D6!important;font-size:9px!important;background:none!important;border:0!important}
+.work-page.work-mockup-parity .cards-4 .h3{margin:44px 0 12px!important;color:#FFFFFF!important;font-size:24px!important;line-height:1!important;letter-spacing:-.04em!important}
+.work-page.work-mockup-parity .cards-4 p{color:#7E8083!important;font-size:10px!important;line-height:1.5!important}
+
+/* Controlled references */
+.work-page.work-mockup-parity main>.section:nth-of-type(3){padding:84px 0!important;background:#FFFFFF!important;color:#000000!important}
+.work-page.work-mockup-parity main>.section:nth-of-type(3) .two-col{grid-template-columns:minmax(0,1fr) minmax(330px,.82fr)!important;gap:54px!important;align-items:center!important}
+.work-page.work-mockup-parity main>.section:nth-of-type(3) .h2{color:#000000!important;font-size:clamp(44px,4.5vw,66px)!important;line-height:.95!important;letter-spacing:-.054em!important}
+.work-page.work-mockup-parity main>.section:nth-of-type(3) .lead{color:#7E8083!important}
+.work-page.work-mockup-parity main>.section:nth-of-type(3) .notice{padding:28px!important;border:1px solid rgba(126,128,131,.24)!important;border-radius:8px!important;background:#FFFFFF!important;color:#000000!important}
+
+/* CTA */
+.work-page.work-mockup-parity main>.section-sm{padding:0 0 84px!important;background:#FFFFFF!important}
+.work-page.work-mockup-parity main>.section-sm .cta{min-height:230px!important;padding:42px!important;border-radius:10px!important;background:radial-gradient(circle at 80% 20%,rgba(90,200,214,.09),transparent 30%),#000000!important;color:#FFFFFF!important}
+.work-page.work-mockup-parity main>.section-sm .cta h2{color:#FFFFFF!important;font-size:clamp(38px,4vw,58px)!important;line-height:.96!important;letter-spacing:-.052em!important}
+.work-page.work-mockup-parity main>.section-sm .cta p{color:#7E8083!important}
+.work-page.work-mockup-parity main>.section-sm .btn-primary{background:#FFFFFF!important;color:#000000!important;border-color:#FFFFFF!important}
+
+/* Evidence sources */
+.work-page.work-mockup-parity .review-section{padding:86px 0!important;background:#000000!important;color:#FFFFFF!important}
+.work-page.work-mockup-parity .review-layout{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr)!important;gap:58px!important;align-items:start!important}
+.work-page.work-mockup-parity .review-section .h2{color:#FFFFFF!important;font-size:clamp(46px,4.6vw,68px)!important;line-height:.95!important;letter-spacing:-.054em!important}
+.work-page.work-mockup-parity .review-section p{color:#7E8083!important}
+.work-page.work-mockup-parity .review-links{border-top:1px solid rgba(255,255,255,.15)!important}
+.work-page.work-mockup-parity .review-links>a,.work-page.work-mockup-parity .review-pending{padding:22px 0!important;border-bottom:1px solid rgba(255,255,255,.15)!important;color:#FFFFFF!important;background:transparent!important}
+.work-page.work-mockup-parity .review-links strong{color:#FFFFFF!important}
+.work-page.work-mockup-parity .review-links span{color:#7E8083!important}
+
+@media(max-width:980px){
+  .work-page.work-mockup-parity .rv-company-hero-grid{grid-template-columns:1fr!important;min-height:0!important;gap:34px!important;padding-top:94px!important}
+  .work-page.work-mockup-parity .rv-company-visual,.work-page.work-mockup-parity .rv-company-visual img{height:430px!important;min-height:430px!important}
+  .work-page.work-mockup-parity .feature-grid,.work-page.work-mockup-parity .review-layout{grid-template-columns:1fr!important}
+  .work-page.work-mockup-parity .cards-4{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  .work-page.work-mockup-parity main>.section:nth-of-type(3) .two-col{grid-template-columns:1fr!important}
+}
+@media(max-width:700px){
+  .work-page.work-mockup-parity .rv-company-hero-copy .h1{font-size:clamp(52px,15vw,76px)!important}
+  .work-page.work-mockup-parity .rv-company-visual,.work-page.work-mockup-parity .rv-company-visual img{height:340px!important;min-height:340px!important}
+  .work-page.work-mockup-parity main>.section:nth-of-type(1),.work-page.work-mockup-parity main>.section:nth-of-type(2),.work-page.work-mockup-parity main>.section:nth-of-type(3),.work-page.work-mockup-parity .review-section{padding:66px 0!important}
+  .work-page.work-mockup-parity .cards-4{grid-template-columns:1fr!important}
+  .work-page.work-mockup-parity .cards-4 .card{min-height:250px!important}
+  .work-page.work-mockup-parity main>.section-sm .cta{padding:30px 24px!important}
+}
