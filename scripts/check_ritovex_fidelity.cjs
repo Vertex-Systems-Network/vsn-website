@@ -58,7 +58,7 @@ for(const file of htmlFiles){
  assert.ok(body.includes('rv-header'),file+' missing reference header shell');
  if(file==='index.html'){
   assert.ok(body.includes('mockup-footer'),file+' missing approved mockup footer shell');
-  assert.match(body,/class="footer-public-links mockup-footer-meta"/,file+' missing compact mockup public-profile footer');
+  assert.match(body,/class="[^"]*footer-public-links[^"]*mockup-footer-meta[^"]*"/,file+' missing compact mockup public-profile footer');
  }else{
   assert.ok(body.includes('rv-footer'),file+' missing reference footer shell');
   assert.match(body,/class="rv-footer-contact"[\s\S]*?href="tel:\+923168433104"/,file+' missing clickable footer phone');
