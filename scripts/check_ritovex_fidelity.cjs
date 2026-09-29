@@ -15,6 +15,7 @@ const homeMockup=read('assets/home-mockup-parity.css');
 const servicesBatch2=read('assets/services-batch2.css');
 const servicesMockup=read('assets/services-mockup-parity.css');
 const aboutMockup=read('assets/about-mockup-parity.css');
+const projectsMockup=read('assets/projects-mockup-parity.css');
 const batch3Polish=read('assets/batch3-page-polish.css');
 
 const servicePages=[
@@ -155,18 +156,30 @@ assert.match(blog,/blog-hero-visual[\s\S]*vsn-human-editorial\.webp/,'Blog hero 
 assert.equal((blog.match(/class="editorial-card"/g)||[]).length,9,'blog reference grid must contain nine cards');
 assert.equal((blog.match(/Coming soon/g)||[]).length>=8,true,'blog must keep eight planned topics clearly marked as coming soon');
 assert.equal((blog.match(/Coming soon/g)||[]).length>=8,true,'blog upcoming topics must remain clearly labeled');
-assert.match(projects,/<body class="editorial-page projects-list-page">/);
+assert.match(projects,/<body class="editorial-page projects-list-page projects-mockup-parity">/,'Projects must use approved cinematic parity body contract');
+assert.match(projects,/assets\/projects-mockup-parity\.css/,'Projects missing approved cinematic parity stylesheet');
 assert.match(projects,/projects-proof-note/,'projects page missing portfolio truthfulness note');
-assert.equal((projects.match(/project-image-meta/g)||[]).length,2,'featured projects must show two image metadata overlays');
+assert.equal((projects.match(/project-image-meta/g)||[]).length,4,'Projects must show four image metadata overlays in the reference portfolio grid');
 assert.equal(projects.indexOf('project-proof-grid') < projects.indexOf('projects-proof-note'),true,'portfolio truthfulness note must follow the featured project grid');
-assert.equal((projects.match(/project-proof-card/g)||[]).length,2,'projects page must contain exactly two featured visual portfolio cards');
-assert.equal((projects.match(/project-repo-row/g)||[]).length,2,'projects page must keep two additional compact public repository proof rows');
+assert.equal((projects.match(/project-proof-card/g)||[]).length,4,'Projects page must contain exactly four verified visual portfolio cards');
+assert.equal((projects.match(/project-card-index/g)||[]).length,4,'Projects portfolio cards must retain numbered reference rhythm');
+assert.doesNotMatch(projects,/project-repo-row/,'Projects must not duplicate the four public surfaces as legacy compact rows');
 assert.match(projects,/github\.com\/Vertex-Systems-Network\/vsn-marketing/,'projects page missing VSN Marketing repository proof');
 assert.match(projects,/github\.com\/Vertex-Systems-Network\/vsn-builder/,'projects page missing VSN Builder repository proof');
 assert.match(projects,/github\.com\/Vertex-Systems-Network\/ai-native-project-operating-system/,'projects page missing ANPOS repository proof');
 assert.doesNotMatch(projects,/<span>Capability<\/span>/,'projects page must not present generic capabilities as completed projects');
+assert.match(projectsMockup,/\.projects-list-page\.projects-mockup-parity \.project-proof-grid\{[\s\S]*grid-template-columns:repeat\(2,minmax\(0,1fr\)\)!important/,'Projects parity must retain two-column desktop portfolio rhythm');
+assert.match(projectsMockup,/\.projects-list-page\.projects-mockup-parity \.projects-reference-hero\{[\s\S]*#000!important/,'Projects parity hero must retain cinematic black stage');
 assert.match(blogDetail,/<body class="editorial-page blog-detail-page">/);
-assert.match(projectDetail,/<body class="editorial-page project-detail-page">/);
+assert.match(projectDetail,/<body class="editorial-page project-detail-page projects-mockup-parity">/,'Project Detail must use approved cinematic parity body contract');
+assert.match(projectDetail,/assets\/projects-mockup-parity\.css/,'Project Detail missing approved cinematic parity stylesheet');
+assert.match(projectDetail,/project-detail-story/,'Project Detail missing About the Project stage');
+assert.match(projectDetail,/project-detail-challenge/,'Project Detail missing Project Challenge stage');
+assert.match(projectDetail,/project-detail-secondary-media/,'Project Detail missing second full-width media stage');
+assert.match(projectDetail,/project-detail-features/,'Project Detail missing Key Features stage');
+assert.equal((projectDetail.match(/project-feature-list[\s\S]*?<\/div><div class="project-detail-actions"/)||[''])[0].match(/<article>/g)?.length,4,'Project Detail key project signals must contain four evidence-led items');
+assert.match(projectsMockup,/\.project-detail-story-grid\{[\s\S]*grid-template-columns:220px minmax\(0,1fr\)!important/,'Project Detail parity must retain reference label/content split');
+assert.match(projectsMockup,/\.project-feature-list\{[\s\S]*grid-template-columns:repeat\(2,minmax\(0,1fr\)\)!important/,'Project Detail parity must retain two-column feature grid');
 assert.notEqual((blog.match(/<body[^>]*>/)||[''])[0],(projects.match(/<body[^>]*>/)||[''])[0],'Blog and Projects must not share the same page template class');
 assert.notEqual((blogDetail.match(/<body[^>]*>/)||[''])[0],(projectDetail.match(/<body[^>]*>/)||[''])[0],'Blog Detail and Project Detail must remain distinct');
 
