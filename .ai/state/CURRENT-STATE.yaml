@@ -516,3 +516,13 @@ project_detail_reference_heading_desktop: 80px
 project_detail_reference_heading_mobile: 28px
 service_name_hero_reference_source: pr-113-rendered-artifacts-plus-live-ritovex
 next_manual_reference_scope: certify-title-parity-and-reconcile-final-state
+
+
+final_wrap_parity_status: implemented-in-review
+representative_service_h1: Web Development
+published_blog_article_h1: Where AI Helps — and Human Review Matters
+mobile_404_single_line_title: true
+project_detail_heading_metric_status: exact-reference-match-pr114
+service_detail_mobile_heading_metric_status: exact-reference-match-pr114
+final_wrap_parity_reference_source: pr-114-rendered-report
+next_manual_reference_scope: certify-final-wrap-parity-and-reconcile-canonical-main
