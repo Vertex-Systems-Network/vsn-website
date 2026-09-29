@@ -91,6 +91,9 @@ for(const file of servicePages){
  assert.match(main,/FAQ|Frequently Asked|Common questions/i,file+' missing visible FAQ heading/label');
 }
 
+const processPage=read('process.html');
+const trustPage=read('trust.html');
+const paymentsPage=read('payments.html');
 const contact=read('contact.html');
 assert.match(contact,/<body class="secondary-page contact-page contact-mockup-parity">/,'Contact must use approved cinematic parity body contract');
 assert.match(contact,/assets\/contact-mockup-parity\.css/,'Contact missing approved cinematic parity stylesheet');
@@ -185,9 +188,6 @@ const projectDetail=read('project-detail.html');
 const products=read('products.html');
 const industries=read('industries.html');
 const work=read('work.html');
-const processPage=read('process.html');
-const trustPage=read('trust.html');
-const paymentsPage=read('payments.html');
 const webCommerce=read('web-development-ecommerce.html');
 const serviceDetailCss=read('assets/ritovex-service-detail.css');
 assert.match(home,/href="blog-detail\.html"/,'Home mockup insights missing published article link');
