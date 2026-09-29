@@ -11,6 +11,7 @@ const app=read('assets/app.js');
 const globalPolish=read('assets/vsn-global-polish.css');
 const homeBatch1=read('assets/home-batch1.css');
 const homeBatch1Js=read('assets/home-batch1.js');
+const servicesBatch2=read('assets/services-batch2.css');
 
 const servicePages=[
  'software.html','web-development-ecommerce.html','websites.html','ecommerce.html',
@@ -183,6 +184,16 @@ assert.match(about,/PSEB · Z-25-17539\/25/,'about credentials missing PSEB evid
 assert.match(about,/https:\/\/github\.com\/Vertex-Systems-Network/,'about credentials missing GitHub proof');
 assert.match(about,/https:\/\/apps\.shopify\.com\/vsn-metafields/,'about credentials missing Shopify proof');
 assert.doesNotMatch(about,/Award-Winning|Awards Winner|Industry Award Recipient/,'about page must not fabricate reference-template awards');
+assert.match(services,/assets\/services-batch2\.css/,'Services page missing Batch 2 stylesheet');
+assert.equal((services.match(/class="services-pillar"/g)||[]).length,4,'Services hero must contain four Build/Automate/Grow/Operate visual pillars');
+assert.match(services,/services-tech-layout[\s\S]*services-tech-visual/,'Services technology section must use image-plus-platform layout');
+assert.equal((services.match(/class="services-proof-media"/g)||[]).length,3,'Services proof section must contain three image-backed public proof cards');
+assert.match(services,/services-scope-section[\s\S]*services-scope-intro/,'Services scope section must use visual scope split');
+assert.match(servicesBatch2,/\.services-rendered-hero>[.]container\{/,'Services Batch 2 hero layout missing');
+assert.match(servicesBatch2,/grid-template-columns:repeat\(2,minmax\(0,1fr\)\)!important/,'Services hero pillars must use a visual two-column grid');
+assert.match(servicesBatch2,/\.services-tech-grid\{[\s\S]*grid-template-columns:repeat\(3,minmax\(0,1fr\)\)!important/,'Services platform grid must use visual tiles rather than circles');
+assert.match(servicesBatch2,/\.services-reference-proof\{[\s\S]*#000000!important/,'Services proof section must retain dark contrast');
+assert.match(servicesBatch2,/\.services-reference-scope\{[\s\S]*grid-template-columns:minmax\(360px,.82fr\) minmax\(0,1.18fr\)!important/,'Services scope split missing');
 assert.match(services,/services-reference-hero/);
 assert.match(services,/services-rendered-hero-stage/,'services page missing reference-style hero breathing stage');
 assert.match(services,/services-benefit-split/,'services page missing image-plus-benefits split');
