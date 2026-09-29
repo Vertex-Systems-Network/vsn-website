@@ -422,3 +422,8 @@ The website remains a direct-open static HTML/CSS/vanilla-JS project, but produc
 ## Main-branch release artifact automation — 2026-09-29
 
 The verified release workflow now runs automatically on every `main` push and remains manually runnable from `main`. It still performs **artifact generation only**: repository validation, deterministic static ZIP creation, checksum/manifest generation and GitHub Actions artifact upload. It has no hosting credentials, DNS mutation or production deployment step, so merging code does not publish the website live.
+
+
+## High-resolution human image correction — 2026-09-29
+
+A direct asset audit found that the previous semantic human-image set was unsuitable for large editorial sections: several repository files were only 640×480 or heavily compressed, and the source generations also contained soft/gibberish interface detail. The ten semantic human images have been replaced with newly generated standalone 1448×1086 WebP photographs for Hero, About, Software, AI, Growth, Operations, Business/Tax, Team, Industries and Editorial/Blog roles. Hero, About, AI and Editorial pages now point to their dedicated semantic files instead of reusing unrelated images. Static validation now rejects semantic human images below 1400×1000, files below the reviewed quality floor, duplicate semantic binaries, or missing key semantic page wiring. Rendered browser QA remains the visual merge gate.
