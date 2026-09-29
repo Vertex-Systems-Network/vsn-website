@@ -1,72 +1,82 @@
-# LAST CHECKPOINT — Point 3 Data-First Home Visual Polish
+# LAST CHECKPOINT — Point 4 Services Data-First Visual Polish
 
 Date: 2026-09-30
 
 ## Canonical runtime
 
 - Repository: Vertex-Systems-Network/vsn-website
-- Point 3 PR: #142
-- Certified PR head: `a0b1d5c08eb30177c7f75c156fcb4d1126df1412`
-- Merged main runtime SHA: `454931c33028150df346aba96f80c8e8b5ee0f51`
-- Static Integrity on PR head: run #696 — passed
-- Static Integrity on merged main: run #697 — passed
-- Production Release Bundle on merged main: run #22 — passed
-- Visual Browser QA: run #149 — passed, failures: 0
-- Secondary Visual Browser QA: run #115 — passed, failures: 0
+- Point 4 PR: #143
+- Certified PR head: `964debcd8061e997216a726410ff2cee3152d14d`
+- Merged main runtime SHA: `d5063ea201904f4c31334c5dabc4d2aaa1282946`
+- Static Integrity on PR head: run #700 — passed
+- Static Integrity on merged main: run #701 — passed
+- Production Release Bundle on merged main: run #24 — passed
+- Visual Browser QA: run #151 — passed, failures: 0
+- Secondary Visual Browser QA: run #117 — passed, failures: 0
 
-## Point 3 objective
+## Point 4 objective
 
-Improve Home visually without replacing VSN's content or information architecture with the earlier literal mockup structure.
-
-The useful mockup idea retained in this point is **dashboard-style information layering**.
-
-The dashboard is populated with VSN-owned data:
-
-- Build — Software & products
-- Automate — AI & workflows
-- Grow — Web, commerce & growth
-- Operate — BPO, teams & business support
-- Public proof — VSN Metafields
+Improve the Services landing page and all 12 service-detail pages without replacing VSN's long-form service data or functional content with mockup structure.
 
 ## Runtime changes
 
-- added `assets/home-point3-data-first.css`
-- retained the restored three-slide hero and parallax
-- replaced the hero's narrow single-product overlay with a VSN capability dashboard
-- refined the credentials rail
-- strengthened active service-lane presentation
-- preserved factual proof cards and existing Home sections
-- preserved reduced-motion support
-- added a guard so inactive slide captions do not ghost during image crossfades
-- corrected the compact dashboard heading on mobile
+- added `assets/point4-services-data-first.css`
+- applied the shared Point 4 layer to `services.html`
+- applied the shared layer to all 12 service-detail pages
+- added a four-lane service rail using VSN's real service architecture:
+  - Build
+  - Automate
+  - Grow
+  - Business
+- refined service hero/media framing
+- improved service-card, scope-panel and long-form hierarchy
+- improved enquiry-form presentation
+- improved FAQ presentation
+- refined Authority Profile pricing-card presentation without changing prices
+- refined Services landing pillars, service accordion and technology grid
+- kept mobile service lanes compact in a 2×2 layout
+- preserved reduced-motion behavior
 
-No Home section was removed to force a mockup section count.
+## Content and function preservation
 
-## Direct rendered review
+Verified on all 12 service-detail pages:
 
-Desktop screenshot review passed.
+- long-form VSN content remains present
+- existing service routes remain present
+- enquiry forms remain before FAQ blocks
+- Authority Profile remains a standalone service
+- Authority Profile starting prices remain $499 / $999 / $1,999
+- tax calculators remain in place
+- no fabricated clients, metrics, awards, reviews or testimonials were introduced
 
-Mobile screenshot review passed after one corrective iteration. The final mobile render shows:
+## Rendered evidence
 
-- readable VSN delivery dashboard
-- no stacked/broken dashboard kicker
-- no overlapping inactive slide captions
-- hero controls clear of the slide copy
+Final primary and secondary browser reports both recorded `failures: []`.
+
+Rendered checks recorded:
+
 - no horizontal overflow
 - no missing images
+- no page errors
+- no console errors
+- no navigation errors
+
+Desktop Services and representative service-detail renders were manually reviewed.
+
+Mobile service-detail rendering was manually reviewed after the compact 2×2 lane-rail correction.
 
 ## Locked design rule
 
 Mockups remain visual references only.
 
-VSN data, service structure, public proof and functional content remain authoritative.
+VSN service content, pricing, routes, forms, FAQs, calculators and public proof remain authoritative.
 
-## Point 3 status
+## Point 4 status
 
 CLOSED — merged and certified.
 
 ## Next allowed action
 
-Point 4 only: Services landing + 12 service-detail pages data-first visual polish.
+Point 5 only: data-first visual polish for About, Products, Projects, Blog and Contact.
 
-Do not start Point 5 until Point 4 is completed, merged and certified.
+Do not start Point 6 until Point 5 is completed, merged and certified.
