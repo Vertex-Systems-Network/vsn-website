@@ -433,10 +433,11 @@ assert.match(blogDetail,/blog-detail-share-row/,'Blog detail missing pre-media t
 assert.match(blogDetail,/editorial-single-body/,'Blog detail must use the single-column editorial body');
 assert.doesNotMatch(blogDetail,/class="container article-shell"/,'Blog detail must not fall back to the old sidebar article shell');
 assert.match(blogDetail,/editorial-inline-media[\s\S]*vsn-human-team\.webp/,'Blog detail missing inline editorial media');
-assert.match(projectDetail,/project-single-proof-note/,'Project detail must retain truthfulness proof as an inline note');
-assert.match(projectDetail,/editorial-single-body project-single-body/,'Project detail must use the single-column case-study body');
+assert.match(projectDetail,/project-detail-story/,'Project detail must retain a dedicated About the Project stage');
+assert.match(projectDetail,/project-detail-challenge/,'Project detail must retain a dedicated Project Challenge stage');
 assert.doesNotMatch(projectDetail,/class="container article-shell"/,'Project detail must not fall back to the old sidebar article shell');
-assert.match(projectDetail,/editorial-inline-media[\s\S]*vsn-human-team\.webp/,'Project detail missing second case-study media stage');
+assert.match(projectDetail,/project-detail-secondary-media[\s\S]*editorial-inline-media[\s\S]*vsn-human-team\.webp/,'Project detail missing second case-study media stage');
+assert.match(projectDetail,/project-detail-features/,'Project detail must retain the reference key-features stage');
 assert.match(editorialCss,/\.article-intro-note\{[\s\S]*grid-template-columns:170px minmax\(0,1fr\)/,'Blog article intro note must retain the reference editorial separator rhythm');
 assert.match(editorialCss,/\.editorial-single-article\.article-body\{[\s\S]*font-size:16px/,'Single detail body typography must retain the reference reading scale');
 assert.match(editorialCss,/\.editorial-single-article\.article-body blockquote\{[\s\S]*background:#000000[\s\S]*color:#FFFFFF/,'Blog quote must retain the dark reference callout');
