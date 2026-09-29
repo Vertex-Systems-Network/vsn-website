@@ -390,11 +390,6 @@
   .service-detail-page .two-col>.card{padding:22px!important}
   .services-reference-page .services-tech-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
 }
-@media(max-width:460px){
-  .p4-service-lane-grid{grid-template-columns:1fr}
-  .p4-service-lane{border-right:0;border-bottom:1px solid rgba(255,255,255,.10)}
-  .p4-service-lane:last-child{border-bottom:0}
-}
 @media(prefers-reduced-motion:reduce){
   .p4-service-lane,
   .services-reference-page .services-pillar,
