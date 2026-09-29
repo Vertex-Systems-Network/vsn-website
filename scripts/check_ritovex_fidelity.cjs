@@ -110,6 +110,8 @@ assert.match(batch3Polish,/\.service-single-reference-shell,[\s\S]*grid-template
 assert.match(batch3Polish,/\.contact-hero-grid\{[\s\S]*grid-template-columns:minmax\(0,.82fr\) minmax\(480px,1.18fr\)/,'Batch 3 Contact hero split missing');
 assert.match(batch3Polish,/\.blog-reference-grid \.editorial-card-media\{[\s\S]*height:250px/,'Batch 3 Blog image height contract missing');
 assert.match(batch3Polish,/\.blog-reference-hero\{[\s\S]*#000000!important/,'Batch 3 Blog hero must retain dark contrast');
+assert.match(batch3Polish,/\.blog-list-page \.blog-hero-visual\{display:block!important\}/,'Blog hero visual must override legacy hide rule');
+assert.match(motion,/\.editorial-hero-visual'\)\.forEach|\.editorial-hero-visual'\)\.forEach/,'Above-the-fold editorial hero visual must be revealed immediately');
 assert.match(homeBatch1,/@keyframes vsn-marquee-seamless/,'Home marquee missing seamless animation');
 assert.match(homeBatch1,/grid-template-columns:repeat\(12,minmax\(0,1fr\)\)!important/,'Home three-image capability grid missing visual composition');
 assert.match(homeBatch1,/\.home-proof-cards\{/,'Home public proof visual grid missing');
