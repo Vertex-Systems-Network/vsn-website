@@ -4,18 +4,21 @@ Official static corporate website for **Vertex Systems Network (VSN)**.
 
 ## Current canonical state
 
-The website is on the restored **data-first VSN baseline**.
+The website is on the restored **data-first VSN baseline**, with Point 3 Home visual polish completed.
 
 - Canonical substantive restore: PR **#137**
-- Canonical certified main SHA: `6ad5b3d8d253a85229a4d3a17f7aa10806439ee1`
-- Substantive restore SHA: `45df966794cffd4b2695d14e638c8c78f8a2ca75`
+- Post-restore reconciliation: PR **#138**
+- Point 3 Home visual polish: PR **#142**
+- Current certified runtime SHA: `454931c33028150df346aba96f80c8e8b5ee0f51`
 - Restored from data-first visual baseline: `dfb37f291b081c5e67479f4aaa53ece7dc9c0608`
-- Static Integrity on certified main: **run #682 passed**
-- Production Release Bundle on certified main: **run #20 passed**
+- Static Integrity on current runtime: **run #697 passed**
+- Production Release Bundle on current runtime: **run #22 passed**
+- Visual Browser QA for Point 3: **run #149 passed, failures 0**
+- Secondary Visual Browser QA for Point 3: **run #115 passed, failures 0**
 - HTML pages: **32**
 - Production deployment: **not yet performed**
 
-The post-PR-123 literal mockup-parity rebuild was removed because the visual mockups are references, not a replacement for VSN's real content or information architecture.
+The post-PR-123 literal mockup-parity rebuild was removed because visual mockups are references, not a replacement for VSN's real content or information architecture.
 
 ## Design and content contract
 
@@ -57,6 +60,37 @@ The current baseline preserves:
 - the single-owner motion model used to avoid duplicate scroll-animation jerk
 
 Useful Batch 1-3 visual upgrades remain. Literal `*-mockup-parity.css` layers do not.
+
+## Point 3 — data-first Home visual polish
+
+Point 3 is complete and merged in PR **#142**.
+
+The Home page now reuses the useful dashboard-style information layering from the rejected mockup direction, but the panel is populated with VSN's own service data rather than mockup content.
+
+The hero dashboard contains:
+
+- Build — Software & products
+- Automate — AI & workflows
+- Grow — Web, commerce & growth
+- Operate — BPO, teams & business support
+- VSN Metafields as public proof
+
+The existing Home sections, three-slide hero, parallax, service routes, proof sections, Products, Blog content and other VSN information remain intact.
+
+Point 3 runtime files:
+
+- `index.html`
+- `assets/home-point3-data-first.css`
+
+Final Point 3 evidence:
+
+- Static Integrity PR run **#696 — passed**
+- Static Integrity merged-main run **#697 — passed**
+- Visual Browser QA **#149 — passed**, failures: **0**
+- Secondary Visual Browser QA **#115 — passed**, failures: **0**
+- Production Release Bundle **#22 — passed**
+- desktop screenshot manually reviewed
+- mobile screenshot manually reviewed after correcting dashboard heading wrapping and slider-caption ghosting
 
 ## Architecture
 
@@ -178,8 +212,6 @@ The official logo remains `assets/vertex-logo.png`.
 - motion behavior
 - Ritovex/reference fidelity guards
 
-The certified post-reconciliation main passed **Static Integrity run #682**.
-
 ## Deployment
 
 The site remains static and is intended for the existing Middlehost/cPanel production host.
@@ -188,7 +220,7 @@ A guarded manual deployment workflow is preserved at:
 
 `.github/workflows/deploy-middlehost.yml`
 
-It requires explicit confirmation and hosting secrets. No production deployment is recorded for the restored baseline.
+It requires explicit confirmation and hosting secrets. No production deployment is recorded for the current baseline.
 
 ## Repository governance
 
@@ -206,22 +238,20 @@ Human checkpoint:
 
 Future work must recover from repository evidence rather than stale chat state.
 
-## Full rendered certification
+## Point 2 — full restored-baseline certification
 
 Point 2 is complete.
 
-Temporary certification PR **#139** was created from certified main with only an inert `assets/` trigger file and was closed **without merge** after the checks completed, so the trigger never entered main.
+Temporary certification PR **#139** was created from certified main with only an inert `assets/` trigger file and was closed **without merge** after the checks completed.
 
 Evidence:
 
 - Static Integrity **#683 — passed**
 - Visual Browser QA **#138 — passed**, failures: **0**
 - Secondary Visual Browser QA **#104 — passed**, failures: **0**
-- Primary and secondary screenshot artifacts were uploaded successfully
-- The primary log contained one blocked external Ritovex placeholder request; it was not a VSN runtime failure and was not in the failure set
 
 ## Next work
 
-The next allowed project step is **Point 3: data-first Home visual polish**.
+The next allowed project step is **Point 4: Services landing + 12 service-detail pages data-first visual polish**.
 
-The Home page may adopt useful mockup visual cues, but VSN's real data, sections, evidence, services and functional behavior remain authoritative.
+Point 4 must preserve long-form VSN service content, all real service routes, and the service-specific enquiry-form-before-FAQ rule.
