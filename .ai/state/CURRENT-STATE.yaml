@@ -1,8 +1,8 @@
 repo: Vertex-Systems-Network/vsn-website
 updated: 2026-09-30
-phase: point-3-data-first-home-visual-polish-complete
+phase: point-4-services-and-service-detail-data-first-visual-polish-complete
 current_branch: main
-current_milestone: point-3-home-polish-merged-certified
+current_milestone: point-4-services-polish-merged-certified
 project_status: active
 implementation_complete: true
 repository_implementation_percent: 100
@@ -29,19 +29,19 @@ canonical_restore:
     - SECURITY-HEADERS.md
     - Google Maps privacy disclosure
 
-verified_main_sha: 454931c33028150df346aba96f80c8e8b5ee0f51
-static_integrity_run: 697
-static_integrity_passed_sha: 454931c33028150df346aba96f80c8e8b5ee0f51
-latest_pr: 142
-latest_static_integrity_run: 697
-latest_verified_main_run: 697
+verified_main_sha: d5063ea201904f4c31334c5dabc4d2aaa1282946
+static_integrity_run: 701
+static_integrity_passed_sha: d5063ea201904f4c31334c5dabc4d2aaa1282946
+latest_pr: 143
+latest_static_integrity_run: 701
+latest_verified_main_run: 701
 latest_verified_main_status: passed
-latest_verified_main_sha: 454931c33028150df346aba96f80c8e8b5ee0f51
+latest_verified_main_sha: d5063ea201904f4c31334c5dabc4d2aaa1282946
 
 release_evidence:
-  production_release_bundle_run: 22
+  production_release_bundle_run: 24
   production_release_bundle_status: passed
-  production_release_bundle_sha: 454931c33028150df346aba96f80c8e8b5ee0f51
+  production_release_bundle_sha: d5063ea201904f4c31334c5dabc4d2aaa1282946
 
 architecture:
   type: static-html-css-vanilla-js
@@ -89,6 +89,8 @@ current_runtime_features:
   home_three_slide_hero: true
   home_parallax: true
   home_data_first_dashboard: true
+  service_lane_navigation: true
+  services_data_first_visual_polish: true
   contact_google_map: true
   whatsapp_project_brief: true
   mobile_navigation: true
@@ -156,4 +158,51 @@ point_3_home_visual_polish:
   production_release_bundle_run: 22
   production_release_bundle_status: passed
 
-next_valid_action: point-4-services-and-service-detail-data-first-visual-polish
+point_4_services_visual_polish:
+  status: closed
+  pr: 143
+  certified_pr_head_sha: 964debcd8061e997216a726410ff2cee3152d14d
+  merged_main_sha: d5063ea201904f4c31334c5dabc4d2aaa1282946
+  runtime_files:
+    - services.html
+    - software.html
+    - web-development-ecommerce.html
+    - websites.html
+    - ecommerce.html
+    - mobile-app-development.html
+    - ai-automation.html
+    - profile.html
+    - social-media.html
+    - bpo.html
+    - business-solutions.html
+    - tax-consulting.html
+    - resource-augmentation.html
+    - assets/point4-services-data-first.css
+  service_detail_pages_polished: 12
+  service_forms_before_faqs_verified: 12
+  service_lane_groups:
+    - build
+    - automate
+    - grow
+    - business
+  content_removed_to_fit_mockup: false
+  authority_profile_pricing_preserved: true
+  tax_calculators_preserved: true
+  exact_logo_palette_only: true
+  static_integrity_pr_run: 700
+  static_integrity_pr_status: passed
+  static_integrity_main_run: 701
+  static_integrity_main_status: passed
+  primary_visual_browser_run: 151
+  primary_visual_browser_status: passed
+  primary_failures: 0
+  secondary_visual_browser_run: 117
+  secondary_visual_browser_status: passed
+  secondary_failures: 0
+  desktop_screenshot_review: passed
+  mobile_screenshot_review: passed
+  mobile_service_lane_layout: compact-2x2
+  production_release_bundle_run: 24
+  production_release_bundle_status: passed
+
+next_valid_action: point-5-company-products-projects-blog-contact-data-first-visual-polish
