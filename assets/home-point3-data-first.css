@@ -1,0 +1,326 @@
+/* Point 3 — data-first Home visual polish — 2026-09-30
+   Mockup-inspired information layering, using only VSN-owned content/data.
+   Loads after home-batch1.css so it can refine the restored baseline without replacing it. */
+
+.home-page{
+  --p3-panel-bg:rgba(0,0,0,.72);
+  --p3-line:rgba(255,255,255,.16);
+  --p3-soft:rgba(255,255,255,.06);
+}
+
+/* Hero: keep the restored 3-slide system, but turn the upper-right overlay
+   into a real VSN capability dashboard instead of a decorative mockup panel. */
+.home-page .home-hero-stage{
+  border-radius:22px!important;
+  border-color:rgba(90,200,214,.22)!important;
+  box-shadow:0 36px 110px rgba(0,0,0,.44),0 0 0 1px rgba(98,91,168,.10)!important;
+}
+.home-page .home-hero-stage:after{
+  content:"";
+  position:absolute;
+  z-index:2;
+  inset:0;
+  pointer-events:none;
+  display:block!important;
+  background:
+    linear-gradient(90deg,transparent 0 56%,rgba(0,0,0,.08) 100%),
+    repeating-linear-gradient(90deg,transparent 0 72px,rgba(90,200,214,.035) 72px 73px);
+  opacity:.78;
+}
+.home-page .home-hero-slides,
+.home-page .home-hero-controls,
+.home-page .home-hero-data-panel{z-index:4}
+.home-page .home-hero-slide figcaption{z-index:6!important}
+
+.home-page .home-hero-data-panel{
+  position:absolute;
+  z-index:7;
+  top:22px;
+  right:22px;
+  width:min(350px,calc(100% - 44px));
+  padding:18px;
+  border:1px solid rgba(90,200,214,.28);
+  border-radius:14px;
+  background:
+    linear-gradient(145deg,rgba(63,66,69,.28),rgba(0,0,0,.78)),
+    var(--p3-panel-bg);
+  box-shadow:0 22px 54px rgba(0,0,0,.22);
+  backdrop-filter:blur(16px);
+  color:#FFFFFF;
+}
+.home-page .home-hero-data-panel:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  border-radius:inherit;
+  background:
+    linear-gradient(90deg,rgba(90,200,214,.10),transparent 28%),
+    repeating-linear-gradient(0deg,transparent 0 31px,rgba(255,255,255,.025) 31px 32px);
+}
+.home-page .home-data-panel-head,
+.home-page .home-data-grid,
+.home-page .home-data-proof{position:relative;z-index:1}
+.home-page .home-data-panel-kicker{
+  display:block;
+  color:#5AC8D6;
+  font-size:9px;
+  line-height:1;
+  font-weight:850;
+  letter-spacing:.15em;
+}
+.home-page .home-data-panel-head h2{
+  margin:8px 0 6px;
+  color:#FFFFFF;
+  font-size:25px;
+  line-height:1.02;
+  letter-spacing:-.045em;
+}
+.home-page .home-data-panel-head p{
+  margin:0;
+  color:rgba(255,255,255,.68);
+  font-size:11px;
+  line-height:1.45;
+}
+.home-page .home-data-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:7px;
+  margin-top:14px;
+}
+.home-page .home-data-grid a{
+  position:relative;
+  display:grid;
+  align-content:end;
+  min-height:76px;
+  padding:11px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:9px;
+  background:rgba(255,255,255,.045);
+  color:#FFFFFF;
+  text-decoration:none;
+  transition:transform .24s cubic-bezier(.22,1,.36,1),border-color .24s ease,background-color .24s ease;
+}
+.home-page .home-data-grid a:before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:0;
+  width:34px;
+  height:2px;
+  background:#6188C6;
+}
+.home-page .home-data-grid a:nth-child(2):before{background:#5AC8D6}
+.home-page .home-data-grid a:nth-child(3):before{background:#625BA8}
+.home-page .home-data-grid a:nth-child(4):before{background:#7E8083}
+.home-page .home-data-grid a:hover,
+.home-page .home-data-grid a:focus-visible{
+  transform:translateY(-2px);
+  border-color:rgba(90,200,214,.46);
+  background:rgba(97,136,198,.10);
+}
+.home-page .home-data-grid small{
+  display:block;
+  margin-bottom:6px;
+  color:#7E8083;
+  font-size:8px;
+  font-weight:850;
+  line-height:1;
+  letter-spacing:.12em;
+}
+.home-page .home-data-grid strong{
+  display:block;
+  color:#FFFFFF;
+  font-size:12px;
+  line-height:1.18;
+  letter-spacing:-.02em;
+}
+.home-page .home-data-proof{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+  margin-top:8px;
+  padding:10px 11px;
+  border:1px solid rgba(90,200,214,.20);
+  border-radius:9px;
+  background:rgba(90,200,214,.06);
+  color:#FFFFFF;
+  text-decoration:none;
+}
+.home-page .home-data-proof span{
+  color:#5AC8D6;
+  font-size:8px;
+  font-weight:850;
+  letter-spacing:.11em;
+}
+.home-page .home-data-proof strong{
+  color:#FFFFFF;
+  font-size:11px;
+  text-align:right;
+}
+.home-page .home-data-proof:hover strong,
+.home-page .home-data-proof:focus-visible strong{color:#5AC8D6}
+
+
+/* Keep slide-copy switching crisp while the photography crossfades. */
+.home-page .home-hero-slide:not(.is-active) figcaption{
+  opacity:0!important;
+  visibility:hidden!important;
+  transition:none!important;
+}
+.home-page .home-hero-slide.is-active figcaption{
+  opacity:1!important;
+  visibility:visible!important;
+}
+
+/* The credentials strip becomes a compact verification rail rather than
+   looking like a second navigation bar. */
+.home-page .home-credentials-grid{
+  gap:0!important;
+}
+.home-page .home-credentials-grid>div,
+.home-page .home-credentials-grid>.credential-link{
+  position:relative;
+  min-height:94px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding-inline:20px;
+}
+.home-page .home-credentials-grid>div+div:before,
+.home-page .home-credentials-grid>.credential-link:before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:24px;
+  bottom:24px;
+  width:1px;
+  background:rgba(126,128,131,.28);
+}
+.home-page .home-credentials-grid>div:first-child{padding-left:0}
+.home-page .home-credentials-grid>.credential-link{
+  align-items:flex-end;
+  text-align:right;
+}
+
+/* Services: retain every real VSN route, but give the active lane a clearer
+   system/dashboard treatment. */
+.home-page .home-service-card{
+  position:relative;
+  margin-inline:-12px;
+  padding-inline:12px!important;
+  border-radius:10px;
+  transition:background-color .24s ease,border-color .24s ease;
+}
+.home-page .home-service-card:before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:18px;
+  bottom:18px;
+  width:2px;
+  border-radius:99px;
+  background:transparent;
+}
+.home-page .home-service-card.is-active{
+  background:linear-gradient(90deg,rgba(97,136,198,.10),rgba(98,91,168,.035) 55%,transparent);
+}
+.home-page .home-service-card.is-active:before{background:#5AC8D6}
+.home-page .home-service-card:hover{background-color:rgba(255,255,255,.03)}
+.home-page .home-service-preview{
+  border:1px solid rgba(90,200,214,.16)!important;
+}
+.home-page .home-service-preview:after{
+  content:"VSN / SELECTED CAPABILITY";
+  position:absolute;
+  left:16px;
+  top:16px;
+  z-index:2;
+  padding:7px 9px;
+  border:1px solid rgba(255,255,255,.16);
+  border-radius:999px;
+  background:rgba(0,0,0,.56);
+  color:#FFFFFF;
+  font-size:8px;
+  font-weight:850;
+  letter-spacing:.12em;
+  backdrop-filter:blur(8px);
+}
+
+/* Slightly strengthen information hierarchy on factual cards without
+   introducing new claims or changing section counts. */
+.home-page .home-proof-card,
+.home-page .home-team-card,
+.home-page .home-showcase-card,
+.home-page .home-blog-card{
+  box-shadow:0 20px 48px rgba(0,0,0,.08);
+}
+.home-page .home-proof-card:focus-visible,
+.home-page .home-showcase-card a:focus-visible,
+.home-page .home-team-note a:focus-visible,
+.home-page .home-blog-card a:focus-visible{
+  outline:2px solid #5AC8D6;
+  outline-offset:3px;
+}
+
+/* Responsive: keep the dashboard readable without covering the entire image. */
+@media(max-width:1120px){
+  .home-page .home-hero-data-panel{width:min(320px,calc(100% - 36px));top:18px;right:18px}
+  .home-page .home-data-panel-head h2{font-size:22px}
+  .home-page .home-data-grid a{min-height:68px}
+}
+@media(max-width:980px){
+  .home-page .home-credentials-grid>div,
+  .home-page .home-credentials-grid>.credential-link{padding-inline:14px}
+}
+@media(max-width:760px){
+  .home-page .home-hero-stage{height:620px!important;min-height:620px!important}
+  .home-page .home-hero-data-panel{
+    top:14px;
+    left:14px;
+    right:14px;
+    width:auto;
+    padding:13px;
+    border-radius:12px;
+    backdrop-filter:blur(11px);
+  }
+  .home-page .home-data-panel-head{display:block}
+  .home-page .home-data-panel-head h2{
+    margin:6px 0 0;
+    font-size:17px;
+    line-height:1.05;
+    white-space:normal;
+  }
+  .home-page .home-data-panel-head p{display:none}
+  .home-page .home-data-panel-kicker{display:block;font-size:8px;white-space:nowrap}
+  .home-page .home-data-grid{gap:5px;margin-top:10px}
+  .home-page .home-data-grid a{min-height:58px;padding:9px}
+  .home-page .home-data-grid small{font-size:7px;margin-bottom:4px}
+  .home-page .home-data-grid strong{font-size:10px}
+  .home-page .home-data-proof{margin-top:6px;padding:8px 9px}
+  .home-page .home-data-proof strong{font-size:9px}
+  .home-page .home-hero-slide figcaption{
+    left:14px!important;
+    bottom:16px!important;
+    width:calc(100% - 28px)!important;
+  }
+  .home-page .home-hero-controls{right:24px!important;bottom:142px!important}
+  .home-page .home-credentials-grid>div+div:before,
+  .home-page .home-credentials-grid>.credential-link:before{display:none}
+  .home-page .home-service-card{margin-inline:0;padding-inline:0!important}
+  .home-page .home-service-card:before{display:none}
+}
+@media(max-width:520px){
+  .home-page .home-hero-stage{height:590px!important;min-height:590px!important}
+  .home-page .home-data-panel-head h2{font-size:15px}
+  .home-page .home-data-grid strong{font-size:9px}
+  .home-page .home-data-grid a{min-height:54px}
+}
+@media(prefers-reduced-motion:reduce){
+  .home-page .home-data-grid a,
+  .home-page .home-service-card{transition:none!important}
+  .home-page .home-data-grid a:hover,
+  .home-page .home-data-grid a:focus-visible{transform:none}
+}
