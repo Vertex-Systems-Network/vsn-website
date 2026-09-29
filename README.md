@@ -4,18 +4,19 @@ Official static corporate website for **Vertex Systems Network (VSN)**.
 
 ## Current canonical state
 
-The website is on the restored **data-first VSN baseline**, with Point 4 Services visual polish completed.
+The website is on the restored **data-first VSN baseline**, with Point 5 company/editorial visual polish completed.
 
 - Canonical substantive restore: PR **#137**
 - Post-restore reconciliation: PR **#138**
 - Point 3 Home visual polish: PR **#142**
 - Point 4 Services + service-detail visual polish: PR **#143**
-- Current certified runtime SHA: `d5063ea201904f4c31334c5dabc4d2aaa1282946`
+- Point 5 Company + editorial visual polish: PR **#144**
+- Current certified runtime SHA: `2e46d53bfe228a67d9da63f0f2a27c5584898d3d`
 - Restored from data-first visual baseline: `dfb37f291b081c5e67479f4aaa53ece7dc9c0608`
-- Static Integrity on current runtime: **run #701 passed**
-- Production Release Bundle on current runtime: **run #24 passed**
-- Visual Browser QA for Point 4: **run #151 passed, failures 0**
-- Secondary Visual Browser QA for Point 4: **run #117 passed, failures 0**
+- Static Integrity on current runtime: **run #707 passed**
+- Production Release Bundle on current runtime: **run #28 passed**
+- Visual Browser QA for Point 5: **run #153 passed, failures 0**
+- Secondary Visual Browser QA for Point 5: **run #119 passed, failures 0**
 - HTML pages: **32**
 - Production deployment: **not yet performed**
 
@@ -129,6 +130,51 @@ Final Point 4 evidence:
 - desktop Services and representative service-detail screenshots manually reviewed
 - mobile service-detail screenshot manually reviewed after keeping the lane rail in a compact 2×2 layout
 - no horizontal overflow, missing images, page errors or console errors in the final browser reports
+
+## Point 5 — Company + editorial data-first visual polish
+
+Point 5 is complete and merged in PR **#144**.
+
+The following page families now use a shared VSN visual language without being turned into one template:
+
+- About
+- Products
+- Projects
+- Project Detail
+- Blog
+- Blog Detail
+- Contact
+
+Point 5 adds `assets/point5-company-editorial.css` and refines:
+
+- About company proof, verification, team and media presentation
+- Products product/repository hierarchy and public-proof framing
+- Projects technical/public-work cards and repository evidence
+- Project Detail fact strip and case-study/evidence framing
+- Blog listing editorial card hierarchy
+- Blog Detail reading/publish-strip treatment
+- Contact project form, route cards, information cards and map presentation
+
+The implementation explicitly preserves:
+
+- Products as evidence-based content with VSN Metafields/public repositories
+- Projects and Blog as distinct content types
+- Project Detail and Blog Detail as distinct semantics
+- Contact project brief, phone/WhatsApp/email routes and Google Map
+- factual public proof only
+- the approved VSN logo palette only
+
+During manual screenshot review, a large legacy blank area on Projects was found and removed before final certification.
+
+Final Point 5 evidence:
+
+- Static Integrity PR run **#706 — passed**
+- Static Integrity merged-main run **#707 — passed**
+- Visual Browser QA **#153 — passed**, failures: **0**
+- Secondary Visual Browser QA **#119 — passed**, failures: **0**
+- Production Release Bundle **#28 — passed**
+- desktop and mobile screenshots manually reviewed across the Point 5 page families
+- no horizontal overflow, missing images, page errors, console errors or navigation errors in the final browser reports
 
 ## Architecture
 
@@ -290,6 +336,6 @@ Evidence:
 
 ## Next work
 
-The next allowed project step is **Point 5: data-first visual polish for About, Products, Projects, Blog and Contact**.
+The next allowed project step is **Point 6: final animation/motion pass and production certification**.
 
-Point 5 must preserve each page's real purpose and data: Projects and Blog remain distinct, Products remains evidence-based, and Contact keeps its project brief, direct contact routes and Google Map.
+Point 6 must keep one motion owner, avoid scroll-trigger duplication/jerk, respect reduced-motion, certify the complete rendered site again, and only then consider the guarded Middlehost production deployment.
