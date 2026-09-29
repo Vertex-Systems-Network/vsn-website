@@ -294,11 +294,14 @@ assert.match(editorialCss,/\.blog-detail-reference-hero \.h1\{[\s\S]*font-size:4
 assert.match(editorialCss,/\.project-detail-reference-hero \.h1\{[\s\S]*font-size:80px[\s\S]*line-height:1\.5/,'Project detail desktop heading metric must stay reference-aligned');
 
 
-assert.match(blogDetail,/<h1 class="h1">Where AI Helps — and Human Review Matters<\/h1>/,'Blog detail must keep the concise reference-scale article title');
-assert.match(read('blog.html'),/Where AI Helps — and Human Review Matters/,'Blog listing must use the same published article title');
-assert.match(home,/Where AI Helps — and Human Review Matters/,'Homepage article preview must use the same published title');
+assert.match(blogDetail,/<h1 class="h1">AI Helps. Human Review Still Matters.<\/h1>/,'Blog detail must keep the concise reference-scale article title');
+assert.match(read('blog.html'),/AI Helps. Human Review Still Matters./,'Blog listing must use the same published article title');
+assert.match(home,/AI Helps. Human Review Still Matters./,'Homepage article preview must use the same published title');
 assert.match(read('web-development-ecommerce.html'),/<h1 class="h1">Web Development<\/h1>/,'Representative service detail must keep the one-line Web Development H1');
 assert.match(fidelity,/@media\(max-width:700px\)\{[\s\S]*\.not-found-page \.utility-inner \.h1\{[\s\S]*font-size:26px!important[\s\S]*white-space:nowrap/,'Mobile 404 must keep its title on one reference-style line');
+
+
+assert.match(serviceDetailCss,/@media\(min-width:701px\)\{[\s\S]*\.web-commerce-detail-page \.web-service-reference-hero \.h1\{[\s\S]*font-size:120px[\s\S]*line-height:180px[\s\S]*letter-spacing:-2\.4px/,'Representative service desktop heading metrics must exactly match the measured reference');
 
 console.log('Ritovex fidelity passed: shell, 980px mobile navigation, palette lock, direct imagery, service FAQs/forms, Google Map, distinct editorial/project templates, 404 and single reveal owner are intact.');
 
