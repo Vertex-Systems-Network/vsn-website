@@ -13,6 +13,7 @@ const homeBatch1=read('assets/home-batch1.css');
 const homeBatch1Js=read('assets/home-batch1.js');
 const homeMockup=read('assets/home-mockup-parity.css');
 const servicesBatch2=read('assets/services-batch2.css');
+const servicesMockup=read('assets/services-mockup-parity.css');
 const batch3Polish=read('assets/batch3-page-polish.css');
 
 const servicePages=[
@@ -217,6 +218,8 @@ assert.match(about,/https:\/\/github\.com\/Vertex-Systems-Network/,'about creden
 assert.match(about,/https:\/\/apps\.shopify\.com\/vsn-metafields/,'about credentials missing Shopify proof');
 assert.doesNotMatch(about,/Award-Winning|Awards Winner|Industry Award Recipient/,'about page must not fabricate reference-template awards');
 assert.match(services,/assets\/services-batch2\.css/,'Services page missing Batch 2 stylesheet');
+assert.match(services,/assets\/services-mockup-parity\.css/,'Services page missing approved mockup parity stylesheet');
+assert.match(services,/<body class="secondary-page services-reference-page services-mockup-parity">/,'Services page missing mockup parity body contract');
 assert.equal((services.match(/class="services-pillar"/g)||[]).length,4,'Services hero must contain four Build/Automate/Grow/Operate visual pillars');
 assert.match(services,/services-tech-layout[\s\S]*services-tech-visual/,'Services technology section must use image-plus-platform layout');
 assert.equal((services.match(/class="services-proof-media"/g)||[]).length,3,'Services proof section must contain three image-backed public proof cards');
@@ -238,6 +241,15 @@ assert.match(services,/services-reference-faq/,'services page missing page-level
 assert.equal((services.match(/class="services-faq-list"[\s\S]*?<\/div><\/div><\/section>/)||[''])[0].match(/<details/g)?.length,4,'services page FAQ must contain four buyer questions');
 assert.match(services,/https:\/\/github\.com\/Vertex-Systems-Network/,'services page missing public GitHub proof');
 assert.match(services,/https:\/\/apps\.shopify\.com\/vsn-metafields/,'services page missing published product proof');
+assert.match(services,/class="services-mockup-footer"/,'Services page missing compact mockup footer');
+assert.match(servicesMockup,/\.services-reference-page\.services-mockup-parity \.services-reference-hero>[.]container\{[\s\S]*grid-template-columns:minmax\(350px,.82fr\) minmax\(0,1.48fr\)!important/,'Services mockup hero split missing');
+assert.match(servicesMockup,/\.services-reference-page\.services-mockup-parity \.services-rendered-hero-stage\{[\s\S]*grid-template-columns:repeat\(4,minmax\(0,1fr\)\)!important/,'Services mockup Build Automate Grow Operate visual grid missing');
+assert.match(servicesMockup,/\.services-reference-page\.services-mockup-parity \.services-reference-tech\{[\s\S]*#000000!important/,'Services mockup technology stage must use dark cinematic contrast');
+assert.match(servicesMockup,/\.services-reference-page\.services-mockup-parity \.services-tech-grid\{[\s\S]*grid-template-columns:repeat\(4,minmax\(0,1fr\)\)!important/,'Services mockup technology tile grid missing');
+assert.match(servicesMockup,/\.services-reference-page\.services-mockup-parity \.services-proof-cards\{[\s\S]*grid-template-columns:repeat\(3,minmax\(0,1fr\)\)!important/,'Services mockup proof visual grid missing');
+assert.match(servicesMockup,/\.services-reference-page\.services-mockup-parity \.services-reference-scope\{[\s\S]*grid-template-columns:1.1fr .9fr!important/,'Services mockup scope split missing');
+assert.match(servicesMockup,/\.services-reference-page\.services-mockup-parity \.services-scope-intro\{[\s\S]*min-height:600px!important/,'Services scope visual stage missing');
+assert.match(servicesMockup,/\.services-reference-page\.services-mockup-parity \.services-reference-faq\{[\s\S]*#3F4245!important/,'Services FAQ contrast band missing');
 for(const file of htmlFiles){const body=read(file);assert.match(body,/footer-public-links rv-footer-public-links/,file+' missing restored public profile footer row');}
 
 const notFound=read('404.html');
