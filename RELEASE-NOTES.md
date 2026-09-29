@@ -90,3 +90,10 @@ See `LAUNCH-HANDOFF.md` for the authoritative production handoff and launch orde
 - Static Integrity now validates that the release package can be built successfully on every PR/main run.
 - `dist/` is ignored so generated release output cannot accidentally enter source control.
 - Runtime architecture remains direct-open HTML/CSS/vanilla JavaScript with no Vercel/Node/framework dependency.
+
+
+## Main release artifact automation — 2026-09-29
+
+- Production Release Bundle now triggers on each `main` push as well as manual dispatch.
+- Every merged main state can therefore produce a matching clean hosting ZIP and checksum evidence automatically.
+- This remains artifact-only automation; no hosting upload, DNS mutation or live deployment action was added.
