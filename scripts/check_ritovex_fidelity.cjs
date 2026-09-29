@@ -19,6 +19,7 @@ const projectsMockup=read('assets/projects-mockup-parity.css');
 const productsMockup=read('assets/products-mockup-parity.css');
 const industriesMockup=read('assets/industries-mockup-parity.css');
 const workMockup=read('assets/work-mockup-parity.css');
+const blogMockup=read('assets/blog-mockup-parity.css');
 const batch3Polish=read('assets/batch3-page-polish.css');
 
 const servicePages=[
@@ -155,13 +156,21 @@ const webCommerce=read('web-development-ecommerce.html');
 const serviceDetailCss=read('assets/ritovex-service-detail.css');
 assert.match(home,/href="blog-detail\.html"/,'Home mockup insights missing published article link');
 assert.match(home,/href="blog\.html">View All Articles/,'Home mockup insights missing all-articles route');
-assert.match(blog,/<body class="editorial-page blog-list-page">/);
+assert.match(blog,/<body class="editorial-page blog-list-page blog-mockup-parity">/,'Blog must use approved cinematic parity body contract');
+assert.match(blog,/assets\/blog-mockup-parity\.css/,'Blog missing approved cinematic parity stylesheet');
 assert.match(blog,/assets\/batch3-page-polish\.css/,'Blog missing Batch 3 stylesheet');
 assert.match(blog,/blog-hero-grid[\s\S]*blog-hero-visual/,'Blog missing Batch 3 image-led hero');
 assert.match(blog,/blog-hero-visual[\s\S]*vsn-human-editorial\.webp/,'Blog hero must use committed editorial imagery');
 assert.equal((blog.match(/class="editorial-card"/g)||[]).length,9,'blog reference grid must contain nine cards');
 assert.equal((blog.match(/Coming soon/g)||[]).length>=8,true,'blog must keep eight planned topics clearly marked as coming soon');
 assert.equal((blog.match(/Coming soon/g)||[]).length>=8,true,'blog upcoming topics must remain clearly labeled');
+assert.match(blogMockup,/\.blog-list-page\.blog-mockup-parity \.blog-hero-grid\{[\s\S]*grid-template-columns:minmax\(350px,.82fr\) minmax\(0,1.18fr\)!important/,'Blog parity hero split missing');
+assert.match(blogMockup,/\.blog-list-page\.blog-mockup-parity \.blog-reference-grid\{[\s\S]*grid-template-columns:repeat\(3,minmax\(0,1fr\)\)!important/,'Blog parity listing grid must retain three-column desktop rhythm');
+assert.match(blogMockup,/\.blog-detail-page\.blog-mockup-parity \.blog-detail-reference-hero \.h1\{[\s\S]*font-size:clamp\(54px,5.7vw,86px\)!important/,'Blog Detail cinematic article heading scale missing');
+assert.match(blogMockup,/\.blog-detail-page\.blog-mockup-parity \.editorial-single-body-section\{[\s\S]*background:#FFFFFF!important/,'Blog Detail reading stage must retain light editorial surface');
+assert.match(blogMockup,/\.blog-detail-page\.blog-mockup-parity \.editorial-single-article blockquote\{[\s\S]*background:#000000!important[\s\S]*color:#FFFFFF!important/,'Blog Detail quote must retain dark cinematic callout');
+assert.match(blogMockup,/@media\(max-width:700px\)/,'Blog parity mobile breakpoint missing');
+
 assert.match(projects,/<body class="editorial-page projects-list-page projects-mockup-parity">/,'Projects must use approved cinematic parity body contract');
 assert.match(projects,/assets\/projects-mockup-parity\.css/,'Projects missing approved cinematic parity stylesheet');
 assert.match(projects,/projects-proof-note/,'projects page missing portfolio truthfulness note');
@@ -217,7 +226,8 @@ assert.match(workMockup,/@media\(max-width:700px\)/,'Work parity mobile breakpoi
 
 
 
-assert.match(blogDetail,/<body class="editorial-page blog-detail-page">/);
+assert.match(blogDetail,/<body class="editorial-page blog-detail-page blog-mockup-parity">/,'Blog Detail must use approved cinematic parity body contract');
+assert.match(blogDetail,/assets\/blog-mockup-parity\.css/,'Blog Detail missing approved cinematic parity stylesheet');
 assert.match(projectDetail,/<body class="editorial-page project-detail-page projects-mockup-parity">/,'Project Detail must use approved cinematic parity body contract');
 assert.match(projectDetail,/assets\/projects-mockup-parity\.css/,'Project Detail missing approved cinematic parity stylesheet');
 assert.match(projectDetail,/project-detail-story/,'Project Detail missing About the Project stage');
