@@ -387,3 +387,8 @@ The representative Web Development & E-commerce detail page now follows the live
 ## Service-detail reference propagation — 2026-09-29
 
 After the Web Development representative page passed Static Integrity and both rendered-browser QA workflows, the same single-service hierarchy was propagated across the remaining service details. Each page now leads with a text-first service hero, a dedicated full-width human image, a concise service overview, then its existing service-specific capability/content stage. Long VSN content, service enquiry forms and FAQ ordering remain intact. The Business Websites page also moves its primary H1 into the hero so its document and visual hierarchy matches the rest of the service family.
+
+
+## Final artifact-led detail and utility parity — 2026-09-29
+
+The PR #111 rendered artifacts were reviewed directly against the live Ritovex captures instead of treating green browser automation as pixel-level certification. That review found three measurable gaps: the VSN 404 page was taller and more complex than the reference, Blog detail used listing-scale typography and placed article metadata before the hero image, and Project detail used a larger title/flat metadata strip. This pass removes the extra 404 CTA stage and secondary action, matches reference 404 title scale, moves Blog article metadata below the hero image, and tunes Blog/Project detail typography and project metadata presentation to the rendered reference.
