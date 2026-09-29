@@ -78,3 +78,15 @@ See `LAUNCH-HANDOFF.md` for the authoritative production handoff and launch orde
 - Redesigned homepage and expanded About; added role-based delivery visibility, registration facts, public product proof and genuine-feedback standards.
 - Added local, credited Font Awesome Free SVG icons and verified public profile links in all 27 footers. Service-page main content remained unchanged.
 - No production inspection or deployment. Official social profile URLs and client-approved reviews remain unprovided.
+
+
+# Production release packaging — 2026-09-29
+
+- Added a deterministic Python release builder for the static website.
+- Runtime packaging includes root HTML, `legal/`, `assets/`, `.well-known/`, `robots.txt` and `sitemap.xml`, while excluding development/governance files.
+- The package includes a machine-readable file manifest and SHA-256 checksum list.
+- Added the manual **Production Release Bundle** GitHub Actions workflow, restricted to `main`.
+- The workflow reruns repository validation and uploads the clean ZIP as an artifact; it performs no production deployment or DNS changes.
+- Static Integrity now validates that the release package can be built successfully on every PR/main run.
+- `dist/` is ignored so generated release output cannot accidentally enter source control.
+- Runtime architecture remains direct-open HTML/CSS/vanilla JavaScript with no Vercel/Node/framework dependency.
