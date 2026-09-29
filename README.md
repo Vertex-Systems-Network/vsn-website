@@ -7,10 +7,11 @@ Official static corporate website for **Vertex Systems Network (VSN)**.
 The website is on the restored **data-first VSN baseline**.
 
 - Canonical substantive restore: PR **#137**
-- Canonical restored main SHA: `45df966794cffd4b2695d14e638c8c78f8a2ca75`
+- Canonical certified main SHA: `6ad5b3d8d253a85229a4d3a17f7aa10806439ee1`
+- Substantive restore SHA: `45df966794cffd4b2695d14e638c8c78f8a2ca75`
 - Restored from data-first visual baseline: `dfb37f291b081c5e67479f4aaa53ece7dc9c0608`
-- Static Integrity: **run #680 passed**
-- Production Release Bundle: **run #19 passed**
+- Static Integrity on certified main: **run #682 passed**
+- Production Release Bundle on certified main: **run #20 passed**
 - HTML pages: **32**
 - Production deployment: **not yet performed**
 
@@ -177,7 +178,7 @@ The official logo remains `assets/vertex-logo.png`.
 - motion behavior
 - Ritovex/reference fidelity guards
 
-The restored baseline passed **Static Integrity run #680** on main.
+The certified post-reconciliation main passed **Static Integrity run #682**.
 
 ## Deployment
 
@@ -205,8 +206,22 @@ Human checkpoint:
 
 Future work must recover from repository evidence rather than stale chat state.
 
+## Full rendered certification
+
+Point 2 is complete.
+
+Temporary certification PR **#139** was created from certified main with only an inert `assets/` trigger file and was closed **without merge** after the checks completed, so the trigger never entered main.
+
+Evidence:
+
+- Static Integrity **#683 — passed**
+- Visual Browser QA **#138 — passed**, failures: **0**
+- Secondary Visual Browser QA **#104 — passed**, failures: **0**
+- Primary and secondary screenshot artifacts were uploaded successfully
+- The primary log contained one blocked external Ritovex placeholder request; it was not a VSN runtime failure and was not in the failure set
+
 ## Next work
 
-The next allowed project step is **Point 2: full certification of the restored baseline** using primary and secondary rendered browser QA.
+The next allowed project step is **Point 3: data-first Home visual polish**.
 
-Do not begin another mockup-driven redesign before that certification step is completed.
+The Home page may adopt useful mockup visual cues, but VSN's real data, sections, evidence, services and functional behavior remain authoritative.
