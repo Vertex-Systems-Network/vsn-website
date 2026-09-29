@@ -55,6 +55,8 @@ const legacyCorruptedHumanAssets=['vsn-human-atlas.webp'];
 
 for(const file of htmlFiles){
  const body=read(file);
+ assert.match(body,/<meta name="theme-color" content="#000000">/,file+' production theme-color must use approved VSN black');
+ assert.doesNotMatch(body,/<meta name="theme-color" content="#(?:07111f|f5f4f0)">/i,file+' contains legacy off-brand theme-color');
  legacyCorruptedHumanAssets.forEach(asset=>assert.ok(!body.includes(asset),file+' references legacy corrupted human asset '+asset));
  const legal=file.startsWith('legal'+path.sep);
  const fidelityCss=legal?'../assets/ritovex-fidelity.css':'assets/ritovex-fidelity.css';
@@ -98,6 +100,14 @@ const processPage=read('process.html');
 const trustPage=read('trust.html');
 const paymentsPage=read('payments.html');
 const profilePage=read('profile.html');
+const privacyPolicy=read('legal/privacy.html');
+const securityHeadersDoc=read('SECURITY-HEADERS.md');
+assert.match(privacyPolicy,/Contact page embeds a Google Maps view/,'Privacy Policy must describe the current Google Maps embed');
+assert.doesNotMatch(privacyPolicy,/OpenStreetMap/i,'Privacy Policy must not contain stale OpenStreetMap disclosure');
+assert.match(securityHeadersDoc,/Google Maps area map/,'Security headers doc must describe the current Google Maps embed');
+assert.match(securityHeadersDoc,/frame-src https:\/\/www\.google\.com https:\/\/maps\.google\.com/,'Security headers doc must preserve Google Maps frame origins');
+assert.doesNotMatch(securityHeadersDoc,/OpenStreetMap/i,'Security headers doc must not contain stale OpenStreetMap guidance');
+
 const contact=read('contact.html');
 assert.match(contact,/<body class="secondary-page contact-page contact-mockup-parity">/,'Contact must use approved cinematic parity body contract');
 assert.match(contact,/assets\/contact-mockup-parity\.css/,'Contact missing approved cinematic parity stylesheet');
