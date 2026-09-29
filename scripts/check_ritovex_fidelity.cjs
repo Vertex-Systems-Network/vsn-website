@@ -16,6 +16,7 @@ const servicesBatch2=read('assets/services-batch2.css');
 const servicesMockup=read('assets/services-mockup-parity.css');
 const aboutMockup=read('assets/about-mockup-parity.css');
 const projectsMockup=read('assets/projects-mockup-parity.css');
+const productsMockup=read('assets/products-mockup-parity.css');
 const batch3Polish=read('assets/batch3-page-polish.css');
 
 const servicePages=[
@@ -145,6 +146,7 @@ const blog=read('blog.html');
 const projects=read('projects.html');
 const blogDetail=read('blog-detail.html');
 const projectDetail=read('project-detail.html');
+const products=read('products.html');
 const webCommerce=read('web-development-ecommerce.html');
 const serviceDetailCss=read('assets/ritovex-service-detail.css');
 assert.match(home,/href="blog-detail\.html"/,'Home mockup insights missing published article link');
@@ -170,6 +172,19 @@ assert.match(projects,/github\.com\/Vertex-Systems-Network\/ai-native-project-op
 assert.doesNotMatch(projects,/<span>Capability<\/span>/,'projects page must not present generic capabilities as completed projects');
 assert.match(projectsMockup,/\.projects-list-page\.projects-mockup-parity \.project-proof-grid\{[\s\S]*grid-template-columns:repeat\(2,minmax\(0,1fr\)\)!important/,'Projects parity must retain two-column desktop portfolio rhythm');
 assert.match(projectsMockup,/\.projects-list-page\.projects-mockup-parity \.projects-reference-hero\{[\s\S]*#000!important/,'Projects parity hero must retain cinematic black stage');
+assert.match(products,/<body class="secondary-page products-page products-mockup-parity">/,'Products must use approved cinematic parity body contract');
+assert.match(products,/assets\/products-mockup-parity\.css/,'Products missing approved cinematic parity stylesheet');
+assert.match(products,/id="product-listing"/,'Products missing featured product listing stage');
+assert.match(products,/id="public-repositories"/,'Products missing public repository catalogue');
+assert.equal((products.match(/class="product-card repo-card"/g)||[]).length,16,'Products must keep one featured product plus fifteen public repository cards');
+assert.equal((products.match(/Public GitHub repository/g)||[]).length,15,'Products public repository register must keep fifteen audited entries');
+assert.match(products,/github\.com\/Vertex-Systems-Network\/wpessential/,'Products catalogue missing WPEssential public repository');
+assert.match(products,/github\.com\/Vertex-Systems-Network\/workforce-intelligence/,'Products catalogue missing Workforce Intelligence public repository');
+assert.match(productsMockup,/\.products-page\.products-mockup-parity \.rv-hero-grid\{[\s\S]*grid-template-columns:minmax\(350px,.82fr\) minmax\(0,1.18fr\)!important/,'Products cinematic hero split missing');
+assert.match(productsMockup,/\.products-page\.products-mockup-parity #public-repositories \.product-project-grid\{[\s\S]*grid-template-columns:repeat\(3,minmax\(0,1fr\)\)!important/,'Products public repository catalogue must retain three-column desktop rhythm');
+assert.match(productsMockup,/\.products-page\.products-mockup-parity \.rv-product-listing \.product-project-grid\{[\s\S]*grid-template-columns:1.15fr .85fr!important/,'Products featured product split missing');
+assert.match(productsMockup,/@media\(max-width:700px\)/,'Products parity mobile breakpoint missing');
+
 assert.match(blogDetail,/<body class="editorial-page blog-detail-page">/);
 assert.match(projectDetail,/<body class="editorial-page project-detail-page projects-mockup-parity">/,'Project Detail must use approved cinematic parity body contract');
 assert.match(projectDetail,/assets\/projects-mockup-parity\.css/,'Project Detail missing approved cinematic parity stylesheet');
