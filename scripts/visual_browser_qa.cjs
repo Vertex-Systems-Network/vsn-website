@@ -7,6 +7,7 @@ const outDir = path.resolve('qa-artifacts/pages');
 fs.mkdirSync(outDir,{recursive:true});
 
 const pages = [
+  {key:'home', local:'index.html', reference:'https://ritovex.webflow.io/'},
   {key:'services', local:'services.html', reference:'https://ritovex.webflow.io/template-pages/services'},
   {key:'about', local:'about.html', reference:'https://ritovex.webflow.io/template-pages/about-us'},
   {key:'blog', local:'blog.html', reference:'https://ritovex.webflow.io/template-pages/blog'},
