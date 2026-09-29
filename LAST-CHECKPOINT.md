@@ -421,3 +421,14 @@ Authority Profile and site-wide motion merged in PR #64 (`7e544c9f58f703cabb0162
 - Release artifact generation is being upgraded from manual-only to automatic on every `main` push while keeping manual dispatch available.
 - The workflow still has no production-hosting or DNS action. A generated artifact is not a deployment.
 - Next action: merge this trigger update, verify the resulting Production Release Bundle main run and inspect its artifact/checksum.
+
+
+## High-resolution human image correction checkpoint — 2026-09-29
+
+- Owner reported that existing website imagery looked blurred, unreadable and insufficiently clear.
+- Asset inspection confirmed that previous committed human images were materially undersized/over-compressed for large website media, with some source generations also containing soft or synthetic interface detail.
+- Replaced all 10 semantic human-image binaries with standalone 1448×1086 WebP assets: Hero, About, Software, AI, Growth, Operations, Business/Tax, Team, Industries and Editorial.
+- Updated semantic wiring so Home Hero uses Hero, About Hero uses About, AI Solutions uses AI, and the published Blog/article visual uses Editorial.
+- Added CI quality guards for minimum 1400×1000 dimensions, minimum reviewed file size, unique semantic binaries and required key-page image references.
+- Production remains not deployed.
+- Next action: certify the exact branch head with Static Integrity and rendered desktop/mobile browser QA, inspect the resulting screenshots directly, then merge only if image clarity/crop is acceptable.
