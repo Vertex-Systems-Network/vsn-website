@@ -1,0 +1,62 @@
+name: Production Release Bundle
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  release-bundle:
+    name: release-bundle
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Require main branch
+        shell: bash
+        run: |
+          if [ "$GITHUB_REF" != "refs/heads/main" ]; then
+            echo "Release bundles must be created from main. Current ref: $GITHUB_REF"
+            exit 1
+          fi
+
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Show Python
+        run: python3 --version
+
+      - name: Validate logo palette
+        run: python3 scripts/check_logo_palette.py
+
+      - name: Validate static website
+        run: python3 scripts/validate_static_site.py
+
+      - name: Validate repository state
+        run: node scripts/check_state_consistency.cjs
+
+      - name: Validate motion behavior
+        run: node scripts/check_motion_behavior.cjs
+
+      - name: Validate Ritovex fidelity
+        run: node scripts/check_ritovex_fidelity.cjs
+
+      - name: Build deterministic release bundle
+        run: python3 scripts/build_release_bundle.py
+
+      - name: Show release checksum
+        run: sha256sum dist/vsn-website-release.zip
+
+      - name: Upload release bundle
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: vsn-website-release-${{ github.sha }}
+          path: |
+            dist/vsn-website-release.zip
+            dist/vsn-website/release-manifest.json
+            dist/vsn-website/SHA256SUMS.txt
+          if-no-files-found: error
+          retention-days: 14
+          compression-level: 0
