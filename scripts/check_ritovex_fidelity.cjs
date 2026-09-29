@@ -56,11 +56,16 @@ for(const file of htmlFiles){
  assert.doesNotMatch(body,/rv-footer-word/,file+' still renders the removed giant VSN footer wordmark');
  assert.ok(body.includes(fidelityScript),file+' missing fidelity interaction script');
  assert.ok(body.includes('rv-header'),file+' missing reference header shell');
- assert.ok(body.includes('rv-footer'),file+' missing reference footer shell');
+ if(file==='index.html'){
+  assert.ok(body.includes('mockup-footer'),file+' missing approved mockup footer shell');
+  assert.match(body,/class="footer-public-links mockup-footer-meta"/,file+' missing compact mockup public-profile footer');
+ }else{
+  assert.ok(body.includes('rv-footer'),file+' missing reference footer shell');
+  assert.match(body,/class="rv-footer-contact"[\s\S]*?href="tel:\+923168433104"/,file+' missing clickable footer phone');
+  assert.match(body,/class="rv-footer-contact"[\s\S]*?href="mailto:info@vertexsystemsnetwork\.com"/,file+' missing clickable footer email');
+ }
  assert.match(body,/class="rv-topline-contact"[\s\S]*?href="mailto:info@vertexsystemsnetwork\.com"/,file+' missing clickable top-line email');
  assert.match(body,/class="rv-topline-contact"[\s\S]*?href="tel:\+923168433104"/,file+' missing clickable top-line phone');
- assert.match(body,/class="rv-footer-contact"[\s\S]*?href="tel:\+923168433104"/,file+' missing clickable footer phone');
- assert.match(body,/class="rv-footer-contact"[\s\S]*?href="mailto:info@vertexsystemsnetwork\.com"/,file+' missing clickable footer email');
  assert.doesNotMatch(body,/<span>info@vertexsystemsnetwork\.com · \+92 316 8433104<\/span>/,file+' contains legacy plain-text top contact');
  assert.doesNotMatch(body,/assets\/vsn-human-(software|ai|growth|operations|business|team|industries|editorial)\.svg/,file+' still uses semantic SVG image wrapper');
 }
