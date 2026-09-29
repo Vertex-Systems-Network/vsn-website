@@ -17,6 +17,7 @@ const servicesMockup=read('assets/services-mockup-parity.css');
 const aboutMockup=read('assets/about-mockup-parity.css');
 const projectsMockup=read('assets/projects-mockup-parity.css');
 const productsMockup=read('assets/products-mockup-parity.css');
+const industriesMockup=read('assets/industries-mockup-parity.css');
 const batch3Polish=read('assets/batch3-page-polish.css');
 
 const servicePages=[
@@ -147,6 +148,7 @@ const projects=read('projects.html');
 const blogDetail=read('blog-detail.html');
 const projectDetail=read('project-detail.html');
 const products=read('products.html');
+const industries=read('industries.html');
 const webCommerce=read('web-development-ecommerce.html');
 const serviceDetailCss=read('assets/ritovex-service-detail.css');
 assert.match(home,/href="blog-detail\.html"/,'Home mockup insights missing published article link');
@@ -184,6 +186,19 @@ assert.match(productsMockup,/\.products-page\.products-mockup-parity \.rv-hero-g
 assert.match(productsMockup,/\.products-page\.products-mockup-parity #public-repositories \.product-project-grid\{[\s\S]*grid-template-columns:repeat\(3,minmax\(0,1fr\)\)!important/,'Products public repository catalogue must retain three-column desktop rhythm');
 assert.match(productsMockup,/\.products-page\.products-mockup-parity \.rv-product-listing \.product-project-grid\{[\s\S]*grid-template-columns:1.15fr .85fr!important/,'Products featured product split missing');
 assert.match(productsMockup,/@media\(max-width:700px\)/,'Products parity mobile breakpoint missing');
+assert.match(industries,/<body class="company-proof-page industries-page industries-mockup-parity">/,'Industries must use approved cinematic parity body contract');
+assert.match(industries,/assets\/industries-mockup-parity\.css/,'Industries missing approved cinematic parity stylesheet');
+assert.match(industries,/vsn-human-industries\.webp/,'Industries hero must use committed industry imagery');
+assert.equal((industries.match(/class="service-card"/g)||[]).length,23,'Industries must retain nineteen industry contexts plus four connected-capability cards');
+assert.equal((industries.match(/class="step"/g)||[]).length,4,'Industries must retain four discovery/process steps');
+assert.match(industries,/SaaS, software &amp; technology/,'Industries missing software and technology context');
+assert.match(industries,/Healthcare, clinics &amp; wellness/,'Industries missing healthcare context');
+assert.match(industries,/Public services &amp; civic programmes/,'Industries missing public-services context');
+assert.match(industriesMockup,/\.industries-page\.industries-mockup-parity main>\.section:nth-of-type\(1\) \.service-grid\{[\s\S]*grid-template-columns:repeat\(3,minmax\(0,1fr\)\)!important/,'Industries context grid must retain three-column desktop rhythm');
+assert.match(industriesMockup,/\.industries-page\.industries-mockup-parity main>\.section:nth-of-type\(2\) \.service-grid\{[\s\S]*grid-template-columns:repeat\(4,minmax\(0,1fr\)\)!important/,'Industries connected-capability stage must retain four-column desktop rhythm');
+assert.match(industriesMockup,/\.industries-page\.industries-mockup-parity main>\.section:nth-of-type\(3\) \.process\{[\s\S]*grid-template-columns:repeat\(4,minmax\(0,1fr\)\)!important/,'Industries process must retain four-column desktop rhythm');
+assert.match(industriesMockup,/@media\(max-width:700px\)/,'Industries parity mobile breakpoint missing');
+
 
 assert.match(blogDetail,/<body class="editorial-page blog-detail-page">/);
 assert.match(projectDetail,/<body class="editorial-page project-detail-page projects-mockup-parity">/,'Project Detail must use approved cinematic parity body contract');
