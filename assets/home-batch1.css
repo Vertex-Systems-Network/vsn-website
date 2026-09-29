@@ -1187,3 +1187,51 @@
   }
 }
 
+/* Point 3 mobile regression correction: override older fidelity flex/min-width rules. */
+@media(max-width:1080px){
+  .home-page .home-product-layout{
+    grid-template-columns:minmax(0,1fr)!important;
+    width:100%;
+    min-width:0;
+  }
+  .home-page .home-product-layout>*{min-width:0}
+}
+@media(max-width:760px){
+  .home-page .home-credentials{overflow:hidden}
+  .home-page .home-credentials-grid{
+    display:grid!important;
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    width:100%!important;
+    min-width:0!important;
+    overflow:visible!important;
+    overscroll-behavior-inline:auto!important;
+    scroll-snap-type:none!important;
+  }
+  .home-page .home-credentials-grid>*,
+  .home-page .home-credentials-grid>.credential-link{
+    display:grid;
+    min-width:0!important;
+    width:auto!important;
+    max-width:none!important;
+    flex:none!important;
+    flex-basis:auto!important;
+    overflow-wrap:anywhere;
+    scroll-snap-align:none!important;
+  }
+  .home-page .home-credentials-grid>.credential-link{
+    align-items:center;
+    justify-content:start;
+  }
+  .home-page .credential-label,
+  .home-page .home-credentials-grid strong{
+    min-width:0;
+    white-space:normal!important;
+  }
+  .home-product-visual-wrap,
+  .home-product-visual,
+  .home-page .home-product-card{
+    min-width:0!important;
+    max-width:100%;
+  }
+}
+
