@@ -21,6 +21,7 @@ const industriesMockup=read('assets/industries-mockup-parity.css');
 const workMockup=read('assets/work-mockup-parity.css');
 const blogMockup=read('assets/blog-mockup-parity.css');
 const contactMockup=read('assets/contact-mockup-parity.css');
+const companyPagesMockup=read('assets/company-pages-mockup-parity.css');
 const batch3Polish=read('assets/batch3-page-polish.css');
 
 const servicePages=[
@@ -100,6 +101,27 @@ assert.match(contactMockup,/\.contact-page\.contact-mockup-parity \.contact-rout
 assert.match(contactMockup,/\.contact-page\.contact-mockup-parity \.contact-step-grid\{[\s\S]*grid-template-columns:repeat\(3,minmax\(0,1fr\)\)!important/,'Contact next-step stage must retain three-column desktop rhythm');
 assert.match(contactMockup,/\.contact-page\.contact-mockup-parity \.contact-map iframe\{[\s\S]*height:520px!important/,'Contact map must retain cinematic desktop height');
 assert.match(contactMockup,/@media\(max-width:700px\)/,'Contact parity mobile breakpoint missing');
+assert.match(processPage,/<body class="company-proof-page process-page company-cinematic-parity">/,'Process must use shared cinematic parity body contract');
+assert.match(trustPage,/<body class="company-proof-page trust-page company-cinematic-parity">/,'Trust must use shared cinematic parity body contract');
+assert.match(paymentsPage,/<body class="company-proof-page payments-page company-cinematic-parity">/,'Payments must use shared cinematic parity body contract');
+for(const body of [processPage,trustPage,paymentsPage]) assert.match(body,/assets\/company-pages-mockup-parity\.css/,'Company page missing shared cinematic parity stylesheet');
+assert.match(processPage,/vsn-human-team\.webp/,'Process hero must use committed team imagery');
+assert.match(trustPage,/vsn-human-operations\.webp/,'Trust hero must use committed operations imagery');
+assert.match(paymentsPage,/vsn-human-business\.webp/,'Payments hero must use committed business imagery');
+assert.equal((processPage.match(/class="step"/g)||[]).length,6,'Process must retain six delivery steps');
+assert.equal((trustPage.match(/class="step"/g)||[]).length,4,'Trust must retain four control steps');
+assert.match(processPage,/No surprise scope\./,'Process must retain explicit no-surprise-scope principle');
+assert.match(processPage,/Decisions stay visible as work moves forward\./,'Process must retain visible review-point principle');
+assert.match(trustPage,/We do not claim certifications we have not independently earned\./,'Trust must retain certification truthfulness boundary');
+assert.match(trustPage,/Security responsibilities are shared\./,'Trust must retain shared-responsibility guidance');
+assert.match(paymentsPage,/Larger custom projects are usually split into milestones\./,'Payments must retain milestone billing guidance');
+assert.match(paymentsPage,/Know the scope and recipient before you pay\./,'Payments must retain payment-recipient verification guidance');
+assert.match(companyPagesMockup,/\.company-cinematic-parity \.rv-company-hero-grid\{[\s\S]*grid-template-columns:minmax\(350px,.84fr\) minmax\(0,1.16fr\)!important/,'Shared company cinematic hero split missing');
+assert.match(companyPagesMockup,/\.process-page\.company-cinematic-parity \.process\.process-6\{[\s\S]*grid-template-columns:repeat\(3,minmax\(0,1fr\)\)!important/,'Process six-step desktop grid missing');
+assert.match(companyPagesMockup,/\.trust-page\.company-cinematic-parity \.process\{[\s\S]*grid-template-columns:repeat\(4,minmax\(0,1fr\)\)!important/,'Trust four-control desktop grid missing');
+assert.match(companyPagesMockup,/\.company-cinematic-parity \.two-col\{[\s\S]*grid-template-columns:minmax\(0,1.05fr\) minmax\(320px,.95fr\)!important/,'Shared company two-column decision layout missing');
+assert.match(companyPagesMockup,/@media\(max-width:700px\)/,'Shared company parity mobile breakpoint missing');
+
 
 assert.match(contact,/https:\/\/maps\.google\.com\/maps\?/, 'contact page missing Google Maps embed');
 assert.match(contact,/frame-src[^;]*google\.com/i,'contact CSP missing Google Maps frame permission');
@@ -163,6 +185,9 @@ const projectDetail=read('project-detail.html');
 const products=read('products.html');
 const industries=read('industries.html');
 const work=read('work.html');
+const processPage=read('process.html');
+const trustPage=read('trust.html');
+const paymentsPage=read('payments.html');
 const webCommerce=read('web-development-ecommerce.html');
 const serviceDetailCss=read('assets/ritovex-service-detail.css');
 assert.match(home,/href="blog-detail\.html"/,'Home mockup insights missing published article link');
