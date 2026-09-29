@@ -4,17 +4,18 @@ Official static corporate website for **Vertex Systems Network (VSN)**.
 
 ## Current canonical state
 
-The website is on the restored **data-first VSN baseline**, with Point 3 Home visual polish completed.
+The website is on the restored **data-first VSN baseline**, with Point 4 Services visual polish completed.
 
 - Canonical substantive restore: PR **#137**
 - Post-restore reconciliation: PR **#138**
 - Point 3 Home visual polish: PR **#142**
-- Current certified runtime SHA: `454931c33028150df346aba96f80c8e8b5ee0f51`
+- Point 4 Services + service-detail visual polish: PR **#143**
+- Current certified runtime SHA: `d5063ea201904f4c31334c5dabc4d2aaa1282946`
 - Restored from data-first visual baseline: `dfb37f291b081c5e67479f4aaa53ece7dc9c0608`
-- Static Integrity on current runtime: **run #697 passed**
-- Production Release Bundle on current runtime: **run #22 passed**
-- Visual Browser QA for Point 3: **run #149 passed, failures 0**
-- Secondary Visual Browser QA for Point 3: **run #115 passed, failures 0**
+- Static Integrity on current runtime: **run #701 passed**
+- Production Release Bundle on current runtime: **run #24 passed**
+- Visual Browser QA for Point 4: **run #151 passed, failures 0**
+- Secondary Visual Browser QA for Point 4: **run #117 passed, failures 0**
 - HTML pages: **32**
 - Production deployment: **not yet performed**
 
@@ -91,6 +92,43 @@ Final Point 3 evidence:
 - Production Release Bundle **#22 — passed**
 - desktop screenshot manually reviewed
 - mobile screenshot manually reviewed after correcting dashboard heading wrapping and slider-caption ghosting
+
+## Point 4 — Services + service-detail data-first visual polish
+
+Point 4 is complete and merged in PR **#143**.
+
+The Services landing page and all **12 service-detail pages** now use a shared VSN data-first visual layer.
+
+The service-detail pages include a compact lane rail based on VSN's real service architecture:
+
+- Build — software, apps, web and commerce
+- Automate — AI, BPO and dedicated delivery
+- Grow — profiles, websites and digital growth
+- Business — setup, tax and operating support
+
+Point 4 also refines service hero/media framing, service cards, scope panels, enquiry forms, FAQs, Authority Profile pricing cards, the Services accordion and technology grid.
+
+The implementation explicitly preserves:
+
+- long-form VSN service content
+- all existing service routes
+- enquiry forms before FAQs on all 12 service-detail pages
+- Authority Profile starting prices of **$499 / $999 / $1,999**
+- tax calculators and page-specific service functionality
+- factual public proof only
+
+Point 4 runtime files include `services.html`, all 12 service-detail HTML pages and `assets/point4-services-data-first.css`.
+
+Final Point 4 evidence:
+
+- Static Integrity PR run **#700 — passed**
+- Static Integrity merged-main run **#701 — passed**
+- Visual Browser QA **#151 — passed**, failures: **0**
+- Secondary Visual Browser QA **#117 — passed**, failures: **0**
+- Production Release Bundle **#24 — passed**
+- desktop Services and representative service-detail screenshots manually reviewed
+- mobile service-detail screenshot manually reviewed after keeping the lane rail in a compact 2×2 layout
+- no horizontal overflow, missing images, page errors or console errors in the final browser reports
 
 ## Architecture
 
@@ -252,6 +290,6 @@ Evidence:
 
 ## Next work
 
-The next allowed project step is **Point 4: Services landing + 12 service-detail pages data-first visual polish**.
+The next allowed project step is **Point 5: data-first visual polish for About, Products, Projects, Blog and Contact**.
 
-Point 4 must preserve long-form VSN service content, all real service routes, and the service-specific enquiry-form-before-FAQ rule.
+Point 5 must preserve each page's real purpose and data: Projects and Blog remain distinct, Products remains evidence-based, and Contact keeps its project brief, direct contact routes and Google Map.
