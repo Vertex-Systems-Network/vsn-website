@@ -1,579 +1,122 @@
 repo: Vertex-Systems-Network/vsn-website
-updated: 2026-09-29
-phase: ritovex-inspired-visual-rebuild
-verified_main_sha: de32fde03c29aebefda10486d2376ea7e962bff2
-current_issue: null
+updated: 2026-09-30
+phase: post-restore-reconciliation
 current_branch: main
-current_milestone: final-rendered-reference-fidelity-certified
-architecture: static-html-css-vanilla-js
-runtime_mode: file-direct-open
+current_milestone: data-first-restore-certified
+project_status: active
 implementation_complete: true
 repository_implementation_percent: 100
-module_progress_percent: 100
-digital_marketing_enhancement_percent: 100
-web_development_enhancement_percent: 100
-mobile_app_development_module_percent: 100
-mobile_app_development_content_refresh_percent: 100
-web_development_ecommerce_module_percent: 100
-web_development_ecommerce_content_refresh_percent: 100
-production_readiness_percent: 95
-requested_content_refresh_percent: 100
-content_refresh_ci: passed
-static_integrity_run: 568
-static_integrity_passed_sha: de32fde03c29aebefda10486d2376ea7e962bff2
-local_http_server_required: false
-vercel_required: false
-node_runtime_required: false
-framework_dependency: none
-package_json: absent
-vercel_runtime_config: absent
-html_pages: 32
-javascript:
-  shared_file: assets/app.js
-  enabled: true
-  mobile_navigation: true
-  whatsapp_project_brief: true
-  logo_failure_fallback: true
-paths:
-  root_pages: relative
-  legal_pages: parent-relative
-  root_relative_local_refs_allowed: false
-brand_asset:
-  local_path: assets/vertex-logo.png
-  sha256: ede0edd921742c57af19b513c1aab73e079fe1217f4bc7ad156ab3260109c671
-  size_bytes: 60222
-  width: 2041
-  height: 517
-security:
-  static_integrity_ci: green_on_pr_head
-  exact_logo_identity_enforced: true
-  root_relative_local_refs_rejected: true
-  main_currently_protected: false
-governance:
-  branch_protection_status: deferred_by_owner
-  branch_protection_issue: 14
-  branch_protection_required_for_repo_finalization: false
-  future_apply_script: scripts/apply_main_protection.ps1
-  future_verify_script: scripts/verify_main_protection.ps1
-  future_admin_workflow: .github/workflows/main-protection-admin.yml
-completed_milestones:
-  - issue: 33
-    pr: 34
-    result: direct-file-browser-portability-complete
-  - pr: 36
-    result: branch-protection-activation-path-ready
-  - pr: 43
-    result: bpo-specific-enquiry-form-added-before-faq
-  - pr: 45
-    result: functional-tax-calculators-tax-intake-and-expanded-tax-bpo-content
-  - pr: 47
-    result: digital-marketing-growth-service-page-and-enquiry-form
-  - pr: 49
-    result: web-development-ecommerce-service-page-full-stack-platform-coverage-form-before-faq
-  - pr: 51
-    result: expanded-digital-marketing-web-development-and-mobile-app-page-with-service-forms
-  - pr: 53
-    result: expanded-industries-ai-solutions-resource-augmentation-with-service-specific-intake-forms
-  - pr: 55
-    result: business-solutions-forms-faqs-and-legal-draft-update-merged
-  - pr: 57
-    result: custom-software-saas-products-public-repository-catalogue-and-classified-navigation-merged
-  - pr: 59
-    result: homepage-about-public-proof-and-fontawesome-icons-merged
-  - pr: 60
-    result: restored-homepage-and-about-responsive-styles-merged
-deferred_items:
-  - issue: 14
-    item: github-main-protection
-    reason: owner-deferred-for-now
-external_production_requirements:
-  - qualified-pakistan-legal-corporate-review
-production_domain_switch_allowed: true
-profile_package_prices:
-  status: owner-requested-revised-starting-fees
-  usd: [499, 999, 1999]
-deployment_status: waiting-for-hosting-panel-access
-next_valid_action: production-publish-or-new-content-change-when-owner-requests
 
-industry_expansion_percent: 100
-ai_solutions_module_percent: 100
-resource_augmentation_module_percent: 100
-latest_pr: 116
-latest_static_integrity_run: 568
-production_deployed: false
+canonical_restore:
+  pr: 137
+  merged_main_sha: 45df966794cffd4b2695d14e638c8c78f8a2ca75
+  restored_from_data_first_baseline: dfb37f291b081c5e67479f4aaa53ece7dc9c0608
+  restore_reason: remove literal mockup-parity restructuring while preserving VSN content and useful visual upgrades
+  restore_scope:
+    - VSN real content and information architecture
+    - 12 service-detail pages with enquiry forms before FAQs
+    - Contact project brief, direct routes and Google Map
+    - Home three-slide hero and parallax behavior
+    - Blog and Projects as distinct content types
+    - VSN Metafields and public-proof content
+    - Batch 1-3 useful visual upgrades
+  removed_scope:
+    - post-PR-123 mockup-parity CSS layers
+    - mockup-driven Home content restructuring
+  preserved_later_hardening:
+    - .github/workflows/deploy-middlehost.yml
+    - DEPLOYMENT.md
+    - SECURITY-HEADERS.md
+    - Google Maps privacy disclosure
 
-business_solutions_module_percent: 100
-service_form_layout_consistency_percent: 100
-
-custom_software_saas_module_percent: 100
-products_catalogue_public_repo_audit_percent: 100
-navigation_classification_module_percent: 100
-homepage_redesign_percent: 100
-about_expansion_percent: 100
-trust_social_icon_audit_percent: 100
-homepage_about_stylesheet_recovery_percent: 100
-audited_public_repository_count: 15
-excluded_private_repository_count: 4
-
-deferred_evidence:
-  - item: official social-network profile URLs
-    reason: owner supplied official LinkedIn URL; Facebook, Instagram and X URLs still not confirmed
-  - item: named team biographies and client testimonials
-    reason: publish only named people with consent and client-approved genuine feedback
-
-contact_map_and_public_channels_percent: 100
-shared_header_consistency_percent: 100
-visual_brand_refresh_percent: 100
-review_evidence_section_percent: 100
-verified_google_business_review_link: pending-owner-url
-visual_browser_verification: artifact-reviewed-and-passed
-
-linkedin_company_profile_added_percent: 100
-
-buyer_service_selection_module_percent: 100
-commerce_ownership_explanation_percent: 100
-process_review_gates_percent: 100
-
-authority_profile_service_classification_percent: 100
-profile_package_revision_percent: 100
-sitewide_motion_implementation_percent: 100
-motion_behavior_check: passed
-motion_stutter_fix: implemented
-duplicate_home_scroll_entrances: removed
-scroll_entrance_animation: removed
-motion_pointer_transform_restarts: removed
-scroll_header_layout_shift: removed
-large_hero_image_continuous_scale: removed
-
-ritovex_visual_rebuild_percent: 100
-ritovex_homepage_percent: 100
-ritovex_original_visual_assets: 4
-ritovex_secondary_pages_percent: 100
-ritovex_reference_strategy: original-vsn-content-and-assets-with-reference-inspired-layout
-ritovex_homepage_static_integrity_run: 135
-ritovex_homepage_static_integrity_status: passed
-
-ritovex_active_secondary_pages: [services, about, products, contact]
-ritovex_secondary_visual_assets: 4
-
-ritovex_service_detail_batch_percent: 100
-ritovex_service_detail_pages_migrated: 12
-ritovex_service_detail_new_visual_assets: 4
-ritovex_service_detail_static_integrity_run: 140
-ritovex_service_detail_static_integrity_status: passed
-
-ritovex_company_proof_batch_percent: 100
-ritovex_company_proof_pages_migrated: 5
-ritovex_company_proof_new_visual_assets: 5
-ritovex_company_proof_static_integrity_run: 143
-ritovex_company_proof_static_integrity_status: passed
-
-ritovex_video_reference_locked: true
-ritovex_motion_rebaseline_percent: 100
-ritovex_copy_simplification_percent: 100
-ritovex_human_image_generation_percent: 100
-ritovex_mockup_first_visuals_final_state: false
-ritovex_motion_static_integrity_run: 147
-ritovex_motion_static_integrity_status: passed
-
-editorial_page_batch_percent: 100
-blog_listing_percent: 100
-blog_detail_template_percent: 100
-projects_listing_percent: 100
-project_detail_template_percent: 100
-coming_soon_percent: 100
-not_found_redesign_percent: 100
-editorial_page_static_integrity_run: 198
-editorial_page_static_integrity_status: passed
-human_image_batch_1_static_integrity_run: 204
-human_image_batch_1_status: passed
-human_image_assets_integrated: [hero, about]
-
-human_image_slot_wiring_percent: 100
-unique_human_photo_assets_percent: 100
-human_image_current_strategy: final-human-atlas-plus-unique-hero-about
-
-responsive_css_qa_percent: 100
-motion_microinteraction_polish_percent: 100
-responsive_motion_static_integrity_run: 246
-responsive_motion_static_integrity_status: passed
-
-human_unique_batch_2_static_integrity_run: 251
-human_unique_batch_2_status: passed
-human_unique_assets: [hero, about, software, ai, growth, operations, business, team, industries, editorial]
-human_alias_assets_pending: []
-
-human_unique_batch_3_static_integrity_run: 256
-human_unique_batch_3_status: passed
-human_unique_assets: [hero, about, software, ai, growth, operations, business, team, industries, editorial]
-human_alias_assets_pending: []
-final_human_atlas_static_integrity_run: 295
-final_human_atlas_static_integrity_status: passed
-website_visual_rebuild_percent: 100
-marketing_copy_simplification_status: complete
-legal_policy_copy_preserved_for_accuracy: true
-completion_status: complete
-final_merge_sha: a2a7cb18075e814b955109dfe60891645639ea40
-final_pr: 72
-final_main_status: merged
-
-corrective_fidelity_rebuild_percent: 100
-corrective_header_footer_shell_percent: 100
-corrective_logo_palette_lock_percent: 100
-corrective_service_faq_form_restore_percent: 100
-corrective_direct_webp_imagery_percent: 100
-corrective_contact_google_map_percent: 100
-corrective_blog_projects_separation_percent: 100
-corrective_detail_page_separation_percent: 100
-corrective_about_services_reference_structure_percent: 100
-corrective_animation_ownership_percent: 100
-corrective_ci_status: passed-final-head-run-423
-
-corrective_static_integrity_run: 420
-corrective_static_integrity_status: passed
-corrective_motion_regression_status: passed
-corrective_ritovex_fidelity_status: passed
-corrective_pr: 75
-
-corrective_final_head_run: 423
-corrective_final_head_status: passed
-corrective_merge_pr: 75
-
-exact_logo_palette_percent: 100
-exact_logo_palette: [#5AC8D6, #625BA8, #6188C6, #3F4245, #7E8083, #000000, #FFFFFF]
-exact_logo_palette_css_files_checked: 8
-exact_logo_palette_foreign_colors: 0
-exact_logo_palette_ci_run: 457
-exact_logo_palette_ci_status: passed-on-main
-exact_logo_palette_pr: 76
-
-exact_logo_palette_final_head_run: 457
-exact_logo_palette_final_head_status: passed-on-main
-exact_logo_palette_merge_sha: 113c82e9ef655627f7abcdcee42eb1178478e547
-exact_logo_palette_merge_pr: 76
-main_visual_state: ritovex-corrective-rebuild-exact-palette-blog-mobile-header-footer-contrast
-
-latest_verified_main_run: 568
+verified_main_sha: 45df966794cffd4b2695d14e638c8c78f8a2ca75
+static_integrity_run: 680
+static_integrity_passed_sha: 45df966794cffd4b2695d14e638c8c78f8a2ca75
+latest_pr: 137
+latest_static_integrity_run: 680
+latest_verified_main_run: 680
 latest_verified_main_status: passed
-latest_verified_main_sha: de32fde03c29aebefda10486d2376ea7e962bff2
-stale_recovery_pr_74_status: closed-superseded
+latest_verified_main_sha: 45df966794cffd4b2695d14e638c8c78f8a2ca75
 
-homepage_blog_preview_percent: 100
-homepage_blog_preview_reference: ritovex-home-article-stage
-homepage_blog_preview_truthfulness: published-plus-clearly-labelled-coming-soon
-homepage_blog_preview_branch: design/ritovex-home-blog-preview-20260928
+release_evidence:
+  production_release_bundle_run: 19
+  production_release_bundle_status: passed
+  production_release_bundle_sha: 45df966794cffd4b2695d14e638c8c78f8a2ca75
 
-mobile_header_breakpoint_hardening_percent: 100
-mobile_header_breakpoint: 980px
-mobile_header_outside_click_close: true
-mobile_header_escape_close: true
-mobile_header_desktop_transition_cleanup: true
-mobile_header_background_scroll_lock: true
-mobile_header_base_verified_run: 461
+architecture:
+  type: static-html-css-vanilla-js
+  runtime_mode: direct-file-open
+  local_http_server_required: false
+  node_runtime_required: false
+  framework_dependency: none
+  vercel_required: false
+  production_host_path: Middlehost-cPanel
+html_pages: 32
 
-mobile_header_merge_pr: 80
-mobile_header_merge_sha: 6bd81221b5613e0fdc427e751b8203032b436e09
-mobile_header_pr_run: 462
-mobile_header_pr_status: passed
-mobile_header_main_run: 463
-mobile_header_main_status: passed
+brand:
+  exact_logo_palette:
+    - "#5AC8D6"
+    - "#625BA8"
+    - "#6188C6"
+    - "#3F4245"
+    - "#7E8083"
+    - "#000000"
+    - "#FFFFFF"
+  logo_path: assets/vertex-logo.png
 
-footer_wordmark_contrast_repair_percent: 100
-footer_wordmark_color: '#3F4245'
-footer_separator_color: '#3F4245'
-footer_black_on_black_regression_guard: true
+data_first_visual_contract:
+  content_authority: VSN real business data and approved factual content
+  mockup_role: visual-reference-only
+  copy_mockup_content: false
+  replace_vsn_information_architecture_with_mockup: false
+  force_mockup_section_counts: false
+  use_helpful_visual_cues: true
+  allowed_visual_cues:
+    - image treatment
+    - spacing and composition
+    - typography scale
+    - card geometry
+    - dark-light rhythm
+    - glass or dashboard styling where semantically appropriate
+  services_keep_long_form_content: true
+  service_forms_before_faqs: true
+  contact_google_map_required: true
+  projects_and_blog_must_remain_distinct: true
+  factual_public_proof_only: true
+  no_fabricated_clients_metrics_awards_testimonials: true
 
-footer_merge_pr: 82
-footer_merge_sha: f56526e64075a270040ed3907d915eb8d13d3752
-footer_pr_run: 466
-footer_pr_status: passed
-footer_main_run: 467
-footer_main_status: passed
-state_consistency_guard: active-on-main
+current_runtime_features:
+  home_three_slide_hero: true
+  home_parallax: true
+  contact_google_map: true
+  whatsapp_project_brief: true
+  mobile_navigation: true
+  reduced_motion_support: true
+  duplicate_scroll_animation_owner_allowed: false
 
-resume_anchor_scope: latest-substantive-main-excludes-metadata-only-reconciliation
-state_guard_merge_pr: 83
-state_guard_merge_sha: 3d36b0f1575a83ff26ad1aa3c68eb5f96be0f50b
-state_guard_pr_run: 468
-state_guard_pr_status: passed
-state_guard_main_run: 469
-state_guard_main_status: passed
+authority_profile:
+  service_classification: standalone-service
+  package_starting_fees_usd:
+    essential: 499
+    authority: 999
+    signature: 1999
+  legacy_249_549_899_pricing: superseded
 
-interaction_breakpoint_hardening_percent: 100
-desktop_interaction_breakpoint: 981px
-newsletter_static_truthfulness: request-opens-email-draft
-newsletter_false_success_removed: true
-reduced_motion_interactions_preserved: true
+security_and_governance:
+  main_protection: deferred-by-owner
+  production_deployment_workflow: guarded-manual-middlehost
+  production_deployed: false
+  qualified_pakistan_legal_review_required_before_publication: true
 
-interaction_merge_pr: 85
-interaction_merge_sha: c90ff84f2182f378ec5c4a2746901941b14624ea
-interaction_pr_run: 472
-interaction_pr_status: passed
-interaction_main_run: 473
-interaction_main_status: passed
+reconciliation:
+  stale_pre_restore_state_removed: true
+  stale_mockup_parity_completion_claims_removed: true
+  stale_authority_profile_pricing_removed: true
+  current_readme_rewritten_from_canonical_restore: true
+  checkpoint_file_required: true
 
-sitewide_actionable_contact_shell_percent: 100
-sitewide_actionable_contact_pages: 32
-header_email_action: mailto
-header_phone_action: tel
-footer_email_action: mailto
-footer_phone_action: tel
+visual_browser_certification:
+  status: pending-point-2
+  note: Point 2 must run full primary and secondary rendered browser QA against this restored data-first baseline.
 
-mobile_header_shell_parity_percent: 100
-mobile_navigation_focus_containment: implemented
-mobile_footer_stack_parity_percent: 100
-mobile_shell_reconciled_base: ba109b04727ec28fc86be93fed629dd036946561
-
-desktop_mega_menu_interaction_percent: 100
-desktop_mega_menu_keyboard_focus: true
-desktop_mega_menu_hover_intent_ms: 55
-desktop_mega_menu_close_delay_ms: 160
-desktop_home_section_rhythm: normalized-clamp
-
-services_reference_depth_percent: 100
-services_technology_stage_percent: 100
-services_page_faq_count: 4
-services_public_proof_strategy: github-plus-shopify-no-fabricated-testimonials
-services_reference_depth_base: 2c53ebe3a27b398e222c517c73a3664f709e1859
-
-about_reference_depth_percent: 100
-about_operating_principles_count: 4
-about_public_verification_strip: true
-about_credentials_strategy: verifiable-records-not-fabricated-awards
-about_reference_depth_base: 77814c377b7671bc9ffcdb63e39f42ebc3ee9c79
-
-blog_projects_parity_separation_percent: 100
-blog_published_feature_count: 1
-blog_upcoming_topic_count: 8
-projects_verifiable_portfolio_count: 4
-projects_generic_capability_cards: 0
-projects_proof_strategy: published-product-plus-public-repositories
-blog_projects_parity_base: 9369c42e86afe1b1cd90618a73bd926b727a44bd
-
-contact_final_parity_percent: 100
-contact_route_count: 3
-contact_direct_whatsapp_route: true
-contact_next_step_count: 3
-contact_google_map_preserved: true
-contact_static_form_truthfulness: preserved
-contact_final_parity_base: c3cd3478863a23dbbf6033b4b3774d5a32424ab6
-
-page_by_page_parity_batch_percent: 100
-page_by_page_parity_pages: [home, services, about, blog, projects, contact]
-page_by_page_parity_latest_substantive_pr: 95
-page_by_page_parity_verified_run: 490
-page_by_page_parity_verified_sha: c2b6794cc09a3101aae5ba2f023bd599b14e2c91
-final_browser_visual_qa_status: full-site-rendered-functional-qa-passed-reference-video-review-remains-manual
-
-home_rendered_browser_qa_status: passed
-home_rendered_browser_qa_runtime_sha: ff77b934abf24b8fa5953bebc84a703f33ced7e8
-home_rendered_browser_qa_visual_run: 16
-home_rendered_browser_qa_static_run: 508
-home_rendered_browser_qa_viewports: [1440x900, 390x844]
-home_rendered_browser_qa_horizontal_overflow: false
-home_rendered_browser_qa_missing_images: 0
-home_rendered_browser_qa_console_errors: 0
-home_rendered_browser_qa_suspicious_human_images: 0
-reveal_animation_owner: motion.js
-corrupted_human_asset_references_in_html: 0
-next_rendered_browser_qa_page: manual-pixel-reference-review-and-production-publication
-
-core_rendered_browser_qa_status: passed
-core_rendered_browser_qa_pr: 98
-core_rendered_browser_qa_visual_run: 32
-core_rendered_browser_qa_visual_head: 78101b25e68f53367c8b12944d5fabbc57cd1de4
-core_rendered_browser_qa_merged_main: 00c4cecc33fd9d79c9be043508739d3f7ea31c3e
-core_rendered_browser_qa_pages: [services, about, blog, projects, contact]
-core_rendered_browser_qa_viewports: [1440x900, 390x844]
-core_rendered_browser_qa_artifact: visual-browser-pages
-core_rendered_browser_qa_missing_images: 0
-core_rendered_browser_qa_page_errors: 0
-core_rendered_browser_qa_horizontal_overflow: false
-reference_fidelity_remaining_focus: [services, contact]
-
-services_contact_rendered_fidelity_status: passed
-services_rendered_reference_flow: hero-accordion-tools-split-benefits-faq-public-proof
-contact_rendered_reference_flow: hero-image-form-contact-cards-vsn-extended-sections
-services_contact_truthfulness: no-fake-testimonials-no-fake-metrics
-
-services_contact_visual_run: 33
-services_contact_visual_head: 623f151e9deec673031720a6b3ff025d5d5a01c9
-services_contact_merged_main: 8a0041b5ff83f15d8e9fd427383485afe1b0c304
-services_contact_postmerge_static_run: 530
-services_contact_rendered_missing_images: 0
-services_contact_rendered_page_errors: 0
-
-detail_utility_rendered_browser_qa_status: passed
-detail_utility_rendered_browser_qa_pr: 102
-detail_utility_rendered_browser_qa_visual_run: 36
-detail_utility_rendered_browser_qa_visual_head: 7743e641a97119dba9697f5fe43517ec1cfa3bd5
-detail_utility_rendered_browser_qa_static_run: 535
-detail_utility_rendered_browser_qa_pages: [web-development-ecommerce, blog-detail, project-detail, 404, coming-soon]
-detail_utility_rendered_browser_qa_viewports: [1440x900, 390x844]
-detail_utility_rendered_browser_qa_artifact: visual-browser-pages
-detail_utility_rendered_browser_qa_missing_images: 0
-detail_utility_rendered_browser_qa_page_errors: 0
-detail_utility_rendered_browser_qa_horizontal_overflow: false
-project_detail_mobile_overflow_repair: block-flow-verified
-
-secondary_rendered_browser_qa_status: passed
-secondary_rendered_browser_qa_pr: 103
-secondary_rendered_browser_qa_visual_run: 1
-secondary_rendered_browser_qa_visual_head: f07e1bdf1137ec01c45f1b272c6b45a330d2a860
-secondary_rendered_browser_qa_static_run: 539
-secondary_rendered_browser_qa_page_count: 21
-secondary_rendered_browser_qa_viewports: [1440x900, 390x844]
-secondary_rendered_browser_qa_artifact: visual-browser-secondary-pages
-secondary_rendered_browser_qa_missing_images: 0
-secondary_rendered_browser_qa_page_errors: 0
-secondary_rendered_browser_qa_horizontal_overflow: false
-full_site_rendered_browser_qa_status: passed
-full_site_rendered_browser_qa_scope: primary-plus-detail-plus-utility-plus-secondary
-full_site_rendered_browser_qa_manual_pixel_review: complete-current-reference-scope
-
-footer_wordmark_reference_fill: full-width
-footer_wordmark_desktop_scale: clamp-190-35vw-500
-footer_wordmark_mobile_scale: 42vw
-footer_bottom_separator: true
-
-about_hero_media_reference_order: hero-media-metrics-priority
-about_hero_media_asset: vsn-human-business.webp
-about_priority_desktop_order: media-copy
-about_priority_mobile_order: copy-media
-
-projects_featured_metadata_position: image-bottom-overlay
-projects_truthfulness_note_position: after-featured-grid
-projects_featured_grid_reference_order: heading-cards-note
-
-blog_reference_grid_card_count: 9
-blog_reference_grid_desktop: 3x3
-blog_published_card_count: 1
-blog_upcoming_topic_count_current: 8
-blog_category_meta_style: pill-plus-status
-
-
-detail_reference_flow_batch_status: implemented-in-review
-detail_reference_flow_pages: [blog-detail, project-detail]
-blog_detail_reference_flow: category-title-summary-publisher-date-readtime-fullwidth-media-article
-project_detail_reference_flow: title-summary-factual-metadata-fullwidth-media-case-study
-detail_reference_truthfulness: no-fake-author-no-fake-client-results-public-proof-preserved
-detail_reference_source_review: live-ritovex-blog-single-and-project-single
-next_manual_reference_scope: [404, coming-soon, representative-service-detail]
-
-
-service_single_reference_batch_status: implemented-in-review
-service_single_reference_page: web-development-ecommerce
-service_single_reference_flow: title-summary-fullwidth-media-overview-included-work-extended-vsn-content-dark-vision-brief-faq
-service_single_form_before_faq: true
-service_single_public_reference_notes_exposed: false
-utility_reference_audit_404: existing-simple-utility-composition-preserved
-utility_reference_audit_coming_soon: no-exact-ritovex-template-page-preserve-vsn-utility-shell
-next_manual_reference_scope: remaining-service-detail-pages-after-representative-certification
-
-
-service_single_reference_baseline_pr: 110
-service_single_reference_baseline_merge_sha: 8c02d06613f050c99373755f33c8fa3cd7181137
-service_single_reference_baseline_ci: static-555-visual-46-secondary-10-passed
-service_single_reference_propagation_status: implemented-in-review
-service_single_reference_propagated_pages: [software, websites, ecommerce, mobile-app-development, ai-automation, profile, social-media, bpo, business-solutions, tax-consulting, resource-augmentation]
-service_single_reference_total_pages: 12
-service_single_reference_form_faq_order_preserved: true
-service_single_reference_internal_notes_public: false
-next_manual_reference_scope: final-full-site-pixel-review-production-publication
-
-
-final_artifact_pixel_review_status: corrections-implemented-in-review
-final_artifact_pixel_review_source_pr: 111
-final_artifact_pixel_review_primary_run: 47
-final_artifact_pixel_review_secondary_run: 11
-final_artifact_pixel_review_404_reference_gap: corrected
-final_artifact_pixel_review_blog_detail_reference_gap: corrected
-final_artifact_pixel_review_project_detail_reference_gap: corrected
-final_artifact_pixel_review_service_family_status: rendered-passed
-next_manual_reference_scope: certify-final-artifact-corrections-then-production-publication
-
-
-editorial_single_body_parity_status: implemented-in-review
-editorial_single_body_pages: [blog-detail, project-detail]
-blog_detail_sidebar_shell_removed: true
-project_detail_sidebar_shell_removed: true
-blog_detail_inline_media_count: 2
-project_detail_inline_media_count: 2
-blog_detail_dark_quote_callout: true
-project_detail_truthfulness_note: inline
-editorial_single_body_reference_source: pr-112-rendered-artifacts-vs-live-ritovex
-next_manual_reference_scope: certify-editorial-single-body-then-final-state-reconciliation
-
-
-service_name_hero_parity_status: implemented-in-review
-service_name_hero_parity_pages: 12
-service_name_hero_strategy: concise-service-name-h1-plus-existing-descriptive-lead
-service_name_hero_desktop_scale: clamp-72-8.33vw-120
-service_name_hero_mobile_scale: 30px
-blog_detail_reference_heading_desktop: 48px
-blog_detail_reference_heading_mobile: 24px
-project_detail_reference_heading_desktop: 80px
-project_detail_reference_heading_mobile: 28px
-service_name_hero_reference_source: pr-113-rendered-artifacts-plus-live-ritovex
-next_manual_reference_scope: certify-title-parity-and-reconcile-final-state
-
-
-final_wrap_parity_status: implemented-in-review
-representative_service_h1: Web Development
-published_blog_article_h1: Where AI Helps — and Human Review Matters
-mobile_404_single_line_title: true
-project_detail_heading_metric_status: exact-reference-match-pr114
-service_detail_mobile_heading_metric_status: exact-reference-match-pr114
-final_wrap_parity_reference_source: pr-114-rendered-report
-next_manual_reference_scope: certify-final-wrap-parity-and-reconcile-canonical-main
-
-
-final_measured_heading_parity_status: implemented-in-review
-representative_service_heading_desktop_metrics: 120px-180px--2.4px
-representative_service_heading_mobile_metrics: 30px-39px--0.6px
-published_blog_article_title: AI Helps. Human Review Still Matters.
-blog_detail_heading_desktop_target: 48px-72px-single-line
-blog_detail_heading_mobile_target: 24px-33.6px-two-line
-final_measured_heading_reference_source: pr-115-rendered-report
-next_manual_reference_scope: certify-final-measured-heading-parity-and-reconcile-canonical-main
-
-
-final_reference_certification_status: passed
-final_reference_certification_date: 2026-09-29
-final_reference_certification_main_sha: de32fde03c29aebefda10486d2376ea7e962bff2
-final_reference_certification_pr: 116
-final_reference_certification_pr_head: 567a2ae37cd63f87db2150fbd6c68adce76790e9
-final_reference_certification_static_run: 568
-final_reference_certification_visual_run: 53
-final_reference_certification_secondary_run: 17
-final_reference_certification_artifact: visual-browser-pages
-final_reference_certification_viewports: [1440x900, 390x844]
-final_reference_certification_missing_images: 0
-final_reference_certification_horizontal_overflow: false
-final_reference_certification_local_console_errors: 0
-final_reference_certification_local_page_errors: 0
-final_reference_heading_metrics:
-  representative_service_desktop: 120px-180px--2.4px
-  representative_service_mobile: 30px-39px--0.6px
-  blog_detail_desktop: 48px-72px--0.96px
-  blog_detail_mobile: 24px-33.6px--0.192px
-  project_detail_desktop: 80px-120px--1.6px
-  project_detail_mobile: 28px-36.4px--0.504px
-final_reference_scope_note: original-vsn-content-and-assets-follow-ritovex-reference-layout-rhythm-not-template-content-copy
-final_reference_template_scope_complete: true
-final_reference_remaining_visual_blocker: none
-production_deployed: false
-next_valid_action: production-publish-or-owner-requested-content-change
-
-
-production_release_bundle_status: implemented-in-review
-production_release_bundle_runtime_dependency_added: false
-production_release_bundle_builder: scripts/build_release_bundle.py
-production_release_bundle_workflow: .github/workflows/release-bundle.yml
-production_release_bundle_workflow_mode: manual-main-only-artifact
-production_release_bundle_outputs: [vsn-website-release.zip, release-manifest.json, SHA256SUMS.txt]
-production_release_bundle_ci_check: static-integrity-check-only
-production_release_bundle_auto_deploy: false
-production_release_bundle_dns_mutation: false
-production_release_bundle_host_credentials: none
-production_release_bundle_next_action: certify-merge-run-manual-main-artifact
+next_valid_action: point-2-full-certification

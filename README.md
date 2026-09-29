@@ -2,428 +2,211 @@
 
 Official static corporate website for **Vertex Systems Network (VSN)**.
 
-## Status
+## Current canonical state
 
-**Website refresh: merged to main.** PR #38 was squash-merged on 25 September 2026 as `700fc02222885d20d000362ce377bf0d4ff1c4e4`. Static Integrity run #54 passed on the merge commit; post-merge PSEB validity updates passed run #56. All 23 page footers now show the PSEB certificate validity through October 2026; confirm renewal before that date. Run #56 passed on audit commit `63fb624e6e9c5198be8195aa6455c3b5f9ef0f3c`.
+The website is on the restored **data-first VSN baseline**.
 
-Contact-page improvement: PR #39 was squash-merged as `3846b430844736e50558231d0b36a77d420ccd27`; Static Integrity run #59 passed. The contact card now shows direct support and phone links, and the enquiry form groups all requested service and platform types.
+- Canonical substantive restore: PR **#137**
+- Canonical restored main SHA: `45df966794cffd4b2695d14e638c8c78f8a2ca75`
+- Restored from data-first visual baseline: `dfb37f291b081c5e67479f4aaa53ece7dc9c0608`
+- Static Integrity: **run #680 passed**
+- Production Release Bundle: **run #19 passed**
+- HTML pages: **32**
+- Production deployment: **not yet performed**
 
-Digital Marketing &amp; Growth now replaces the former social-only service positioning with a detailed offer for individual and company profiles, publishing, social campaigns and email marketing; the page includes a dedicated enquiry form before FAQs. The profile/page ownership, approval, list-permission and paid-media boundaries are explicit.
+The post-PR-123 literal mockup-parity rebuild was removed because the visual mockups are references, not a replacement for VSN's real content or information architecture.
 
-Authority Profile starting fees are finalized for publication at **$249, $549 and $899 USD**; PR #40 merged on 25 September 2026 and Static Integrity run #62 passed. The static version has not yet been uploaded to the existing host. Production domain state is unverified by request.
+## Design and content contract
 
-The refreshed site now includes expanded service pages, Authority Profile starting packages, expanded legal drafts, the navy/cobalt/lime visual system, expanded BPO and individual/business tax-service pages, detailed AI Solutions, Resource Augmentation, and industry-specific pathways. The tax page now includes six working browser-side estimate tools: individual income, freelancer/sole-proprietor profit, company provision, sales-tax invoice, withholding/net payment and a tax-reserve planner. The Tax Year 2027 individual schedule is based on FBR's published rate card; entity, payment-section and provincial-service rates are entered from the applicable current source instead of being guessed. The page includes a tax-specific enquiry form before FAQs and cautions visitors not to send tax IDs or documents through WhatsApp. PR #45 was squash-merged as `608900a94c3a5b14ec034f5cc189f3b98b9992bd`; Static Integrity run #72 passed. No production deployment was made. Profile prices remain starting fees; legal and tax language should receive qualified Pakistan review before public production use.
+VSN's actual business information is authoritative.
 
-The Web Development & E-commerce service now covers managed CMS and store platforms, full-stack application scope, frontend and backend technology combinations, integrations, migration, quality checks, ownership and maintenance. It includes a project-specific WhatsApp brief before FAQs and links to the existing business/profile website and e-commerce detail pages. PR #49 was squash-merged on 25 September 2026 as `2afa432dec154018b8e3b92662c4391e2b5fac76`; Static Integrity run #82 passed on that main-branch commit. No live production check or deployment was performed.
+Mockups and external visual references may influence:
 
-Digital Marketing & Growth has been extended to cover SEO, paid search and social ads, content, landing-page conversion paths, email programmes, reporting and media-budget boundaries. The VSN form captures the current website and paid-media budget status before FAQs.
+- image treatment
+- spacing and composition
+- typography scale
+- card geometry
+- dark/light rhythm
+- glass, dashboard or cinematic styling where it fits the content
 
-Web Development & E-commerce now also details UX/UI, custom backend/API work, additional frameworks, AI-enabled web features and post-launch maintenance. A standalone Mobile App Development page covers native iOS/Android, Flutter and React Native, learning and creator/task earning models, payments and store-policy dependencies, QA, release and lifecycle support; a project-specific app brief appears before FAQs. App income, store approval and marketing outcomes are not guaranteed.
+They must **not**:
 
-The BPO page now includes a dedicated workflow enquiry form immediately before its FAQs, decision-rights guidance for routine versus approval-required work, and a knowledge-maintenance approach for client-approved procedures. The enquiry captures the service area, approximate workload, channels, coverage window, tools and expected start, then prepares those details for WhatsApp. The form does not send data to a VSN server; it cautions visitors not to include customer records or credentials. PR #43 was squash-merged on 25 September 2026 and Static Integrity run #68 passed. No production deployment was made.
+- replace VSN content with mockup content
+- force the same section count as a mockup
+- remove service detail because a reference page is shorter
+- turn Projects and Blog into the same page type
+- fabricate clients, metrics, awards, reviews or testimonials
+- remove functional VSN elements such as forms, FAQs, public proof or the Contact map
 
+## Preserved restored functionality
 
-## Visual direction
+The current baseline preserves:
 
-The refresh uses a midnight navy, cobalt and lime palette, a more editorial homepage hierarchy and a locally stored hero visual. The visual is original, text-free artwork; no external image host is required.
+- Home three-slide image hero and restrained parallax behavior
+- real VSN content and service information
+- 12 service-detail pages
+- service-specific enquiry forms before FAQs
+- Contact project brief and direct contact routes
+- Google Map on Contact
+- Blog listing and Blog Detail as editorial content
+- Projects listing and Project Detail as project/case-study content
+- VSN Metafields and other factual public-proof links
+- responsive mobile navigation
+- reduced-motion support
+- the single-owner motion model used to avoid duplicate scroll-animation jerk
+
+Useful Batch 1-3 visual upgrades remain. Literal `*-mockup-parity.css` layers do not.
 
 ## Architecture
 
-- Plain HTML5 pages
-- Shared CSS in `assets/styles.css`
-- Shared vanilla JavaScript in `assets/app.js`
-- No Node.js runtime
-- No framework dependency
-- No Vercel dependency
-- No local HTTP server required
-- No build/install command required
-- Direct browser opening supported through relative local paths
+- HTML5
+- shared CSS
+- vanilla JavaScript
+- no application framework
+- no Node runtime for the website
+- no Vercel dependency
+- direct `file://` opening supported
+- relative local links required
 
-## Run directly
-
-1. Keep the repository folder structure unchanged.
-2. Open `index.html` directly in a modern browser.
-3. Navigation, CSS, logo assets and `assets/app.js` resolve through relative paths.
-4. The contact form prepares the project brief in WhatsApp using client-side JavaScript; it does not require a VSN backend.
-
-Root pages use paths such as `assets/styles.css` and `contact.html`.
-Pages inside `legal/` use paths such as `../assets/styles.css` and `../contact.html`.
-
-Do **not** convert local links back to root-relative `/assets/...` or `/contact.html` paths, because those break direct `file://` opening.
+Do not convert local URLs back to root-relative `/assets/...` or `/contact.html` paths because direct-file use depends on relative paths.
 
 ## Main pages
 
-- `index.html` — corporate homepage
-- `services.html` — expanded service catalogue
-- `web-development-ecommerce.html` — web development & e-commerce
-- `websites.html` — business website platforms and scope
-- `profile.html` — VSN Authority Profile packages and pricing
-- `software.html` — custom software & SaaS
-- `mobile-app-development.html` — native and cross-platform mobile apps
-- `ecommerce.html` — e-commerce development
-- `ai-automation.html` — AI & automation
-- `social-media.html` — Digital Marketing & Growth (SEO, paid search/social, profiles, content, email and campaign measurement)
-- `bpo.html` — BPO / managed operations
-- `tax-consulting.html` — tax & compliance services
-- `products.html` — VSN products
-- `industries.html` — 19 industry contexts, industry-specific workflow examples and linked VSN capabilities
-- `business-solutions.html` — modular Pakistan company setup, launch and operations service
-- `resource-augmentation.html` — individual specialist augmentation and dedicated team models
-- `resource-augmentation.html` — individual specialist augmentation and dedicated team models
-- `work.html` — work & proof framework
-- `trust.html` — trust & security
-- `process.html` — delivery process
-- `payments.html` — billing & payment information
-- `about.html` — company information
-- `contact.html` — project enquiry
+### Core
 
-## Legal
+- `index.html` — Home
+- `about.html` — About
+- `services.html` — Services
+- `products.html` — Products
+- `projects.html` — Projects
+- `project-detail.html` — Project Detail
+- `blog.html` — Blog
+- `blog-detail.html` — Blog Detail
+- `contact.html` — Contact
+- `industries.html` — Industries
+- `work.html` — Work & Proof
+- `process.html` — Process
+- `trust.html` — Trust & Security
+- `payments.html` — Payments
 
-Legal pages are in `legal/`. Internal consistency hardening is documented in `LEGAL-REVIEW.md`. Qualified Pakistan legal/corporate review remains an external requirement before public production use.
+### Service detail pages
+
+- `software.html` — Custom Software & SaaS
+- `web-development-ecommerce.html` — Web Development & E-commerce
+- `websites.html` — Business Websites
+- `ecommerce.html` — E-commerce
+- `mobile-app-development.html` — Mobile App Development
+- `ai-automation.html` — AI Solutions
+- `profile.html` — Authority Profile
+- `social-media.html` — Digital Marketing & Growth
+- `bpo.html` — BPO Services
+- `business-solutions.html` — Business Solutions
+- `tax-consulting.html` — Pakistan Tax Support
+- `resource-augmentation.html` — Resource Augmentation
+
+### Utility and legal
+
+- `404.html`
+- `coming-soon.html`
+- `legal/terms.html`
+- `legal/privacy.html`
+- `legal/refunds.html`
+- `legal/cookies.html`
+
+## Authority Profile
+
+Authority Profile is a **standalone service**, not a generic company-page bundle.
+
+Current starting package fees shown by the page are:
+
+- Essential — **$499 USD**
+- Authority — **$999 USD**
+- Signature — **$1,999 USD**
+
+The older **$249 / $549 / $899** package schedule is superseded. A separate Media Kit add-on may still start at $249 and should not be confused with the Essential package price.
+
+## Forms and FAQs
+
+Service-detail pages retain their detailed content.
+
+Where a service has an enquiry form, the intended order is:
+
+1. service information
+2. enquiry / project brief form
+3. FAQs
+
+Do not move the FAQ above the form during visual redesign work.
+
+The current forms prepare client-side project briefs; they do not claim a VSN server-side submission backend where none exists.
+
+## Contact and public proof
+
+The Contact page retains:
+
+- project brief form
+- direct phone / WhatsApp / email routes
+- public-profile links
+- Google Maps area embed
+
+The privacy policy contains the corresponding Google Maps disclosure.
+
+Public evidence must remain factual. Do not publish unverified client names, reviews, partner logos, certifications, adoption counts or performance claims.
+
+## Brand palette
+
+Approved website palette is based on the VSN logo:
+
+- `#5AC8D6`
+- `#625BA8`
+- `#6188C6`
+- `#3F4245`
+- `#7E8083`
+- `#000000`
+- `#FFFFFF`
+
+The official logo remains `assets/vertex-logo.png`.
 
 ## Continuous integration
 
-`.github/workflows/static-integrity.yml` validates source integrity with Python standard library only. It verifies the exact official logo, local references, CSP/hash invariants, sitemap/legal requirements, and rejects root-relative local `href`/`src` values so direct-file compatibility cannot regress.
+`.github/workflows/static-integrity.yml` checks:
+
+- exact logo palette
+- static-site integrity
+- deterministic release packaging
+- repository state consistency
+- motion behavior
+- Ritovex/reference fidelity guards
+
+The restored baseline passed **Static Integrity run #680** on main.
+
+## Deployment
+
+The site remains static and is intended for the existing Middlehost/cPanel production host.
+
+A guarded manual deployment workflow is preserved at:
+
+`.github/workflows/deploy-middlehost.yml`
+
+It requires explicit confirmation and hosting secrets. No production deployment is recorded for the restored baseline.
 
 ## Repository governance
 
-Main-branch protection is **deferred by owner for now**. The repository currently remains unprotected.
+Main branch protection is currently deferred by owner. Supporting protection scripts/workflows remain in the repository for later activation.
 
-The implementation for future activation is preserved:
-- `scripts/apply_main_protection.ps1`
-- `scripts/verify_main_protection.ps1`
-- `.github/workflows/main-protection-admin.yml`
-- `SECURITY-GOVERNANCE.md`
+## AI resume state
 
-This deferred governance item does not block repository/code finalization. It can be activated later without changing the website runtime architecture.
+Canonical machine-readable resume state:
 
-## Branding
+`.ai/state/CURRENT-STATE.yaml`
 
-The exact owner-supplied VSN logo is stored at `assets/vertex-logo.png`. SHA-256: `ede0edd921742c57af19b513c1aab73e079fe1217f4bc7ad156ab3260109c671`; dimensions: `2041×517`; size: `60,222 bytes`.
+Human checkpoint:
 
-## Website progress
+`.ai/state/LAST-CHECKPOINT.md`
 
-- Static architecture and direct-file portability: **100% — complete**
-- Direct-file portability: **100% — completed**
-- Architecture: **direct-open static HTML + CSS + vanilla JS**
-- Server requirement: **none**
-- Vercel requirement: **none**
-- Main protection: **deferred by owner**
-- Current milestone: Business Solutions, service-form design consistency and updated legal drafts merged in PR #55 as `d59fb75827a58ba1f40a82fdc69b1c357015d29e`; Static Integrity run #95 passed on main.
-- External production requirement: qualified Pakistan legal/corporate review
+Future work must recover from repository evidence rather than stale chat state.
 
+## Next work
 
-Current development chunks: PR #53 completed Industries, AI Solutions and Resource Augmentation. PR #55 added three-module Business Solutions and aligned AI/Resource forms and FAQ presentation with the site's standard layout. The site now has 27 HTML files and 26 indexed sitemap URLs; Static Integrity run #95 passed on main. No live check or deployment was performed.
+The next allowed project step is **Point 2: full certification of the restored baseline** using primary and secondary rendered browser QA.
 
-
-## Latest milestone — Custom Software, SaaS, Products & navigation (2026-09-26)
-
-PR #57 was squash-merged to `main` as `938393c167be3a5c49d7915d112e598ce1be9a59`. It expands the Custom Software & SaaS page with SaaS architecture, delivery and quality scope, a dedicated project enquiry form and nine FAQs. The Services menu now groups every service detail page; the Company menu links company, trust, contact and legal pages.
-
-The Products page now includes the VSN Metafields marketplace link and a repository directory covering all **15 public VSN organization repositories** discovered in the audit. Four private repositories were excluded. Cards distinguish marketplace product information from active engineering initiatives, templates/tooling and the company website source; repository status labels follow README, docs and manifest evidence and do not claim commercial availability, production readiness or full security review.
-
-Static Integrity passed on the PR head in run #99 and on the merged main commit in run #100. Internal checks found no broken local links or fragments across the 27 HTML pages, confirmed the software enquiry form appears before its FAQs, and verified 15 public-repository links. No production deployment or live-site check was performed.
-
-
-## Latest milestone — Homepage, About & trust evidence (2026-09-25)
-
-PR #59 merged to `main` as `3356bd642e204e91aa8e04cfb8a47383d38770ba`. Static Integrity run #106 passed on PR head `c08547ed90e3876db63d6d41bc53a05f0b660286`. The homepage was rebuilt around clearer service paths, company credentials, public product proof, delivery roles and contact. About now gives a fuller company story, role-based delivery model, company details, public profiles and a client-feedback approval policy.
-
-Font Awesome Free 6.7.2 SVGs are embedded locally and credited; the shared footer now links to VSN’s verified GitHub organization, WP Essential WordPress.org profile and Shopify app listing on all 27 pages. No official Facebook, Instagram, LinkedIn or X account URLs, named employee bios or client-approved reviews were available to publish. The service-page main content is unchanged. We did not check or deploy the live website.
-
-
-## Styling fix — Homepage & About (2026-09-26)
-
-The page-specific CSS had been lost during a footer stylesheet update, which left the redesigned Home and About layouts without their grid/card rules. Restored the responsive styles in PR #60 (`17baf7f6b3065d337da6b702ce4bfbf64c92347f`). Static Integrity run #112 passed; local integrity checks also passed for all 27 HTML files and 1,408 local references. Service-page styling was preserved. No production check or deployment was performed.
-
-## Visual and contact refresh (2026-09-26)
-
-The 27-page shared header now uses one identical navigation markup (with relative paths for legal pages), backed by a regression check. The palette follows the official logo's cyan, blue and violet, with restrained hero, card and scroll motion and reduced-motion support. The Contact page now has an OpenStreetMap Phase 4-A area view, direct enquiry, and the three verified public VSN destinations. Map access and privacy behavior are explained on the page and in the Privacy Policy. Home, About and Work link to public Shopify/GitHub evidence and explain that a verified Google Business Profile and approved testimonials are still needed before displaying review ratings. No production check or deployment was performed.
-
-## LinkedIn profile update (2026-09-26)
-
-The owner supplied the official LinkedIn company URL. Its direct canonical company link is now in the shared footer on every page, Contact public channels and About public profiles. The Google Business Profile URL has not yet been supplied or independently matched, so the site does not invent Google ratings or reviews.
-
-LinkedIn profile update was merged as PR #62; Static Integrity run #119 passed. Google review links and ratings remain pending an official Google Business Profile URL.
-
-## Buyer decision and delivery depth (2026-09-26)
-
-The Services catalogue now helps visitors choose a starting path for product engineering, digital sales, operational improvement or Pakistan business setup, then explains what information supports a written scope. The E-commerce page separates merchant decisions, VSN implementation and external platform/provider dependencies, with direct routes to the detailed capability page and contact. The Process page makes scope, direction, working-build and handover review gates explicit. Added responsive layouts and reduced-motion-compatible reveal behavior. No service-page claims, prices or legal terms were changed; no production check or deployment was made.
-
-The buyer decision and delivery-depth update merged in PR #63; Static Integrity run #122 passed.
-
-## Authority Profile service and site-wide motion (2026-09-26)
-
-Authority Profile & Personal Branding is now under **Services**, outside the Company menu on all 27 pages, and explicitly listed in the service catalogue. Its page now describes an individual client's personal website/brand deliverables. Starting tiers are **Essential $499, Authority $999 and Signature $1,999 USD**, superseding the earlier $249/$549/$899 fees. Scope includes bounded editorial work, approved imagery options, brand assets, defined aftercare, priced optional extensions and a profile-specific enquiry form before FAQs. Domain/hosting/provider fees, translation and third-party publication remain separately scoped.
-
-`assets/motion.js` progressively enhances all 27 pages with CSS-based hover feedback, menu/FAQ feedback, form focus states, reading progress and a stable scroll header. It does not animate sections as they enter the viewport: the observer started after content had already appeared and caused a visible replay/slide. Pointer tracking also no longer restarts transforms on every mouse move. Motion can be reduced with an on-page control and follows the system's reduced-motion preference. Content remains visible in its normal document flow. Offline behavior checks: `node scripts/check_motion_behavior.cjs`. These tests do not substitute for browser visual review. No live production check or deployment.
-
-Authority Profile and site-wide motion merged in PR #64 (`7e544c9f58f703cabb0162f11e68cf48ebc8b185`). Static Integrity run #125 passed; offline motion behavior checks passed. Browser visual review and production deployment were not performed.
-
-## Motion stutter fix (2026-09-26)
-
-Removed per-pointermove Web Animations that repeatedly replaced element transforms, stopped shrinking the sticky header during scroll, and removed the continuous full-image scale animation. Then removed scroll-triggered section entrances entirely: IntersectionObserver started them after content was already visible, creating the apparent second slide. Also removed overlapping Home CSS entrances. Scroll leaves content stationary; CSS still handles hover feedback and the FAQ retains its open/close response. Offline checks assert scroll entrance triggers stay absent. Browser visual review and production checks remain unperformed.
-
-
-## Ritovex-inspired homepage rebuild — in progress (2026-09-26)
-
-A homepage-only visual layer is now being developed on `design/ritovex-homepage-rebuild`. The direction follows Ritovex's editorial hierarchy, oversized typography, service-row rhythm, immersive dark feature section, capability marquee and stronger whitespace while preserving VSN's own content, verified company facts and static HTML/CSS/vanilla-JS architecture.
-
-The redesign does **not** copy Ritovex/Webflow assets or text. The branch now includes an original local VSN visual pack for the hero, product engineering, AI/automation and growth/operations sections. The homepage uses those assets in image-led editorial sections while keeping all claims and links VSN-specific. Scroll-triggered entrance effects remain disabled to avoid the earlier double-animation/jank issue.
-
-
-### Ritovex-inspired homepage visual milestone (2026-09-26)
-
-The homepage now has four original local VSN SVG visuals: a new hero artwork plus product-engineering, AI/automation and growth/operations illustrations. Image-led editorial sections were added without copying Ritovex assets or text, and the existing no-scroll-replay motion rule remains intact. Static Integrity run #135 passed on commit `2c2f2d6eeee4880d25fa10f7678a82ac916eb6f3`. The next design milestone is to extend the same visual system to secondary pages.
-
-
-## Secondary-page Ritovex visual milestone — in progress (2026-09-26)
-
-After PR #68 merged, work moved to `design/ritovex-secondary-pages`. Services, About, Products and Contact now use a shared editorial page system with oversized split heroes, original VSN content-matched SVG visuals, flatter service/product layouts and stronger whitespace. Static architecture and the no-scroll-replay motion rule remain unchanged. This milestone is not merged yet.
-
-
-## Service-detail Ritovex large batch — in progress (2026-09-26)
-
-PR #69 was squash-merged as `f59229c9940dbcd183cd212316ca143167eddadd`. A new branch, `design/ritovex-service-details-batch-1`, now applies the shared editorial service-detail system to **12 primary service pages**: Custom Software & SaaS, Web Development & E-commerce, Business Websites, E-commerce, Mobile App Development, AI Solutions, Authority Profile, Digital Marketing & Growth, BPO, Business Solutions, Tax Support and Resource Augmentation. Four new original local VSN visuals were added for mobile, web/commerce, operations and business/tax; existing VSN product, AI, growth and company visuals are reused only where they match the subject. Existing content, forms, calculators and the no-scroll-replay motion behavior remain in place. PR #70 now carries this batch; Static Integrity run #140 passed on the implementation checkpoint.
-
-
-## Company/proof Ritovex batch — in progress (2026-09-26)
-
-PR #70 was squash-merged as `5a51d30ea674f9a7c632b0767605c1350797a24e`. A new branch, `design/ritovex-company-proof-batch`, now migrates Industries, Work, Process, Trust and Payments to the same editorial image-led system. Five original local VSN visuals were added for industry workflows, public proof, delivery process, trust/security and payments. Work and Trust continue to avoid invented client results, certifications or unsupported proof. Existing page copy, links, payment wording and static architecture remain intact. PR #71 carries this batch; Static Integrity run #143 passed on the completed implementation checkpoint.
-
-
-## Video-reference motion and copy rebaseline — in progress (2026-09-26)
-
-PR #71 merged to main as `29cd7557a48f1e0ed66f9cdd66e872352acb682a`. Work then moved to `design/ritovex-motion-content-human-v2` using the owner's full-page Ritovex recordings as the motion/layout reference. The homepage now uses a dark interactive services accordion, horizontal work cards, a sticky process layout and shorter VSN copy. A new pre-paint motion initializer plus shared motion stylesheet loads on all 27 HTML pages so reveal animations start before content is painted, run once, and do not replay on scroll-back. Core marketing-page hero copy was simplified without changing meaning. The remaining visual milestone is to replace mockup-first imagery with original human + AI/technology interaction photography generated specifically for VSN.
-
-Static Integrity run #147 passed with both the static-site validator and the new motion regression check. The motion layer is wired across all 27 HTML pages; the human-image asset swap remains the open visual milestone.
-
-
-## Blog, Projects and utility-page expansion (2026-09-26)
-
-The video-reference branch now includes a Ritovex-style editorial system for Blog, Blog Detail, Projects, Project Detail, Coming Soon and the redesigned 404 page. Blog launches with one original VSN article about keeping human judgment inside AI automation; future-note cards route to the noindex Coming Soon page rather than pretending unpublished articles exist. Projects launches with verified public VSN surfaces and a VSN Metafields detail page that points to the Shopify App Store as the source of truth. Projects and Blog were added to the shared navigation/footer across all 32 HTML pages. Sitemap validation now expects 30 public URLs; 404 and Coming Soon remain excluded from indexing. One-shot motion targets include the new editorial components.
-
-Static Integrity run #198 passed after the Blog, Projects and utility-page expansion. The validator now checks 32 HTML pages and 30 sitemap URLs, and the motion regression test covers the new editorial pages.
-
-
-### Human image batch 1 (2026-09-26)
-
-The Home hero, Home About and About page now use committed human-led WebP assets instead of interface/mockup-first SVG illustrations. Responsive object-position/crop tuning is included in the homepage stylesheet. Static Integrity run #204 passed after the binary asset swap. The next image batch is Software, AI, Growth and Operations.
-
-
-### Human image semantic-slot wiring (2026-09-26)
-
-Human-led semantic media slots are now wired across Home, Services, Products, Contact, all primary service-detail pages, Industries, Work, Process, Trust, Payments, Blog and Projects. The slot filenames (`vsn-human-software.webp`, `vsn-human-ai.webp`, `vsn-human-growth.webp`, `vsn-human-operations.webp`, `vsn-human-business.webp`, `vsn-human-team.webp`, `vsn-human-industries.webp`, `vsn-human-editorial.webp`) currently reuse the two approved human photographs as temporary source blobs so mockup-first SVGs no longer control the live layouts. This is an implementation bridge, not the final photography set. Responsive crop and tonal rules now live in `assets/styles.css`. Each semantic file can be replaced independently with a unique generated photo later without changing page markup.
-
-
-### Responsive and motion polish checkpoint (2026-09-26)
-
-Home, secondary, service-detail, company/proof and editorial styles now have a dedicated final breakpoint pass for tablet/mobile widths. The Home accordion allows larger active content on small screens, horizontal work cards use touch-friendly overflow, process cards collapse cleanly, editorial feature images reduce height on mobile, and shared human-image crops receive desktop/tablet/mobile object-position rules. Motion state now correctly adds the `motion-enabled` class expected by the shared stylesheet. The Home service-preview switch cancels stale timers during fast pointer movement and exposes `aria-expanded` on each interactive service row. Static Integrity run #246 passed with the expanded motion regression assertions.
-
-
-### Human image unique batch 2 (2026-09-26)
-
-The human-media system now has six unique production WebP assets: Hero, About, Software, AI, Growth and Operations. Software, AI, Growth and Operations replaced their temporary semantic aliases in commit `d11dfd34904dd14d794de78fa0dfdd13071e4c2b`. Static Integrity run #251 passed on that exact head. Business, Team, Industries and Editorial remain semantic aliases and are the final photography batch before PR #72 can leave draft state.
-
-
-### Human image unique batch 3 (2026-09-26)
-
-Business, Team and Industries now use their own committed human-led WebP binaries rather than the About-photo alias. Together with Hero, About, Software, AI, Growth and Operations, **9 of 10** planned human-media slots are now unique. Static Integrity run #256 passed on commit `6b88b7defb6bd20b7f7f41dc18f71b66c626fe48`. Editorial remains the only semantic slot still using an alias; it is the last photography task before final visual review.
-
-
-## Final human photography and Ritovex completion checkpoint (2026-09-26)
-
-The Ritovex-reference redesign is now complete on the active branch. The two approved unique Hero/About WebP photographs remain direct assets. Software, AI, Growth, Operations, Business, Team, Industries and Editorial now use eight distinct generated human + technology scenes stored in a single local WebP atlas with lightweight semantic SVG crop wrappers. Temporary alias WebP files were deleted so stale references cannot silently survive. All major marketing, service, company, Blog and Projects surfaces now use human-led imagery instead of mockup-first illustrations. Responsive and one-shot motion QA are complete. Marketing copy has been simplified across the primary customer-facing pages while legal/policy wording remains factual rather than lyrical where precision matters. Static Integrity run #295 passed after the final image architecture and alias deletion.
-
-## Corrective Ritovex fidelity rebuild
-
-The previous inspired implementation was reopened because it did not preserve the recorded Ritovex visual grammar closely enough. The corrective branch uses the supplied recordings and the live Ritovex demo as the design and interaction reference while keeping VSN content and required business sections.
-
-Corrections now include:
-- logo-palette lock using VSN cyan, indigo and violet with black and white neutrals;
-- reference-style top strip, navigation, wide mega menus, dark newsletter/footer and oversized VSN footer wordmark;
-- direct human WebP section imagery instead of semantic SVG crop wrappers;
-- FAQ and project enquiry forms on all 12 service-detail pages;
-- Google Maps embed on Contact;
-- separate Blog, Projects, Blog Detail and Project Detail compositions;
-- recorded-style 404 circular-photo composition;
-- About and Services rebuilt around the reference centered hero, black accordion, human cards and split-image patterns;
-- one reveal-animation owner in fidelity mode to prevent the earlier double-animation behavior;
-- a dedicated scripts/check_ritovex_fidelity.cjs CI regression check.
-
-### Corrective verification run #420
-
-Static Integrity run #420 passed on the corrective branch. The same job passed the static-site validator, motion regression and the dedicated Ritovex fidelity regression. The fidelity check now protects the reference shell, direct human imagery, all service-detail FAQs/forms, Google Maps contact section, separate Blog/Projects and detail layouts, About/Services reference structures, 404 composition and single animation ownership.
-
-## Exact VSN logo palette lock
-
-The website palette is now derived from the committed VSN logo itself instead of manually chosen approximate colors.
-
-- Cyan: `#5AC8D6`
-- Violet: `#625BA8`
-- Blue: `#6188C6`
-- Charcoal: `#3F4245`
-- Gray: `#7E8083`
-- Black: `#000000`
-- White: `#FFFFFF`
-
-All eight active CSS files were normalized to these colors or alpha variants of them. `scripts/check_logo_palette.py` now derives the logo colors from `assets/vertex-logo.png` and fails CI if any foreign hex/RGB color enters active CSS. Static Integrity run #450 passed the logo inspector, exact palette validator, static-site validator, motion regression and Ritovex fidelity regression on the same PR head.
-
-## Repository reconciliation — 2026-09-28
-
-The corrective Ritovex rebuild and exact VSN logo palette are merged on `main`. The latest verified main commit is `63387d5d186ca2d1c5326d4c686778b2312e0d4b`; Static Integrity run #457 passed on that exact commit. Draft recovery PR #74 was closed as superseded by merged PRs #75, #76 and #77, so it is no longer treated as active development.
-
-Code-side visual requirements currently represented in the repository include the Ritovex-aligned shell, VSN-only exact logo palette, restored service forms and FAQs, direct WebP imagery, Google Maps on Contact, separated Blog/Projects and detail layouts, and single-owner reveal animation behavior. Production publication and qualified Pakistan legal/corporate review remain external release steps rather than unfinished static-site implementation.
-
-## Homepage article-preview parity — 2026-09-28
-
-The homepage now restores the Ritovex reference flow's article-preview stage using VSN-owned content rather than copied template posts. It shows the published AI/human-judgment article plus two clearly labeled upcoming topics, links to the full Blog, uses committed human WebP imagery, and keeps reduced-motion behavior. The Ritovex fidelity regression now requires the three-card homepage preview so this structural stage cannot silently disappear.
-
-## Mobile header fidelity hardening — 2026-09-28
-
-A responsive audit found a breakpoint seam between the shared navigation (`980px`) and the Ritovex fidelity override (`900px`). At widths from 901–980px the mobile navigation could inherit the wrong vertical offset while the top strip was still present. The fidelity shell now switches at the same 980px boundary, hides the top strip consistently, anchors the menu directly below the 68px mobile header, uses a full-width scrollable menu panel and locks background scrolling while the menu is open. Shared navigation JavaScript now closes cleanly on outside click, link activation, Escape and transition back to desktop. Static fidelity checks protect these behaviors.
-
-Mobile header hardening was merged in PR #80 as `6bd81221b5613e0fdc427e751b8203032b436e09`. Static Integrity passed on the PR head in run #462 and again on merged `main` in run #463.
-
-## Footer contrast repair — 2026-09-28
-
-The Ritovex footer audit found that the oversized `VSN` wordmark and public-profile separators had been normalized to black while the footer background is also black, making those elements effectively disappear. The wordmark and separators now use the VSN charcoal `#3F4245`, preserving the exact logo palette while restoring the intended oversized footer treatment. Fidelity checks now reject a black-on-black footer wordmark regression.
-
-## Repository state consistency guard — 2026-09-28
-
-The resume index had accumulated contradictory historical anchors, including duplicate HTML-page counts and outdated latest PR/CI values. The current state is normalized to 32 HTML pages, PR #82 and verified main run #467. CI now runs `scripts/check_state_consistency.cjs`, which rejects duplicate critical state keys, a page-count mismatch, temporary-branch residue in the main resume index, and disagreement between the verified main SHA and CI run anchors.
-
-The repository state consistency guard merged in PR #83 as `3d36b0f1575a83ff26ad1aa3c68eb5f96be0f50b`; PR run #468 and main run #469 both passed. The resume index intentionally anchors the latest substantive main milestone and excludes metadata-only reconciliation commits, preventing self-referential checkpoint churn.
-
-## Interaction boundary and newsletter truthfulness — 2026-09-28
-
-The fidelity interaction layer now uses the same responsive boundary as the navigation shell: desktop hover dropdown behavior starts at 981px, eliminating the remaining 901–980px interaction seam. The static footer newsletter no longer displays a fake `Thank you` success without storing or sending an address. It now labels the action as an updates request, discloses that the page stores nothing, and opens a prefilled email request to VSN. The newsletter handler also remains active when reduced motion is enabled because reveal fallback no longer exits the interaction script early.
-
-Interaction/newsletter hardening merged in PR #85 as `c90ff84f2182f378ec5c4a2746901941b14624ea`; Static Integrity passed on PR run #472 and merged-main run #473.
-
-## Sitewide actionable contact shell — 2026-09-28
-
-All 32 HTML pages now expose the shared header email/phone and footer phone/email as direct `mailto:` and `tel:` links instead of plain text. The legal pages receive the same contact behavior without changing their parent-relative local navigation. Ritovex fidelity CI now verifies clickable header/footer contact actions on every HTML page and rejects the old plain-text top-contact shell.
-
-## Mobile navigation and footer parity — 2026-09-28
-
-The Ritovex fidelity shell now uses a full-height mobile navigation panel instead of a small floating dropdown, with larger primary links, clearer nested service groups, body-scroll locking and keyboard focus containment. Small-screen footer columns now collapse to one readable stack, while the newsletter, clickable contact actions and oversized footer wordmark remain intact. This pass preserves the latest sitewide contact-shell changes and direct-file operation.
-
-## Desktop mega-menu and section rhythm — 2026-09-28
-
-The shared desktop shell now gives the mega-menu the same deliberate interaction quality as the mobile navigation: short hover intent, a forgiving close delay, keyboard focus-in/focus-out support, active VSN-gradient navigation underlines, a restrained panel reveal, clearer column separation, and small link/CTA hover travel. Homepage desktop section spacing is normalized with a bounded clamp rather than adding another scroll-animation owner.
-
-## Services reference-depth parity — 2026-09-28
-
-The Services listing now follows the reference page's deeper information rhythm after the service catalogue: a real VSN technology/platform grid, delivery benefits, page-level buyer FAQs, and a public-proof stage. The reference testimonial slot is intentionally represented with traceable GitHub and Shopify evidence rather than fabricated client quotes. Tablet/mobile layouts collapse these stages cleanly without adding another animation system.
-
-## About reference-depth parity — 2026-09-28
-
-The About page now restores the reference page's early four-principle rhythm, a horizontally scrollable public-verification strip, and an end-stage credentials/milestones treatment. Ritovex's partner-logo and awards roles are intentionally represented with VSN-owned, checkable evidence such as company registrations, GitHub and the published Shopify app rather than invented partners or awards. Responsive layouts collapse 4→2→1 while preserving the existing team/service structure and single motion owner.
-
-## Blog and Projects parity separation — 2026-09-28
-
-Blog and Projects now use intentionally different listing systems. Blog leads with the one published VSN article and separates five clearly marked upcoming topics. Projects uses a four-card, two-column portfolio based only on a published product or public repositories; generic capability cards were removed so Services remains the capability catalogue. This preserves the Ritovex editorial/portfolio rhythm without inventing project outcomes or client case studies.
-
-## Contact final parity — 2026-09-28
-
-The Contact page now opens with three explicit routes—structured project brief, email and WhatsApp—and adds a three-stage explanation of what happens after first contact. The existing WhatsApp-generated static brief, direct contact card, public-profile links and Google Map remain intact. This gives the page a clearer business-conversion rhythm without pretending that the static form submits to a backend.
-
-## Page-by-page parity batch complete — 2026-09-28
-
-The current substantive website main (`c2b6794cc09a3101aae5ba2f023bd599b14e2c91`) completes the planned Home → Services → About → Blog/Projects → Contact parity pass. Static Integrity run #490 passed on that exact code state, including palette validation, static-site validation, repository-state validation, motion checks and Ritovex fidelity checks. The repository remains direct-file HTML/CSS/vanilla-JS. A final rendered-browser comparison against the owner's recordings remains a separate visual QA activity and is not represented as completed by these static checks.
-
-## Rendered browser QA — Home — 2026-09-28
-
-Home was rendered in headless Chromium at 1440×900 and 390×844 beside the live Ritovex homepage. The pass exposed two runtime-only problems that static checks had missed: a second reveal observer that could leave full-page blank bands, and corrupted WebP assets that technically loaded but rendered black/blank. The duplicate reveal owner was removed so `motion.js` is the only one-shot viewport reveal system. Corrupted human-image references were replaced site-wide with decodable VSN human/technology assets. The extra desktop contact strip was removed from the rendered shell, hero geometry was tightened, mobile hero alignment was centered, credentials became a compact scroll strip, and Home About was reorganized to lead with its heading before image/facts. Visual Browser QA run #16 and Static Integrity run #508 passed for runtime SHA `ff77b934abf24b8fa5953bebc84a703f33ced7e8`. The render reported no horizontal overflow, missing images, console/page errors, or suspicious human imagery on Home desktop/mobile.
-
-## Rendered core-page browser QA — 2026-09-28
-
-PR #98 completed rendered Chromium QA for Services, About, Blog, Projects and Contact at 1440×900 and 390×844, alongside live Ritovex reference screenshots. Visual Browser QA run #32 passed on tested head `78101b25e68f53367c8b12944d5fabbc57cd1de4`; the same changes were squash-merged as `00c4cecc33fd9d79c9be043508739d3f7ea31c3e`, and post-merge Static Integrity run #526 passed. Screenshot-led corrections included the About proof/priority hierarchy, Blog editorial hero/card treatment, Projects featured-work hierarchy, Contact map/mobile form fixes, and browser diagnostics for overflow, missing images, hidden content, console/page errors and mobile-nav state. This certifies core-page browser health and materially improved reference alignment; it does not claim pixel-perfect identity with Ritovex. Services and Contact remain the next reference-fidelity focus.
-
-## Services + Contact rendered fidelity — 2026-09-28
-
-This screenshot-led pass moves the two remaining primary pages materially closer to the live Ritovex reference without removing VSN-required content. Services now uses a large left editorial hero, dark service accordion, circular technology tokens, image-plus-benefits split, compact FAQ treatment and three verifiable public-proof cards; VSN outcome/scope modules remain available lower in the page. Contact now opens with a simple large hero, then a soft image-plus-project-brief form and three direct contact cards before the VSN-specific route, next-step, public-profile and Google Map sections. Fake testimonials, client metrics and unsupported claims remain excluded. Rendered Chromium QA remains the merge gate.
-
-### Services + Contact rendered certification
-
-PR #100 passed Static Integrity run #529 and Visual Browser QA run #33 on tested head `623f151e9deec673031720a6b3ff025d5d5a01c9`, then merged as `8a0041b5ff83f15d8e9fd427383485afe1b0c304`. Post-merge Static Integrity run #530 passed on that exact main commit. The next browser-QA scope moves to service-detail, Blog detail, Project detail and utility pages rather than repeating the primary-page checks.
-
-## Detail and utility rendered browser QA — 2026-09-28
-
-Playwright now renders Web Development service detail, Blog detail, Project detail, 404 and Coming Soon at 1440×900 and 390×844, with live Ritovex comparison routes where available. Visual Browser QA run #36 passed after fixing a real mobile overflow on the Project detail hero; Static Integrity run #535 also passed on the tested head. The workflow now fails on local navigation/page errors, horizontal overflow, missing or suspicious human imagery, hidden post-scroll content, missing H1s and mobile-navigation state regressions. Artifact `visual-browser-pages` stores the screenshots and machine-readable report for seven days.
-
-## Secondary and full-site rendered browser QA — 2026-09-28
-
-A dedicated Playwright lane now renders the remaining 21 service, company/support and legal pages at 1440×900 and 390×844. Secondary Visual Browser QA run #1 passed with no local navigation/page errors, page-level horizontal overflow, missing images, suspicious human imagery, hidden post-scroll content, missing H1s or mobile-navigation state failures. Together with the primary-page and detail/utility browser runs, every current site page now has automated rendered functional QA coverage. This does not claim a manual pixel-for-pixel match against every owner-recorded reference video; that remains a separate visual review/publication step.
-
-## Full-width footer wordmark parity — 2026-09-29
-
-Rendered screenshot comparison showed that the three-letter VSN footer mark was materially smaller than the reference template's oversized footer wordmark. The footer now scales VSN to fill the available width on desktop and mobile, keeps the existing black/gray palette, preserves public-profile content, and adds the reference-style separator above the legal metadata row.
-
-## About hero/media rendered parity — 2026-09-29
-
-Rendered comparison against the live About reference showed that VSN moved directly from hero copy to proof cards, while the reference places a wide human visual between them. About now follows hero → wide VSN human image → proof cards → priority block. The priority split remains image-left/copy-right on desktop and changes to copy-first/image-second on mobile, matching the reference reading order without inventing metrics.
-
-## Projects rendered-card parity — 2026-09-29
-
-Rendered comparison showed that the Ritovex portfolio moves directly from its centered section heading into large image-led cards and places metadata on the image edge. VSN now follows that rhythm: the two featured public-work cards begin immediately after the heading, their public-proof metadata sits on the image bottom edge, and the factual portfolio-rule note remains available after the cards instead of interrupting the visual flow.
-
-## Blog 3×3 rendered parity — 2026-09-29
-
-Rendered comparison showed that the reference Blog uses a dense three-column, three-row first listing rhythm. VSN now presents one published article plus eight explicitly labelled upcoming topics in the same nine-card density. Category metadata uses a compact pill while publication status remains visible, so planned topics are not misrepresented as published posts.
-
-
-## Detail-page rendered reference flow — 2026-09-29
-
-Live Ritovex single-blog and single-project pages use a text-first reading hierarchy before the large media stage. VSN now follows that geometry without copying unsupported claims: Blog detail opens with category, large title, summary and a factual VSN Editorial/date/read-time strip before the full-width image; Project detail opens with the verified product summary and factual type/platform/proof/status strip before full-width case-study media. Existing long-form VSN article/project content and public proof remain intact.
-
-
-## Web Development single-service reference spine — 2026-09-29
-
-The representative Web Development & E-commerce detail page now follows the live Ritovex single-service information hierarchy more closely: large service title and summary, a dedicated full-width service image, a concise service overview, concrete included-work groups, then VSN's deeper platform, commerce, architecture, delivery, ownership, project-brief and FAQ content. The project brief remains before the FAQ, and the public page does not expose internal template/reference notes.
-
-
-## Service-detail reference propagation — 2026-09-29
-
-After the Web Development representative page passed Static Integrity and both rendered-browser QA workflows, the same single-service hierarchy was propagated across the remaining service details. Each page now leads with a text-first service hero, a dedicated full-width human image, a concise service overview, then its existing service-specific capability/content stage. Long VSN content, service enquiry forms and FAQ ordering remain intact. The Business Websites page also moves its primary H1 into the hero so its document and visual hierarchy matches the rest of the service family.
-
-
-## Final artifact-led detail and utility parity — 2026-09-29
-
-The PR #111 rendered artifacts were reviewed directly against the live Ritovex captures instead of treating green browser automation as pixel-level certification. That review found three measurable gaps: the VSN 404 page was taller and more complex than the reference, Blog detail used listing-scale typography and placed article metadata before the hero image, and Project detail used a larger title/flat metadata strip. This pass removes the extra 404 CTA stage and secondary action, matches reference 404 title scale, moves Blog article metadata below the hero image, and tunes Blog/Project detail typography and project metadata presentation to the rendered reference.
-
-
-## Single-column Blog and Project detail parity — 2026-09-29
-
-A second direct review of the PR #112 screenshots showed that title and metadata scale were corrected, but both VSN single-detail pages still used the older two-column sidebar body while the Ritovex single-blog and single-project references use a wide single-column reading/case-study flow. This pass removes the sidebar shell, keeps the same factual VSN content, adds a second committed human image inside each long-form page, turns the Blog quote into the dark reference-style callout, and keeps Project public-proof disclosure as an inline evidence note rather than a side column.
-
-
-## Service-name hero parity — 2026-09-29
-
-Rendered-reference review showed that the remaining service-detail mismatch was driven by long descriptive H1 sentences wrapping into four or five lines, while the Ritovex single-service template uses the service name as the hero title and keeps the explanation in supporting copy. All 12 VSN service-detail pages now use concise service-name H1s while preserving their existing lead paragraphs and full long-form content. Shared service hero sizing is also aligned to the reference, with compact 30px mobile service titles. Blog and Project single-detail title metrics are locked to the measured reference desktop/mobile sizes.
-
-
-## Final title wrapping parity — 2026-09-29
-
-The PR #114 artifact confirmed exact Project Detail heading metrics and exact mobile service-title sizing, but the representative Web Development title still wrapped because the VSN H1 included “& E-commerce”, and the longer Blog headline occupied more lines than the single-blog reference. The representative H1 is now “Web Development” while commerce remains explicit in the page metadata, eyebrow, lead and body. The published Blog title is tightened to “Where AI Helps — and Human Review Matters” consistently on the homepage, Blog listing and article detail. The mobile 404 title is also constrained to the same single-line visual rhythm as the reference.
-
-
-## Final measured heading parity — 2026-09-29
-
-The PR #115 rendered report reduced the remaining differences to two measurable heading-geometry gaps. The representative Web Development desktop H1 now uses the exact measured Ritovex reference metrics: 120px font size, 180px line height and -2.4px letter spacing. The published article title is shortened to “AI Helps. Human Review Still Matters.” across the homepage, Blog listing and Blog detail so the 48px desktop article heading can occupy the same single-line rhythm as the reference while retaining the article’s meaning.
-
-
-## Production release bundle hardening — 2026-09-29
-
-The website remains a direct-open static HTML/CSS/vanilla-JS project, but production handoff now has a reproducible packaging path. `scripts/build_release_bundle.py` creates a clean hosting directory, deterministic `vsn-website-release.zip`, a JSON file manifest and SHA-256 checksum list. Static Integrity builds the same package in check-only mode so missing runtime files or package leakage fail before merge. A manual **Production Release Bundle** GitHub Actions workflow is restricted to `main`, reruns the repository validators and uploads the release ZIP as an artifact. It does not deploy the site, change DNS or introduce a Vercel/Node/runtime dependency.
-
-
-## Main-branch release artifact automation — 2026-09-29
-
-The verified release workflow now runs automatically on every `main` push and remains manually runnable from `main`. It still performs **artifact generation only**: repository validation, deterministic static ZIP creation, checksum/manifest generation and GitHub Actions artifact upload. It has no hosting credentials, DNS mutation or production deployment step, so merging code does not publish the website live.
-
-
-## High-resolution human image correction — 2026-09-29
-
-A direct asset audit found that the previous semantic human-image set was unsuitable for large editorial sections: several repository files were only 640×480 or heavily compressed, and the source generations also contained soft/gibberish interface detail. The ten semantic human images have been replaced with newly generated standalone 1448×1086 WebP photographs for Hero, About, Software, AI, Growth, Operations, Business/Tax, Team, Industries and Editorial/Blog roles. Hero, About, AI and Editorial pages now point to their dedicated semantic files instead of reusing unrelated images. Static validation now rejects semantic human images below 1400×1000, files below the reviewed quality floor, duplicate semantic binaries, or missing key semantic page wiring. Rendered browser QA remains the visual merge gate.
+Do not begin another mockup-driven redesign before that certification step is completed.
