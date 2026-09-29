@@ -131,7 +131,7 @@ for(const file of propagatedServiceReferencePages){
  assert.match(body,/service-single-included-stage/,file+' missing included-work stage');
  assert.doesNotMatch(body,/live Ritovex|reference template|template rhythm/i,file+' exposes internal reference notes in public copy');
 }
-assert.match(read('websites.html'),/service-single-reference-hero[\s\S]*?<h1 class="h1">Business websites built around the way you work\.<\/h1>/,'Websites H1 must live in the reference hero');
+assert.match(read('websites.html'),/service-single-reference-hero[\s\S]*?<h1 class="h1">Business Websites<\/h1>/,'Websites H1 must use the concise service-name title inside the reference hero');
 assert.match(serviceDetailCss,/\.service-single-reference-overview-grid\{[\s\S]*grid-template-columns:repeat\(2/,'Shared service overview must keep two-column desktop rhythm');
 assert.match(serviceDetailCss,/\.service-single-included-stage>\.container\{[\s\S]*border-top:1px solid #3F4245/,'Shared included-work stage must retain reference separator');
 
