@@ -33,17 +33,31 @@
   padding-top:0!important;
   padding-bottom:0!important;
 }
-.home-page.mockup-parity .rv-header .brand{min-width:92px}
+.home-page.mockup-parity .rv-header .brand{
+  min-width:92px;
+  padding:0!important;
+  border:0!important;
+  border-radius:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+}
 .home-page.mockup-parity .rv-header .brand img{display:none!important}
 .home-page.mockup-parity .rv-header .brand-fallback{
   display:block!important;
   position:static!important;
   width:auto!important;
   height:auto!important;
+  min-width:0!important;
+  min-height:0!important;
   overflow:visible!important;
   clip:auto!important;
   white-space:normal!important;
-  color:#FFFFFF;
+  padding:0!important;
+  border:0!important;
+  border-radius:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+  color:#FFFFFF!important;
   font-size:28px;
   line-height:1;
   font-weight:850;
