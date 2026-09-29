@@ -33,14 +33,14 @@ function walk(dir){
 walk('.');
 assert.equal(htmlFiles.length,32,'expected 32 HTML pages');
 
-const corruptedHumanAssets=[
- 'vsn-human-hero.webp','vsn-human-about.webp','vsn-human-ai.webp',
- 'vsn-human-editorial.webp','vsn-human-atlas.webp'
-];
+// The old atlas remains forbidden. Formerly corrupted semantic filenames are now
+// backed by new high-resolution standalone WebP binaries and are validated by
+// validate_static_site.py for dimensions, size, uniqueness and semantic wiring.
+const legacyCorruptedHumanAssets=['vsn-human-atlas.webp'];
 
 for(const file of htmlFiles){
  const body=read(file);
- corruptedHumanAssets.forEach(asset=>assert.ok(!body.includes(asset),file+' references corrupted human asset '+asset));
+ legacyCorruptedHumanAssets.forEach(asset=>assert.ok(!body.includes(asset),file+' references legacy corrupted human asset '+asset));
  const legal=file.startsWith('legal'+path.sep);
  const fidelityCss=legal?'../assets/ritovex-fidelity.css':'assets/ritovex-fidelity.css';
  const fidelityScript=legal?'../assets/ritovex-fidelity.js':'assets/ritovex-fidelity.js';
