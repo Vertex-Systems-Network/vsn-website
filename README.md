@@ -392,3 +392,8 @@ After the Web Development representative page passed Static Integrity and both r
 ## Final artifact-led detail and utility parity — 2026-09-29
 
 The PR #111 rendered artifacts were reviewed directly against the live Ritovex captures instead of treating green browser automation as pixel-level certification. That review found three measurable gaps: the VSN 404 page was taller and more complex than the reference, Blog detail used listing-scale typography and placed article metadata before the hero image, and Project detail used a larger title/flat metadata strip. This pass removes the extra 404 CTA stage and secondary action, matches reference 404 title scale, moves Blog article metadata below the hero image, and tunes Blog/Project detail typography and project metadata presentation to the rendered reference.
+
+
+## Single-column Blog and Project detail parity — 2026-09-29
+
+A second direct review of the PR #112 screenshots showed that title and metadata scale were corrected, but both VSN single-detail pages still used the older two-column sidebar body while the Ritovex single-blog and single-project references use a wide single-column reading/case-study flow. This pass removes the sidebar shell, keeps the same factual VSN content, adds a second committed human image inside each long-form page, turns the Blog quote into the dark reference-style callout, and keeps Project public-proof disclosure as an inline evidence note rather than a side column.
