@@ -14,6 +14,7 @@ const homeBatch1Js=read('assets/home-batch1.js');
 const homeMockup=read('assets/home-mockup-parity.css');
 const servicesBatch2=read('assets/services-batch2.css');
 const servicesMockup=read('assets/services-mockup-parity.css');
+const aboutMockup=read('assets/about-mockup-parity.css');
 const batch3Polish=read('assets/batch3-page-polish.css');
 
 const servicePages=[
@@ -200,6 +201,15 @@ for(const file of ['index.html','blog.html','projects.html','blog-detail.html','
 }
 
 const about=read('about.html');
+assert.match(about,/<body class="secondary-page about-page about-reference-page about-mockup-parity">/,'About must use approved cinematic parity body contract');
+assert.match(about,/assets\/about-mockup-parity\.css/,'About missing approved cinematic parity stylesheet');
+assert.match(aboutMockup,/\.about-reference-page\.about-mockup-parity \.about-reference-hero>[.]container\{[\s\S]*grid-template-columns:minmax\(350px,.78fr\) minmax\(0,1.22fr\)!important/,'About parity hero split missing');
+assert.match(aboutMockup,/\.about-reference-page\.about-mockup-parity \.about-proof-metrics-grid\{[\s\S]*grid-template-columns:repeat\(4,minmax\(0,1fr\)\)!important/,'About parity proof row missing');
+assert.match(aboutMockup,/\.about-reference-page\.about-mockup-parity \.about-reference-team\{[\s\S]*background:#000000!important/,'About parity team stage must retain cinematic contrast');
+assert.match(aboutMockup,/\.about-reference-page\.about-mockup-parity \.about-team-grid\{[\s\S]*grid-template-columns:repeat\(3,minmax\(0,1fr\)\)!important/,'About parity team grid missing');
+assert.match(aboutMockup,/\.about-reference-page\.about-mockup-parity \.about-reference-credentials\{[\s\S]*background:#000000!important/,'About parity credentials stage must retain dark reference role');
+assert.match(aboutMockup,/@media\(max-width:980px\)/,'About parity mobile breakpoint missing');
+
 const services=read('services.html');
 assert.match(about,/about-reference-hero/);
 assert.match(about,/reference-service-accordion/);
