@@ -1,15 +1,15 @@
 repo: Vertex-Systems-Network/vsn-website
 updated: 2026-09-30
-phase: post-restore-reconciliation
+phase: full-rendered-restore-certification-complete
 current_branch: main
-current_milestone: data-first-restore-certified
+current_milestone: restored-baseline-full-rendered-certified
 project_status: active
 implementation_complete: true
 repository_implementation_percent: 100
 
 canonical_restore:
   pr: 137
-  merged_main_sha: 45df966794cffd4b2695d14e638c8c78f8a2ca75
+  merged_main_sha: 6ad5b3d8d253a85229a4d3a17f7aa10806439ee1
   restored_from_data_first_baseline: dfb37f291b081c5e67479f4aaa53ece7dc9c0608
   restore_reason: remove literal mockup-parity restructuring while preserving VSN content and useful visual upgrades
   restore_scope:
@@ -29,19 +29,19 @@ canonical_restore:
     - SECURITY-HEADERS.md
     - Google Maps privacy disclosure
 
-verified_main_sha: 45df966794cffd4b2695d14e638c8c78f8a2ca75
-static_integrity_run: 680
-static_integrity_passed_sha: 45df966794cffd4b2695d14e638c8c78f8a2ca75
-latest_pr: 137
-latest_static_integrity_run: 680
-latest_verified_main_run: 680
+verified_main_sha: 6ad5b3d8d253a85229a4d3a17f7aa10806439ee1
+static_integrity_run: 682
+static_integrity_passed_sha: 6ad5b3d8d253a85229a4d3a17f7aa10806439ee1
+latest_pr: 138
+latest_static_integrity_run: 682
+latest_verified_main_run: 682
 latest_verified_main_status: passed
-latest_verified_main_sha: 45df966794cffd4b2695d14e638c8c78f8a2ca75
+latest_verified_main_sha: 6ad5b3d8d253a85229a4d3a17f7aa10806439ee1
 
 release_evidence:
-  production_release_bundle_run: 19
+  production_release_bundle_run: 20
   production_release_bundle_status: passed
-  production_release_bundle_sha: 45df966794cffd4b2695d14e638c8c78f8a2ca75
+  production_release_bundle_sha: 6ad5b3d8d253a85229a4d3a17f7aa10806439ee1
 
 architecture:
   type: static-html-css-vanilla-js
@@ -116,7 +116,20 @@ reconciliation:
   checkpoint_file_required: true
 
 visual_browser_certification:
-  status: pending-point-2
-  note: Point 2 must run full primary and secondary rendered browser QA against this restored data-first baseline.
+  status: passed
+  certified_main_runtime_sha: 6ad5b3d8d253a85229a4d3a17f7aa10806439ee1
+  certification_pr: 139
+  certification_pr_disposition: closed-without-merge
+  certification_trigger_head_sha: 4e4e265498be7ec83d9659f59298da746e0aacd1
+  static_integrity_run: 683
+  static_integrity_status: passed
+  primary_visual_browser_run: 138
+  primary_visual_browser_status: passed
+  primary_failures: 0
+  secondary_visual_browser_run: 104
+  secondary_visual_browser_status: passed
+  secondary_failures: 0
+  runtime_change_in_certification_pr: false
+  note: The temporary PR added only an inert assets trigger file and was closed unmerged after certification.
 
-next_valid_action: point-2-full-certification
+next_valid_action: point-3-data-first-home-visual-polish
