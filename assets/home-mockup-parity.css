@@ -9,7 +9,7 @@
   --mp-cream:#FFFFFFFFF;
   --mp-paper:#FFFFFFFFF;
   --mp-line:rgba(255,255,255,.16);
-  --mp-line-dark:rgba(15,20,24,.14);
+  --mp-line-dark:rgba(0,0,0,.14);
   --mp-cyan:#5AC8D6;
   --mp-blue:#6188C6;
   --mp-violet:#625BA8;
@@ -228,7 +228,7 @@
   min-height:260px;
   padding:18px;
   border:1px solid rgba(90,200,214,.32);
-  background:linear-gradient(145deg,rgba(9,19,25,.42),rgba(11,21,28,.13));
+  background:linear-gradient(145deg,rgba(0,0,0,.42),rgba(63,66,69,.13));
   box-shadow:0 0 60px rgba(90,200,214,.08);
   backdrop-filter:blur(4px);
   pointer-events:none;
@@ -770,7 +770,7 @@
   gap:10px;
   min-height:90px;
   padding:12px;
-  border:1px solid rgba(15,20,24,.06);
+  border:1px solid rgba(0,0,0,.06);
   border-radius:5px;
   background:#FFFFFFFFF;
 }
