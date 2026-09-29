@@ -1004,3 +1004,54 @@ input:focus,textarea:focus,select:focus{outline-color:var(--vsn-indigo)!importan
   .about-proof-metrics{padding-bottom:58px!important}
   .about-priority-grid>figure{margin-top:10px}
 }
+
+
+/* 2026-09-29: artifact-led 404 parity with the live reference. */
+.not-found-page .utility-page{
+  min-height:auto!important;
+  padding:150px 24px 130px!important;
+}
+.not-found-page .utility-inner{
+  max-width:720px!important;
+}
+.not-found-page .utility-404-art{
+  font-size:clamp(120px,18vw,260px)!important;
+  margin:0 0 22px!important;
+}
+.not-found-page .utility-inner .h1{
+  font-size:48px!important;
+  line-height:1.5!important;
+  letter-spacing:-.02em!important;
+  margin:0!important;
+}
+.not-found-page .utility-inner .lead{
+  max-width:540px!important;
+  margin:8px auto 0!important;
+  color:#3F4245!important;
+}
+.not-found-page .utility-inner .btn-row{
+  margin-top:24px!important;
+}
+@media(max-width:700px){
+  .not-found-page .utility-page{
+    padding:88px 20px 80px!important;
+  }
+  .not-found-page .utility-404-art{
+    font-size:clamp(84px,27vw,118px)!important;
+    gap:10px!important;
+    margin-bottom:18px!important;
+  }
+  .not-found-page .utility-404-photo{
+    width:96px!important;
+    height:96px!important;
+  }
+  .not-found-page .utility-inner .h1{
+    font-size:30px!important;
+    line-height:1.4!important;
+    letter-spacing:-.02em!important;
+  }
+  .not-found-page .utility-inner .lead{
+    max-width:320px!important;
+    font-size:16px!important;
+  }
+}

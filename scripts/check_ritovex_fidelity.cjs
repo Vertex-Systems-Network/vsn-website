@@ -272,10 +272,21 @@ console.log('Ritovex fidelity passed: shell, 980px mobile navigation, palette lo
 
 
 assert.match(blogDetail,/blog-detail-reference-hero/,'Blog detail must use the reference text-first hero');
-assert.match(blogDetail,/blog-detail-publish-strip/,'Blog detail must show publisher/date/read-time strip before media');
+assert.match(blogDetail,/blog-detail-publish-strip/,'Blog detail must show publisher/date/read-time information');
+assert.equal(blogDetail.indexOf('blog-detail-hero-media') < blogDetail.indexOf('blog-detail-publish-strip'),true,'Blog detail metadata strip must follow the hero image like the rendered reference');
 assert.match(blogDetail,/blog-detail-hero-media/,'Blog detail must use a full-width media stage');
 assert.match(projectDetail,/project-detail-reference-hero/,'Project detail must use the reference text-first hero');
 assert.match(projectDetail,/project-detail-reference-facts/,'Project detail must keep factual project metadata under the hero copy');
 assert.match(projectDetail,/project-detail-reference-media/,'Project detail must use a full-width case-study media stage');
+
+assert.match(read('404.html'),/<body class="editorial-page not-found-page">/,'404 must use its final reference utility class');
+assert.doesNotMatch(read('404.html'),/rv-footer-cta/,'404 must move directly from the utility state into the reference footer');
+assert.doesNotMatch(read('404.html'),/Contact VSN/,'404 must keep a single reference-style return action');
+assert.match(fidelity,/\.not-found-page \.utility-inner \.h1\{[\s\S]*font-size:48px!important/,'404 desktop title must match the rendered reference scale');
+assert.match(fidelity,/@media\(max-width:700px\)\{[\s\S]*\.not-found-page \.utility-inner \.h1\{[\s\S]*font-size:30px!important/,'404 mobile title must match the rendered reference scale');
+assert.match(editorialCss,/\.blog-detail-reference-hero \.h1\{[\s\S]*font-size:clamp\(42px,3\.6vw,56px\)/,'Blog detail title must use article-scale typography rather than listing-hero scale');
+assert.match(editorialCss,/\.project-detail-reference-hero \.h1\{[\s\S]*font-size:clamp\(64px,5\.6vw,84px\)/,'Project detail title must use the rendered project-single scale');
+assert.match(editorialCss,/\.project-detail-reference-facts\{[\s\S]*background:rgba\(126,128,131,\.08\)/,'Project facts must keep the light reference metadata panel');
+
 assert.match(editorialCss,/\.blog-detail-publish-strip\{[\s\S]*grid-template-columns:repeat\(3/,'Blog detail publish strip must use a three-column desktop rhythm');
 assert.match(editorialCss,/\.project-detail-reference-facts\{[\s\S]*border-top-color:#3F4245/,'Project detail factual strip must remain visually legible');
