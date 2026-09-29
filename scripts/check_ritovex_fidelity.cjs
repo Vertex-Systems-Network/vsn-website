@@ -20,6 +20,7 @@ const productsMockup=read('assets/products-mockup-parity.css');
 const industriesMockup=read('assets/industries-mockup-parity.css');
 const workMockup=read('assets/work-mockup-parity.css');
 const blogMockup=read('assets/blog-mockup-parity.css');
+const contactMockup=read('assets/contact-mockup-parity.css');
 const batch3Polish=read('assets/batch3-page-polish.css');
 
 const servicePages=[
@@ -90,6 +91,16 @@ for(const file of servicePages){
 }
 
 const contact=read('contact.html');
+assert.match(contact,/<body class="secondary-page contact-page contact-mockup-parity">/,'Contact must use approved cinematic parity body contract');
+assert.match(contact,/assets\/contact-mockup-parity\.css/,'Contact missing approved cinematic parity stylesheet');
+assert.match(contactMockup,/\.contact-page\.contact-mockup-parity \.contact-hero-grid\{[\s\S]*grid-template-columns:minmax\(350px,.82fr\) minmax\(0,1.18fr\)!important/,'Contact cinematic hero split missing');
+assert.match(contactMockup,/\.contact-page\.contact-mockup-parity \.contact-reference-form-grid\{[\s\S]*grid-template-columns:minmax\(0,.9fr\) minmax\(0,1.1fr\)!important/,'Contact image/form split missing from cinematic parity');
+assert.match(contactMockup,/\.contact-page\.contact-mockup-parity \.contact-info-grid\{[\s\S]*grid-template-columns:repeat\(3,minmax\(0,1fr\)\)!important/,'Contact facts must retain three-column desktop rhythm');
+assert.match(contactMockup,/\.contact-page\.contact-mockup-parity \.contact-route-grid\{[\s\S]*grid-template-columns:repeat\(3,minmax\(0,1fr\)\)!important/,'Contact route stage must retain three-column desktop rhythm');
+assert.match(contactMockup,/\.contact-page\.contact-mockup-parity \.contact-step-grid\{[\s\S]*grid-template-columns:repeat\(3,minmax\(0,1fr\)\)!important/,'Contact next-step stage must retain three-column desktop rhythm');
+assert.match(contactMockup,/\.contact-page\.contact-mockup-parity \.contact-map iframe\{[\s\S]*height:520px!important/,'Contact map must retain cinematic desktop height');
+assert.match(contactMockup,/@media\(max-width:700px\)/,'Contact parity mobile breakpoint missing');
+
 assert.match(contact,/https:\/\/maps\.google\.com\/maps\?/, 'contact page missing Google Maps embed');
 assert.match(contact,/frame-src[^;]*google\.com/i,'contact CSP missing Google Maps frame permission');
 assert.doesNotMatch(contact,/openstreetmap/i,'contact page still contains OpenStreetMap residue');
