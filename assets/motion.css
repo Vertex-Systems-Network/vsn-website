@@ -104,3 +104,26 @@
  opacity:1!important;
  transform:none!important;
 }
+
+
+/* Batch 3 first-section reveal targets. */
+.motion-prep:not(.motion-fallback) .service-hero-copy>*,
+.motion-prep:not(.motion-fallback) .service-hero-visual,
+.motion-prep:not(.motion-fallback) .contact-hero-copy>*,
+.motion-prep:not(.motion-fallback) .contact-hero-visual{
+ opacity:0;
+ transform:translate3d(0,28px,0);
+ transition:opacity .72s cubic-bezier(.22,1,.36,1),transform .72s cubic-bezier(.22,1,.36,1);
+ transition-delay:var(--rv-delay,0ms);
+}
+.motion-prep:not(.motion-fallback) .service-hero-visual,
+.motion-prep:not(.motion-fallback) .contact-hero-visual{
+ transform:translate3d(0,34px,0) scale(.985);
+}
+.motion-fallback .service-hero-copy>*,
+.motion-fallback .service-hero-visual,
+.motion-fallback .contact-hero-copy>*,
+.motion-fallback .contact-hero-visual{
+ opacity:1!important;
+ transform:none!important;
+}
