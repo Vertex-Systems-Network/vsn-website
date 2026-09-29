@@ -20,7 +20,7 @@ production_readiness_percent: 95
 requested_content_refresh_percent: 100
 content_refresh_ci: passed
 static_integrity_run: 568
-static_integrity_passed_sha: 567a2ae37cd63f87db2150fbd6c68adce76790e9
+static_integrity_passed_sha: de32fde03c29aebefda10486d2376ea7e962bff2
 local_http_server_required: false
 vercel_required: false
 node_runtime_required: false
@@ -253,9 +253,9 @@ exact_logo_palette_merge_sha: 113c82e9ef655627f7abcdcee42eb1178478e547
 exact_logo_palette_merge_pr: 76
 main_visual_state: ritovex-corrective-rebuild-exact-palette-blog-mobile-header-footer-contrast
 
-latest_verified_main_run: 530
+latest_verified_main_run: 568
 latest_verified_main_status: passed
-latest_verified_main_sha: 8a0041b5ff83f15d8e9fd427383485afe1b0c304
+latest_verified_main_sha: de32fde03c29aebefda10486d2376ea7e962bff2
 stale_recovery_pr_74_status: closed-superseded
 
 homepage_blog_preview_percent: 100
