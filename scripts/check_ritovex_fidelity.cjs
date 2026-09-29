@@ -118,6 +118,21 @@ assert.match(homeBatch1,/\.home-proof-cards\{/,'Home public proof visual grid mi
 assert.match(homeBatch1,/\.home-blog-section\{[\s\S]*#000000!important/,'Home Blog must use the dark visual treatment');
 assert.match(homeBatch1Js,/setInterval\(\(\)=>show\(active\+1\),6000\)/,'Home slider must rotate at a restrained cadence');
 assert.match(homeBatch1Js,/requestAnimationFrame\(updateParallax\)/,'Home hero parallax must be requestAnimationFrame-driven');
+assert.match(homeBatch1,/Point 3 — data-first Home visual polish/,'Home missing Point 3 data-first visual polish contract');
+assert.match(homeBatch1,/\.home-page \.home-credentials\{[\s\S]*?background:#FFFFFF!important/,'Point 3 Home credentials strip must use the light evidence treatment');
+assert.match(homeBatch1,/\.home-page \.home-product-layout\{[\s\S]*?grid-template-columns:minmax\(0,.86fr\) minmax\(500px,1.14fr\)!important/,'Point 3 Home product split must keep more room for VSN copy');
+assert.match(homeBatch1,/@media\(max-width:760px\)\{[\s\S]*?\.home-page \.home-credentials-grid\{[\s\S]*?grid-template-columns:repeat\(2,minmax\(0,1fr\)\)!important/,'Point 3 mobile evidence strip must use a readable two-column layout');
+[
+ 'Good technology should feel simple.',
+ 'Your needs. Our expertise.',
+ 'See what we can shape together.',
+ 'We build for ourselves, too.',
+ 'You should always know who owns the work.',
+ 'Proof you can inspect.',
+ 'A clear path from idea to handover.',
+ 'What should we build next?',
+ 'Ideas for building clearer digital systems.'
+].forEach(copy=>assert.ok(home.includes(copy),'Point 3 must preserve VSN Home content: '+copy));
 assert.doesNotMatch(homeBatch1Js,/pointermove/,'Home hero parallax must not use pointermove loops');
 const blog=read('blog.html');
 const projects=read('projects.html');
