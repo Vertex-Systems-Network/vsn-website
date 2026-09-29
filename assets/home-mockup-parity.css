@@ -3,18 +3,18 @@
    Visual geometry is matched while factual VSN content replaces unverified claims. */
 
 .home-page.mockup-parity{
-  --mp-black:#080b0d;
-  --mp-black-2:#0d1215;
-  --mp-charcoal:#151b1f;
-  --mp-cream:#f4f0e9;
-  --mp-paper:#fbfaf7;
+  --mp-black:#000000;
+  --mp-black-2:#000000;
+  --mp-charcoal:#3F4245;
+  --mp-cream:#FFFFFFFFF;
+  --mp-paper:#FFFFFFFFF;
   --mp-line:rgba(255,255,255,.16);
   --mp-line-dark:rgba(15,20,24,.14);
   --mp-cyan:#5AC8D6;
   --mp-blue:#6188C6;
   --mp-violet:#625BA8;
   background:var(--mp-black);
-  color:#fff;
+  color:#FFFFFFFFF;
 }
 
 /* Header sits on top of the cinematic hero, as in the approved mockup. */
@@ -43,7 +43,7 @@
   overflow:visible!important;
   clip:auto!important;
   white-space:normal!important;
-  color:#fff;
+  color:#FFFFFFFFF;
   font-size:28px;
   line-height:1;
   font-weight:850;
@@ -52,26 +52,26 @@
 .home-page.mockup-parity .rv-header .nav-links{gap:28px!important}
 .home-page.mockup-parity .rv-header .nav-links>a,
 .home-page.mockup-parity .rv-header .nav-dropdown>summary{
-  color:#fff!important;
+  color:#FFFFFFFFF!important;
   font-size:12px!important;
   opacity:.9;
 }
 .home-page.mockup-parity .rv-header .nav-links>a:hover,
 .home-page.mockup-parity .rv-header .nav-dropdown>summary:hover{opacity:1}
-.home-page.mockup-parity .rv-header .nav-dropdown .nav-menu{background:#fff!important}
+.home-page.mockup-parity .rv-header .nav-dropdown .nav-menu{background:#FFFFFFFFF!important}
 .home-page.mockup-parity .rv-header .nav-dropdown .nav-menu,
 .home-page.mockup-parity .rv-header .nav-dropdown .nav-menu a,
-.home-page.mockup-parity .rv-header .nav-dropdown .nav-menu strong{color:#111!important}
+.home-page.mockup-parity .rv-header .nav-dropdown .nav-menu strong{color:#000000!important}
 .home-page.mockup-parity .rv-header-cta{
   border:0!important;
   border-radius:999px!important;
-  background:#fff!important;
-  color:#111!important;
+  background:#FFFFFFFFF!important;
+  color:#000000!important;
   padding:12px 20px!important;
   min-height:42px!important;
 }
 .home-page.mockup-parity .mobile-toggle{
-  color:#fff!important;
+  color:#FFFFFFFFF!important;
   border-color:rgba(255,255,255,.3)!important;
   background:rgba(0,0,0,.22)!important;
 }
@@ -88,7 +88,7 @@
   min-width:0;
   min-height:720px;
   overflow:hidden;
-  background:#0b1013;
+  background:#000000;
 }
 .mockup-hero-main .home-hero-stage{
   --hero-shift:0px;
@@ -99,7 +99,7 @@
   border:0!important;
   border-radius:0!important;
   box-shadow:none!important;
-  background:#0b1013!important;
+  background:#000000!important;
 }
 .mockup-hero-main .home-hero-slides{position:absolute;inset:0}
 .mockup-hero-main .home-hero-slide{
@@ -138,7 +138,7 @@
 .mockup-kicker{
   display:block;
   margin-bottom:18px;
-  color:#fff;
+  color:#FFFFFFFFF;
   font-size:11px;
   font-weight:750;
   text-transform:uppercase;
@@ -147,13 +147,13 @@
 }
 .mockup-hero-copy h1{
   margin:0 0 22px;
-  color:#fff;
+  color:#FFFFFFFFF;
   font-size:clamp(58px,5.25vw,92px);
   line-height:.94;
   font-weight:520;
   letter-spacing:-.062em;
 }
-.mockup-hero-copy h1 span{color:#d9dadd}
+.mockup-hero-copy h1 span{color:#FFFFFF}
 .mockup-hero-copy p{
   max-width:570px;
   margin:0;
@@ -171,15 +171,15 @@
   border-radius:8px!important;
   min-height:48px;
   padding:0 21px!important;
-  background:#fff!important;
-  color:#111!important;
-  border-color:#fff!important;
+  background:#FFFFFFFFF!important;
+  color:#000000!important;
+  border-color:#FFFFFFFFF!important;
 }
 .mockup-play{
   display:inline-flex;
   align-items:center;
   gap:10px;
-  color:#fff;
+  color:#FFFFFFFFF;
   font-size:13px;
 }
 .mockup-play>span{
@@ -206,8 +206,8 @@
   margin-left:-7px;
   border:2px solid rgba(255,255,255,.9);
   border-radius:50%;
-  background:#1d262c;
-  color:#fff;
+  background:#3F4245;
+  color:#FFFFFFFFF;
   font-style:normal;
   font-size:8px;
   font-weight:800;
@@ -235,7 +235,7 @@
 }
 .mockup-ai-overlay strong{
   display:block;
-  color:#fff;
+  color:#FFFFFFFFF;
   font-size:46px;
   line-height:1;
   letter-spacing:-.05em;
@@ -243,7 +243,7 @@
 .mockup-ai-overlay span{
   display:block;
   margin-top:6px;
-  color:#8cd5df;
+  color:#5AC8D6;
   font-size:9px;
   letter-spacing:.15em;
 }
@@ -277,7 +277,7 @@
   border-radius:999px;
   background:rgba(255,255,255,.34);
 }
-.mockup-hero-controls .home-hero-dot.is-active{width:50px;background:#fff}
+.mockup-hero-controls .home-hero-dot.is-active{width:50px;background:#FFFFFFFFF}
 
 /* Process panel */
 .mockup-process-panel{
@@ -286,7 +286,7 @@
   overflow:hidden;
   background:
     radial-gradient(circle at 18% 20%,rgba(90,200,214,.05),transparent 26%),
-    #0a0e10;
+    #000000;
 }
 .mockup-process-panel:after{
   content:"";
@@ -299,7 +299,7 @@
   border:1px solid rgba(90,200,214,.10);
   box-shadow:0 0 0 28px rgba(98,91,168,.035),0 0 0 56px rgba(90,200,214,.025);
 }
-.mockup-process-panel .mockup-kicker{color:#9fa5a9}
+.mockup-process-panel .mockup-kicker{color:#7E8083}
 .mockup-process-panel h2{
   margin:0;
   max-width:340px;
@@ -311,7 +311,7 @@
 .mockup-process-panel>p{
   max-width:390px;
   margin:20px 0 22px;
-  color:#c4c6c8;
+  color:#7E8083;
   font-size:13px;
   line-height:1.6;
 }
@@ -319,8 +319,8 @@
   min-height:44px;
   padding:0 18px!important;
   border-radius:6px!important;
-  background:#fff!important;
-  color:#111!important;
+  background:#FFFFFFFFF!important;
+  color:#000000!important;
 }
 .mockup-process-list{
   position:relative;
@@ -354,19 +354,19 @@
   height:38px;
   border:1px solid rgba(255,255,255,.72);
   border-radius:50%;
-  background:#1a1f22;
-  color:#fff;
+  background:#3F4245;
+  color:#FFFFFFFFF;
   font-size:10px;
 }
 .mockup-process-item h3{
   margin:0 0 6px;
-  color:#fff;
+  color:#FFFFFFFFF;
   font-size:18px;
   font-weight:520;
 }
 .mockup-process-item p{
   margin:0;
-  color:#aeb2b5;
+  color:#7E8083;
   font-size:11px;
   line-height:1.5;
 }
@@ -374,7 +374,7 @@
 /* Capability strip — same geometry as mockup trust strip, but factual. */
 .mockup-platform-strip{
   background:var(--mp-cream);
-  color:#111;
+  color:#000000;
   border-bottom:1px solid var(--mp-line-dark);
 }
 .mockup-platform-inner{
@@ -388,7 +388,7 @@
   gap:12px;
 }
 .mockup-platform-label{
-  color:#65676a;
+  color:#7E8083;
   font-size:10px;
   line-height:1.35;
   text-transform:uppercase;
@@ -397,7 +397,7 @@
 .mockup-platform-item{
   display:flex;
   justify-content:center;
-  color:#141516;
+  color:#000000;
   font-size:14px;
   font-weight:800;
   white-space:nowrap;
@@ -407,8 +407,8 @@
   display:flex;
   align-items:center;
   justify-content:flex-end;
-  border-left:1px solid #cfcac1;
-  color:#111;
+  border-left:1px solid #7E8083;
+  color:#000000;
   font-size:10px;
   font-weight:800;
   text-transform:uppercase;
@@ -432,7 +432,7 @@
 .mockup-services-intro{
   padding:18px 0;
 }
-.mockup-services-intro .mockup-kicker{margin-bottom:10px;color:#c3c6c8}
+.mockup-services-intro .mockup-kicker{margin-bottom:10px;color:#7E8083}
 .mockup-services-intro h2{
   max-width:440px;
   margin:0;
@@ -444,14 +444,14 @@
 .mockup-services-intro p{
   max-width:420px;
   margin:16px 0 22px;
-  color:#b7babd;
+  color:#7E8083;
   font-size:12px;
   line-height:1.55;
 }
 .mockup-services-intro .btn{
   border-radius:6px!important;
-  background:#fff!important;
-  color:#111!important;
+  background:#FFFFFFFFF!important;
+  color:#000000!important;
   min-height:42px;
   padding:0 17px!important;
 }
@@ -466,8 +466,8 @@
   overflow:hidden;
   border:1px solid rgba(255,255,255,.13);
   border-radius:7px;
-  color:#fff;
-  background:#14191c;
+  color:#FFFFFFFFF;
+  background:#3F4245;
 }
 .mockup-service-card img{
   width:100%;
@@ -478,14 +478,14 @@
 .mockup-service-card-body{padding:16px}
 .mockup-service-card h3{
   margin:0 0 7px;
-  color:#fff;
+  color:#FFFFFFFFF;
   font-size:16px;
   line-height:1.15;
 }
 .mockup-service-card p{
   margin:0;
   min-height:52px;
-  color:#b6b9bb;
+  color:#7E8083;
   font-size:11px;
   line-height:1.45;
 }
@@ -499,7 +499,7 @@
   height:34px;
   border:1px solid rgba(255,255,255,.52);
   border-radius:50%;
-  color:#fff;
+  color:#FFFFFFFFF;
   font-size:15px;
 }
 
@@ -507,7 +507,7 @@
 .mockup-industries{
   padding:24px 0 26px;
   background:var(--mp-cream);
-  color:#111;
+  color:#000000;
 }
 .mockup-industries-grid{
   display:grid;
@@ -515,7 +515,7 @@
   gap:34px;
   align-items:end;
 }
-.mockup-industries-copy .mockup-kicker{margin-bottom:8px;color:#666}
+.mockup-industries-copy .mockup-kicker{margin-bottom:8px;color:#7E8083}
 .mockup-industries-copy h2{
   margin:0;
   max-width:330px;
@@ -527,15 +527,15 @@
 .mockup-industries-copy p{
   max-width:360px;
   margin:12px 0 18px;
-  color:#515356;
+  color:#7E8083;
   font-size:11px;
   line-height:1.5;
 }
 .mockup-industries-copy .btn{
   min-height:40px;
   border-radius:5px!important;
-  background:#111!important;
-  color:#fff!important;
+  background:#000000!important;
+  color:#FFFFFFFFF!important;
   padding:0 15px!important;
 }
 .mockup-industry-cards{
@@ -546,8 +546,8 @@
 .mockup-industry-card{
   overflow:hidden;
   border-radius:5px;
-  background:#fff;
-  color:#111;
+  background:#FFFFFFFFF;
+  color:#000000;
 }
 .mockup-industry-card img{
   width:100%;
@@ -595,7 +595,7 @@
   gap:34px;
   align-items:center;
 }
-.mockup-work-copy .mockup-kicker{margin-bottom:10px;color:#bfc3c5}
+.mockup-work-copy .mockup-kicker{margin-bottom:10px;color:#7E8083}
 .mockup-work-copy h2{
   margin:0;
   font-size:clamp(34px,2.7vw,48px);
@@ -605,7 +605,7 @@
 }
 .mockup-work-copy p{
   margin:14px 0 18px;
-  color:#b2b6b8;
+  color:#7E8083;
   font-size:11px;
   line-height:1.5;
 }
@@ -613,8 +613,8 @@
 .mockup-insights-head .btn{
   min-height:40px;
   border-radius:5px!important;
-  background:#fff!important;
-  color:#111!important;
+  background:#FFFFFFFFF!important;
+  color:#000000!important;
   padding:0 15px!important;
 }
 .mockup-featured-card{
@@ -623,7 +623,7 @@
   overflow:hidden;
   border:1px solid rgba(255,255,255,.14);
   border-radius:7px;
-  background:#12171a;
+  background:#3F4245;
 }
 .mockup-featured-card img{
   position:absolute;
@@ -655,17 +655,17 @@
 }
 .mockup-featured-content h3{
   margin:0 0 7px;
-  color:#fff;
+  color:#FFFFFFFFF;
   font-size:22px;
   font-weight:520;
 }
 .mockup-featured-content p{
   margin:0 0 16px;
-  color:#d6d8d9;
+  color:#FFFFFF;
   font-size:10px;
   line-height:1.45;
 }
-.mockup-featured-content a{color:#fff;font-size:11px}
+.mockup-featured-content a{color:#FFFFFFFFF;font-size:11px}
 .mockup-featured-store{
   position:absolute;
   z-index:3;
@@ -676,8 +676,8 @@
   width:40px;
   height:40px;
   border-radius:8px;
-  background:#6eb944;
-  color:#fff;
+  background:#6188C6;
+  color:#FFFFFFFFF;
   font-size:9px;
   font-weight:850;
 }
@@ -696,7 +696,7 @@
   height:32px;
   border:1px solid rgba(255,255,255,.55);
   border-radius:50%;
-  color:#fff;
+  color:#FFFFFFFFF;
 }
 .mockup-insights{
   display:grid;
@@ -707,7 +707,7 @@
 .mockup-insights-head{
   padding:8px 6px 8px 0;
 }
-.mockup-insights-head .mockup-kicker{margin-bottom:8px;color:#bfc3c5}
+.mockup-insights-head .mockup-kicker{margin-bottom:8px;color:#7E8083}
 .mockup-insights-head h3{
   margin:0 0 18px;
   font-size:27px;
@@ -718,8 +718,8 @@
 .mockup-insight-card{
   overflow:hidden;
   border-radius:5px;
-  background:#fff;
-  color:#111;
+  background:#FFFFFFFFF;
+  color:#000000;
 }
 .mockup-insight-card img{
   width:100%;
@@ -727,7 +727,7 @@
   object-fit:cover;
 }
 .mockup-insight-body{padding:10px 11px 11px}
-.mockup-insight-body small{color:#75777a;font-size:8px}
+.mockup-insight-body small{color:#7E8083;font-size:8px}
 .mockup-insight-body h4{
   margin:6px 0 12px;
   min-height:56px;
@@ -735,13 +735,13 @@
   line-height:1.2;
   font-weight:600;
 }
-.mockup-insight-body a{color:#111;font-size:9px;font-weight:750}
+.mockup-insight-body a{color:#000000;font-size:9px;font-weight:750}
 
 /* Factual public proof row replacing fake testimonial content while matching the same slot. */
 .mockup-proof-row{
   padding:10px 0;
   background:var(--mp-cream);
-  color:#111;
+  color:#000000;
 }
 .mockup-proof-grid{
   display:grid;
@@ -750,7 +750,7 @@
   align-items:stretch;
 }
 .mockup-proof-intro{padding:12px 12px 10px 0}
-.mockup-proof-intro .mockup-kicker{margin-bottom:7px;color:#6f7173}
+.mockup-proof-intro .mockup-kicker{margin-bottom:7px;color:#7E8083}
 .mockup-proof-intro h2{
   margin:0 0 8px;
   font-size:25px;
@@ -760,7 +760,7 @@
 }
 .mockup-proof-intro p{
   margin:0;
-  color:#696b6d;
+  color:#7E8083;
   font-size:10px;
   line-height:1.4;
 }
@@ -772,7 +772,7 @@
   padding:12px;
   border:1px solid rgba(15,20,24,.06);
   border-radius:5px;
-  background:#fff;
+  background:#FFFFFFFFF;
 }
 .mockup-proof-icon{
   display:grid;
@@ -780,8 +780,8 @@
   width:36px;
   height:36px;
   border-radius:50%;
-  background:#111;
-  color:#fff;
+  background:#000000;
+  color:#FFFFFFFFF;
   font-size:8px;
   font-weight:850;
 }
@@ -792,14 +792,14 @@
 }
 .mockup-proof-item span{
   display:block;
-  color:#67696c;
+  color:#7E8083;
   font-size:9px;
   line-height:1.35;
 }
 .mockup-proof-item a{
   display:inline-block;
   margin-top:8px;
-  color:#111;
+  color:#000000;
   font-size:8px;
   font-weight:800;
 }
@@ -819,7 +819,7 @@
   gap:28px;
   align-items:center;
 }
-.mockup-cta-grid .mockup-kicker{margin:0;color:#aeb2b5}
+.mockup-cta-grid .mockup-kicker{margin:0;color:#7E8083}
 .mockup-cta-grid h2{
   margin:0;
   font-size:29px;
@@ -829,7 +829,7 @@
 }
 .mockup-cta-grid p{
   margin:5px 0 0;
-  color:#aeb2b5;
+  color:#7E8083;
   font-size:10px;
 }
 .mockup-cta-actions{display:flex;gap:8px}
@@ -838,11 +838,11 @@
   border-radius:5px!important;
   padding:0 15px!important;
 }
-.mockup-cta-actions .btn:first-child{background:#fff!important;color:#111!important;border-color:#fff!important}
-.mockup-cta-actions .btn:last-child{background:transparent!important;color:#fff!important;border-color:rgba(255,255,255,.34)!important}
+.mockup-cta-actions .btn:first-child{background:#FFFFFFFFF!important;color:#000000!important;border-color:#FFFFFFFFF!important}
+.mockup-cta-actions .btn:last-child{background:transparent!important;color:#FFFFFFFFF!important;border-color:rgba(255,255,255,.34)!important}
 
 .home-page.mockup-parity .mockup-footer{
-  background:#070a0c!important;
+  background:#000000!important;
   border-top:1px solid rgba(255,255,255,.09)!important;
 }
 .mockup-footer-inner{
@@ -860,12 +860,12 @@
   gap:28px;
 }
 .mockup-footer-brand strong{
-  color:#fff;
+  color:#FFFFFFFFF;
   font-size:23px;
   letter-spacing:-.04em;
 }
 .mockup-footer-brand span{
-  color:#a4a8ab;
+  color:#7E8083;
   font-size:9px;
 }
 .mockup-footer-nav,
@@ -876,7 +876,7 @@
 }
 .mockup-footer-nav a,
 .mockup-footer-meta a{
-  color:#c8cbcd;
+  color:#7E8083;
   font-size:9px;
 }
 .mockup-footer-meta{justify-content:flex-end}
