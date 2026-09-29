@@ -1250,3 +1250,32 @@
   }
 }
 
+/* Point 3 final mobile cascade lock: preserve intended single-column reading order. */
+@media(max-width:1080px){
+  .home-page .home-about-intro{
+    grid-template-columns:minmax(0,1fr)!important;
+    width:100%;
+    min-width:0;
+  }
+}
+@media(max-width:760px){
+  .home-page .home-about-intro,
+  .home-proof-header{
+    grid-template-columns:minmax(0,1fr)!important;
+    width:100%;
+    min-width:0;
+  }
+  .home-page .home-showcase-grid{
+    grid-template-columns:minmax(0,1fr)!important;
+    grid-auto-flow:row!important;
+    grid-auto-columns:minmax(0,1fr)!important;
+  }
+  .home-page .home-showcase-card-wide,
+  .home-page .home-showcase-card:not(.home-showcase-card-wide){
+    grid-column:1!important;
+    grid-row:auto!important;
+    min-width:0;
+    max-width:100%;
+  }
+}
+
