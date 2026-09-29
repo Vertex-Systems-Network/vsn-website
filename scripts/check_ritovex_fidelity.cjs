@@ -131,7 +131,7 @@ for(const file of propagatedServiceReferencePages){
  assert.match(body,/service-single-included-stage/,file+' missing included-work stage');
  assert.doesNotMatch(body,/live Ritovex|reference template|template rhythm/i,file+' exposes internal reference notes in public copy');
 }
-assert.match(read('websites.html'),/service-single-reference-hero[\s\S]*?<h1 class="h1">Business websites built around the way you work\.<\/h1>/,'Websites H1 must live in the reference hero');
+assert.match(read('websites.html'),/service-single-reference-hero[\s\S]*?<h1 class="h1">Business Websites<\/h1>/,'Websites H1 must use the concise service-name title inside the reference hero');
 assert.match(serviceDetailCss,/\.service-single-reference-overview-grid\{[\s\S]*grid-template-columns:repeat\(2/,'Shared service overview must keep two-column desktop rhythm');
 assert.match(serviceDetailCss,/\.service-single-included-stage>\.container\{[\s\S]*border-top:1px solid #3F4245/,'Shared included-work stage must retain reference separator');
 
@@ -267,6 +267,31 @@ assert.match(motion,/observer\.unobserve/,'motion.js reveal must remain one-shot
 assert.doesNotMatch(fidelityJs,/IntersectionObserver/,'fidelity JS must not own a second viewport reveal observer');
 assert.doesNotMatch(fidelityJs,/rv-fidelity-reveal/,'fidelity JS must not re-hide rendered sections');
 assert.doesNotMatch(fidelity,/\.rv-fidelity-reveal/,'fidelity CSS must not contain a second hidden reveal state');
+
+
+const expectedServiceHeroTitles={
+ 'software.html':'Custom Software &amp; SaaS',
+ 'web-development-ecommerce.html':'Web Development &amp; E-commerce',
+ 'websites.html':'Business Websites',
+ 'ecommerce.html':'E-commerce Development',
+ 'mobile-app-development.html':'Mobile App Development',
+ 'ai-automation.html':'AI Solutions',
+ 'profile.html':'Authority Profile',
+ 'social-media.html':'Digital Marketing &amp; Growth',
+ 'bpo.html':'BPO Services',
+ 'business-solutions.html':'Business Solutions',
+ 'tax-consulting.html':'Tax Consultancy',
+ 'resource-augmentation.html':'Resource Augmentation'
+};
+for(const [file,title] of Object.entries(expectedServiceHeroTitles)){
+ const body=read(file);
+ assert.ok(body.includes('<h1 class="h1">'+title+'</h1>'),file+' must use the concise service-name H1');
+}
+assert.match(serviceDetailCss,/rendered-reference service-name hero scale/,'Service-detail CSS missing rendered-reference hero-title scale');
+assert.match(serviceDetailCss,/font-size:30px;[\s\S]*line-height:1\.3/,'Service-detail mobile hero title must match the compact reference scale');
+assert.match(editorialCss,/rendered-reference exact single-detail heading metrics/,'Editorial CSS missing exact single-detail heading metrics');
+assert.match(editorialCss,/\.blog-detail-reference-hero \.h1\{[\s\S]*font-size:48px[\s\S]*line-height:1\.5/,'Blog detail desktop heading metric must stay reference-aligned');
+assert.match(editorialCss,/\.project-detail-reference-hero \.h1\{[\s\S]*font-size:80px[\s\S]*line-height:1\.5/,'Project detail desktop heading metric must stay reference-aligned');
 
 console.log('Ritovex fidelity passed: shell, 980px mobile navigation, palette lock, direct imagery, service FAQs/forms, Google Map, distinct editorial/project templates, 404 and single reveal owner are intact.');
 
