@@ -503,3 +503,16 @@ blog_detail_dark_quote_callout: true
 project_detail_truthfulness_note: inline
 editorial_single_body_reference_source: pr-112-rendered-artifacts-vs-live-ritovex
 next_manual_reference_scope: certify-editorial-single-body-then-final-state-reconciliation
+
+
+service_name_hero_parity_status: implemented-in-review
+service_name_hero_parity_pages: 12
+service_name_hero_strategy: concise-service-name-h1-plus-existing-descriptive-lead
+service_name_hero_desktop_scale: clamp-72-8.33vw-120
+service_name_hero_mobile_scale: 30px
+blog_detail_reference_heading_desktop: 48px
+blog_detail_reference_heading_mobile: 24px
+project_detail_reference_heading_desktop: 80px
+project_detail_reference_heading_mobile: 28px
+service_name_hero_reference_source: pr-113-rendered-artifacts-plus-live-ritovex
+next_manual_reference_scope: certify-title-parity-and-reconcile-final-state
