@@ -18,6 +18,7 @@ const aboutMockup=read('assets/about-mockup-parity.css');
 const projectsMockup=read('assets/projects-mockup-parity.css');
 const productsMockup=read('assets/products-mockup-parity.css');
 const industriesMockup=read('assets/industries-mockup-parity.css');
+const workMockup=read('assets/work-mockup-parity.css');
 const batch3Polish=read('assets/batch3-page-polish.css');
 
 const servicePages=[
@@ -149,6 +150,7 @@ const blogDetail=read('blog-detail.html');
 const projectDetail=read('project-detail.html');
 const products=read('products.html');
 const industries=read('industries.html');
+const work=read('work.html');
 const webCommerce=read('web-development-ecommerce.html');
 const serviceDetailCss=read('assets/ritovex-service-detail.css');
 assert.match(home,/href="blog-detail\.html"/,'Home mockup insights missing published article link');
@@ -198,6 +200,21 @@ assert.match(industriesMockup,/\.industries-page\.industries-mockup-parity main>
 assert.match(industriesMockup,/\.industries-page\.industries-mockup-parity main>\.section:nth-of-type\(2\) \.service-grid\{[\s\S]*grid-template-columns:repeat\(4,minmax\(0,1fr\)\)!important/,'Industries connected-capability stage must retain four-column desktop rhythm');
 assert.match(industriesMockup,/\.industries-page\.industries-mockup-parity main>\.section:nth-of-type\(3\) \.process\{[\s\S]*grid-template-columns:repeat\(4,minmax\(0,1fr\)\)!important/,'Industries process must retain four-column desktop rhythm');
 assert.match(industriesMockup,/@media\(max-width:700px\)/,'Industries parity mobile breakpoint missing');
+assert.match(work,/<body class="company-proof-page work-page work-mockup-parity">/,'Work must use approved cinematic parity body contract');
+assert.match(work,/assets\/work-mockup-parity\.css/,'Work missing approved cinematic parity stylesheet');
+assert.match(work,/vsn-human-team\.webp/,'Work hero must use committed team imagery');
+assert.equal((work.match(/class="check"/g)||[]).length,3,'Work public product proof must retain three evidence checks');
+assert.equal((work.match(/class="card"/g)||[]).length,4,'Work case-study publication standard must retain four evidence cards');
+assert.equal((work.match(/class="evidence-panel"/g)||[]).length,1,'Work must retain one verified public evidence panel');
+assert.match(work,/No fabricated social proof\./,'Work must retain no-fabricated-social-proof notice');
+assert.match(work,/Google reviews/,'Work must retain explicit Google review verification guard');
+assert.match(work,/apps\.shopify\.com\/vsn-metafields/,'Work missing Shopify App Store proof link');
+assert.match(work,/github\.com\/Vertex-Systems-Network/,'Work missing public GitHub proof link');
+assert.match(workMockup,/\.work-page\.work-mockup-parity \.rv-company-hero-grid\{[\s\S]*grid-template-columns:minmax\(350px,.84fr\) minmax\(0,1.16fr\)!important/,'Work cinematic hero split missing');
+assert.match(workMockup,/\.work-page\.work-mockup-parity \.cards-4\{[\s\S]*grid-template-columns:repeat\(4,minmax\(0,1fr\)\)!important/,'Work evidence grid must retain four-column desktop rhythm');
+assert.match(workMockup,/\.work-page\.work-mockup-parity \.review-layout\{[\s\S]*grid-template-columns:minmax\(0,.9fr\) minmax\(0,1.1fr\)!important/,'Work review-source split missing');
+assert.match(workMockup,/@media\(max-width:700px\)/,'Work parity mobile breakpoint missing');
+
 
 
 assert.match(blogDetail,/<body class="editorial-page blog-detail-page">/);
