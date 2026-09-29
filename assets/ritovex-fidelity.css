@@ -1055,3 +1055,14 @@ input:focus,textarea:focus,select:focus{outline-color:var(--vsn-indigo)!importan
     font-size:16px!important;
   }
 }
+
+
+/* 2026-09-29: final mobile 404 single-line title parity. */
+@media(max-width:700px){
+  .not-found-page .utility-inner .h1{
+    font-size:26px!important;
+    line-height:42px!important;
+    letter-spacing:-.04em!important;
+    white-space:nowrap;
+  }
+}
