@@ -92,6 +92,6 @@ A deterministic static release-packaging path is now part of the repository:
 - generated `release-manifest.json`
 - generated `SHA256SUMS.txt`
 
-The manual workflow is restricted to `main` and only creates a downloadable artifact. It does not upload to production or modify DNS.
+The workflow runs on every `main` push and can also be started manually from `main`; it only creates a downloadable artifact. It does not upload to production or modify DNS.
 
 Before a public launch, use `DEPLOYMENT.md` for the release/package flow and `SECURITY-HEADERS.md` for host-side response-header verification.
