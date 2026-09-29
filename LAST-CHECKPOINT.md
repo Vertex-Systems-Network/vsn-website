@@ -413,3 +413,11 @@ Authority Profile and site-wide motion merged in PR #64 (`7e544c9f58f703cabb0162
 - Static Integrity now exercises the release packager in `--check-only` mode.
 - `dist/` is ignored.
 - Next action after this branch passes CI: merge the release-packaging PR, run the manual bundle workflow from `main`, inspect the generated artifact/checksum, then wait for explicit production-hosting authorization/access before any upload.
+
+
+## Main release artifact automation checkpoint — 2026-09-29
+
+- PR #118 added and certified deterministic release packaging; Static Integrity #573 passed on the PR head and post-merge Static Integrity #574 passed on main `d6049a626df73cd09dd3ae79415f008e99ed2848`.
+- Release artifact generation is being upgraded from manual-only to automatic on every `main` push while keeping manual dispatch available.
+- The workflow still has no production-hosting or DNS action. A generated artifact is not a deployment.
+- Next action: merge this trigger update, verify the resulting Production Release Bundle main run and inspect its artifact/checksum.
