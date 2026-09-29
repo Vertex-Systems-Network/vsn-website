@@ -417,3 +417,8 @@ The PR #115 rendered report reduced the remaining differences to two measurable 
 ## Production release bundle hardening — 2026-09-29
 
 The website remains a direct-open static HTML/CSS/vanilla-JS project, but production handoff now has a reproducible packaging path. `scripts/build_release_bundle.py` creates a clean hosting directory, deterministic `vsn-website-release.zip`, a JSON file manifest and SHA-256 checksum list. Static Integrity builds the same package in check-only mode so missing runtime files or package leakage fail before merge. A manual **Production Release Bundle** GitHub Actions workflow is restricted to `main`, reruns the repository validators and uploads the release ZIP as an artifact. It does not deploy the site, change DNS or introduce a Vercel/Node/runtime dependency.
+
+
+## Main-branch release artifact automation — 2026-09-29
+
+The verified release workflow now runs automatically on every `main` push and remains manually runnable from `main`. It still performs **artifact generation only**: repository validation, deterministic static ZIP creation, checksum/manifest generation and GitHub Actions artifact upload. It has no hosting credentials, DNS mutation or production deployment step, so merging code does not publish the website live.
