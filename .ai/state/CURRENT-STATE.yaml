@@ -564,3 +564,16 @@ final_reference_template_scope_complete: true
 final_reference_remaining_visual_blocker: none
 production_deployed: false
 next_valid_action: production-publish-or-owner-requested-content-change
+
+
+production_release_bundle_status: implemented-in-review
+production_release_bundle_runtime_dependency_added: false
+production_release_bundle_builder: scripts/build_release_bundle.py
+production_release_bundle_workflow: .github/workflows/release-bundle.yml
+production_release_bundle_workflow_mode: manual-main-only-artifact
+production_release_bundle_outputs: [vsn-website-release.zip, release-manifest.json, SHA256SUMS.txt]
+production_release_bundle_ci_check: static-integrity-check-only
+production_release_bundle_auto_deploy: false
+production_release_bundle_dns_mutation: false
+production_release_bundle_host_credentials: none
+production_release_bundle_next_action: certify-merge-run-manual-main-artifact

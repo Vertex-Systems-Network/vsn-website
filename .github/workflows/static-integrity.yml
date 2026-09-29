@@ -35,6 +35,9 @@ jobs:
       - name: Validate static website
         run: python3 scripts/validate_static_site.py
 
+      - name: Validate release bundle
+        run: python3 scripts/build_release_bundle.py --check-only
+
       - name: Validate repository state
         run: node scripts/check_state_consistency.cjs
 

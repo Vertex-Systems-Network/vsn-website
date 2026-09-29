@@ -3,6 +3,7 @@ qa/
 generate.py
 enhance.py
 vercel.json
+dist/
 
 # OS/editor files
 .DS_Store

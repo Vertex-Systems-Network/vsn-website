@@ -412,3 +412,8 @@ The PR #114 artifact confirmed exact Project Detail heading metrics and exact mo
 ## Final measured heading parity — 2026-09-29
 
 The PR #115 rendered report reduced the remaining differences to two measurable heading-geometry gaps. The representative Web Development desktop H1 now uses the exact measured Ritovex reference metrics: 120px font size, 180px line height and -2.4px letter spacing. The published article title is shortened to “AI Helps. Human Review Still Matters.” across the homepage, Blog listing and Blog detail so the 48px desktop article heading can occupy the same single-line rhythm as the reference while retaining the article’s meaning.
+
+
+## Production release bundle hardening — 2026-09-29
+
+The website remains a direct-open static HTML/CSS/vanilla-JS project, but production handoff now has a reproducible packaging path. `scripts/build_release_bundle.py` creates a clean hosting directory, deterministic `vsn-website-release.zip`, a JSON file manifest and SHA-256 checksum list. Static Integrity builds the same package in check-only mode so missing runtime files or package leakage fail before merge. A manual **Production Release Bundle** GitHub Actions workflow is restricted to `main`, reruns the repository validators and uploads the release ZIP as an artifact. It does not deploy the site, change DNS or introduce a Vercel/Node/runtime dependency.

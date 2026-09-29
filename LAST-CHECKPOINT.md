@@ -401,3 +401,15 @@ Authority Profile and site-wide motion merged in PR #64 (`7e544c9f58f703cabb0162
 - Exact-final-head Static Integrity run #453 passed all five checks: logo inspection, exact palette validation, static website validation, motion regression and Ritovex fidelity regression.
 - Main CSS palette is restricted to the committed VSN logo colors plus white; foreign CSS colors: 0.
 - Website code/design is unchanged by this reconciliation; only persistent project state was corrected.
+
+
+## Production release bundle checkpoint — 2026-09-29
+
+- Current certified visual/reference implementation is merged on `main`; PR #116 supplied the final measured-heading implementation and PR #117 reconciled canonical repository state.
+- Production remains **not deployed**.
+- Added optional deterministic release packaging without changing the direct-file runtime architecture.
+- `scripts/build_release_bundle.py` packages only runtime files and emits `release-manifest.json`, `SHA256SUMS.txt` and `vsn-website-release.zip`.
+- `.github/workflows/release-bundle.yml` is manual, main-only and artifact-only; it has no hosting credentials and cannot publish automatically.
+- Static Integrity now exercises the release packager in `--check-only` mode.
+- `dist/` is ignored.
+- Next action after this branch passes CI: merge the release-packaging PR, run the manual bundle workflow from `main`, inspect the generated artifact/checksum, then wait for explicit production-hosting authorization/access before any upload.
