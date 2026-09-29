@@ -480,3 +480,14 @@ service_single_reference_total_pages: 12
 service_single_reference_form_faq_order_preserved: true
 service_single_reference_internal_notes_public: false
 next_manual_reference_scope: final-full-site-pixel-review-production-publication
+
+
+final_artifact_pixel_review_status: corrections-implemented-in-review
+final_artifact_pixel_review_source_pr: 111
+final_artifact_pixel_review_primary_run: 47
+final_artifact_pixel_review_secondary_run: 11
+final_artifact_pixel_review_404_reference_gap: corrected
+final_artifact_pixel_review_blog_detail_reference_gap: corrected
+final_artifact_pixel_review_project_detail_reference_gap: corrected
+final_artifact_pixel_review_service_family_status: rendered-passed
+next_manual_reference_scope: certify-final-artifact-corrections-then-production-publication
