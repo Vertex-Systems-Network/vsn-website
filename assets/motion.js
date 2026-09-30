@@ -14,7 +14,7 @@ addEventListener('scroll',()=>{if(!frame)frame=requestAnimationFrame(updateScrol
 addEventListener('resize',()=>{if(!frame)frame=requestAnimationFrame(updateScroll)},{passive:true});
 
 const groups=[
- ['.home-hero-copy>*',90],['.hero-art',0],['.home-about-visual,.home-about-copy',100],['.home-section-intro',0],
+ ['.home-hero-copy>*',90],['.hero-art,.home-hero-data-panel',0],['.home-credentials-grid>*',65],['.home-about-visual,.home-about-copy',100],['.home-section-intro',0],
  ['.home-service-card',70],['.home-service-preview',0],['.home-showcase-card',90],['.home-product-layout>*',90],
  ['.home-team-grid>article',80],['.home-proof-layout>*',90],['.home-process-intro',0],['.home-process-grid>article',90],
  ['.home-contact-band,.review-section .container',0],['.rv-hero-copy>*,.rv-service-hero-copy>*,.rv-company-hero-copy>*',80],
@@ -24,11 +24,21 @@ const groups=[
  ['.secondary-page .service-card,.secondary-page .product-card,.secondary-page .repo-card,.secondary-page .card,.secondary-page .contact-section-heading',70],
  ['.service-detail-page .service-card,.service-detail-page .card,.service-detail-page .decision-card,.service-detail-page .scope-panel,.service-detail-page .price-card',70],
  ['.company-proof-page .service-card,.company-proof-page .proof-card,.company-proof-page .card,.company-proof-page .decision-card,.company-proof-page .scope-panel',70],
- ['.services-pillar',70],['.services-tech-visual,.services-tech-copy',90],['.services-proof-cards>a',80],['.services-scope-intro',0],['.services-reference-scope .project-facts>div',70],
- ['.editorial-hero-copy>*',80],['.editorial-hero-visual',0],['.editorial-section-head',0],['.editorial-feature',0],['.editorial-card',80],['.article-aside',0],['.article-body>*',55],['.project-detail-image',0],['.utility-inner>*',80]
+ ['.services-pillar',70],['.services-tech-visual,.services-tech-copy',90],['.services-proof-cards>a',80],['.services-scope-intro',0],['.services-reference-scope .project-facts>div',70],['.p4-service-lane',55],
+ ['.about-proof-metrics-grid>div,.about-verification-track>*,.about-team-grid>article,.about-credential-row',65],
+ ['.editorial-hero-copy>*',80],['.editorial-hero-visual',0],['.editorial-section-head',0],['.editorial-feature',0],['.editorial-card',80],['.article-aside',0],['.article-body>*',55],['.project-detail-image',0],['.utility-inner>*',80],
+ ['.projects-proof-note,.project-more-proof,.project-repo-row,.project-detail-reference-facts>div,.project-single-proof-note',60],
+ ['.blog-detail-publish-strip>span,.article-intro-note',60],
+ ['.contact-info-grid article,.contact-route-grid>a,.contact-step-grid article,.contact-public-links a,.contact-map',60],
+ ['.rv-footer-cta .container,.rv-footer-grid>*,.rv-footer-public-links>*,.rv-footer-bottom>*',55]
 ];
-const targets=[];
-groups.forEach(([selector,step])=>document.querySelectorAll(selector).forEach((el,i)=>{el.style.setProperty('--rv-delay',step?Math.min(i*step,320)+'ms':'0ms');targets.push(el)}));
+const targets=[],seen=new Set();
+groups.forEach(([selector,step])=>document.querySelectorAll(selector).forEach((el,i)=>{
+ if(seen.has(el))return;
+ seen.add(el);
+ el.style.setProperty('--rv-delay',step?Math.min(i*step,280)+'ms':'0ms');
+ targets.push(el);
+}));
 let observer=null;
 function revealAll(){targets.forEach(el=>el.classList.add('rv-visible'))}
 function startReveal(){
@@ -38,7 +48,7 @@ function startReveal(){
  observer?.disconnect();
  observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('rv-visible');observer.unobserve(entry.target)}}),{threshold:.12,rootMargin:'0px 0px -7% 0px'});
  targets.forEach(el=>observer.observe(el));
- requestAnimationFrame(()=>document.querySelectorAll('.home-hero-copy>*,.hero-art,.rv-hero-copy>*,.rv-service-hero-copy>*,.rv-company-hero-copy>*,.rv-hero-visual,.rv-service-visual,.rv-company-visual,.service-hero-copy>*,.service-hero-visual,.contact-hero-copy>*,.contact-hero-visual,.editorial-hero-copy>*,.editorial-hero-visual').forEach(el=>el.classList.add('rv-visible')));
+ requestAnimationFrame(()=>document.querySelectorAll('.home-hero-copy>*,.hero-art,.home-hero-data-panel,.rv-hero-copy>*,.rv-service-hero-copy>*,.rv-company-hero-copy>*,.rv-hero-visual,.rv-service-visual,.rv-company-visual,.service-hero-copy>*,.service-hero-visual,.contact-hero-copy>*,.contact-hero-visual,.editorial-hero-copy>*,.editorial-hero-visual').forEach(el=>el.classList.add('rv-visible')));
 }
 
 const accordion=document.querySelector('[data-service-accordion]');
