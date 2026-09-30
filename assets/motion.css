@@ -153,8 +153,7 @@
 .motion-prep:not(.motion-fallback) .contact-map,
 .motion-prep:not(.motion-fallback) .rv-footer-cta .container,
 .motion-prep:not(.motion-fallback) .rv-footer-grid>*,
-.motion-prep:not(.motion-fallback) .rv-footer-public-links>*,
-.motion-prep:not(.motion-fallback) .rv-footer-bottom>*{
+.motion-prep:not(.motion-fallback) .rv-footer-public-links>*{
  opacity:0;
  transform:translate3d(0,20px,0);
  transition:opacity .62s cubic-bezier(.22,1,.36,1),transform .62s cubic-bezier(.22,1,.36,1);
@@ -190,8 +189,7 @@
 .motion-fallback .contact-map,
 .motion-fallback .rv-footer-cta .container,
 .motion-fallback .rv-footer-grid>*,
-.motion-fallback .rv-footer-public-links>*,
-.motion-fallback .rv-footer-bottom>*{
+.motion-fallback .rv-footer-public-links>*{
  opacity:1!important;
  transform:none!important;
 }
