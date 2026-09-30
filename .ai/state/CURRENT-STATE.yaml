@@ -1,8 +1,8 @@
 repo: Vertex-Systems-Network/vsn-website
 updated: 2026-09-30
-phase: point-5-company-products-projects-blog-contact-data-first-visual-polish-complete
+phase: point-6-final-animation-motion-production-certification-complete
 current_branch: main
-current_milestone: point-5-company-editorial-polish-merged-certified
+current_milestone: point-6-motion-and-production-certification-merged
 project_status: active
 implementation_complete: true
 repository_implementation_percent: 100
@@ -29,19 +29,19 @@ canonical_restore:
     - SECURITY-HEADERS.md
     - Google Maps privacy disclosure
 
-verified_main_sha: 2e46d53bfe228a67d9da63f0f2a27c5584898d3d
-static_integrity_run: 707
-static_integrity_passed_sha: 2e46d53bfe228a67d9da63f0f2a27c5584898d3d
-latest_pr: 144
-latest_static_integrity_run: 707
-latest_verified_main_run: 707
+verified_main_sha: 37853514407c05ccb53afe4da25dd57621f8d14b
+static_integrity_run: 717
+static_integrity_passed_sha: 37853514407c05ccb53afe4da25dd57621f8d14b
+latest_pr: 145
+latest_static_integrity_run: 717
+latest_verified_main_run: 717
 latest_verified_main_status: passed
-latest_verified_main_sha: 2e46d53bfe228a67d9da63f0f2a27c5584898d3d
+latest_verified_main_sha: 37853514407c05ccb53afe4da25dd57621f8d14b
 
 release_evidence:
-  production_release_bundle_run: 28
+  production_release_bundle_run: 33
   production_release_bundle_status: passed
-  production_release_bundle_sha: 2e46d53bfe228a67d9da63f0f2a27c5584898d3d
+  production_release_bundle_sha: 37853514407c05ccb53afe4da25dd57621f8d14b
 
 architecture:
   type: static-html-css-vanilla-js
@@ -98,6 +98,9 @@ current_runtime_features:
   mobile_navigation: true
   reduced_motion_support: true
   duplicate_scroll_animation_owner_allowed: false
+  single_motion_observer_owner: true
+  motion_target_deduplication: true
+  reduced_motion_browser_certified: true
 
 authority_profile:
   service_classification: standalone-service
@@ -251,4 +254,50 @@ point_5_company_editorial_visual_polish:
   production_release_bundle_run: 28
   production_release_bundle_status: passed
 
-next_valid_action: point-6-final-animation-and-production-certification
+point_6_final_motion_and_production_certification:
+  status: closed
+  pr: 145
+  certified_pr_head_sha: ccb0c9f175f82ae3674bab0d1c34c14e83b26bc2
+  merged_main_runtime_sha: 37853514407c05ccb53afe4da25dd57621f8d14b
+  runtime_files:
+    - assets/motion.css
+    - assets/motion.js
+  certification_files:
+    - scripts/check_motion_behavior.cjs
+    - scripts/visual_browser_qa.cjs
+    - SECURITY-HEADERS.md
+  single_intersection_observer_owner: assets/motion.js
+  observer_construction_count: 1
+  target_deduplication: true
+  one_shot_unobserve_after_reveal: true
+  prep_init_before_first_stylesheet_all_html: true
+  html_pages_verified: 32
+  reduced_motion_runtime_samples:
+    - home
+    - service-detail
+    - blog
+    - contact
+  reduced_motion_hidden_targets: 0
+  pointermove_animation_loops: 0
+  web_animations_api_loops: 0
+  footer_bottom_hidden_content_bug: fixed
+  footer_bottom_legal_line_always_visible: true
+  security_header_docs_html_count_reconciled: 32
+  static_integrity_pr_run: 716
+  static_integrity_pr_status: passed
+  primary_visual_browser_run: 158
+  primary_visual_browser_status: passed
+  primary_failures: 0
+  secondary_visual_browser_run: 124
+  secondary_visual_browser_status: passed
+  secondary_failures: 0
+  desktop_screenshot_review: passed
+  mobile_screenshot_review: passed
+  static_integrity_main_run: 717
+  static_integrity_main_status: passed
+  production_release_bundle_run: 33
+  production_release_bundle_status: passed
+  production_release_bundle_zip_sha256: eb6c6b86554f346c6b76098e3a16ae0f6ecffd006d2d2aea02e06ff64d5240b5
+  production_deployed: false
+
+next_valid_action: guarded-production-deployment-or-owner-requested-content-change
