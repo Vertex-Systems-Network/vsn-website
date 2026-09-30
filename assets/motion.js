@@ -30,7 +30,7 @@ const groups=[
  ['.projects-proof-note,.project-more-proof,.project-repo-row,.project-detail-reference-facts>div,.project-single-proof-note',60],
  ['.blog-detail-publish-strip>span,.article-intro-note',60],
  ['.contact-info-grid article,.contact-route-grid>a,.contact-step-grid article,.contact-public-links a,.contact-map',60],
- ['.rv-footer-cta .container,.rv-footer-grid>*,.rv-footer-public-links>*,.rv-footer-bottom>*',55]
+ ['.rv-footer-cta .container,.rv-footer-grid>*,.rv-footer-public-links>*',55]
 ];
 const targets=[],seen=new Set();
 groups.forEach(([selector,step])=>document.querySelectorAll(selector).forEach((el,i)=>{
