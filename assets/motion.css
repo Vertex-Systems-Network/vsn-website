@@ -127,3 +127,69 @@
  opacity:1!important;
  transform:none!important;
 }
+
+
+/* Point 6 final choreography: newer data-first components stay on the same
+   single IntersectionObserver owner. Distances are intentionally restrained
+   to avoid the previous "content appears, then jumps" effect. */
+.motion-prep:not(.motion-fallback) .home-hero-data-panel,
+.motion-prep:not(.motion-fallback) .home-credentials-grid>*,
+.motion-prep:not(.motion-fallback) .p4-service-lane,
+.motion-prep:not(.motion-fallback) .about-proof-metrics-grid>div,
+.motion-prep:not(.motion-fallback) .about-verification-track>*,
+.motion-prep:not(.motion-fallback) .about-team-grid>article,
+.motion-prep:not(.motion-fallback) .about-credential-row,
+.motion-prep:not(.motion-fallback) .projects-proof-note,
+.motion-prep:not(.motion-fallback) .project-more-proof,
+.motion-prep:not(.motion-fallback) .project-repo-row,
+.motion-prep:not(.motion-fallback) .project-detail-reference-facts>div,
+.motion-prep:not(.motion-fallback) .project-single-proof-note,
+.motion-prep:not(.motion-fallback) .blog-detail-publish-strip>span,
+.motion-prep:not(.motion-fallback) .article-intro-note,
+.motion-prep:not(.motion-fallback) .contact-info-grid article,
+.motion-prep:not(.motion-fallback) .contact-route-grid>a,
+.motion-prep:not(.motion-fallback) .contact-step-grid article,
+.motion-prep:not(.motion-fallback) .contact-public-links a,
+.motion-prep:not(.motion-fallback) .contact-map,
+.motion-prep:not(.motion-fallback) .rv-footer-cta .container,
+.motion-prep:not(.motion-fallback) .rv-footer-grid>*,
+.motion-prep:not(.motion-fallback) .rv-footer-public-links>*{
+ opacity:0;
+ transform:translate3d(0,20px,0);
+ transition:opacity .62s cubic-bezier(.22,1,.36,1),transform .62s cubic-bezier(.22,1,.36,1);
+ transition-delay:var(--rv-delay,0ms);
+}
+.motion-prep:not(.motion-fallback) .home-hero-data-panel,
+.motion-prep:not(.motion-fallback) .p4-service-lane,
+.motion-prep:not(.motion-fallback) .about-team-grid>article,
+.motion-prep:not(.motion-fallback) .project-more-proof,
+.motion-prep:not(.motion-fallback) .contact-route-grid>a,
+.motion-prep:not(.motion-fallback) .contact-map,
+.motion-prep:not(.motion-fallback) .rv-footer-cta .container{
+ transform:translate3d(0,22px,0) scale(.992);
+}
+.motion-fallback .home-hero-data-panel,
+.motion-fallback .home-credentials-grid>*,
+.motion-fallback .p4-service-lane,
+.motion-fallback .about-proof-metrics-grid>div,
+.motion-fallback .about-verification-track>*,
+.motion-fallback .about-team-grid>article,
+.motion-fallback .about-credential-row,
+.motion-fallback .projects-proof-note,
+.motion-fallback .project-more-proof,
+.motion-fallback .project-repo-row,
+.motion-fallback .project-detail-reference-facts>div,
+.motion-fallback .project-single-proof-note,
+.motion-fallback .blog-detail-publish-strip>span,
+.motion-fallback .article-intro-note,
+.motion-fallback .contact-info-grid article,
+.motion-fallback .contact-route-grid>a,
+.motion-fallback .contact-step-grid article,
+.motion-fallback .contact-public-links a,
+.motion-fallback .contact-map,
+.motion-fallback .rv-footer-cta .container,
+.motion-fallback .rv-footer-grid>*,
+.motion-fallback .rv-footer-public-links>*{
+ opacity:1!important;
+ transform:none!important;
+}

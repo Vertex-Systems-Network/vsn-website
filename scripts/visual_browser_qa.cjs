@@ -98,11 +98,18 @@ async function collectMetrics(page,local){
       const r=el.getBoundingClientRect(),s=getComputedStyle(el);
       return {className:el.className,height:Math.round(r.height),paddingTop:s.paddingTop,paddingBottom:s.paddingBottom,background:s.backgroundColor};
     }),
+    motionState:{
+      prep:document.documentElement.classList.contains('motion-prep'),
+      live:document.documentElement.classList.contains('motion-live'),
+      fallback:document.documentElement.classList.contains('motion-fallback'),
+      reduced:document.documentElement.classList.contains('motion-reduced'),
+      control:!!document.querySelector('.motion-control')
+    },
     keyBlockVisibility:{
       blogFeature:(()=>{const el=document.querySelector('.blog-featured-article');return el?{display:getComputedStyle(el).display,width:Math.round(el.getBoundingClientRect().width),height:Math.round(el.getBoundingClientRect().height)}:null})(),
       contactTwoCol:(()=>{const el=document.querySelector('.contact-page .contact-main .two-col');return el?{gridTemplateColumns:getComputedStyle(el).gridTemplateColumns,width:Math.round(el.getBoundingClientRect().width)}:null})()
     },
-    hiddenVisibleArea:[...document.querySelectorAll('main section > .container, .editorial-card, .editorial-feature, .project-proof-card, .about-principle-grid article, .services-benefit-grid article, .contact-route-grid > a, .contact-step-grid article')]
+    hiddenVisibleArea:[...document.querySelectorAll('main section > .container, .editorial-card, .editorial-feature, .project-proof-card, .about-principle-grid article, .services-benefit-grid article, .p4-service-lane, .about-proof-metrics-grid>div, .about-verification-track>*, .about-team-grid>article, .about-credential-row, .projects-proof-note, .project-more-proof, .project-repo-row, .project-detail-reference-facts>div, .project-single-proof-note, .blog-detail-publish-strip>span, .article-intro-note, .contact-info-grid article, .contact-route-grid>a, .contact-step-grid article, .contact-public-links a, .contact-map, .rv-footer-cta .container, .rv-footer-grid>*, .rv-footer-public-links>*, .rv-footer-bottom>*')]
       .filter(el=>{const r=el.getBoundingClientRect(),s=getComputedStyle(el);return r.width>0&&r.height>0&&Number(s.opacity)<0.1})
       .map(el=>({className:el.className,opacity:getComputedStyle(el).opacity,height:Math.round(el.getBoundingClientRect().height)})),
     suspiciousHumanImages:[...document.images].filter(img=>/vsn-human-/i.test(img.getAttribute('src')||'')).map(img=>{
@@ -134,7 +141,8 @@ async function collectMetrics(page,local){
 (async()=>{
   const server=await startStaticServer();
   const browser=await chromium.launch({headless:true});
-  const report={generatedAt:new Date().toISOString(),localBaseUrl:'http://127.0.0.1:4173/',pages:{}};
+  const report={generatedAt:new Date().toISOString(),localBaseUrl:'http://127.0.0.1:4173/',pages:{},reducedMotion:{}};
+  const failures=[];
   for(const p of pages){
     const pageOut=path.join(outDir,p.key);
     fs.mkdirSync(pageOut,{recursive:true});
@@ -165,18 +173,64 @@ async function collectMetrics(page,local){
       }
     }
   }
+  const reducedSamples=[
+    {key:'home',local:'index.html'},
+    {key:'service-detail',local:'web-development-ecommerce.html'},
+    {key:'blog',local:'blog.html'},
+    {key:'contact',local:'contact.html'}
+  ];
+  for(const sample of reducedSamples){
+    const context=await browser.newContext({
+      viewport:{width:390,height:844},
+      deviceScaleFactor:1,
+      reducedMotion:'reduce'
+    });
+    const page=await context.newPage();
+    const consoleErrors=[];const pageErrors=[];
+    page.on('console',m=>{if(m.type()==='error')consoleErrors.push(m.text())});
+    page.on('pageerror',e=>pageErrors.push(String(e)));
+    let response=null,navigationError=null;
+    try{response=await page.goto('http://127.0.0.1:4173/'+sample.local,{waitUntil:'domcontentloaded',timeout:30000})}catch(e){navigationError=String(e)}
+    if(!navigationError)await page.waitForTimeout(450);
+    const metrics=navigationError?null:await page.evaluate(()=>({
+      prefersReduced:matchMedia('(prefers-reduced-motion: reduce)').matches,
+      prep:document.documentElement.classList.contains('motion-prep'),
+      live:document.documentElement.classList.contains('motion-live'),
+      reduced:document.documentElement.classList.contains('motion-reduced'),
+      fallback:document.documentElement.classList.contains('motion-fallback'),
+      controlDisabled:document.querySelector('.motion-control')?.disabled??null,
+      hiddenMotionTargets:[...document.querySelectorAll('.home-hero-copy>*,.home-hero-data-panel,.service-hero-copy>*,.service-hero-visual,.editorial-hero-copy>*,.editorial-hero-visual,.contact-hero-copy>*,.contact-hero-visual')]
+        .filter(el=>{const r=el.getBoundingClientRect(),s=getComputedStyle(el);return r.width>0&&r.height>0&&Number(s.opacity)<0.1})
+        .map(el=>({className:el.className,opacity:getComputedStyle(el).opacity}))
+    }));
+    report.reducedMotion[sample.key]={status:response?.status?.()||null,navigationError,metrics,consoleErrors,pageErrors};
+    const label='reduced-motion/'+sample.key;
+    if(navigationError)failures.push(label+': navigation '+navigationError);
+    if(response?.status?.()>=400)failures.push(label+': HTTP '+response.status());
+    if(pageErrors.length)failures.push(label+': page errors '+pageErrors.join(' | '));
+    if(consoleErrors.length)failures.push(label+': console errors '+consoleErrors.join(' | '));
+    if(metrics&&(!metrics.prefersReduced||metrics.prep||metrics.live||!metrics.reduced||metrics.fallback||metrics.controlDisabled!==true)){
+      failures.push(label+': reduced-motion root/control state regression');
+    }
+    if(metrics?.hiddenMotionTargets?.length)failures.push(label+': motion content remained hidden');
+    await context.close();
+  }
+
   fs.writeFileSync(path.join(outDir,'report.json'),JSON.stringify(report,null,2));
-  const failures=[];
   for(const [key,entries] of Object.entries(report.pages)){
     for(const entry of entries.filter(x=>x.local)){
       const label=key+'/'+entry.target;
       if(entry.navigationError)failures.push(label+': navigation '+entry.navigationError);
       if(entry.status&&entry.status>=400)failures.push(label+': HTTP '+entry.status);
       if(entry.pageErrors.length)failures.push(label+': page errors '+entry.pageErrors.join(' | '));
+      if(entry.consoleErrors.length)failures.push(label+': console errors '+entry.consoleErrors.map(x=>x.text||String(x)).join(' | '));
       if(entry.metrics?.horizontalOverflow)failures.push(label+': horizontal overflow');
       if(entry.metrics?.missingImages?.length)failures.push(label+': missing images '+entry.metrics.missingImages.join(', '));
       if(entry.metrics?.suspiciousHumanImages?.length)failures.push(label+': suspicious human imagery');
       if(entry.metrics?.hiddenVisibleArea?.length)failures.push(label+': hidden content remained after full scroll');
+      if(entry.metrics?.motionState&&(!entry.metrics.motionState.prep||!entry.metrics.motionState.live||entry.metrics.motionState.fallback||entry.metrics.motionState.reduced||!entry.metrics.motionState.control)){
+        failures.push(label+': default motion runtime state regression');
+      }
       if(!entry.metrics?.h1?.length)failures.push(label+': missing H1');
       if(entry.metrics?.mobileNav?.tested){
         const nav=entry.metrics.mobileNav;
