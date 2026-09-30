@@ -4,19 +4,20 @@ Official static corporate website for **Vertex Systems Network (VSN)**.
 
 ## Current canonical state
 
-The website is on the restored **data-first VSN baseline**, with Point 5 company/editorial visual polish completed.
+The website is on the restored **data-first VSN baseline**, with Point 6 final motion and production certification completed.
 
 - Canonical substantive restore: PR **#137**
 - Post-restore reconciliation: PR **#138**
 - Point 3 Home visual polish: PR **#142**
 - Point 4 Services + service-detail visual polish: PR **#143**
 - Point 5 Company + editorial visual polish: PR **#144**
-- Current certified runtime SHA: `2e46d53bfe228a67d9da63f0f2a27c5584898d3d`
+- Point 6 Final motion + production certification: PR **#145**
+- Current certified runtime SHA: `37853514407c05ccb53afe4da25dd57621f8d14b`
 - Restored from data-first visual baseline: `dfb37f291b081c5e67479f4aaa53ece7dc9c0608`
-- Static Integrity on current runtime: **run #707 passed**
-- Production Release Bundle on current runtime: **run #28 passed**
-- Visual Browser QA for Point 5: **run #153 passed, failures 0**
-- Secondary Visual Browser QA for Point 5: **run #119 passed, failures 0**
+- Static Integrity on current runtime: **run #717 passed**
+- Production Release Bundle on current runtime: **run #33 passed**
+- Visual Browser QA for Point 6: **run #158 passed, failures 0**
+- Secondary Visual Browser QA for Point 6: **run #124 passed, failures 0**
 - HTML pages: **32**
 - Production deployment: **not yet performed**
 
@@ -175,6 +176,41 @@ Final Point 5 evidence:
 - Production Release Bundle **#28 — passed**
 - desktop and mobile screenshots manually reviewed across the Point 5 page families
 - no horizontal overflow, missing images, page errors, console errors or navigation errors in the final browser reports
+
+## Point 6 — Final motion + production certification
+
+Point 6 is complete and merged in PR **#145**.
+
+The final motion pass keeps a single reveal engine and extends it to selected Point 3–5 components without adding another scroll/reveal owner.
+
+Certified behavior:
+
+- `assets/motion.js` is the only runtime `IntersectionObserver` owner
+- exactly one reveal observer is constructed
+- reveal targets are deduplicated
+- one-shot reveal/unobserve behavior is preserved
+- `motion-init.js` loads before the first stylesheet on all **32 HTML pages**
+- all 32 HTML pages load the motion runtime
+- no pointermove animation loops
+- no Web Animations API loops
+- Home parallax remains separate and requestAnimationFrame-throttled
+- real reduced-motion browser contexts pass for Home, Service Detail, Blog and Contact
+
+A stricter final browser check found a real footer bug: the document-bottom copyright/SECP/icon-credit line could remain hidden because the observer's negative bottom root margin could not be satisfied at the absolute document end. The bottom legal line is now permanently visible while the upper footer keeps its motion treatment.
+
+Final Point 6 evidence:
+
+- Static Integrity PR run **#716 — passed**
+- Visual Browser QA **#158 — passed**, failures: **0**
+- Secondary Visual Browser QA **#124 — passed**, failures: **0**
+- Static Integrity merged-main run **#717 — passed**
+- Production Release Bundle **#33 — passed**
+- release ZIP SHA-256: `eb6c6b86554f346c6b76098e3a16ae0f6ecffd006d2d2aea02e06ff64d5240b5`
+- deterministic release: **32 HTML files / 94 runtime files**
+- reduced-motion hidden targets: **0**
+- desktop/mobile screenshots manually reviewed, including the corrected footer bottom
+
+Production has **not** been deployed. The existing Middlehost deployment remains a separate explicit manual action.
 
 ## Architecture
 
@@ -336,6 +372,6 @@ Evidence:
 
 ## Next work
 
-The next allowed project step is **Point 6: final animation/motion pass and production certification**.
+The planned Point 1–6 website recovery, visual-polish and certification sequence is complete.
 
-Point 6 must keep one motion owner, avoid scroll-trigger duplication/jerk, respect reduced-motion, certify the complete rendered site again, and only then consider the guarded Middlehost production deployment.
+The next operational action is either an explicitly requested guarded Middlehost production deployment or a new owner-requested content/product/site change. Production is not considered deployed until the manual deployment workflow and live HTTPS smoke checks pass.
