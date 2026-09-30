@@ -51,7 +51,7 @@ Notes:
 
 ## Source-level meta CSP defense in depth — 2026-09-25
 
-All 22 HTML pages now carry the same reviewed `Content-Security-Policy` meta policy before loadable resources:
+All 32 HTML pages now carry the same reviewed `Content-Security-Policy` meta policy before loadable resources:
 
 `default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self' 'sha256-+RvWWLE055Y83NN2tnQqwBMbousTQloiJeaaIBrsomU='; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'none'; worker-src 'none'; form-action 'self'`
 
@@ -59,7 +59,7 @@ They also carry:
 
 `<meta name="referrer" content="strict-origin-when-cross-origin">`
 
-`static-integrity` enforces the exact policy, placement, referrer policy, and rejects any policy containing `'unsafe-inline'` or `'unsafe-eval'`.
+`static-integrity` enforces the exact policy, placement, referrer policy, and rejects any policy containing `'unsafe-inline'` or `'unsafe-eval'` across the complete 32-page HTML set.
 
 This is defense in depth only. A meta CSP does **not** replace production response headers. In particular:
 - `frame-ancestors` must be delivered as an HTTP response header.
