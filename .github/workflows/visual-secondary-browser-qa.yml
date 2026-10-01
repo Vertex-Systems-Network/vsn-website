@@ -46,7 +46,7 @@ jobs:
         run: node scripts/visual_secondary_browser_qa.cjs
       - name: Upload screenshots and report
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: visual-browser-secondary-pages
           path: qa-artifacts/secondary-pages
