@@ -1,0 +1,167 @@
+{
+  "data": {
+    "e-gv-vsn-black": {
+      "type": "global-color-variable",
+      "label": "vsn-black",
+      "value": "#000000",
+      "order": 1,
+      "sync_to_v3": true
+    },
+    "e-gv-vsn-white": {
+      "type": "global-color-variable",
+      "label": "vsn-white",
+      "value": "#FFFFFF",
+      "order": 2,
+      "sync_to_v3": true
+    },
+    "e-gv-vsn-charcoal": {
+      "type": "global-color-variable",
+      "label": "vsn-charcoal",
+      "value": "#3F4245",
+      "order": 3,
+      "sync_to_v3": true
+    },
+    "e-gv-vsn-muted": {
+      "type": "global-color-variable",
+      "label": "vsn-muted",
+      "value": "#7E8083",
+      "order": 4,
+      "sync_to_v3": true
+    },
+    "e-gv-vsn-blue": {
+      "type": "global-color-variable",
+      "label": "vsn-blue",
+      "value": "#6188C6",
+      "order": 5,
+      "sync_to_v3": true
+    },
+    "e-gv-vsn-violet": {
+      "type": "global-color-variable",
+      "label": "vsn-violet",
+      "value": "#625BA8",
+      "order": 6,
+      "sync_to_v3": true
+    },
+    "e-gv-vsn-cyan": {
+      "type": "global-color-variable",
+      "label": "vsn-cyan",
+      "value": "#5AC8D6",
+      "order": 7,
+      "sync_to_v3": true
+    },
+    "e-gv-vsn-line": {
+      "type": "global-color-variable",
+      "label": "vsn-line",
+      "value": "rgba(63,66,69,0.16)",
+      "order": 8,
+      "sync_to_v3": false
+    },
+    "e-gv-vsn-font-sans": {
+      "type": "global-font-variable",
+      "label": "vsn-font-sans",
+      "value": "Inter",
+      "order": 9,
+      "sync_to_v3": true
+    },
+    "e-gv-vsn-font-serif": {
+      "type": "global-font-variable",
+      "label": "vsn-font-serif",
+      "value": "Georgia",
+      "order": 10,
+      "sync_to_v3": true
+    },
+    "e-gv-space-2xs": {
+      "type": "global-size-variable",
+      "label": "space-2xs",
+      "value": "4px",
+      "order": 11,
+      "sync_to_v3": false
+    },
+    "e-gv-space-xs": {
+      "type": "global-size-variable",
+      "label": "space-xs",
+      "value": "8px",
+      "order": 12,
+      "sync_to_v3": false
+    },
+    "e-gv-space-sm": {
+      "type": "global-size-variable",
+      "label": "space-sm",
+      "value": "12px",
+      "order": 13,
+      "sync_to_v3": false
+    },
+    "e-gv-space-md": {
+      "type": "global-size-variable",
+      "label": "space-md",
+      "value": "16px",
+      "order": 14,
+      "sync_to_v3": false
+    },
+    "e-gv-space-lg": {
+      "type": "global-size-variable",
+      "label": "space-lg",
+      "value": "24px",
+      "order": 15,
+      "sync_to_v3": false
+    },
+    "e-gv-space-xl": {
+      "type": "global-size-variable",
+      "label": "space-xl",
+      "value": "32px",
+      "order": 16,
+      "sync_to_v3": false
+    },
+    "e-gv-space-2xl": {
+      "type": "global-size-variable",
+      "label": "space-2xl",
+      "value": "48px",
+      "order": 17,
+      "sync_to_v3": false
+    },
+    "e-gv-space-3xl": {
+      "type": "global-size-variable",
+      "label": "space-3xl",
+      "value": "64px",
+      "order": 18,
+      "sync_to_v3": false
+    },
+    "e-gv-radius-sm": {
+      "type": "global-size-variable",
+      "label": "radius-sm",
+      "value": "10px",
+      "order": 19,
+      "sync_to_v3": false
+    },
+    "e-gv-radius-md": {
+      "type": "global-size-variable",
+      "label": "radius-md",
+      "value": "14px",
+      "order": 20,
+      "sync_to_v3": false
+    },
+    "e-gv-radius-lg": {
+      "type": "global-size-variable",
+      "label": "radius-lg",
+      "value": "20px",
+      "order": 21,
+      "sync_to_v3": false
+    },
+    "e-gv-radius-xl": {
+      "type": "global-size-variable",
+      "label": "radius-xl",
+      "value": "24px",
+      "order": 22,
+      "sync_to_v3": false
+    },
+    "e-gv-radius-pill": {
+      "type": "global-size-variable",
+      "label": "radius-pill",
+      "value": "999px",
+      "order": 23,
+      "sync_to_v3": false
+    }
+  },
+  "watermark": 0,
+  "version": 1
+}
