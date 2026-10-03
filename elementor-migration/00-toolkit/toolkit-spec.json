@@ -1,0 +1,246 @@
+{
+  "schema_version": 1,
+  "name": "VSN Elementor Toolkit v1",
+  "status": "canonical-source",
+  "compatibility": {
+    "elementor_core": "4.3.3",
+    "elementor_pro_minimum": "4.3.0",
+    "wordpress_minimum_for_mcp": "6.8",
+    "atomic_editor": true
+  },
+  "source": {
+    "repo": "Vertex-Systems-Network/vsn-website",
+    "branch_base": "main",
+    "audited_css": [
+      "assets/styles.css",
+      "assets/ritovex-fidelity.css",
+      "assets/ritovex-home.css",
+      "assets/ritovex-service-detail.css",
+      "assets/vsn-global-polish.css"
+    ]
+  },
+  "brand": {
+    "colors": {
+      "vsn-black": "#000000",
+      "vsn-white": "#FFFFFF",
+      "vsn-charcoal": "#3F4245",
+      "vsn-muted": "#7E8083",
+      "vsn-blue": "#6188C6",
+      "vsn-violet": "#625BA8",
+      "vsn-cyan": "#5AC8D6",
+      "vsn-line": "rgba(63,66,69,0.16)"
+    },
+    "fonts": {
+      "vsn-font-sans": "Inter",
+      "vsn-font-serif": "Georgia"
+    }
+  },
+  "layout": {
+    "container_max": "1240px",
+    "content_narrow": "820px",
+    "content_reading": "920px",
+    "horizontal_gutter_desktop": "20px",
+    "horizontal_gutter_mobile": "14px",
+    "breakpoints": {
+      "desktop": "1025px+",
+      "tablet": "768px-1024px",
+      "mobile": "480px-767px",
+      "mobile_extra": "<=479px"
+    }
+  },
+  "spacing": {
+    "space-2xs": "4px",
+    "space-xs": "8px",
+    "space-sm": "12px",
+    "space-md": "16px",
+    "space-lg": "24px",
+    "space-xl": "32px",
+    "space-2xl": "48px",
+    "space-3xl": "64px",
+    "section-desktop": "112px",
+    "section-tablet": "80px",
+    "section-mobile": "64px"
+  },
+  "radius": {
+    "radius-sm": "10px",
+    "radius-md": "14px",
+    "radius-lg": "20px",
+    "radius-xl": "24px",
+    "radius-pill": "999px"
+  },
+  "typography": {
+    "body": {
+      "family": "Inter",
+      "size": "16px",
+      "weight": 400,
+      "line_height": 1.65,
+      "letter_spacing": "0"
+    },
+    "body_large": {
+      "family": "Inter",
+      "size": "20px",
+      "weight": 400,
+      "line_height": 1.55,
+      "letter_spacing": "-0.01em"
+    },
+    "small": {
+      "family": "Inter",
+      "size": "14px",
+      "weight": 500,
+      "line_height": 1.5,
+      "letter_spacing": "0"
+    },
+    "eyebrow": {
+      "family": "Inter",
+      "size": "12px",
+      "weight": 700,
+      "line_height": 1.3,
+      "letter_spacing": "0.10em",
+      "transform": "uppercase"
+    },
+    "display_xl": {
+      "family": "Inter",
+      "size": "clamp(68px,7.7vw,112px)",
+      "weight": 850,
+      "line_height": 0.92,
+      "letter_spacing": "-0.06em"
+    },
+    "display_service": {
+      "family": "Inter",
+      "size": "clamp(54px,6.1vw,98px)",
+      "weight": 850,
+      "line_height": 0.92,
+      "letter_spacing": "-0.068em"
+    },
+    "h2": {
+      "family": "Inter",
+      "size": "clamp(44px,5vw,76px)",
+      "weight": 850,
+      "line_height": 0.98,
+      "letter_spacing": "-0.052em"
+    },
+    "h3": {
+      "family": "Inter",
+      "size": "28px",
+      "weight": 800,
+      "line_height": 1.08,
+      "letter_spacing": "-0.035em"
+    },
+    "h4": {
+      "family": "Inter",
+      "size": "18px",
+      "weight": 750,
+      "line_height": 1.2,
+      "letter_spacing": "-0.02em"
+    }
+  },
+  "controls": {
+    "buttons": {
+      "base": {
+        "min_height": "48px",
+        "padding": "14px 20px",
+        "radius": "14px",
+        "font_weight": 800,
+        "transition": "200ms"
+      },
+      "primary": {
+        "background": "vsn-black",
+        "color": "vsn-white",
+        "border": "vsn-black"
+      },
+      "brand": {
+        "background": "vsn-cyan",
+        "color": "vsn-black",
+        "border": "vsn-cyan"
+      },
+      "outline": {
+        "background": "transparent",
+        "color": "vsn-black",
+        "border": "vsn-charcoal"
+      }
+    },
+    "forms": {
+      "field_background": "vsn-white",
+      "field_text": "vsn-black",
+      "field_border": "vsn-line",
+      "field_radius": "10px",
+      "field_padding": "13px 14px",
+      "textarea_min_height": "140px"
+    }
+  },
+  "motion": {
+    "ease": "cubic-bezier(.22,1,.36,1)",
+    "fast": "200ms",
+    "standard": "450ms",
+    "slow": "700ms",
+    "reduced_motion_required": true
+  },
+  "elementor_mapping": {
+    "v3_globals": {
+      "primary": "vsn-cyan",
+      "secondary": "vsn-violet",
+      "text": "vsn-black",
+      "accent": "vsn-blue"
+    },
+    "atomic_variables": {
+      "colors": [
+        "vsn-black",
+        "vsn-white",
+        "vsn-charcoal",
+        "vsn-muted",
+        "vsn-blue",
+        "vsn-violet",
+        "vsn-cyan",
+        "vsn-line"
+      ],
+      "fonts": [
+        "vsn-font-sans",
+        "vsn-font-serif"
+      ],
+      "sizes": [
+        "space-2xs",
+        "space-xs",
+        "space-sm",
+        "space-md",
+        "space-lg",
+        "space-xl",
+        "space-2xl",
+        "space-3xl",
+        "radius-sm",
+        "radius-md",
+        "radius-lg",
+        "radius-xl",
+        "radius-pill"
+      ]
+    }
+  },
+  "global_classes": [
+    "vsn-container",
+    "vsn-section",
+    "vsn-section-soft",
+    "vsn-grid-2",
+    "vsn-grid-3",
+    "vsn-grid-4",
+    "vsn-display-xl",
+    "vsn-display-service",
+    "vsn-h2",
+    "vsn-h3",
+    "vsn-body-lg",
+    "vsn-eyebrow",
+    "vsn-btn",
+    "vsn-btn-primary",
+    "vsn-btn-brand",
+    "vsn-btn-outline",
+    "vsn-card",
+    "vsn-card-dark",
+    "vsn-media-frame",
+    "vsn-form-field",
+    "vsn-reveal",
+    "vsn-hover-lift"
+  ],
+  "notes": [
+    "This file is the canonical source spec, not a fabricated Elementor ZIP.",
+    "The final import package must be generated through Elementor 4.3.x native export/MCP format after the classes/default styles are created.",
+    "Core 4.3.3 and Pro 4.3.0 are the current project compatibility baseline."
+  ]
+}
